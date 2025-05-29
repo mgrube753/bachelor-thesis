@@ -16,11 +16,11 @@ def main():
     get_bloom()
 
     print("[INFO] Starting experiments...")
-    # run_exp_1a(clients)
-    # run_exp_1b(clients)
-    # run_exp_2a(clients)
+    run_exp_1a(clients)
+    run_exp_1b(clients)
+    run_exp_2a(clients)
     run_exp_2b(clients)
-    # run_exp_2c(clients)
+    run_exp_2c(clients)
 
     print("\n[INFO] All experiments completed.")
 

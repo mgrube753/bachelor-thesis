@@ -1,7 +1,7 @@
 import os
 
 BASE_PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-EXPERIMENTS_BASE_PATH = os.path.join(BASE_PROJECT_PATH, "experiments")
+EXPERIMENTS_BASE_PATH = os.path.join(BASE_PROJECT_PATH, "20_experiments")
 INPUT_SOURCES_PATH = os.path.join(EXPERIMENTS_BASE_PATH, "30_input_sources")
 PROMPT_TEMPLATES_PATH = os.path.join(EXPERIMENTS_BASE_PATH, "40_prompts")
 EVAL_PATH = os.path.join(EXPERIMENTS_BASE_PATH, "60_eval")

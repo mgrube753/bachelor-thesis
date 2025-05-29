@@ -16,8 +16,8 @@ def load_txt(file_path):
 def save_result(file_path, content):
     try:
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
-        # with open(file_path, "w", encoding="utf-8") as f:
-        #     f.write(content)
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(content)
         # print(" " * 7 + f"Saved result to: {file_path}\n")
     except Exception as e:
         print(" " * 7 + f"Error saving file {file_path}: {e}\n")
