@@ -1,0 +1,9 @@
+**Frage:** Welche drei Kernaufgaben werden dem Session Layer (Layer 5) im ISO-OSI-Modell laut dem Text zugeschrieben?  
+
+**Antwort:**  
+A) Sitzungen, Synchronisation, Bündelung  
+B) Datenumwandlung, Verschlüsselung, Kompression  
+C) Adressierung, Routing, Paketvermittlung  
+D) Bitübertragung, Signalcodierung, Fehlererkennung  
+
+**Korrekte Antwort:** A) Sitzungen, Synchronisation, Bündelung

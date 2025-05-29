@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Aussagen beschreibt eine der fünf Kernaufgaben des Data Link Layer (Schicht 2) im ISO-OSI-Modell?  
+
+A) Fragmentierung: Aufteilen größerer Einheiten in einzelne Bits, z.B. 1-bit Segmente.  
+B) Verschlüsselung: Sicherstellung der Datenvertraulichkeit durch Algorithmen.  
+C) Adressierung: Zuweisung logischer IP-Adressen im Netzwerk.  
+D) Sitzungssteuerung: Synchronisation der Kommunikation zwischen Endgeräten.  
+
+Antwort: A) Fragmentierung: Aufteilen größerer Einheiten in einzelne Bits, z.B. 1-bit Segmente.

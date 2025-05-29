@@ -1,0 +1,7 @@
+**Frage:** Welche der folgenden Funktionen werden von der Session-Schicht des ISO-OSI-Modells bereitgestellt?  
+
+[KORREKT] Dialogsteuerung (Dialog Control)  
+[KORREKT] Token-Verwaltung (Token Management)  
+[KORREKT] Synchronisierung (Synchronization)  
+[ ] Datenverschlüsselung (Data Encryption)  
+[ ] Fehlererkennung (Error Detection)

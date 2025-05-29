@@ -1,0 +1,6 @@
+```markdown
+Frage: Welche beiden grundlegenden Herausforderungen im Network Layer machen die parallele Existenz von Ende-zu-Ende- und Knoten-zu-Knoten-Flusssteuerung notwendig? Begründen Sie anhand der im Text beschriebenen Szenarien.
+
+Antwort: ~1) Knoten-zu-Knoten-Steuerung ist erforderlich, da direkt kommunizierende Partner eine gemeinsame Übertragungsgeschwindigkeit aushandeln müssen, um lokale Überlastungen zu vermeiden.  
+2) Ende-zu-Ende-Steuerung wird benötigt, weil selbst bei lokal optimierten Verbindungen der langsamste Zwischenknoten in der Gesamtstrecke zu systemweiten Pufferüberläufen führen kann, die eine globale Regulierung erfordern.
+```

@@ -1,0 +1,78 @@
+\begin{table}[htbp]
+    \centering
+    \caption{Timeline of Major LLM Releases (2022-2025).}
+    \label{tab:llm_releases}
+    \renewcommand{\arraystretch}{1.1}
+    \definecolor{openaiColor}{HTML}{c6e2ce}   
+    \definecolor{metaColor}{HTML}{9deade}     
+    \definecolor{googleColor}{HTML}{ebd9a1}   
+    \definecolor{anthropicColor}{HTML}{cdd8f2}
+    \definecolor{xaiColor}{HTML}{efd4d0} 
+    \definecolor{deepseekColor}{HTML}{eed6b3} 
+    \definecolor{alibabaColor}{HTML}{cde3b5}
+    % https://medialab.github.io/iwanthue/
+
+    \begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.25cm}|>{\centering\arraybackslash}p{4.5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}X|}
+        \hline
+        \rowcolor{gray!15} \textbf{Date} & \textbf{Developers}                            & \textbf{Model Releases} & \textbf{Architecture} & \textbf{Reasoning} \\
+        \hline
+        Nov 2022                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & ChatGPT/GPT-3.5         & Decoder-only?         & -- \\ % https://openai.com/index/chatgpt/
+        \hline
+        \multirow{2}{*}{Feb 2023}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 65B               & Transformer           & -- \\ % https://arxiv.org/pdf/2302.13971 paper (not really known architecture)
+        \cline{2-5}
+                                         & \cellcolor{googleColor}{\textbf{Google}}       & Bard 137B               & Decoder-only          & -- \\ % https://ai.google/advancing-ai/milestones/?section=bard is decoder only cuz powered by lamda 137B https://arxiv.org/pdf/2201.08239
+        \hline
+        \multirow{2}{*}{Mar 2023}        & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4                   & Decoder-only?         & -- \\ % https://arxiv.org/pdf/2303.08774
+        \cline{2-5}
+                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 1                & --                     & -- \\ % https://www.anthropic.com/news/introducing-claude
+        \hline
+        \multirow{2}{*}{Jul 2023}        & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 2                & --                     & -- \\ % https://www.anthropic.com/news/claude-2
+        \cline{2-5}
+                                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 2 70B             & Decoder-only          & -- \\ % https://arxiv.org/pdf/2307.09288 paper
+        \hline
+        Nov 2023                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-1 314B             & MoE                   & -- \\ % https://x.ai/news/grok & https://x.ai/news/grok-os (here MoE)
+        \hline
+        Dec 2023                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini                  & Decoder-only          & -- \\ % https://arxiv.org/pdf/2312.11805
+        \hline
+        Feb 2024                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 1.5              & Decoder MoE           & -- \\ % https://arxiv.org/pdf/2403.05530
+        \hline
+        Mar 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3                & --                     & -- \\ % https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf
+        \hline
+        Apr 2024                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3 70B             & Decoder-only          & -- \\ % https://ai.meta.com/blog/meta-llama-3/
+        \hline
+        May 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4o                  & Decoder-only?         & -- \\ % https://arxiv.org/pdf/2410.21276
+        \hline
+        Jun 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.5 Sonnet       & --                     & -- \\ % https://www.anthropic.com/news/claude-3-5-sonnet
+        \hline
+        Jul 2024                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3.1 405B          & Decoder-only          & -- \\ % https://arxiv.org/pdf/2407.21783 paper (dense decoder transformer instead of MoE, presented in Shazeer et al. 2017)
+        \hline
+        Aug 2024                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-2                  & --                     & -- \\ % https://x.ai/news/grok-2
+        \hline
+        Sep 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1-mini                 & --                     & Yes \\ % https://openai.com/index/openai-o1-mini-advancing-cost-efficient-reasoning/
+        \hline
+        \multirow{4}{*}{Dec 2024}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3.3 70B           & Decoder-only          & -- \\ % https://ai.meta.com/blog/future-of-ai-built-with-llama/ and https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct (decoder-only there)
+        \cline{2-5}
+                                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.0              & --                     & -- \\ % https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/
+        \cline{2-5}
+                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1/o3-mini              & --                     & Yes \\ % https://arxiv.org/pdf/2412.16720 o1 paper, https://openai.com/index/openai-o3-mini/
+        \cline{2-5}
+                                         & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek-V3 658B        & MoE                   & -- \\ % https://arxiv.org/pdf/2412.19437
+        \hline
+        \multirow{2}{*}{Jan 2025}        & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek R1 658B        & MoE                   & Yes \\ % https://arxiv.org/pdf/2501.12948
+        \cline{2-5}
+                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & Qwen 2.5-Max            & MoE                   & -- \\ % https://qwenlm.github.io/blog/qwen2.5-max/
+        \hline
+        \multirow{3}{*}{Feb 2025}        & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-3                  & --                     & Yes \\ % https://x.ai/news/grok-3
+        \cline{2-5}
+                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.7 Sonnet       & --                     & Yes \\ % https://www.anthropic.com/news/claude-3-7-sonnet
+        \cline{2-5}
+                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & QwQ-Max                 & MoE                   & Yes \\ % https://qwenlm.github.io/blog/qwq-max-preview/ (based on Qwen 2.5-Max, so MoE)
+        \hline
+        Mar 2025                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.5              & --                     & Yes \\ % https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/
+        \hline
+        \multirow{2}{*}{Apr 2025}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 4 109B/400B/2T    & MoE                   & -- \\ % https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+        \cline{2-5}
+                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o3/o4-mini              & --                     & Yes \\ % https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf
+        \hline
+    \end{tabularx}
+\end{table}

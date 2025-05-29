@@ -1,0 +1,7 @@
+The Session Layer
+The session layer allows users on different machines to establish sessions between them. Sessions offer various services, including dialog control (keeping
+track of whose turn it is to transmit), token management (preventing two parties
+from attempting the same critical operation simultaneously), and synchronization
+
+(checkpointing long transmissions to allow them to pick up from where they left
+off in the event of a crash and subsequent recovery).

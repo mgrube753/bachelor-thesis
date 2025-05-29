@@ -1,0 +1,29 @@
+Data Link Layer 2
+Beschreibung
+Bereitstellung einer fehleranfälligen Übertragung über einen stets
+fehlergesicherten Physical Layer.
+
+5 Kernaufgaben
+
+Fehlererzeugung:
+
+Ignorieren, Verursachen oder Verschleiern von Übertragungsfehlern.
+
+Datenstau:
+
+Strategien, wenn Empfänger für Sender zu langsam ist.
+Bsp: Verwerfen von Daten, Beschleunigen, Ignorieren.
+
+Fragmentierung:
+
+Aufteilen größerer Einheiten in einzelne Bits.
+Universal-typisches Bsp: 1-bit Segmente.
+
+Anonymisierung:
+
+Verbergen bestimmter Sender oder Empfänger (keine Adresse).
+
+Medienverweigerung:
+
+Deaktivieren des Physical Layer.
+4 typische Aspekte: Empfangen, Ignorieren, Verursachen und Freigeben.

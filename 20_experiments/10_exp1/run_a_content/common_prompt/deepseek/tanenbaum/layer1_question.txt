@@ -1,0 +1,4 @@
+**Frage:** Welche der folgenden Aspekte sind primäre Anliegen der Physikalischen Schicht im ISO-OSI-Modell?  
+
+**Korrekte Antwort:**  
+- Übertragung roher Bits über einen Kommunikationskanal sowie die Gestaltung mechanischer, elektrischer und zeitlicher Schnittstellen.

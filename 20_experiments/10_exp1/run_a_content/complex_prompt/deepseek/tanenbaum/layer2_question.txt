@@ -1,0 +1,10 @@
+```markdown
+Frage: Welche drei Hauptaufgaben der Data Link Layer werden im Text explizit beschrieben und durch welche spezifischen Mechanismen werden diese gelöst?
+
+Antwortmöglichkeiten:
+- ~Transformation der Übertragungseinrichtung in eine fehlerfreie Leitung durch Framing und Bestätigungsmechanismen
+- ~Flusskontrolle durch Regulierung des Datenverkehrs zwischen schnellem Sender und langsamem Empfänger
+- Routing von Datenpaketen über verschiedene Netzwerke hinweg
+- ~Zugriffskontrolle auf Shared Media in Broadcast-Netzwerken durch das MAC-Sublayer
+- Verschlüsselung von Datenframes zur Sicherstellung der Vertraulichkeit
+```

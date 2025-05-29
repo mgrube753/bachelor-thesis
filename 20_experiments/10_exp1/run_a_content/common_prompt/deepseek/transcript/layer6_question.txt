@@ -1,0 +1,14 @@
+**Frage:** Welche der folgenden Aufgaben gehören zur Schicht 6 (Presentation Layer) des ISO-OSI-Modells?  
+
+**A. (Korrekte Antwort):**  
+- Konvertierung von Zeichendarstellungen (z.B. ASCII, Unicode, EBCDIC)  
+- Serialisierung komplexer Datenstrukturen (z.B. Grafen, Objekte)  
+- Behandlung von Little/Big Endian-Unterschieden  
+- Durchführung von Kompression/Dekomprimierung und Verschlüsselung/Entschlüsselung  
+- Verwaltung von NDNS (Netzwerkdatenrepräsentationsstandards)  
+
+**B.:**  
+- Physikalische Übertragung von Bitströmen über Medien  
+- Routing von Datenpaketen zwischen Netzwerken  
+- Fehlererkennung und -korrektur auf Verbindungsebene  
+- Bereitstellung von Anwendungsdiensten wie HTTP oder FTP

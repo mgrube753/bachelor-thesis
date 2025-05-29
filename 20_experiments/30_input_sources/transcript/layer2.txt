@@ -1,0 +1,20 @@
+Wir haben dann den zweiten Layer, den Data Link Layer und der stellt nun, wichtiges Wort, eine fehlergesicherte Übertragung über einen möglicherweise eben nicht fehlergesicherten Physical Layer zur Verfügung.
+Er hat eine Reihe von Aufgaben, die man sinnvollerweise auch zusammenbündelt und diese sind nun Fehlerkontrolle,
+Flusskontrolle, Segmentierung, Identifikation und Medienzugriff.
+Fehlerkontrolle bedeutet, dass wir Übertragungsfehler zunächst einmal erkennen müssen.
+Wenn wir sie erkannt haben, kann es nun Tricks geben, dass wir sie bereits selber beheben können oder aber wir müssen sie der anderen Seite mitteilen, signalisieren und dann muss die andere Seite etwas tun, was uns in die Lage versetzt, diesen Fehler auch wirklich zu beheben.
+Zweitens die Flusskontrolle.
+Flusskontrolle brauchen wir immer dann, wenn der Sender für den Empfänger zu schnell sendet.
+Also irgendwelche Mechanismen, die erlauben,
+dieses Problem zu lösen.
+Die Strategien im Link Layer sind nun Zwischenpuffer.
+Ich nehme Daten entgegen, lege sie in einem Puffer ab,
+Ich könnte auch die andere Seite herunterregeln.
+Ich könnte also der anderen Seite sagen, bitte sende nicht so schnell.
+Oder ich könnte mit Bestätigungen, die die andere Seite benötigt, etwas auf mich warten lassen, die Bestätigungen nicht senden oder später senden und dadurch implizit deutlich machen, dass ich lieber einen etwas langsameren Datenfluss hätte.
+Die Segmentierung ist dann wieder eher etwas sehr simples, das ist das Zusammenfassen von einzelnen Bits zu größeren Einheiten.
+Und man könnte sagen, das Beispiel, aber das universaltypische Beispiel, weil sich das praktisch durchgängig bewährt hat, ist das Zusammenfassen von acht Bits zu einem Byte, was die typische Einheit in einem Netzwerk ist.
+In den Anfängen hat man so ein bisschen rumgebastelt und hatte so Zeichensätze kodiert und hatte 7-Bit-Kodierungen und dann 8-Bit-Kodierungen.
+Schließlich die Identifikation, die Auswahl eines bestimmten Senders oder Empfängers durch die sogenannte Adresse.
+Und schließlich, als auch unterste in der Schicht sozusagen, gelegen die Aktivierung des physikalischen Layers.
+Es muss ja jetzt nun der Data Link Layer mit dem Physical Layer sprechen.

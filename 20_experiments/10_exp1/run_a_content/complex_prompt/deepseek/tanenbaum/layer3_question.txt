@@ -1,0 +1,5 @@
+```markdown
+Frage: Warum ist die Netzwerkschicht in Broadcast-Netzwerken häufig nur schwach ausgeprägt oder nicht vorhanden?
+
+Antwort: ~Weil das Routingproblem in solchen Netzwerken aufgrund ihrer Natur einfach ist.
+```

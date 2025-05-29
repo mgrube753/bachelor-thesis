@@ -1,0 +1,43 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.snm
+*.run.xml
+*.synctex.gz
+*.toc
+*-SAVE-ERROR
+*.vrb
+*.lol
+*.tdo
+
+# LaTeX output files
+*.pdf
+*.dvi
+*.ps
+*.eps
+
+# LaTeX editor files
+*.swp
+*.synctex(busy)
+
+# LaTeX generated files
+/_minted-*/
+
+# LaTeX distribution files
+*.gz
+*.zip
+
+# Python
+*.pyc
+.python-version
+.env
+

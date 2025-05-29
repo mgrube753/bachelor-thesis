@@ -1,0 +1,9 @@
+```markdown
+Frage: In welcher Reihenfolge führt die Physical Layer (Schicht 1) des ISO-OSI-Modells ihre drei Kernaufgaben während einer vollständigen Datenübertragung typischerweise aus?
+
+Antwortmöglichkeiten:
+- Transport, Codierung, Decodierung
+- ~Codierung, Transport, Decodierung
+- Decodierung, Codierung, Transport
+- Transport, Decodierung, Codierung
+```

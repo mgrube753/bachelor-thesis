@@ -1,0 +1,3 @@
+F: Welche drei Kernkonzepte werden im Application Layer (Layer 7) des ISO-OSI-Modells zur Festlegung anwendungsspezifischer Elemente definiert?  
+
+A: Protokollelemente, Daten und Reaktion der Anwendung (durch Zustandsänderungen oder andere Aktionen).

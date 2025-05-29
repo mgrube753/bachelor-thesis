@@ -1,0 +1,9 @@
+```markdown
+Frage: Welches der folgenden Protokolle gehört NICHT zur Anwendungsschicht des ISO-OSI-Modells, basierend auf den im Text beschriebenen Funktionen und Beispielen?
+
+Antwortmöglichkeiten:
+- ~TCP
+- HTTP
+- FTP
+- SMTP
+```

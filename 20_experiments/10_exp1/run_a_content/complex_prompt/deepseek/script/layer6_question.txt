@@ -1,0 +1,13 @@
+```markdown
+Frage: Welche der folgenden Aufgaben gehört NICHT zu den Kernaufgaben des Presentation Layers (Schicht 6) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- ~Steuerung des Datenflusses zwischen Sender und Empfänger
+- Konvertierung von Zeichendarstellungen zwischen ASCII und Unicode
+- Komprimierung von Daten zur Bandbreitenoptimierung
+- Verschlüsselung sensibler Informationen
+- Umwandlung von Big-Endian- zu Little-Endian-Formaten
+```
+
+**Erklärung:**  
+Die Datenflusskontrolle ist eine Kernaufgabe des Transport Layers (Schicht 4), nicht des Presentation Layers. Die anderen Optionen entsprechen exakt den vier im Text genannten Kernaufgaben (Endianness-Konvertierung, Zeichenkodierung, Kompression, Verschlüsselung).

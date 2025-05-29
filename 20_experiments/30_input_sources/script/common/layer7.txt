@@ -1,0 +1,19 @@
+Application Layer 7
+Beschreibung
+Festlegung, welche Elemente bei einer spezifischen Anwendung auftreten.
+
+3 Kernaufgaben
+
+Grundkonzepte:
+Welche Begriffe treten in der Anwendung auf.
+
+Protokollelemente: Welche Anforderungen können gestellt werden?
+Welche Daten werden dabei erwartet?
+
+Verhalten:
+Wie reagiert die Anwendung auf die
+Anforderungen durch diese Protokollelemente?
+
+
+Stark abhängig von der jeweiligen Anwendung!
+Daher wenig Systematisierung möglich.

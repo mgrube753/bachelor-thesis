@@ -1,0 +1,10 @@
+```markdown
+Frage: Welche der folgenden Aussagen zur Physical Layer 1 zeigt einen Widerspruch zwischen der beschriebenen logischen Konzeption und den genannten Beispielen auf?
+
+Antwortmöglichkeiten:
+- ~"Speicherung medien-unabhängiger Größen wird an Festplatten demonstriert, obwohl diese physische Medien erfordern"
+- "Verschlüsselung wird durch AES veranschaulicht, das ein symmetrisches Verfahren ist"
+- "Kompression logischer Größen in physikalische Werte widerspricht der Shannon-Kodierungstheorie"
+- ~"Die Umwandlung logischer Größen in physikalische Werte wird der Kompression zugeordnet, obwohl dies typischerweise eine Physical-Layer-Transcodierung darstellt"
+- "RAM wird als medien-gebundenes Speicherbeispiel genannt, obwohl es flüchtige Speicherung zeigt"
+```

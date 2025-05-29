@@ -1,0 +1,5 @@
+```markdown
+Frage: Bei der Implementierung eines Netzwerkprotokolls soll der Data Link Layer einen zuverlässigen Medienzugriff gewährleisten. Welche vier Aspekte müssen hierfür laut der beschriebenen Kernaufgaben zwingend berücksichtigt werden, und welche typischen Fehlerquellen könnten bei der Vernachlässigung eines dieser Aspekte entstehen?
+
+Antwort: ~ Die vier obligatorischen Aspekte sind: Senden, Warten, Beheben und Reservieren. Fehlerquellen bei Vernachlässigung wären z.B. Kollisionen unkoordinierter Sendeversuche (fehlendes Warten/Reservieren), Datenverluste bei Konflikten (unzureichendes Beheben) oder ineffiziente Bandbreitennutzung durch unkontrollierte Zugriffe (mangelndes Sende-Management).
+```

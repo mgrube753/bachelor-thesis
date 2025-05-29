@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Funktionen gehört NICHT zu den Kernaufgaben des Session Layers (Schicht 5) im OSI-Modell?
+
+Antwortmöglichkeiten:
+- ~Steuerung des Datenflusses zwischen Endgeräten
+- Synchronisation durch Setzen von Wiederaufsetzpunkten
+- Bündelung logisch zusammenhängender Kommunikationseinheiten
+- Aufbau und Abbau von Dialogverbindungen zwischen Anwendungen
+```

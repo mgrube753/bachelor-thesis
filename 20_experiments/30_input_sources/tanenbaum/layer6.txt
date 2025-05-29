@@ -1,0 +1,6 @@
+The Presentation Layer
+Unlike the lower layers, which are mostly concerned with moving bits around,
+the presentation layer is concerned with the syntax and semantics of the information transmitted. In order to make it possible for computers with different internal data representations to communicate, the data structures to be exchanged
+can be defined in an abstract way, along with a standard encoding to be used ''on
+the wire.'' The presentation layer manages these abstract data structures and allows higher-level data structures (e.g., banking records) to be defined and
+exchanged.

@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Funktionen gehört NICHT zu den drei Kernaufgaben des Session Layers im OSI-Modell gemäß dem beschriebenen Text?
+
+Antwortmöglichkeiten:
+- ~Implementierung von Flusskontrolle zur Datenratenanpassung
+- Asynchronität durch Vermeidung von Zwischenbestätigungen
+- Atomisierung unabhängiger Datenpakete
+- Spontane Datagramm-Verarbeitung ohne persistente Verbindungen
+```

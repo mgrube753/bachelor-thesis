@@ -1,0 +1,8 @@
+**Frage:** Welche der folgenden Kernaufgaben des Network Layer 3 (ISO-OSI-Modell) beinhaltet Strategien zur Bewältigung zu langsamer Datenübertragung?  
+
+**Antwort:** Datenbeschleunigung.  
+
+**Auswahlmöglichkeiten:**  
+A) Lokalisierung  
+B) Zufallspfad  
+C) Datenbeschleunigung

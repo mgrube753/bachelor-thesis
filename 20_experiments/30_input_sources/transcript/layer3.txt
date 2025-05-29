@@ -1,0 +1,23 @@
+Der dritte, der nächste Layer, der Network Layer, stellt nun eine Übertragung zwischen Geräten, die sich in unterschiedlichen Netzwerken befinden, bereit.
+Der hat nun drei Kernaufgaben.
+Adressierung, Routing und Flusssteuerung.
+Die Adressierung deshalb, weil ich für das Kommunizieren zwischen zwei möglicherweise unterschiedlichen Netzwerken
+auch neue Adressen einführen muss.
+Der eine Knoten hat seine Bluetooth-Adresse, der andere Knoten hat seine 5G-Adresse.
+Die jeweils eine Adresse macht in der jeweils anderen Technologie keinen Sinn.
+Ich muss also jetzt Adressen
+technologieübergreifend einführen, damit ich hier auch von einem Knoten reden kann, ohne die jeweils spezifische Technologie dabei kennen zu müssen.
+Das Routing bedeutet nun die Auswahl von vermittelnden Zwischenknoten.
+Weil jetzt wird es vermutlich so sein, dass dieser Bluetooth-Knoten mit einem anderen Bluetooth-Knoten redet.
+Der redet mit einem WLAN-Knoten.
+Der redet mit irgendeinem Knoten bei meinem Provider.
+Das Datenpaket, das ich jetzt gerade in mein Handy hinein spreche, das ist vielleicht sozusagen jetzt die Verbindung vom Headset, vom Mikrofon über Bluetooth in mein Handy und über das Handy geht es dann sozusagen weiter.
+Da sind viele Zwischenknoten noch dabei, bis es am Ende ankommt.
+Also diese Auswahl der vermittelnden Zwischenknoten, das ist das Routing.
+Und schließlich wiederum Flusssteuerung.
+Ich brauche wiederum Strategien, wenn zu schnell gesendet wird.
+Und hier können wir zwei verschiedene Aspekte beachten.
+Nun, also die Flusssteuerung kann eine Ende-zu-Ende oder eine Knoten-zu-Knoten-Flusssteuerung sein.
+Knoten-zu-Knoten insofern, als natürlich jeder Partner mit seinem anderen Partner das Problem hat, dass sie sich auf einer gemeinsamen Geschwindigkeit wiederfinden müssen.
+Ende zu Ende, weil es nun ja jetzt sein kann, dass auch über eine längere Strecke zwar jeder Partner mit seinem anderen Partner vernünftig eine gemeinsame Geschwindigkeit findet, aber möglicherweise
+der langsamste, der schwächste Knoten auf der ganzen Verbindungsstrecke sehr viel zwischenpuffern muss und sozusagen sich in Gesamtsicht auf einer langen Strecke Ende zu Ende sehr viel vielleicht aufstaut und es deshalb nötig ist, auch diese Perspektive im Auge zu behalten.

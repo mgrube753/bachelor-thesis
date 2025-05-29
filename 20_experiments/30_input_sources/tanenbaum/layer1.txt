@@ -1,0 +1,9 @@
+The Physical Layer
+The physical layer is concerned with transmitting raw bits over a communication channel. The design issues have to do with making sure that when one side
+sends a 1 bit it is received by the other side as a 1 bit, not as a 0 bit. Typical questions here are what electrical signals should be used to represent a 1 and a 0, how
+many nanoseconds a bit lasts, whether transmission may proceed simultaneously
+in both directions, how the initial connection is established, how it is torn down
+when both sides are finished, how many pins the network connector has, and what
+each pin is used for. These design issues largely deal with mechanical, electrical,
+and timing interfaces, as well as the physical transmission medium, which lies
+below the physical layer.

@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche zwei Quality of Service (QoS)-Parameter sind für Echtzeit-Videoströme kritisch, während die Fehlerrate hier tolerierbar ist? Begründe anhand der Textbeispiele, warum im Gegensatz dazu bei Dateiübertragungen ein entgegengesetzter Anspruch an diese Parameter besteht.
+
+Antwortmöglichkeiten:
+- ~Latenz und Jitter – Bei Echtzeit-Videoströmen führen Verzögerungen/Schwankungen zu wahrnehmbaren Störungen, während einzelne Pixelabweichungen (durch Paketverluste) toleriert werden. Bei Dateiübertragungen darf hingegen kein Datenverlust (hohe Fehlerrate) auftreten, während Timing-Parameter sekundär sind.
+- Bandbreite und Durchsatz – Videos benötigen konstante Hochgeschwindigkeitsverbindungen, Dateien können mit variabler Rate übertragen werden.
+- Paketreihenfolge und Header-Compression – Echtzeitdaten erfordern strikte Sequenzierung, Dateien nutzen redundante Prüfsummen.
+- Verbindungsorientierung und Multiplexing – Streams benötigen dedizierte Kanäle, Dateien können gebündelt übertragen werden.
+```

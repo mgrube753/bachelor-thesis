@@ -1,0 +1,22 @@
+Network Layer 3
+Beschreibung
+Bereitstellung einer Übertragung zwischen Geräten, die sich in unterschiedlichen
+Netzwerken (möglicherweise) verschiedener Layer 2 Technologien befinden.
+
+3 Kernaufgaben
+
+Adressierung:
+
+Netzwerk-übergreifende Adressen.
+
+Routing:
+
+Auswahl der vermittelnden Zwischenknoten
+zur Kommunikation nicht direkt verbundenen Knoten.
+
+Flußsteuerung:
+
+Strategien, wenn zu schnell gesendet wird.
+End-to-End:
+Vom Sender zum weit entfernten Empfänger.
+Node-to-Node: Von jedem Knoten zum Nächsten.

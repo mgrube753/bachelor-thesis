@@ -1,0 +1,8 @@
+**F:** Nennen Sie die fünf Kernaufgaben des Data Link Layers (Schicht 2) im ISO-OSI-Modell.  
+
+**A:** Die fünf Kernaufgaben sind:  
+1. **Fehlerkontrolle** (Erkennen, Beheben oder Signalisieren von Übertragungsfehlern),  
+2. **Flußkontrolle** (Strategien zur Anpassung der Senderate, z. B. Zwischenpuffern oder Herunterregeln),  
+3. **Segmentierung** (Zusammenfassen einzelner Bits zu größeren Einheiten, z. B. Bytes),  
+4. **Identifikation** (Adressierung zur Auswahl bestimmter Sender/Empfänger),  
+5. **Medienzugriff** (Steuerung des Physical Layers, z. B. Senden, Warten, Beheben, Reservieren).

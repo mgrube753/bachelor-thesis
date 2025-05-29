@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Aussagen beschreibt den entscheidenden strukturellen Unterschied zwischen der Transport Layer (Schicht 4) und den darunterliegenden Schichten 1-3 im ISO-OSI-Modell am treffendsten?
+
+Antwortmöglichkeiten:
+- ~Die Transport Layer ermöglicht eine direkte logische Kommunikation zwischen den Endgeräten, während Schichten 1-3 nur zwischen physisch benachbarten Netzwerkknoten operieren.
+- Die Transport Layer ist ausschließlich für die Fehlerkorrektur zuständig, während Schichten 1-3 nur Paketweiterleitung implementieren.
+- Schichten 1-3 verwenden ausschließlich Broadcast-Kommunikation, während die Transport Layer Punkt-zu-Punkt-Verbindungen erzwingt.
+- Die Transport Layer arbeitet mit physikalischen Adressen, während Schichten 1-3 logische Adressierung für End-to-End-Kommunikation nutzen.
+```

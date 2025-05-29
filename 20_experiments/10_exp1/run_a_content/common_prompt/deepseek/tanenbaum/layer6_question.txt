@@ -1,0 +1,10 @@
+**Frage:** Welche der folgenden Aussagen beschreibt die Hauptaufgabe der Präsentationsschicht im ISO-OSI-Modell?  
+
+**Korrekte Antwort:**  
+C) Verwaltung der Syntax und Semantik der Daten sowie Definition abstrakter Datenstrukturen mit standardisierter Kodierung.  
+
+(Antwortmöglichkeiten:  
+A) Physikalische Übertragung von Bits über das Netzwerkmedium.  
+B) Gewährleistung der zuverlässigen Ende-zu-Ende-Kommunikation und Datenflusskontrolle.  
+C) Verwaltung der Syntax und Semantik der Daten sowie Definition abstrakter Datenstrukturen mit standardisierter Kodierung.  
+D) Weiterleitung von Datenpaketen zwischen unterschiedlichen Netzwerken.)

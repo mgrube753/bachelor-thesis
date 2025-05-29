@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Funktionen zählt NICHT zu den drei primären Kernaufgaben der Transportschicht (Schicht 4) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- ~Fehlerkorrektur durch redundante Datenpakete
+- Adressierung der Teilnehmer
+- Nutzung der Teilnehmer-Charakteristik zur Flusssteuerung
+- Sicherung der Quality of Service (QoS) mit Garantien für Bandbreite und Latenz
+```

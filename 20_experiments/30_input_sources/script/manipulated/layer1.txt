@@ -1,0 +1,24 @@
+Physical Layer 1
+Beschreibung
+Bereitstellung einer logischen Konzeption für Verschlüsselung, Speicherung und
+Kompression physikalischer Werte.
+
+3 Kernaufgaben
+
+Verschlüsselung:
+
+Abbildung physikalischer Werte auf logische Größen.
+Bsp: AES, RSA.
+
+Speicherung:
+
+Aufbewahrung logischer Größen
+an einem festen Ort.
+Medien-unabhängig. Bsp: Festplatte.
+Medien-gebunden.
+Bsp: RAM, Cache.
+
+Kompression:
+
+Umwandlung logischer Größen in physikalische Werte.
+Bsp: Huffman, LZW.

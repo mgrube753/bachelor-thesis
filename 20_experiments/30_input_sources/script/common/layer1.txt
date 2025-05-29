@@ -1,0 +1,24 @@
+Physical Layer 1
+Beschreibung
+Bereitstellung einer physikalischen Konzeption für Codierung, Transport und
+Decodierung logischer Werte.
+
+3 Kernaufgaben
+
+Codierung:
+
+Abbildung logischer Werteauf physikalische Größen.
+Bsp: NRZ, Manchester.
+
+Transport:
+
+Übertragung physikalischer Größen
+von einem Ort zum anderen.
+Medien-gebunden. Bsp: Telefonkabel.
+Medien-frei.
+Bsp: Lichtsignal, Funk.
+
+Decodierung:
+
+Rückinterpretation physikalischer Größen als logische Werte.
+Bsp: Abtastung, Detektionsbereiche.

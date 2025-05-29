@@ -1,0 +1,9 @@
+```markdown
+Frage: In welchem der folgenden Szenarien wird primär eine Node-to-Node-Flußsteuerung in Layer 3 eingesetzt, im Gegensatz zur End-to-End-Flußsteuerung?
+
+Antwortmöglichkeiten:
+- ~Bei der Überlastung eines Zwischenrouters, der Pakete zwischen zwei nicht direkt verbundenen Netzwerken weiterleitet
+- Bei der Anpassung der Übertragungsrate zwischen einem Webserver und einem Client in unterschiedlichen Ländern
+- Wenn ein Endgerät seine Senderate aufgrund von Paketverlusten am Zielstandort reduziert
+- Während der Neukonfiguration von MAC-Adresstabellen in einem geswitchten Netzwerk
+```

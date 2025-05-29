@@ -1,0 +1,23 @@
+Presentation Layer 6
+Beschreibung
+Interpretation des Bitstroms als Rohdaten ohne Anwendungsbezug.
+
+4 Kernaufgaben
+
+Datenformat:
+
+Vereinheitlichung der Datendarstellung.
+Bsp: nur big endian, ein einziges Serialisierungs-Format.
+
+Binärdaten:
+
+Ignorieren der Zeichendarstellung, Behandlung als reine Binärdaten.
+Bsp: keine Unterscheidung von ASCII, Unicode, etc.
+
+Expansion:
+
+Nur Expandieren (Entpacken).
+
+Offenlegung:
+
+Nur Entschlüsseln, keine Verschlüsselung anbieten.

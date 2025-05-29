@@ -1,0 +1,9 @@
+```markdown
+Frage: Warum lässt sich der Application Layer (Schicht 7) des ISO-OSI-Modells laut Text nur schwer systematisieren, und welche Aspekte tragen maßgeblich zu dieser Herausforderung bei?
+
+Antwortmöglichkeiten:
+- ~Die starke Anwendungsabhängigkeit führt zu variablen Grundkonzepten, Protokollelementen und Verhaltensmustern, die keine einheitliche Struktur zulassen.
+- Die fehlende Definition von Netzwerkdiensten auf dieser Schicht verhindert eine klare Abgrenzung zwischen Anwendungen.
+- Die Standardisierung der Transportmechanismen dominiert die Schicht und überschattet anwendungsspezifische Anforderungen.
+- Protokollheader-Formate erfordern ständige Anpassungen, was Konsistenz im Application Layer untergräbt.
+```

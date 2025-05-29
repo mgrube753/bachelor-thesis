@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Methoden wird im Data Link Layer zur Flusskontrolle eingesetzt, wie im Text beschrieben?
+
+Antwortmöglichkeiten:
+- ~Verzögerung von Bestätigungen, um die Senderate implizit zu reduzieren
+- Dynamische Neuberechnung von Netzwerkpfaden basierend auf Auslastung
+- Verschlüsselung übertragener Bytes zur Sicherung der Vertraulichkeit
+- Zerlegung langer Nachrichten in transportfähige Pakete auf Anwendungsebene

@@ -1,0 +1,11 @@
+```markdown
+Frage: Welche der folgenden Aspekte zählen zu den primären Designkriterien der Physical Layer im ISO-OSI-Modell, und welche gehören zu höheren Schichten? Begründen Sie Ihre Zuordnung kritisch.
+
+Antwortmöglichkeiten:
+- ~Festlegung der Spannungspegel zur Unterscheidung von 0- und 1-Bits (Physical Layer: Direkte Signalrepräsentation)
+- ~Synchronisation der Bit-Übertragungsdauer in Nanosekunden (Physical Layer: Timing-Interface)
+- ~Physische Pin-Belegung eines Netzwerkconnectors (Physical Layer: Mechanische Schnittstelle)
+- Verhandlung gleichzeitiger bidirektionaler Übertragung (Data Link Layer: Vollduplex-Steuerung)
+- Fehlererkennung durch Prüfsummen (Data Link Layer: Frame-Integrität)
+- Verschlüsselung übertragener Daten (Presentation Layer: Datentransformation)
+```

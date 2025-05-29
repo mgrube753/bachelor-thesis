@@ -1,0 +1,93 @@
+\documentclass[usenames, dvipsnames, aspectratio=32]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage[defaultfam, regular]{montserrat}
+\usepackage{csquotes}
+\usepackage[normalem]{ulem}
+\usepackage{latexsym,multicol,booktabs,miama}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{amssymb,amsfonts,amsmath,amsthm,mathrsfs,mathptmx} 
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage[backend=biber,bibencoding=utf8,urldateusetime=true,style=alphabetic,sorting=nyt,natbib=true]{biblatex}
+\usepackage{style}
+\usepackage{hyperref}
+    \hypersetup{colorlinks=true, citecolor=purple, filecolor=black, linkcolor=swufe, urlcolor=blue}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+% \addbibresource{ref.bib}
+
+\author[Malte Grube]{\vspace*{-.8em}Malte Grube -- B.\,Sc. Informatik (2021)\inst{1}}
+\title[]{LLMs in der Fragengenerierung}
+\subtitle{--\;Zwischenverteidigung\;--}
+\institute[Universität Rostock]{
+    \inst{1}
+    \footnotesize{Betreuer: \textit{Prof.\,Dr. rer.nat.habil. \uline{Clemens H. Cap}}} \vspace*{.25em} \\
+    \textit{Jun.-Prof.in Dr.in \uline{Charlott Rubach}} \vspace*{-.25em}
+}
+\date{15. Oktober 2024}
+
+\def\cmd#1{\texttt{\color[RGB]{0, 0, 139}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color[RGB]{0, 0, 139}\footnotesize #1}}
+
+\lstdefinestyle{texstyle}{
+    language=[LaTeX]TeX,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle={\bfseries\color[RGB]{0, 0, 180}},
+    keywordstyle=[2]{\slshape\color[RGB]{225, 140, 30}},
+    morekeywords=[2]{,itemize, enumerate, equation, table, tabular},
+    stringstyle=\color[RGB]{50, 50, 50},
+    numbers=left,
+    numberstyle=\footnotesize\color{gray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox
+}
+
+% \AtBeginSection[]{
+%   \begin{frame}
+%     \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+%   \end{frame}
+% }
+
+\begin{document}
+
+\begin{frame}
+    \vspace*{-.75em}
+    \begin{figure}[htpb]
+\centering
+        \includegraphics[width=0.55\linewidth]{logo.jpg}
+    \end{figure}
+    \vspace*{-1.5em}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\section{This is a Section}
+
+\begin{frame}{Was geht ab}
+    \begin{itemize}
+        \item Joa test
+    \end{itemize}
+\end{frame}
+
+\section{Testing Testing}
+
+\begin{frame}
+    \begin{itemize}
+        \item Joa
+    \end{itemize}
+\end{frame}
+
+\section{Success}
+
+\begin{frame}
+    \begin{itemize}
+        \item Joa
+    \end{itemize}
+\end{frame}
+
+\end{document}

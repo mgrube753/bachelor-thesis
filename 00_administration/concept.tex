@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{ulem}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{geometry}
+    \geometry{a4paper, margin=1in}
+\usepackage[breaklinks=true]{hyperref}
+    \hypersetup{colorlinks, citecolor=BrickRed, filecolor=Black, linkcolor=Red, urlcolor=MidnightBlue}
+
+\title{Generating Educational Questions using Large Language Models: An Evaluation of Quality and Alignment with Pedagogical Principles}
+\author{Malte Grube}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction and Research Motivation}
+Assessment plays a crucial role in education, with practice questions being essential tools for students to evaluate their understanding of instructional material. Large Language Models (LLMs) present a comfortable opportunity to automate the generation of such educational questions. This thesis explores the capabilities of State-of-the-Art LLMs in generating diverse, effective, and pedagogically valuable questions from computer science instructional texts.
+
+The research focuses on how these generated questions align with established educational frameworks, particularly Bloom's Taxonomy of cognitive levels. While current research has explored LLMs for content generation, there remains a significant gap in understanding their effectiveness for educational question generation that adheres to specific pedagogical principles and maintains fidelity to source materials. The aim is to provide practical insights for educators considering LLM-assisted question creation, with implications for both educational practice and the advancement of AI applications in education.
+
+\section{Research Questions}
+This thesis addresses the following key research questions:
+\begin{enumerate}
+    \item To what extent do LLMs adhere to the content of diverse provided instructional texts when generating questions?
+    % even if the content of the texts contradicts the LLM's pre-existing knowledge?
+
+    \item How does the relationship between diverse question formats and Bloom's Taxonomy levels influence the pedagogical effectiveness of LLM-generated questions?
+\end{enumerate}
+
+\pagebreak
+
+\section{Theoretical Framework}
+\subsection{Bloom's Taxonomy in Educational Assessment}
+Bloom's Taxonomy provides a hierarchical framework for categorizing educational objectives according to cognitive complexity. Using the revised taxonomy (Anderson \& Krathwohl, 2001) with its six levels (remembering, understanding, applying, analyzing, evaluating, and creating), this thesis examines how LLM-generated questions can be aligned with these cognitive levels to create comprehensive assessments.
+
+\subsection{Question Types}
+Different question formats serve distinct pedagogical purposes. This research evaluates the LLMs' ability to generate questions across various question formats.
+
+\section{Methodology and Research Design}
+This thesis will employ a mixed-methods empirical study with the following components:
+
+\subsection{Experiment Design Overview}
+The research will be structured around two complementary experiments:
+% Deutsch oder Englisch?
+
+\subsubsection{Input Variation Impact}
+This experiment will systematically examine how different types of input materials affect the quality of LLM-generated questions. These will be paired with both a common and a complex prompt to assess how input format influences question quality, relevance, and faithfulness to source material. Additionally, the input materials will be modified once to contain contradictory information, allowing for an evaluation of how LLMs handle inconsistencies in the source material.
+% Welche Eingabetexte?
+% zweites Teilexp mit Fehlern im Input
+% 
+
+\subsubsection{Bloom's Taxonomy and Question Type Guidance}
+This experiment will investigate how explicitly specifying Bloom's Taxonomy levels and / or question types in prompts affects the quality and cognitive level of generated questions. The experiment will use either the highest-performing input material identified from Experiment 1 or LLM system knowledge if the results from Experiment 1 are inconclusive. The experimental conditions will include:
+\begin{itemize}
+    \item Question type specification only
+    \item Bloom's level specification only
+    \item Combined specification of both Bloom's level and question type
+\end{itemize}
+% Welche Eingabetexte? Einer? Der beste? Keiner?
+% lieber nur MC und Freitextfragen
+
+\subsection{LLM Selection and Technical Implementation}
+Based on preliminary assessment of capabilities and accessibility, four state-of-the-art LLMs have been selected: OpenAI o3-mini, Google Gemini 2.0 Flash \textbf{or} the recently published Gemini 2.5 Pro, Anthropic Claude 3.7 Sonnet, DeepSeek R1.
+
+\subsection{Test Corpus Selection}
+A carefully curated collection of computer science instructional texts will be assembled, focusing particularly the ISO-OSI reference model. This ensures content validity while maintaining sufficient complexity for meaningful assessment.
+
+\subsection{Evaluation Methodology}
+The evaluation will combine quantitative and qualitative approaches:
+
+\subsubsection{Quantitative Metrics}
+\begin{itemize}
+    \item \textbf{Semantic similarity:} Measuring cosine similarity between source text and generated questions using embedding models.
+    \item \textbf{Bloom's level adherence ratio:} The proportion of questions correctly matching the specified cognitive level, done with an LLM providing feedback to each question's level.
+    % \item \textbf{Question type compliance:} The accuracy with which LLMs follow question format instructions.
+\end{itemize}
+
+\subsubsection{Qualitative Assessment}
+\begin{itemize}
+    \item \textbf{Depth evaluation:} Sample-based rating of questions on a 1-5 scale for cognitive complexity.
+    \item \textbf{Content fidelity:} Analysis of how faithfully questions represent source material concepts.
+    \item \textbf{Error propagation:} Assessment of how LLMs handle inconsistencies in source materials.
+\end{itemize}
+
+\section{Expected Results and Contributions}
+This research is expected to yield the following contributions:
+
+\begin{itemize}
+    \item A comprehensive evaluation for assessing LLM-generated educational questions
+    \item Empirical data on the comparative performance of leading LLMs in educational question generation
+    \item Practices for prompt engineering to achieve questions at targeted cognitive levels
+    \item Guidelines for educators on effective LLM-assisted question generation
+    \item Insights into the relationship between input material quality, its correctness and output question effectiveness.
+\end{itemize}
+
+\section{Timeline and Work Plan}
+The thesis will be completed over a 20-week period with the following phases:
+\begin{itemize}
+    \item \textbf{Weeks 1-4:} Literature review and test corpus preparation
+    \item \textbf{Week 5:} Implementation of Experiment 1 -- First Run
+    \item \textbf{Weeks 6-7:} Implementation of Experiment 2 -- First Run
+    \item \textbf{Week 8:} Data analysis and preliminary results compilation
+    \item \textbf{Week 9:} Experiment 1 -- Second Run with probable adjustments
+    \item \textbf{Weeks 10-11:} Experiment 2 -- Second Run with probable adjustments
+    \item \textbf{Week 12:} Data analysis and preliminary results compilation
+    \item \textbf{Week 13:} Intermediate defense
+    \item \textbf{Weeks 14-15:} Results interpretation and discussion
+    \item \textbf{Weeks 16-17:} Concentrating on the thesis document
+    \item \textbf{Week 18:} Review and feedback incorporation
+    \item \textbf{Weeks 19-20:} Final revisions and submission
+\end{itemize}
+
+\end{document}

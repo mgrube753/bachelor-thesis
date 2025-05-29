@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche fundamentale physikalische Prinzipien liegen sowohl mediengebundenen als auch medienfreien Transportmechanismen des Physical Layer zugrunde, und wie manifestieren sich diese in konkreten Anwendungsbeispielen?
+
+Antwortmöglichkeiten:
+- ~Elektromagnetische Wechselwirkung; manifestiert in Kupferkabeln (mediengebunden) und Freiraum-Funkübertragung (medienfrei)
+- Gravitationswechselwirkung; realisiert durch mechanische Spannungsübertragung in Glasfasern und Satellitenkommunikation
+- Anwendungsschicht-Protokolle; umgesetzt durch HTTP-Header-Encodierung in drahtlosen Mesh-Netzwerken
+- Unterschiedliche Codierungsschemata wie Manchester vs. Differential Manchester; genutzt zur Fehlerreduktion in Powerline-Kommunikation
+```

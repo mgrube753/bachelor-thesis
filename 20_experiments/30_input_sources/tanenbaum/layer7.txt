@@ -1,0 +1,6 @@
+The Application Layer
+The application layer contains a variety of protocols that are commonly
+needed by users. One widely used application protocol is HTTP (HyperText
+Transfer Protocol), which is the basis for the World Wide Web. When a
+browser wants a Web page, it sends the name of the page it wants to the server
+hosting the page using HTTP. The server then sends the page back. Other application protocols are used for file transfer, electronic mail, and network news.

@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche drei primären Funktionen werden dem Session Layer (Layer 5) im ISO-OSI-Modell laut dem Text zugeschrieben, und wie unterscheiden sie sich konzeptionell von typischen Aufgaben anderer Schichten?
+
+Antwortmöglichkeiten:
+- ~Verwaltung von Sitzungen (Aufbau, Steuerung, Beendigung), Setzen von Synchronisationspunkten für Datenströme und Bündelung zusammengehöriger Transaktionen
+- Verschlüsselung von Nutzdaten, Fehlererkennung durch Checksummen und Garantie der Ende-zu-Ende-Zustellung
+- Adressierung über IP-Adressen, Weiterleitung von Paketen zwischen Netzwerken und Optimierung von Routing-Pfaden
+- Physikalische Übertragungssteuerung, Modulation von Signalen und Management von Netzwerkkabelverbindungen
+```

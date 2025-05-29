@@ -1,0 +1,12 @@
+```markdown
+Frage: Welche der folgenden Aussagen charakterisieren die "Dienstquantität" gemäß der Transport Layer-Beschreibung am treffendsten?
+(Mehrfachauswahl möglich)
+
+Antwortmöglichkeiten:
+- ~Bietet Speicherdienste ohne Kapazitätsgarantien oder Fehlerfreiheitszusagen
+- Gewährleistet Quality of Service (QoS) für priorisierte Datenströme
+- ~Operiert unabhängig von spezifischen Teilnehmereigenschaften
+- Nutzt Teilnehmer-Charakteristiken zur Optimierung der Zugriffszeiten
+- ~Ignoriert qualitative Parameter wie Varianz bei Dienstleistungen
+- Implementiert gerätespezifische Kennungen für verbesserte Identifikation
+```

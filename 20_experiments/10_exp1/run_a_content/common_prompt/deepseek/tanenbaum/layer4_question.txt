@@ -1,0 +1,5 @@
+**Frage:** Welche der folgenden Aussagen beschreibt korrekt die primäre Funktion der Transportschicht im ISO-OSI-Modell?  
+**Antwort:** [A] Akzeptieren von Daten, Aufteilung in kleinere Einheiten, Weiterleitung an die Vermittlungsschicht und Sicherstellung der korrekten Zustellung aller Teile am Ziel.  
+[B] Physikalische Übertragung von Bits über das Netzwerkmedium.  
+[C] Routen von Paketen über mehrere Netzwerke hinweg.  
+[D] Verschlüsselung und Entschlüsselung von Nachrichten für die sichere Kommunikation.

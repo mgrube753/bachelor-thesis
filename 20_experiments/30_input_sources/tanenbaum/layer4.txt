@@ -1,0 +1,21 @@
+The Transport Layer
+The basic function of the transport layer is to accept data from above it, split
+it up into smaller units if need be, pass these to the network layer, and ensure that
+the pieces all arrive correctly at the other end. Furthermore, all this must be done
+efficiently and in a way that isolates the upper layers from the inevitable changes
+in the hardware technology over the course of time.
+The transport layer also determines what type of service to provide to the session layer, and, ultimately, to the users of the network. The most popular type of
+transport connection is an error-free point-to-point channel that delivers messages
+or bytes in the order in which they were sent. However, other possible kinds of
+transport service exist, such as the transporting of isolated messages with no guarantee about the order of delivery, and the broadcasting of messages to multiple
+destinations. The type of service is determined when the connection is established. (As an aside, an error-free channel is completely impossible to achieve;
+what people really mean by this term is that the error rate is low enough to ignore
+in practice.)
+The transport layer is a true end-to-end layer; it carries data all the way from
+the source to the destination. In other words, a program on the source machine
+carries on a conversation with a similar program on the destination machine, using
+the message headers and control messages. In the lower layers, each protocols is
+between a machine and its immediate neighbors, and not between the ultimate
+source and destination machines, which may be separated by many routers. The
+difference between layers 1 through 3, which are chained, and layers 4 through 7,
+which are end-to-end, is illustrated in Fig. 1-20.

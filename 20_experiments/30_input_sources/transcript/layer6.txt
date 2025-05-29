@@ -1,0 +1,9 @@
+Der Presentation Layer wird die Anwendungsdaten als Bitstrom kodieren und darstellen.
+Und eine der Hauptaufgaben haben wir gerade in unserem konzeptuellen Kapitel gesehen, nämlich das Konvertieren der Datendarstellung bei Little und Big Endian.
+Und es gibt dann auch, wenn das jetzt nicht nur Zahlen sind, sondern komplexere Objekte, ganze Grafenstrukturen vielleicht, noch viele weitere komplexere Formen von Serialisierungen und darüber um diese NDNS kümmert sich der Presentation Layer.
+Neben der NDNS muss er auch Zeichendarstellungen konvertieren, Kompression und Verschlüsselung bearbeiten.
+Zeichendarstellungen, na da haben wir ein ähnliches Problem.
+Ich habe 7-Bit ASCII, vielleicht 8-Bit ASCII, vielleicht Unicode, vielleicht diesen alten EBCDIC-Standard, vielleicht nationale Sonderzeichen, die je nachdem ob das jetzt eine französische oder eine dänische oder eine österreichische Kodierung ist für die Umlaut A oder für die Akzente, Zeichen möglicherweise unterschiedlich kodiert und daher auch eine entsprechende Anpassung benötigt.
+Und wir sehen Kompression und Verschlüsselung, Dekompression und Entschlüsseln.
+Das passt natürlich auch trefflich auf den Layer 6.
+Dort sind diese Funktionen angesiedelt.

@@ -1,0 +1,20 @@
+Transport Layer 4
+Beschreibung
+Bereitstellung einer Speicherung für festgelegte Teilnehmerpaare eines Netzes.
+
+3 Kernaufgaben
+
+Identifizierung:
+
+Geräte-spezifische Kennungen.
+
+Datenstau:
+
+Ignorieren der Teilnehmer-Charakteristik.
+
+Dienstquantität:
+
+Vernachlässigung der Quality of Service (QoS)
+Erbringung eines Speicherdienstes ohne Garantien
+für Kapazität, Zugriffszeit, Varianz, Fehlerfreiheit usw.
+Unabhängig vom jeweiligen Teilnehmer.

@@ -1,0 +1,18 @@
+The Network Layer
+The network layer controls the operation of the subnet. A key design issue is
+determining how packets are routed from source to destination. Routes can be
+based on static tables that are ''wired into'' the network and rarely changed, or
+more often they can be updated automatically to avoid failed components. They
+can also be determined at the start of each conversation, for example, a terminal
+session, such as a login to a remote machine. Finally, they can be highly dynamic, being determined anew for each packet to reflect the current network load.
+If too many packets are present in the subnet at the same time, they will get in
+one another's way, forming bottlenecks. Handling congestion is also a responsibility of the network layer, in conjunction with higher layers that adapt the load
+
+they place on the network. More generally, the quality of service provided (delay,
+transit time, jitter, etc.) is also a network layer issue.
+When a packet has to travel from one network to another to get to its destination, many problems can arise. The addressing used by the second network may
+be different from that used by the first one. The second one may not accept the
+packet at all because it is too large. The protocols may differ, and so on. It is up
+to the network layer to overcome all these problems to allow heterogeneous networks to be interconnected.
+In broadcast networks, the routing problem is simple, so the network layer is
+often thin or even nonexistent.

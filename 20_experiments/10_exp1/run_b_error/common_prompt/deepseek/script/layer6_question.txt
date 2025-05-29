@@ -1,0 +1,10 @@
+**Frage:** Welche der folgenden Aufgaben gehört NICHT zu den vier Kernaufgaben des Presentation Layers (Schicht 6) im ISO-OSI-Modell gemäß dem gegebenen Text?  
+
+**Korrekte Antwort:**  
+- **C) Komprimierung von Daten anbieten**  
+
+**Antwortmöglichkeiten:**  
+A) Vereinheitlichung der Datendarstellung  
+B) Behandlung von Daten als reine Binärdaten  
+C) Komprimierung von Daten anbieten  
+D) Entschlüsseln von Daten ohne Verschlüsselung

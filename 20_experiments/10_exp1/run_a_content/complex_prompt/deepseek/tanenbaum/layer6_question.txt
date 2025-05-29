@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche grundlegende Funktion der Präsentationsschicht ermöglicht eine nahtlose Kommunikation zwischen heterogenen Systemen, die unterschiedliche interne Datenrepräsentationen verwenden?
+
+Antwortmöglichkeiten:
+- ~Bereitstellung abstrakter Datenstrukturdefinitionen mit standardisierter Netzwerk-Kodierung
+- Optimierung der Bitübertragungsraten zwischen verschiedenen Netzwerkgeräten
+- Implementierung von Datenflusskontrolle zur Vermeidung von Paketverlusten
+- Physikalische Konvertierung von Signalen zwischen digitalen und analogen Formaten
+```

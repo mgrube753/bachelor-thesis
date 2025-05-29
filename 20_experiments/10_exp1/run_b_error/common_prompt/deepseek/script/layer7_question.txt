@@ -1,0 +1,6 @@
+F: Nennen Sie die drei Kernaufgaben des Application Layers (Layer 7) im ISO-OSI-Modell gemäß dem gegebenen Text.  
+
+A:  
+1. Identifikation universeller Begriffe, die für alle Anwendungen gültig sind (Universalkonzepte).  
+2. Definition von Standardanforderungen und generischen Datenstrukturen (Standardelemente).  
+3. Festlegung des standardisierten Systemverhaltens bei generischen Anforderungen (Standardverhalten).

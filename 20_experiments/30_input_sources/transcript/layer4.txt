@@ -1,0 +1,24 @@
+Und schließlich der letzte, der vierte Layer, der Transport Layer.
+Bereitstellung ist eine Beschreibung einer Übertragung zwischen beliebigen Teilnehmern eines Netzes.
+Da taucht ein neuer Begriff auf, über den wir gleich noch ein bisschen nachdenken müssen.
+Die Kernaufgaben sind hier Adressierung, wiederum die Flusssteuerung und die Dienstqualität als vielleicht etwas fortgeschrittene Form der Flusssteuerung.
+Adressierung heißt, wir brauchen jetzt nochmal ein neues Adresskonzept aus ähnlichen Gründen wie bei der netzübergreifenden Kommunikation.
+Wir werden das gleich verstehen, wenn wir uns mit dem Konzept des Teilnehmers beschäftigen werden.
+Die Flusssteuerung, weil wir durch
+die Charakteristik des Teilnehmers unter Umständen ein bisschen mehr über die Bedürfnisse des spezifischen einzelnen Teilnehmers wissen.
+Auf Transport Layer, wenn der Teilnehmer identifiziert ist, kann ich vielleicht schon ein bisschen abschätzen, was sind denn mögliche Anforderungen, die hier eine Rolle spielen.
+Ich kommuniziere in einem Fall, vielleicht schicke ich eine Datei übers Netz, ob die morgen oder übermorgen ankommt, ist nicht so schlimm.
+Im anderen Fall geht es um einen Realtime-Voice, Realtime-Videostrom und der sollte eben nicht verzögert werden.
+Da sollten auch nicht kurze Unterbrüche in der Kommunikation stattfinden.
+Bis morgen wollen wir da keinesfalls warten.
+Und wir sehen auch, dieses Thema ist eng verbunden mit der Begrifflichkeit der Dienstqualität.
+Wie man englisch gerne auch sagt, der Quality of Service, der QOS.
+Ich möchte also jetzt einen Kommunikationsdienst erbringen und dabei Ihnen Garantien geben.
+Für Bandbreite, für Latenz, für Jitter.
+Also die drei wesentlichen Parameter in Quality of Service, aber auch für die Fehlerrate, vielleicht für weitere Aspekte noch.
+Und zwar so zugeschnitten auf den jeweiligen Teilnehmer, dass es passt.
+Wenn jetzt in dem Videostrom, den wir haben, mal irgendwo kurz
+Ein kleines Datenpaket rausfällt, dann sehen Sie vielleicht die Bewegung meiner Hand nicht so ideal flüssig.
+Es gibt vielleicht eine Schwankung in der Größenordnung von ein paar Pixeln in der Nähe meines Zeigefingers, das nehmen Sie gar nicht wahr.
+Wenn allerdings bei einem Update für Ihr Mobiltelefon plötzlich mal ein paar Bit unterwegs fehlen, das wollen wir nicht haben.
+Das sind die Bedürfnisse der jeweiligen Teilnehmer.

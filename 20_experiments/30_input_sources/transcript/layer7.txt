@@ -1,0 +1,8 @@
+Und nun haben wir den letzten Layer, den Layer 7 (Application Layer), der nun festlegen soll, welche Elemente bei einer spezifischen Anwendung auftreten sollen.
+Hier möchte ich auch drei Kernaufgaben angeben, obwohl ich gleich schon sagen muss, es hängt das sehr stark von der Art der jeweiligen Anwendung ab.
+Daher ist hier sehr schwer nur eine anwendungsfreie Systematisierung der Funktion des Layers möglich.
+Wir haben Grundkonzepte, die wir definieren müssen.
+Welche Begriffe treten denn auf in der Anwendung?
+Wir haben Protokollelemente, also jene Elemente, mit denen der Kommunikationspartner Anforderungen an den anderen stellt und die Daten, die er dabei dann erwartet.
+Und schließlich die Information, wie soll denn eigentlich eine Anwendung darauf dann reagieren?
+Wie soll sie auf die Anforderungen oder die Protokollelemente durch Verändern ihres internen Zustands oder durch andere Dinge antworten?

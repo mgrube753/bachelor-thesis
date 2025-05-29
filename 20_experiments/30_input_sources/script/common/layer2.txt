@@ -1,0 +1,29 @@
+Data Link Layer 2
+Beschreibung
+Bereitstellung einer fehlergesicherten Übertragung über einen möglicherweise nicht
+fehlergesicherten Physical Layer.
+
+5 Kernaufgaben
+
+Fehlerkontrolle:
+
+Erkennen, Beheben oder Signalisieren von Übertragungsfehlern.
+
+Flußkontrolle:
+
+Strategien, wenn Sender für Empfänger zu schnell sendet.
+Bsp: Zwischenpuffern, Herunterregeln, warten Lassen.
+
+Segmentierung:
+
+Zusammenfassen einzelner Bits zu größeren Einheiten.
+Universal-typisches Bsp: 8-bit Bytes.
+
+Identifikation:
+
+Auswahl bestimmter Sender oder Empfänger (sog. Adresse).
+
+Medienzugriff:
+
+Aktivieren des Physical Layer.
+4 typische Aspekte: Senden, Warten, Beheben und Reservieren.

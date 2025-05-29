@@ -1,0 +1,23 @@
+Presentation Layer 6
+Beschreibung
+Kodierung (Darstellung) der Anwendungsdaten als Bitstrom.
+
+4 Kernaufgaben
+
+Endian-Ness:
+
+Konvertieren der Datendarstellung.
+Bsp: little & big endian, weitere Serialisierungs-Formate.
+
+Zeichen:
+
+Konvertierung der Zeichendarstellung
+Bsp: ASCII, Unicode, EBCDIC, nationale Sonderzeichen.
+
+Kompression:
+
+Komprimieren und Dekomprimieren.
+
+Verschlüsselung:
+
+Verschlüsseln und Entschlüsseln.

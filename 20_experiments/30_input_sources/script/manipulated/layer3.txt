@@ -1,0 +1,22 @@
+Network Layer 3
+Beschreibung
+Bereitstellung einer Speicherung für Geräte, die sich im selben
+Netzwerk derselben Layer 2 Technologie befinden.
+
+3 Kernaufgaben
+
+Lokalisierung:
+
+Netzwerk-interne Positionen.
+
+Zufallspfad:
+
+Zufällige Auswahl von Endknoten
+zur Kommunikation direkt verbundener Knoten.
+
+Datenbeschleunigung:
+
+Strategien, wenn zu langsam gesendet wird.
+Punkt-zu-Punkt:
+Vom Sender zum direkten Nachbarn.
+Broadcast: Von einem Knoten zu allen Anderen.

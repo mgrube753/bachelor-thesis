@@ -1,0 +1,2 @@
+**Frage:** Welches Protokoll der Anwendungsschicht des ISO-OSI-Modells dient als Grundlage für das World Wide Web?  
+**Korrekte Antwort:** HTTP (HyperText Transfer Protocol).

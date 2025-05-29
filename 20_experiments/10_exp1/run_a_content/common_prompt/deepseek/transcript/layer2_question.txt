@@ -1,0 +1,8 @@
+**Frage:** Welche der folgenden Aufgaben gehört NICHT zu den Hauptaufgaben des Data Link Layers im ISO-OSI-Modell?  
+
+**A) Fehlerkontrolle**  
+**B) Flusskontrolle**  
+**C) Segmentierung**  
+**D) Routing**  
+
+**Korrekte Antwort:** D) Routing

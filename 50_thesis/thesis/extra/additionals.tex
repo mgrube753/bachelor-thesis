@@ -1,0 +1,199 @@
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsthm,amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[dvipsnames, table, xcdraw]{xcolor}
+% \usepackage[draft]{graphicx}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage[breaklinks=true]{hyperref}
+    \hypersetup{colorlinks, citecolor=BrickRed, filecolor=Black, linkcolor=Black, urlcolor=MidnightBlue}
+\newcommand{\bfref}[1]{\textbf{\ref{#1}}}
+\newcommand{\bfhyperref}[2]{\textbf{\hyperref[#1]{#2}}}
+\usepackage{csquotes}
+\usepackage{tabularx,multirow,booktabs}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\usepackage{aligned-overset}
+\usepackage{stmaryrd}
+%\usepackage{esvect}
+\usepackage{xfrac}
+\usepackage{letltxmacro} % improved sqrt
+\usepackage{tikz}
+    \usetikzlibrary{automata, arrows.meta, positioning}
+\usepackage{bold-extra}
+\usepackage{todonotes}
+    \newcommand{\newtodo}[1]{\vspace{.75em}\todo[inline,color=yellow]{#1}}
+\usepackage{lipsum}
+\usepackage{acro}
+    \acsetup{
+      list/name = List of Abbreviations,
+      list/preamble = \addcontentsline{toc}{section}{\acrolistname}
+    }
+\usepackage{enumitem}
+\usepackage{appendix}
+\usepackage{colortbl}
+
+\let\oldFootnote\footnote
+\newcommand\nextToken\relax
+
+\renewcommand\footnote[1]{%
+    \oldFootnote{#1}\futurelet\nextToken\isFootnote}
+
+\newcommand\isFootnote{%
+    \ifx\footnote\nextToken\textsuperscript{,}\fi}
+
+\setlist{
+  noitemsep,      
+  topsep=2pt,     
+  partopsep=1pt,  
+  parsep=1pt,     
+  leftmargin=2em,
+  itemindent=1pt, 
+}
+
+% \setlength{\abovedisplayskip}{0pt plus 2pt minus 2pt}
+% \setlength{\belowdisplayskip}{0pt plus 2pt minus 2pt}
+% \setlength{\abovedisplayshortskip}{0pt plus 2pt}
+
+\AtBeginEnvironment{align}{%
+  \setlength{\abovedisplayskip}{9pt plus 3pt minus 1pt}%
+  \setlength{\belowdisplayskip}{6pt plus 3pt minus 1pt}%
+  \setlength{\abovedisplayshortskip}{0pt plus 2pt}%
+  \setlength{\belowdisplayshortskip}{0pt plus 2pt minus 2pt}%
+}
+\AtBeginEnvironment{align*}{%
+  \setlength{\abovedisplayskip}{9pt plus 3pt minus 1pt}%
+  \setlength{\belowdisplayskip}{6pt plus 3pt minus 1pt}%
+  \setlength{\abovedisplayshortskip}{0pt plus 2pt}%
+  \setlength{\belowdisplayshortskip}{0pt plus 2pt minus 2pt}%
+}
+
+\setlist[itemize]{
+  label=\textbullet,
+  itemsep=0pt plus 1pt minus 1pt,
+}
+
+\setlist[enumerate]{
+  labelindent=0pt,
+}
+
+\usepackage{etoolbox} 
+\makeatletter 
+\newlength{\mylen} \setlength{\mylen}{2.5em}  
+\patchcmd{\l@section}{1.5em}{\mylen}{}{} 
+\makeatother
+
+\usepackage[backend=biber,bibencoding=utf8,urldateusetime=true,style=alphabetic,sorting=nyt,natbib=true]{biblatex}
+% \usepackage[backend=biber,bibencoding=utf8,urldateusetime=true,style=authoryear,sorting=nyt,natbib=true]{biblatex}
+\renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}}
+\renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+
+\setcounter{biburllcpenalty}{7500}
+\setcounter{biburlucpenalty}{8000}
+
+\usepackage[most]{tcolorbox}
+\newtcolorbox{mytcbbox}[1][]{%
+    enhanced jigsaw,
+    sharp corners,
+    colback=white,
+    #1
+}
+
+%%%%%%%
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries\slshape}}
+\makeatother
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{4}
+%%%%%%%
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash\hsize=0.65\hsize}X}
+\newcolumntype{A}{>{\centering\arraybackslash\hsize=1.35\hsize}X}
+
+
+\usepackage[
+    protrusion=true,
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
+
+\makeatletter
+\let\oldr@@t\r@@t
+\def\r@@t#1#2{%
+    \setbox0=\hbox{$\oldr@@t#1{#2\,}$}\dimen0=\ht0
+    \advance\dimen0-0.2\ht0
+    \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+    {\box0\lower0.4pt\box2}}
+\LetLtxMacro{\oldsqrt}{\sqrt}
+\renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2} }
+\makeatother
+
+\newcounter{align}[equation]
+\renewcommand{\thealign}{\theequation.\arabic{align}}
+\newcommand{\alignno}{\refstepcounter{align}\tag{\thealign}}
+\expandafter\let\expandafter\oldalignstar\csname align*\endcsname
+\expandafter\def\csname align*\endcsname{\refstepcounter{equation}\oldalignstar}
+
+\topmargin=-0.35in   \textwidth=6.5in
+\evensidemargin=0in  \textheight=8.75in
+\oddsidemargin=0in   \headsep=0.325in
+
+\usepackage[margin=8pt,font=normalsize,figurename=Figure,
+    tablename=Table,labelfont=bf, format=plain,
+    justification=centering]{caption}
+\usepackage{subcaption}
+
+\renewcommand{\sectionmark}[1]{\markboth{\large\slshape\thesection.\; #1}{}}
+\pagestyle{fancy}
+\fancyhead[L]{}
+\fancyhead[R]{\large\slshape\nouppercase\leftmark}
+% \cfoot{\thepage}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+% \renewcommand\footrulewidth{0.4pt}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+
+
+\fancypagestyle{nohead}{
+    \fancyhf{}
+    \fancyfoot[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    % \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\newtheorem{manualtheoreminner}{}
+\newenvironment{env}[1]{%
+    \renewcommand\themanualtheoreminner{#1}%
+    \manualtheoreminner
+}{\endmanualtheoreminner}
+
+\newenvironment{solution}{\noindent\textit{Lösung.}\hspace*{0.25em}}{\vspace*{0.4em}}
+
+\newcommand{\vp}{\vfill\pagebreak}
+\newcommand{\object}[1]{\vspace{.25em}\textbf{#1.}\hspace*{0.15em}}
+\newcommand{\requ}[2]{\vspace{.5em}\noindent\hspace{1.5em}\textbf{RQ#1:}\hspace*{0.5em}\textit{#2}}
+% also for hypotheses now
+\newcommand{\hypo}[2]{\vspace{.5em}\noindent\hspace{1.5em}\textbf{H#1:}\hspace*{0.5em}\textit{#2}}
+
+\newcommand{\tcr}[1]{\textcolor{red}{#1}}

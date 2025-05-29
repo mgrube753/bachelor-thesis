@@ -1,0 +1,11 @@
+Frage: Welche der folgenden Aspekte sind typisch für die Medienverweigerung im Data Link Layer 2 gemäß dem gegebenen Text?
+
+Antwortmöglichkeiten:
+- ~Empfangen
+- ~Ignorieren
+- ~Verursachen
+- ~Freigeben
+- Verschleiern von Übertragungsfehlern
+- Verwerfen von Daten
+- Verschlüsselung der Adressen
+- Beschleunigen der Übertragungsrate

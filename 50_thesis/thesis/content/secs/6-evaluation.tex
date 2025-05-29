@@ -1,0 +1,61 @@
+\section{Evaluation of Results} \label{sec:evaluation}
+
+This section presents the findings from the two experiments detailed in Section \bfref{sec:experiment-design}. The quantitative and qualitative analyses are discussed, addressing the research questions regarding content fidelity, error propagation, question format generation, and alignment with Bloom's Taxonomy.
+
+% \newtodo{Need some approaches (LLMs) to compare against and provide metrics.}
+% \newtodo{While benchmarking, compare to something that already exists, hmmmm.}
+% \newtodo{Include an overview of the system's implementation but not too detailed if unnecessary.}
+
+\subsection{First Experiment}
+\label{sec:first-experiment}
+
+\object{Hypotheses} ...
+
+% \hypo{1}{The usage of a complex prompt with detailed instructions, in contrast to a common one, will lead to a higher content fidelity of the generated questions with respect to the source material, and higher.}
+
+% \hypo{2}{The content fidelity with respect to the \ac{llms} varies depending on the type, the language and\,/\,or the correctness of the source material.}
+
+...
+
+\object{Quantitative Analysis}
+
+% \begin{itemize}
+%     \item Semantic Similarity, such as BERTScore or own calculation of cosine similarity score
+%     \item Quality by more recent metrics like BLEURT (\url{https://github.com/google-research/bleurt}) instead of common linguistic metrics such as BLEU, ROUGE, and METEOR
+%     \item LLM-based Perplexity score calculation?
+% \end{itemize}
+
+\object{Qualitative Analysis}
+
+% \begin{itemize}
+%     \item LLM as an Evaluator, 2 runs for better validity
+%     \item Sampled Expert Evaluation, here Cap would be suitable
+%     \item Using a suitable rubric together, not the \cite{horbach_linguistic_2020} one, better a smaller one with $\leq 5$ categories
+%     \item We need high inter-annotator agreement score between \ac{llm} and expert to show validity of the \ac{llm} as an evaluator
+%     \item And for re-run: Adherence to the malicious input text (does it follow the manipulated context, or does it use the system knowledge?)
+% \end{itemize}
+
+% \vp
+
+\subsection{Second Experiment}
+\label{sec:second-experiment}
+
+\object{Hypotheses} ...
+
+% \hypo{3}{The explicit indication of the level of Bloom's revised Taxonomy in the prompt will lead to a higher adherence to the respective level in the generated questions, compared to questions without indicating the level.}
+
+% \hypo{4}{The combined specification of the Bloom's level and the type of question will result in a higher adherence to the respective level than specifying solely the Bloom's level.}
+
+...
+
+\object{Qualitative Analysis}
+
+% \begin{itemize}
+%     \item LLM as an Evaluator, with 2 runs for better validity
+%     \item Sampled Expert Evaluation, here Rubach would be suitable
+%     \item Rubric by \cite{horbach_linguistic_2020}, but also the refined one by \cite{scaria_how_2024} by replacing \textit{Rephrase} category with \textit{Bloom'sLevel}
+%     \item Rubric by \cite{mi_comparative_2024} could be useful as well
+%     \item Also need high inter-annotator agreement between \ac{llm} and expert to show validity of the \ac{llm} as an evaluator
+% \end{itemize}
+
+\vp

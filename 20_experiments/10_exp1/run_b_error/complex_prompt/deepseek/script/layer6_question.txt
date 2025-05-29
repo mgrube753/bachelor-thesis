@@ -1,0 +1,7 @@
+Frage: Eine Anwendung empfängt Rohdaten, die in einem einheitlichen Serialisierungsformat vorliegen, als reine Binärdaten ohne Berücksichtigung von Zeichensätzen. Die Daten wurden vor der Übertragung ausschließlich entschlüsselt, aber nicht verschlüsselt. Welche Schicht des ISO-OSI-Modells ist primär für diese beschriebenen Aufgaben verantwortlich?
+
+Antwortmöglichkeiten:
+- ~Presentation Layer (Schicht 6)
+- Application Layer (Schicht 7)
+- Session Layer (Schicht 5)
+- Transport Layer (Schicht 4)

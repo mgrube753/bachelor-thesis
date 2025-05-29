@@ -1,0 +1,6 @@
+**Frage:** Welche drei Kernaufgaben des Application Layers (Schicht 7) im ISO-OSI-Modell werden im Text genannt?  
+
+**Antwort:**  
+1. **Grundkonzepte**: Festlegung der in der Anwendung auftretenden Begriffe.  
+2. **Protokollelemente**: Bestimmung von Anforderungen und erwarteten Daten.  
+3. **Verhalten**: Definition der Reaktion der Anwendung auf diese Protokollelemente.

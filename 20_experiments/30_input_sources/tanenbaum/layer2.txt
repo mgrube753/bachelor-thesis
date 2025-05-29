@@ -1,0 +1,13 @@
+The Data Link Layer
+The main task of the data link layer is to transform a raw transmission facility into a line that appears free of undetected transmission errors. It does so by
+masking the real errors so the network layer does not see them. It accomplishes
+this task by having the sender break up the input data into data frames (typically
+a few hundred or a few thousand bytes) and transmit the frames sequentially. If
+the service is reliable, the receiver confirms correct receipt of each frame by sending back an acknowledgement frame.
+Another issue that arises in the data link layer (and most of the higher layers
+as well) is how to keep a fast transmitter from drowning a slow receiver in data.
+Some traffic regulation mechanism may be needed to let the transmitter know
+when the receiver can accept more data.
+Broadcast networks have an additional issue in the data link layer: how to
+control access to the shared channel. A special sublayer of the data link layer, the
+medium access control sublayer, deals with this problem.

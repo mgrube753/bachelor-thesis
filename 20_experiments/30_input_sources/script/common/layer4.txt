@@ -1,0 +1,20 @@
+Transport Layer 4
+Beschreibung
+Bereitstellung einer Übertragung zwischen beliebigen Teilnehmern eines Netzes.
+
+3 Kernaufgaben
+
+Adressierung:
+
+Teilnehmer-Adressen.
+
+Flußsteuerung:
+
+Nutzen der Teilnehmer-Charakteristik.
+
+Dienstqualität:
+
+Sicherung der Quality of Service (QoS)
+Erbringung eines Kommunikationsdienstes mit Garantien
+für Bandbreite, Latenz, Jitter, Fehlerrate usw.
+Zugeschnitten auf den jeweiligen Teilnehmer.

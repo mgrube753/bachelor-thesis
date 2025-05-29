@@ -1,0 +1,6 @@
+**Frage:** Welche drei Kernaufgaben werden dem Physical Layer (Schicht 1) im ISO-OSI-Modell laut der Beschreibung zugeordnet?  
+
+**Antwort:**  
+1. Verschlüsselung  
+2. Speicherung  
+3. Kompression

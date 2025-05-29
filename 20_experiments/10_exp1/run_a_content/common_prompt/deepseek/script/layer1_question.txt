@@ -1,0 +1,3 @@
+F: Welche drei Kernaufgaben umfasst der Physical Layer (Schicht 1) des ISO-OSI-Modells?  
+
+A: [Korrekte Antwort] Codierung, Transport und Decodierung.

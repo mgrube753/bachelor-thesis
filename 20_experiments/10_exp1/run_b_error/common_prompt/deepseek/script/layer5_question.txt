@@ -1,0 +1,9 @@
+**Frage:** Welche der folgenden Optionen zählen zu den 3 Kernaufgaben des Session Layer (Schicht 5) im ISO-OSI-Modell laut dem gegebenen Text?  
+
+**Antworten:**  
+A. Datagramme  
+B. Asynchronität  
+C. Atomisierung  
+D. Verschlüsselung  
+
+**Korrekte Antwort(en):** A, B, C

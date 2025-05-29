@@ -1,0 +1,11 @@
+```markdown
+Frage: Welche drei Grundkonzepte müssen laut dem Text im Application Layer definiert werden, um die Interaktion zwischen Kommunikationspartnern trotz anwendungsspezifischer Variabilität systematisch erfassbar zu machen?
+
+Antwortmöglichkeiten:
+- ~Protokollelemente (Anforderungen/Kommunikationsregeln)
+- ~Daten (ausgetauschte Informationsstrukturen)
+- ~Reaktionsinformationen (Zustandsänderungen/Antwortverhalten der Anwendung)
+- Fehlerkorrekturmechanismen (Bit-Ebene)
+- Paketvermittlungsstrategien (Routing)
+- Verschlüsselungsalgorithmen (Sicherheitsebene)
+```

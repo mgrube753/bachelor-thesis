@@ -1,0 +1,6 @@
+**Frage:** Welche drei Hauptaufgaben bzw. Probleme behandelt die Data Link Layer laut des beschriebenen Textes?  
+
+**Korrekte Antwort:**  
+1. Umwandlung der rohen Übertragung in eine fehlerfrei erscheinende Leitung durch Fehlermaskierung und Bestätigung korrekt empfangener Frames.  
+2. Regulierung des Datenflusses, um eine Überlastung des Empfängers durch einen schnellen Sender zu verhindern.  
+3. Kontrolle des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken (über das MAC-Sublayer).

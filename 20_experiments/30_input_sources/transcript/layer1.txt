@@ -1,0 +1,15 @@
+Der Physical Layer stellt eine physikalische Konzeption für Codierung, Transport und Dekodierung logischer Werte bereit.
+Und die Beschreibung enthält bereits die drei zentralen Kernaufgaben.
+Codierung
+Damit haben wir uns auch schon beschäftigt.
+Codierung bedeutet also die Abbildung logischer Werte auf physikalische Größen.
+Wir kennen es aus der NAZ-Codierung, aus der Manchester-Codierung, der Differential Manchester-Codierung und einer Vielzahl von weiteren Dingen.
+Dann der Transport, also die Übertragung physikalischer Größen von einem Ort zum anderen.
+Was, wie wir bereits wissen, mediengebunden oder medienfrei geschehen kann.
+In beiden Fällen unter Anwendung der elektromagnetischen Wechselwirkung.
+einmal an ein Medium gebunden, ein Telefonkabel, ein Ethernet-Kabel, was auch immer, oder medienfrei.
+Ein Lichtsignal, das direkt durch den freien Raum geht, oder ein Funksignal, das eben auch durch den freien Raum geht.
+Und beim Licht sehen wir, da werden wir auch so ein bisschen eine Doppelfunktion haben, weil Licht kann ich eben direkt von A nach B als Lichtstrahl senden, aber auch über einen Lichtwellenleiter in einem Kabel transportieren, doch davon später.
+Und schließlich drittens die Dekodierung, also die Rückinterpretation physikalischer Größen als logische Werte.
+Und auch damit haben wir uns schon intensiver auseinandergesetzt.
+Wir erinnern uns an die Abtastthematik, an die Detektionsbereiche und all diese drei Dinge müssen nun auf dem Physic Layer entsprechend festgelegt werden.

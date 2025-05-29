@@ -1,0 +1,7 @@
+**Frage:** Welche der folgenden Aufgaben fällt in die Zuständigkeit der Netzwerkschicht des ISO-OSI-Modells?  
+
+**Antwort:**  
+- Bestimmen von Paketrouten von der Quelle zum Ziel  
+- Bewältigung von Überlastung (Congestion) im Subnetz  
+- Sicherstellung der Qualität der Dienstleistung (QoS: Verzögerung, Transitzeit, Jitter)  
+- Überwindung von Problemen bei der Verbindung heterogener Netzwerke (z. B. unterschiedliche Adressierung, Paketgrößen, Protokolle)

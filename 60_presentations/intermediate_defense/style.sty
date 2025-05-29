@@ -1,0 +1,101 @@
+\mode<presentation>
+
+\xdefinecolor{swufe}{RGB}{1,83,139}
+\xdefinecolor{swufe-light}{RGB}{210,229,242}
+\xdefinecolor{swufe-dark}{RGB}{0,48,87}
+
+\useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+\useinnertheme[shadow=true]{rounded}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamercolor{section in toc}{fg=swufe-dark}
+\setbeamerfont{section in toc}{series=\bfseries}
+\setbeamercolor{subsection in toc}{fg=red}
+\setbeamerfont{subsection in toc}{series=\itshape}
+\setbeamertemplate{subsection in toc}{%
+  \hspace{1.5em}\inserttocsectionnumber.\inserttocsubsectionnumber.\;\inserttocsubsection\par}
+\setbeamertemplate{section in toc}{%
+  \inserttocsectionnumber.\;\inserttocsection\par}
+\setbeamercolor{section in head/foot}{fg=swufe-dark, bg=white}
+\setbeamerfont{section in head/foot}{series=\bfseries}
+
+  \AtBeginSection[]{
+    \sectionpage
+  }
+
+% \AtBeginSubsection[]{
+%   \begin{frame}
+%     \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+%   \end{frame}
+% }
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamercolor{palette primary}{bg=swufe-dark,fg=white}
+\setbeamercolor{palette secondary}{bg=swufe,fg=white}
+\setbeamercolor{palette tertiary}{bg=swufe-light,fg=swufe-dark}
+\setbeamercolor{palette quaternary}{bg=white,fg=swufe-dark}
+
+\setbeamercolor{structure}{fg=swufe}
+\setbeamercolor{title}{fg=white,bg=swufe-dark}
+\setbeamercolor{frametitle}{fg=white,bg=swufe}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=swufe}
+
+\setbeamercolor{block title}{bg=swufe,fg=white}
+\setbeamercolor{block body}{bg=swufe-light,fg=swufe-dark}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamertemplate{itemize item}{\color{swufe}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{swufe!70}$\triangleright$}
+\setbeamertemplate{enumerate item}{\color{swufe}\insertenumlabel.}
+
+\renewcommand{\sectionpage}{
+    \begin{frame}[plain]
+        \begin{tikzpicture}[remember picture,overlay]
+            % Background gradient
+            \fill[top color=swufe!60, bottom color=swufe-light!70, shading angle=45] 
+                (current page.north west) rectangle (current page.south east);
+            
+            % Decorative elements
+            \fill[white,opacity=0.1] (current page.west) -- ++(0.8\paperwidth,0) -- 
+                ++(0,0.02\paperheight) -- ++(-0.8\paperwidth,0) -- cycle;
+            \fill[white,opacity=0.1] (current page.west) -- ++(0.6\paperwidth,0) -- 
+                ++(0,0.01\paperheight) -- ++(-0.6\paperwidth,0) -- cycle;
+            
+        \end{tikzpicture}
+        
+        % Section title
+        \vspace*{-0.05\paperheight}
+        \begin{center}
+            \usebeamercolor[fg]{title}
+            \usebeamerfont{title}
+            \fontsize{28}{32}\selectfont\bfseries\insertsection
+        \end{center}
+    \end{frame}
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.25ex,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}%
+      \hspace*{1.5cm}\insertshortauthor~(\insertshortinstitute)%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.25ex,right]{author in head/foot}%
+      \usebeamerfont{date in head/foot}%
+      \insertshortdate{}\hspace*{1.5cm}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{.5cm}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+\setbeamertemplate{frametitle}{
+  \vspace{0.1cm}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=.8cm,dp=0.3125cm]{frametitle}
+    \hspace{0.4cm}\parbox{\dimexpr\textwidth-1cm}{\Large\insertframetitle}
+  \end{beamercolorbox}
+}
+
+\mode<all>

@@ -1,0 +1,3 @@
+**Frage:** Welche drei Kernaufgaben des Transport Layers im ISO-OSI-Modell werden im Text genannt?  
+
+**Antwort:** Adressierung, Flusssteuerung und Dienstqualität (Quality of Service/QoS).

@@ -1,0 +1,7 @@
+Wir haben uns also angesehen, wie Sitzungen funktionieren und derjenige Layer, der nun die Sitzungskonzepte verwaltet, ist der Session Layer, der Layer 5.
+Er hat, so stelle ich es hier, fasse ich es hier, drei Kernaufgaben.
+Sitzungen, Synchronisation und Bündelung.
+Er muss also dieses Konzept von Sitzungen aufbauen, verwalten, zurückweisen, wiederum beenden, wie wir es an unseren Diagrammen gesehen haben.
+Er wird Synchronisations, also solche Zwischenpunkte setzen, die ich dann später nutzen kann.
+Wir erinnern uns an das Übertragen einer großen Datei.
+Und er wird darauf achten, dass er Zusammengehörige Transaktionen geeignet bündelt und dazu Funktionen zur Verfügung stellt.

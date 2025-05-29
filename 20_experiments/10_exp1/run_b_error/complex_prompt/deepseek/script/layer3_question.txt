@@ -1,0 +1,9 @@
+```markdown
+Frage: Bei der Datenbeschleunigung in Schicht 3 des ISO-OSI-Modells werden spezifische Strategien zur Optimierung langsamer Übertragungen eingesetzt. Welche zwei der folgenden Ansätze sind explizit im beschriebenen Kontext zugeordnet?
+
+Antwortmöglichkeiten:
+- ~Punkt-zu-Punkt: Vom Sender zum direkten Nachbarn
+- ~Broadcast: Von einem Knoten zu allen Anderen
+- Multicast: Von einem Knoten zu einer definierten Teilmenge
+- Anycast: Von einem Knoten zum nächsten verfügbaren in einer Gruppe
+```

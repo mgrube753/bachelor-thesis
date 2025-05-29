@@ -1,0 +1,19 @@
+Application Layer 7
+Beschreibung
+Abstraktion von spezifischen Anwendungselementen zu generischen Funktionen.
+
+3 Kernaufgaben
+
+Universalkonzepte:
+Welche universellen Begriffe sind für alle Anwendungen gültig.
+
+Standardelemente: Welche Standardanforderungen gibt es immer?
+Welche generischen Datenstrukturen werden dabei genutzt?
+
+Standardverhalten:
+Wie reagiert das System standardmäßig auf
+generische Anforderungen durch diese Standardelemente?
+
+
+Universell anwendbar für jede Anwendung!
+Daher hohe Systematisierung und Wiederverwendbarkeit möglich.

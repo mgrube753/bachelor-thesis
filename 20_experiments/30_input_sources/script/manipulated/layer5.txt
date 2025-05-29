@@ -1,0 +1,18 @@
+Session Layer 5
+
+Beschreibung
+Bereitstellung der Funktionen für den verbindungslosen Datenaustausch einer Kommunikationsbeziehung.
+
+3 Kernaufgaben
+
+Datagramme:
+
+Spontanes Erstellen, Senden, Empfangen und sofortiges Verwerfen.
+
+Asynchronität:
+
+Vermeidung von Zwischenpunkten und Bestätigungen.
+
+Atomisierung:
+
+Aufspaltung unabhängiger Datenpakete in Einzelteile.
