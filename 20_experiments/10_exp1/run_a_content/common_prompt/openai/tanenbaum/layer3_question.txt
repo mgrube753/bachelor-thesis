@@ -1,0 +1,3 @@
+Korrekte Antwort: Das Bestimmen der Route (Routing) für Pakete vom Sender zum Empfänger.
+
+Frage: Welche Hauptfunktion übernimmt die Network Layer im ISO-OSI-Modell laut dem gegebenen Text?

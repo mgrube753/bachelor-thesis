@@ -1,0 +1,3 @@
+Frage: Was sind die drei Kernaufgaben der Anwendungsschicht (Application Layer 7) im ISO-OSI-Modell?
+
+Korrekte Antwort: Die drei Kernaufgaben sind die Definition von Grundkonzepten (welche Begriffe in der Anwendung auftreten), Protokollelementen (welche Anforderungen gestellt werden können und welche Daten erwartet werden) und Verhalten (wie die Anwendung auf Anforderungen durch diese Protokollelemente reagiert).

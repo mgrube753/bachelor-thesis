@@ -1,0 +1,9 @@
+```markdown
+Frage: Angenommen, ein Unternehmen entwickelt eine neue Anwendung, die Finanzdaten zwischen Systemen mit unterschiedlichen Datenformaten austauschen soll. Welche spezifische Funktion der Präsentationsschicht ist dabei am kritischsten, und warum ist diese Funktion nicht den darunterliegenden Schichten zugeordnet?
+
+Antwortmöglichkeiten:
+- [Die Bitübertragung zwischen den Systemen, da unterschiedliche Hardware verwendet wird]
+- [Die Fehlererkennung während der Übertragung, um Datenverlust zu vermeiden]
+- ~[Die abstrakte Definition und Standardkodierung der Datenstrukturen, da die Präsentationsschicht sich mit der Syntax und Semantik befasst, während tiefere Schichten primär für den Transport der Bits zuständig sind]
+- [Die Segmentierung der Finanzdaten in kleine Pakete, um eine effiziente Übertragung zu gewährleisten]
+```

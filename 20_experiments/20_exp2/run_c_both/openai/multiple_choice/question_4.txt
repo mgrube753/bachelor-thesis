@@ -1,0 +1,7 @@
+Frage: Untersuchen Sie folgendes Szenario: Zwei Rechner sind über eine exklusive Punkt-zu-Punkt-Leitung verbunden, die garantiert vollkommen fehlerfrei arbeitet und identische Übertragungsraten an beiden Endpunkten sicherstellt. Welche der im Text beschriebenen Teilfunktionen der Sicherungsschicht verliert unter diesen Randbedingungen ihren eigentlichen Zweck, weil ihre zugrunde liegende Problemstellung vollständig entfällt?
+
+Antwortmöglichkeiten:
+- ~Die Medium-Access-Control-(MAC-)Sublayer-Funktion zur Steuerung des Zugriffs auf einen gemeinsamen Übertragungskanal
+- Die Flusskontrolle, um einen schnellen Sender vor dem Überfluten eines langsameren Empfängers zu hindern
+- Das Aufteilen der Daten in Frames mit anschließenden Quittungen zur Fehlermaskierung
+- Die Weiterleitung von Paketen basierend auf logischen Netzadressen

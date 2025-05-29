@@ -1,0 +1,9 @@
+```markdown
+Frage: Ein Netzwerkarchitekt muss ein System entwickeln, bei dem hohe Datenmengen über eine Verbindung mit stark schwankender Bandbreite übertragen werden. Welche der folgenden Flusssteuerungsstrategien auf Network Layer 3 wäre am besten geeignet, um Datenverlust zu minimieren und gleichzeitig die verfügbare Bandbreite optimal zu nutzen?
+
+Antwortmöglichkeiten:
+- [Eine reine Node-to-Node Flusssteuerung, die nur zwischen direkt benachbarten Knoten agiert]
+- ~[Eine Kombination aus End-to-End und Node-to-Node Flusssteuerung, wobei End-to-End die Gesamtübertragungsrate reguliert und Node-to-Node lokale Überlastungen verhindert]
+- [Ausschließlich End-to-End Flusssteuerung mit fester Übertragungsrate, die einmal zu Beginn der Übertragung festgelegt wird]
+- [Verzicht auf Flusssteuerung zugunsten schnellerer Routing-Entscheidungen, um die verfügbare Bandbreite maximal auszunutzen]
+```

@@ -1,0 +1,8 @@
+**Korrekte Antwort: A**
+
+**Frage:** Was ist die Hauptaufgabe des Application Layer (Schicht 7) im ISO-OSI-Modell gemäß der gegebenen Beschreibung?
+
+A) Die Abstraktion spezifischer Anwendungselemente zu generischen Funktionen.
+B) Die Verwaltung von IP-Adressen und Routing-Informationen.
+C) Die Sicherstellung einer zuverlässigen Ende-zu-Ende-Kommunikation.
+D) Die physische Übertragung von Bits über das Medium.

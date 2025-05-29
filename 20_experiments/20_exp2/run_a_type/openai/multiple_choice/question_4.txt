@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche im Text genannte Maßnahme der Sicherungsschicht adressiert explizit das Problem, dass ein schneller Sender einen langsameren Empfänger mit Daten überflutet?
+
+Antwortmöglichkeiten:
+- ~Ein Mechanismus zur Verkehrsregulierung, der dem Sender signalisiert, wann der Empfänger weitere Daten akzeptieren kann
+- Die Aufteilung der Eingangsdaten in Frames, um Bitfehler zu maskieren
+- Das Senden von Bestätigungsframes, um die zuverlässige Übertragung sicherzustellen
+- Der Einsatz der MAC-Unterschicht zur Steuerung des Zugriffs auf ein gemeinsames Übertragungsmedium
+```

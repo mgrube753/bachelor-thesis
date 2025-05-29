@@ -1,0 +1,9 @@
+Frage: Welche der folgenden Aufgaben gehören zu den Kernaufgaben der Netzwerkschicht (Layer 3) im ISO-OSI-Modell?
+
+Korrekte Antwort: Lokalisierung, Zufallspfad und Datenbeschleunigung
+
+Weitere Antwortmöglichkeiten:
+- Fehlererkennung, Flusssteuerung und Segmentierung
+- Verschlüsselung, Authentifizierung und Kompression
+- Adressierung, Routing und Fragmentierung
+- Medienzugriffskontrolle, Synchronisation und Datenkompression

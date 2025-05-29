@@ -1,0 +1,2 @@
+Richtige Antwort: Transportschicht  
+Frage: Welche Schicht des ISO/OSI-Modells sorgt dafür, dass Daten in kleinere Einheiten zerlegt, zuverlässig vom Sender zum Empfänger übertragen und den höheren Schichten ein echter End-to-End-Dienst bereitgestellt wird?

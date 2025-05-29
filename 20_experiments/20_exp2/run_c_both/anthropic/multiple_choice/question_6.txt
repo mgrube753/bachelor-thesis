@@ -1,0 +1,9 @@
+```markdown
+Frage: Entwerfen Sie ein theoretisches Protokoll für die Sicherungsschicht (Data Link Layer), das alle im Text genannten Herausforderungen effizient adressiert. Welcher der folgenden Ansätze würde die Anforderungen am umfassendsten erfüllen?
+
+Antwortmöglichkeiten:
+- ~Ein Protokoll, das adaptive Framegrößen verwendet, einen Sliding-Window-Mechanismus für Flusskontrolle implementiert und eine CSMA/CD-Technik für den Medienzugriff in Broadcast-Umgebungen einsetzt.
+- Ein Protokoll, das ausschließlich große Frames verwendet, auf Bestätigungen verzichtet und stattdessen Fehlerkorrekturcodes einsetzt, sowie einen Token-Passing-Mechanismus für alle Netzwerktypen implementiert.
+- Ein Protokoll, das auf die Unterteilung in Frames verzichtet und stattdessen kontinuierliche Datenströme mit eingebetteten Prüfsummen verwendet, kombiniert mit einer zeitbasierten Zugriffssteuerung.
+- Ein Protokoll, das nur auf End-to-End-Fehlererkennung auf höheren Schichten setzt, keine Flusskontrolle implementiert und den Medienzugriff durch feste Zeitslots regelt, unabhängig vom tatsächlichen Übertragungsbedarf.
+```

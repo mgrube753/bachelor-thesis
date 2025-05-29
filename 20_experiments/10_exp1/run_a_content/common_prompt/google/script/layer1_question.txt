@@ -1,0 +1,3 @@
+**Korrekte Antwort:** Bereitstellung einer physikalischen Konzeption für Codierung, Transport und Decodierung logischer Werte.
+
+**Frage:** Welche primäre Funktion erfüllt der Physical Layer (Schicht 1) im ISO-OSI-Modell?

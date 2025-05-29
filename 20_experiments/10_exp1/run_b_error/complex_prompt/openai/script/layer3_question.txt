@@ -1,0 +1,3 @@
+Frage: Basierend auf der Textbeschreibung des „Network Layer 3“: Erklären Sie, warum die Bereitstellung einer Speicherung für Geräte, die sich im selben Netzwerk derselben Layer-2-Technologie befinden, eine notwendige Voraussetzung für die Kernaufgabe „Lokalisierung“ darstellt.
+
+Antwort: ~Damit die Lokalisierung – also das Auffinden der Netzwerk-internen Position einzelner Geräte – überhaupt funktionieren kann, muss Layer 3 eine Tabelle bzw. einen Speicher führen, in dem jedes Gerät seiner konkreten Position innerhalb des gemeinsamen Layer-2-Netzes zugeordnet ist; ohne diese persistenten Informationen ließe sich keine eindeutige Positionsbestimmung oder Adressierung durchführen.

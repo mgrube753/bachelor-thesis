@@ -1,0 +1,3 @@
+**Korrekte Antwort:** Die Vermittlungsschicht (Network Layer) ist dafür zuständig, Probleme wie unterschiedliche Adressierungsschemata, Paketgrößenbeschränkungen und abweichende Protokolle zu überwinden, um die Interkonnektion heterogener Netzwerke zu ermöglichen.
+
+**Frage:** Welche zentrale Aufgabe der Vermittlungsschicht (Network Layer) ist entscheidend, um die problemlose Verbindung von heterogenen Netzwerken zu gewährleisten und welche Schwierigkeiten müssen dabei typischerweise überwunden werden?

@@ -1,0 +1,9 @@
+```markdown
+Frage: In einem Netzwerk mit mehreren Endgeräten werden regelmäßig Pakete übertragen. Bei hoher Netzwerklast kommt es zu Kollisionen und einzelne Datenpakete werden nicht korrekt übertragen. Welche zwei Kernaufgaben des Data Link Layers arbeiten in diesem Szenario primär zusammen, um eine zuverlässige Datenübertragung trotz dieser Probleme zu gewährleisten?
+
+Antwortmöglichkeiten:
+- ~Fehlerkontrolle und Medienzugriff
+- Segmentierung und Identifikation
+- Flusskontrolle und Segmentierung
+- Identifikation und Fehlerkontrolle
+```

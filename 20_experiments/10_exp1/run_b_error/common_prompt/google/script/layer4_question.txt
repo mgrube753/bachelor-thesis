@@ -1,0 +1,7 @@
+[Korrekt: C]
+Welche Aspekte der Dienstquantität werden laut dem gegebenen Text auf dem Transport Layer (Schicht 4) vernachlässigt oder ohne Garantien erbracht?
+
+A. Lediglich die Zugriffszeit und die Fehlerfreiheit.
+B. Ausschließlich die Kapazität und die Varianz.
+C. Kapazität, Zugriffszeit, Varianz und Fehlerfreiheit.
+D. Nur die Geräte-spezifischen Kennungen.

@@ -1,0 +1,9 @@
+```markdown
+Frage: Vergleichen Sie die Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) und erklären Sie, welche davon primär der Fehlerkontrolle dient.
+
+Antwortmöglichkeiten:
+- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine scheinbar fehlerfreie Verbindung durch Aufteilung der Daten in Frames und Bestätigung des korrekten Empfangs
+- Die Verkehrsregulierung zwischen schnellen Sendern und langsamen Empfängern durch spezielle Übertragungsmechanismen
+- Die Kontrolle des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken durch die Medium Access Control Sublayer
+- Die Isolierung der physikalischen Übertragungsschicht von den höheren Protokollschichten und das Routing von Datenpaketen
+```

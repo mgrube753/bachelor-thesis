@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche architektonische Konsequenz ergibt sich aus dem "end-to-end"-Charakter der Transportschicht im Vergleich zu den Schichten 1-3, und welche funktionalen Herausforderungen werden dadurch adressiert?
+
+Antwortmöglichkeiten:
+- ~Die Transportschicht ermöglicht eine direkte Kommunikation zwischen Quell- und Zielprogrammen über beliebig viele Zwischenknoten hinweg, wodurch die oberen Schichten von Änderungen der Hardware-Technologie isoliert werden können.
+- Die Transportschicht kommuniziert nur mit unmittelbaren Nachbarknoten und stellt sicher, dass die Datenpakete nicht über mehr als drei Router weitergeleitet werden müssen.
+- Die Transportschicht fungiert als Brücke zwischen den oberen und unteren Schichten, indem sie ausschließlich die Umwandlung von Session-Layer-Protokollen in Network-Layer-Protokolle durchführt.
+- Die Transportschicht eliminiert die Notwendigkeit für Router im Netzwerk, da sie eine direkte physische Verbindung zwischen den kommunizierenden Endgeräten voraussetzt.
+```

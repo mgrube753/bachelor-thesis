@@ -1,0 +1,9 @@
+```markdown
+Frage: Ein Netzwerktechniker beobachtet bei einer mediengebundenen Datenübertragung sporadische Übertragungsfehler, obwohl die Signalpegel am Empfänger ausreichend stark sind. Welche der folgenden Aspekte des Physical Layers könnte die wahrscheinlichste Ursache für dieses Problem sein, und warum?
+
+Antwortmöglichkeiten:
+- [Die Bandbreite des Übertragungsmediums ist zu gering für die gewählte Übertragungsrate]
+- ~[Fehler in der Dekodierungsphase aufgrund unzureichender Detektionsbereiche oder falscher Abtastzeitpunkte]
+- [Ein Transportproblem durch elektromagnetische Störungen in der Umgebung]
+- [Inkompatible Codierungsverfahren zwischen Sender und Empfänger]
+```

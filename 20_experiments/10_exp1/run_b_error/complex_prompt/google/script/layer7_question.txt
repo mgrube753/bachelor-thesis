@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt die Hauptfunktion der Anwendungsschicht (Layer 7) als „Abstraktion von spezifischen Anwendungselementen zu generischen Funktionen“, mit dem Vorteil „hoher Systematisierung und Wiederverwendbarkeit“. Welche der folgenden Aussagen erläutert am präzisesten, wie die drei Kernaufgaben der Anwendungsschicht – Universalkonzepte, Standardelemente und Standardverhalten – diesen Zweck der Abstraktion und die daraus resultierenden Vorteile ermöglichen?
+
+Antwortmöglichkeiten:
+- Durch das Festlegen von universellen Begriffen, generischen Datenstrukturen und einheitlichen Systemreaktionen auf standardisierte Anforderungen schaffen die Kernaufgaben eine gemeinsame, anwendungsübergreifende Schnittstelle, die eine Wiederverwendung von Komponenten und die Systematisierung der Anwendungsentwicklung fördert.
+- ~Die Kernaufgaben konzentrieren sich darauf, spezifische Anwendungslogik für jede individuelle Anwendung zu definieren, was eine detaillierte Anpassung ermöglicht und somit die Gesamteffizienz durch maßgeschneiderte Lösungen steigert.
+- Die Kernaufgaben dienen primär dazu, die Kommunikation zwischen der Anwendungsschicht und den darunterliegenden Schichten zu standardisieren, indem sie sicherstellen, dass Daten konsistent übermittelt werden.
+- Die Abstraktion wird erreicht, indem die Schicht nur die notwendigsten Protokolle für die Datenübertragung bereitstellt, ohne sich um anwendungsspezifische Details zu kümmern, wodurch Komplexität reduziert wird.

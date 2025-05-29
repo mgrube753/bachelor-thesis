@@ -1,0 +1,7 @@
+Frage: Der vorliegende Text zur Transportschicht (Layer 4) beschreibt die Erbringung eines Speicherdienstes, welcher explizit "ohne Garantien für Kapazität, Zugriffszeit, Varianz, Fehlerfreiheit usw." angeboten wird. Welche kritische Schlussfolgerung lässt sich aus dieser spezifischen Beschreibung im Kontext der allgemeinen Funktion der Transportschicht des ISO-OSI-Modells ziehen, wenn man bedenkt, dass auf dieser Schicht auch protokollbasierte Datenübertragung stattfindet?
+
+Antwortmöglichkeiten:
+- Dieser beschriebene Dienst repräsentiert die einzige Funktionalität der Transportschicht und macht die Bereitstellung zuverlässiger Verbindungen unmöglich.
+- ~Der Text beschreibt eine grundlegende, potenziell unzuverlässige Transportdienstleistung. Die Notwendigkeit für Garantien, wie sie für viele Anwendungen unerlässlich sind, muss entweder durch zusätzliche Mechanismen *oberhalb* dieser Dienstleistung auf der Transportschicht selbst (z.B. durch andere Protokolle dieses Layers) oder durch Anwendungen auf höheren Schichten erbracht werden.
+- Die "Dienstquantität"-Beschreibung ist ein Widerspruch zu jeder Form von Datenübertragung und deutet darauf hin, dass diese Schicht primär für reine Speicherung und nicht für Kommunikation zuständig ist.
+- Die genannten Einschränkungen bedeuten, dass die Transportschicht vollständig auf die Adressierung von Kommunikationsendpunkten verzichtet, da die Qualität der Dienstleistung irrelevant ist.

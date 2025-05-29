@@ -1,0 +1,9 @@
+```markdown
+Frage: Die Transportschicht (Layer 4) im OSI-Modell wird im Text mit drei spezifischen Kernaufgaben beschrieben, die auf den ersten Blick kontraintuitiv erscheinen könnten. Welche der folgenden Aussagen reflektiert am präzisesten die tatsächliche Rolle und Funktion dieser Schicht im Gegensatz zu der im Text dargestellten Beschreibung?
+
+Antwortmöglichkeiten:
+- ~Die Transportschicht stellt tatsächlich zuverlässige Ende-zu-Ende-Verbindungen her und bietet Mechanismen zur Flusskontrolle und Fehlererkennung, anstatt QoS zu vernachlässigen und Speicherdienste ohne Garantien zu erbringen.
+- Die Transportschicht ignoriert bewusst Teilnehmer-Charakteristika, um eine maximale Netzwerkgeschwindigkeit zu gewährleisten, genau wie im Text beschrieben.
+- Die primäre Funktion der Transportschicht ist die Bereitstellung eines Speicherdienstes ohne Leistungsgarantien, wie im Text korrekt angegeben.
+- Die im Text genannte "Ignorierung der Teilnehmer-Charakteristik" beim Datenstau ist ein essentielles Feature der Transportschicht zur Wahrung der Netzwerkneutralität.
+```

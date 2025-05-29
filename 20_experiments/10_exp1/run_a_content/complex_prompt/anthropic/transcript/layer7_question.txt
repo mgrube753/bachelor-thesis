@@ -1,0 +1,9 @@
+```markdown
+Frage: Warum ist die Systematisierung der Funktionen im Layer 7 (Application Layer) des OSI-Modells besonders herausfordernd im Vergleich zu anderen Schichten, und welche Konsequenz hat dies für die Implementierung von Anwendungsprotokollen? Wählen Sie die umfassendste und präziseste Antwort.
+
+Antwortmöglichkeiten:
+- [Layer 7 hat keine standardisierten Schnittstellen, sodass jede Anwendung ihre eigenen Protokolle definieren muss]
+- ~[Die starke Abhängigkeit von der jeweiligen Anwendung macht eine anwendungsfreie Systematisierung schwierig, wodurch Protokollelemente, Grundkonzepte und Reaktionsmuster für jeden Anwendungsfall spezifisch definiert werden müssen]
+- [Layer 7 kommuniziert direkt mit dem Benutzer und muss daher unterschiedliche Benutzerschnittstellen berücksichtigen]
+- [Im Application Layer müssen alle Funktionen der darunterliegenden Schichten zusammengeführt werden, was die Komplexität erhöht]
+```

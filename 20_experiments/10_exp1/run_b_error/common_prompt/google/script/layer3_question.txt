@@ -1,0 +1,6 @@
+Welche der folgenden Beschreibungen passt *nicht* zu den Kernaufgaben oder Kommunikationsarten des Network Layer 3, wie sie im Text dargestellt sind?
+
+A) Lokalisierung: Bestimmung netzwerk-interner Positionen.
+B) Zufallspfad: Zufällige Auswahl von Endknoten zur Kommunikation direkt verbundener Knoten.
+[KORREKTE ANTWORT] C) Datenverschlüsselung: Sicherstellung der Vertraulichkeit von Daten während der Übertragung.
+D) Punkt-zu-Punkt: Kommunikation vom Sender zum direkten Nachbarn.

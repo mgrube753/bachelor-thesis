@@ -1,0 +1,7 @@
+Frage: Stellen Sie sich ein Szenario vor, in dem ein Sender in Netzwerk A über einen Router in Netzwerk B mit einem Empfänger in Netzwerk C kommuniziert.  
+a) Welche konkreten Probleme können auftreten, wenn Schicht 3 zwar Adressierung und Routing korrekt ausführt, jedoch auf jegliche Flusssteuerung verzichtet?  
+b) Vergleichen Sie anschließend einen rein End-to-End- mit einem rein Node-to-Node-Flusssteuerungsmechanismus hinsichtlich ihrer Wirksamkeit in diesem Szenario und diskutieren Sie deren jeweilige Vor- und Nachteile.
+
+Antwort: ~Ohne Flusssteuerung kann der Sender Daten schneller liefern, als Router B oder der Empfänger sie verarbeiten können; Folge sind Pufferüberläufe, Paketverlust, Neuübertragungen und eventuell Staus, die sogar benachbarte Netze beeinträchtigen.  
+End-to-End-Flusssteuerung (z. B. Fensterprotokolle) koordiniert Sender und entfernten Empfänger, verhindert langfristige Überlastung entlang des gesamten Pfads, reagiert aber träge, weil Rückmeldungen den ganzen Weg zurücklegen müssen.  
+Node-to-Node-Flusssteuerung (Hop-by-Hop) erkennt lokale Engpässe schneller und schützt einzelne Routerpuffer, erzeugt jedoch zusätzlichen Protokoll-Overhead und kann Staus nur Abschnitt für Abschnitt begrenzen, sodass weiter hinten im Pfad dennoch Überlastungen auftreten können. Eine Kombination beider Verfahren vereint schnelle lokale Reaktion mit globaler End-to-End-Stabilität und ist daher meist am effektivsten.

@@ -1,0 +1,2 @@
+Korrekte Antwort: Codierung, Transport und Dekodierung  
+Frage: Welche drei zentralen Kernaufgaben des Physical Layers werden im Text genannt?

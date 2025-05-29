@@ -1,0 +1,9 @@
+Frage: Erläutern Sie, inwiefern die drei Kernaufgaben des Session Layers – Sitzungsverwaltung, Synchronisation und Bündelung – sich gegenseitig bedingen. Beschreiben Sie dabei zwei konkrete Anwendungs­szenarien, in denen fehlende Synchronisationspunkte die Funktion der beiden anderen Aufgaben entscheidend beeinträchtigen würden.
+
+Antwort: ~Alle drei Aufgaben greifen ineinander:  
+1. Sitzungsverwaltung definiert den logischen Rahmen, innerhalb dessen Daten ausgetauscht werden. Ohne Synchronisationspunkte könnte ein Wiederaufsetzen einer abgebrochenen Sitzung nur durch vollständiges Neu­starten erfolgen; die Sitzung würde ihre Zweckbestimmung – kontrolliertes Fortsetzen – verlieren.  
+2. Bündelung fasst zusammengehörige Transaktionen, damit sie atomar behandelt werden können. Fehlen Synchronisations­marken, kann bei einem Fehler nicht festgestellt werden, welche Teilmengen bereits erfolgreich abgeschlossen sind; die Bündelung könnte nicht konsistent zurückgerollt oder fortgeführt werden.  
+
+Szenario 1: Dateiübertragung in Blöcken – fällt die Leitung nach 70 %, ermöglichen Synchronisationsmarker das Weiterführen ab dem letzten Checkpoint; ohne sie müsste die gesamte Datei erneut gesendet werden.  
+
+Szenario 2: Remote-Prozeduraufrufe in einer verteilten Datenbank – mehrere Transaktionen werden zu einer logischen Einheit gebündelt. Tritt ein Fehler zwischen zwei Synchronisationspunkten auf, lassen sich nur die unvollständigen Teiltransaktionen wiederholen, während die übrigen bestehen bleiben; ohne Marker müsste die komplette Bündelung abgebrochen und neu gestartet werden.

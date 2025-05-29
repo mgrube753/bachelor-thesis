@@ -1,0 +1,13 @@
+```markdown
+Frage: Erklären Sie die Hauptfunktionen der Datenverbindungsschicht (Data Link Layer) im OSI-Modell und vergleichen Sie, wie diese Funktionen zusammenwirken, um eine zuverlässige Datenübertragung zu gewährleisten.
+
+Antwort: ~Die Datenverbindungsschicht hat mehrere Hauptfunktionen, die zusammenwirken, um eine zuverlässige Datenübertragung zu gewährleisten:
+
+1. Fehlerkorrektur: Sie transformiert eine fehleranfällige Übertragungseinrichtung in eine Verbindung, die für die höheren Schichten fehlerfrei erscheint. Dies geschieht durch Aufteilung der Daten in Frames und sequentielle Übertragung, wobei der Empfänger den korrekten Empfang durch Acknowledgement-Frames bestätigt.
+
+2. Flusskontrolle: Sie verhindert, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet, indem sie Verkehrsregulierungsmechanismen implementiert.
+
+3. Medienzugriffskontrolle: Bei Broadcast-Netzwerken regelt die MAC-Sublayer den Zugriff auf den gemeinsam genutzten Kanal.
+
+Diese Funktionen arbeiten zusammen, indem die Fehlerkorrektur die Grundlage für die Zuverlässigkeit schafft, während die Flusskontrolle sicherstellt, dass diese zuverlässige Übertragung auch bei unterschiedlichen Verarbeitungsgeschwindigkeiten aufrechterhalten wird. Die Medienzugriffskontrolle ergänzt diese Funktionen, indem sie in Netzwerken mit gemeinsam genutztem Medium einen geordneten Datenaustausch ermöglicht.
+```

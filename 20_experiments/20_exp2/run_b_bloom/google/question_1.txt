@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aufgaben gehört laut dem bereitgestellten Text zu den primären Verantwortlichkeiten der Sicherungsschicht (Data Link Layer)?
+
+Antwortmöglichkeiten:
+- Routen von Paketen zwischen verschiedenen Netzwerken.
+- ~Das Verwandeln einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint.
+- Die Verschlüsselung von Daten zur Gewährleistung der Vertraulichkeit.
+- Die Darstellung von Daten auf dem Bildschirm des Benutzers.

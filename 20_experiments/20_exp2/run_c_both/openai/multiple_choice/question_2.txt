@@ -1,0 +1,7 @@
+Frage: Erklären Sie anhand des Textes, welche zentrale Aufgabe die Data-Link-Schicht im ISO-OSI-Modell übernimmt.
+
+Antwortmöglichkeiten:
+- ~Sie wandelt eine rohe Übertragungsstrecke in eine Leitung um, die für höhere Schichten als frei von unentdeckten Fehlern erscheint.
+- Sie weist jedem Datenpaket eine logische Netzadresse zu, damit es geroutet werden kann.
+- Sie stellt Ende-zu-Ende-Verschlüsselung zwischen den Anwendungen her.
+- Sie ermittelt den kürzesten Pfad durch mehrere Netze, um die Verzögerung zu minimieren.

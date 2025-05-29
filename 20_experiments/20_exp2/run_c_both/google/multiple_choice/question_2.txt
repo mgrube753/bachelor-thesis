@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt die Kernaufgaben des Data Link Layers. Erklären Sie zusammenfassend, welche der folgenden Aussagen die *wesentlichen Funktionen* dieses Layers gemäß der bereitgestellten Informationen am prägnantesten umschreibt.
+
+Antwortmöglichkeiten:
+- ~Der Data Link Layer maskiert Übertragungsfehler, indem er Eingabedaten in Datenframes zerlegt und den Empfang bestätigt, und adressiert zudem die Flusskontrolle, um eine Überflutung langsamer Empfänger zu verhindern, sowie in Broadcast-Netzwerken die Kontrolle des gemeinsamen Kanalzugriffs.
+- Der Data Link Layer ist hauptsächlich dafür verantwortlich, Datenpakete über das Netzwerk zu routen und IP-Adressen in Hardware-Adressen zu übersetzen, während er Fehlerbehebungsmechanismen auf Transportebene bereitstellt.
+- Der Data Link Layer stellt sicher, dass Anwendungen die Bedeutung von Daten verstehen und diese korrekt darstellen können, indem er Datenformatierungen und Verschlüsselung auf höchster Ebene verwaltet und Fehler in der Endanwendung behebt.
+- Der Data Link Layer konzentriert sich ausschließlich auf die physische Übertragung von Bits über das Medium und ignoriert höhere Protokollschichten, wobei er primär elektrische Signale und Kabeltypen verwaltet und somit keine Fehlerbehebung durchführt.

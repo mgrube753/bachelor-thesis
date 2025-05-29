@@ -1,0 +1,9 @@
+```markdown
+Frage: Ein Entwickler testet ein System, bei dem ein Hochgeschwindigkeits-Sensor (Sender) seine Messdaten über eine Punkt-zu-Punkt-Verbindung an einen Mikrocontroller (Empfänger) mit sehr kleinem Eingabepuffer überträgt. Bereits nach kurzer Zeit überfüllt der Empfänger-Puffer, und Daten gehen verloren. Ermitteln Sie, welche spezifische Funktion der Data-Link-Schicht gemäß obigem Text angewendet werden muss, um dieses Szenario zu beherrschen.
+
+Antwortmöglichkeiten:
+- ~Die Implementierung eines Flusskontroll-Mechanismus, der dem Sender Rückmeldung über die momentane Aufnahmekapazität des Empfängers gibt
+- Die Einführung eines Media-Access-Control-Verfahrens wie CSMA/CD, um den Zugriff auf das Übertragungsmedium zu koordinieren
+- Die Platzierung eines Routing-Protokolls, das alternative Pfade für die Frames berechnet
+- Die Aktivierung einer Anwendungsschicht-Kompression, um die Datenmenge pro Frame zu reduzieren
+```

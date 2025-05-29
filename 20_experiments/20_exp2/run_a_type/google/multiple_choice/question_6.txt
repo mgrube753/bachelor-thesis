@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Funktionen ist eine *Grundlage* für die Hauptaufgabe der Sicherungsschicht, Übertragungsfehler zu maskieren, aber nicht die Aufgabe selbst, und unter welchen Bedingungen wird sie typischerweise ergänzend eingesetzt?
+
+Antwortmöglichkeiten:
+- ~Die Aufteilung von Eingabedaten in Datenrahmen und deren sequentielle Übertragung; bei zuverlässigem Dienst ergänzt durch Empfangsbestätigungen.
+- Die Medium Access Control (MAC)-Unterebene; ausschließlich zur Steuerung des Zugriffs auf gemeinsam genutzte Kanäle in Broadcast-Netzwerken.
+- Der Mechanismus zur Verkehrsregulierung; um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überflutet.
+- Die Umwandlung einer rohen Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung; dies ist die primäre Zielsetzung und keine zugrundeliegende Methode.

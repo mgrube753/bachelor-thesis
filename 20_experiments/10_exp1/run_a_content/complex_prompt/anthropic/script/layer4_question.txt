@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Netzwerkszenarien erfordert primär die Implementierung der "Dienstqualität (QoS)"-Funktionalität der Transportschicht, und NICHT hauptsächlich die anderen beiden Kernaufgaben (Adressierung und Flusssteuerung)?
+
+Antwortmöglichkeiten:
+- [Ein Router muss entscheiden, an welchen Host im lokalen Netzwerk ein eingehendes Paket weitergeleitet werden soll]
+- [Ein Server muss die Rate reduzieren, mit der er Daten an einen Client sendet, da dieser die Daten nicht schnell genug verarbeiten kann]
+- ~[Eine Videokonferenzanwendung muss konstante Latenz und Bandbreite sicherstellen, um Unterbrechungen während eines wichtigen Meetings zu vermeiden]
+- [Ein Client stellt eine Verbindung zu einem spezifischen Dienst auf einem Server her, der mehrere Dienste auf verschiedenen Ports anbietet]
+```

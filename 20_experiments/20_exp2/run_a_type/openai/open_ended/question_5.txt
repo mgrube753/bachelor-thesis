@@ -1,0 +1,13 @@
+Frage: Erläutern und analysieren Sie, wie die drei im Text beschriebenen Kernaufgaben der Data Link Layer – (1) Fehlerkontrolle durch Rahmenbildung / Bestätigungen, (2) Flusskontrolle zwischen Sender und Empfänger sowie (3) Medienzugriffskontrolle in Broadcast-Netzen – in der Praxis ineinandergreifen, um eine zuverlässige und effiziente Übertragung sicherzustellen. Gehen Sie dabei insbesondere auf mögliche Zielkonflikte zwischen diesen Funktionen ein und skizzieren Sie Lösungsstrategien, mit denen ein Protokolldesigner diese Konflikte minimieren kann. 
+
+Antwort: ~Die Fehlerkontrolle sorgt mittels Rahmenbildung, Prüfsummen und Quittungen dafür, dass der Netzwerkschicht nur fehlerfreie Daten präsentiert werden. Flusskontrolle reguliert das Sende­tempo, damit ein schneller Sender einen langsameren Empfänger nicht überfordert; sie geschieht z. B. mittels Stop-and-Wait- oder Sliding-Window-Verfahren. Die Medienzugriffskontrolle koordiniert bei geteilten Kanälen, welcher Knoten wann senden darf (z. B. CSMA/CD, Token Passing).  
+Zielkonflikte:  
+• Strenge Fehlerkontrolle (kleine Rahmen, häufige ACKs) erhöht Zuverlässigkeit, verkleinert aber die nutzbare Bandbreite und kollidiert mit dem Wunsch der MAC-Schicht nach kurzen Besetzungszeiten.  
+• Ein großes Sliding Window verbessert Durchsatz, kann jedoch bei Überlast die MAC-Schicht blockieren und die Kollisionswahrscheinlichkeit steigern.  
+• Aggressiver Medienzugang (kurze Backoff-Zeiten) maximiert Kanalnutzung, erhöht aber die Zahl der Kollisionen und folglich die Wiederholungen auf der Fehlerkontroll-Ebene.  
+Lösungsstrategien:  
+1. Dynamische Rahmen- und Fenstergrößen, die sich an Fehlerrate und Empfangspuffer anpassen.  
+2. Hybride ACK-Verfahren (kumulativ, selektive Wiederholung), um Kontrollverkehr zu reduzieren.  
+3. Adaptive MAC-Algorithmen, die bei zunehmender Last die Backoff-Parameter vergrößern.  
+4. Priorisierung oder Serviceklassen, die dringende Daten bevorzugen und so Blockierungen verringern.  
+5. Cross-Layer-Optimierung: Feedback aus Fehler- und Flusskontrolle beeinflusst MAC-Parameter, sodass alle drei Funktionen koordiniert arbeiten und weder Durchsatz noch Zuverlässigkeit unnötig beeinträchtigt werden.

@@ -1,0 +1,5 @@
+```markdown
+Frage: Warum konzentriert sich die Physical Layer des OSI-Modells auf Aspekte wie elektrische Signale, Bit-Timing und Steckerkonfiguration, während sie abstraktere Konzepte wie Adressierung oder Protokollkommunikation anderen Schichten überlässt? Erläutere den fundamentalen Designansatz und seine Implikationen.
+
+Antwort: ~Die Physical Layer bildet die Grundlage der Netzwerkkommunikation, indem sie die zuverlässige Bitübertragung zwischen direkt verbundenen Geräten sicherstellt. Diese Fokussierung auf die elementarste Form der Kommunikation (Bits) folgt dem Schichtenmodell-Prinzip, bei dem jede Schicht eine klar definierte Aufgabe erfüllt und komplexere Abstraktionen auf höheren Ebenen aufbauen. Durch diese Trennung werden standardisierte Schnittstellen zwischen Schichten geschaffen, was Interoperabilität verschiedener Technologien ermöglicht und die Komplexität des Gesamtsystems reduziert. Die Physical Layer muss sich mit den physikalischen Realitäten der Signalübertragung auseinandersetzen, während höhere Schichten von diesen Details abstrahieren können und sich auf logische Konzepte konzentrieren.
+```

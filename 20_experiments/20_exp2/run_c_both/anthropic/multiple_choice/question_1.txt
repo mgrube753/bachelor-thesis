@@ -1,0 +1,9 @@
+```markdown
+Frage: Identifizieren Sie die Hauptaufgabe der Data Link Layer im OSI-Modell.
+
+Antwortmöglichkeiten:
+- ~Eine Übertragungseinrichtung in eine Leitung zu transformieren, die frei von unentdeckten Übertragungsfehlern erscheint
+- Den physikalischen Zugang zum Netzwerkmedium zu steuern
+- Die Fragmentierung und Zusammensetzung von Datenpaketen zu verwalten
+- Die Weiterleitung von Datenpaketen zwischen verschiedenen Netzwerken sicherzustellen
+```

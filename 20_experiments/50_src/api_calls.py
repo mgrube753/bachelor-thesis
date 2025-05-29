@@ -46,11 +46,12 @@ def gen_with_openai(client, prompt_text, model_id):
             input=[{"role": "user", "content": prompt_text}],
             max_output_tokens=1400,
         )
+        # based on https://platform.openai.com/docs/api-reference/responses-streaming/response/incomplete
         if (
             response.status == "incomplete"
             and response.incomplete_details.reason == "max_output_tokens"
         ):
-            print("[WARNING] Ran out of tokens")
+            print("\n[WARNING] Ran out of tokens")
             if response.output_text:
                 print("[INFO] Partial output available")
                 return response.output_text

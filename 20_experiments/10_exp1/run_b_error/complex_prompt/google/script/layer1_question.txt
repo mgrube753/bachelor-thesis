@@ -1,0 +1,7 @@
+Frage: Basierend auf der im Text gegebenen Beschreibung des Physical Layer 1 und dessen Kernaufgaben, welche der folgenden Aussagen trifft auf die *Kompression* zu, wie sie in diesem Kontext definiert ist?
+
+Antwortmöglichkeiten:
+- Die Kompression wandelt physikalische Werte in logische Größen um, um die Übertragungseffizienz zu steigern.
+- ~Die Kompression ist im bereitgestellten Text als die Umwandlung logischer Größen in physikalische Werte definiert.
+- Die Kompression nutzt Algorithmen wie AES und RSA zur Reduzierung der Datenmenge vor der Speicherung.
+- Die Kompression dient der Speicherung logischer Größen an einem festen Ort und ist medienunabhängig.

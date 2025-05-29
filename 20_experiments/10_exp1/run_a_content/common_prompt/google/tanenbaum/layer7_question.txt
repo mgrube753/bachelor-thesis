@@ -1,0 +1,3 @@
+Korrekte Antwort: HTTP (HyperText Transfer Protocol)
+
+Frage: Welches Protokoll wird laut dem bereitgestellten Text als Grundlage für das World Wide Web auf der Anwendungsschicht (Application Layer) beschrieben?

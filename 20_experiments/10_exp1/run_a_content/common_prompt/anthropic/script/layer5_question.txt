@@ -1,0 +1,8 @@
+KORREKTE ANTWORT: C
+
+Frage: Welche der folgenden Aufgaben gehört NICHT zu den drei Kernaufgaben der Schicht 5 (Session Layer) im ISO-OSI-Modell?
+
+A) Sitzungen aufbauen und beenden
+B) Synchronisation durch Setzen von Zwischenpunkten
+C) Fehlerkorrektur und Flusskontrolle
+D) Bündelung zusammengehöriger Transaktionen

@@ -1,0 +1,7 @@
+Frage: Welches spezielle Problem adressiert der Medium-Access-Control-(MAC-)Sublayer innerhalb der Sicherungsschicht gemäß dem obigen Text?
+
+Antwortmöglichkeiten:
+- ~Die Steuerung des Zugriffs mehrerer Stationen auf ein gemeinsames Übertragungsmedium in Broadcast-Netzen
+- Die Erkennung und Korrektur von Bitfehlern innerhalb einzelner Frames
+- Die Flusskontrolle, um einen schnellen Sender daran zu hindern, einen langsameren Empfänger zu überlasten
+- Das Routing von Paketen zwischen unterschiedlichen Netzwerken

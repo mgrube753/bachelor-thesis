@@ -1,0 +1,13 @@
+Frage: Entwickeln Sie ein Data-Link-Layer-Protokoll für ein geostationäres Satelliten-Broadcast-Netzwerk mit hoher Latenz, bei dem viele Bodenstationen denselben Downlink-Kanal teilen. Ihr Entwurf soll folgende Ziele gleichzeitig erfüllen:
+1. Verbergen von Übertragungsfehlern vor der Netzwerkschicht.  
+2. Verhindern, dass schnelle Sender langsame Empfänger überlasten.  
+3. Effiziente, faire Kanalzugriffssteuerung auf dem gemeinsamen Medium.  
+
+Beschreiben Sie die wesentlichen Bausteine Ihres Protokolls (Framing-Strategie, Fehlerkontrolle, Flusskontrolle, Medium-Access-Verfahren) und erläutern Sie, warum jede Entscheidung angesichts der gegebenen Rahmenbedingungen (hohe Latenz, Broadcast, viele Teilnehmer) zweckmäßig ist.
+
+Antwort: ~Beispielhafter Entwurf:  
+• Framing: Variable-Längen-Frames mit Längenfeld, Header-Hamming-Schutz und 32-Bit-CRC am Frame-Ende, um Bit-Fehler zu erkennen.  
+• Fehlerkontrolle: Selective-Repeat-ARQ mit 1024-Frame-Fenster; kumulative ACK/NACK-Bitmap wird in Periodic-Feedback-Frames gebündelt, um RTT auszunutzen und Rückkanalbandbreite zu sparen.  
+• Flusskontrolle: Kredit-basiertes Sliding-Window; Empfänger publiziert sein verfügbare-Puffer-Kredite-Feld im Feedback-Frame, sodass Sender ihre Fenstergröße dynamisch anpassen.  
+• Medium Access: Zweistufiges TDMA-Verfahren. Rahmen 1: Reservation-Slots, in denen Bodenstationen per Slotted-ALOHA Mini-Requests senden. Rahmen 2: Zugeteilte Daten-Slots, die der Satellit zentral vergibt und in einem Downlink-Schedule ankündigt. Diese Kombination reduziert Kollisionen trotz vieler Stationen und hoher Latenz.  
+Durch diese Komponenten werden Fehler maskiert, Rückstau vermieden und der gemeinsam genutzte Broadcast-Kanal fair sowie effizient verwaltet.

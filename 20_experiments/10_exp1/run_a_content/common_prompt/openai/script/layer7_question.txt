@@ -1,0 +1,2 @@
+Antwort: 1. Grundkonzepte  2. Protokollelemente  3. Verhalten  
+Frage: Welche drei Kernaufgaben erfüllt die Anwendungsschicht (Layer 7) im ISO-OSI-Modell?

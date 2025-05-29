@@ -1,0 +1,5 @@
+```markdown
+Frage: Welcher grundlegende konzeptionelle Fehler liegt in der Beschreibung des Physical Layer (Schicht 1) im gegebenen Text vor, wenn man das standardisierte ISO-OSI-Referenzmodell betrachtet?
+
+Antwort: ~Im standardisierten ISO-OSI-Modell ist der Physical Layer (Schicht 1) für die physikalische Übertragung von Bitströmen über ein Übertragungsmedium zuständig (elektrische, mechanische und funktionale Eigenschaften). Die im Text beschriebenen Funktionen wie Verschlüsselung (AES, RSA) und Datenkompression (Huffman, LZW) sind typischerweise Aufgaben der Presentation Layer (Schicht 6), während Datenspeicherung gar nicht direkt im OSI-Modell definiert ist, da es sich um ein Kommunikationsmodell handelt.
+```

@@ -1,0 +1,7 @@
+Frage: Der Text hebt hervor, dass es "sehr schwer [ist], nur eine anwendungsfreie Systematisierung der Funktion des Layers [7, Application Layer] möglich [zu machen]". Trotzdem werden drei "Grundkonzepte" oder "Kernaufgaben" genannt, die der Layer 7 für eine spezifische Anwendung festlegen soll. Welche der folgenden Aussagen fasst die *Essenz* dieser drei Konzepte im Hinblick auf die Kommunikationsinteraktion einer Anwendung am präzisesten zusammen?
+
+Antwortmöglichkeiten:
+- ~Diese Konzepte definieren gemeinsam das anwendungsspezifische Vokabular (Begriffe), die Struktur der Kommunikationsanforderungen und -erwartungen (Protokollelemente) sowie die zu erwartenden Verhaltensweisen und Zustandsänderungen der Anwendung als Reaktion auf diese (Information zur Reaktion).
+- Die Konzepte beziehen sich primär auf die Sicherstellung der Datenintegrität, die Verschlüsselung von Übertragungsinhalten und die Etablierung zuverlässiger End-to-End-Verbindungen für jede spezifische Anwendung.
+- Sie spezifizieren, wie Daten über das Netzwerk in Binärform kodiert werden müssen, welche Transportprotokolle zu verwenden sind und wie Fehler in der Datenübertragung erkannt und korrigiert werden.
+- Die drei Kernaufgaben legen fest, welche physischen Schnittstellen für die Netzwerkverbindung zu verwenden sind, wie die IP-Adressierung erfolgt und wie der Netzwerkzugriff auf die Anwendungsebene abgebildet wird.

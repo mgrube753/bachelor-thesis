@@ -1,0 +1,13 @@
+```markdown
+Frage: Die Data Link Layer erfüllt mehrere wichtige Funktionen in der Netzwerkkommunikation, darunter Fehlermaskierung, Flussregulierung und Medienzugriffskontrolle. Analysieren Sie, wie sich die Anforderungen an die Data Link Layer in modernen Hochgeschwindigkeitsnetzwerken im Vergleich zu traditionellen Netzwerken verändert haben könnten und welche neuen Herausforderungen oder Trade-offs bei der Implementierung dieser drei Hauptfunktionen entstehen könnten.
+
+Antwort: ~Eine mögliche Analyse könnte folgende Aspekte umfassen:
+
+1. Fehlermaskierung: In Hochgeschwindigkeitsnetzwerken könnten komplexere Fehlerkorrekturalgorithmen nötig sein, jedoch führen diese zu höherer Verarbeitungszeit. Moderne Netzwerke könnten daher auf weniger rechenintensive Prüfsummen setzen und Fehlerkorrektur höheren Schichten überlassen.
+
+2. Flussregulierung: Bei hohen Datenraten wird die Latenz der Bestätigungsmechanismen kritischer. Moderne Implementierungen könnten größere Sliding-Window-Protokolle, vorausschauende Übertragungen oder Rate-Based-Mechanismen statt traditioneller Stop-and-Wait-Ansätze verwenden.
+
+3. Medienzugriffskontrolle: In Hochgeschwindigkeitsnetzwerken könnte die Kollisionserkennung ineffizient werden, weshalb Kollisionsvermeidungstechniken oder deterministische Zuweisungsmethoden bevorzugt werden. Gleichzeitig müssen moderne MAC-Protokolle mit variabler Dienstgüte (QoS) und heterogenen Geräteanforderungen umgehen können.
+
+Der zentrale Trade-off liegt zwischen Optimierung für Geschwindigkeit, Zuverlässigkeit und Flexibilität, wobei unterschiedliche Netzwerkumgebungen verschiedene Prioritäten setzen müssen.
+```

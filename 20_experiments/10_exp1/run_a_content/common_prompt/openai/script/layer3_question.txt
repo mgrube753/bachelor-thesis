@@ -1,0 +1,2 @@
+Korrekte Antwort: Routing
+Frage: Welche Kernaufgabe der Netzwerkschicht (Layer 3) beschreibt die Auswahl der vermittelnden Zwischenknoten zur Kommunikation zwischen nicht direkt verbundenen Knoten?

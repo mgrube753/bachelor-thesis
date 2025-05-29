@@ -1,0 +1,3 @@
+Frage: In welcher Schicht des ISO-OSI-Modells ist das HTTP-Protokoll angesiedelt?
+
+Korrekte Antwort: Application Layer (Anwendungsschicht)

@@ -1,0 +1,8 @@
+KORREKTE ANTWORT: A
+
+Welche der drei Kernaufgaben des Physical Layer (Schicht 1) des ISO-OSI-Modells ist gemäß der Beschreibung für die Abbildung physikalischer Werte auf logische Größen zuständig?
+
+A. Verschlüsselung
+B. Speicherung
+C. Kompression
+D. Keine der genannten Aufgaben

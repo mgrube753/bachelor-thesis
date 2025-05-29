@@ -1,0 +1,8 @@
+**Frage: Welche drei Parameter werden im Text als "wesentliche Parameter in Quality of Service (QoS)" auf der Transport-Schicht des OSI-Modells genannt?**
+
+**Korrekte Antwort: Bandbreite, Latenz, Jitter**
+
+Mögliche falsche Antworten:
+- Adressierung, Flusssteuerung, Fehlerrate
+- Fehlerrate, Bandbreite, Adressierung
+- Latenz, Adressierung, Dienstqualität

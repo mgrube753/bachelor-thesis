@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Aussagen stellt einen Widerspruch zur traditionellen Konzeption des Session Layers (Schicht 5) im ISO-OSI-Modell dar, wenn man die im Text beschriebenen Eigenschaften betrachtet?
+
+Antwortmöglichkeiten:
+- ~Die Beschreibung des Session Layers als zuständig für "verbindungslosen Datenaustausch", da es traditionell für die Verwaltung von Sitzungen und Verbindungen verantwortlich ist
+- Die Atomisierung von Datenpaketen in Einzelteile, da dies nicht zu den Kernaufgaben des Session Layers gehört
+- Die asynchrone Kommunikation ohne Zwischenpunkte und Bestätigungen, da das Session Layer typischerweise synchrone Kommunikation unterstützt
+- Die Erstellung und Verwerfung von Datagrammen, da diese Funktionalität ausschließlich in Schicht 4 (Transport Layer) angesiedelt ist
+```

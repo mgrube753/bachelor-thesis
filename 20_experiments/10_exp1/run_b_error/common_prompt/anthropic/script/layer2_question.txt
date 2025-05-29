@@ -1,0 +1,7 @@
+**Frage: Welche der folgenden ist KEINE Kernaufgabe des Data Link Layers (Schicht 2) laut dem gegebenen Text?**
+
+A) Korrekte Antwort: Datenintegrität sicherstellen
+B) Fehlererzeugung
+C) Datenstau
+D) Fragmentierung
+E) Anonymisierung

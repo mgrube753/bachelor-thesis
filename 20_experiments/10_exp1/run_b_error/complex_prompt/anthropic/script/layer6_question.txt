@@ -1,0 +1,9 @@
+```markdown
+Frage: Warum ist die Presentation Layer des ISO-OSI-Modells bewusst auf "nur Entschlüsseln" und "nur Expandieren" beschränkt, anstatt auch Verschlüsselung und Komprimierung anzubieten? Welcher grundlegende Architekturgedanke des Schichtenmodells wird dadurch unterstützt?
+
+Antwortmöglichkeiten:
+- ~Diese Einwegfunktionalität unterstützt das Prinzip der Kapselung, indem die Presentation Layer sich auf die Aufbereitung der Daten für die Anwendungsschicht konzentriert, während die Vorbereitung ausgehender Daten in anderen Schichten oder außerhalb des Modells stattfindet
+- Diese Beschränkung existiert, weil Verschlüsselung und Komprimierung rechenintensive Operationen sind, die auf höheren Schichten effizienter implementiert werden können
+- Die Presentation Layer bietet in Wirklichkeit beide Richtungen an, der Text enthält einen Fehler in der Beschreibung der Kernaufgaben
+- Diese Einschränkung wurde eingeführt, um Kompatibilitätsprobleme zwischen verschiedenen Betriebssystemen zu vermeiden, die unterschiedliche Verschlüsselungs- und Komprimierungsalgorithmen verwenden
+```

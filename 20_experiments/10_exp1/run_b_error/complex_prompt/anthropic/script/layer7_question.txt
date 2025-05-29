@@ -1,0 +1,9 @@
+```markdown
+Frage: Welcher der folgenden Aspekte ist KEIN konzeptioneller Vorteil, der sich aus den drei Kernaufgaben der Anwendungsschicht (Layer 7) des OSI-Modells ergibt, und warum ist diese Antwort falsch?
+
+Antwortmöglichkeiten:
+- Erhöhte Betriebssystemunabhängigkeit durch Universalkonzepte, die für alle Anwendungen gültig sind
+- ~Schnellere Datenübertragungsraten durch die Standardisierung von Elementen und Datenstrukturen
+- Vereinfachte Entwicklung neuer Anwendungen durch hohe Systematisierung und Wiederverwendbarkeit
+- Verbesserte Interoperabilität zwischen verschiedenen Anwendungen durch definiertes Standardverhalten
+```

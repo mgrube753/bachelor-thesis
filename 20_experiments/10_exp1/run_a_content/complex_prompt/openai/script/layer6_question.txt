@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Aufgaben fällt NICHT in den Verantwortungsbereich der Präsentationsschicht (Layer 6) des ISO-OSI-Modells?
+
+Antwortmöglichkeiten:  
+- Endian-Konvertierung  
+- Zeichensatzumwandlung  
+- Datenkompression  
+- Verschlüsselung  
+- ~Wegewahl (Routing)

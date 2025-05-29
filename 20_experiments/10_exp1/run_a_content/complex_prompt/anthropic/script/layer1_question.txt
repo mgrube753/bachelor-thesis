@@ -1,0 +1,9 @@
+```markdown
+Frage: Ein Netzwerkingenieur muss ein neues System für die Datenübertragung in einer industriellen Umgebung mit starken elektromagnetischen Störfeldern entwickeln. Welche Anpassung auf der Physical Layer wäre am effektivsten, um die Datenintegrität zu maximieren, und wie würde sich diese Anpassung auf die anderen Kernaufgaben dieser Schicht auswirken?
+
+Antwortmöglichkeiten:
+- [Erhöhung der Übertragungsleistung, um das Signal-Rausch-Verhältnis zu verbessern, was jedoch die Decodierung erschwert, da Detektionsbereiche neu kalibriert werden müssen]
+- ~[Implementierung einer robusteren Codierungsmethode wie Manchester-Codierung, die durch ihre Selbsttaktung und eingebaute Fehlererkennung sowohl den Transport unter Störeinflüssen verbessert als auch die Decodierung zuverlässiger macht]
+- [Einsatz medienfrei übertragender Technologien wie Funk, wodurch elektromagnetische Störfelder umgangen werden, jedoch die Codierung und Decodierung komplexer wird]
+- [Reduzierung der Datenrate, was die Störanfälligkeit verringert, aber die Effizienz des Transports beeinträchtigt und keine direkte Verbesserung der Codierungs- und Decodierungsprozesse bietet]
+```

@@ -1,0 +1,9 @@
+```markdown
+Frage: Betrachten Sie ein Szenario, in dem ein multinationaler Konzern ein globales Netzwerk betreibt, das unterschiedliche lokale Netzwerke mit variierenden Protokollen und Adressierungsschemen verbindet. Die Netzwerkbelastung schwankt stark je nach Tageszeit und geografischer Region. Welche Aussage beschreibt am präzisesten die optimale Strategie für die Netzwerkschicht in diesem Kontext?
+
+Antwortmöglichkeiten:
+- [Statisches Routing sollte implementiert werden, da es die zuverlässigste Methode für heterogene Netzwerke darstellt]
+- ~[Dynamisches Routing mit kontinuierlicher Anpassung an die aktuelle Netzwerkauslastung kombiniert mit Protokollübersetzungsmechanismen zwischen heterogenen Netzwerken bietet die beste Lösung]
+- [Die Implementierung eines reinen Broadcast-Netzwerks würde die Komplexität der Netzwerkschicht erheblich reduzieren und ist daher optimal]
+- [Routing sollte nur zu Beginn jeder Kommunikationssitzung festgelegt werden, um sowohl Flexibilität als auch Konsistenz zu gewährleisten]
+```

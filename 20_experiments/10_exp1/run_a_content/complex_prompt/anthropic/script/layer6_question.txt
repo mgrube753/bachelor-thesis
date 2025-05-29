@@ -1,0 +1,9 @@
+```markdown
+Frage: Ein Unternehmen entwickelt eine internationale Anwendung, die zwischen Systemen mit unterschiedlichen Architekturtypen Daten übertragen muss. Bei der Übertragung werden die Daten zunächst binär codiert, dann komprimiert, anschließend verschlüsselt und schließlich vom Empfänger über das Netzwerk empfangen. Bei welchem der folgenden Szenarien wäre ein Fehler in der Presentation Layer (Schicht 6) des OSI-Modells die wahrscheinlichste Ursache für Probleme?
+
+Antwortmöglichkeiten:
+- [Die Übertragung wird wiederholt unterbrochen und muss neu gestartet werden]
+- [Der Empfänger erhält die Daten, kann aber die Absenderadresse nicht verifizieren]
+- ~[Text mit Umlauten wird korrekt gesendet, erscheint aber beim Empfänger mit falschen Sonderzeichen]
+- [Die Daten kommen an, aber die Anwendung des Empfängers stürzt beim Öffnen ab]
+```

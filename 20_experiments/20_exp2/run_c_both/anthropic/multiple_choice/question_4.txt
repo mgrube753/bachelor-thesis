@@ -1,0 +1,9 @@
+```markdown
+Frage: Analysieren Sie die im Text beschriebenen Funktionen des Data Link Layers und bestimmen Sie, welche der folgenden Aussagen die Beziehung zwischen den verschiedenen Aufgaben dieser Schicht am treffendsten beschreibt.
+
+Antwortmöglichkeiten:
+- ~Die Funktionen des Data Link Layers bilden ein zusammenhängendes System zur Gewährleistung zuverlässiger Punkt-zu-Punkt-Kommunikation, wobei Fehlermasking, Datenregulierung und Kanalzugriffskontrolle unterschiedliche Aspekte desselben Problems adressieren.
+- Die Hauptaufgaben des Data Link Layers sind unabhängig voneinander und dienen primär zur Unterstützung der Funktionen höherer Schichten, ohne eigene Fehlerbehandlung zu implementieren.
+- Der Data Link Layer befasst sich ausschließlich mit der Übertragung von Frames, während die Fehlerkorrektur und Flusssteuerung vollständig in der physikalischen Schicht implementiert sind.
+- Die Funktionen des Data Link Layers dienen hauptsächlich dazu, Broadcast-Netzwerke zu verwalten, während Punkt-zu-Punkt-Verbindungen diese Schicht weitgehend umgehen können.
+```

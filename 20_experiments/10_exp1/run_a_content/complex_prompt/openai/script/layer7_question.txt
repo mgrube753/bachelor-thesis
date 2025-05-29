@@ -1,0 +1,3 @@
+Frage: Inwiefern beeinflussen die Protokollelemente der Anwendungsschicht (Layer 7) das Verhalten einer konkreten Anwendung, und weshalb führt diese Abhängigkeit dazu, dass innerhalb der Application Layer nur eine geringe Systematisierung möglich ist?
+
+Antwort: ~Die Protokollelemente legen fest, welche Anforderungen eine Anwendung stellen darf und welche Datenformate dabei erwartet werden; das Verhalten der Anwendung ergibt sich direkt daraus, wie sie auf genau diese spezifizierten Anforderungen reagiert. Weil jede Anwendung ihre eigenen, oft einzigartigen Konzepte, Protokollelemente und Verhaltensweisen definiert, variiert die Ausgestaltung von Layer 7 stark von Fall zu Fall, wodurch eine einheitliche, allgemeingültige Systematisierung kaum möglich ist.

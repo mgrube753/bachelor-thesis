@@ -1,0 +1,3 @@
+Frage: Analysieren Sie den obigen Abschnitt und ordnen Sie jede der drei dort genannten Hauptherausforderungen im Data-Link-Layer (A: Übertragungsfehler, B: Geschwindigkeitsunterschiede zwischen Sender und Empfänger, C: gemeinsamer Kanal in Broadcast-Netzen) dem Mechanismus bzw. der Sublayer zu, mit dem sie laut Text bewältigt wird.  
+
+Antwort: ~A → Framing + Acknowledgement-Rahmen zur Fehlermaskierung; B → Verkehrs-/Flusskontrollmechanismus zur Regulierung des Senders; C → Medium Access Control (MAC)-Sublayer zur Kanalzugriffssteuerung

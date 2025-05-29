@@ -1,0 +1,10 @@
+```markdown
+Frage: Der Instruktionstext beschreibt die Hauptaufgabe des Data Link Layer als die "Bereitstellung einer fehlergesicherten Übertragung über einen möglicherweise nicht fehlergesicherten Physical Layer". Welche der fünf Kernaufgaben des Data Link Layer ist primär und direkt dafür verantwortlich, die *Fehlerfreiheit* dieser Übertragung zu gewährleisten, während andere Aufgaben sich eher auf die *effiziente und geordnete Bereitstellung* der Übertragung konzentrieren?
+
+Antwortmöglichkeiten:
+- Flußkontrolle
+- Medienzugriff
+- ~Fehlerkontrolle
+- Identifikation
+- Segmentierung
+```

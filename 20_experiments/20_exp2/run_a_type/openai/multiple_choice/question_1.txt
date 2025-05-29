@@ -1,0 +1,9 @@
+```markdown
+Frage: Welches der folgenden Probleme wird gemäß dem Text explizit in der Sicherungsschicht – gegebenenfalls durch ihre Medium-Access-Control-Unterschicht – gelöst und nicht erst in höheren OSI-Schichten?
+
+Antwortmöglichkeiten:
+- ~Die Steuerung des Zugriffs mehrerer Stationen auf ein gemeinsames Übertragungsmedium in Broadcast-Netzen.
+- Die Auswahl des optimalen Routers entlang eines Ende-zu-Ende-Pfades durch mehrere Netze.
+- Die Priorisierung konkurrierender Transportströme zur Vermeidung von Überlastungen im Gesamtnetz.
+- Die transparente Verschlüsselung und Entschlüsselung von Nutzdaten für Ende-zu-Ende-Sicherheit.
+```

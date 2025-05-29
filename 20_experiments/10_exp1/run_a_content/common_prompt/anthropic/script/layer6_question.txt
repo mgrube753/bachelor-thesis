@@ -1,0 +1,13 @@
+Frage: Welche der folgenden Aufgaben gehören zu den 4 Kernaufgaben des Presentation Layer (Schicht 6) im ISO-OSI-Modell?
+
+Korrekte Antworten:
+- Konvertierung der Datendarstellung (Endian-Ness)
+- Konvertierung der Zeichendarstellung
+- Komprimieren und Dekomprimieren
+- Verschlüsseln und Entschlüsseln
+
+Falsche Antworten:
+- Routing von Datenpaketen
+- Fehlererkennung und -korrektur
+- Aufbau und Verwaltung von Verbindungen
+- Segmentierung von Daten

@@ -1,0 +1,8 @@
+Frage: Welcher Kernaufgabe des Data-Link-Layers kommt die Hauptverantwortung zu, wenn in einem bidirektionalen Funknetz Sender und Empfänger stark unterschiedliche Verarbeitungsraten besitzen und deshalb Zwischenpuffer überlaufen könnten, obwohl keinerlei Bitfehler auftreten?
+
+Antwortmöglichkeiten:
+- ~Flußkontrolle
+- Fehlerkontrolle
+- Segmentierung
+- Medienzugriff
+- Identifikation

@@ -1,0 +1,3 @@
+Antwort: Datenformat
+
+Frage: Wie heißt die Kernaufgabe der Presentation Layer (Schicht 6) im ISO-OSI-Modell, die sich mit der Vereinheitlichung der Datendarstellung (z. B. nur Big-Endian, ein einziges Serialisierungs-Format) befasst?

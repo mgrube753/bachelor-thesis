@@ -1,0 +1,3 @@
+Frage: In einer verteilten Speichertransaktion soll verhindert werden, dass zwei Prozesse gleichzeitig denselben kritischen Schreibzugriff ausführen. Welcher spezifische Dienst der Session-Layer-Services wird hierbei eingesetzt und warum ist er dafür geeignet?
+
+Antwort: ~Der Token-Management-Dienst, weil er durch die Vergabe eines exklusiven „Tokens“ sicherstellt, dass stets nur der Inhaber dieses Tokens den kritischen Schreibzugriff ausführen darf und somit gleichzeitige konkurrierende Operationen unterbindet.

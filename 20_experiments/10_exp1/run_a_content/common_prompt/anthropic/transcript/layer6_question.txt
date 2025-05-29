@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Aufgaben gehören zu den Hauptfunktionen des Presentation Layers (Schicht 6) im ISO-OSI-Modell?
+
+Korrekte Antwort: Alle genannten Funktionen (A, B, C und D) gehören zu den Hauptaufgaben des Presentation Layers.
+
+A) Konvertierung zwischen Little Endian und Big Endian Datendarstellung
+B) Umwandlung verschiedener Zeichenkodierungen (ASCII, Unicode, EBCDIC)
+C) Kompression und Dekompression von Daten
+D) Verschlüsselung und Entschlüsselung von Daten

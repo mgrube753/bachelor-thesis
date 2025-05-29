@@ -1,0 +1,3 @@
+Frage: Im Hinblick auf die Zielsetzung eines verbindungslosen Datenaustauschs in der Session Layer 5: Welche der drei beschriebenen Kernaufgaben eliminiert explizit die Notwendigkeit, Zustandsinformationen über bereits übermittelte Pakete zu speichern, und warum?
+
+Antwort: ~Die Kernaufgabe „Datagramme“ – weil das sofortige Verwerfen nach dem Senden bzw. Empfangen verhindert, dass die Schicht Zustands- oder Verlaufinformationen zu einzelnen Paketen aufrechterhalten muss.

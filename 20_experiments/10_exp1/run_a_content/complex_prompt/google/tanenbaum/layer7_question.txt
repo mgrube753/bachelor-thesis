@@ -1,0 +1,7 @@
+Frage: Der gegebene Text beschreibt die Anwendungsschicht des ISO-OSI-Modells und führt beispielhaft HTTP, Dateitransfer, E-Mail und Netzwerk-News-Protokolle an. Welche primäre Eigenschaft dieser Protokolle, die auch in ihrer Funktion zum Ausdruck kommt, legitimiert ihre Platzierung in der Anwendungsschicht gemäß der hier vermittelten Darstellung?
+
+Antwortmöglichkeiten:
+- Ihre Fähigkeit, Datenpakete effizient über verschiedene Netzwerke zu routen.
+- ~Ihre direkte Interaktion mit Endbenutzeranwendungen und die Bereitstellung spezifischer Dienste für diese.
+- Ihr Fokus auf die zuverlässige Übertragung von Datenströmen zwischen zwei Endpunkten.
+- Ihre Zuständigkeit für die Übersetzung von Datenformaten zur plattformübergreifenden Kommunikation.

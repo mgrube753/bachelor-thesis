@@ -1,0 +1,9 @@
+```markdown
+Frage: Warum ist im OSI-Modell speziell bei der Anwendungsschicht (Application Layer) eine umfassende Systematisierung schwieriger zu realisieren als bei den darunterliegenden Schichten, und welche architektonische Konsequenz ergibt sich daraus für die Entwicklung von Anwendungsprotokollen?
+
+Antwortmöglichkeiten:
+- ~Die starke Abhängigkeit von spezifischen Anwendungsfällen führt dazu, dass jedes Anwendungsprotokoll eigene Begriffe, Anforderungen und Verhaltensweisen definieren muss, was eine universelle Systematisierung verhindert und zur Entwicklung spezialisierter, anwendungsspezifischer Protokolle statt eines einheitlichen Frameworks führt.
+- Die Anwendungsschicht ist technisch komplexer als andere Schichten, weshalb eine Systematisierung zu rechenintensiv wäre und daher Protokolle auf dieser Ebene bewusst minimalistisch gehalten werden.
+- Die OSI-Standardisierungsgremien haben die Anwendungsschicht bewusst offen gelassen, um künftige technologische Entwicklungen nicht einzuschränken, was zu einer gewollten Fragmentierung führte.
+- Die Anwendungsschicht wurde historisch zuletzt definiert, als die Standardisierungsbemühungen bereits nachließen, wodurch eine vollständige Systematisierung aus zeitlichen Gründen nicht mehr durchgeführt werden konnte.
+```

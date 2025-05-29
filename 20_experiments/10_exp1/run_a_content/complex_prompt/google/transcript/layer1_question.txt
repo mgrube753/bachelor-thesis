@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt die drei Kernaufgaben des Physical Layers: Codierung, Transport und Dekodierung. Welche der folgenden Aussagen beschreibt am präzisesten die *funktionale Beziehung* zwischen diesen Aufgaben im Kontext der Datenaustauschprozesse auf diesem Layer, basierend auf den gegebenen Beschreibungen?
+
+Antwortmöglichkeiten:
+- Die Codierung definiert die physikalische Repräsentation logischer Daten, während der Transport die Übertragung dieser Repräsentation ermöglicht, und die Dekodierung die ursprünglichen logischen Daten aus der physikalischen Repräsentation wiederherstellt.
+- Transport ist die Voraussetzung für Codierung und Dekodierung, da ohne physische Übertragung keine Umwandlung oder Rückinterpretation stattfinden kann.
+- ~Codierung und Dekodierung stellen die bidirektionale Abbildung zwischen logischen Werten und physikalischen Größen her, wobei der Transport die Bewegung der resultierenden physikalischen Größen zwischen diesen Abbildungspunkten ermöglicht.
+- Alle drei Aufgaben sind gleichwertige, unabhängige Prozesse, die parallel auf dem Physical Layer ablaufen, um die Datenintegrität zu gewährleisten.

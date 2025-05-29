@@ -1,0 +1,8 @@
+**Korrekte Antwort: c)**
+
+Welche der folgenden Funktionen gehört NICHT zu den Aufgaben der Sitzungsschicht (Session Layer) im ISO-OSI-Modell?
+
+a) Dialog-Kontrolle (Nachverfolgen, wer an der Reihe ist zu übertragen)
+b) Token-Management (Verhindern gleichzeitiger kritischer Operationen)
+c) Routing von Datenpaketen zwischen verschiedenen Netzwerken
+d) Synchronisation (Setzen von Prüfpunkten bei langen Übertragungen)

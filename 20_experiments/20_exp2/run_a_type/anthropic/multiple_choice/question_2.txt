@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche fundamentale architektonische Überlegung spiegelt sich in der Organisation der Data Link Layer wider, besonders im Kontext von Broadcast-Netzwerken?
+
+Antwortmöglichkeiten:
+- ~Die Trennung von allgemeiner Fehlerkorrektur und spezifischer Kanalzugriffskontrolle durch eine dedizierte Sublayer-Struktur
+- Die vollständige Integration aller Netzwerkfunktionen in eine monolithische Schicht zur Optimierung der Datenübertragungsgeschwindigkeit
+- Die Priorisierung der Flusssteuerung über Fehlerkorrekturmechanismen, um Datenverlust zu minimieren
+- Die Eliminierung von Bestätigungsframes zugunsten einer verbesserten Netzwerkeffizienz bei Broadcast-Übertragungen
+```

@@ -1,0 +1,5 @@
+Frage: Listen Sie anhand des Textes die drei wesentlichen Aufgaben der Data Link Layer im ISO-OSI-Modell auf.
+
+Antwort: ~1. Umwandeln eines rohen Übertragungskanals in eine scheinbar fehlerfreie Leitung durch Rahmenbildung, Fehlererkennung und Bestätigungen  
+~2. Verkehrsregulierung (Flow Control), um einen schnellen Sender daran zu hindern, einen langsamen Empfänger zu überfluten  
+~3. Zugriffssteuerung auf ein gemeinsames Übertragungsmedium durch die Medium-Access-Control-Sublayer

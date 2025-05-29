@@ -1,0 +1,3 @@
+Frage: Welche der im Text genannten „Kernaufgaben“ steht in ihrem Zweck am deutlichsten im Widerspruch zur üblichen Funktion des Data-Link-Layers im OSI-Modell, und warum?
+
+Antwort: ~Die „Fehlererzeugung“, denn das Data-Link-Layer soll Übertragungsfehler erkennen und korrigieren, nicht aktiv ignorieren, verursachen oder verschleiern.

@@ -1,0 +1,3 @@
+Richtige Antwort: Transportschicht (Layer 4)
+
+Frage: Welche Schicht des ISO/OSI-Modells übernimmt die Bereitstellung einer Speicherung für festgelegte Teilnehmerpaare eines Netzes, identifiziert Geräte-spezifische Kennungen, ignoriert Teilnehmer-Charakteristika beim Datenstau und erbringt einen Speicherdienst ohne Quality-of-Service-Garantien?

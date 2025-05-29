@@ -1,0 +1,3 @@
+Richtige Antwort: Application Layer (Schicht 7)
+
+Frage: Welche ISO/OSI-Schicht abstrahiert spezifische Anwendungselemente zu generischen Funktionen und definiert universelle Konzepte, Standardelemente sowie Standardverhalten?

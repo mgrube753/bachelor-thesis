@@ -1,0 +1,2 @@
+Richtige Antwort: Adressierung, Routing und Flusssteuerung  
+Frage: Welche drei Kernaufgaben erfüllt der Network Layer im ISO-OSI-Modell laut Text?

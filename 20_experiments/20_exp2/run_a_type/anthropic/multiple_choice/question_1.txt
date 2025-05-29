@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Aussagen beschreibt am besten, wie die Datensicherungsschicht (Data Link Layer) mit unterschiedlichen Geschwindigkeiten von Sender und Empfänger umgeht, und warum ist dieser Mechanismus notwendig?
+
+Antwortmöglichkeiten:
+- ~Die Datensicherungsschicht implementiert einen Verkehrsregulierungsmechanismus, der dem Sender mitteilt, wann der Empfänger weitere Daten akzeptieren kann, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet.
+- Die Datensicherungsschicht teilt die Daten in Frames auf und wartet auf Bestätigungen, was automatisch dafür sorgt, dass die Übertragungsgeschwindigkeit der des langsamsten Teilnehmers entspricht.
+- Die Medium Access Control-Unterschicht der Datensicherungsschicht ist ausschließlich dafür verantwortlich, die Übertragungsgeschwindigkeit zwischen schnellen Sendern und langsamen Empfängern anzupassen.
+- Die Datensicherungsschicht benötigt keinen speziellen Mechanismus für unterschiedliche Geschwindigkeiten, da die physikalische Schicht bereits die Bitrate für alle Teilnehmer synchronisiert.
+```

@@ -1,0 +1,7 @@
+Frage: Der gegebene Text beschreibt, wie die Sicherungsschicht (Data Link Layer) eine "fehlerfreie" Übertragungsleitung für die darüberliegende Netzwerkschicht (Network Layer) bereitstellt. Obwohl die Hauptaufgabe die Fehlerbehandlung ist, werden zwei weitere zentrale Herausforderungen genannt. Erläutern Sie, warum die in Broadcast-Netzwerken auftretende Herausforderung der Zugriffssteuerung (Medium Access Control) als eine *spezielle Unterebene* innerhalb der Sicherungsschicht behandelt wird und welche Relevanz dies für das Schichtenmodell hat.
+
+Antwortmöglichkeiten:
+- Die Zugriffssteuerung ist eine untergeordnete Funktion, die nur in spezifischen Netzwerktopologien relevant ist und daher nicht die primären Aufgaben der Sicherungsschicht beeinflusst.
+- ~Die Zugriffssteuerung ist eine grundlegende Funktion, die sich spezifisch mit dem Konfliktmanagement auf gemeinsam genutzten physikalischen Medien befasst, eine Aufgabe, die so essenziell und von der eigentlichen Fehlerbehebung abstrahiert ist, dass eine eigene Unterebene ihre Komplexität und spezifische Natur besser kapselt und die Modularität des Schichtenmodells unterstreicht.
+- Die Trennung in eine Unterebene ist lediglich eine organisatorische Maßnahme, da die Funktion historisch später hinzugefügt wurde.
+- Die Zugriffssteuerung ist eine Funktion, die von der Netzwerkschicht implementiert wird, aber aufgrund der Komplexität in der Sicherungsschicht delegiert werden muss.

@@ -1,0 +1,8 @@
+Korrekte Antwort: c)
+
+Frage: Welche der folgenden Aufgaben gehört zum Application Layer (Layer 7) des ISO-OSI-Modells?
+
+a) Steuerung der physikalischen Übertragung von Bits  
+b) Aufbau, Pflege und Abbau von Verbindungen zwischen Netzendpunkten  
+c) Definition der Protokollelemente, mit denen Kommunikationspartner Anforderungen stellen und die erwarteten Daten festlegen  
+d) Bestimmung der optimalen Route für Datenpakete

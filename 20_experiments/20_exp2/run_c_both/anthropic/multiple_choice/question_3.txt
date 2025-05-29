@@ -1,0 +1,9 @@
+```markdown
+Frage: In einem Netzwerk beobachten Sie, dass ein leistungsstarker Server große Datenmengen an einen älteren Client-Computer sendet, was zu häufigen Datenverlusten führt. Welche Funktion der Datenverbindungsschicht würden Sie anwenden, um dieses Problem zu lösen?
+
+Antwortmöglichkeiten:
+- ~Implementieren eines Verkehrsregulierungsmechanismus, der dem Sender mitteilt, wann der Empfänger weitere Daten akzeptieren kann
+- Erhöhen der Framegröße, um die Anzahl der zu verarbeitenden Pakete zu reduzieren
+- Deaktivieren der Acknowledgement-Frames, um die Übertragungsgeschwindigkeit zu erhöhen
+- Umleiten des Datenverkehrs über die Medium Access Control Sublayer zur Priorisierung
+```

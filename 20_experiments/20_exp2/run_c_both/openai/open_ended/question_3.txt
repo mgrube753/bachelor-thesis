@@ -1,0 +1,6 @@
+Frage: Wenden Sie die im Text beschriebenen Mechanismen des Data-Link-Layers an, um für ein drahtloses Sensornetz (Broadcast-Umgebung) ein Verfahren zu entwerfen, das gleichzeitig  
+a) Übertragungsfehler zuverlässig erkennt und maskiert sowie  
+b) den Zugriff mehrerer Sensoren auf den gemeinsamen Funkkanal steuert.  
+Beschreiben Sie Schritt für Schritt, welche Data-Link-Funktionen Sie einsetzen, wie sie kombiniert werden und wie sie in dieser konkreten Situation zusammenwirken.
+
+Antwort: ~Verwenden Sie Rahmenbildung mit Prüfsumme (z. B. CRC) zur Fehlererkennung, nummerieren Sie jedes Daten-Frame und implementieren Sie ein ARQ-Schema (Stop-and-Wait oder Sliding Window) mit Quittungen, um erkannte Fehler zu maskieren. Integrieren Sie für den gemeinsamen Kanal ein Medium-Access-Control-Verfahren wie CSMA/CA oder alternativ eine zeitschlitzbasierte TDMA-Einplanung, um Kollisionen zu vermeiden und den Sensorsendern geregelten Zugriff zu geben. Die Sensoren senden nur, wenn der Kanal frei ist bzw. in ihrem Slot; die Basisstation bestätigt korrekte Frames, fehlerhafte werden erneut gesendet. So werden Fehler verborgen und gleichzeitiger Kanalzugriff beherrscht.

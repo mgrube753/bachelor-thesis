@@ -1,0 +1,8 @@
+Antwort: C
+
+Frage: Was ist die Hauptaufgabe der Datensicherungsschicht (Data Link Layer) im ISO-OSI-Modell?
+
+A) Die Umwandlung von logischen in physische Adressen
+B) Die Bereitstellung von Ende-zu-Ende-Verbindungen zwischen Anwendungen
+C) Die Umwandlung einer Übertragungsleitung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
+D) Die Aufrechterhaltung von Routing-Tabellen für die Weiterleitung von Paketen

@@ -1,0 +1,8 @@
+KORREKTE ANTWORT: C
+
+Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Physical Layers (Schicht 1) laut dem gegebenen Text?
+
+A) Die Verschlüsselung bildet physikalische Werte auf logische Größen ab.
+B) Die Speicherung umfasst sowohl medien-unabhängige als auch medien-gebundene Aufbewahrung logischer Größen.
+C) Die Signalübertragung über Kabel und Funkwellen.
+D) Die Kompression wandelt logische Größen in physikalische Werte um.

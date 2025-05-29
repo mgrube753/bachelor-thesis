@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Operationen entspricht den im Text spezifizierten Aufgaben der Presentation Layer (Schicht 6) des ISO/OSI-Modells?
+
+Antwortmöglichkeiten:
+- ~Umwandlung eines Little-Endian-Bitstroms in Big-Endian-Reihenfolge
+- Komprimieren eines Bitstroms, um Bandbreite zu sparen
+- Verschlüsselung eines bereits entschlüsselten Datenstroms zur Gewährleistung der Vertraulichkeit
+- Konvertierung eines UTF-8-kodierten Textes nach UTF-16, um Zeichensatzkompatibilität herzustellen

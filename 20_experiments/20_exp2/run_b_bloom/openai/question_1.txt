@@ -1,0 +1,7 @@
+Frage: Welche spezielle Teilschicht (Sublayer) der Sicherungsschicht ist in Broadcast-Netzen dafür zuständig, den Zugriff auf das gemeinsam genutzte Übertragungsmedium zu steuern?
+
+Antwortmöglichkeiten:
+- ~Medium Access Control (MAC) Sublayer
+- Logical Link Control (LLC) Sublayer
+- Transport Control Sublayer
+- Network Access Sublayer

@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Aussagen beschreibt NICHT eine der im Text genannten Hauptfunktionen der Datensicherungsschicht (Data Link Layer) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- ~Die Verschlüsselung der Daten zur Gewährleistung der Übertragungssicherheit
+- Die Maskierung von Übertragungsfehlern, sodass diese für die Netzwerkschicht unsichtbar bleiben
+- Die Regulierung des Datenverkehrs zwischen einem schnellen Sender und einem langsamen Empfänger
+- Die Steuerung des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken durch die Medium Access Control Sublayer
+```

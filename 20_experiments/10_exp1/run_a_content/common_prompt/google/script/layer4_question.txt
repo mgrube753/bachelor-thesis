@@ -1,0 +1,3 @@
+**Korrekte Antwort:** Sicherung der Quality of Service (QoS) mit Garantien für Bandbreite, Latenz, Jitter und Fehlerrate.
+
+**Frage:** Welche der folgenden Kernaufgaben des Transport Layer 4 (ISO-OSI-Modell) beinhaltet die Erbringung eines Kommunikationsdienstes mit spezifischen Garantien wie für Bandbreite oder Latenz?

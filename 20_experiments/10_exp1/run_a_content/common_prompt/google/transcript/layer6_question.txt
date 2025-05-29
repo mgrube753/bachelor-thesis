@@ -1,0 +1,7 @@
+A. Konvertierung von Datendarstellungen (z.B. Little/Big Endian), Zeichendarstellungen und die Bearbeitung von Kompression und Verschlüsselung.
+
+Welche der folgenden Hauptaufgaben fallen in die Zuständigkeit des Presentation Layer (Schicht 6) gemäß dem OSI-Modell, basierend auf dem gegebenen Text?
+A. Konvertierung von Datendarstellungen (z.B. Little/Big Endian), Zeichendarstellungen und die Bearbeitung von Kompression und Verschlüsselung.
+B. Die logische Adressierung und Wegewahl von Datenpaketen im Netzwerk.
+C. Die zuverlässige End-zu-End-Datenübertragung und Fehlerbehandlung.
+D. Die Steuerung und Verwaltung von Kommunikationssitzungen und Dialogen.

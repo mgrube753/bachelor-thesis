@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche Aussage beschreibt die korrekte Beziehung zwischen den Hauptfunktionen der Datenverbindungsschicht im Kontext des ISO-OSI-Modells?
+
+Antwortmöglichkeiten:
+- ~Die Datenverbindungsschicht maskiert reale Übertragungsfehler für die Netzwerkschicht, indem sie Daten in Frames aufteilt und Bestätigungsmechanismen implementiert, während sie gleichzeitig Verkehrsregulierung zwischen unterschiedlich schnellen Endpunkten ermöglicht.
+- Die Datenverbindungsschicht korrigiert alle Übertragungsfehler, bevor die Daten an die Netzwerkschicht weitergeleitet werden, und ist ausschließlich für die Zugriffskontrolle auf den Übertragungskanal verantwortlich.
+- Die Datenverbindungsschicht sammelt alle Frames und setzt sie erst dann zur Weiterleitung zusammen, wenn der gesamte Datenstrom empfangen wurde, um so Geschwindigkeitsunterschiede zwischen Sender und Empfänger auszugleichen.
+- Die Datenverbindungsschicht stellt primär die Ende-zu-Ende-Verbindung zwischen Sender und Empfänger her und verhindert durch ihre Medium Access Control-Sublayer, dass Daten von unautorisierten Empfängern abgefangen werden können.
+```

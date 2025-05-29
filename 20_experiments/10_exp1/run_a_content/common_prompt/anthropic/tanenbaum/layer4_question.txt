@@ -1,0 +1,9 @@
+**Korrekte Antwort: C**
+
+Welche Eigenschaft charakterisiert den Transport Layer im ISO-OSI-Modell am besten?
+
+A) Er kommuniziert ausschließlich mit benachbarten Netzwerkgeräten
+B) Er garantiert immer eine fehlerfreie Übertragung
+C) Er ist eine echte End-to-End-Schicht, die Daten vom Ursprung bis zum Ziel trägt
+D) Er bestimmt die physikalischen Verbindungsstandards zwischen Netzwerkknoten
+E) Er kann keine Nachrichten an multiple Ziele übertragen

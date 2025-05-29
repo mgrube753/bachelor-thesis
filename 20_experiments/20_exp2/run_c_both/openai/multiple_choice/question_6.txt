@@ -1,0 +1,7 @@
+Frage: Sie sollen für ein Broadcast-Netzwerk ein neues Datenlink-Protokoll konstruieren. Welche der folgenden zusammen­gestellten Entwürfe integriert alle im Text beschriebenen Mechanismen (Fehlermaskierung, Flusskontrolle und Kanalzugriff) zu einem kohärenten Ganzen?
+
+Antwortmöglichkeiten:
+- ~Segmentierung der Nutzdaten in fortlaufend nummerierte Frames mit Empfangsbestätigungen zur Fehlermaskierung, gleitendem Fenster zur Flusskontrolle sowie einer separaten Medium-Access-Control-Sublayer zur Koordinierung des Kanalzugriffs
+- Segmentierung der Nutzdaten in Frames und zyklische Redundanzprüfung; Flusskontrolle und Kanalzugriff werden dem Netzwerk- bzw. Anwendungslayer überlassen
+- Einsatz einer reinen Rundsendung ohne Frame-Struktur; Fehlerbehandlung erfolgt erst in der Vermittlungsschicht, während Flusskontrolle vollständig weggelassen wird
+- Nutzung einer Medium-Access-Control-Sublayer für den Kanalzugriff, jedoch Verzicht auf Empfangsbestätigungen und Flusskontrollverfahren, um Latenz zu minimieren

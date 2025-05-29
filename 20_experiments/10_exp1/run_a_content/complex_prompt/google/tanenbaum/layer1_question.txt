@@ -1,0 +1,7 @@
+Frage: Der bereitgestellte Text beschreibt mehrere Designfragen des Physical Layers. Welche der folgenden Aussagen fasst die *grundlegende* Designherausforderung des Physical Layers präzise zusammen und berücksichtigt dabei auch die Beispiele für spezifizierte Probleme?
+
+Antwortmöglichkeiten:
+- Der Physical Layer konzentriert sich primär auf die logische Adressierung und das Routing von Datenpaketen, um eine zuverlässige Übertragung sicherzustellen.
+- ~Die wesentliche Designherausforderung des Physical Layers besteht darin, die fehlerfreie Übertragung von binären Signalen über einen Kommunikationskanal zu gewährleisten, indem mechanische, elektrische und zeitliche Schnittstellen sowie die Darstellung von Bits definiert werden.
+- Die Hauptaufgabe des Physical Layers ist die Verwaltung von Netzwerkverbindungen und die dynamische Zuweisung von IP-Adressen an Endgeräte.
+- Der Physical Layer ist primär für die Flusskontrolle und Fehlererkennung auf Paketebene zuständig, um eine Überlastung des Netzwerks zu vermeiden.

@@ -1,0 +1,6 @@
+Frage: Fassen Sie zusammen, welche Aufgaben das Data Link Layer laut Text in den Bereichen Fehlerbehandlung, Flusskontrolle und Medium-Access-Control übernimmt, und erklären Sie kurz, wie es jede dieser Aufgaben erfüllt.
+
+Antwort: ~Das Data Link Layer
+1) zerlegt die eingehenden Daten in Frames und nutzt Quittungen, um Übertragungsfehler zu erkennen und vor höheren Schichten zu verbergen;  
+2) verhindert Überlastung eines langsameren Empfängers durch Flusskontrollmechanismen, die dem Sender anzeigen, wann weitere Frames gesendet werden dürfen;  
+3) regelt in Broadcast-Netzen den Zugriff mehrerer Stationen auf das geteilte Medium über die Medium-Access-Control-Sublayer, die Kollisionsvermeidung oder -auflösung sicherstellt.

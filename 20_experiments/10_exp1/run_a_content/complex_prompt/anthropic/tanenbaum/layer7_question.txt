@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche der folgenden Aussagen reflektiert am besten die konzeptionelle Rolle der Anwendungsschicht im ISO-OSI-Modell, basierend auf den im Text beschriebenen Charakteristiken und Beispielen?
+
+Antwortmöglichkeiten:
+- ~Die Anwendungsschicht stellt eine Sammlung standardisierter Protokolle bereit, die direkte Benutzerdienste ermöglichen, wie die Übertragung von Webseiten mittels HTTP
+- Die Anwendungsschicht ist hauptsächlich für die physische Übertragung von Datenpaketen zwischen verschiedenen Netzwerkknoten verantwortlich
+- Die Anwendungsschicht fungiert primär als Verschlüsselungsebene, die die Sicherheit der Datenkommunikation im World Wide Web gewährleistet
+- Die Anwendungsschicht dient ausschließlich als Vermittler zwischen den Transportprotokollen und sorgt für die Aufteilung von Datenpaketen
+```

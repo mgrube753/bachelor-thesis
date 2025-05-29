@@ -1,0 +1,8 @@
+Korrekte Antwort: d)
+
+Frage: Welche der folgenden Kernaufgaben des Data Link Layer 2 umfasst das Deaktivieren des Physical Layer?
+
+a) Fehlererzeugung  
+b) Anonymisierung  
+c) Datenstau  
+d) Medienverweigerung

@@ -1,0 +1,3 @@
+**Korrekte Antwort:** Codierung, Transport und Dekodierung
+
+Welche drei zentralen Kernaufgaben werden laut Text auf dem Physical Layer des ISO-OSI-Modells bereitgestellt?

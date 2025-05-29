@@ -1,0 +1,7 @@
+Frage: Angesichts der im Text beschriebenen Kernaufgaben des Session Layers 5 – "Datagramme" (spontanes Erstellen, Senden, Empfangen und sofortiges Verwerfen), "Asynchronität" (Vermeidung von Zwischenpunkten und Bestätigungen) und "Atomisierung" (Aufspaltung unabhängiger Datenpakete in Einzelteile) – welche Eigenschaft des Datenaustauschs wird durch die *kombinierte* Anwendung von "Datagramme" und "Asynchronität" am stärksten gefördert und welche mögliche Konsequenz ergibt sich daraus für die Zuverlässigkeit einer Kommunikationsbeziehung?
+
+Antwortmöglichkeiten:
+- Eine erhöhte Latenz aufgrund komplexer Bestätigungsprotokolle und somit eine Reduzierung der Datendurchsatzrate.
+- ~Eine Maximierung der Geschwindigkeit und Effizienz des Datentransports durch den Verzicht auf Overhead, was jedoch eine potenziell geringere oder nicht garantierte Zuverlässigkeit der Datenübermittlung zur Folge hat.
+- Die Bildung stabiler, zustandsbehafteter Verbindungen, welche die Wiederherstellung von Sitzungen bei Unterbrechungen ermöglichen.
+- Eine prioritäre Behandlung von Datenpaketen mit garantiertem Empfang in der korrekten Reihenfolge, selbst bei Netzüberlastung.

@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aufgaben liegt nach dem ISO/OSI-Modell primär in der Verantwortung der Network Layer, insbesondere um heterogene Netzwerke miteinander zu verbinden?
+
+Antwortmöglichkeiten:
+- Wiederherstellung verlorener Segmente durch erneutes Senden
+- Sequenzierung von Datenströmen, um die korrekte Reihenfolge zu garantieren
+- ~Bestimmung und dynamische Anpassung von Paketrouten über Netze mit unterschiedlichen Adressierungs- und Paketformaten
+- Ende-zu-Ende Verschlüsselung der Nutzdaten

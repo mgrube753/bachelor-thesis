@@ -1,0 +1,9 @@
+```markdown
+Frage: Der Presentation Layer (Schicht 6) im OSI-Modell ist für die Konvertierung von Datenformaten zwischen Anwendungen zuständig. Analysieren Sie folgendes Szenario: Ein deutscher Nutzer mit einem Little-Endian-System sendet eine Nachricht mit deutschen Umlauten an einen japanischen Nutzer, der ein Big-Endian-System mit Unicode-Unterstützung verwendet. Welche der folgenden Funktionen müsste der Presentation Layer in diesem Kommunikationsprozess NICHT zwingend ausführen?
+
+Antwortmöglichkeiten:
+- Die Umwandlung der Byte-Reihenfolge von Little-Endian zu Big-Endian
+- Die Konvertierung der deutschen Umlaute in das entsprechende Unicode-Format
+- ~Die Kompression der Daten zur Optimierung der Übertragungsgeschwindigkeit
+- Die Anpassung der Zeichenkodierung zwischen verschiedenen Standards
+```

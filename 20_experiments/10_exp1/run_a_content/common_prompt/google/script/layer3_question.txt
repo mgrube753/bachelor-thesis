@@ -1,0 +1,9 @@
+**KORREKTE ANTWORT: C**
+
+**Frage:** Basierend auf der gegebenen Beschreibung des Netzwerk Layers (Layer 3) im ISO-OSI-Modell, welche der folgenden Aussagen ist *keine* der drei Kernaufgaben dieses Layers?
+
+**Antwortmöglichkeiten:**
+A) Adressierung mit netzwerk-übergreifenden Adressen.
+B) Auswahl der vermittelnden Zwischenknoten für das Routing.
+C) Bereitstellung einer Übertragung zwischen Geräten in unterschiedlichen Netzwerken.
+D) Flusssteuerung, um Strategien bei zu schnellem Senden anzuwenden.

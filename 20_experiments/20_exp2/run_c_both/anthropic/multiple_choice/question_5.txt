@@ -1,0 +1,9 @@
+```markdown
+Frage: Bewerten Sie, welche der folgenden Aussagen die kritischste Schwachstelle in der Implementierung der Data Link Layer darstellt, wenn ein Netzwerk unter hoher Last betrieben wird.
+
+Antwortmöglichkeiten:
+- ~Ein unzureichender Verkehrsregulierungsmechanismus, der nicht verhindert, dass schnelle Sender langsame Empfänger mit Daten überfluten
+- Die Unfähigkeit der Data Link Layer, Übertragungsfehler vollständig zu eliminieren, anstatt sie nur zu maskieren
+- Der erhöhte Overhead durch die Aufteilung der Daten in Frames und die sequentielle Übertragung
+- Die Notwendigkeit von Bestätigungsframes (acknowledgements) bei jedem erfolgreichen Empfang eines Datenframes
+```

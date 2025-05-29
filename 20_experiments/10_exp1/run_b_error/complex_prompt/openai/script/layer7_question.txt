@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Schlussfolgerungen lässt sich auf Basis der drei im Text genannten Kernaufgaben der Anwendungsschicht (Universalkonzepte, Standardelemente, Standardverhalten) am schlüssigsten ableiten?
+
+Antwortmöglichkeiten:
+- ~Durch die Definition generischer Begriffe, wiederkehrender Anforderungen und standardisierter Reaktionen kann ein einziges abstraktes Modell auf unterschiedlichste Anwendungen angewandt werden, was hohe Wiederverwendbarkeit gewährleistet.
+- Die Anwendungsschicht legt hardware­spezifische Optimierungen fest, wodurch ihre Konzepte nur in eng abgegrenzten Szenarien einsetzbar sind.
+- Standardelemente der Anwendungsschicht ersetzen die darunterliegenden Schichten, sodass Transport- und Netzwerkschicht entfallen können.
+- Universalkonzepte der Anwendungsschicht ermöglichen es, jede Anwendung automatisch in Maschinencode der physischen Schicht zu übersetzen.

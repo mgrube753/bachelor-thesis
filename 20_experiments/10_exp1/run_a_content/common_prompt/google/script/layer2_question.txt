@@ -1,0 +1,8 @@
+[KORREKTE ANTWORT: B]
+
+Frage: Welche der folgenden Aufgaben gehört nicht zu den 5 Kernaufgaben des Data Link Layers (Schicht 2) im ISO-OSI-Modell, wie im gegebenen Text beschrieben?
+
+A. Fehlerkontrolle
+B. Routenfindung
+C. Segmentierung
+D. Medienzugriff

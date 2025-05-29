@@ -1,0 +1,5 @@
+Frage: Welches der drei im Text als „Kernaufgaben“ genannten Konzepte (Verschlüsselung, Speicherung, Kompression) liegt nach dem offiziellen ISO/OSI-Schichtenmodell am deutlichsten außerhalb des eigentlichen Verantwortungsbereichs der Physical Layer, und welche zwei zentralen Argumente aus der OSI-Systematik belegen diese Einordnung?
+
+Antwort: ~Speicherung  
+- Die Physical Layer ist ausschließlich für die Übertragung transienter elektrischer/optischer Signale zuständig und definiert keinerlei Mechanismen zur dauerhaften Datenhaltung.  
+- Die OSI-Systematik bezieht sich auf Kommunikationsprozesse zwischen Endsystemen; persistente Lokalspeicherung ist eine hostinterne Funktion, die von keinem Layer – schon gar nicht Layer 1 – spezifiziert wird.

@@ -1,0 +1,3 @@
+Antwort: Quality of Service (QoS)
+
+Frage: Wie nennt man im Transport Layer des ISO-OSI-Modells den Mechanismus, der Garantien für Bandbreite, Latenz, Jitter und Fehlerrate festlegt?

@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Eigenschaften gehört NICHT zu den Kernaufgaben der Session Layer 5 gemäß dem gegebenen Text?
+
+[RICHTIGE ANTWORT: Verbindungsorientierte Kommunikation mit Bestätigungsmechanismen]
+
+A) Spontanes Erstellen und Verwerfen von Datagrammen
+B) Verbindungsorientierte Kommunikation mit Bestätigungsmechanismen
+C) Vermeidung von Zwischenpunkten und Bestätigungen durch Asynchronität
+D) Aufspaltung unabhängiger Datenpakete in Einzelteile (Atomisierung)

@@ -1,0 +1,9 @@
+```markdown
+Frage: Erklären Sie, basierend auf dem bereitgestellten Text, die Hauptaufgaben und zusätzlichen Herausforderungen der Sicherungsschicht (Data Link Layer), indem Sie die korrekte Aussage auswählen, die diese Aspekte präzise zusammenfasst.
+
+Antwortmöglichkeiten:
+- Die Sicherungsschicht maskiert Übertragungsfehler, indem sie Daten in Frames zerlegt und den Empfang bestätigt; ihre Hauptaufgabe ist jedoch ausschließlich die effiziente Routenplanung innerhalb des Netzwerks.
+- Die Sicherungsschicht transformiert eine Rohleitung in eine fehlerfreie Übertragungsstrecke durch Frame-Verfahren und Bestätigungen; zudem regelt sie den Datenfluss zwischen Sender und Empfänger und steuert in Broadcast-Netzwerken den Medienzugriff über eine spezielle Unterschicht.
+- ~Die Sicherungsschicht ist primär dafür verantwortlich, eine Rohleitung in eine fehlerfrei erscheinende Strecke umzuwandeln, was durch die Zerlegung von Daten in Rahmen und den Einsatz von Bestätigungen erreicht wird; zusätzlich bewältigt sie das Problem der Flusskontrolle zwischen ungleichen Geschwindigkeiten von Sendern und Empfängern und reguliert den Zugriff auf gemeinsam genutzte Kanäle in Broadcast-Netzwerken durch die MAC-Unterschicht.
+- Die Sicherungsschicht konvertiert analoge Signale in digitale Daten und sorgt für die Ende-zu-Ende-Verschlüsselung, während sie gleichzeitig die Kommunikation zwischen Anwendungen auf verschiedenen Hosts ermöglicht.
+```

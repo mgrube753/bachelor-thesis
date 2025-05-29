@@ -1,0 +1,9 @@
+```markdown
+Frage: Im Kontext des Transport Layers (Schicht 4) werden verschiedene Anforderungen für unterschiedliche Anwendungstypen beschrieben. Welcher der folgenden QoS-Parameter wäre bei einer kritischen Fehlerkorrektur für ein Betriebssystem-Update am wichtigsten, und warum unterscheidet sich diese Priorisierung von den Anforderungen eines Echtzeit-Videostreams?
+
+Antwortmöglichkeiten:
+- [Jitter, da zeitliche Schwankungen bei der Übertragung größerer Datenpakete zu Komplikationen bei der Installation führen können]
+- [Bandbreite, da höhere Übertragungsraten die Fehlerrate durch redundante Übertragung ausgleichen können]
+- ~[Fehlerrate, da bei Software-Updates jedes fehlende oder verfälschte Bit die Funktionalität oder Sicherheit des Systems beeinträchtigen kann, während bei Videostreams einzelne Pixelfehler kaum wahrnehmbar sind]
+- [Latenz, da verzögerungsfreie Übertragung die Wahrscheinlichkeit von Übertragungsfehlern durch Timeouts minimiert]
+```

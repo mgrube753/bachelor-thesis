@@ -1,0 +1,8 @@
+Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Presentation Layer (Schicht 6) im ISO-OSI-Modell?
+
+Korrekte Antwort: c)
+
+a) Vereinheitlichung der Datendarstellung
+b) Ignorieren der Zeichendarstellung und Behandlung als reine Binärdaten
+c) Verschlüsselung von Daten zur sicheren Übertragung
+d) Entpacken (Expansion) von Daten

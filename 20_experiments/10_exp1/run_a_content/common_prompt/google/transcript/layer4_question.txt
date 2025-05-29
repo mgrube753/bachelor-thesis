@@ -1,0 +1,8 @@
+**A. Bandbreite, Latenz, Jitter, Fehlerrate**
+
+Welche der folgenden Parameter werden im Text als wesentliche Aspekte der Dienstqualität (Quality of Service) auf dem Transport Layer genannt?
+
+A. Bandbreite, Latenz, Jitter, Fehlerrate
+B. IP-Adresse, Portnummer, Protokoll
+C. Paketgröße, Routing-Tabelle, MAC-Adresse
+D. Topologie, Kabeltyp, Netzwerkkarten-Treiber

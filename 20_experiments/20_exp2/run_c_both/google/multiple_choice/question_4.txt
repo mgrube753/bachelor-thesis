@@ -1,0 +1,9 @@
+```markdown
+Frage: Analysieren Sie die im Text beschriebenen Kernfunktionen der Data Link Layer. Wie unterscheiden sich die Mechanismen, die darauf abzielen, eine Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung umzuwandeln, von jenen zur Regulierung des Datenflusses im Hinblick auf die primäre Problemstellung und deren Lösungsansatz?
+
+Antwortmöglichkeiten:
+- ~Die fehlerfreie Leitung konzentriert sich auf die Maskierung von Übertragungsfehlern durch den Austausch von Bestätigungen auf Frame-Ebene, während die Flusskontrolle das Überfluten eines langsamen Empfängers durch einen schnellen Sender mittels Verkehrsregulierungsmechanismen verhindern soll.
+- Die Mechanismen zur fehlerfreien Leitung dienen hauptsächlich der Adressierung und Weiterleitung von Datenpaketen, während die Flusskontrolle die Reihenfolge der Paketankünfte sicherstellt.
+- Die fehlerfreie Leitung optimiert die Zugriffskontrolle auf den gemeinsamen Kanal in Broadcast-Netzwerken, wohingegen die Flusskontrolle die Datenintegrität durch Prüfsummen gewährleistet.
+- Der Hauptzweck der fehlerfreien Leitung ist die Verschlüsselung von Daten, um unbefugten Zugriff zu verhindern, während die Flusskontrolle die physikalische Verbindung zwischen Geräten herstellt und aufrechterhält.
+```

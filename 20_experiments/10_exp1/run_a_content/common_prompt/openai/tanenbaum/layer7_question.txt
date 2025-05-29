@@ -1,0 +1,2 @@
+Antwort: Anwendungsschicht (Application Layer)  
+Frage: In welcher Schicht des ISO-OSI-Modells ist das Protokoll HTTP angesiedelt?

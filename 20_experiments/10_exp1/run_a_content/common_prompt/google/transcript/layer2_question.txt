@@ -1,0 +1,8 @@
+**Korrekte Antwort:** D) Routing
+
+**Frage:** Welche der folgenden Aufgaben gehört *nicht* zu den im Text genannten Verantwortlichkeiten des Data Link Layers (Schicht 2) im ISO-OSI-Modell?
+
+A) Fehlerkontrolle
+B) Flusskontrolle
+C) Segmentierung
+D) Routing

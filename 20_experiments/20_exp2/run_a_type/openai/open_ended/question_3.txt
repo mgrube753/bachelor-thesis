@@ -1,0 +1,6 @@
+Frage: Erläutern Sie, weshalb der Data-Link-Layer neben seiner Aufgabe der Fehlererkennung und -korrektur zusätzlich sowohl Flusskontrollmechanismen als auch ein Medium-Access-Control-(MAC)-Sub­layer benötigt. Diskutieren Sie zudem, welche konkreten Folgen in einem Netzwerk auftreten könnten, wenn einer dieser beiden Mechanismen fehlt oder fehlerhaft implementiert ist.
+
+Antwort: ~Während die Fehlerkontrolle sicherstellt, dass übertragene Frames unverfälscht beim Empfänger ankommen, löst sie weder das Geschwindigkeitsgefälle zwischen Sender und Empfänger noch das Problem des gleichzeitigen Zugriffs mehrerer Stationen auf ein gemeinsames Medium.  
+• Flusskontrolle verhindert, dass ein schneller Sender einen langsameren Empfänger mit Frames überflutet; ohne sie käme es zu Pufferüberläufen, Frame-Verlusten und erneutem Verkehrsaufkommen durch notwendige Wiederholungen.  
+• Das MAC-Sublayer koordiniert den Zugriff mehrerer Teilnehmer auf ein gemeinsames Übertragungsmedium; fehlt es oder arbeitet es fehlerhaft, resultieren Kollisionen, unfaire Bandbreitenverteilung und insgesamt verringerter Durchsatz.  
+Somit ergänzen Flusskontrolle und MAC die Fehlerkontrolle, um eine konsistente, effiziente und faire Datenübertragung sicherzustellen.

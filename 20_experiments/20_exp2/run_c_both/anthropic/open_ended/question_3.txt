@@ -1,0 +1,13 @@
+```markdown
+Frage: Untersuchen Sie, wie die Prinzipien der Datensicherungsschicht (Data Link Layer) in einem realen Netzwerkszenario angewendet werden können, bei dem ein Server mit hoher Übertragungsgeschwindigkeit Daten an mehrere Clients mit unterschiedlichen Empfangskapazitäten senden muss. Veranschaulichen Sie insbesondere, welche Mechanismen zur Fehlerkorrektur, Verkehrsregulierung und Medienzugriffskontrolle implementiert werden sollten, um eine zuverlässige Kommunikation zu gewährleisten.
+
+Antwort: ~Eine praktische Anwendung der Data Link Layer-Prinzipien in diesem Szenario würde folgende Aspekte umfassen:
+
+Für die Fehlerkorrektur: Der Server würde die zu übertragenden Daten in Frames angemessener Größe (z.B. 1000-1500 Bytes) aufteilen und sequentiell senden. Jeder Client würde den korrekten Empfang durch Acknowledgement-Frames bestätigen. Bei ausbleibenden Bestätigungen würde der Server die entsprechenden Frames erneut senden.
+
+Zur Verkehrsregulierung: Da die Clients unterschiedliche Empfangskapazitäten haben, müsste ein Flow-Control-Mechanismus implementiert werden. Dies könnte durch Sliding-Window-Protokolle realisiert werden, bei denen jeder Client seine aktuelle Empfangskapazität mitteilt. Der Server passt dann seine Senderate individuell für jeden Client an, um ein Überfluten langsamer Clients zu vermeiden.
+
+Für die Medienzugriffskontrolle: Da mehrere Clients auf den gemeinsamen Übertragungskanal zugreifen, würde die MAC-Sublayer Verfahren wie CSMA/CD (in Ethernet-Netzwerken) oder Token-Passing implementieren, um Kollisionen zu vermeiden und allen Teilnehmern faire Zugriffsmöglichkeiten zu bieten.
+
+Diese Implementierungen würden zusammen eine zuverlässige Kommunikation gewährleisten, indem sie Übertragungsfehler maskieren, Datenfluss regulieren und fairen Kanalzugriff ermöglichen.
+```

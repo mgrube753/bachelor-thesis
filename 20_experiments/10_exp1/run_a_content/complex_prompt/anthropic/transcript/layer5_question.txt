@@ -1,0 +1,9 @@
+```markdown
+Frage: Ein großes Softwareunternehmen entwickelt eine neue Anwendung zur Übertragung sensibler medizinischer Daten zwischen Krankenhäusern. Bei der Implementierung des ISO-OSI-Modells wird der Session Layer (Schicht 5) aus Zeitgründen minimalistisch umgesetzt. Welche kritischen Probleme könnten auftreten, wenn die Synchronisationsfunktion des Session Layers nicht vollständig implementiert wird?
+
+Antwortmöglichkeiten:
+- ~Bei Verbindungsabbrüchen während der Übertragung großer Patientendaten müsste die gesamte Übertragung neu gestartet werden, da keine Wiederaufnahmepunkte (Checkpoints) existieren
+- Die medizinischen Daten würden stets unverschlüsselt übertragen werden, da Verschlüsselung eine Hauptfunktion des Session Layers ist
+- Die Anwendung könnte keine gleichzeitigen Verbindungen zu mehreren Krankenhäusern aufbauen, da Multiplexing ausschließlich im Session Layer implementiert wird
+- Die Datenintegrität könnte nicht gewährleistet werden, da Prüfsummenberechnungen hauptsächlich im Session Layer stattfinden
+```

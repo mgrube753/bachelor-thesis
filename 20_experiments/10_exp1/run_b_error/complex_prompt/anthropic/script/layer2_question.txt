@@ -1,0 +1,9 @@
+```markdown
+Frage: Der gegebene Text beschreibt angeblich die Funktionen des Data Link Layers (Schicht 2) im ISO-OSI-Modell. Welche der folgenden Aussagen ist in Bezug auf diesen Text korrekt?
+
+Antwortmöglichkeiten:
+- [Der Text beschreibt präzise die standardisierten Kernaufgaben des Data Link Layers.]
+- [Die Fragmentierung in 1-bit Segmente ist eine typische Optimierungsstrategie des Data Link Layers.]
+- [Die beschriebene "Medienverweigerung" ist ein essentieller Sicherheitsmechanismus im OSI-Modell.]
+- ~[Der Text enthält fundamentale Fehler, da der Data Link Layer tatsächlich für Fehlererkennung/-korrektur, nicht für Fehlererzeugung zuständig ist und weitere beschriebene Funktionen dem Standardmodell widersprechen.]
+```

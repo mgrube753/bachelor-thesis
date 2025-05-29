@@ -1,0 +1,12 @@
+```markdown
+Frage: Stellen Sie sich vor, Sie entwickeln ein Kommunikationsprotokoll für ein Netzwerk, in dem ein Server regelmäßig große Datenmengen an mehrere Clients mit unterschiedlichen Verarbeitungsgeschwindigkeiten sendet. Wenden Sie die Konzepte des Data Link Layers an, um einen geeigneten Mechanismus zu entwerfen, der sowohl Übertragungsfehler erkennt als auch verhindert, dass langsamere Clients mit Daten überflutet werden. Beschreiben Sie konkret, wie Ihr Mechanismus funktionieren würde.
+
+Antwort: ~Ein geeigneter Mechanismus würde folgende Komponenten umfassen:
+1. Aufteilung der Daten in Frames fester oder variabler Größe (z.B. 1000 Bytes), um Übertragungsfehler besser lokalisieren zu können
+2. Implementierung eines Acknowledgement-Systems, bei dem jeder Client den korrekten Empfang jedes Frames bestätigen muss, bevor der nächste Frame gesendet wird
+3. Integration eines Flusskontrollmechanismus, bei dem jeder Client in seinem Acknowledgement seinen verfügbaren Pufferspeicher mitteilt (z.B. "Window Size")
+4. Anpassung der Senderate für jeden Client individuell basierend auf dessen Bestätigungsgeschwindigkeit und verfügbarem Puffer
+5. Bei Broadcast-Übertragungen: Implementierung eines Medium Access Control Mechanismus, der sicherstellt, dass alle Clients fair bedient werden und keine Kollisionen auftreten
+
+Dieser Mechanismus würde sicherstellen, dass Übertragungsfehler maskiert werden (Hauptaufgabe des Data Link Layers) und gleichzeitig eine Überlastung langsamer Clients verhindert wird.
+```

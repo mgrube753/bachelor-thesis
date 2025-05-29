@@ -1,0 +1,8 @@
+Frage: Was ist die Hauptaufgabe der Präsentationsschicht im ISO-OSI-Modell?
+
+Korrekte Antwort: Die Präsentationsschicht befasst sich mit der Syntax und Semantik der übertragenen Informationen und ermöglicht Computern mit unterschiedlichen internen Datenrepräsentationen die Kommunikation durch abstrakte Datenstrukturen und Standardkodierung.
+
+Weitere Antwortmöglichkeiten:
+- Die Präsentationsschicht ist für die Übertragung von Bits zuständig.
+- Die Präsentationsschicht stellt die physische Verbindung zwischen Netzwerkkomponenten her.
+- Die Präsentationsschicht ist für die Ende-zu-Ende-Kommunikation und Flusskontrolle verantwortlich.

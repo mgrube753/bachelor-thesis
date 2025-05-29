@@ -1,0 +1,5 @@
+```markdown
+Frage: Ein Hochleistungsserver (Sender) versucht, Daten an einen älteren Client (Empfänger) zu senden. Der Client kann die Daten nicht so schnell verarbeiten, wie der Server sie sendet. Gemäß den im Text beschriebenen Aufgaben der Data Link Layer im OSI-Modell, welche Mechanismen müsste die Data Link Layer *anwenden*, um sicherzustellen, dass der Client nicht durch einen Datenüberfluss "ertrinkt" und die Daten dennoch zuverlässig empfangen werden können?
+
+Antwort: ~Die Data Link Layer müsste einen Mechanismus zur *Flusskontrolle* (Traffic Regulation Mechanism) anwenden, der es dem Sender ermöglicht, zu erfahren, wann der Empfänger bereit ist, weitere Daten zu empfangen. Dies verhindert, dass der schnelle Sender den langsameren Empfänger mit zu vielen Daten "ertränkt". Zusätzlich würde für die zuverlässige Übertragung die Aufteilung der Daten in *Frames* und das Senden von *Empfangsbestätigungen* (Acknowledgement Frames) durch den Empfänger für jeden korrekt empfangenen Frame zum Einsatz kommen, um den zuverlässigen Empfang zu bestätigen und gegebenenfalls verlorene Frames erneut anzufordern.
+```

@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt die primären Aufgaben und Herausforderungen der Data Link Layer. Welche der folgenden Aussagen fasst die essenziellen Funktionen und die adressierten Probleme dieser Schicht, basierend auf dem bereitgestellten Text, am präzisesten zusammen?
+
+Antwortmöglichkeiten:
+- ~Die Data Link Layer ist primär dafür verantwortlich, die darunterliegende physische Übertragungseinrichtung vor Fehlern zu verbergen und eine scheinbar fehlerfreie Leitung für die darüberliegende Network Layer bereitzustellen, während sie gleichzeitig Mechanismen zur Flusskontrolle und bei Broadcast-Netzwerken zur Kanalzugriffskontrolle integriert.
+- Die Hauptaufgabe der Data Link Layer ist es, lediglich Übertragungsfehler zu erkennen und zu korrigieren, um sicherzustellen, dass keine Datenverluste auftreten, ohne jedoch den Datenfluss zwischen schnellen Sendern und langsamen Empfängern zu regulieren.
+- Die Data Link Layer konzentriert sich ausschließlich darauf, den Zugriff auf gemeinsame Kanäle in Broadcast-Netzwerken zu regeln, wobei die Fehlerbehandlung und Flusskontrolle primär von der Network Layer übernommen werden.
+- Die Data Link Layer wandelt lediglich Eingabedaten in Datenrahmen um und überträgt diese sequenziell, wobei die Zuverlässigkeit der Übertragung und die Fehlerbehandlung vollständig von der physischen Schicht gewährleistet werden.

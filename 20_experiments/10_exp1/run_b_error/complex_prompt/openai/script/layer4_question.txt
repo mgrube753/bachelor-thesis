@@ -1,0 +1,7 @@
+Frage: Ein Client fordert vom Netzwerk verbindliche Garantien hinsichtlich Bandbreite und Zugriffszeit. Welche der im Text beschriebenen Kernaufgaben des Transport Layer widerspricht diesem Wunsch am stärksten?
+
+Antwortmöglichkeiten:
+- ~Dienstquantität
+- Identifizierung
+- Datenstau
+- Fehlererkennung

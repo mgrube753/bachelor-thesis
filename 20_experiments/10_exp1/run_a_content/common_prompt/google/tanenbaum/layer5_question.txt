@@ -1,0 +1,8 @@
+**Korrekte Antwort: A**
+
+Frage: Welche der folgenden Dienstleistungen werden gemäß dem Text von der Sitzungsschicht (Session Layer) des ISO-OSI-Modells bereitgestellt?
+
+A) Dialogkontrolle, Token-Management und Synchronisierung
+B) Physikalische Adressierung und Fehlererkennung
+C) Routenwahl und logische Adressierung
+D) Datenformatierung und Verschlüsselung

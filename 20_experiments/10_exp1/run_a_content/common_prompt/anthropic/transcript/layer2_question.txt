@@ -1,0 +1,9 @@
+Frage: Welche der folgenden Aufgaben gehören zum Data Link Layer (Schicht 2) des ISO-OSI-Modells?
+
+Korrekte Antwort: Fehlerkontrolle, Flusskontrolle, Segmentierung, Identifikation und Medienzugriff
+
+Antwortmöglichkeiten:
+A) Fehlerkontrolle, Flusskontrolle, Segmentierung, Identifikation und Medienzugriff
+B) Fehlerkontrolle, Adressierung, Verschlüsselung, Routing und Übersetzung
+C) Sessionverwaltung, Flusskontrolle, Medienzugriff und Darstellung
+D) Fehlererkennung, Signalmodulation, Segmentierung und Datenkompression

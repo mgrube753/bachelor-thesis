@@ -1,0 +1,9 @@
+```markdown
+Frage: Basierend auf der Beschreibung der Data Link Layer, beurteilen Sie, welche der folgenden Aussagen die *kritischste und grundlegendste* Funktion dieser Schicht für die Bereitstellung eines zuverlässigen Kommunikationskanals für die Network Layer hervorhebt.
+
+Antwortmöglichkeiten:
+- ~Die primäre Funktion ist die Transformation einer fehleranfälligen Übertragungsleitung in eine scheinbar fehlerfreie Verbindung, indem Übertragungsfehler maskiert werden, was eine verlässliche Basis für höhere Schichten schafft.
+- Die wichtigste Aufgabe besteht darin, Mechanismen zur Flusskontrolle zu implementieren, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet.
+- Ihre Hauptbedeutung liegt in der Bereitstellung eines speziellen Sublayers, der den Zugriff auf gemeinsame Kanäle in Broadcast-Netzwerken regelt.
+- Die Kernfunktion ist das Aufteilen von Eingangsdaten in Frames und deren sequentielle Übertragung, um die Datenstruktur für die Netzwerkschicht zu optimieren.
+```

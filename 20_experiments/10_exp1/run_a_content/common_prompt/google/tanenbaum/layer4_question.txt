@@ -1,0 +1,9 @@
+**Richtige Antwort: A**
+
+**Frage:** Welche Eigenschaft unterscheidet die Transportschicht (und die darüberliegenden Schichten 4-7) grundlegend von den unteren Schichten (1-3) im ISO-OSI-Modell, gemäß dem bereitgestellten Text?
+
+**Antworten:**
+A) Sie agiert als echte Ende-zu-Ende-Schicht und ermöglicht die Kommunikation direkt zwischen der Quell- und der Zielanwendung.
+B) Sie ist dafür verantwortlich, Daten bei Bedarf in kleinere Einheiten aufzuteilen und an die Netzwerkschicht weiterzugeben.
+C) Sie bestimmt die Art des Dienstes, der der Sitzungsschicht zur Verfügung gestellt wird.
+D) Sie isoliert die oberen Schichten von Änderungen in der Hardware-Technologie.

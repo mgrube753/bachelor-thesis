@@ -1,0 +1,5 @@
+```markdown
+Frage: Beschreiben Sie die Hauptaufgabe des Data Link Layers, wie sie im Text dargestellt wird, und identifizieren Sie eine Methode, mit der diese Aufgabe erfüllt wird.
+
+Antwort: ~Die Hauptaufgabe des Data Link Layers besteht darin, eine rohe Übertragungseinrichtung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint, indem es die realen Fehler maskiert, sodass die Netzwerkschicht sie nicht sieht. Eine Methode, mit der dies erfüllt wird, ist, dass der Sender die Eingabedaten in Datenrahmen zerlegt und die Rahmen sequenziell überträgt.
+```

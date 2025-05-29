@@ -1,0 +1,7 @@
+Frage: Beim Transfer eines umfangreichen Datenstroms soll sichergestellt werden, dass nach einem Verbindungsabbruch nicht die komplette Übertragung erneut gestartet werden muss, sondern die Kommunikation an vordefinierten Checkpoints wiederaufgenommen werden kann. Auf welche spezifische Kernaufgabe der OSI-Schicht 5 bezieht sich diese Anforderung?
+
+Antwortmöglichkeiten:
+- ~Synchronisation
+- Sitzungen (Aufbauen, Verwalten, Beenden)
+- Bündelung (Gruppierung zusammengehöriger Transaktionen)
+- Flusskontrolle (Flow Control)

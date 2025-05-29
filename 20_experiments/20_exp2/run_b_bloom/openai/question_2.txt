@@ -1,0 +1,7 @@
+Frage: Wie heißt die spezielle Unterschicht der Sicherungsschicht, die in Broadcast-Netzen den Zugriff auf das gemeinsam genutzte Übertragungsmedium kontrolliert?
+
+Antwortmöglichkeiten:
+- ~Medium Access Control (MAC)-Sublayer
+- Logical Link Control (LLC)-Sublayer
+- Transport Control Unit (TCU)
+- Physical Service Access Point (PSAP)

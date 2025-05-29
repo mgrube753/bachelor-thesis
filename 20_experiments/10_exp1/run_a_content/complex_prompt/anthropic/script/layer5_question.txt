@@ -1,0 +1,9 @@
+```markdown
+Frage: In einem verteilten System müssen Datentransfers zwischen zwei Anwendungen auch nach kurzzeitigen Netzwerkausfällen fortgesetzt werden können, ohne die gesamte Übertragung neu starten zu müssen. Welche spezifische Kernfunktion der Session Layer (Schicht 5) des OSI-Modells adressiert dieses Problem am direktesten und warum?
+
+Antwortmöglichkeiten:
+- [Bündelung, da sie zusammengehörige Transaktionen gruppiert und so einen gemeinsamen Neustart ermöglicht]
+- ~[Synchronisation, da durch das Setzen von Zwischenpunkten die Übertragung nach einem Ausfall an diesen fortgesetzt werden kann]
+- [Sitzungsverwaltung, da beim erneuten Verbindungsaufbau automatisch die letzte Position erkannt wird]
+- [Sitzungsbeendigung, da durch kontrolliertes Beenden der Übertragung Datenverluste vermieden werden]
+```

@@ -1,0 +1,7 @@
+Frage: Der gegebene Text beschreibt die Aufgaben des Presentation Layers (Schicht 6) und betont dabei explizit, dass dieser "nur Expandieren (Entpacken)" und "nur Entschlüsseln, keine Verschlüsselung anbieten" soll. Welche der folgenden Aussagen ist die logisch zwingende Schlussfolgerung aus diesen spezifischen Einschränkungen im Kontext der Datenverarbeitung innerhalb des OSI-Modells?
+
+Antwortmöglichkeiten:
+- Die Komprimierung und Verschlüsselung von Daten müssen durch Schichten auf der *sendenden* Seite des Kommunikationsprozesses oder durch die Anwendung selbst vor der Übergabe an die unterliegenden Schichten erfolgen.
+- ~Die Schicht 6 ist ausschließlich für den Empfang und die Aufbereitung von Daten zuständig, indem sie empfangene komprimierte oder verschlüsselte Daten in einen für die darüberliegenden Schichten nutzbaren Zustand überführt, ohne selbst aktiv Daten zu transformieren, die *gesendet* werden.
+- Die Beschränkung impliziert, dass die Gegenseite keine komprimierten oder verschlüsselten Daten senden darf, da die Schicht 6 die entsprechenden Gegenoperationen nicht durchführt.
+- Diese Schicht ist primär für die Datenintegrität verantwortlich und führt daher nur Operationen durch, die eine potenzielle Datenkorruption durch Komprimierung oder Verschlüsselung rückgängig machen.

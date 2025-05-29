@@ -1,0 +1,19 @@
+Frage: Entwickeln Sie ein integriertes Daten­link-Protokoll für ein Broadcast-Netz, das zuverlässige Übertragung, Flusskontrolle und Medienzugriff in einem einzigen Rahmenformat vereint. Stellen Sie dazu 1) die Felder Ihres Frame-Aufbaus zusammen und beschreiben Sie deren Funktion, 2) konstruieren Sie den Ablauf der Rahmenübertragung inklusive der notwendigen Steuer- und Bestätigungsrahmen, und 3) erläutern Sie, wie Ihr Entwurf die drei Herausforderungen (Fehlermaskierung, Empfänger-Überlastschutz, kollisionsfreier Zugriff) in einem kohärenten Mechanismus reorganisiert.
+
+Antwort: ~Beispielhafte Lösung:  
+1) Frame-Format:  
+   • Präambel (Synchronisation)  
+   • Dest-MAC / Src-MAC (Adressierung)  
+   • Typ/Länge  
+   • Seq-Nr. (Fehlerkontrolle + Ordnung)  
+   • Fenstergröße (dynamische Flusskontrolle)  
+   • Zugriffscode (CSMA/CA-Slot-Nummer + Priorität)  
+   • Nutzdaten  
+   • CRC  
+
+2) Übertragungs­ablauf: Sender lauscht Medium, reserviert Slot über Zugriffscode, sendet Frame. Empfänger sendet nach zufälliger Wartezeit ACK mit eigener Fenstergröße. Ausbleibendes ACK → Retransmission. Fenstergröße 0 friert Sender, bis ein RESTART-ACK kommt.  
+
+3) Integration:  
+   • Fehlermaskierung durch Seq-Nr. + CRC + selektive Wiederholung.  
+   • Flusskontrolle über gleitendes Fenster, das der Empfänger dynamisch im ACK anpasst.  
+   • Kollisionsfreier Zugriff durch dezentrale Slot-Reservierung im Zugriffscode-Feld, kombiniert mit Backoff-Strategie, wodurch separate MAC-Sublayer überflüssig wird und alle drei Funktionen nahtlos in einem Rahmenformat zusammengeführt sind.

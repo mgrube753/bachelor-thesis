@@ -1,0 +1,9 @@
+```markdown
+Frage: Gemäß dem bereitgestellten Text wird unter bestimmten Netzwerkbedingungen eine spezielle Sublayer innerhalb der Sicherungsschicht notwendig. Welches Szenario aktiviert diese Sublayer und welche Hauptaufgabe übernimmt sie?
+
+Antwortmöglichkeiten:
+- ~Das Vorhandensein eines Broadcast-Netzwerks aktiviert die Medium Access Control (MAC)-Sublayer, deren Aufgabe es ist, den Zugriff mehrerer Stationen auf das gemeinsam genutzte Übertragungsmedium zu koordinieren.
+- Eine Punkt-zu-Punkt-Verbindung erfordert die MAC-Sublayer, damit Router automatisch den kürzesten Weiterleitungsweg wählen.
+- Ein schneller Sender gegenüber einem langsamen Empfänger aktiviert die MAC-Sublayer, um Flusskontrolle zwischen den Geräten durchzuführen.
+- Hohe physikalische Bitfehlerraten bedingen die MAC-Sublayer, welche Fehlererkennung und -korrektur mittels Prüfsummen übernimmt.
+```

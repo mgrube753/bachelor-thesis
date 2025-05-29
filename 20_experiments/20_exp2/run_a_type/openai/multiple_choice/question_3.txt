@@ -1,0 +1,7 @@
+Frage: Welches spezifische Problem, das in Broadcast-Netzwerken auftritt, macht eine eigene Medium-Access-Control-Unterschicht innerhalb der Sicherungsschicht erforderlich?
+
+Antwortmöglichkeiten:
+- ~Die Steuerung des Zugriffs mehrerer Stationen auf das gemeinsam genutzte Übertragungsmedium
+- Die Aufteilung des Datenstroms in einzelne Frames fester Größe
+- Die Ende-zu-Ende-Wegewahl (Routing) der Datenpakete durch das gesamte Netz
+- Die Rückmeldung von Empfangsbestätigungen (Acknowledgements) zur Fehlerkontrolle

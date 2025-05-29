@@ -1,0 +1,5 @@
+Frage: Erläutern Sie, welche zwei im Text genannten Designentscheidungen der Physical Layer zugleich stark von den mechanischen UND elektrischen Eigenschaften des Übertragungsmediums abhängen, und begründen Sie kurz, wodurch diese Abhängigkeit jeweils entsteht.
+
+Antwort: ~
+1. Die Festlegung, welche elektrischen Signale eine „1“ bzw. „0“ repräsentieren – sie erfordert elektrische Kompatibilität (Spannungspegel, Impedanz) und wird durch die mechanische Ausgestaltung des Mediums (z. B. Leiterquerschnitt, Steckverbindung) mitbestimmt.  
+2. Die Anzahl der Pins und deren Belegung am Netzwerk­stecker – die elektrische Trennung einzelner Signalleitungen muss mechanisch durch ausreichend viele, passgenau angeordnete Kontakte realisiert werden, um Übersprechen und Signalverlust zu vermeiden.

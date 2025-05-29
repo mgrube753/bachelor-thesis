@@ -1,0 +1,9 @@
+```markdown
+Frage: Welche architektonische Entwurfsentscheidung der Data Link Layer spiegelt am deutlichsten das Prinzip der Abstraktion im ISO-OSI-Modell wider und warum?
+
+Antwortmöglichkeiten:
+- ~Das Maskieren von Übertragungsfehlern, sodass die Netzwerkschicht diese nicht sehen muss, da dies die komplexe Realität der physikalischen Übertragung vor höheren Schichten verbirgt und eine scheinbar fehlerfreie Kommunikationsleitung bereitstellt
+- Die Aufteilung der Daten in Frames, da dies die grundlegende Funktionsweise des gesamten OSI-Modells demonstriert und alle Schichten mit Frames arbeiten
+- Die Implementierung von Zugriffskontrollmechanismen für den gemeinsamen Kanal, da dies die höheren Schichten von den spezifischen Details der Medienzugriffsmethoden isoliert
+- Der Einsatz von Bestätigungsframes, da dies die einzige Möglichkeit ist, zuverlässige Kommunikation über unzuverlässige physische Medien zu gewährleisten
+```

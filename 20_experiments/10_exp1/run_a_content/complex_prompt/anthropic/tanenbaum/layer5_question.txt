@@ -1,0 +1,9 @@
+```markdown
+Frage: In einem verteilten System arbeiten zwei Benutzer gleichzeitig an einem gemeinsamen Dokument. Während der Bearbeitung bricht die Netzwerkverbindung ab und wird nach einiger Zeit wiederhergestellt. Welche spezifische Funktion der Session Layer ist am kritischsten, um zu verhindern, dass beide Benutzer während der Wiederverbindung dieselben Dokumentteile gleichzeitig verändern, und welche andere Funktion sorgt dafür, dass die Arbeit nach dem Verbindungsabbruch effizient fortgesetzt werden kann?
+
+Antwortmöglichkeiten:
+- [Dialogkontrolle und Verschlüsselung]
+- ~[Token-Management und Synchronisation (Checkpointing)]
+- [Protokollkonvertierung und Dialogkontrolle]
+- [Fehlerkorrektur und Token-Management]
+```

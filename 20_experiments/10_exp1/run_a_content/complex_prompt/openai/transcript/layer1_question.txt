@@ -1,0 +1,7 @@
+Frage: Angenommen, ein Differential-Manchester-codiertes Signal soll statt über ein verdrilltes Kupferkabel nun drahtlos per Funk übertragen werden, wobei Codierung und Dekodierung unverändert bleiben. Welcher Aspekt muss auf Physical-Layer-Ebene zwingend angepasst werden, damit das Signal im neuen Medium zuverlässig übertragbar ist?
+
+Antwortmöglichkeiten:
+- ~Die Spezifikation der Übertragungseigenschaften des Mediums (z. B. Frequenzband, Sendeleistung und Ausbreitungsdämpfung), sodass die physikalischen Größen der bestehenden Codierung im Funkkanal korrekt transportiert werden.
+- Die Bitmuster der Differential-Manchester-Codierung, um sie an das Funkmedium anzupassen.
+- Die Dekodierlogik, da ein Funkkanal keine Rückinterpretation physikalischer Größen erlaubt.
+- Die Funktionen der Schichten 3 bis 7, da ihr Verhalten vom Übertragungsmedium abhängt.

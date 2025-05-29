@@ -1,0 +1,7 @@
+Frage: Der Session Layer (Schicht 5) des ISO-OSI-Modells ist für die Verwaltung von Sitzungen zuständig. Welche der folgenden Aussagen beschreibt am präzisesten, wie die Kernaufgaben 'Synchronisation' und 'Bündelung' die übergeordnete Funktion der 'Sitzungsverwaltung' ergänzen, um die Integrität und den Fortschritt von Datenübertragungen über längere Zeiträume oder bei komplexen Interaktionen zu gewährleisten?
+
+Antwortmöglichkeiten:
+- Die Synchronisationspunkte dienen ausschließlich der Fehlerbehebung bei Verbindungsabbrüchen, während die Bündelung die Netzwerkbandbreite optimiert.
+- ~Die Synchronisation ermöglicht das Setzen von Wiederherstellungspunkten innerhalb einer Sitzung, um bei Unterbrechungen nicht den gesamten Fortschritt zu verlieren, während die Bündelung sicherstellt, dass logisch zusammengehörige Operationen als eine Einheit behandelt werden, was die Kohärenz der Sitzungsinteraktion verbessert.
+- Bündelung ist eine Technik zur Komprimierung von Daten, während Synchronisation die zeitliche Abstimmung von Datenpaketen über verschiedene Verbindungen hinweg gewährleistet.
+- Beide Funktionen sind primär für die Adressierung von Datenpaketen zuständig und arbeiten eng mit den unteren Schichten des Modells zusammen.

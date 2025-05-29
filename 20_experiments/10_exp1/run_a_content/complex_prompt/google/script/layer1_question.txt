@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt die drei Kernaufgaben des Physical Layer 1 als Codierung, Transport und Decodierung. Welche Aussage erfasst die kausale und funktionale Beziehung dieser Aufgaben, um die Übertragung logischer Werte auf physikalischer Ebene zu gewährleisten?
+
+Antwortmöglichkeiten:
+- Encoding und Decodierung sind lediglich unterschiedliche Arten von Transformationen, die unabhängig vom Transportmechanismus ablaufen.
+- Die Codierung konvertiert logische Werte in ein transportierbares physikalisches Format, das dann durch den Transportmechanismus übermittelt wird, woraufhin die Decodierung diese physikalischen Größen wieder in logische Werte zurückwandelt.
+- ~Der Transport ist der erste Schritt, der eine physikalische Verbindung herstellt, gefolgt von der Codierung und anschließend der Decodierung der Daten.
+- Codierung und Decodierung sind primär für die Fehlerkorrektur zuständig, während der Transport die eigentliche Datenbewegung ohne weitere Modifikation übernimmt.

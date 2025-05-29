@@ -1,0 +1,9 @@
+**Korrekte Antwort:** D
+
+**Frage:** Welche der folgenden Aufgaben gehört NICHT zu den Kernaufgaben der Presentation Layer (Schicht 6) des ISO-OSI-Modells gemäß der gegebenen Beschreibung?
+
+**Antwortmöglichkeiten:**
+A) Endian-Ness: Konvertieren der Datendarstellung
+B) Kompression: Komprimieren und Dekomprimieren
+C) Verschlüsselung: Verschlüsseln und Entschlüsseln
+D) Routenwahl: Bestimmen des besten Pfades für Datenpakete

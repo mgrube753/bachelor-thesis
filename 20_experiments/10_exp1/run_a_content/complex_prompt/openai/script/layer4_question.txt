@@ -1,0 +1,4 @@
+Frage: Welches der folgenden Szenarien adressiert vorrangig die im Text genannte Kernaufgabe „Dienstqualität (QoS)“ der Transportschicht – also Garantien für Bandbreite, Latenz, Jitter oder Fehlerrate – und nicht überwiegend Adressierung oder Flusssteuerung?
+
+Antwortmöglichkeiten:
+- ~Ein Live-

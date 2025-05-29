@@ -1,0 +1,7 @@
+Frage: Angesichts der Hauptaufgabe der Sicherungsschicht, eine fehlerfreie Übertragungsleitung für die Netzwerkschicht bereitzustellen, welche der folgenden Maßnahmen ist eine *direkte Konsequenz* oder *essenzieller Bestandteil* dieser Zielsetzung, während sie gleichzeitig eine grundlegende Herausforderung im Datenfluss adressiert?
+
+Antwortmöglichkeiten:
+- ~Die Zerlegung von Eingabedaten in Datenrahmen und das Management von Empfangsbestätigungen zur Fehlermaskierung, kombiniert mit Mechanismen zur Flusskontrolle, um eine Überflutung des Empfängers zu verhindern.
+- Die ausschließliche Nutzung des Medium Access Control (MAC) Sublayers zur Steuerung des Zugriffs auf gemeinsam genutzte Kanäle und zur dynamischen Anpassung der Übertragungsgeschwindigkeit basierend auf dem Netzwerkverkehr.
+- Die Transformation von rohen Übertragungseinrichtungen in eine Leitung, die ohne unerkannten Übertragungsfehler erscheint, indem lediglich eine Priorisierung von Datenpaketen vorgenommen wird, ohne Rücksicht auf die Empfängerkapazität.
+- Die Konzentration auf die Adressierung und das Routing von Paketen zwischen verschiedenen Netzwerken, während die Fehlerkorrektur vollständig der Transportschicht überlassen wird.

@@ -1,0 +1,9 @@
+```markdown
+Frage: Identifizieren Sie den speziellen Sublayer der Data Link Layer, der laut Text die Kontrolle des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken handhabt.
+
+Antwortmöglichkeiten:
+- ~Medium Access Control (MAC) Sublayer
+- Network Protocol Control Sublayer
+- Transmission Error Handling Sublayer
+- Data Flow Regulation Sublayer
+```

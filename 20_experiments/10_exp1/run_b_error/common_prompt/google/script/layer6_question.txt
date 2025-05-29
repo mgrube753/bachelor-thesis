@@ -1,0 +1,6 @@
+**B.** Welche der folgenden Aufgaben gehört **nicht** zu den Kernaufgaben der Presentation Layer (Schicht 6) gemäß der vorliegenden Beschreibung?
+
+A. Die Vereinheitlichung der Datendarstellung.
+B. Das Anbieten von Verschlüsselung.
+C. Die Behandlung von Daten als reine Binärdaten.
+D. Das Expandieren (Entpacken) von Daten.

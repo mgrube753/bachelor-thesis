@@ -1,0 +1,3 @@
+FRAGE: Was sind die drei Kernaufgaben der Netzwerkschicht (Layer 3) im ISO-OSI-Modell?
+
+KORREKTE ANTWORT: Die drei Kernaufgaben der Netzwerkschicht sind Adressierung (netzwerkübergreifende Adressen), Routing (Auswahl der vermittelnden Zwischenknoten) und Flusssteuerung (Strategien bei zu schnellem Senden, sowohl End-to-End als auch Node-to-Node).

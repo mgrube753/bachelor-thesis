@@ -1,0 +1,7 @@
+```markdown
+Frage: Analysieren Sie, wie die verschiedenen Aufgaben der Data Link Layer (Fehlerkorrektur, Flusssteuerung und Kanalzugriffskontrolle) zusammenwirken, um die Zuverlässigkeit der Datenübertragung zu gewährleisten. Diskutieren Sie außerdem, welche Kompromisse zwischen Effizienz und Zuverlässigkeit in dieser Schicht möglicherweise getroffen werden müssen.
+
+Antwort: ~Eine umfassende Analyse zeigt, dass die Data Link Layer durch ein Zusammenspiel mehrerer Mechanismen die Zuverlässigkeit sicherstellt: Die Fehlerkorrektur durch Frame-basierte Übertragung und Bestätigungen maskiert reale Übertragungsfehler für höhere Schichten. Die Flusssteuerung verhindert Datenüberlastungen, indem sie die Übertragungsgeschwindigkeit reguliert. Die Medium Access Control-Unterschicht koordiniert den Zugriff auf geteilte Kanäle bei Broadcast-Netzwerken. 
+
+Bezüglich der Kompromisse: Mehr Fehlerkorrekturmechanismen erhöhen die Zuverlässigkeit, fügen jedoch Overhead hinzu und reduzieren den Nettonutzdurchsatz. Strengere Flusssteuerungen verhindern Datenverlust, können aber die maximale Übertragungsleistung limitieren. Bei Kanalzugriffskontrolle müssen Fairness und Effizienz gegeneinander abgewogen werden. Diese Kompromisse müssen je nach Anwendungsanforderungen und Netzwerkbedingungen sorgfältig austariert werden.
+```

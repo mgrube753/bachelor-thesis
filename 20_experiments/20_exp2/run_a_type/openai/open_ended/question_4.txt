@@ -1,0 +1,18 @@
+Frage: Erläutern und analysieren Sie, warum Fehlerkontrolle, Flusskontrolle und Medium-Access-Control (MAC) als Aufgaben der Data-Link-Layer beziehungsweise ihrer MAC-Sublayer definiert sind. Diskutieren Sie außerdem, welche praktischen Konsequenzen (z. B. bezüglich Effizienz, Latenz und Komplexität) entstehen würden, wenn diese Funktionen stattdessen erst in höheren OSI-Schichten angesiedelt wären.
+
+Antwort: ~Die Fehlerkontrolle wird in der Data-Link-Layer platziert, weil sie direkt an der Bitübertragung ansetzt: Schon bevor die darüberliegende Network-Layer Pakete interpretiert, müssen Bit-Fehler erkannt und möglichst korrigiert werden. Würde man diese Kontrolle höher verschieben, müssten fehlerhafte Rahmendaten bis zur Network- oder gar Transport-Layer weitergeleitet werden, was dort zu zusätzlicher Last, höherer Latenz und potenziell größerem Datenverlust (ganze Pakete statt einzelner Frames) führen würde.
+
+Die Flusskontrolle wird hier implementiert, weil die Data-Link-Layer die erste Instanz ist, die Sender- und Empfänger-Geschwindigkeit vollständig kennt (Verbindungspunkt-zu-Punkt). Ein Mechanismus wie Stop-and-Wait oder Sliding-Window kann den Sender unmittelbar bremsen, bevor sich Pufferüberläufe aufstauen. Würde man die Flusskontrolle erst in höheren Schichten etablieren, müsste ein wesentlich größerer Datenweg (mehr Schichten, größere Puffer) überbrückt werden, was Speicherbedarf, Verzögerung und Protokollkomplexität erhöht.
+
+MAC schließlich gehört logisch zur Data-Link-Layer, weil der unmittelbare Zugriff mehrerer Stationen auf ein gemeinsames physisches Medium geregelt werden muss, bevor überhaupt gerahmte Daten verlässlich ausgetauscht werden können. Verlagerte man diese Steuerung nach oben, bliebe die physische Schicht unkoordiniert; Kollisionen oder Interferenzen würden zu massiven Fehlerraten führen, die dann wieder aufwendig in höheren Ebenen behoben werden müssten.
+
+Zusammengefasst minimiert die frühe Lokalisierung dieser Funktionen:
+1. Latenz und Overhead durch sofortige Behandlung von Bit-Fehlern.
+2. Speicherverbrauch und Komplexität durch eng gekoppeltes Flussmanagement.
+3. Kollisions- und Stauwahrscheinlichkeit durch unmittelbare Medienzugangskontrolle.
+
+Eine Verschiebung in höhere Schichten würde dagegen:
+• die Fehlerrate sichtbar bis dorthin propagieren,
+• Puffer- und Time-out-Anforderungen drastisch erhöhen,
+• die Protokollstapel komplizieren und
+• insgesamt die Effizienz des Netzwerks mindern.

@@ -1,0 +1,3 @@
+A) Verbindungsloser Datenaustausch.
+
+Frage: Welche Art des Datenaustauschs ermöglicht die Session Layer 5 gemäß der Beschreibung?

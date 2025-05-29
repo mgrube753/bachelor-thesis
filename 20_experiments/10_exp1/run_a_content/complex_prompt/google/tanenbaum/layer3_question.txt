@@ -1,0 +1,7 @@
+Frage: Eine Organisation betreibt ein Netzwerk, das häufig starken Lastschwankungen unterliegt und in dem die Konnektivität zwischen verschiedenen Segmenten unvorhersehbar ausfallen kann. Basierend auf der Beschreibung der Vermittlungsschicht (Network Layer), welche der folgenden Routing-Strategien wäre am besten geeignet, um sowohl den wechselnden Netzwerkbedingungen gerecht zu werden als auch Ausfälle proaktiv zu adressieren?
+
+Antwortmöglichkeiten:
+- Statische Routen, da sie einfach zu verwalten sind und nur selten geändert werden müssen.
+- Routen, die zu Beginn jeder Konversation bestimmt werden, da dies eine hohe Stabilität für individuelle Sitzungen gewährleistet.
+- Routen, die automatisch aktualisiert werden, um ausgefallene Komponenten zu vermeiden, da dies direkte Abhilfe bei Konnektivitätsproblemen schafft, kombiniert mit hochdynamischen Routen, die für jedes Paket neu bestimmt werden, um die aktuelle Netzwerklast zu reflektieren.
+- ~Hochdynamische Routen, die für jedes Paket neu bestimmt werden, um die aktuelle Netzwerklast zu reflektieren, ergänzt durch Routen, die automatisch aktualisiert werden, um ausgefallene Komponenten zu vermeiden.

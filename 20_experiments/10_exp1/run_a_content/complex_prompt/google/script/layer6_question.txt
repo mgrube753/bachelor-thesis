@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt die Aufgaben der Presentation Layer (Schicht 6) im OSI-Modell, insbesondere die „Kodierung (Darstellung) der Anwendungsdaten als Bitstrom“. Welche grundlegende Herausforderung adressieren die vier Kernaufgaben (Endian-Ness, Zeichenkonvertierung, Kompression, Verschlüsselung) dieser Schicht kollektiv, um eine interoperable Kommunikation zu ermöglichen, auch wenn die Spezifika dieser Herausforderung nicht explizit im Text genannt werden?
+
+Antwortmöglichkeiten:
+- Die Sicherstellung der physischen Übertragungsgeschwindigkeit unabhängig von der Hardware.
+- ~Die Überwindung von Inkompatibilitäten und Heterogenitäten in der Datenrepräsentation zwischen verschiedenen Systemen.
+- Die dynamische Zuweisung von Netzwerkadressen und die Routenoptimierung.
+- Die Bereitstellung von Flusskontrollmechanismen zur Vermeidung von Überlastung.

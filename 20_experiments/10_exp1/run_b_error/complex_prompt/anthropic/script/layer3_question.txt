@@ -1,0 +1,9 @@
+```markdown
+Frage: Der gegebene Text beschreibt angeblich die Funktionen des Network Layers (Layer 3) im OSI-Modell, weicht jedoch in mehreren Aspekten von der standardisierten Definition ab. Welche der folgenden Aussagen identifiziert korrekt eine Abweichung zwischen der dargestellten Beschreibung und den tatsächlichen Funktionen des Network Layers?
+
+Antwortmöglichkeiten:
+- ~Die "Zufallspfad"-Funktion zur zufälligen Auswahl von Endknoten widerspricht dem deterministischen Routing-Konzept des Network Layers, der optimale Pfade zwischen Netzwerken bestimmen soll
+- Die "Lokalisierung" entspricht nicht der Funktionalität des Network Layers, da Layer 3 keine physische Positionierung von Geräten vornimmt
+- Die "Datenbeschleunigung" ist eine typische Hauptfunktion des Network Layers und wurde korrekt beschrieben
+- Die Beschreibung "Bereitstellung einer Speicherung für Geräte" ist präzise, da der Network Layer primär für die Datenspeicherung zwischen Netzwerksegmenten zuständig ist
+```

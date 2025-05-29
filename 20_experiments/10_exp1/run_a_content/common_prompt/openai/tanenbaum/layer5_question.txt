@@ -1,0 +1,3 @@
+Korrekte Antwort: Dialogsteuerung
+
+Frage: Wie heißt der Dienst der Sitzungsschicht im ISO-OSI-Modell, der bestimmt, wessen „Runde“ es gerade ist, also wer senden darf?

@@ -1,0 +1,9 @@
+```markdown
+Frage: Ein Hochgeschwindigkeits-Server versucht, Daten mit maximaler Kapazität an einen langsameren Client zu übermitteln. Der Client signalisiert, dass er die eingehenden Daten aufgrund der Geschwindigkeit nicht verarbeiten kann und es zu Datenverlusten kommt. Welchen primären Mechanismus würde die Data Link Layer in dieser Situation *anwenden*, um den reibungslosen und verlustfreien Datenfluss zwischen Sender und Empfänger zu gewährleisten?
+
+Antwortmöglichkeiten:
+- ~Einen Verkehrsregulierungsmechanismus (Flusskontrolle), um den Sender über die Aufnahmefähigkeit des Empfängers zu informieren.
+- Die Medium Access Control (MAC) Sublayer, um den Zugriff auf das Übertragungsmedium zu steuern.
+- Das Zerlegen der Eingabedaten in kleinere Datenrahmen, um die Übertragungseffizienz zu erhöhen.
+- Das Maskieren von Übertragungsfehlern, um dem Netzwerkschicht eine fehlerfreie Leitung vorzugaukeln.
+```

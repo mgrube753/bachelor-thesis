@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aussagen beschreibt die primäre transformationale Aufgabe der Sicherungsschicht (Data Link Layer) im Kontext des ISO-OSI-Modells am präzisesten und welche unterstützenden Mechanismen sind dabei integral, um Daten für die darüberliegende Netzwerkschicht aufzubereiten?
+
+Antwortmöglichkeiten:
+- ~Die Hauptaufgabe besteht darin, eine rohe Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung umzuwandeln, indem reale Übertragungsfehler maskiert werden, was durch das Aufbrechen von Eingabedaten in Datenrahmen, deren sequentielle Übertragung und gegebenenfalls Bestätigungen für den korrekten Empfang erreicht wird.
+- Die Sicherungsschicht konzentriert sich hauptsächlich auf die End-zu-End-Flusskontrolle und die Segmentierung von Nachrichten, um eine effiziente und verlustfreie Kommunikation über verschiedene Netzwerke hinweg zu gewährleisten.
+- Ihre primäre Funktion ist die logische Adressierung und das Routing von Datenpaketen durch ein komplexes Netzwerk, während sie gleichzeitig die Lastverteilung und den Stau im Netzwerk verwaltet.
+- Die Hauptrolle der Sicherungsschicht ist die Umwandlung von Bitströmen in elektrische Signale und deren Übertragung über physische Medien, einschließlich der Definition von Spannungspegeln und Kabeltypen.

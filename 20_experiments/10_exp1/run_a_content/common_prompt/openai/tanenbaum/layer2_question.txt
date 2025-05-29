@@ -1,0 +1,2 @@
+Richtige Antwort: Medium Access Control Sublayer (MAC-Sublayer)  
+Frage: Wie heißt die Unterschicht der Sicherungsschicht (Data Link Layer) in Broadcast-Netzen, die den Zugriff auf das gemeinsame Übertragungsmedium regelt?

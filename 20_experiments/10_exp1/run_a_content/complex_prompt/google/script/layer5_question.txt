@@ -1,0 +1,7 @@
+Frage: Der Session Layer (Schicht 5) des ISO-OSI-Modells ist für die Bereitstellung des Sitzungskonzepts einer Kommunikationsbeziehung verantwortlich. Welche der folgenden Aussagen beschreibt am präzisesten, wie die Funktion der "Synchronisation" (Setzen von Zwischenpunkten) im Kontext der anderen Kernaufgaben des Session Layers (Sitzungsmanagement und Bündelung) zur Robustheit und Effizienz einer Kommunikationssitzung beiträgt?
+
+Antwortmöglichkeiten:
+- ~Die Synchronisation ermöglicht es, bei einem Kommunikationsabbruch nur den letzten Abschnitt einer Transaktion zu wiederholen, anstatt die gesamte Sitzung von Neuem aufzubauen, und unterstützt somit die Wiederherstellbarkeit und den geordneten Fortschritt komplexer Datenaustauschvorgänge innerhalb einer bestehenden Sitzung.
+- Die Synchronisation ist primär dafür zuständig, eine gleichzeitige Datenübertragung in beide Richtungen zu gewährleisten, wodurch die Effizienz der Kommunikationsbeziehung maximiert wird.
+- Das Setzen von Zwischenpunkten dient hauptsächlich dazu, die Bandbreite der Verbindung dynamisch anzupassen und somit eine optimale Nutzung der Netzwerkressourcen sicherzustellen.
+- Die Kernaufgabe der Synchronisation besteht darin, sicherzustellen, dass alle beteiligten Kommunikationspartner exakt dieselbe Hardware-Konfiguration verwenden, um Kompatibilitätsprobleme zu vermeiden.
