@@ -15,9 +15,8 @@ Die korrekte Antwort -- oder Antwortmöglichkeit, sofern mehrere Möglichkeiten 
 
 Verwende für die Ausgabe der Frage und der Antwort(en) exakt das folgende Format:
 
-```markdown
+"""
 {question_type_format}
-```
+"""
 
 Nun starte mit der Generierung unter Berücksichtigung der oben genannten Punkte. Gib nur die Frage und die zugehörige(n) Antwort(en) aus. Achte final auf Korrektheit in Format und Formulierung.
-

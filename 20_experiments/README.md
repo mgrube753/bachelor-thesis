@@ -47,6 +47,7 @@ across different source materials and generation strategies, with automated scor
 
 ## Todo
 
+- [ ] Add Bloom descriptions and verbs to exp2_rubric.md
 - [ ] Create analysis_quantitative.py script for cosine similarity and LLM-based content adherence ratings
 - [ ] Create analysis_qualitative.py script for LLM-based evaluation based on a rubric
 - [ ] Expert ratings with this rubric for qualitative evaluation are also missing

@@ -12,22 +12,22 @@ Die korrekte Antwort -- oder Antwortmöglichkeit, sofern mehrere Möglichkeiten 
 
 Wenn eine Antwortmöglichkeit generiert wird, soll das Antwortformat somit wie folgt aussehen:
 
-```markdown
-Frage: [Hier den Frageninhalt einfügen]
+"""
+Frage: Hier den Frageninhalt einfügen
 
-Antwort: ~[Hier die Antwort einfügen]
-```
+Antwort: ~Hier die Antwort einfügen
+"""
 
 Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei eine oder mehrere Antworten durch ein vorangestelltes korrekt markiert werden und an beliebiger Position stehen können:
 
-```markdown
-Frage: [Hier den Frageninhalt einfügen]
+"""
+Frage: Hier den Frageninhalt einfügen
 
 Antwortmöglichkeiten:
-- ~[Beispielsweise hier die korrekte Antwort einfügen]
-- [Hier die erste falsche Antwort einfügen]
-- [Hier die zweite falsche Antwort einfügen]
-- [Hier die dritte falsche Antwort einfügen]
-```
+- ~Beispielsweise hier die korrekte Antwort einfügen
+- Hier die erste falsche Antwort einfügen
+- Hier die zweite falsche Antwort einfügen
+- Hier die dritte falsche Antwort einfügen
+"""
 
 Nun starte mit der Generierung unter Berücksichtigung der oben genannten Punkte. Gib nur die Frage und die zugehörige(n) Antwort(en) aus. Achte final auf Korrektheit in Format und Formulierung.

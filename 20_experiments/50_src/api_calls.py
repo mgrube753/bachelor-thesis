@@ -5,13 +5,14 @@ from google.genai import types
 
 
 def gen_with_google(client, prompt_text, model_id):
-    # https://github.com/googleapis/python-genai, https://ai.google.dev/gemini-api/docs/thinking
+    # https://github.com/googleapis/python-genai, https://ai.google.dev/gemini-api/docs/thinking https://ai.google.dev/gemini-api/docs/text-generation
     try:
         response = client.models.generate_content(
             model=model_id,
             contents=prompt_text,
             config=types.GenerateContentConfig(
-                thinking_config=types.ThinkingConfig(thinking_budget=1100)
+                thinking_config=types.ThinkingConfig(thinking_budget=1100),
+                max_output_tokens=1500,
             ),
         )
         return response.text
@@ -27,7 +28,7 @@ def gen_with_anthropic(client, prompt_text, model_id):
             model=model_id,
             thinking={"type": "enabled", "budget_tokens": 1100},
             messages=[{"role": "user", "content": prompt_text}],
-            max_tokens=1400,
+            max_tokens=1500,
         )
         for block in response.content:
             if block.type == "text":
@@ -44,7 +45,7 @@ def gen_with_openai(client, prompt_text, model_id):
             model=model_id,
             reasoning={"effort": "medium"},
             input=[{"role": "user", "content": prompt_text}],
-            max_output_tokens=1400,
+            max_output_tokens=1500,
         )
         # based on https://platform.openai.com/docs/api-reference/responses-streaming/response/incomplete[]
         if (
@@ -73,8 +74,6 @@ def llm_generation(llm_name, clients, prompt_text):
     if not client or not model_id:
         print(f"[ERROR] Client or model_id not found for LLM: {llm_name}")
         return None
-
-    # print(f"[INFO] Generating with {llm_name} {model_id}...")
 
     result = None
     if llm_name == "google":

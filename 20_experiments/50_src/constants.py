@@ -13,8 +13,8 @@ LLM_MODEL_IDS = {
     "anthropic": "claude-3-7-sonnet-20250219",
     "openai": "o3",
 }
-EMBEDDING_MODEL_ID = "T-Systems-onsite/cross-en-de-roberta-sentence-transformer"
 LLM_NAMES = LLM_MODEL_IDS.keys()
+EMBEDDING_MODEL_ID = "T-Systems-onsite/cross-en-de-roberta-sentence-transformer"
 REQUEST_DELAY_SECONDS = 10
 
 EXP1_PROMPT_TYPES = ["exp1_common_prompt", "exp1_complex_prompt"]

@@ -1,11 +1,12 @@
 import os
 import constants
+from constants import BLOOM_LEVELS_ORDERED, BLOOM_DATA_FILE, PROMPT_TEMPLATES_PATH
 from file_utils import load_txt
 
 
 def load_prompt(prompt_name):
     filename = prompt_name if prompt_name.endswith(".md") else f"{prompt_name}.md"
-    path = os.path.join(constants.PROMPT_TEMPLATES_PATH, filename)
+    path = os.path.join(PROMPT_TEMPLATES_PATH, filename)
     return load_txt(path)
 
 
@@ -23,8 +24,7 @@ def format_prompt(template, **values):
 
 def parse_bloom_md(md_content):
     bloom_data = {
-        level: {"description": "", "verbs": ""}
-        for level in constants.BLOOM_LEVELS_ORDERED
+        level: {"description": "", "verbs": ""} for level in BLOOM_LEVELS_ORDERED
     }
     if not md_content:
         return bloom_data
@@ -65,7 +65,7 @@ _bloom_cache = None
 def get_bloom():
     global _bloom_cache
     if _bloom_cache is None:
-        raw = load_txt(constants.BLOOM_DATA_FILE)
+        raw = load_txt(BLOOM_DATA_FILE)
         _bloom_cache = parse_bloom_md(raw)
     return _bloom_cache
 
