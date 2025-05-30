@@ -34,11 +34,11 @@ To properly challenge the \ac{llms} in their multilingual capabilities, each sou
 Anthropic Claude 3.7 Sonnet \cite{anthropic_claude_2025},
     DeepSeek R1 \cite{deepseek-ai_deepseek-r1_2025},
     Google Gemini 2.5 Flash \cite{kavukcuoglu_gemini_2025}, and
-    OpenAI o4-mini \cite{openai_openai_2025-1}.
+    OpenAI o3 \cite{openai_openai_2025-1}.
 
 \vspace{1em}
 
-o4-mini and Claude 3.7 Sonnet were accessed through their Python APIs\footnote{\label{fn:openai-api}\url{https://github.com/openai/openai-python}, accessed 05/09/2025}\footnote{\label{fn:anthropic-api}\url{https://github.com/anthropics/anthropic-sdk-python}, accessed 05/09/2025}, incurring costs per usage. This access method was necessary as the chosen models were not available to the required extent through other means. In contrast, Gemini 2.5 Flash was utilized via Google's Python API\footnote{\label{fn:google-api}\url{https://github.com/googleapis/python-genai}, accessed 05/09/2025}, which offers a free usage tier. To manage costs while maintaining a robust set of \ac{llms}, DeepSeek R1, a comparatively less expensive yet highly capable \ac{llm}, was accessed free of charge via its website\footnote{\label{fn:deepseek}\url{https://chat.deepseek.com/}, accessed 05/09/2025}.
+o3 and Claude 3.7 Sonnet were accessed through their Python APIs\footnote{\label{fn:openai-api}\url{https://github.com/openai/openai-python}, accessed 05/09/2025}\footnote{\label{fn:anthropic-api}\url{https://github.com/anthropics/anthropic-sdk-python}, accessed 05/09/2025}, incurring costs per usage. This access method was necessary as the chosen models were not available to the required extent through other means. In contrast, Gemini 2.5 Flash was utilized via Google's Python API\footnote{\label{fn:google-api}\url{https://github.com/googleapis/python-genai}, accessed 05/09/2025}, which offers a free usage tier. To manage costs while maintaining a robust set of \ac{llms}, DeepSeek R1, a comparatively less expensive yet highly capable \ac{llm}, was accessed free of charge via its website\footnote{\label{fn:deepseek}\url{https://chat.deepseek.com/}, accessed 05/09/2025}.
 
 \subsection{Methodological Approach}
 \label{sec:methodological-approach}
@@ -60,9 +60,9 @@ The method employed for the two experiments is outlined here. It details the spe
 \object{Experiment 2: Question Formats and Bloom's Taxonomy} The second experiment focused on the generation of varied question formats and their alignment with Bloom's revised Taxonomy. Contextual information for this experiment was derived from a single, pre-selected layer of the ISO-OSI model, utilizing the detailed content from \bfhyperref{lst:tanenbaum_layer2}{Layer 2} within the excerpt from \cite{tanenbaum_computer_2013}. The four selected \ac{llms} were employed in three distinct runs, each designed to explore different prompting parameters related to question type and cognitive complexity:
 
 \begin{enumerate}
-    \item \textit{Question Type Specification}: Prompts specified only the desired question types (Multiple Choice and Open-Ended). For the chosen layer, each \ac{llm} was tasked six times to generate a question without mentioning a certain Bloom level for each of the two question types, resulting in \begin{align}4 \text{ \ac{llms}} \times 2 \text{ question types} \times 1 \sfrac{\text{ question}}{\text{run}}\times 6 \text{ runs} = 48 \text{ questions.}\end{align}
+    \item \textit{Question Type Specification}: Prompts specified only the desired question types (Multiple-Choice and Open-Ended). For the chosen layer, each \ac{llm} was tasked six times to generate a question without mentioning a certain Bloom level for each of the two question types, resulting in \begin{align}4 \text{ \ac{llms}} \times 2 \text{ question types} \times 1 \sfrac{\text{ question}}{\text{run}}\times 6 \text{ runs} = 48 \text{ questions.}\end{align}
     \item \textit{Cognitive Level Specification}: Prompts specified only the target cognitive levels according to Bloom's Taxonomy. For the chosen layer, each \ac{llm} generated one question for six runs to get a question for each of the Bloom levels. In total, these are  \begin{align}4 \text{ \ac{llms}} \times 1 \sfrac{\text{ question}}{\text{level}} \times 6 \text{ Bloom levels} = 24 \text{ questions.}\end{align}
-    \item \textit{Combined Specification}: Prompts specified both the question types (Multiple Choice and Open-Ended) and the cognitive levels. Similar to the first run, this resulted in \begin{align}4 \text{ \ac{llms}} \times 2 \text{ question types} \times 1 \sfrac{\text{ question}}{\text{level}} \times 6 \text{ Bloom levels} = 48 \text{ questions.}\end{align}
+    \item \textit{Combined Specification}: Prompts specified both the question types (Multiple-Choice and Open-Ended) and the cognitive levels. Similar to the first run, this resulted in \begin{align}4 \text{ \ac{llms}} \times 2 \text{ question types} \times 1 \sfrac{\text{ question}}{\text{level}} \times 6 \text{ Bloom levels} = 48 \text{ questions.}\end{align}
 \end{enumerate}
 
 \object{Data Collection} The data was primarily collected using the \ac{llms} via their APIs, excepting DeepSeek being prompted on the website. The other 3 models were prompted automatically via Python to generate questions based on the given source materials. The generated questions were stored in a directory structure, particularly based on the experiment, the \ac{llm} and the source material. The question files for each prompt were stored in distinct \textit{.txt} files.
@@ -71,8 +71,12 @@ The method employed for the two experiments is outlined here. It details the spe
 \begin{itemize}
     \item \textbf{Experiment 1 (Content Fidelity and Error Propagation):}
     \begin{itemize}
-        \item \textit{Quantitative Analysis:} The \textit{Semantic Similarity} between generated questions and source materials will be assessed using cosine similarity on generated text embedding vectors. Question quality will be evaluated using the \textit{\ac{bleurt}} metric. Moreover, \textit{\ac{rquge}} was not employed since gold standard answers are not available for comparison.
-        \vspace{1em}\pagebreak
+        \item \textit{Quantitative Analysis:} In this stage, the \textit{Semantic Similarity} between generated questions and source materials will be assessed using cosine similarity on generated text embedding vectors. This can be done since a sentence transformer is used, which offer comparable sentence embeddings \cite{reimers_sentence-bert_2019}. Metrics such as \textit{\ac{bleurt}} and \textit{\ac{rquge}} were not employed since, on the one hand, the structure of the source material and the question differ too much, and on the other hand, gold standard answers are not available for comparison.
+
+        \pagebreak
+        
+        Moreover, other metrics such as Perplexity are less suitable for this task, as \enquote{the output value is based heavily on what the text and the model was trained on. This means that perplexity scores are not comparable between models or datasets}, as stated on HuggingFace\footnote{\url{https://huggingface.co/spaces/evaluate-metric/perplexity}}. Instead, to properly analyze the content fidelity on a quantitative level, the \textit{Content Adherence} will be assessed by prompting an \ac{llm}. By this, the generated questions can be evaluated against the source material by returning a value between 0 and 1. Regarding \cite{nguyen_reference-based_2024}, which used an \ac{llm} to extensively evaluate generated questions which are based on context, the authors did not cover the content adherence. This offers a new perspective on the evaluation of generated questions, especially in the context of \ac{aqg}.
+
         \item \textit{Qualitative Analysis:} An \ac{llm} will serve as an evaluator with multiple runs to ensure validity. Besides, expert evaluations are conducted on a sampled question subset using the same concise rubric. Inter-annotator agreement between the \ac{llm} and human experts (via Cohen's Kappa) will be measured to validate the reliability of automated evaluation. Since Experiment 1b examines the adherence to manipulated input texts, the \textit{Correctness} will be specifically assessed for each of the two experimental runs, as quantitative metrics solely may not capture the correctness of the generated questions. The evaluation adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. However, the \textit{Bloom's Level} criterion is replaced with \textit{Correctness} to address the specific objectives of this experiment:
 
         \begin{table}[htbp]
@@ -109,13 +113,13 @@ The method employed for the two experiments is outlined here. It details the spe
          \end{table}
     \end{itemize}
 
-    % \pagebreak
+    \pagebreak
 
     \item \textbf{Experiment 2 (Question Formats and Bloom's Taxonomy):}
     \begin{itemize}
         \item \textit{Qualitative Analysis:} As the primary focus of this experiment lies on qualitative assessment, any quantitative evaluation is discarded. An \ac{llm} will function as the primary evaluator, with expert evaluations conducted again on randomized samples. Inter-annotator agreement will be critical for validating the \ac{llm} as a reliable evaluator for this experiment as well. Both follow the rubric structure from the previously used \cite{mi_comparative_2024}, also maintaining a maximum score of 50 points per question. In this experiment, instead of evaluating the proposed \textit{Correctness}, the \text{Bloom's Level} is used again with specific refinements addressing Bloom's Taxonomy assessment:
-        \vspace{5em}
-        \pagebreak
+        % \vspace{5em}
+        % \pagebreak
 
         \begin{table}[htbp]
            \centering
