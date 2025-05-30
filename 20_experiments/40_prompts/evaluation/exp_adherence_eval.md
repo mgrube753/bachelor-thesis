@@ -27,4 +27,6 @@ Für ein systematisches Verwenden der Daten soll das Ausgabeformat wie folgt aus
 [adherence_score]
 """
 
-Nun bewerte die Frage anhand der Inhaltstreue zum gegebenen Kontext. Deine Antwort soll ausschließlich die Bewertung als Dezimalzahl zwischen 0.0 und 1.0 sein, zusätzliche Erklärungen oder Kommentare.
+Ein Beispiel-Output wäre: `0.73`
+
+Nun bewerte die Frage anhand der Inhaltstreue zum gegebenen Kontext. Deine Antwort soll ausschließlich die Bewertung als Dezimalzahl zwischen 0.0 und 1.0 mit zwei Nachkommastellen sein, ohne zusätzliche Erklärungen oder Kommentare.

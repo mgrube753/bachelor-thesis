@@ -47,4 +47,8 @@ across different source materials and generation strategies, with automated scor
 
 ## Todo
 
-- [ ] add eval.py for pandas/matplotlib evaluation based on the csv files created by the analysis.py script / expert eval
+- [ ] Create analysis_quantitative.py script for cosine similarity and LLM-based content adherence ratings
+- [ ] Create analysis_qualitative.py script for LLM-based evaluation based on a rubric
+- [ ] Expert ratings with this rubric for qualitative evaluation are also missing
+- [ ] Inter-annotator agreement needed
+- [ ] Create eval.py for pandas/matplotlib evaluation based on the csv files created by the analysis.py script / expert eval
