@@ -61,12 +61,6 @@ The transformer follows an encoder-decoder structure \cite{patil_review_2024,min
 
 \subsection{Framing Bloom's Taxonomy for LLM Applications} \label{sec:blooms-taxonomy}
 
-% \newtodo{We need a bridge from llms to application of bloom with llms}
-
-% Given their advanced capabilities, LLMs enable the automation of the often time-consuming procedure of question generation for educators. The integration of such models into educational settings presents an opportunity to enhance the learning experience, support teachers, and foster the development of educational content. Utilizing LLMs has the potential to assist educators in creating diverse and inclusive materials, thereby freeing up valuable time for teaching and student interaction. However, aligning these automatically generated questions with specific cognitive levels remains a key challenge, requiring careful strategies to guide LLMs effectively
-
-% Given \ac{llms}' capabilities, these enable the automation of the often time-consuming question generation process for educators \cite{vu_chatgpt-based_2024}. The integration of such models into education offers an opportunity to enhance the learning experience, plus support teachers and advance educational content \cite{naveed_comprehensive_2024}. Diverse and inclusive materials can be created with the help of \ac{llms}, thereby freeing up valuable time for both teaching and student interaction \cite{naveed_comprehensive_2024}. However, aligning the \ac{llm}-based questions with specific cognitive levels still remains a key challenge.
-
 Given \ac{llms}' capabilities, these enable the automation of the often time-consuming question generation process for educators \cite{vu_chatgpt-based_2024}. The integration of such models into education offers an opportunity to enhance the learning experience for students and support teachers in advancing educational content \cite{naveed_comprehensive_2024}. 
 With the help of \ac{llms}, customized study materials and practice questions can be generated to develop personalized learning for students \cite{al_faraby_analysis_2024,bhowmick_automating_2023,hang_mcqgen_2024}, while freeing up the educators' valuable time for both teaching and student interaction \cite{naveed_comprehensive_2024}.
 % sources: 452 part 1 / 453.454 for part 2 
@@ -85,19 +79,18 @@ According to \cite{krathwohl_revision_2002}, this taxonomy follows a hierarchica
    \caption{Hierarchy of Bloom's Revised Taxonomy.}
 \end{figure}
 
-The revised taxonomy \cite{krathwohl_revision_2002} is divided into six levels. Each level is associated with a specific cognitive skill, as follows with ascending complexity \tcr{need refinements, bedeutung von wissen??}:
-%  representing a different cognitive skill as follows:
+The revised taxonomy \cite{krathwohl_revision_2002} is divided into six levels. Each level is associated with a specific cognitive skill, as follows with ascending complexity:
 
 \begin{itemize}
    \item \textbf{Remembering:} Formerly known as \enquote{Knowledge}, this level refers to the retrieval of relevant knowledge from long-term memory by focusing on recognition and recall of facts.
    \item \textbf{Understanding:} This level, previously called \enquote{Comprehension}, involves identifying the meaning of instructional messages, such as oral, written and graphic communication.
-   \item \textbf{Applying:} This level is about performing or applying a procedure in a given situation.
+   \item \textbf{Applying:} This level is about carrying out or using a procedure in a given situation.
    \item \textbf{Analyzing:} This involves breaking down material into its components and determining their relationships to one another or to an overall structure or purpose.
    \item \textbf{Evaluating:} This level requires making judgements based on established criteria and standards.
    \item \textbf{Creating:} This is the highest cognitive level and involves assembling or reorganizing elements into a coherent whole.
 \end{itemize}
 
-Each of these cognitive levels is associated with a set of action verbs that can be used to formulate learning objectives and assessment questions. A comprehensive list of such verbs, categorized by these cognitive levels, can be found at the University of Arkansas' website\footnote{\url{https://tips.uark.edu/blooms-taxonomy-verb-chart/}, accessed 05/13/2025}. The following table offers a brief overview of the cognitive levels and their corresponding action verbs \tcr{befunde zusammenfassen, wo lücken für mich}
+Each of these cognitive levels is associated with a set of action verbs that can be used to formulate learning objectives and assessment questions. A comprehensive list of such verbs, categorized by these cognitive levels, can be found at the University of Arkansas' website\footnote{\url{https://tips.uark.edu/blooms-taxonomy-verb-chart/}, accessed 05/13/2025}. The following table offers a brief overview of the cognitive levels and their corresponding action verbs:
 
 % Du meinst ja oben, dass diese Taxonomy schon genutzt wird, um die Relevanz von LLMs zu untersuchen. Wenn das stimmt, dann würde ich dir empfehlen, hier auch Forschungsbefunde zusammenzufassen. Also was haben die schon untersucht und wo gibt es Forschungslücken, die du jetzt adressieren möchtest
 
@@ -134,8 +127,6 @@ Each of these cognitive levels is associated with a set of action verbs that can
    \end{tabularx}
  \end{table}
 
-% \object{Application to Question Generation} \ac{llms} show great potential in \ac{aqg} with respect to different cognitive levels \cite{maity_can_2025,blobstein_angel_2023,duong-trung_bloomllm_2024,scaria_automated_2024,scaria_how_2024}. By using different prompting strategies, as illustrated in the \bfhyperref{sec:performance-enhancements}{Performance Enhancements} and the according \bfhyperref{sec:question-generation-research}{Question Generation Research} section, the models can be guided to generate questions that are aligned with the cognitive levels of Bloom's Taxonomy. Certain approaches can generate questions across all levels of Bloom's Taxonomy \cite{duong-trung_bloomllm_2024,zhuge_twinstar_2025}. However, despite their proficiency at lower levels (memory, comprehension), \ac{llms} occasionally struggle with adherence at the higher levels \cite{duong-trung_bloomllm_2024,cheng_treequestion_2024,elkins_how_2023}.
-
 \pagebreak
 
 \subsection{Performance Enhancements}
@@ -146,15 +137,10 @@ To address these challenges and to refine the capabilities of \ac{llms} for spec
 \object{In-Context Learning} As highlighted by \cite{zhao_survey_2025}, the advent of GPT-3 \cite{brown_language_2020} introduced the concept of in-context learning. OpenAI further delineated this into subcategories such as zero-shot, one-shot, and few-shot learning, depending on how many examples are provided in the prompt.
 
 \object{\ac{cot}} This technique, introduced by \cite{wei_chain--thought_2022}, enhances in-context learning by prompting reasoning steps to elicit the \ac{llms}' step-by-step reasoning \cite{zhao_survey_2025}. Moreover, this method can lead to higher quality questions \cite{scaria_automated_2024}, as depicted in \cite{wei_chain--thought_2022}.
-%  [33] in \cite{zhao_survey_2025} --> real source: \cite{wei_chain--thought_2022}
-
-% \object{Being Descriptive} via table 12
 
 \object{Role-based Prompting} This technique involves assigning a specific role or persona to the model while prompting it \cite{zhao_survey_2025} to better fulfill the task instruction. The advantages of the approach are further discussed in the according paper \cite{kong_better_2024} independently of the survey paper.
 
 \object{Self-Refinement} By iteratively refining the \ac{llm}-generated output based on feedback \cite{madaan_self-refine_2023}, the overall process and the corresponding solutions can be improved \cite{zhao_survey_2025}.
-
-% \object{other promptings} from \cite{zhao_survey_2025} what is also to be seen in table 12? 6 new strategies would be nice to mention.
 
 \object{Using Special Marks} Emphasizing important parts of the prompt can be achieved by using special marks like quotation marks or line breaks \cite{zhao_survey_2025} to help the \ac{llm} visually distinguish between different parts of the prompt. 
 
@@ -162,20 +148,9 @@ To address these challenges and to refine the capabilities of \ac{llms} for spec
 
 \object{Providing Scoring Standards} For tasks which involve scoring a text, it is crucial to provide a detailed description of the scoring standards in the prompt \cite{zhao_survey_2025}. For instance, this clear rubric helps the \ac{llm} to assess the quality of generated questions \cite{scaria_automated_2024}.
 
-% \begin{itemize}
-%    \item \textbf{Zero-shot}: To assess the model's ability to generate content without any prior examples or training on a specific task.
-%    \item \textbf{Few-shot}: Providing a few examples to guide the model in generating content, compromising between zero-shot and full training.
-%    \item \textbf{Role-based prompting}: Providing the model a specific role or persona to adopt, e.g. telling the model to act as an expert in a specific field.
-%    \item \textbf{Instructional prompting}: Providing precise instructions to the model to guide its responses.
-%    \item \textbf{\ac{cot}}: Dividing the difficult task into smaller and logical steps, so the model can solve the issues step by step. \tcr{was not cited, problem?}
-%    \item \textbf{Self-refinement}: Given a problem, building on earlier sub problems, the model refines its own output to solve later subproblems sequentially. \tcr{was not cited, problem?}
-% \end{itemize}
-
-% \object{Other Prompting Strategies \cite{zhao_survey_2025}} \tcr{Many interesting strategies to mention}
-
 \object{\ac{rag}} This method \cite{lewis_retrieval-augmented_2020}, as used in approach \cite{hang_mcqgen_2024}, highlights how external knowledge sources can be integrated at \ac{aqg} prompts. For this, querying a comprehensive database is needed to retrieve relevant information that is useful the context of the question. This can be realized via e.g.\ knowledge graphs as domain-specific knowledge, which can be based on course content \cite{yang_heuristic_2024}.
 
-\object{Model Fine-Tuning} A key strategy to adapt general-purpose \ac{llms} to specific tasks by training them on domain-specific data \cite{hou_large_2024}. By this process, models can learn knowledge relevant to a specific context, aber traditional full fine-tuning requires vast amounts of data and computational resources \cite{hou_large_2024}. For instance, \cite{duong-trung_bloomllm_2024} fine-tuned their \ac{aqg} model with more than 1000 questions, which is a relatively small amount of data. % overfitting?
+\object{Model Fine-Tuning} A key strategy to adapt general-purpose \ac{llms} to specific tasks by training them on domain-specific data \cite{hou_large_2024}. By this process, models can learn knowledge relevant to a specific context, aber traditional full fine-tuning requires vast amounts of data and computational resources \cite{hou_large_2024}. For instance, \cite{duong-trung_bloomllm_2024} fine-tuned their \ac{aqg} model with more than 1000 questions, which is a relatively small amount of data.
 
 \object{Integration of Contextual Knowledge} Several studies \cite{biancini_multiple-choice_2024,blobstein_angel_2023,wang_towards_2022,bhowmick_automating_2023} have injected topic-related contextual information directly into the prompt to avoid hallucinating and give users control over the source of knowledge \cite{biancini_multiple-choice_2024}.
 

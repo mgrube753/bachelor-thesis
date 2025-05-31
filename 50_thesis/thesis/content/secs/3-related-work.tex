@@ -28,20 +28,22 @@ This section explores current research in \ac{llms} and their application to \ac
 \begin{itemize}
     \item \textbf{OpenAI:} With the initial release of ChatGPT \cite{openai_introducing_2022}, which firstly utilized the GPT-3.5 architecture, OpenAI has limited the disclosure of architectural details for its subsequent models. The GPT-4 model \cite{openai_gpt-4_2024} was followed by GPT-4o \cite{openai_gpt-4o_2024}, which outperformed GPT-4. The \enquote{GPT} nomenclature indicates a continuation of the decoder-only transformer architecture, a characteristic of known models up to GPT-3 \cite{brown_language_2020}. OpenAI's current state-of-the-art models emphasize reasoning capabilities, as seen in the o1-mini \cite{openai_openai_2024}, o1 \cite{openai_openai_2024-1}, o3-mini \cite{openai_openai_2025}, and the subsequent o3 and o4-mini \cite{openai_openai_2025-1} releases.
 
-    \item \textbf{Meta:} Meta has provided some architectural insights for its LLaMA series. The first generation \cite{touvron_llama_2023} was based on a modified transformer architecture. LLaMA 2 \cite{touvron_llama_2023-1}, up to the LLaMA 3.3 iteration adopted a decoder-only transformer architecture\footnote{\url{https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md}, accessed 05/09/2025. Note that auto-regressive means decoder-only}. With LLaMA 4 \cite{meta_ai_llama_2025}, Meta also transitioned to \ac{moe} models, with a maximum of 2 trillion parameters on its third model.
+    \item \textbf{Meta:} Meta has provided some architectural insights for its LLaMA series. The first generation \cite{touvron_llama_2023} was based on a modified transformer architecture. LLaMA 2 \cite{touvron_llama_2023-1}, up to the LLaMA 3.3 iteration adopted a decoder-only transformer\footnote{\url{https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md}, accessed 05/09/2025. Note that auto-regressive means decoder-only}. With LLaMA 4 \cite{meta_ai_llama_2025}, Meta also transitioned to \ac{moe} models, with a maximum of 2 trillion parameters on its third model.
 
     \item \textbf{Google:} Google's Bard, launched in February 2023, was initially based on the LaMDA architecture \cite{pichai_important_2023,thoppilan_lamda_2022}, making it a decoder-only model. Subsequent fine-tuning led to the Gemini series \cite{team_gemini_2024}, which also started as decoder-only. Gemini 1.5 marked a shift to an \ac{moe} architecture, though still described as decoder-based \cite{team_gemini_2024-1}. Beginning with Gemini 2.0 \cite{pichai_introducing_2024}, Google stopped publishing detailed architectural information. Gemini 2.5 \cite{kavukcuoglu_gemini_2025} further advanced their offerings by fully integrating reasoning capabilities, aligning with current state-of-the-art trends.
 
     \item \textbf{Anthropic:} Anthropic has maintained the policy of not disclosing detailed architectural information for its Claude series. This applies from the initial Claude 1 \cite{anthropic_introducing_2023} and Claude 2 \cite{anthropic_claude_2023} models, through the Claude 3 family \cite{anthropic_introducing_2024-1}, Claude 3.5 Sonnet \cite{anthropic_introducing_2024}, and up to Claude 3.7 Sonnet \cite{anthropic_claude_2025}. The latter also incorporated reasoning capabilities, making it competitive with other currently leading models.
 
-    \item \textbf{xAI:} xAI initially disclosed that its Grok-1 model utilized an \ac{moe} architecture \cite{xai_open_2024}. However, for subsequent releases, Grok-2 \cite{xai_grok-2_2024} and Grok-3 \cite{xai_grok_2025}, architectural details were not provided, though Grok-3 is recognized as a competitive state-of-the-art model with reasoning.
+    \item \textbf{xAI:} xAI initially disclosed that its Grok-1 model utilized an \ac{moe} architecture \cite{xai_open_2024}. However, for subsequent releases, Grok-2 \cite{xai_grok-2_2024} and Grok-3 \cite{xai_grok_2025}, architectural details were not provided, though Grok-3 is a competitive state-of-the-art model with reasoning.
 
     \item \textbf{DeepSeek AI:} DeepSeek AI offers open-source models, with DeepSeek V3 \cite{deepseek-ai_deepseek-v3_2025} as a popular \ac{moe} model. One month later, DeepSeek R1 \cite{deepseek-ai_deepseek-r1_2025} followed, reportedly using the same architecture but with added reasoning capabilities.
 
     \item \textbf{Alibaba:} The Alibaba Group has also contributed to the field with models like Qwen 2.5-Max \cite{team_qwen25-max_2025}, an \ac{moe} model. The more recent QwQ-Max \cite{team_thinkthink_2025} builds upon this architecture, incorporating reasoning to compete at the state-of-the-art.
 \end{itemize}
 
-Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the given table began from o1 and o3-mini in December 2024 plus the release of DeepSeek V3. January 2025, DeepSeek R1 and Alibaba's Qwen 2.5-Max model without reasoning capabilities were released. February 2025 brought xAI's Grok-3, Anthropic's Claude 3.7 Sonnet and Alibaba's QwQ-Max. In March 2025, the state-of-the-art was reached by a major upgrade in Google Gemini, with the release of Gemini 2.5. Finally, April 2025 featured the LLaMA 4 family by Meta and OpenAI's o3 and o4-mini models. Based on this information pool, the models for the \ac{aqg} evaluation were selected, as to be seen in Section \bfref{sec:experiment-setup}. 
+\pagebreak
+
+Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the given table began from o1 and o3-mini in December 2024 plus the release of DeepSeek V3. January 2025, DeepSeek R1 and Alibaba's Qwen 2.5-Max model without reasoning capabilities were released. February 2025 brought xAI's Grok-3, Anthropic's Claude 3.7 Sonnet and Alibaba's QwQ-Max. In March 2025, the state-of-the-art was reached by a major upgrade in Google Gemini, with the release of Gemini 2.5. Finally, April 2025 featured the LLaMA 4 family by Meta and OpenAI's o3 and o4-mini models. Based on this information pool, the models for the \ac{aqg} evaluation were selected, as to be seen in Section \bfref{sec:experiment-design}. 
 
 \object{Key \ac{llm} Development Trends} As illustrated in Table \bfref{tab:llm_releases}, a discernible trend is the decreasing transparency from developers regarding architectural designs of their \ac{llms}. While some models are known to be transformer-based (e.g.\ decoder-only) or employ an \ac{moe} architecture, and reasoning capabilities are often highlighted, many other details remain undisclosed due to the competitive nature of the field. It is also worth noting that there is a trend towards models with a higher number of parameters, a prevalence of decoder-only architectures from ChatGPT on, and an increasing adoption of \ac{moe} designs, a trend possibly popularized by GPT-4. Although the technical report for GPT-4 \cite{openai_gpt-4_2024} lacks architectural specifications, it is rumored to be an \ac{moe} model\footnote{\url{https://medium.com/@seanbetts/peering-inside-gpt-4-understanding-its-mixture-of-experts-moe-architecture-2a42eb8bdcb3}, accessed 05/09/2025}. Furthermore, a significant trend is the continuous integration of reasoning capabilities into \ac{llms}, with the most recent models being competitive in this area.
 
@@ -49,8 +51,6 @@ Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the 
 \label{sec:question-generation-research}
 
 \ac{llms} enable the automation of the time-consuming and demanding procedure of question generation \cite{vu_chatgpt-based_2024}. It has been communicated by the authors \cite{naveed_comprehensive_2024}, that the integration of such models into educational settings offer an opportunity to improve the learning experience, support teachers and encourage the development of educational content. The utilization of \ac{llms} has the potential to assist educators in the creation of diverse and inclusive materials with respect to education. This results in freeing up time for educators to focus on teaching and interacting with students.
-
-% \object{Focusing on Bloom's Taxonomy} Several studies have investigated the capability of \ac{llms} to generate educational questions aligned with the cognitive levels defined by Bloom's Taxonomy, aiming to provide educators with tools for targeted assessments. The following papers represent various approaches, including different prompting strategies, fine-tuning methods, and dedicated system developments.
 
 \object{Focusing solely on Prompt Engineering} Several studies have investigated the capability of \ac{llms} to generate educational questions aligned with cognitive levels, primarily by refining and optimizing the prompts given to the models. These approaches aim to guide \ac{llms} towards producing questions that meet specific educational objectives without any modification of the underlying model architecture.
 \begin{itemize}
@@ -78,24 +78,21 @@ Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the 
     \item \cite{hang_mcqgen_2024} presented MCQGen, a system that generates \ac{mcqs} for personalized learning by using GPT-4. They employed \ac{rag} and advanced prompting techniques, drawing on an external knowledge base. The approach leveraged the advanced semantic understanding and summarization capabilities of GPT-4. Both human- and \ac{llm}-based evaluators were used to assess the generated questions to provide a comprehensive assessment. Mixed outcomes were observed between e.g.\ LLaMA2 and GPT-3.5 versus human lecturers. While utilizing \ac{cot} prompting with self-refinement, the evaluation focused on \textit{Grammar, Answerability, Diversity, Complexity,} and \textit{Relevance}. Diversity and answerability lacked in both evaluation methods, suggesting that prompt optimization and expanding the knowledge base could address these limitations. 
 \end{itemize}
 
-% \object{Disregarding Bloom's Taxonomy} Other research explores the broader application of \ac{llms} for general-purpose \ac{aqg} in education, often focusing on specific question formats, overall quality improvement, or addressing challenges like hallucination. The following works highlight diverse methodologies and findings in this area.
-
-% \begin{itemize}
-    % question generation with chatgpt vs llama2-13B, experiments by using several textbooks, zero-shot, enhanced zero-shot, few-shot, few-shot with \ac{cot}, each version with 6 variations. human evaluators (experts, crowdsourcing), where experts prefer human-generated questions from textbooks and crowdsourced evaluators are pretty on par regarding both human- and \ac{llm}-generated questions. enhanced Zero-shot outperformed the other methods. metrics to check preference: clarity, alignment with learning objectives, simulation to critical thinking, usefulness, difficulty level, resemblance to human-generated questions. inter-rater agreement via cohens kappa.
-
-    % \item \cite{bhowmick_automating_2023} QGen generates \ac{mcqs} in focus from educational texts. modular framework with several steps: 1. question generation, 2. prediction of correct answer, 3. distractor formulation. using InstructGPT and Google T5. Eval by GPT-2 for perplexity and well-formedness in module 1. module 2: exact match, F1, ROUGE. module 3: acceptable distractors or not via e.g.\ semantic similarity. human eval regarding question, answer, distractors, the whole question complex. using few-shot prompting.
-    % \tcr{metrics need cites}
-    % MCQGen, a system which generates \ac{mcqs} for personalized learning via GPT-4. \ac{llm} with \ac{rag} and advanced prompting techniques by drawing on an external knowledge base. mixed outcomes between llama2, palm2 and gpt-3.5 as evaluators vs human lecturers... using \ac{cot} prompting for question generation with self-refinement. eval based on grammar, answerability, diversity, complexity, relevance. diversity and answerability were lacking, telling both evaluation methods. LLM as an evaluator. comprehensive assessment using both methods
-
-    % fine-tuned Google's FLAN-T5 model
-    %\footnote{\url{https://huggingface.co/google/flan-t5-base}, accessed 05/09/2025}
-    % for educational question generation via reinforcement learning, called RLLM-EduQG. The authors used two reward functions to steer the model's learning process: the BLEU metric and a semantic reward function. The model was evaluated using several simple metrics, including BLEU, F1, ROUGE, perplexity, and diversity, indicating a high predictive performance and linguistic quality. 
-
-    % \item \cite{luo_systematic_2023} \ac{llms} generated diverse questions based on factual knowledge from knowledge graphs. Several question types (true-false, mc, ...). models such as chatgpt, llama-7b, t5, flan-t5, outdated models, simple prompts injecting knowledge graph triplet. precision, F1 on diverse benchmarks, such as Google-RE.
-    
-    % chatgpt-3.5, generation of question banks in high-school education supporting educators at generating questions. adopted from \cite{cavojsky_exploring_2023}, several prompt patterns were set up for different question types (mc, tf, calculative excercise), such as combining the \ac{llm}'s role, the desired task, given some context, an example and the format, called RTCEF. blind test where each tells if was human- or gpt-generated. many calculative excercise questions were filtered out before, because of insufficient data, relying on the probability of word's appearance rather than the logical factors. but still potential at supporting educators. test shown that lecturers can differ best, in contrast to different students' groups.
-
-    % \item \cite{wang_towards_2022} large pre-trained language models for \ac{aqg} with educational focus. watching impact of different prompting strategies on the quality of the questions. experts in eval could not effectively differ between human- and \ac{llm}-generated questions underlining the potential of scalable question generation.
-% \end{itemize}
-
 \vspace{3em}\pagebreak
+
+\object{Research Gaps addressed by this Thesis} ...
+
+\newtodo{Maybe the texts above need a little refinement, so that the gaps are more visible.}
+
+\newtodo{Create proper research gaps text, what do i want to address with my thesis?}
+
+\begin{itemize}
+    \item outdated models or small language models used, even in current papers
+    \item uprising reasoning/thinking capabilities were not considered
+    \item "A significant research gap exists regarding the creation of
+cognitively challenging questions, particularly the effective implementation and scoring of questions
+aligned with higher levels of Bloom's Taxonomy. While LLMs such as ChatGPT [Ope22] are good
+at generating questions for lower cognitive levels, they have limitations at the higher levels, often
+generating oversimplified or unrealistic questions [DWK24; Elk+23; SDS24]"
+    \item what else?
+\end{itemize}
