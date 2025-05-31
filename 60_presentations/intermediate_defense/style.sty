@@ -1,14 +1,14 @@
 \mode<presentation>
 
-\xdefinecolor{swufe}{RGB}{1,83,139}
-\xdefinecolor{swufe-light}{RGB}{210,229,242}
-\xdefinecolor{swufe-dark}{RGB}{0,48,87}
+\xdefinecolor{main}{RGB}{1,83,139}
+\xdefinecolor{main-light}{RGB}{210,229,242}
+\xdefinecolor{main-dark}{RGB}{0,48,87}
 
 \useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
 \useinnertheme[shadow=true]{rounded}
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
-\setbeamercolor{section in toc}{fg=swufe-dark}
+\setbeamercolor{section in toc}{fg=main-dark}
 \setbeamerfont{section in toc}{series=\bfseries}
 \setbeamercolor{subsection in toc}{fg=red}
 \setbeamerfont{subsection in toc}{series=\itshape}
@@ -16,7 +16,7 @@
   \hspace{1.5em}\inserttocsectionnumber.\inserttocsubsectionnumber.\;\inserttocsubsection\par}
 \setbeamertemplate{section in toc}{%
   \inserttocsectionnumber.\;\inserttocsection\par}
-\setbeamercolor{section in head/foot}{fg=swufe-dark, bg=white}
+\setbeamercolor{section in head/foot}{fg=main-dark, bg=white}
 \setbeamerfont{section in head/foot}{series=\bfseries}
 
   \AtBeginSection[]{
@@ -31,30 +31,30 @@
 
 \beamertemplatenavigationsymbolsempty
 
-\setbeamercolor{palette primary}{bg=swufe-dark,fg=white}
-\setbeamercolor{palette secondary}{bg=swufe,fg=white}
-\setbeamercolor{palette tertiary}{bg=swufe-light,fg=swufe-dark}
-\setbeamercolor{palette quaternary}{bg=white,fg=swufe-dark}
+\setbeamercolor{palette primary}{bg=main-dark,fg=white}
+\setbeamercolor{palette secondary}{bg=main,fg=white}
+\setbeamercolor{palette tertiary}{bg=main-light,fg=main-dark}
+\setbeamercolor{palette quaternary}{bg=white,fg=main-dark}
 
-\setbeamercolor{structure}{fg=swufe}
-\setbeamercolor{title}{fg=white,bg=swufe-dark}
-\setbeamercolor{frametitle}{fg=white,bg=swufe}
+\setbeamercolor{structure}{fg=main}
+\setbeamercolor{title}{fg=white,bg=main-dark}
+\setbeamercolor{frametitle}{fg=white,bg=main}
 \setbeamercolor{section in toc}{fg=black}
-\setbeamercolor{subsection in toc}{fg=swufe}
+\setbeamercolor{subsection in toc}{fg=main}
 
-\setbeamercolor{block title}{bg=swufe,fg=white}
-\setbeamercolor{block body}{bg=swufe-light,fg=swufe-dark}
+\setbeamercolor{block title}{bg=main,fg=white}
+\setbeamercolor{block body}{bg=main-light,fg=main-dark}
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
-\setbeamertemplate{itemize item}{\color{swufe}$\bullet$}
-\setbeamertemplate{itemize subitem}{\color{swufe!70}$\triangleright$}
-\setbeamertemplate{enumerate item}{\color{swufe}\insertenumlabel.}
+\setbeamertemplate{itemize item}{\color{main}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{main!70}$\triangleright$}
+\setbeamertemplate{enumerate item}{\color{main}\insertenumlabel.}
 
 \renewcommand{\sectionpage}{
-    \begin{frame}[plain]
+    \begin{frame}[plain, noframenumbering]
         \begin{tikzpicture}[remember picture,overlay]
             % Background gradient
-            \fill[top color=swufe!60, bottom color=swufe-light!70, shading angle=45] 
+            \fill[top color=main!30, bottom color=main-light!40, shading angle=45] 
                 (current page.north west) rectangle (current page.south east);
             
             % Decorative elements
@@ -70,7 +70,7 @@
         \begin{center}
             \usebeamercolor[fg]{title}
             \usebeamerfont{title}
-            \fontsize{28}{32}\selectfont\bfseries\insertsection
+            \fontsize{24}{32}\selectfont\bfseries\insertsection
         \end{center}
     \end{frame}
 }
@@ -92,8 +92,8 @@
 }
 
 \setbeamertemplate{frametitle}{
-  \vspace{0.1cm}
-  \begin{beamercolorbox}[wd=\paperwidth,ht=.8cm,dp=0.3125cm]{frametitle}
+  % \vspace{0.1cm}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=.7cm,dp=0.3125cm]{frametitle}
     \hspace{0.4cm}\parbox{\dimexpr\textwidth-1cm}{\Large\insertframetitle}
   \end{beamercolorbox}
 }
