@@ -1,7 +1,7 @@
 ## Descriptions
 
 -   Remembering: Abruf relevanten Wissens aus dem Langzeitgedächtnis, indem der Schwerpunkt auf dem Erkennen und Erinnern von Fakten liegt.
--   Understanding: Erkennen der Bedeutung von Anweisungen, z. B. mündlicher, schriftlicher und grafischer Kommunikation.
+-   Understanding: Erkennen der Bedeutung von Anweisungen, z.B. mündlicher, schriftlicher und grafischer Kommunikation.
 -   Applying: Durchführen oder Anwenden eines Verfahrens in einer bestimmten Situation.
 -   Analyzing: Zerlegung von Material in seine Bestandteile und Bestimmung ihrer Beziehungen zueinander oder zu einer Gesamtstruktur oder einem Gesamtzweck.
 -   Evaluating: Urteile auf der Grundlage etablierter Kriterien und Standards fällen.
