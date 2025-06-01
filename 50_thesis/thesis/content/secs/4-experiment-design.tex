@@ -75,13 +75,13 @@ The method employed for the two experiments is outlined here. It details the spe
 
         \pagebreak
         
-        Moreover, other metrics such as Perplexity are less suitable for this task, as \enquote{the output value is based heavily on what the text and the model was trained on. This means that perplexity scores are not comparable between models or datasets}, as stated on HuggingFace\footnote{\url{https://huggingface.co/spaces/evaluate-metric/perplexity}}. Instead, to properly analyze the content fidelity on a quantitative level, the \textit{Content Adherence} will be assessed by prompting an \ac{llm}. By this, the generated questions can be evaluated against the source material by returning a value between 0 and 1. Regarding \cite{nguyen_reference-based_2024}, which used an \ac{llm} to extensively evaluate generated questions which are based on context, the authors did not cover the content adherence. This offers a new perspective on the evaluation of generated questions, especially in the context of \ac{aqg}.
+        Moreover, other metrics such as Perplexity are less suitable for this task, as \enquote{the output value is based heavily on what the text and the model was trained on. This means that perplexity scores are not comparable between models or datasets}, as stated on HuggingFace\footnote{\url{https://huggingface.co/spaces/evaluate-metric/perplexity}, accessed 06/01/2025}. Instead, to properly analyze the content fidelity on a quantitative level, the \textit{Content Adherence} will be assessed by prompting an \ac{llm}. By this, the generated questions can be evaluated against the source material by returning a value between 0 and 1. Regarding \cite{nguyen_reference-based_2024}, which used an \ac{llm} to extensively evaluate generated questions which are based on context, the authors did not cover the content adherence. This offers a new perspective on the evaluation of generated questions, especially in the context of \ac{aqg}.
 
         \item \textit{Qualitative Analysis:} An \ac{llm} will serve as an evaluator with multiple runs to ensure validity. Besides, expert evaluations are conducted on a sampled question subset using the same concise rubric. Inter-annotator agreement between the \ac{llm} and human experts (via Cohen's Kappa) will be measured to validate the reliability of automated evaluation. Since Experiment 1b examines the adherence to manipulated input texts, the \textit{Correctness} will be specifically assessed for each of the two experimental runs, as quantitative metrics solely may not capture the correctness of the generated questions. The evaluation adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. However, the \textit{Bloom's Level} criterion is replaced with \textit{Correctness} to address the specific objectives of this experiment:
 
         \begin{table}[htbp]
            \centering
-           \renewcommand{\arraystretch}{1.6}
+           \renewcommand{\arraystretch}{1.4}
            \caption{Experiment 1 Evaluation Criteria.}
            \label{tab:exp1_criteria}
            \begin{tabularx}{\textwidth}{|Z|A|Y|}
@@ -104,7 +104,7 @@ The method employed for the two experiments is outlined here. It details the spe
             \end{itemize} \\
            \cline{2-3}
             & \textbf{Manipulated Source Material:} Does the question adhere to the manipulated input text content? & \vspace{-1em}\begin{itemize} 
-                \item No Adherence: 10p
+                \item No Adherence\,/\,Detects Mani- pulation: 10p
                 \item Partially adheres: 5p
                 \item Otherwise: 0p
             \end{itemize} \\
@@ -123,7 +123,7 @@ The method employed for the two experiments is outlined here. It details the spe
 
         \begin{table}[htbp]
            \centering
-           \renewcommand{\arraystretch}{1.6}
+           \renewcommand{\arraystretch}{1.4}
            \caption{Experiment 2 Evaluation Criteria.}
            \label{tab:exp2_criteria}
            \begin{tabularx}{\textwidth}{|Z|A|Y|}
