@@ -1,9 +1,8 @@
-```markdown
-Frage: In welcher Reihenfolge führt die Physical Layer (Schicht 1) des ISO-OSI-Modells ihre drei Kernaufgaben während einer vollständigen Datenübertragung typischerweise aus?
+Frage:  
+Warum wird bei der Transportfunktion der Bitübertragungsschicht zwischen "medien-gebunden" und "medien-frei" unterschieden, und welche grundlegende Implikation ergibt sich daraus für die physische Signalübertragung?  
 
-Antwortmöglichkeiten:
-- Transport, Codierung, Decodierung
-- ~Codierung, Transport, Decodierung
-- Decodierung, Codierung, Transport
-- Transport, Decodierung, Codierung
-```
+Antwortmöglichkeiten:  
+- ~Die Unterscheidung reflektiert die Abhängigkeit von einem physischen Trägermedium (z. B. Kabel) versus der Nutzung von Wellenausbreitung im Raum. Dies bestimmt maßgeblich die Signalausbreitungscharakteristiken und Störungsanfälligkeit.  
+- Sie kennzeichnet die Übertragungsgeschwindigkeit, wobei medien-freie Methoden grundsätzlich höhere Bandbreiten ermöglichen.  
+- Sie definiert die Codierungsart: Medien-gebundener Transport erfordert Manchester-Codierung, medien-freier hingegen NRZ.  
+- Sie trennt digitale von analoger Signalverarbeitung, wobei medien-freier Transport ausschließlich digitale Signale nutzt.

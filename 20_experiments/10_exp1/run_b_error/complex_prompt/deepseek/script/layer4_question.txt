@@ -1,12 +1,7 @@
-```markdown
-Frage: Welche der folgenden Aussagen charakterisieren die "Dienstquantität" gemäß der Transport Layer-Beschreibung am treffendsten?
-(Mehrfachauswahl möglich)
+Frage: Der Text beschreibt die Transport Layer-Funktion als "Bereitstellung einer Speicherung". Analysieren Sie vor dem Hintergrund der genannten Kernaufgaben, warum diese Formulierung dennoch technisch korrekt ist, obwohl explizit keine Garantien für Speicherdienst-Eigenschaften gegeben werden.
 
 Antwortmöglichkeiten:
-- ~Bietet Speicherdienste ohne Kapazitätsgarantien oder Fehlerfreiheitszusagen
-- Gewährleistet Quality of Service (QoS) für priorisierte Datenströme
-- ~Operiert unabhängig von spezifischen Teilnehmereigenschaften
-- Nutzt Teilnehmer-Charakteristiken zur Optimierung der Zugriffszeiten
-- ~Ignoriert qualitative Parameter wie Varianz bei Dienstleistungen
-- Implementiert gerätespezifische Kennungen für verbesserte Identifikation
-```
+- ~Die "Speicherung" bezieht sich auf die temporäre Pufferung von Segmenten während der Ende-zu-Ende-Übertragung zur Behandlung von Flusskontrolle und Staukontrolle, nicht auf persistente Datenspeicherung.
+- Sie beschreibt die Fähigkeit des Layers, Daten dauerhaft für spätere Übertragungen vorzuhalten, unabhängig von QoS-Anforderungen.
+- Die Formulierung ist inkonsistent; sie widerspricht direkt der Aussage zur Dienstquantität und müsste als Fehler im Text betrachtet werden.
+- Es handelt sich um eine Referenz zu Layer-1-Funktionalitäten (physische Speicherung), die fälschlich dem Transport Layer zugeordnet wurden.

@@ -1,8 +1,8 @@
-**Frage:** Welche der folgenden Kernaufgaben des Network Layer 3 (ISO-OSI-Modell) beinhaltet Strategien zur Bewältigung zu langsamer Datenübertragung?  
+**Frage:**  
+Welches Protokoll der Netzwerkschicht (Layer 3) dient der Speicherung von Adressinformationen für Geräte im selben lokalen Netzwerk (gleiche Layer 2 Technologie) und erfüllt Kernaufgaben wie Lokalisierung, Zufallspfad-Auswahl und Datenbeschleunigung?  
 
-**Antwort:** Datenbeschleunigung.  
-
-**Auswahlmöglichkeiten:**  
-A) Lokalisierung  
-B) Zufallspfad  
-C) Datenbeschleunigung
+**Antworten:**  
+A) DHCP  
+B) DNS  
+C) **ARP (Korrekte Antwort)**  
+D) TCP

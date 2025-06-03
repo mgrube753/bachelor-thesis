@@ -1,11 +1,11 @@
-Frage: Welche der folgenden Aspekte sind typisch für die Medienverweigerung im Data Link Layer 2 gemäß dem gegebenen Text?
+Frage:  
+Der Text beschreibt fünf Kernaufgaben der Sicherungsschicht (Layer 2) des ISO-OSI-Modells. Eine dieser Aufgaben wird als "Fragmentierung: Aufteilen größerer Einheiten in einzelne Bits" mit dem "universal-typischen Beispiel: 1-bit Segmente" definiert. Warum ist diese Beschreibung der Fragmentierung aus technischer und konzeptioneller Sicht problematisch oder inkorrekt? Wähle die zutreffende Begründung aus.  
 
-Antwortmöglichkeiten:
-- ~Empfangen
-- ~Ignorieren
-- ~Verursachen
-- ~Freigeben
-- Verschleiern von Übertragungsfehlern
-- Verwerfen von Daten
-- Verschlüsselung der Adressen
-- Beschleunigen der Übertragungsrate
+Antwortmöglichkeiten:  
+- ~Die Fragmentierung in einzelne Bits ist eine Kernfunktion der *Bitübertragungsschicht (Layer 1)*, nicht der Sicherungsschicht. Layer 2 arbeitet typischerweise mit Frames, deren Fragmentierung größere Datenblöcke (z.B. Pakete von Layer 3) in kleinere, aber immer noch mehrbitige Frames aufteilt, nicht in einzelne Bits.  
+- Die Sicherungsschicht fragmentiert Daten ausschließlich in Byte-große Einheiten, da dies die Adressierung vereinfacht.  
+- Die korrekte Fragmentierungsaufgabe von Layer 2 besteht im Zusammenfügen (Reassembly) von Bits aus Layer 1 zu Frames, nicht im Aufteilen in Bits.  
+- Fragmentierung bezieht sich in Layer 2 primär auf die Anpassung der Paketgröße an die maximale Übertragungseinheit (MTU) des darunterliegenden Netzwerks, wobei die resultierenden Segmente immer noch aus vielen Bits bestehen.  
+
+**Erklärung zur Korrektheit:**  
+Die Antwort ist problematisch, weil sie eine grundlegende Aufgabe der Schicht 1 (Physical Layer) fälschlicherweise der Schicht 2 (Data Link Layer) zuordnet. Der Physical Layer ist für die Übertragung *individueller Bits* über das Medium verantwortlich. Die Sicherungsschicht arbeitet dagegen mit strukturierten Datenblöcken (Frames), die aus vielen Bits bestehen. Ihre Fragmentierungsfunktion (wenn vorhanden) teilt große *Frames* oder von Layer 3 empfangene *Pakete* in kleinere *Frames* auf, nicht in einzelne Bits. Das genannte "1-bit Segment" ist kein gültiges Konzept für Layer-2-Operationen.

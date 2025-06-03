@@ -1,13 +1,7 @@
-```markdown
-Frage: Welche der folgenden Aufgaben gehört NICHT zu den Kernaufgaben des Presentation Layers (Schicht 6) im ISO-OSI-Modell?
+Frage: Eine Netzwerk-Applikation sendet strukturierte Daten zwischen Systemen unterschiedlicher Architekturen. Welche der folgenden Funktionen werden explizit der Präsentationsschicht (Schicht 6) im OSI-Modell zugeordnet, um die notwendige Daten-Transformation für diese Kommunikation sicherzustellen?
 
 Antwortmöglichkeiten:
-- ~Steuerung des Datenflusses zwischen Sender und Empfänger
-- Konvertierung von Zeichendarstellungen zwischen ASCII und Unicode
-- Komprimierung von Daten zur Bandbreitenoptimierung
-- Verschlüsselung sensibler Informationen
-- Umwandlung von Big-Endian- zu Little-Endian-Formaten
-```
-
-**Erklärung:**  
-Die Datenflusskontrolle ist eine Kernaufgabe des Transport Layers (Schicht 4), nicht des Presentation Layers. Die anderen Optionen entsprechen exakt den vier im Text genannten Kernaufgaben (Endianness-Konvertierung, Zeichenkodierung, Kompression, Verschlüsselung).
+- ~Endianness-Konvertierung, Zeichendarstellungskonvertierung, Kompression und Verschlüsselung
+- Segmentierung, Flusskontrolle, Fehlererkennung und logische Adressierung
+- Validierung des Datenformats gemäß Applikationsprotokoll, Initiierung von Sitzungen und Dialogkontrolle
+- Physikalische Signalumsetzung, Bit-Synchronisation und Topologie-Management

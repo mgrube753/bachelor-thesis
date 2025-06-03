@@ -1,10 +1,7 @@
-```markdown
-Frage: Welche der folgenden Aussagen zur Physical Layer 1 zeigt einen Widerspruch zwischen der beschriebenen logischen Konzeption und den genannten Beispielen auf?
+Frage: Warum stellt die Beschreibung der Physical Layer 1 im gegebenen Text eine fundamentale Abweichung vom traditionellen Verständnis des ISO-OSI-Modells dar, und welche konzeptionellen Widersprüche ergeben sich daraus bezüglich der Aufgabenverteilung zwischen Schicht 1 und höheren Schichten?  
 
-Antwortmöglichkeiten:
-- ~"Speicherung medien-unabhängiger Größen wird an Festplatten demonstriert, obwohl diese physische Medien erfordern"
-- "Verschlüsselung wird durch AES veranschaulicht, das ein symmetrisches Verfahren ist"
-- "Kompression logischer Größen in physikalische Werte widerspricht der Shannon-Kodierungstheorie"
-- ~"Die Umwandlung logischer Größen in physikalische Werte wird der Kompression zugeordnet, obwohl dies typischerweise eine Physical-Layer-Transcodierung darstellt"
-- "RAM wird als medien-gebundenes Speicherbeispiel genannt, obwohl es flüchtige Speicherung zeigt"
-```
+Antwortmöglichkeiten:  
+- ~Weil traditionell die Physical Layer ausschließlich die rohe Bit-Übertragung über physische Medien regelt (z.B. Spannungspegel, Stecker), der Text ihr jedoch logische Verarbeitungsaufgaben (Verschlüsselung, Kompression) zuweist, die eigentlich höheren Schichten (wie Präsentationsschicht) vorbehalten sind.  
+- Weil der Text die Speicherung als medienunabhängig beschreibt, während das OSI-Modell explizit mediengebundene Protokolle für Layer 1 vorsieht.  
+- Weil die genannten Algorithmen (AES, Huffman) typischerweise der Netzwerk- und Transportschicht zugeordnet werden, nicht der Bitübertragungsschicht.  
+- Weil das OSI-Modell in Layer 1 keine Abbildung zwischen physikalischen Werten und logischen Größen vorsieht, sondern diese Abstraktion erst in der Data-Link-Layer beginnt.

@@ -1,11 +1,3 @@
-```markdown
-Frage: Welche der folgenden Aspekte zählen zu den primären Designkriterien der Physical Layer im ISO-OSI-Modell, und welche gehören zu höheren Schichten? Begründen Sie Ihre Zuordnung kritisch.
+Frage: Warum wird das physische Übertragungsmedium in der Beschreibung der Bitübertragung auf der physischen Schicht des ISO-OSI-Modells explizit als "*unterhalb* der physischen Schicht liegend" charakterisiert, obwohl es doch die eigentlichen Bits trägt? Erläutern Sie diesen scheinbaren Widerspruch unter Bezugnahme auf die definierten Aufgaben und Verantwortlichkeiten der Schicht.
 
-Antwortmöglichkeiten:
-- ~Festlegung der Spannungspegel zur Unterscheidung von 0- und 1-Bits (Physical Layer: Direkte Signalrepräsentation)
-- ~Synchronisation der Bit-Übertragungsdauer in Nanosekunden (Physical Layer: Timing-Interface)
-- ~Physische Pin-Belegung eines Netzwerkconnectors (Physical Layer: Mechanische Schnittstelle)
-- Verhandlung gleichzeitiger bidirektionaler Übertragung (Data Link Layer: Vollduplex-Steuerung)
-- Fehlererkennung durch Prüfsummen (Data Link Layer: Frame-Integrität)
-- Verschlüsselung übertragener Daten (Presentation Layer: Datentransformation)
-```
+Antwort: ~Das physische Übertragungsmedium (z. B. Kupferkabel, Glasfaser, Luft) liegt *unterhalb* der physischen Schicht, weil es die reine physische Grundlage für die Übertragung darstellt, aber *nicht* Teil der Protokollschicht selbst ist. Die physische Schicht (Layer 1) definiert die **Schnittstelle** zu diesem Medium – also *wie* Bits als elektrische/optische Signale repräsentiert werden, deren zeitliche Dauer, die Steuerung der Übertragungsrichtung (Simplex, Halbduplex, Vollduplex), die mechanische Verbindung (Stecker/Pins) und die Prozeduren für Verbindungsauf-/-abbau. Sie standardisiert somit die Interaktion mit dem Medium, aber *nicht* die intrinsischen Eigenschaften des Mediums selbst. Das Medium ist die passive Infrastruktur, auf die die aktiven Spezifikationen der physischen Schicht angewendet werden.

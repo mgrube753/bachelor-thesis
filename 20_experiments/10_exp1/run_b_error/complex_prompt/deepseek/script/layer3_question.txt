@@ -1,9 +1,6 @@
-```markdown
-Frage: Bei der Datenbeschleunigung in Schicht 3 des ISO-OSI-Modells werden spezifische Strategien zur Optimierung langsamer Übertragungen eingesetzt. Welche zwei der folgenden Ansätze sind explizit im beschriebenen Kontext zugeordnet?
+Frage: Identifizieren Sie die Kernaufgabe in der beschriebenen Netzwerkschicht (Layer 3), deren Zuordnung zum OSI-Layer 3 unter Standarddefinitionen am stärksten infrage gestellt werden kann. Begründen Sie kurz, warum diese Aufgabe typischerweise einem anderen OSI-Layer zugeordnet wird.
 
 Antwortmöglichkeiten:
-- ~Punkt-zu-Punkt: Vom Sender zum direkten Nachbarn
-- ~Broadcast: Von einem Knoten zu allen Anderen
-- Multicast: Von einem Knoten zu einer definierten Teilmenge
-- Anycast: Von einem Knoten zum nächsten verfügbaren in einer Gruppe
-```
+- ~**Datenbeschleunigung: Strategien, wenn zu langsam gesendet wird** – Diese Funktion (insbesondere die erwähnten Übertragungsmodi Punkt-zu-Punkt und Broadcast) betrifft primär die effiziente Datenübertragung zwischen direkt verbundenen Knoten. Dies fällt in den Zuständigkeitsbereich der **Sicherungsschicht (Layer 2)**, die für den Zugriff auf das physische Medium und die Fehlererkennung/Korrektur zwischen benachbarten Knoten verantwortlich ist. Layer 3 (Vermittlungsschicht) fokussiert sich auf logische Adressierung und pfadbasierte Weiterleitung über mehrere Hops hinweg, nicht auf die Beschleunigung der Bitübertragung zwischen direkten Nachbarn.
+- Lokalisierung: Netzwerk-interne Positionen – Dies entspricht der logischen Adressierung (z.B. IP-Adressen), einer Kernfunktion von Layer 3 zur Identifikation von Geräten im Netzwerk.
+- Zufallspfad: Zufällige Auswahl von Endknoten zur Kommunikation direkt verbundener Knoten – Dies beschreibt rudimentär das Routing (Pfadauswahl), eine weitere zentrale Aufgabe von Layer 3, auch wenn die Formulierung "zufällig" untypisch ist.

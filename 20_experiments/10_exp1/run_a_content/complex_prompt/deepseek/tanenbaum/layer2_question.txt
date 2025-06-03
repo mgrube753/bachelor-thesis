@@ -1,10 +1,7 @@
-```markdown
-Frage: Welche drei Hauptaufgaben der Data Link Layer werden im Text explizit beschrieben und durch welche spezifischen Mechanismen werden diese gelöst?
+Frage: Betrachten Sie die spezifischen Herausforderungen der Data-Link-Layer im ISO/OSI-Modell gemäß dem Text. Welche der folgenden Funktionen stellt ein *ausschließliches* Problem in Broadcast-Netzwerken dar und erfordert daher das spezielle MAC-Sublayer, während es in Point-to-Point-Verbindungen nicht auftritt?
 
 Antwortmöglichkeiten:
-- ~Transformation der Übertragungseinrichtung in eine fehlerfreie Leitung durch Framing und Bestätigungsmechanismen
-- ~Flusskontrolle durch Regulierung des Datenverkehrs zwischen schnellem Sender und langsamem Empfänger
-- Routing von Datenpaketen über verschiedene Netzwerke hinweg
-- ~Zugriffskontrolle auf Shared Media in Broadcast-Netzwerken durch das MAC-Sublayer
-- Verschlüsselung von Datenframes zur Sicherstellung der Vertraulichkeit
-```
+- ~Kontrolle des Zugriffs auf das gemeinsame Übertragungsmedium
+- Sicherstellung der Flusskontrolle zwischen Sender und Empfänger
+- Aufteilung der Eingabedaten in Frames und sequentielle Übertragung
+- Bestätigung korrekt empfangener Frames durch Acknowledgement

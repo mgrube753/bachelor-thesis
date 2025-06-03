@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Methoden wird im Data Link Layer zur Flusskontrolle eingesetzt, wie im Text beschrieben?
+Frage: Eine Netzwerktechnikerin beobachtet konstante Datenverluste durch Überlastung bei einer Point-to-Point-Verbindung. Basierend auf den beschriebenen Flusskontrollmechanismen des Data Link Layers – welche Lösung wirkt *präventiv*, indem sie Überlastung aktiv verhindert (anstatt reaktiv darauf zu reagieren), und warum ist dieser Ansatz im gegebenen Szenario besonders effektiv?
 
 Antwortmöglichkeiten:
-- ~Verzögerung von Bestätigungen, um die Senderate implizit zu reduzieren
-- Dynamische Neuberechnung von Netzwerkpfaden basierend auf Auslastung
-- Verschlüsselung übertragener Bytes zur Sicherung der Vertraulichkeit
-- Zerlegung langer Nachrichten in transportfähige Pakete auf Anwendungsebene
+- Verzögerung von Bestätigungen (ACKs), da der Empfänger so implizit die Senderate drosselt, ohne zusätzliche Steuersignale zu benötigen.
+- Einsatz von Zwischenpuffern, da diese eingehende Daten temporär speichern und so plötzliche Spitzenlasten abfedern können.
+- **~Explizite Drosselungsanfrage ("Bitte sende nicht so schnell")**, da sie den Sender *proaktiv* anweist, seine Rate *bevor* Datenverlust auftritt anzupassen und direkte Kontrolle ermöglicht.
+- Segmentierung in Bytes, da kleinere Einheiten die Pufferung effizienter machen und so das Überlaufrisiko minimieren.

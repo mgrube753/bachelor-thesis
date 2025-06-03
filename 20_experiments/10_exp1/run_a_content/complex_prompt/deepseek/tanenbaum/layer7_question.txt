@@ -1,9 +1,7 @@
-```markdown
-Frage: Welches der folgenden Protokolle gehört NICHT zur Anwendungsschicht des ISO-OSI-Modells, basierend auf den im Text beschriebenen Funktionen und Beispielen?
+Frage: Warum wird HTTP als Anwendungsprotokoll klassifiziert, basierend auf seiner beschriebenen Funktionsweise im ISO-OSI-Modell?
 
 Antwortmöglichkeiten:
-- ~TCP
-- HTTP
-- FTP
-- SMTP
-```
+- ~Weil es direkt von Anwendungen (wie Browsern) genutzt wird, um spezifische benutzerorientierte Dienste (wie das Abrufen von Webseiten) zu realisieren.
+- Weil es für die zuverlässige Übertragung der Datenpakete zwischen Client und Server verantwortlich ist.
+- Weil es die logische Adressierung und den Weg der Daten durch das Netzwerk festlegt.
+- Weil es die physikalische Darstellung der Daten auf dem Übertragungsmedium regelt.

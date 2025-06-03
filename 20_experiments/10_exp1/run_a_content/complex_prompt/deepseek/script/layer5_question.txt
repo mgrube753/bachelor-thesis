@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche der folgenden Funktionen gehört NICHT zu den Kernaufgaben des Session Layers (Schicht 5) im OSI-Modell?
+Frage: Ein Entwickler entwirft ein Protokoll für Online-Banktransaktionen, das Gruppen zusammenhängender Operationen (z.B. Überweisung mit Buchungsbestätigung) als Einheit behandelt und bei Systemfehlern den automatischen Rollback zum letzten stabilen Zustand ermöglicht. Welche Kernfunktion der OSI-Session-Schicht nutzt er primär für diese Anforderungen kombiniert?
 
-Antwortmöglichkeiten:
-- ~Steuerung des Datenflusses zwischen Endgeräten
-- Synchronisation durch Setzen von Wiederaufsetzpunkten
-- Bündelung logisch zusammenhängender Kommunikationseinheiten
-- Aufbau und Abbau von Dialogverbindungen zwischen Anwendungen
-```
+Antwortmöglichkeiten:  
+- Sitzungsaufbau und -verwaltung  
+- ~Synchronisation durch Zwischenpunkte in Verbindung mit Bündelung  
+- Reine Bündelung ohne Synchronisationsmechanismen  
+- Beendigung von Sitzungen nach Einzeltransaktionen

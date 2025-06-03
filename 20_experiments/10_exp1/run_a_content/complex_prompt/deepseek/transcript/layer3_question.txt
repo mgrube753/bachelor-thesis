@@ -1,6 +1,7 @@
-```markdown
-Frage: Welche beiden grundlegenden Herausforderungen im Network Layer machen die parallele Existenz von Ende-zu-Ende- und Knoten-zu-Knoten-Flusssteuerung notwendig? Begründen Sie anhand der im Text beschriebenen Szenarien.
+Frage: Warum erfordert die Ende-zu-Ende-Flusssteuerung im Network Layer des OSI-Modells eine gesonderte Betrachtung, selbst wenn alle direkt verbundenen Knotenpaare (Knoten-zu-Knoten) jeweils optimale Übertragungsgeschwindigkeiten ausgehandelt haben? Erläutern Sie den zugrundeliegenden Mechanismus anhand des Textbeispiels.
 
-Antwort: ~1) Knoten-zu-Knoten-Steuerung ist erforderlich, da direkt kommunizierende Partner eine gemeinsame Übertragungsgeschwindigkeit aushandeln müssen, um lokale Überlastungen zu vermeiden.  
-2) Ende-zu-Ende-Steuerung wird benötigt, weil selbst bei lokal optimierten Verbindungen der langsamste Zwischenknoten in der Gesamtstrecke zu systemweiten Pufferüberläufen führen kann, die eine globale Regulierung erfordern.
-```
+Antwortmöglichkeiten:
+- ~Weil heterogene Übertragungsgeschwindigkeiten entlang der gesamten Route dazu führen können, dass langsame Zwischenknoten überlastet werden, da sie Daten zwischenspeichern (puffern) müssen, was Ende-zu-Ende-Staus verursacht – selbst wenn lokale Verbindungen stabil sind.
+- Weil die Adressierung unterschiedlicher Netzwerktechnologien (z.B. Bluetooth zu 5G) eine globale Koordination der Senderaten erzwingt, um Adresskonflikte zu vermeiden.
+- Weil das Routing-Protokoll priorisiert werden muss, um sicherzustellen, dass die Flusssteuerungspakete immer den kürzesten Pfad nehmen.
+- Weil die Knoten-zu-Knoten-Flusssteuerung ausschließlich für physische Verbindungen gilt, während Ende-zu-Ende logische Verbindungen über mehrere Hops steuert.

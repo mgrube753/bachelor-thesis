@@ -1,9 +1,7 @@
-```markdown
-Frage: In welchem der folgenden Szenarien wird primär eine Node-to-Node-Flußsteuerung in Layer 3 eingesetzt, im Gegensatz zur End-to-End-Flußsteuerung?
+Frage: Eine Netzwerkadministratorin analysiert Paketverluste in einem mehrstufigen WAN. Sie beobachtet, dass Sender A Daten zu schnell für den letzten Hop-Router vor Empfänger B ausspuckt, aber alle Zwischenknoten problemlos kommunizieren. Welche Art der Flußsteuerung aus Layer 3 muss hier priorisiert implementiert werden, um das Problem spezifisch zwischen A und B zu lösen, ohne Zwischenknoten anzupassen? Begründe deine Wahl anhand der Kernaufgaben.
 
 Antwortmöglichkeiten:
-- ~Bei der Überlastung eines Zwischenrouters, der Pakete zwischen zwei nicht direkt verbundenen Netzwerken weiterleitet
-- Bei der Anpassung der Übertragungsrate zwischen einem Webserver und einem Client in unterschiedlichen Ländern
-- Wenn ein Endgerät seine Senderate aufgrund von Paketverlusten am Zielstandort reduziert
-- Während der Neukonfiguration von MAC-Adresstabellen in einem geswitchten Netzwerk
-```
+- ~End-to-End-Flußsteuerung: Sie reguliert die Senderate direkt zwischen den Endgeräten (A und B), ohne Änderungen an den vermittelnden Knoten zu erfordern, und adressiert genau das beobachtete Problem am letzten Hop zum Empfänger.
+- Node-to-Node-Flußsteuerung: Sie würde nur die Übertragung zwischen direkt benachbarten Knoten (z.B. zwischen Routern) steuern, nicht aber die End-to-End-Rate zwischen A und B als Ganzes.
+- Routing: Es wählt den Pfad über Zwischenknoten, beeinflusst aber nicht die Senderate zwischen Endgeräten bei bestehender Route.
+- Adressierung: Sie ermöglicht logische Adressen über Netzwerkgrenzen hinweg, ist jedoch nicht für die Regulierung der Übertragungsgeschwindigkeit zuständig.

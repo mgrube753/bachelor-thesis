@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche der folgenden Funktionen gehört NICHT zu den drei Kernaufgaben des Session Layers im OSI-Modell gemäß dem beschriebenen Text?
+Frage: Die Beschreibung des Session Layer 5 in diesem Text betont verbindungslosen Austausch mit spontanen Datagrammen, Asynchronität ohne Bestätigungen und Atomisierung. Welche Kernaussage zur *Funktionsweise* dieser spezifischen Session-Layer-Implementierung lässt sich daraus ableiten, die der gängigen Auffassung des Session Layers im OSI-Modell widerspricht?
 
 Antwortmöglichkeiten:
-- ~Implementierung von Flusskontrolle zur Datenratenanpassung
-- Asynchronität durch Vermeidung von Zwischenbestätigungen
-- Atomisierung unabhängiger Datenpakete
-- Spontane Datagramm-Verarbeitung ohne persistente Verbindungen
-```
+- ~Sie implementiert primär einen verbindungslosen, bestätigungsfreien Kommunikationsmodus statt verbindungsorientierter Sitzungssteuerung.
+- Sie dient hauptsächlich der Synchronisation durch Token Management für verbindungsorientierte Dialoge.
+- Sie konzentriert sich auf die Ende-zu-Ende-Verschlüsselung und Authentifizierung von Datenpaketen.
+- Sie ermöglicht explizit die Wiederaufnahme unterbrochener Sitzungen durch Checkpointing-Mechanismen.

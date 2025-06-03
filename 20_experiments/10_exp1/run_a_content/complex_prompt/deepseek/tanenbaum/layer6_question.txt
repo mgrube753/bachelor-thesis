@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche grundlegende Funktion der Präsentationsschicht ermöglicht eine nahtlose Kommunikation zwischen heterogenen Systemen, die unterschiedliche interne Datenrepräsentationen verwenden?
+Frage: Welches fundamentale Problem der heterogenen Datenrepräsentation adressiert die Präsentationsschicht des ISO-OSI-Modells durch die Verwendung abstrakter Datenstrukturen und einer standardisierten Kodierung, und warum ist dieser Ansatz für die Kommunikation zwischen unterschiedlichen Systemen essenziell?
 
 Antwortmöglichkeiten:
-- ~Bereitstellung abstrakter Datenstrukturdefinitionen mit standardisierter Netzwerk-Kodierung
-- Optimierung der Bitübertragungsraten zwischen verschiedenen Netzwerkgeräten
-- Implementierung von Datenflusskontrolle zur Vermeidung von Paketverlusten
-- Physikalische Konvertierung von Signalen zwischen digitalen und analogen Formaten
-```
+-   ~Sie löst das Problem, dass unterschiedliche Computer unterschiedliche interne Darstellungen für Daten (z.B. Byte-Reihenfolge, Zeichenkodierung) verwenden, was direkten Austausch unmöglich machen würde. Die Abstraktion und Standardisierung stellen sicher, dass die Semantik und Struktur der Daten unabhängig von der sendenden oder empfangenden Plattform korrekt interpretiert werden.
+-   Sie verhindert primär den unbefugten Zugriff auf Daten während der Übertragung durch Verschlüsselung, wodurch die Vertraulichkeit gewährleistet wird.
+-   Sie optimiert die physische Übertragungsgeschwindigkeit der Bits über das Netzwerkmedium, indem redundante Informationen entfernt werden.
+-   Sie ermöglicht die direkte Kommunikation zwischen unterschiedlichen Hardware-Schnittstellen wie Ethernet und Wi-Fi, indem sie eine einheitliche elektrische Signalform bereitstellt.

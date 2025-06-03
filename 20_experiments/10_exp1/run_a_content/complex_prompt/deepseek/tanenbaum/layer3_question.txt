@@ -1,5 +1,7 @@
-```markdown
-Frage: Warum ist die Netzwerkschicht in Broadcast-Netzwerken häufig nur schwach ausgeprägt oder nicht vorhanden?
+Frage: Betrachten Sie eine Broadcast-basierte Netzwerkinfrastruktur ohne dedizierte Router zwischen Segmenten. Warum wäre die Implementierung der OSI-Netzwerkschicht hier typischerweise minimal oder entbehrlich, obwohl diese Schicht grundsätzlich für Routing, Congestion Control und die Bewältigung von Heterogenität zwischen Netzen verantwortlich ist? Begründen Sie anhand der im Text genannten Eigenschaften von Broadcast-Netzen.
 
-Antwort: ~Weil das Routingproblem in solchen Netzwerken aufgrund ihrer Natur einfach ist.
-```
+Antwortmöglichkeiten:
+- ~Weil das Routing-Problem in Broadcast-Netzen trivial ist, da Pakete an alle Knoten gesendet werden und keine komplexen Entscheidungen über Pfade zwischen verschiedenen Netzen erforderlich sind, wie der Text explizit feststellt.
+- Weil in Broadcast-Netzen die Congestion Control ausschließlich von den höheren Schichten übernommen wird, wodurch die Kernfunktionalität der Netzwerkschicht obsolet wird.
+- Weil Broadcast-Netze per Definition homogen sind und somit die Fähigkeit der Netzwerkschicht zur Überbrückung von Heterogenität (Adressierung, Paketgröße, Protokolle) nicht benötigt wird, was im Text implizit erwähnt wird.
+- Weil die dynamische Bestimmung von Routen pro Paket, eine Hauptaufgabe der Netzwerkschicht, in Broadcast-Netzen technisch unmöglich ist und durch statische Tabellen ersetzt wird.

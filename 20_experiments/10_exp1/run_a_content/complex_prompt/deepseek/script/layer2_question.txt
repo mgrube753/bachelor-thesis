@@ -1,5 +1,19 @@
-```markdown
-Frage: Bei der Implementierung eines Netzwerkprotokolls soll der Data Link Layer einen zuverlässigen Medienzugriff gewährleisten. Welche vier Aspekte müssen hierfür laut der beschriebenen Kernaufgaben zwingend berücksichtigt werden, und welche typischen Fehlerquellen könnten bei der Vernachlässigung eines dieser Aspekte entstehen?
+Frage:  
+Betrachten Sie die fünf Kernaufgaben der Schicht 2 im ISO-OSI-Modell. Eine dieser Aufgaben umfasst explizit vier spezifische Aspekte: Senden, Warten, Beheben und Reservieren. Welche Kernaufgabe bezieht sich auf diese vier Aspekte, und warum sind diese insbesondere bei geteilten Übertragungsmedien entscheidend für die Systemeffizienz?  
 
-Antwort: ~ Die vier obligatorischen Aspekte sind: Senden, Warten, Beheben und Reservieren. Fehlerquellen bei Vernachlässigung wären z.B. Kollisionen unkoordinierter Sendeversuche (fehlendes Warten/Reservieren), Datenverluste bei Konflikten (unzureichendes Beheben) oder ineffiziente Bandbreitennutzung durch unkontrollierte Zugriffe (mangelndes Sende-Management).
-```
+Antwort:  
+~Medienzugriff  
+*(Begründung: Die vier genannten Aspekte beschreiben Mechanismen zur Steuerung des Zugriffs auf ein gemeinsames Medium, z. B. Kollisionserkennung ("Beheben") oder Token-Passing ("Reservieren"). Bei geteilten Medien wie Ethernet oder WLAN verhindern sie Datenkollisionen und gewährleisten fairen Zugriff, was Durchsatz und Stabilität maximiert.)*  
+
+---
+
+**Alternative mit Antwortmöglichkeiten:**  
+
+Frage:  
+Laut Text umfasst eine der fünf Kernaufgaben des Data Link Layers vier spezifische Aspekte: "Senden, Warten, Beheben und Reservieren". Welche der folgenden Aufgaben korrespondiert direkt mit diesen Aspekten?  
+
+Antwortmöglichkeiten:  
+- ~Medienzugriff  
+- Fehlerkontrolle  
+- Segmentierung  
+- Flußkontrolle

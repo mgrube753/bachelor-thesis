@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche fundamentale physikalische Prinzipien liegen sowohl mediengebundenen als auch medienfreien Transportmechanismen des Physical Layer zugrunde, und wie manifestieren sich diese in konkreten Anwendungsbeispielen?
+Frage: Der Text beschreibt die drei Kernaufgaben des Physical Layers: Codierung, Transport und Dekodierung. Analysieren Sie die Aussage "beim Licht sehen wir, da werden wir auch so ein bisschen eine Doppelfunktion haben" im Kontext des Transports physikalischer Größen. Welche Schlussfolgerung über die grundlegende Natur der *Transport*-Funktion im ISO/OSI-Modell lässt sich aus dieser Beobachtung und der Beschreibung des Transports ableiten?
 
 Antwortmöglichkeiten:
-- ~Elektromagnetische Wechselwirkung; manifestiert in Kupferkabeln (mediengebunden) und Freiraum-Funkübertragung (medienfrei)
-- Gravitationswechselwirkung; realisiert durch mechanische Spannungsübertragung in Glasfasern und Satellitenkommunikation
-- Anwendungsschicht-Protokolle; umgesetzt durch HTTP-Header-Encodierung in drahtlosen Mesh-Netzwerken
-- Unterschiedliche Codierungsschemata wie Manchester vs. Differential Manchester; genutzt zur Fehlerreduktion in Powerline-Kommunikation
-```
+- ~Die Transportfunktion des Physical Layer ist medienneutral definiert; ihre Implementierung (mediengebunden oder medienfrei) ist eine untergeordnete technische Ausgestaltung, die die grundlegende Aufgabe der Übertragung physikalischer Größen nicht ändert.
+- Die Transportfunktion muss streng zwischen drahtgebundenen (Kabel) und drahtlosen (Licht/Funk) Medien unterscheiden, da diese unterschiedliche physikalische Gesetze nutzen.
+- Die Verwendung eines Lichtwellenleiters für Lichtsignale fällt primär unter die Dekodierungsaufgabe, da hier das Signal für das Medium "aufbereitet" wird.
+- Die Codierungsaufgabe ist direkt an die Wahl des Mediums (gebunden vs. frei) gekoppelt, was die Doppelfunktion bei Lichtsignalen erklärt.

@@ -1,9 +1,8 @@
-```markdown
-Frage: Welche systematischen Vorteile ergeben sich aus der dreigliedrigen Struktur der Kernaufgaben (Universalkonzepte, Standardelemente, Standardverhalten) im Application Layer des ISO-OSI-Modells, und wie stehen diese im Zusammenhang mit der universellen Anwendbarkeit?
+Frage:  
+Warum sind gerade die drei Kernaufgaben "Universalkonzepte", "Standardelemente" und "Standardverhalten" entscheidend dafür, dass die Application Layer 7 universell für jede Anwendung funktioniert und dadurch hohe Systematisierung sowie Wiederverwendbarkeit ermöglicht?  
 
-Antwortmöglichkeiten:
-- ~Die Dreiteilung ermöglicht die Abstraktion anwendungsspezifischer Funktionen in generische Komponenten, wodurch durch Standardisierung eine hohe Wiederverwendbarkeit über verschiedene Anwendungen hinweg erreicht wird
-- Die Struktur priorisiert Sicherheitsaspekte durch klar definierte Datenstrukturen für alle Netzwerkprotokolle
-- Die Kernaufgaben dienen primär der Leistungsoptimierung durch Reduktion redundanter Kommunikationsschichten
-- Universalkonzepte garantieren die Kompatibilität zwischen Layer-7-Protokollen und unteren OSI-Schichten
-```
+Antwortmöglichkeiten:  
+- ~**Weil sie gemeinsam spezifische Anwendungselemente durch Abstraktion in generische Funktionen überführen: Universalkonzepte definieren übergreifende Prinzipien, Standardelemente stellen konsistente Datenstrukturen bereit, und Standardverhalten gewährleistet vorhersagbare Reaktionen – unabhängig von konkreten Implementierungsdetails.**  
+- Weil sie die Netzwerkkommunikation von der Transportebene entkoppeln und somit Protokollunabhängigkeit garantieren.  
+- Weil sie direkt anwendungsspezifische Protokolle wie HTTP oder SMTP implementieren und deren Semantik standardisieren.  
+- Weil sie die Verschlüsselung von Nutzdaten auf Ebene 7 erzwingen und so Sicherheit für alle Anwendungen bereitstellen.

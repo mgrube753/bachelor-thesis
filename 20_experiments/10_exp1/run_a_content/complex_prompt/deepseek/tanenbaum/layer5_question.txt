@@ -1,5 +1,7 @@
-```markdown
-Frage: Ein Unternehmen erlebt während einer kritischen Datenübertragung zwischen zwei Systemen häufige Abstürze. Nach dem Neustart können die Systeme genau an der Stelle fortfahren, an der die Übertragung unterbrochen wurde. Welche Funktion der Sitzungsschicht ermöglicht dies, und warum ist dies entscheidend für die Zuverlässigkeit langer Transaktionen?
+Frage: Eine Videokonferenz-Software nutzt während einer Übertragung automatisch Wiederaufnahmepunkte nach großen Datenpaketen und verhindert gleichzeitiges Ändern der Freigabeeinstellungen durch mehrere Teilnehmer. Welche OSI-Schicht implementiert primär diese beiden spezifischen Funktionalitäten basierend auf ihren Kernservices?
 
-Antwort: ~ Synchronisation durch Checkpointing – Sie ermöglicht das Unterteilen langer Transaktionen in Abschnitte, sodass nach einem Absturz nur der letzte unbestätigte Abschnitt erneut übertragen werden muss, anstatt die gesamte Übertragung zu wiederholen.
-```
+Antwortmöglichkeiten:
+- ~Session Layer
+- Transport Layer
+- Application Layer
+- Network Layer

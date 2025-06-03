@@ -1,3 +1,6 @@
-**Frage:** Welche der drei Kernaufgaben des Transport Layers (Layer 4) im ISO-OSI-Modell beschreibt die Bereitstellung eines Speicherdienstes ohne Garantien für Kapazität, Zugriffszeit, Varianz oder Fehlerfreiheit?  
+**Frage:**  
+Welche Art von Dienst beschreibt die Transport Layer 4 laut Text, wenn sie Dienstquantität durch Vernachlässigung von QoS und das Erbringen eines Speicherdienstes ohne Garantien (z.B. für Kapazität oder Fehlerfreiheit) bietet?  
 
-**Antwort:** Dienstquantität.
+**(Korrekte Antwort)**  
+Best-Effort-Dienst  
+*(Optionen: Verbindungsorientierter Dienst / Best-Effort-Dienst / Flusskontrollierter Dienst / Sicherungsdienst (Layer 2))*

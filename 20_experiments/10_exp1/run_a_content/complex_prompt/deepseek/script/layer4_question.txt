@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche der folgenden Funktionen zählt NICHT zu den drei primären Kernaufgaben der Transportschicht (Schicht 4) im ISO-OSI-Modell?
+Frage: Eine Anwendung benötigt eine Echtzeit-Videoübertragung mit garantierter Bandbreite und niedriger Latenz. Betrachtet man die logische Abfolge der drei Kernaufgaben der Transport Layer (Adressierung, Flusssteuerung, Dienstqualität) - welche Reihenfolge muss zwingend eingehalten werden, um diesen dienstgütespezifischen Kommunikationsdienst erfolgreich zwischen zwei Teilnehmern zu etablieren? Begründe kurz die Notwendigkeit dieser Abfolge.
 
 Antwortmöglichkeiten:
-- ~Fehlerkorrektur durch redundante Datenpakete
-- Adressierung der Teilnehmer
-- Nutzung der Teilnehmer-Charakteristik zur Flusssteuerung
-- Sicherung der Quality of Service (QoS) mit Garantien für Bandbreite und Latenz
-```
+- ~Adressierung → Flusssteuerung → Dienstqualität: Zuerst müssen die Teilnehmer eindeutig identifiziert werden. Anschließend kann der Datenfluss zwischen ihnen gesteuert werden, was die Grundlage für die anschließende garantierte Bereitstellung der spezifischen QoS-Parameter (wie Bandbreite, Latenz) bildet.
+- Dienstqualität → Adressierung → Flusssteuerung: Die Dienstgüte muss zuerst ausgehandelt werden, bevor überhaupt Teilnehmer adressiert oder der Fluss gesteuert werden können.
+- Flusssteuerung → Dienstqualität → Adressierung: Die Steuerung des Datenflusses setzt voraus, dass bereits eine Verbindung besteht, für die dann die Dienstgüte sichergestellt und schließlich die Teilnehmer adressiert werden.
+- Adressierung → Dienstqualität → Flusssteuerung: Nach der Adressierung wird direkt die Dienstgüte festgelegt, bevor die Feinjustierung durch die Flusssteuerung erfolgt.

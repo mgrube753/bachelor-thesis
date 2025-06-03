@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche der folgenden Aussagen beschreibt den entscheidenden strukturellen Unterschied zwischen der Transport Layer (Schicht 4) und den darunterliegenden Schichten 1-3 im ISO-OSI-Modell am treffendsten?
+Frage: Warum wird die Transportschicht als "echte Ende-zu-Ende-Schicht" charakterisiert, während die darunterliegenden Schichten (1-3) als "verkettet" beschrieben werden? Erläutern Sie den fundamentalen Unterschied in der Kommunikationslogik zwischen diesen Schichtgruppen anhand ihrer Beziehung zu den Endgeräten und Zwischenknoten.
 
 Antwortmöglichkeiten:
-- ~Die Transport Layer ermöglicht eine direkte logische Kommunikation zwischen den Endgeräten, während Schichten 1-3 nur zwischen physisch benachbarten Netzwerkknoten operieren.
-- Die Transport Layer ist ausschließlich für die Fehlerkorrektur zuständig, während Schichten 1-3 nur Paketweiterleitung implementieren.
-- Schichten 1-3 verwenden ausschließlich Broadcast-Kommunikation, während die Transport Layer Punkt-zu-Punkt-Verbindungen erzwingt.
-- Die Transport Layer arbeitet mit physikalischen Adressen, während Schichten 1-3 logische Adressierung für End-to-End-Kommunikation nutzen.
-```
+- ~Weil die Transportschicht eine direkte logische Kommunikation zwischen den Anwendungsprozessen auf dem *Quell-* und *Zielhost* ermöglicht, wobei Zwischenknoten (Router) nur die Schichten 1-3 implementieren, die jeweils nur zwischen *direkt benachbarten* Knoten operieren.
+- Weil die Transportschicht für die physikalische Adressierung der Endgeräte zuständig ist, während die Schichten 1-3 nur logische Adressen auf Router-Ebene verarbeiten.
+- Weil die Transportschicht als einzige Schicht die vollständige Route vom Sender zum Empfänger im Voraus festlegt ("verkettet"), während Schichten 1-3 nur den nächsten Hop bestimmen ("Ende-zu-Ende").
+- Weil die Transportschicht ausschließlich auf Hosts implementiert wird, während die Schichten 1-3 nur in Netzwerkhardware wie Routern und Switches existieren.
