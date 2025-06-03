@@ -1,7 +1,9 @@
-Frage: Angenommen, das physikalische Übertragungsmedium wäre vollkommen fehlerfrei. Welche im Text genannte Aufgabe der Sicherungsschicht (Data Link Layer) wäre in einem Broadcast-Netz laut Beschreibung weiterhin zwingend erforderlich?
+"""
+Frage: Welcher Aufgabenbereich fällt laut Text ausschließlich bei Broadcast-Netzen, nicht aber bei reinen Punkt-zu-Punkt-Verbindungen, in die Verantwortung der Sicherungsschicht?
 
 Antwortmöglichkeiten:
-- ~Steuerung des Zugriffs auf das gemeinsame Übertragungsmedium durch die Medium-Access-Control-Sublayer
-- Aufteilung der Daten in Frames, um Übertragungsfehler vor der Netzwerkschicht zu verbergen
-- Treffen von Routing-Entscheidungen zur Bestimmung des End-to-End-Pfades
-- End-to-End-Staukontrolle über mehrere Netzwerkknoten hinweg
+- ~Regelung des Zugriffs auf das geteilte Übertragungsmedium durch die Medium-Access-Control-Unterschicht
+- Aufteilung des Datenstroms in nummerierte Rahmen, um Einzelübertragungsfehler zu maskieren
+- Flusskontrolle, damit ein schneller Sender einen langsamen Empfänger nicht überlastet
+- Verschlüsselung der Rahmeninhalte, um Vertraulichkeit auf Bitübertragungsebene sicherzustellen
+"""

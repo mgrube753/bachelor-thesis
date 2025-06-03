@@ -1,9 +1,8 @@
-KORREKTE ANTWORT: B) Setzen von Zwischenpunkten zur Synchronisation.
+[Korrekte Antwort: D]
 
-Frage: Welche der folgenden Aufgaben ist eine der drei Kernaufgaben des Session Layer (Schicht 5) im ISO-OSI-Modell gemäß der gegebenen Beschreibung?
+Frage: Basierend auf der gegebenen Beschreibung, welche der folgenden Aufgaben zählt *nicht* zu den Kernaufgaben des Session Layers (Schicht 5) im ISO-OSI-Modell?
 
-Antwortmöglichkeiten:
-A) Zuverlässige Ende-zu-Ende-Kommunikation und Flusskontrolle.
-B) Setzen von Zwischenpunkten zur Synchronisation.
-C) Routenwahl und logische Adressierung von Datenpaketen.
-D) Darstellung und Formatierung der Daten für die Anwendungsschicht.
+A) Das Aufbauen, Verwalten, Zurückweisen und Beenden von Sitzungen.
+B) Das Setzen von Zwischenpunkten zur Synchronisation.
+C) Die Gruppierung zusammengehöriger Transaktionen (Bündelung).
+D) Die Adressierung und Wegewahl von Datenpaketen durch das Netzwerk.

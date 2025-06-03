@@ -1,10 +1,5 @@
-```markdown
-Frage: Was sind die Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) im OSI-Modell?
+```
+Frage: Nennen Sie die Hauptaufgabe der Data Link Layer im OSI-Modell.
 
-Antwortmöglichkeiten:
-- ~Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
-- ~Regulierung des Datenverkehrs zwischen schnellen Sendern und langsamen Empfängern
-- ~Kontrolle des Zugriffs auf den gemeinsam genutzten Kanal bei Broadcast-Netzwerken
-- Verschlüsselung der Daten zur Gewährleistung der Sicherheit
-- Bereitstellung von End-zu-End-Verbindungen zwischen Anwendungen
+Antwort: ~Die Hauptaufgabe der Data Link Layer ist es, eine rohe Übertragungsleitung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint.
 ```

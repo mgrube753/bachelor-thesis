@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Schlussfolgerungen lässt sich auf Basis der drei im Text genannten Kernaufgaben der Anwendungsschicht (Universalkonzepte, Standardelemente, Standardverhalten) am schlüssigsten ableiten?
+Frage: Welcher Mechanismus auf Schicht 7 des ISO-OSI-Modells ist laut obigem Text die Voraussetzung dafür, dass die Layer-Funktionalität „universell anwendbar für jede Anwendung“ bleibt?
 
 Antwortmöglichkeiten:
-- ~Durch die Definition generischer Begriffe, wiederkehrender Anforderungen und standardisierter Reaktionen kann ein einziges abstraktes Modell auf unterschiedlichste Anwendungen angewandt werden, was hohe Wiederverwendbarkeit gewährleistet.
-- Die Anwendungsschicht legt hardware­spezifische Optimierungen fest, wodurch ihre Konzepte nur in eng abgegrenzten Szenarien einsetzbar sind.
-- Standardelemente der Anwendungsschicht ersetzen die darunterliegenden Schichten, sodass Transport- und Netzwerkschicht entfallen können.
-- Universalkonzepte der Anwendungsschicht ermöglichen es, jede Anwendung automatisch in Maschinencode der physischen Schicht zu übersetzen.
+- ~Die Abstraktion spezifischer Anwendungselemente zu generischen Funktionen
+- Die Implementierung verbindungsloser Transportprotokolle
+- Die hardwarenahe Kapselung von Bits in Frames
+- Der Austausch von Routing-Tabellen zwischen Netzwerkknoten

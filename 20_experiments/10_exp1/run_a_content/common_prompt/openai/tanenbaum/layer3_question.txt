@@ -1,3 +1,3 @@
-Korrekte Antwort: Das Bestimmen der Route (Routing) für Pakete vom Sender zum Empfänger.
+Richtige Antwort: Schicht 3 – Vermittlungsschicht (Network Layer)
 
-Frage: Welche Hauptfunktion übernimmt die Network Layer im ISO-OSI-Modell laut dem gegebenen Text?
+Frage: Welche Schicht des ISO-OSI-Modells ist verantwortlich für Routing, Staukontrolle und die Gewährleistung der Dienstgüte (Quality of Service)?

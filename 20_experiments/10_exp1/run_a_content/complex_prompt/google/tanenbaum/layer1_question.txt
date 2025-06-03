@@ -1,7 +1,7 @@
-Frage: Der bereitgestellte Text beschreibt mehrere Designfragen des Physical Layers. Welche der folgenden Aussagen fasst die *grundlegende* Designherausforderung des Physical Layers präzise zusammen und berücksichtigt dabei auch die Beispiele für spezifizierte Probleme?
+Frage: Der Text beschreibt die Aufgaben der Bitübertragungsschicht (Physical Layer) und listet typische Designfragen auf, die sich auf mechanische, elektrische und zeitliche Schnittstellen sowie das physikalische Übertragungsmedium beziehen. Trotz der tiefgreifenden Beschäftigung mit diesen Aspekten wird ausdrücklich erwähnt, dass das physikalische Übertragungsmedium *unterhalb* der Bitübertragungsschicht liegt. Welche der folgenden Aussagen erklärt diese Unterscheidung am präzisesten, basierend auf dem gegebenen Textausschnitt?
 
 Antwortmöglichkeiten:
-- Der Physical Layer konzentriert sich primär auf die logische Adressierung und das Routing von Datenpaketen, um eine zuverlässige Übertragung sicherzustellen.
-- ~Die wesentliche Designherausforderung des Physical Layers besteht darin, die fehlerfreie Übertragung von binären Signalen über einen Kommunikationskanal zu gewährleisten, indem mechanische, elektrische und zeitliche Schnittstellen sowie die Darstellung von Bits definiert werden.
-- Die Hauptaufgabe des Physical Layers ist die Verwaltung von Netzwerkverbindungen und die dynamische Zuweisung von IP-Adressen an Endgeräte.
-- Der Physical Layer ist primär für die Flusskontrolle und Fehlererkennung auf Paketebene zuständig, um eine Überlastung des Netzwerks zu vermeiden.
+- Die Bitübertragungsschicht ist eine logische Abstraktionsebene, die die Regeln und Standards für die Nutzung des Mediums definiert, während das Medium selbst die materielle Grundlage darstellt.
+- ~Die Bitübertragungsschicht definiert die *Methoden* zur Übertragung von Bits über einen Kommunikationskanal (z.B. Signaltypen, Zeitdauern, Pinbelegungen), während das physikalische Übertragungsmedium das *Medium* (z.B. Kabel, Funkwellen) ist, das diese Methoden nutzt, aber selbst keine Designfragen im Sinne der Schicht stellt.
+- Das physikalische Übertragungsmedium liegt unterhalb der Bitübertragungsschicht, da es sich um eine reine Hardware-Komponente handelt, die keine intelligenten Funktionen besitzt.
+- Die Bitübertragungsschicht ist für die Fehlerkorrektur des Signals auf dem Medium zuständig, was eine Ebene über dem eigentlichen Medium erfordert.

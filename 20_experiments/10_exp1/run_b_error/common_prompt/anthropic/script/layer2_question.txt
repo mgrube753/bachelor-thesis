@@ -1,7 +1,9 @@
-**Frage: Welche der folgenden ist KEINE Kernaufgabe des Data Link Layers (Schicht 2) laut dem gegebenen Text?**
+Frage: Welche der folgenden Aussagen beschreibt korrekt eine tatsächliche Funktion des Data Link Layers im ISO-OSI-Modell?
 
-A) Korrekte Antwort: Datenintegrität sicherstellen
-B) Fehlererzeugung
-C) Datenstau
-D) Fragmentierung
-E) Anonymisierung
+Korrekte Antwort: B) Fehlerkorrektur und Fehlererkennung zur Sicherstellung einer zuverlässigen Übertragung
+
+Antwortmöglichkeiten:
+A) Fehlererzeugung durch Ignorieren, Verursachen oder Verschleiern von Übertragungsfehlern
+B) Fehlerkorrektur und Fehlererkennung zur Sicherstellung einer zuverlässigen Übertragung
+C) Anonymisierung durch Verbergen bestimmter Sender oder Empfänger
+D) Medienverweigerung durch Deaktivieren des Physical Layers

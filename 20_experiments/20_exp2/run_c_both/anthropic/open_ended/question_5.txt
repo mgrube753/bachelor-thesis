@@ -1,17 +1,9 @@
-```markdown
-Frage: Bewerten Sie kritisch die Design-Entscheidungen des Data Link Layers, insbesondere die Strategie der Fehlerbehandlung durch Frames und Acknowledgements im Vergleich zu anderen möglichen Ansätzen. Begründen Sie, inwiefern dieser Ansatz für moderne Netzwerkanforderungen angemessen ist, und identifizieren Sie potenzielle Schwachstellen, die in bestimmten Anwendungsfällen problematisch sein könnten.
+"""
+Frage: Bewerten Sie kritisch die Rolle der Datenverbindungsschicht (Data Link Layer) in modernen Hochgeschwindigkeitsnetzwerken. Inwiefern sind die im Text beschriebenen Funktionen wie Fehlermaskierung, Framingmechanismen und Verkehrsregulierung noch zeitgemäß, und welche Kompromisse müssen möglicherweise eingegangen werden, wenn es um die Balance zwischen Zuverlässigkeit und Latenz geht? Begründen Sie Ihre Einschätzung anhand konkreter Netzwerkanforderungen.
 
-Antwort: ~Eine kritische Bewertung des Data Link Layer-Designs sollte folgende Aspekte umfassen:
+Antwort: ~Eine kritische Bewertung der Datenverbindungsschicht in modernen Hochgeschwindigkeitsnetzwerken zeigt, dass die grundlegenden Funktionen nach wie vor relevant sind, jedoch mit veränderten Prioritäten. Die Fehlermaskierung bleibt essentiell, da physikalische Übertragungsfehler trotz verbesserter Hardware weiterhin auftreten. Allerdings haben sich die Kompromisse verschoben: Während in traditionellen Netzwerken die Zuverlässigkeit durch umfangreiche Fehlerkorrekturverfahren priorisiert wurde, müssen moderne Anwendungen (wie Videostreaming oder Cloud Computing) minimale Latenzzeiten aufweisen. Dies führt dazu, dass aggressive Fehlerkorrekturverfahren teilweise durch schnellere, weniger umfassende Methoden ersetzt werden.
 
-1. Die Frame-basierte Fehlerbehandlung bietet den Vorteil der Isolation von Fehlern auf kleine Dateneinheiten, was Neuübertragungen effizienter macht als bei großen Datenblöcken. Dies ist besonders wichtig in Umgebungen mit hoher Fehlerrate.
+Die Framing-Mechanismen wurden weiterentwickelt, um größere Datenmengen effizienter zu verarbeiten, während Verkehrsregulierungsmechanismen angesichts der enormen Bandbreitenunterschiede zwischen Geräten wichtiger denn je sind. In Rechenzentren mit 100 Gbit/s-Verbindungen ist die Gefahr der Überlastung von Endgeräten besonders hoch. Die Medium Access Control Sublayer hat sich durch fortschrittliche Protokolle wie das Enhanced Distributed Channel Access (EDCA) weiterentwickelt, um differenzierte Dienstqualität zu unterstützen.
 
-2. Der Acknowledgement-Mechanismus stellt Zuverlässigkeit sicher, führt jedoch zu Overhead und Latenz, besonders in Netzwerken mit langen Übertragungswegen. In Echtzeit-Anwendungen könnte dieser Ansatz zu Verzögerungen führen.
-
-3. Für moderne Hochgeschwindigkeitsnetzwerke könnte der klassische Acknowledgement-Ansatz einen Flaschenhals darstellen, weshalb erweiterte Techniken wie selektive Wiederholungen oder größere Fenstergrößen notwendig werden.
-
-4. Die Verkehrsregulierung zum Schutz langsamer Empfänger ist weiterhin relevant, aber moderne Systeme benötigen komplexere Flow-Control-Mechanismen als einfache Stop-and-Wait-Protokolle.
-
-5. Die Medium Access Control Sublayer für Broadcast-Netzwerke bleibt wichtig, muss aber für unterschiedliche Technologien (wie Wireless) angepasst werden.
-
-Der Frame-basierte Ansatz ist für die meisten Anwendungsfälle angemessen, zeigt jedoch Schwächen in Szenarien mit extrem niedriger Latenz, sehr hoher Bandbreite oder in stark ressourcenbeschränkten Umgebungen wie IoT-Geräten, wo der Overhead problematisch sein kann.
-```
+Der entscheidende Kompromiss in modernen Netzwerken liegt in der Abwägung zwischen End-to-End-Zuverlässigkeit (vollständig auf Schicht 2) versus einer verteilten Fehlerkontrolle über mehrere Schichten, wobei letztere oft geringere Latenz bei akzeptabler Gesamtzuverlässigkeit bietet.
+"""

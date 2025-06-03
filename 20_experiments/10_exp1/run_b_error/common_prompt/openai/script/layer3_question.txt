@@ -1,3 +1,2 @@
-Korrekte Antwort: Layer 3 – Network Layer (Vermittlungsschicht)
-
-Frage: Welche Schicht des ISO-OSI-Modells ist unter anderem für die Lokalisierung netzwerkinterner Positionen, die zufällige Auswahl von Endknoten direkt verbundener Knoten (Zufallspfad) sowie für Datenbeschleunigungsstrategien verantwortlich?
+Richtige Antwort: Lokalisierung  
+Frage: Welche Kernaufgabe der Network Layer 3 beschreibt das Auffinden von netzwerk-internen Positionen?

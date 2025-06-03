@@ -1,3 +1,3 @@
-Richtige Antwort: Session Layer (Schicht 5)
+Antwort: Atomisierung
 
-Frage: Welche OSI-Schicht übernimmt den verbindungslosen Datenaustausch, indem sie spontane Datagramme ermöglicht, Zwischenpunkte und Bestätigungen vermeidet und Datenpakete atomisiert?
+Frage: Wie lautet die Bezeichnung der Kernaufgabe der Session Layer 5 im ISO-OSI-Modell, bei der unabhängige Datenpakete in Einzelteile aufgespaltet werden?

@@ -1,3 +1,5 @@
-**Frage:** Welche drei Kernaufgaben des Transport Layers im ISO-OSI-Modell werden im Text genannt?  
-
-**Antwort:** Adressierung, Flusssteuerung und Dienstqualität (Quality of Service/QoS).
+**Frage:** Welche Hauptfunktion erfüllt die Dienstgüte (Quality of Service, QoS) im Transport Layer des ISO-OSI-Modells laut des gegebenen Textes?  
+1.  Sicherstellung der physischen Verbindung zwischen Geräten.  
+2.  **(Korrekte Antwort)** Bereitstellung garantierter Übertragungsparameter (wie Bandbreite, Latenz, Jitter, Fehlerrate), die spezifisch auf die Bedürfnisse des identifizierten Teilnehmers und dessen Anwendung zugeschnitten sind.  
+3.  Verschlüsselung der übertragenen Daten zur Gewährleistung der Vertraulichkeit.  
+4.  Konvertierung von Datenformaten zwischen verschiedenen Systemen.

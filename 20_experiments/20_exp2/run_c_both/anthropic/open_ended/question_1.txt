@@ -1,11 +1,11 @@
-```markdown
-Frage: Beschreiben Sie die Hauptaufgaben der Datensicherungsschicht (Data Link Layer) im ISO-OSI-Modell und erläutern Sie, wie diese Schicht mit Übertragungsfehlern umgeht.
+"""
+Frage: Beschreiben Sie die Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) im ISO-OSI-Modell laut dem gegebenen Text.
 
-Antwort: ~Die Hauptaufgaben der Datensicherungsschicht sind:
-1. Umwandlung einer Rohübertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
-2. Maskierung realer Fehler, sodass die Netzwerkschicht diese nicht sieht
-3. Aufteilen der Eingabedaten in Datenrahmen (Frames) und sequentielle Übertragung dieser
-4. Bei zuverlässigem Dienst: Bestätigung des korrekten Empfangs jedes Rahmens durch Rücksendung eines Bestätigungsrahmens
-5. Verkehrsregulierung, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet
-6. Bei Broadcast-Netzwerken: Steuerung des Zugriffs auf den gemeinsam genutzten Kanal durch die Medium Access Control Sublayer
-```
+Antwort: ~Die Hauptaufgaben der Datenverbindungsschicht sind:
+- Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
+- Maskierung realer Fehler, sodass die Netzwerkschicht diese nicht sieht
+- Aufteilen der Eingabedaten in Datenrahmen (Data Frames) und sequenzielle Übertragung dieser Rahmen
+- Bei zuverlässigem Dienst: Bestätigung des korrekten Empfangs jedes Rahmens durch Rücksendung eines Bestätigungsrahmens (Acknowledgement Frame)
+- Regelung des Datenverkehrs, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet
+- Für Broadcast-Netzwerke: Kontrolle des Zugriffs auf den gemeinsam genutzten Kanal mittels der Medium Access Control Sublayer
+"""

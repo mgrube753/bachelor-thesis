@@ -1,9 +1,5 @@
-```markdown
-Frage: Ein großes Softwareunternehmen entwickelt eine neue Anwendung zur Übertragung sensibler medizinischer Daten zwischen Krankenhäusern. Bei der Implementierung des ISO-OSI-Modells wird der Session Layer (Schicht 5) aus Zeitgründen minimalistisch umgesetzt. Welche kritischen Probleme könnten auftreten, wenn die Synchronisationsfunktion des Session Layers nicht vollständig implementiert wird?
+```
+Frage: Welche Problemstellung im Netzwerkbetrieb wird durch die Synchronisationsfunktion des Session Layers (Schicht 5) primär adressiert, und wie unterscheidet sich dieser Lösungsansatz konzeptionell von den anderen Kernaufgaben dieser Schicht?
 
-Antwortmöglichkeiten:
-- ~Bei Verbindungsabbrüchen während der Übertragung großer Patientendaten müsste die gesamte Übertragung neu gestartet werden, da keine Wiederaufnahmepunkte (Checkpoints) existieren
-- Die medizinischen Daten würden stets unverschlüsselt übertragen werden, da Verschlüsselung eine Hauptfunktion des Session Layers ist
-- Die Anwendung könnte keine gleichzeitigen Verbindungen zu mehreren Krankenhäusern aufbauen, da Multiplexing ausschließlich im Session Layer implementiert wird
-- Die Datenintegrität könnte nicht gewährleistet werden, da Prüfsummenberechnungen hauptsächlich im Session Layer stattfinden
+Antwort: ~Die Synchronisationsfunktion des Session Layers adressiert primär das Problem der Unterbrechung bei der Übertragung großer Datenmengen, indem sie Zwischenpunkte (Checkpoints) setzt, an denen eine Übertragung nach einem Abbruch wieder aufgenommen werden kann, statt von vorne beginnen zu müssen. Konzeptionell unterscheidet sich dieser Ansatz von den anderen Kernaufgaben dadurch, dass die Sitzungsverwaltung den grundlegenden Kommunikationsrahmen etabliert, während die Bündelung zusammengehörige Transaktionen gruppiert. Die Synchronisation hingegen fokussiert sich auf die Robustheit und Wiederherstellbarkeit innerhalb einer bestehenden Sitzung.
 ```

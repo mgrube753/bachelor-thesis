@@ -1,5 +1,3 @@
-Frage: Welches der drei im Text als „Kernaufgaben“ genannten Konzepte (Verschlüsselung, Speicherung, Kompression) liegt nach dem offiziellen ISO/OSI-Schichtenmodell am deutlichsten außerhalb des eigentlichen Verantwortungsbereichs der Physical Layer, und welche zwei zentralen Argumente aus der OSI-Systematik belegen diese Einordnung?
+Frage: Welcher grundlegende Widerspruch offenbart sich, wenn man die im Text der „Physical Layer 1“ aufgeführten Kernaufgaben (Verschlüsselung, Speicherung, Kompression) mit der offiziellen Funktionszuordnung der Bitübertragungsschicht im ISO-OSI-Referenzmodell vergleicht?
 
-Antwort: ~Speicherung  
-- Die Physical Layer ist ausschließlich für die Übertragung transienter elektrischer/optischer Signale zuständig und definiert keinerlei Mechanismen zur dauerhaften Datenhaltung.  
-- Die OSI-Systematik bezieht sich auf Kommunikationsprozesse zwischen Endsystemen; persistente Lokalspeicherung ist eine hostinterne Funktion, die von keinem Layer – schon gar nicht Layer 1 – spezifiziert wird.
+Antwort: ~Im ISO-OSI-Modell ist die Bitübertragungsschicht (Physical Layer) ausschließlich für die elektrische, optische oder mechanische Übertragung von Bits zuständig; Verschlüsselung, Speicherung und Kompression gehören dort zu höheren Schichten (v. a. Präsentations- und Anwendungsschicht).

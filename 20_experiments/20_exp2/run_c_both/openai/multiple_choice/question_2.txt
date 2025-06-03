@@ -1,7 +1,9 @@
-Frage: Erklären Sie anhand des Textes, welche zentrale Aufgabe die Data-Link-Schicht im ISO-OSI-Modell übernimmt.
+"""
+Frage: Erklären Sie, welche der folgenden Aussagen die im Text klarstellte Hauptaufgabe des Data Link Layer im ISO/OSI-Modell am besten umschreibt.
 
 Antwortmöglichkeiten:
-- ~Sie wandelt eine rohe Übertragungsstrecke in eine Leitung um, die für höhere Schichten als frei von unentdeckten Fehlern erscheint.
-- Sie weist jedem Datenpaket eine logische Netzadresse zu, damit es geroutet werden kann.
-- Sie stellt Ende-zu-Ende-Verschlüsselung zwischen den Anwendungen her.
-- Sie ermittelt den kürzesten Pfad durch mehrere Netze, um die Verzögerung zu minimieren.
+- ~Er maskiert Übertragungsfehler, indem er Daten in Frames zerlegt, ihre fehlerfreie Ankunft bestätigt und so der Netzwerkschicht eine scheinbar fehlerfreie Leitung bereitstellt.
+- Er verschlüsselt sämtliche Nutzdaten, um deren Vertraulichkeit während der Übertragung zu gewährleisten.
+- Er bestimmt den schnellsten Pfad durch das Netzwerk, um Pakete effizient zu routen.
+- Er wandelt analoge Signale in digitale Bitströme um, damit Endgeräte sie direkt interpretieren können.
+"""

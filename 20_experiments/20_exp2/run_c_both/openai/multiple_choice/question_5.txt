@@ -1,9 +1,7 @@
-```markdown
-Frage: Ein Entwicklerteam schlägt vor, ein neues Protokoll zu entwerfen, das für jedes empfangene Datenpaket Quittungsrahmen (Acknowledgements) in der Netzwerkschicht (Layer 3) verschickt, um Zuverlässigkeit sicherzustellen. Beurteilen Sie diesen Vorschlag auf Basis der im Text beschriebenen Aufgabenverteilung des ISO-OSI-Modells.
+Frage: Beurteilen Sie, welche der folgenden Protokollmaßnahmen die im Text beschriebenen Kernaufgaben der Sicherungsschicht – nämlich Fehlermaskierung, Flusskontrolle und Medienzugriffssteuerung – am konsequentesten erfüllt.
 
 Antwortmöglichkeiten:
-- ~Der Vorschlag ist abzulehnen, weil das Versenden von Quittungen zur zuverlässigen Rahmenübertragung eindeutig zur Sicherungsschicht gehört und nicht in die Netzwerkschicht verlagert werden sollte.
-- Der Vorschlag ist richtig, weil die Netzwerkschicht traditionell für die Beseitigung aller Übertragungsfehler verantwortlich ist.
-- Der Vorschlag ist nur dann sinnvoll, wenn das Medium-Access-Control-Sublayer bereits in der Transportschicht implementiert ist.
-- Der Vorschlag verbessert die Effizienz, weil er den Sender direkt in der Bitübertragungsschicht über neue Quittungen informiert.
-```
+- ~Implementierung eines rahmenbasierten Übertragungsverfahrens mit Quittungen und Fenstersteuerung, das Übertragungsfehler maskiert und den Datenstrom zwischen schnellem Sender und langsamerem Empfänger reguliert.
+- Einführung eines adaptiven Hashing-Algorithmus in der Vermittlungsschicht, um IP-Adressen schneller aufzulösen.
+- Integration einer Ende-zu-Ende-Verschlüsselung auf Anwendungsschichtniveau zur Sicherstellung der Vertraulichkeit der Nutzdaten.
+- Einsatz eines auf Metadaten basierenden Quality-of-Service-Schedulers in der Transportschicht zur Priorisierung von Video-Streams.

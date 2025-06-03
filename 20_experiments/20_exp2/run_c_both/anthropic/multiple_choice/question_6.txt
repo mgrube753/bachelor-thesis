@@ -1,9 +1,9 @@
-```markdown
-Frage: Entwerfen Sie ein theoretisches Protokoll für die Sicherungsschicht (Data Link Layer), das alle im Text genannten Herausforderungen effizient adressiert. Welcher der folgenden Ansätze würde die Anforderungen am umfassendsten erfüllen?
+"""
+Frage: Entwickeln Sie ein konzeptionelles Framework für ein verbessertes Data Link Layer-Protokoll, das speziell für Hochgeschwindigkeits-Breitbandnetzwerke mit stark variierenden Übertragungsgeschwindigkeiten optimiert ist. Welche der folgenden Architekturen würde die im Text beschriebenen Herausforderungen am effektivsten adressieren?
 
 Antwortmöglichkeiten:
-- ~Ein Protokoll, das adaptive Framegrößen verwendet, einen Sliding-Window-Mechanismus für Flusskontrolle implementiert und eine CSMA/CD-Technik für den Medienzugriff in Broadcast-Umgebungen einsetzt.
-- Ein Protokoll, das ausschließlich große Frames verwendet, auf Bestätigungen verzichtet und stattdessen Fehlerkorrekturcodes einsetzt, sowie einen Token-Passing-Mechanismus für alle Netzwerktypen implementiert.
-- Ein Protokoll, das auf die Unterteilung in Frames verzichtet und stattdessen kontinuierliche Datenströme mit eingebetteten Prüfsummen verwendet, kombiniert mit einer zeitbasierten Zugriffssteuerung.
-- Ein Protokoll, das nur auf End-to-End-Fehlererkennung auf höheren Schichten setzt, keine Flusskontrolle implementiert und den Medienzugriff durch feste Zeitslots regelt, unabhängig vom tatsächlichen Übertragungsbedarf.
-```
+- ~Ein hybrides System mit adaptiver Framegrößenanpassung, selektivem Acknowledgment-Mechanismus und einem zweischichtigen Zugriffssteuerungsprotokoll, das dynamisch zwischen deterministischen und probabilistischen Methoden wechselt
+- Ein starres System mit fixer Framegröße, globalem Acknowledgment-Mechanismus und einer einschichtigen, rein deterministischen Zugriffssteuerung
+- Ein Protokoll, das vollständig auf Acknowledgments verzichtet und stattdessen redundante Datenübertragung nutzt, mit statischer Framegröße und FIFO-basierter Kanalzuteilung
+- Ein System, das die Fehlerkorrektur und Flusssteuerung vollständig an höhere Schichten delegiert und sich ausschließlich auf die physikalische Übertragung konzentriert
+"""

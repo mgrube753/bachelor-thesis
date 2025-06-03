@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche der folgenden Aussagen reflektiert am besten die konzeptionelle Rolle der Anwendungsschicht im ISO-OSI-Modell, basierend auf den im Text beschriebenen Charakteristiken und Beispielen?
+Frage: Welche architektonische Konsequenz ergibt sich aus der im Text beschriebenen Funktionsweise von HTTP und was bedeutet dies für die konzeptionelle Gestaltung anderer Anwendungsprotokolle in der Anwendungsschicht des OSI-Modells?
 
 Antwortmöglichkeiten:
-- ~Die Anwendungsschicht stellt eine Sammlung standardisierter Protokolle bereit, die direkte Benutzerdienste ermöglichen, wie die Übertragung von Webseiten mittels HTTP
-- Die Anwendungsschicht ist hauptsächlich für die physische Übertragung von Datenpaketen zwischen verschiedenen Netzwerkknoten verantwortlich
-- Die Anwendungsschicht fungiert primär als Verschlüsselungsebene, die die Sicherheit der Datenkommunikation im World Wide Web gewährleistet
-- Die Anwendungsschicht dient ausschließlich als Vermittler zwischen den Transportprotokollen und sorgt für die Aufteilung von Datenpaketen
-```
+- ~HTTP implementiert ein Client-Server-Modell, was darauf hindeutet, dass die Anwendungsschicht primär Kommunikationsmuster zwischen Endpunkten definiert, nicht nur Datenformate
+- HTTP ist ein zustandsloses Protokoll, wodurch alle Anwendungsprotokolle in der Anwendungsschicht zwingend zustandslos sein müssen
+- Die Anwendungsschicht ist ausschließlich für die Benutzeroberfläche verantwortlich, nicht für Datenübertragungsmuster
+- HTTP zeigt, dass Anwendungsprotokolle nur Datenaustausch mit Webservern ermöglichen können und nicht für andere Kommunikationsformen geeignet sind

@@ -1,3 +1,7 @@
-Frage: Im Hinblick auf die Zielsetzung eines verbindungslosen Datenaustauschs in der Session Layer 5: Welche der drei beschriebenen Kernaufgaben eliminiert explizit die Notwendigkeit, Zustandsinformationen über bereits übermittelte Pakete zu speichern, und warum?
+Frage: Eine IoT‐Anwendung sendet in unregelmäßigen Abständen kurze Statusmeldungen, möchte aber aus Effizienzgründen vollständig auf Handshakes sowie Empfangsbestätigungen verzichten. Auf welche Kernaufgabe der Session Layer 5 stützt sich dieses Kommunikationsmuster maßgeblich?
 
-Antwort: ~Die Kernaufgabe „Datagramme“ – weil das sofortige Verwerfen nach dem Senden bzw. Empfangen verhindert, dass die Schicht Zustands- oder Verlaufinformationen zu einzelnen Paketen aufrechterhalten muss.
+Antwortmöglichkeiten:
+- ~Asynchronität
+- Atomisierung
+- Datagramme
+- Flusskontrolle

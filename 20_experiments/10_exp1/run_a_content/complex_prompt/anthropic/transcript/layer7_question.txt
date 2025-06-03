@@ -1,9 +1,5 @@
-```markdown
-Frage: Warum ist die Systematisierung der Funktionen im Layer 7 (Application Layer) des OSI-Modells besonders herausfordernd im Vergleich zu anderen Schichten, und welche Konsequenz hat dies für die Implementierung von Anwendungsprotokollen? Wählen Sie die umfassendste und präziseste Antwort.
+```
+Frage: Welche fundamentale Herausforderung bei der Konzeption des Layer 7 (Application Layer) wird im Text beschrieben, und wie wirkt sich diese auf die Standardisierungsbemühungen der ISO aus? Analysieren Sie die daraus resultierenden Implikationen für die Implementierung von Anwendungsprotokollen.
 
-Antwortmöglichkeiten:
-- [Layer 7 hat keine standardisierten Schnittstellen, sodass jede Anwendung ihre eigenen Protokolle definieren muss]
-- ~[Die starke Abhängigkeit von der jeweiligen Anwendung macht eine anwendungsfreie Systematisierung schwierig, wodurch Protokollelemente, Grundkonzepte und Reaktionsmuster für jeden Anwendungsfall spezifisch definiert werden müssen]
-- [Layer 7 kommuniziert direkt mit dem Benutzer und muss daher unterschiedliche Benutzerschnittstellen berücksichtigen]
-- [Im Application Layer müssen alle Funktionen der darunterliegenden Schichten zusammengeführt werden, was die Komplexität erhöht]
+Antwort: ~Die fundamentale Herausforderung liegt in der Schwierigkeit, eine "anwendungsfreie Systematisierung" zu erreichen, da die Funktionen stark von der spezifischen Anwendung abhängen. Dies erschwert die Standardisierungsbemühungen der ISO, da universelle Regeln für den Application Layer kaum definierbar sind. Die Implikation für Protokollimplementierungen ist, dass statt starrer Vorgaben eher ein Rahmenwerk für die drei Kernaufgaben (Definition von Grundkonzepten/Begriffen, Festlegung von Protokollelementen für Anforderungen und Datenerwartungen, sowie Spezifikation der Reaktionsmuster von Anwendungen) geschaffen werden muss, das flexibel genug ist, um an verschiedene Anwendungsszenarien angepasst zu werden.
 ```

@@ -1,16 +1,14 @@
-Frage: Basierend auf den im Text beschriebenen Kernfunktionen der Data Link Layer – insbesondere der Transformation einer rohen Übertragungsleitung in eine scheinbar fehlerfreie Leitung durch Fehlerkaschierung sowie der Flusskontrolle – entwerfen Sie eine konzeptionelle Erweiterung des Frame-Übertragungs- und Bestätigungsmechanismus. Diese Erweiterung soll die Effizienz der Datenübertragung über eine Kommunikationsstrecke mit hoher Latenz und potenziellen Paketverlusten verbessern, ohne die Zuverlässigkeit zu kompromittieren. Beschreiben Sie die wesentlichen Anpassungen an der Art und Weise, wie Frames gesendet und bestätigt werden, und wie dies die genannten Herausforderungen adressiert.
+Frage: Angenommen, Sie sind ein Ingenieur, der beauftragt wurde, ein grundlegendes Protokoll für die Sicherungsschicht zu konzipieren, das die im Text beschriebenen Kernaufgaben für eine zuverlässige Punkt-zu-Punkt-Verbindung erfüllt, einschließlich Fehlerbehandlung und Flusskontrolle. Entwickeln Sie eine Abfolge von Schritten oder Prinzipien, die sowohl der Sender als auch der Empfänger befolgen müssten, um Datenrahmen fehlerfrei und effizient zu übertragen, wobei mindestens zwei der im Text erwähnten Mechanismen (z.B. Datenrahmen, Bestätigungsrahmen, Verkehrsregelung) integriert werden.
 
-Antwort: ~Um die Effizienz der Data Link Layer über eine Kommunikationsstrecke mit hoher Latenz und Paketverlusten zu verbessern, könnte der aktuelle sequenzielle Übertragungs- und Einzel-Frame-Bestätigungsmechanismus durch eine **"Sliding Window"- oder Fensterprotokoll-Logik** erweitert werden.
-
-**Wesentliche Anpassungen:**
-1.  **Fensterbasierte Übertragung:** Statt auf die Bestätigung jedes einzelnen Frames zu warten, bevor der nächste gesendet wird (was bei hoher Latenz ineffizient wäre), würde der Sender eine vorgegebene Anzahl von Frames (das "Fenster") sequenziell senden, ohne sofort auf Bestätigungen zu warten. Jeder Frame innerhalb des Fensters erhält eine eindeutige Sequenznummer.
-2.  **Kumulative oder Selektive Bestätigungen:**
-    *   **Kumulative Bestätigung:** Der Empfänger sendet Bestätigungen, die angeben, bis zu welchem Frame (z.B. die höchste sequenzielle Nummer eines korrekt empfangenen Frames) alle vorherigen Frames erfolgreich empfangen wurden. Dies reduziert die Anzahl der Bestätigungs-Frames.
-    *   **Selektive Bestätigung (zusätzlich/alternativ):** Für Paketverluste könnte der Empfänger auch selektive Bestätigungen senden, die genau angeben, welche Frames (oder Bereiche von Frames) fehlen und neu gesendet werden müssen, anstatt dass der Sender nach einem Timeout das gesamte Fenster neu senden muss (Go-Back-N-Ansatz).
-3.  **Pufferung beim Empfänger:** Der Empfänger puffert korrekt empfangene Frames, die nicht sequenziell empfangen wurden (z.B. wenn ein früherer Frame verloren ging), um sie bei Empfang der fehlenden Frames in der richtigen Reihenfolge an die darüberliegende Schicht weiterzugeben.
-4.  **Timeout und Neuübertragung:** Ein Timer wird für das gesamte Fenster oder für einzelne gesendete Frames gesetzt. Läuft der Timer ab, bevor alle Bestätigungen für das Fenster oder bestimmte Frames empfangen wurden, werden die als unbestätigt oder verloren identifizierten Frames erneut gesendet.
-
-**Adressierung der Herausforderungen:**
-*   **Hohe Latenz:** Durch das Senden mehrerer Frames innerhalb eines Fensters, bevor Bestätigungen eintreffen, wird die Wartezeit effektiv genutzt. Die "Leitung" bleibt gefüllt, was den Durchsatz erhöht, da der Sender nicht untätig auf einzelne Bestätigungen warten muss.
-*   **Paketverluste:** Der Mechanismus der Neuübertragung nach Timeout oder basierend auf selektiven Bestätigungen stellt sicher, dass verlorene Frames erkannt und nachgesendet werden. Die Pufferung und die Möglichkeit zur selektiven Bestätigung verhindern unnötige Neuübertragungen von bereits korrekt empfangenen Frames, was die Effizienz zusätzlich steigert.
-*   **Zuverlässigkeit:** Trotz hoher Latenz und Verlusten bleibt die Kernaufgabe der Data Link Layer – die Bereitstellung einer fehlerfreien Leitung – durch die Kombination aus Sequenznummern, Bestätigungen und Neuübertragungen gewährleistet.
+Antwort: ~Ein solches grundlegendes Protokoll könnte folgende Schritte und Prinzipien beinhalten:
+-   **Senderseite:**
+    1.  Die Eingabedaten werden in kleinere *Datenrahmen* zerlegt.
+    2.  Jeder Datenrahmen wird sequenziell gesendet.
+    3.  Nach dem Senden eines Datenrahmens wartet der Sender auf einen *Bestätigungsrahmen* (Acknowledgement) vom Empfänger.
+    4.  Wird innerhalb einer bestimmten Zeit kein Bestätigungsrahmen empfangen oder wird ein negativer Bestätigungsrahmen empfangen, wird der Datenrahmen erneut gesendet (Fehlerbehandlung).
+    5.  Der Sender implementiert einen *Verkehrsregelungsmechanismus*, z.B. ein Schiebefenster oder eine Senderate, die auf Rückmeldungen des Empfängers basiert, um zu verhindern, dass der Empfänger überflutet wird.
+-   **Empfängerseite:**
+    1.  Der Empfänger empfängt Datenrahmen und prüft sie auf Übertragungsfehler.
+    2.  Bei korrektem Empfang eines Datenrahmens sendet der Empfänger einen *Bestätigungsrahmen* an den Sender.
+    3.  Werden fehlerhafte Rahmen empfangen oder fehlen Rahmen, sendet der Empfänger möglicherweise keine Bestätigung oder eine negative Bestätigung, um eine Neuübertragung durch den Sender zu veranlassen.
+    4.  Der Empfänger signalisiert dem Sender durch den Verkehrsregelungsmechanismus (z.B. durch Bestätigungen oder ein Schiebefenster), wann er bereit ist, weitere Daten zu empfangen, um eine Überlastung zu vermeiden.

@@ -1,8 +1,7 @@
-KORREKTE ANTWORT: C
+Frage: Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Physical Layer (Schicht 1) laut dem gegebenen Text?
 
-Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Physical Layers (Schicht 1) laut dem gegebenen Text?
+Korrekte Antwort: a) Bereitstellung von Routing-Funktionen zwischen verschiedenen Netzwerken
 
-A) Die Verschlüsselung bildet physikalische Werte auf logische Größen ab.
-B) Die Speicherung umfasst sowohl medien-unabhängige als auch medien-gebundene Aufbewahrung logischer Größen.
-C) Die Signalübertragung über Kabel und Funkwellen.
-D) Die Kompression wandelt logische Größen in physikalische Werte um.
+b) Verschlüsselung durch Abbildung physikalischer Werte auf logische Größen
+c) Speicherung durch Aufbewahrung logischer Größen an einem festen Ort
+d) Kompression durch Umwandlung logischer Größen in physikalische Werte

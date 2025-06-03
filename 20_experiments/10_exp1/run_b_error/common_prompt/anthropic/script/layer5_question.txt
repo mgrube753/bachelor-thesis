@@ -1,8 +1,9 @@
-Frage: Welche der folgenden Eigenschaften gehört NICHT zu den Kernaufgaben der Session Layer 5 gemäß dem gegebenen Text?
+Frage: Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Session Layers (Schicht 5) im ISO-OSI-Modell?
 
-[RICHTIGE ANTWORT: Verbindungsorientierte Kommunikation mit Bestätigungsmechanismen]
+Korrekte Antwort: Synchronisation von Datenströmen und Gewährleistung von Bestätigungen
 
-A) Spontanes Erstellen und Verwerfen von Datagrammen
-B) Verbindungsorientierte Kommunikation mit Bestätigungsmechanismen
-C) Vermeidung von Zwischenpunkten und Bestätigungen durch Asynchronität
+Antwortmöglichkeiten:
+A) Synchronisation von Datenströmen und Gewährleistung von Bestätigungen
+B) Spontanes Erstellen, Senden, Empfangen und sofortiges Verwerfen von Datagrammen
+C) Vermeidung von Zwischenpunkten und Bestätigungen (Asynchronität)
 D) Aufspaltung unabhängiger Datenpakete in Einzelteile (Atomisierung)

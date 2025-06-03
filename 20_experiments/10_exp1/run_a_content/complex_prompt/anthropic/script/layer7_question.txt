@@ -1,9 +1,3 @@
-```markdown
-Frage: Warum ist im OSI-Modell speziell bei der Anwendungsschicht (Application Layer) eine umfassende Systematisierung schwieriger zu realisieren als bei den darunterliegenden Schichten, und welche architektonische Konsequenz ergibt sich daraus für die Entwicklung von Anwendungsprotokollen?
+Frage: Warum ist eine Systematisierung des Application Layers (Schicht 7) im OSI-Modell im Vergleich zu anderen Schichten besonders schwierig, und welche Auswirkungen hat dies auf die Implementierung von Anwendungsprotokollen? Erläutern Sie anhand der Kernaufgaben des Application Layers.
 
-Antwortmöglichkeiten:
-- ~Die starke Abhängigkeit von spezifischen Anwendungsfällen führt dazu, dass jedes Anwendungsprotokoll eigene Begriffe, Anforderungen und Verhaltensweisen definieren muss, was eine universelle Systematisierung verhindert und zur Entwicklung spezialisierter, anwendungsspezifischer Protokolle statt eines einheitlichen Frameworks führt.
-- Die Anwendungsschicht ist technisch komplexer als andere Schichten, weshalb eine Systematisierung zu rechenintensiv wäre und daher Protokolle auf dieser Ebene bewusst minimalistisch gehalten werden.
-- Die OSI-Standardisierungsgremien haben die Anwendungsschicht bewusst offen gelassen, um künftige technologische Entwicklungen nicht einzuschränken, was zu einer gewollten Fragmentierung führte.
-- Die Anwendungsschicht wurde historisch zuletzt definiert, als die Standardisierungsbemühungen bereits nachließen, wodurch eine vollständige Systematisierung aus zeitlichen Gründen nicht mehr durchgeführt werden konnte.
-```
+Antwort: ~Die Systematisierung des Application Layers ist besonders schwierig, weil er stark von der jeweiligen Anwendung abhängt. Jede Anwendung definiert eigene Grundkonzepte (spezifische Begriffe), Protokollelemente (Anforderungen und erwartete Daten) und Verhaltensweisen (Reaktionen auf Protokollanforderungen). Diese Vielfalt und Anwendungsspezifität führt dazu, dass keine einheitliche Struktur wie bei tieferen Schichten möglich ist. Bei der Implementierung von Anwendungsprotokollen bedeutet dies, dass für jede Anwendung individuelle Konzepte entwickelt werden müssen, anstatt auf standardisierte Muster zurückgreifen zu können, was den Entwicklungsprozess komplexer macht und die Interoperabilität erschweren kann.

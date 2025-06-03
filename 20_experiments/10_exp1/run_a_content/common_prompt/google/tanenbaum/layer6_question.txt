@@ -1,3 +1,3 @@
-Korrekte Antwort: Die Darstellungsschicht befasst sich mit der Syntax und Semantik der übertragenen Informationen und ermöglicht die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen, indem sie abstrakte Datenstrukturen definiert und eine Standardkodierung für die Übertragung festlegt.
+**Korrekt: Die Präsentationsschicht ermöglicht die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen, indem sie die auszutauschenden Datenstrukturen abstrakt definiert und eine Standardkodierung für die Übertragung ("on the wire") verwendet.**
 
-Frage: Welche zentrale Funktion erfüllt die Darstellungsschicht (Presentation Layer) im ISO-OSI-Modell, um die Kommunikation zwischen Systemen mit abweichenden Datenformaten zu gewährleisten?
+Basierend auf dem gegebenen Text: Wie unterstützt die Präsentationsschicht des ISO-OSI-Modells die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen?

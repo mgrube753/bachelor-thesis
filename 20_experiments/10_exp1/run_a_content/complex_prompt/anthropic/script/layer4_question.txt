@@ -1,9 +1,9 @@
-```markdown
-Frage: Welche der folgenden Netzwerkszenarien erfordert primär die Implementierung der "Dienstqualität (QoS)"-Funktionalität der Transportschicht, und NICHT hauptsächlich die anderen beiden Kernaufgaben (Adressierung und Flusssteuerung)?
+```
+Frage: Welche der folgenden Aussagen stellt die konzeptionelle Besonderheit der Transport-Schicht (Layer 4) im OSI-Modell korrekt dar, insbesondere in Bezug auf die Kombination ihrer drei Kernaufgaben?
 
 Antwortmöglichkeiten:
-- [Ein Router muss entscheiden, an welchen Host im lokalen Netzwerk ein eingehendes Paket weitergeleitet werden soll]
-- [Ein Server muss die Rate reduzieren, mit der er Daten an einen Client sendet, da dieser die Daten nicht schnell genug verarbeiten kann]
-- ~[Eine Videokonferenzanwendung muss konstante Latenz und Bandbreite sicherstellen, um Unterbrechungen während eines wichtigen Meetings zu vermeiden]
-- [Ein Client stellt eine Verbindung zu einem spezifischen Dienst auf einem Server her, der mehrere Dienste auf verschiedenen Ports anbietet]
+- Die Transport-Schicht bietet lediglich eine Flusskontrolle zwischen physischen Netzwerkgeräten und hat keine Adressierungsfunktionen.
+- ~Die Transport-Schicht ist die erste Schicht (von unten gezählt), die eine Ende-zu-Ende-Verbindung zwischen Anwendungsprozessen ermöglicht, indem sie Teilnehmer-Adressierung, Flusssteuerung und individuelle Dienstqualitätsgarantien kombiniert.
+- Die Transport-Schicht befasst sich ausschließlich mit der Quality of Service, während Adressierung und Flusssteuerung vollständig in der Netzwerkschicht implementiert sind.
+- Die Transport-Schicht ist hauptsächlich für die physische Übertragung von Datenpaketen verantwortlich und verwendet dafür die drei genannten Kernaufgaben.
 ```

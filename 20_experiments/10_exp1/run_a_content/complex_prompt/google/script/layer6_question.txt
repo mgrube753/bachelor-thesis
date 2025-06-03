@@ -1,7 +1,5 @@
-Frage: Der Text beschreibt die Aufgaben der Presentation Layer (Schicht 6) im OSI-Modell, insbesondere die „Kodierung (Darstellung) der Anwendungsdaten als Bitstrom“. Welche grundlegende Herausforderung adressieren die vier Kernaufgaben (Endian-Ness, Zeichenkonvertierung, Kompression, Verschlüsselung) dieser Schicht kollektiv, um eine interoperable Kommunikation zu ermöglichen, auch wenn die Spezifika dieser Herausforderung nicht explizit im Text genannt werden?
+Frage: Das OSI-Referenzmodell trennt Netzwerkfunktionen in Schichten, um Komplexität zu reduzieren und Interoperabilität zu fördern. Die Präsentationsschicht (Layer 6) wird beschrieben als zuständig für die "Kodierung (Darstellung) der Anwendungsdaten als Bitstrom" und umfasst Kernaufgaben wie Endian-Ness-Konvertierung, Zeichendarstellungskonvertierung, Kompression und Verschlüsselung.
 
-Antwortmöglichkeiten:
-- Die Sicherstellung der physischen Übertragungsgeschwindigkeit unabhängig von der Hardware.
-- ~Die Überwindung von Inkompatibilitäten und Heterogenitäten in der Datenrepräsentation zwischen verschiedenen Systemen.
-- Die dynamische Zuweisung von Netzwerkadressen und die Routenoptimierung.
-- Die Bereitstellung von Flusskontrollmechanismen zur Vermeidung von Überlastung.
+Welche gemeinsame übergeordnete Herausforderung adressieren diese scheinbar unterschiedlichen Kernaufgaben der Präsentationsschicht primär, um die Kommunikation zwischen heterogenen Systemen zu gewährleisten?
+
+Antwort: ~Die Kernaufgaben der Präsentationsschicht adressieren primär die Herausforderung der semantischen und syntaktischen Interoperabilität, indem sie sicherstellen, dass Anwendungsdaten, die auf einem sendenden System in einem spezifischen Format vorliegen (z.B. mit bestimmter Byte-Reihenfolge, Zeichenkodierung), von einem empfangenden System, das möglicherweise andere interne Darstellungsweisen verwendet, korrekt interpretiert und verarbeitet werden können, bevor sie der Anwendungsebene übergeben werden. Kompression und Verschlüsselung ergänzen dies durch effiziente und sichere Übertragung der bereits vereinheitlichten Datenrepräsentation.

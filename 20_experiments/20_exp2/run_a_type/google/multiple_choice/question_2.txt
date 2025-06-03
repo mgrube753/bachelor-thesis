@@ -1,9 +1,7 @@
-```markdown
-Frage: Die Beschreibung der Sicherungsschicht (Data Link Layer) hebt mehrere Kernaufgaben und Mechanismen hervor. Welche der folgenden Aussagen fasst die *primäre, übergreifende Implikation* der Fehlerbehandlungsfunktion dieser Schicht für die darüberliegende Vermittlungsschicht (Network Layer) präzise zusammen?
+Frage: Basierend auf der im Text beschriebenen Hauptaufgabe der Sicherungsschicht (Data Link Layer), welche übergeordnete Funktion erfüllt sie, um den Transport für höhere Schichten zu optimieren?
 
 Antwortmöglichkeiten:
-- ~Die Sicherungsschicht verbirgt Übertragungsfehler vollständig vor der Vermittlungsschicht, wodurch diese auf einer fehlerfreien Leitung operieren kann, ohne sich um die Integrität einzelner Datenrahmen kümmern zu müssen.
-- Die Sicherungsschicht gewährleistet, dass die Vermittlungsschicht immer die optimalste Route für den Datentransfer auswählt, indem sie fehlerhafte Pfade maskiert.
-- Die Sicherungsschicht führt eine Ende-zu-Ende-Verschlüsselung der Daten durch, um die Vertraulichkeit für die Vermittlungsschicht zu sichern.
-- Die Sicherungsschicht ist primär dafür verantwortlich, übermäßige Datenfluten von einem schnellen Sender an einen langsamen Empfänger zu verhindern, was der Vermittlungsschicht die Flusskontrolle abnimmt.
-```
+- ~Sie wandelt eine fehleranfällige Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung um, indem sie Übertragungsfehler maskiert und Bestätigungsmechanismen implementiert.
+- Sie gewährleistet primär die Zugriffssteuerung auf das gemeinsame Übertragungsmedium in Broadcast-Netzwerken, um Kollisionen zu vermeiden.
+- Sie reguliert hauptsächlich den Datenfluss zwischen Sender und Empfänger, um ein Überfluten langsamer Empfänger zu verhindern.
+- Sie ist verantwortlich für die logische Adressierung und das Routing von Datenpaketen über verschiedene Netzwerke hinweg.

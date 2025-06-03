@@ -1,13 +1,17 @@
-```markdown
-Frage: Untersuchen Sie, wie die Prinzipien der Datensicherungsschicht (Data Link Layer) in einem realen Netzwerkszenario angewendet werden können, bei dem ein Server mit hoher Übertragungsgeschwindigkeit Daten an mehrere Clients mit unterschiedlichen Empfangskapazitäten senden muss. Veranschaulichen Sie insbesondere, welche Mechanismen zur Fehlerkorrektur, Verkehrsregulierung und Medienzugriffskontrolle implementiert werden sollten, um eine zuverlässige Kommunikation zu gewährleisten.
+"""
+Frage: Untersuchen Sie, wie die Mechanismen der Data Link Layer in einem industriellen Netzwerk angewendet werden können, um die zuverlässige Übertragung von zeitkritischen Steuerungsdaten zwischen einem zentralen Kontrollsystem und mehreren Fertigungsmaschinen zu gewährleisten. Veranschaulichen Sie dabei, welche spezifischen Herausforderungen auftreten könnten, wenn einige Maschinen deutlich langsamer Daten verarbeiten als andere, und wie die verschiedenen Funktionen der Data Link Layer (Fehlermasking, Framing, Bestätigungsmechanismen und Verkehrsregulierung) konkret eingesetzt werden sollten, um diese Probleme zu lösen.
 
-Antwort: ~Eine praktische Anwendung der Data Link Layer-Prinzipien in diesem Szenario würde folgende Aspekte umfassen:
+Antwort: ~In einem industriellen Netzwerk müssten die Data Link Layer-Mechanismen wie folgt angewendet werden:
 
-Für die Fehlerkorrektur: Der Server würde die zu übertragenden Daten in Frames angemessener Größe (z.B. 1000-1500 Bytes) aufteilen und sequentiell senden. Jeder Client würde den korrekten Empfang durch Acknowledgement-Frames bestätigen. Bei ausbleibenden Bestätigungen würde der Server die entsprechenden Frames erneut senden.
+- Fehlermasking: Implementierung robuster CRC-Prüfsummen oder ähnlicher Fehlererkennungscodes, die speziell für Industrieumgebungen mit elektromagnetischen Störungen geeignet sind, um Bitfehler zu erkennen und zu korrigieren, bevor sie die Steuerungsbefehle verfälschen.
 
-Zur Verkehrsregulierung: Da die Clients unterschiedliche Empfangskapazitäten haben, müsste ein Flow-Control-Mechanismus implementiert werden. Dies könnte durch Sliding-Window-Protokolle realisiert werden, bei denen jeder Client seine aktuelle Empfangskapazität mitteilt. Der Server passt dann seine Senderate individuell für jeden Client an, um ein Überfluten langsamer Clients zu vermeiden.
+- Framing: Aufteilung der Steuerungsdaten in kleinere Frames mit priorisierter Kennzeichnung für zeitkritische Befehle, sodass wichtige Steuersignale vorrangig behandelt werden können.
 
-Für die Medienzugriffskontrolle: Da mehrere Clients auf den gemeinsamen Übertragungskanal zugreifen, würde die MAC-Sublayer Verfahren wie CSMA/CD (in Ethernet-Netzwerken) oder Token-Passing implementieren, um Kollisionen zu vermeiden und allen Teilnehmern faire Zugriffsmöglichkeiten zu bieten.
+- Bestätigungsmechanismen: Einrichtung eines zuverlässigen Acknowledgement-Systems mit kurzen Timeouts für zeitkritische Daten, wobei nicht bestätigte Frames sofort erneut gesendet werden, um Produktionsunterbrechungen zu minimieren.
 
-Diese Implementierungen würden zusammen eine zuverlässige Kommunikation gewährleisten, indem sie Übertragungsfehler maskieren, Datenfluss regulieren und fairen Kanalzugriff ermöglichen.
-```
+- Verkehrsregulierung: Implementierung eines angepassten Flow-Control-Mechanismus, der die unterschiedlichen Verarbeitungsgeschwindigkeiten der Maschinen berücksichtigt, etwa durch dynamische Puffergrößen oder variable Senderate, basierend auf Feedback der langsameren Maschinen.
+
+- Medium Access Control: Bei gemeinsam genutzten Übertragungskanälen könnte ein deterministisches Zugriffsverfahren wie Token-Passing oder TDMA implementiert werden, das jeder Maschine garantierte Zeitslots zuweist und so Kollisionen verhindert, die in zeitkritischen Anwendungen nicht tolerierbar sind.
+
+Diese Lösungen müssten je nach spezifischen Anforderungen des industriellen Prozesses und der physischen Netzwerkstruktur angepasst werden.
+"""

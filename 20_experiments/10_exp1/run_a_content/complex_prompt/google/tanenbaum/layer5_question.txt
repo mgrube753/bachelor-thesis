@@ -1,7 +1,8 @@
-Frage: Angesichts der im Text beschriebenen Dienste der Sitzungsschicht – Dialogsteuerung, Token-Verwaltung und Synchronisation – welche der folgenden Aussagen beschreibt am präzisesten die *grundlegende, übergeordnete Funktion*, die diese Dienste gemeinsam erfüllen, um eine robuste Kommunikation zwischen Benutzern auf verschiedenen Maschinen zu gewährleisten?
+Frage: Der Session Layer im ISO-OSI-Modell bietet Dienste wie Dialogsteuerung, Token-Management und Synchronisation an. Welche gemeinsame übergeordnete Funktion oder welchen kritischen Aspekt der Kommunikation zwischen verschiedenen Maschinen adressieren diese scheinbar unterschiedlichen Dienste primär, um eine robuste und verlässliche Interaktion über eine längere Zeitspanne zu gewährleisten?
 
 Antwortmöglichkeiten:
-- Alle Dienste konzentrieren sich darauf, die Integrität der übertragenen Datenpakete sicherzustellen und Fehler auf Bitorganisationsebene zu korrigieren.
-- Diese Dienste dienen primär dazu, den Transport von Segmenten zwischen Endsystemen zu orchestrieren und die Flusskontrolle des Datenstroms zu regeln.
-- ~Die kollektive Funktion dieser Dienste ist es, die Struktur, den Ablauf und die Konsistenz einer Kommunikationsinteraktion zu managen, um einen geordneten und wiederherstellbaren Austausch von Informationen zu ermöglichen.
-- Die Hauptaufgabe dieser Dienste ist die logische Adressierung und das Routing von Datenpaketen über verschiedene Netzwerke hinweg.
+- ~Die kollektive Gewährleistung der Kohärenz, Konfliktvermeidung und Wiederherstellbarkeit komplexer Interaktionsprozesse, die über eine einzelne Anforderung hinausgehen.
+- Die reine Datenkomprimierung zur Effizienzsteigerung der Netzwerkübertragung.
+- Die Verschlüsselung von Datenpaketen zur Sicherstellung der Vertraulichkeit.
+- Die dynamische Zuweisung von IP-Adressen an Endgeräte im Netzwerk.
+- Die Umwandlung von logischen Adressen in physische Hardware-Adressen.

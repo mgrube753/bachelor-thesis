@@ -1,5 +1,3 @@
-Frage: Erläutern Sie, welche zwei im Text genannten Designentscheidungen der Physical Layer zugleich stark von den mechanischen UND elektrischen Eigenschaften des Übertragungsmediums abhängen, und begründen Sie kurz, wodurch diese Abhängigkeit jeweils entsteht.
+Frage: Ein Unternehmen plant, seine bestehende Punkt-zu-Punkt-Kupferverkabelung auf eine neue Topologie umzustellen, bei der Daten gleichzeitig in beide Richtungen fließen sollen, ohne dass sich die Signale gegenseitig stören. Auf welcher ISO-OSI-Ebene ist dieses Duplex-Problem angesiedelt, und welche konkrete Designfrage aus dem bereitgestellten Text muss dabei insbesondere gelöst werden?
 
-Antwort: ~
-1. Die Festlegung, welche elektrischen Signale eine „1“ bzw. „0“ repräsentieren – sie erfordert elektrische Kompatibilität (Spannungspegel, Impedanz) und wird durch die mechanische Ausgestaltung des Mediums (z. B. Leiterquerschnitt, Steckverbindung) mitbestimmt.  
-2. Die Anzahl der Pins und deren Belegung am Netzwerk­stecker – die elektrische Trennung einzelner Signalleitungen muss mechanisch durch ausreichend viele, passgenau angeordnete Kontakte realisiert werden, um Übersprechen und Signalverlust zu vermeiden.
+Antwort: ~Physikalische Schicht; es muss geklärt werden, ob die Übertragung simultan in beide Richtungen erfolgen kann (Simplex, Halbduplex oder Vollduplex) und wie die elektrischen Signale dafür gestaltet sein müssen.

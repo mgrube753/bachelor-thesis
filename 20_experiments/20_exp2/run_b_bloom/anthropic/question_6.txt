@@ -1,23 +1,5 @@
-```markdown
-Frage: Entwickle ein erweitertes Protokoll für die Datensicherungsschicht, das die drei Hauptherausforderungen (Fehlererkennung, Flusssteuerung und Medienzugriffskontrolle) effizient adressiert. Dein Protokoll soll insbesondere für ein Netzwerk mit variablen Übertragungsgeschwindigkeiten und unterschiedlich leistungsfähigen Endgeräten konzipiert sein. Erkläre die Mechanismen, die du implementieren würdest, und wie diese zusammenwirken, um eine zuverlässige Kommunikation zu gewährleisten.
+```
+Frage: Entwerfen Sie ein neues Data Link Layer-Protokoll für ein Netzwerk, in dem extrem unterschiedlich schnelle Geräte miteinander kommunizieren müssen (z.B. High-Performance-Server und ressourcenbeschränkte IoT-Geräte). Ihr Protokoll soll alle im Text genannten Hauptfunktionen der Data Link Layer erfüllen, aber speziell die Problematik der Geschwindigkeitsunterschiede innovativ lösen. Beschreiben Sie die Mechanismen für Fehlererkennung, Frame-Übertragung, Empfangsbestätigung und Verkehrsregulierung sowie die Zugriffskontrolle für gemeinsam genutzte Kanäle.
 
-Antwort: ~Ein erweitertes Datensicherungsschicht-Protokoll für die beschriebenen Anforderungen könnte folgende Komponenten umfassen:
-
-1. Adaptive Fehlererkennung und -korrektur:
-   - Hybrides CRC/Hamming-Code-System, das je nach Leitungsqualität dynamisch zwischen einfacher Erkennung und Vorwärtskorrektur wechselt
-   - Selektive Wiederholung mit variablen Timeouts basierend auf gemessenen Round-Trip-Zeiten
-   - Hierarchische Rahmenstruktur mit Subframes, die bei Übertragungsfehlern einzeln wiederholt werden können
-
-2. Intelligente Flusssteuerung:
-   - Adaptive Fenstergröße, die sich basierend auf Empfängerkapazität und Netzwerkauslastung automatisch anpasst
-   - Priorisierungsmechanismus, der kritischen Datenrahmen Vorrang einräumt
-   - Feedback-basierte Drosselung mit Kapazitätsindikatoren vom Empfänger
-   - Pufferüberwachung mit proaktiver Benachrichtigung
-
-3. Flexible Medienzugriffskontrolle:
-   - Hybrider Zugriffsalgorithmus, der zwischen zeitbasiertem (TDMA) und wettbewerbsbasiertem (CSMA/CD) Zugriff basierend auf Netzwerkauslastung wechselt
-   - Dynamische Kanalzuweisung mit Bandbreitenreservierung für leistungsschwache Geräte
-   - Kollisionsvermeidung durch statistisches Lernen von Übertragungsmustern
-
-Diese Komponenten interagieren in einem mehrschichtigen System: Die Medienzugriffskontrolle koordiniert den Kanalzugriff, während die Flusssteuerung die Übertragungsrate reguliert. Die Fehlererkennung gewährleistet die Datenintegrität und initiiert bei Bedarf Wiederholungen. Das Protokoll passt alle Parameter kontinuierlich an die aktuelle Netzwerksituation und Geräteleistung an, um eine optimale Balance zwischen Durchsatz und Zuverlässigkeit zu erreichen.
+Antwort: ~Ein mögliches Protokoll könnte ein adaptives Mehrstufen-Flusskontrollsystem implementieren, das dynamisch Rahmengröße, Übertragungsrate und Bestätigungsmechanismen an die Geräteleistung anpasst. Es verwendet variable Framegrößen (kleine für IoT-Geräte, große für Server) und ein hybrides Bestätigungssystem, das für langsame Geräte Gruppenbestätigungen mit längeren Timeouts erlaubt, während schnelle Geräte Einzelbestätigungen mit kurzen Timeouts nutzen. Für die Fehlererkennung kombiniert es CRC-Prüfsummen mit selektiver Wiederholung (SACK) und implementiert einen prädiktiven Puffermechanismus, der die Empfängerkapazität vorausberechnet. Die Kanalzugriffskontrolle erfolgt über ein zweistufiges Zeitschlitzverfahren, wobei ressourcenstarke Geräte bei Bedarf Zeitfenster abtreten können und priorisierte Warteschlangen für kritischen Traffic sorgen. Ein Adaptive Rate Control Protocol (ARCP) verhandelt kontinuierlich optimale Übertragungsparameter zwischen den kommunizierenden Geräten.
 ```

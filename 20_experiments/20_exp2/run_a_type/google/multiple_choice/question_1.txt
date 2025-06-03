@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Aussagen beschreibt die primäre transformationale Aufgabe der Sicherungsschicht (Data Link Layer) im Kontext des ISO-OSI-Modells am präzisesten und welche unterstützenden Mechanismen sind dabei integral, um Daten für die darüberliegende Netzwerkschicht aufzubereiten?
+Frage: Welche der folgenden Aussagen beschreibt am präzisesten, wie die Sicherungsschicht (Data Link Layer) ihre Kernaufgabe der Transformation einer Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung in Bezug auf die Datenintegrität primär umsetzt?
 
 Antwortmöglichkeiten:
-- ~Die Hauptaufgabe besteht darin, eine rohe Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung umzuwandeln, indem reale Übertragungsfehler maskiert werden, was durch das Aufbrechen von Eingabedaten in Datenrahmen, deren sequentielle Übertragung und gegebenenfalls Bestätigungen für den korrekten Empfang erreicht wird.
-- Die Sicherungsschicht konzentriert sich hauptsächlich auf die End-zu-End-Flusskontrolle und die Segmentierung von Nachrichten, um eine effiziente und verlustfreie Kommunikation über verschiedene Netzwerke hinweg zu gewährleisten.
-- Ihre primäre Funktion ist die logische Adressierung und das Routing von Datenpaketen durch ein komplexes Netzwerk, während sie gleichzeitig die Lastverteilung und den Stau im Netzwerk verwaltet.
-- Die Hauptrolle der Sicherungsschicht ist die Umwandlung von Bitströmen in elektrische Signale und deren Übertragung über physische Medien, einschließlich der Definition von Spannungspegeln und Kabeltypen.
+- ~Die Sicherungsschicht zerlegt Eingangsdaten in Datenrahmen, überträgt diese sequenziell und nutzt bei zuverlässigen Diensten Empfangsbestätigungen, um Fehler vor der Netzwerkschicht zu verbergen.
+- Sie gewährleistet eine fehlerfreie Kommunikation hauptsächlich durch die Implementierung von Mechanismen zur Flusskontrolle, um eine Überflutung langsamer Empfänger zu verhindern.
+- Sie ist primär dafür verantwortlich, über die Medium Access Control (MAC) Unterschicht den Zugang zum gemeinsamen Kanal in Broadcast-Netzwerken zu regeln.
+- Ihre Hauptfunktion besteht darin, die physischen Fehler der Übertragungsmedien direkt zu beheben, bevor die Daten überhaupt in Datenrahmen organisiert werden können.

@@ -1,3 +1,8 @@
-Frage: Was sind die drei Kernaufgaben des Application Layers (Schicht 7) im ISO-OSI-Modell?
+KORREKTE ANTWORT: C
 
-Korrekte Antwort: Universalkonzepte, Standardelemente und Standardverhalten
+Frage: Welche der folgenden Aussagen beschreibt NICHT eine der drei Kernaufgaben des Application Layers (Schicht 7) im ISO-OSI-Modell?
+
+A: Die Definition universeller Begriffe, die für alle Anwendungen gültig sind
+B: Die Festlegung von Standardverhalten als Reaktion auf generische Anforderungen
+C: Die Herstellung der direkten Verbindung zwischen Endsystemen
+D: Die Identifikation von Standardanforderungen und generischen Datenstrukturen

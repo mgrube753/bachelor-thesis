@@ -1,7 +1,7 @@
-Frage: Welches spezielle Problem adressiert der Medium-Access-Control-(MAC-)Sublayer innerhalb der Sicherungsschicht gemäß dem obigen Text?
+Frage: Welcher der im Text beschriebenen Mechanismen des Data-Link-Layers sorgt in erster Linie dafür, dass die Netzwerkschicht eine nahezu fehlerfreie Verbindung sieht, ohne zugleich Funktionen der Verkehrsregulierung oder der Medienzugriffskontrolle zu übernehmen?
 
 Antwortmöglichkeiten:
-- ~Die Steuerung des Zugriffs mehrerer Stationen auf ein gemeinsames Übertragungsmedium in Broadcast-Netzen
-- Die Erkennung und Korrektur von Bitfehlern innerhalb einzelner Frames
-- Die Flusskontrolle, um einen schnellen Sender daran zu hindern, einen langsameren Empfänger zu überlasten
-- Das Routing von Paketen zwischen unterschiedlichen Netzwerken
+- ~Die sequentielle Übertragung von Frames mit anschließender Quittierung jedes korrekt empfangenen Frames
+- Die Implementierung eines Flow-Control-Verfahrens, das einen schnellen Sender an die Geschwindigkeit des Empfängers anpasst
+- Die Verwendung des Medium-Access-Control-Sublayers, um den Zugriff mehrerer Stationen auf ein gemeinsames Übertragungsmedium zu koordinieren
+- Die Fragmentierung von Netzwerkpaketen in kleinere Einheiten, um ihre Übertragung über heterogene Netze zu erleichtern

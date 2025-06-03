@@ -1,7 +1,3 @@
-Frage: Ein Client fordert vom Netzwerk verbindliche Garantien hinsichtlich Bandbreite und Zugriffszeit. Welche der im Text beschriebenen Kernaufgaben des Transport Layer widerspricht diesem Wunsch am stärksten?
+Frage: Der Text beschreibt einen Transport Layer, der „einen Speicherdienst ohne Garantien für Kapazität, Zugriffszeit, Varianz, Fehlerfreiheit usw.“ bereitstellt und dabei die Quality of Service komplett ausklammert. Welche beiden darüberliegenden ISO-OSI-Schichten müssen dadurch zwingend zusätzliche Mechanismen zur Sicherstellung von Verbindungs- und Dienstqualität implementieren, und warum gerade diese?
 
-Antwortmöglichkeiten:
-- ~Dienstquantität
-- Identifizierung
-- Datenstau
-- Fehlererkennung
+Antwort: ~Die Session Layer (Schicht 5) und die Application Layer (Schicht 7); die Session-Schicht ist für Dialogsteuerung, Synchronisation und Wiederaufsetzen von Verbindungen zuständig, während die Application-Schicht unmittelbar die Endanwender-Anforderungen erfüllt und daher fehlende QoS-Garantien durch applikationsspezifische Wiederholungs-, Puffer- und Fehlertoleranzmechanismen kompensieren muss.

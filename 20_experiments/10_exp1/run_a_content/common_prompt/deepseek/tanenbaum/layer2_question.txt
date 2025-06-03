@@ -1,6 +1,9 @@
-**Frage:** Welche drei Hauptaufgaben bzw. Probleme behandelt die Data Link Layer laut des beschriebenen Textes?  
+**Frage:** Welche Funktion der Sicherungsschicht verhindert, dass ein schneller Sender einen langsamen Empfänger mit Daten überlastet?  
 
 **Korrekte Antwort:**  
-1. Umwandlung der rohen Übertragung in eine fehlerfrei erscheinende Leitung durch Fehlermaskierung und Bestätigung korrekt empfangener Frames.  
-2. Regulierung des Datenflusses, um eine Überlastung des Empfängers durch einen schnellen Sender zu verhindern.  
-3. Kontrolle des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken (über das MAC-Sublayer).
+- B) Einsatz eines Flusskontrollmechanismus  
+
+**Weitere Antwortoptionen:**  
+- A) Aufteilung der Daten in Frames  
+- C) Verwendung des MAC-Sublayers für Broadcast-Netzwerke  
+- D) Bestätigung korrekt empfangener Frames

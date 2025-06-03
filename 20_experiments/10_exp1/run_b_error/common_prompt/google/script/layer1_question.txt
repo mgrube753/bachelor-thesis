@@ -1,8 +1,5 @@
-KORREKTE ANTWORT: A
+**Frage:** Welche der im Text genannten Kernaufgaben des Physical Layer 1 ist für die **Abbildung physikalischer Werte auf logische Größen** zuständig, und welche für die **Umwandlung logischer Größen in physikalische Werte**?
 
-Welche der drei Kernaufgaben des Physical Layer (Schicht 1) des ISO-OSI-Modells ist gemäß der Beschreibung für die Abbildung physikalischer Werte auf logische Größen zuständig?
-
-A. Verschlüsselung
-B. Speicherung
-C. Kompression
-D. Keine der genannten Aufgaben
+**Korrekt:**
+Verschlüsselung ist für die Abbildung physikalischer Werte auf logische Größen zuständig.
+Kompression ist für die Umwandlung logischer Größen in physikalische Werte zuständig.

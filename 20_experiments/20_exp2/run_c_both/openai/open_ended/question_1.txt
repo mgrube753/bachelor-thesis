@@ -1,5 +1,5 @@
-Frage: Listen Sie anhand des Textes die drei wesentlichen Aufgaben der Data Link Layer im ISO-OSI-Modell auf.
+Frage: Listen Sie drei spezifische Funktionen der Data-Link-Layer (Sicherungsschicht) im ISO-OSI-Modell auf, die im obigen Text genannt werden.
 
-Antwort: ~1. Umwandeln eines rohen Übertragungskanals in eine scheinbar fehlerfreie Leitung durch Rahmenbildung, Fehlererkennung und Bestätigungen  
-~2. Verkehrsregulierung (Flow Control), um einen schnellen Sender daran zu hindern, einen langsamen Empfänger zu überfluten  
-~3. Zugriffssteuerung auf ein gemeinsames Übertragungsmedium durch die Medium-Access-Control-Sublayer
+Antwort: ~- Maskieren von Übertragungsfehlern durch Aufteilung der Daten in Frames und Veranlassen von Empfangsbestätigungen  
+- Flusskontrolle, um einen schnellen Sender daran zu hindern, einen langsameren Empfänger zu überlasten  
+- Steuerung des Zugriffs auf ein gemeinsames Übertragungsmedium über die Medium-Access-Control-Unterschicht

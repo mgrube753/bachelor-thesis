@@ -1,10 +1,3 @@
-**Korrekte Antwort: C**
+Korrekte Antwort: Die Begriffe, die in der Anwendung auftreten; die Protokollelemente; und die Information, wie die Anwendung auf Anforderungen reagieren soll.
 
-**Frage:**
-Welche drei Kernkonzepte bzw. Grundkonzepte, die für die Funktion des Application Layers (Schicht 7) relevant sind, werden laut dem gegebenen Text primär definiert?
-
-**Antworten:**
-A. Die physikalische Verbindung, die Datenübertragung und die Fehlerbehandlung.
-B. Die Netzwerktopologie, die IP-Adressen und die Routing-Entscheidungen.
-C. Die in der Anwendung auftretenden Begriffe, die Protokollelemente für Anforderungen und erwartete Daten sowie die Art der Reaktion der Anwendung.
-D. Die Sitzungssteuerung, die Datenverschlüsselung und die Authentifizierung der Nutzer.
+Welche drei Grundkonzepte müssen laut dem gegebenen Text vom Application Layer (Schicht 7) definiert werden, um die Interaktion einer spezifischen Anwendung zu regeln?

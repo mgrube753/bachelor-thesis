@@ -1,7 +1,15 @@
-```markdown
-Frage: Analysieren Sie, wie die verschiedenen Aufgaben der Data Link Layer (Fehlerkorrektur, Flusssteuerung und Kanalzugriffskontrolle) zusammenwirken, um die Zuverlässigkeit der Datenübertragung zu gewährleisten. Diskutieren Sie außerdem, welche Kompromisse zwischen Effizienz und Zuverlässigkeit in dieser Schicht möglicherweise getroffen werden müssen.
+"""
+Frage: Im Text wird beschrieben, dass die Datenlink-Schicht die Hauptaufgabe hat, eine "rohe Übertragungseinrichtung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint". Analysieren Sie kritisch, wie die beschriebenen Mechanismen (Frames, Bestätigungen, Verkehrsregulierung und Medienzugriffskontrolle) zusammenwirken, um diese Aufgabe zu erfüllen, und erläutern Sie, welche Kompromisse bei der Implementierung dieser Mechanismen in verschiedenen Netzwerkumgebungen (z.B. kabelgebundene vs. drahtlose Netzwerke) eingegangen werden müssen.
 
-Antwort: ~Eine umfassende Analyse zeigt, dass die Data Link Layer durch ein Zusammenspiel mehrerer Mechanismen die Zuverlässigkeit sicherstellt: Die Fehlerkorrektur durch Frame-basierte Übertragung und Bestätigungen maskiert reale Übertragungsfehler für höhere Schichten. Die Flusssteuerung verhindert Datenüberlastungen, indem sie die Übertragungsgeschwindigkeit reguliert. Die Medium Access Control-Unterschicht koordiniert den Zugriff auf geteilte Kanäle bei Broadcast-Netzwerken. 
+Antwort: ~Eine kritische Analyse zeigt, dass die genannten Mechanismen ein komplexes System bilden, um Fehlerfreiheit zu simulieren: 
 
-Bezüglich der Kompromisse: Mehr Fehlerkorrekturmechanismen erhöhen die Zuverlässigkeit, fügen jedoch Overhead hinzu und reduzieren den Nettonutzdurchsatz. Strengere Flusssteuerungen verhindern Datenverlust, können aber die maximale Übertragungsleistung limitieren. Bei Kanalzugriffskontrolle müssen Fairness und Effizienz gegeneinander abgewogen werden. Diese Kompromisse müssen je nach Anwendungsanforderungen und Netzwerkbedingungen sorgfältig austariert werden.
-```
+- Frames ermöglichen die Segmentierung großer Datenmengen in handhabbare Einheiten, wodurch Fehlerlokalisierung und Neuübertragung effizienter werden. Dies erfordert jedoch Overhead durch Header/Trailer.
+
+- Bestätigungen (Acknowledgements) bieten Zuverlässigkeit durch Empfangsbestätigung, führen aber zu erhöhter Latenz und Bandbreitennutzung durch zusätzlichen Datenverkehr.
+
+- Verkehrsregulierungsmechanismen verhindern Überlastungen und damit verbundene Paketverluste, können jedoch bei falscher Konfiguration die Leistung drosseln.
+
+- Die Medienzugriffskontrolle verhindert Kollisionen in geteilten Medien, benötigt aber ausgeklügelte Algorithmen mit eigenen Overhead-Kosten.
+
+Bei kabelgebundenen Netzwerken können strengere Fehlerkorrekturverfahren und weniger aggressive Medienzugriffskontrollen implementiert werden, da die Übertragung stabiler ist. Drahtlose Netzwerke hingegen erfordern robustere Fehlerkorrektur, dynamischere Flusskontrolle und komplexere Medienzugriffsverfahren, um mit Interferenzen, Signalverlust und variablen Übertragungsraten umzugehen. Die Herausforderung liegt darin, diese Mechanismen je nach Netzwerktyp so auszubalancieren, dass eine scheinbar fehlerfreie Verbindung bei akzeptabler Leistung entsteht.
+"""

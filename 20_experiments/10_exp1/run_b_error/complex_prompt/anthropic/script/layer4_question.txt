@@ -1,9 +1,7 @@
-```markdown
-Frage: Die Transportschicht (Layer 4) im OSI-Modell wird im Text mit drei spezifischen Kernaufgaben beschrieben, die auf den ersten Blick kontraintuitiv erscheinen könnten. Welche der folgenden Aussagen reflektiert am präzisesten die tatsächliche Rolle und Funktion dieser Schicht im Gegensatz zu der im Text dargestellten Beschreibung?
+Frage: Analysieren Sie kritisch die Darstellung der Transportschicht (Layer 4) im gegebenen Text. Welche der folgenden Aussagen identifiziert korrekt eine konzeptionelle Inkonsistenz oder ein Missverständnis in der Beschreibung der Kernaufgaben dieser Schicht im Vergleich zum standardmäßigen ISO-OSI-Modell?
 
 Antwortmöglichkeiten:
-- ~Die Transportschicht stellt tatsächlich zuverlässige Ende-zu-Ende-Verbindungen her und bietet Mechanismen zur Flusskontrolle und Fehlererkennung, anstatt QoS zu vernachlässigen und Speicherdienste ohne Garantien zu erbringen.
-- Die Transportschicht ignoriert bewusst Teilnehmer-Charakteristika, um eine maximale Netzwerkgeschwindigkeit zu gewährleisten, genau wie im Text beschrieben.
-- Die primäre Funktion der Transportschicht ist die Bereitstellung eines Speicherdienstes ohne Leistungsgarantien, wie im Text korrekt angegeben.
-- Die im Text genannte "Ignorierung der Teilnehmer-Charakteristik" beim Datenstau ist ein essentielles Feature der Transportschicht zur Wahrung der Netzwerkneutralität.
-```
+- ~Die Beschreibung des "Datenstaus" als "Ignorieren der Teilnehmer-Charakteristik" widerspricht der eigentlichen Aufgabe der Transportschicht, die gerade für Flusskontrolle und Staumanagement verantwortlich ist
+- Die "Identifizierung" mit "Geräte-spezifischen Kennungen" ist keine Aufgabe der Transportschicht, sondern ausschließlich der Sicherungsschicht (Layer 2)
+- Die Beschreibung der "Dienstquantität" ist korrekt, da die Transportschicht grundsätzlich keine Garantien für QoS bieten kann
+- Die Bereitstellung einer "Speicherung für festgelegte Teilnehmerpaare" ist die Hauptfunktion der Transportschicht und korrekt dargestellt

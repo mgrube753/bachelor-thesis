@@ -1,7 +1,6 @@
-**Frage:** Welche der folgenden Funktionen werden von der Session-Schicht des ISO-OSI-Modells bereitgestellt?  
+**Frage:** Welche drei Hauptdienste bietet die Session-Schicht des ISO-OSI-Modells laut Text?  
 
-[KORREKT] Dialogsteuerung (Dialog Control)  
-[KORREKT] Token-Verwaltung (Token Management)  
-[KORREKT] Synchronisierung (Synchronization)  
-[ ] Datenverschlüsselung (Data Encryption)  
-[ ] Fehlererkennung (Error Detection)
+**Korrekte Antwort:**  
+1.  Dialogsteuerung (Dialog Control)  
+2.  Token-Verwaltung (Token Management)  
+3.  Synchronisation (Synchronization)

@@ -1,7 +1,7 @@
-Frage: Beim Transfer eines umfangreichen Datenstroms soll sichergestellt werden, dass nach einem Verbindungsabbruch nicht die komplette Übertragung erneut gestartet werden muss, sondern die Kommunikation an vordefinierten Checkpoints wiederaufgenommen werden kann. Auf welche spezifische Kernaufgabe der OSI-Schicht 5 bezieht sich diese Anforderung?
+Frage: Bei der Entwicklung eines Dateitransfer-Protokolls soll eine Funktion implementiert werden, die während der Übertragung definierte Wiederaufnahmepunkte (Checkpoints) setzt, sodass Sender und Empfänger nach einer Unterbrechung exakt an derselben Stelle fortfahren können. Welcher Dienst des ISO-OSI-Modells ist für die Realisierung dieser Checkpoints zuständig und auf welcher Schicht ist er angesiedelt?
 
 Antwortmöglichkeiten:
-- ~Synchronisation
-- Sitzungen (Aufbauen, Verwalten, Beenden)
-- Bündelung (Gruppierung zusammengehöriger Transaktionen)
-- Flusskontrolle (Flow Control)
+- ~Synchronisationsdienst der Session Layer (Schicht 5)
+- Fehlererkennungsdienst der Sicherungsschicht (Schicht 2)
+- Flusskontrolle der Transportschicht (Schicht 4)
+- Datenkompressionsdienst der Darstellungsschicht (Schicht 6)

@@ -1,4 +1,3 @@
-Frage: Welches der folgenden Szenarien adressiert vorrangig die im Text genannte Kernaufgabe „Dienstqualität (QoS)“ der Transportschicht – also Garantien für Bandbreite, Latenz, Jitter oder Fehlerrate – und nicht überwiegend Adressierung oder Flusssteuerung?
+Frage: Ein Telechirurgie-System muss gewährleisten, dass zwischen den beiden Kommunikationspartnern eine Ende-zu-Ende-Verzögerung von höchstens 50 ms mit einer Schwankung (Jitter) von maximal 5 ms aufrechterhalten wird, ohne dass Pakete verloren gehen. Auf welche der drei Kernaufgaben des Transport Layer richtet sich diese Forderung primär und welche konkreten Qualitätsparameter sind dabei betroffen? Begründen Sie Ihre Auswahl kurz.
 
-Antwortmöglichkeiten:
-- ~Ein Live-
+Antwort: ~Die Forderung richtet sich primär auf die Kernaufgabe „Dienstqualität“, da hier explizit QoS-Parameter wie Latenz, Jitter und Fehlerrate garantiert werden sollen.

@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Aufgaben gehört laut dem bereitgestellten Text zu den primären Verantwortlichkeiten der Sicherungsschicht (Data Link Layer)?
+Frage: Welche spezielle Unterschicht des Data Link Layers ist dafür verantwortlich, den Zugriff auf den gemeinsamen Kanal in Broadcast-Netzwerken zu kontrollieren?
 
 Antwortmöglichkeiten:
-- Routen von Paketen zwischen verschiedenen Netzwerken.
-- ~Das Verwandeln einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint.
-- Die Verschlüsselung von Daten zur Gewährleistung der Vertraulichkeit.
-- Die Darstellung von Daten auf dem Bildschirm des Benutzers.
+- Logical Link Control (LLC) sublayer
+- Network Interface Unit (NIU) sublayer
+- ~Medium Access Control (MAC) sublayer
+- Transmission Control (TC) sublayer

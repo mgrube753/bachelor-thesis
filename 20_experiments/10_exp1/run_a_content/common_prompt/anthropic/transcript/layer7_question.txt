@@ -1,9 +1,8 @@
-Frage: Welche drei Kernaufgaben erfüllt der Layer 7 (Application Layer) im ISO-OSI-Modell?
+KORREKTE ANTWORT: C
 
-Korrekte Antwort:
-A) Definition von Grundkonzepten (Begriffe der Anwendung), Festlegung der Protokollelemente (für Anforderungen und erwartete Daten) und Beschreibung der Reaktionen der Anwendung auf Anforderungen.
+Welche der folgenden Aufgaben gehören zu den im Text genannten Kernaufgaben des Layer 7 (Application Layer) im ISO-OSI-Modell?
 
-Weitere Antwortmöglichkeiten:
-B) Verschlüsselung der Daten, Fehlererkennung und Datenkompression
-C) Routing von Datenpaketen, Verbindungsaufbau und Adressierung
-D) Bitübertragung, Flusskontrolle und Segmentierung von Daten
+A) Routing von Datenpaketen, Fehlererkennung und Verschlüsselung von Daten
+B) Syntaxkonvertierung, Kompression und Sitzungsverwaltung
+C) Definition von Grundkonzepten/Begriffen, Festlegung von Protokollelementen und Spezifikation der Anwendungsreaktionen
+D) Segmentierung von Daten, Flusskontrolle und End-to-End-Verbindungen

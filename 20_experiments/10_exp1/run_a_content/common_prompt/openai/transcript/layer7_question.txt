@@ -1,8 +1,3 @@
-Korrekte Antwort: c)
+Antwort: 1. Definition der Grundkonzepte/Begriffe der Anwendung  2. Festlegung der Protokollelemente (Anforderungen und erwartete Daten)  3. Bestimmung der Reaktionsweise der Anwendung (z. B. Änderung des internen Zustands)
 
-Frage: Welche der folgenden Aufgaben gehört zum Application Layer (Layer 7) des ISO-OSI-Modells?
-
-a) Steuerung der physikalischen Übertragung von Bits  
-b) Aufbau, Pflege und Abbau von Verbindungen zwischen Netzendpunkten  
-c) Definition der Protokollelemente, mit denen Kommunikationspartner Anforderungen stellen und die erwarteten Daten festlegen  
-d) Bestimmung der optimalen Route für Datenpakete
+Frage: Welche drei Kernaufgaben erfüllt der Application Layer (Layer 7) laut dem gegebenen Text?

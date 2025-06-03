@@ -1,7 +1,3 @@
-Frage: Erläutern Sie, weshalb die Definition abstrakter Datentypen und deren standardisierte „on-the-wire“-Kodierung in der Präsentationsschicht angesiedelt ist. Gehen Sie dabei auf folgende Teilaspekte ein:
-1. Wie erleichtert diese Abstraktion die Entwicklung verteilter Anwendungen auf heterogenen Systemen?
-2. Warum wäre es konzeptionell falsch, diese Aufgabe stattdessen der Transportschicht zuzuordnen?
+Frage: Angenommen, ein Big-Endian-System (System A) sendet einen 32-Bit-Ganzzahlwert an ein Little-Endian-System (System B). Erkläre anhand der Aufgaben der ISO-OSI-Präsentationsschicht, warum ohne diese Schicht die empfangene Zahl auf System B eine andere Semantik hätte, selbst wenn alle darunterliegenden Schichten den Datenstrom fehlerfrei übertragen.  
 
-Antwort: ~
-1. Die Präsentationsschicht versteckt Endianess, Zeichensatz- und Zahlenrepräsentationsunterschiede hinter einer plattformneutralen Beschreibung der Daten. Anwendungen können dadurch dieselben logischen Strukturen (z. B. „BankRecord“) benutzen, ohne jedes Zielsystem individuell berücksichtigen zu müssen; Portierungs- und Integrationsaufwand sinken drastisch.  
-2. Die Transportschicht hat nach ISO-OSI lediglich die Aufgabe, einen zuverlässigen, adressierten Byte-Strom bereitzustellen; sie ist bewusst inhaltsagnostisch. Würde sie auch Syntax-/Semantikfragen lösen, würde sie gegen das Schichtprinzip verstoßen, höhere Schichten duplizieren und ihre Implementierung an konkrete Datenformate koppeln. Die Trennung wahrt somit Modularität und Austauschbarkeit beider Schichten.
+Antwort: ~Die Präsentationsschicht übersetzt vor der Übertragung die architekturabhängige Darstellung (z. B. Endianness) in eine standardisierte, systemunabhängige Kodierung und stellt sie auf der Empfängerseite wieder her; ohne diese Schicht würden die Bits zwar korrekt ankommen, aber System B würde die Bytefolge in seiner eigenen Byteordnung auslegen und dadurch einen numerisch falschen Wert erhalten.

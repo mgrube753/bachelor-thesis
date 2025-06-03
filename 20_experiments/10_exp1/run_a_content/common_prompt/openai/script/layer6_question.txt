@@ -1,3 +1,2 @@
-Antwort: Präsentationsschicht (Layer 6)
-
-Frage: Welche Schicht des ISO-OSI-Modells ist für Aufgaben wie Endian-Konvertierung, Zeichencodierung, Kompression und Verschlüsselung verantwortlich?
+Antwort: Endian-Ness  
+Frage: Wie heißt die Kernaufgabe der Schicht 6 (Presentation Layer) im ISO-OSI-Modell, die die Konvertierung der Datendarstellung, etwa zwischen little und big endian, übernimmt?

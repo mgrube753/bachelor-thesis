@@ -1,8 +1,7 @@
-Frage: Welcher Kernaufgabe des Data-Link-Layers kommt die Hauptverantwortung zu, wenn in einem bidirektionalen Funknetz Sender und Empfänger stark unterschiedliche Verarbeitungsraten besitzen und deshalb Zwischenpuffer überlaufen könnten, obwohl keinerlei Bitfehler auftreten?
+Frage: Ordnen Sie die fünf im Text genannten Kernaufgaben des Data-Link-Layers so an, wie sie typischerweise in einem sendeseitigen Ablauf auftreten – vom Empfang der reinen Bitfolge aus der Network-Layer-Schnittstelle bis zur tatsächlichen Übergabe an den Physical Layer – und begründen Sie kurz, warum jede Aufgabe an der jeweiligen Position sinnvoll ist.
 
-Antwortmöglichkeiten:
-- ~Flußkontrolle
-- Fehlerkontrolle
-- Segmentierung
-- Medienzugriff
-- Identifikation
+Antwort: ~1. Segmentierung – Zuerst werden die eingehenden Bits zu handhabbaren Einheiten (Frames) zusammengefasst; ohne klar abgegrenzte Datenblöcke könnten die nachfolgenden Funktionen nicht gezielt wirken.  
+2. Identifikation – Anschließend wird der Frame mit Adressinformationen versehen, damit er eindeutig einem Empfänger (oder Sender) zugeordnet werden kann.  
+3. Fehlerkontrolle – Jetzt wird eine Prüfsumme o. Ä. ergänzt, um später beim Empfänger Übertragungsfehler erkennen (bzw. schon auf Senderseite vorbeugen) zu können; die Prüfinformation muss auf den endgültigen, bereits adressierten Frame angewendet werden.  
+4. Flusskontrolle – Bevor gesendet wird, prüft bzw. regelt der Sender, ob der Empfänger aktuell aufnahmefähig ist; dies verhindert Überlauf und unnötige Wiederholungen.  
+5. Medienzugriff – Erst zuletzt wird das eigentliche Medium aktiviert: Der Sender entscheidet, ob er senden, warten, reservieren oder eine Kollision beheben muss, und übergibt den vorbereiteten Frame an den (möglicherweise unzuverlässigen) Physical Layer.

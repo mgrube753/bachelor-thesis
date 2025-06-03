@@ -1,9 +1,9 @@
 Frage: Welche der folgenden Aufgaben gehört NICHT zu den 5 Kernaufgaben des Data Link Layers (Schicht 2) im ISO-OSI-Modell?
 
-Richtige Antwort: Datenverschlüsselung
+Korrekte Antwort: Protokollübersetzung
 
 Antwortmöglichkeiten:
-A) Datenverschlüsselung
+A) Protokollübersetzung
 B) Fehlerkontrolle
 C) Flußkontrolle
 D) Segmentierung

@@ -1,9 +1,7 @@
-Frage: Welche drei Kernaufgaben hat die Transportschicht (Schicht 4) im ISO-OSI-Modell?  
+**Frage:**  
+Welche der folgenden Aufgaben gehört NICHT zu den Kernaufgaben der Transportschicht im OSI-Modell?  
 
-Korrekte Antwort: Adressierung, Flußsteuerung, Dienstqualität.  
-
-Antwortmöglichkeiten:  
-A) Adressierung, Flußsteuerung, Dienstqualität  
-B) Verschlüsselung, Routing, Fehlerkorrektur  
-C) Paketierung, Datenkompression, Zugriffskontrolle  
-D) Protokollumsetzung, Signalcodierung, Kollisionserkennung
+**(KORREKTE ANTWORT)** D) Verschlüsselung  
+A) Adressierung  
+B) Dienstgüte  
+C) Flusskontrolle

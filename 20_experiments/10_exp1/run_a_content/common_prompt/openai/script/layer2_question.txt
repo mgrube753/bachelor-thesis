@@ -1,6 +1,2 @@
-Richtige Antwort: B) Segmentierung  
-Welche Kernaufgabe des Data Link Layer 2 fasst einzelne Bits zu größeren Einheiten zusammen?  
-A) Fehlerkontrolle  
-B) Segmentierung  
-C) Identifikation  
-D) Medienzugriff
+Antwort: Fehlerkontrolle  
+Frage: Wie heißt die Kernaufgabe des Data Link Layer im ISO-OSI-Modell, die das Erkennen, Beheben oder Signalisieren von Übertragungsfehlern übernimmt?

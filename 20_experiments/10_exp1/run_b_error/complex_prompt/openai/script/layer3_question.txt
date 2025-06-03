@@ -1,3 +1,7 @@
-Frage: Basierend auf der Textbeschreibung des „Network Layer 3“: Erklären Sie, warum die Bereitstellung einer Speicherung für Geräte, die sich im selben Netzwerk derselben Layer-2-Technologie befinden, eine notwendige Voraussetzung für die Kernaufgabe „Lokalisierung“ darstellt.
+Frage: Analysieren Sie die im Text beschriebenen „3 Kernaufgaben“ der Layer-3-Schicht. Welche dieser Aufgaben würde man nach strengem ISO/OSI-Verständnis am ehesten einer anderen Schicht als Layer 3 zuordnen, da sie primär die Übertragungsgeschwindigkeit und nicht die logische Adressierung oder Wegfindung betrifft?
 
-Antwort: ~Damit die Lokalisierung – also das Auffinden der Netzwerk-internen Position einzelner Geräte – überhaupt funktionieren kann, muss Layer 3 eine Tabelle bzw. einen Speicher führen, in dem jedes Gerät seiner konkreten Position innerhalb des gemeinsamen Layer-2-Netzes zugeordnet ist; ohne diese persistenten Informationen ließe sich keine eindeutige Positionsbestimmung oder Adressierung durchführen.
+Antwortmöglichkeiten:
+- ~Datenbeschleunigung
+- Lokalisierung
+- Zufallspfad
+- Broadcast

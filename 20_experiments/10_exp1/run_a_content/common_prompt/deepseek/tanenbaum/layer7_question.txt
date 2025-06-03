@@ -1,2 +1,6 @@
-**Frage:** Welches Protokoll der Anwendungsschicht des ISO-OSI-Modells dient als Grundlage für das World Wide Web?  
-**Korrekte Antwort:** HTTP (HyperText Transfer Protocol).
+**Frage:** Welche der folgenden Anwendungsprotokolle werden im Text als Beispiele für die Anwendungsschicht des ISO-OSI-Modells genannt? (Mehrere Antworten möglich)  
+**[KORREKTE ANTWORT]**  
+A) HTTP (HyperText Transfer Protocol)  
+B) Protokolle für Dateitransfer  
+C) Protokolle für elektronische Mail  
+D) Protokolle für Netzwerk-News

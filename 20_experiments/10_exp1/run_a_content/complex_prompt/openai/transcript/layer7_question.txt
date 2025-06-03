@@ -1,5 +1,7 @@
-Frage: Der Text stellt heraus, dass „eine anwendungsfreie Systematisierung der Funktion des Layers [7] sehr schwer“ sei. Analysieren Sie die Ursache dieser Schwierigkeit und leiten Sie zwei konkrete Implikationen für das Design von Protokollelementen im Application Layer ab.
+Frage: Der Text beschreibt drei Kernaufgaben des Application Layers (Layer 7) und betont gleichzeitig, dass deren Ausgestaltung stark von der konkreten Anwendung abhängt. Nennen Sie diese drei Aufgaben und begründen Sie in einem Satz, weshalb eine anwendungsfreie Systematisierung an dieser Stelle schwierig ist.
 
-Antwort: ~Die Schwierigkeit resultiert daraus, dass Layer 7 unmittelbar mit den fach- und domänenspezifischen Anforderungen der jeweils eingesetzten Anwendung interagiert; er muss deshalb variable Begriffe, Protokollelemente und Reaktionsmuster abbilden, die von Anwendung zu Anwendung stark divergieren.  
-1. Implikation: Protokollelemente müssen extensibel bzw. verhandelbar gestaltet sein, damit unterschiedliche Anwendungen ihre spezifischen Anforderungen (z. B. Datenformate, Befehle) dynamisch aushandeln können.  
-2. Implikation: Das Protokolldesign erfordert klar definierte Zustandsmaschinen oder Ereignismodelle, über die Anwendungen ihre interne Logik anpassbar halten, um auf jeweils andere Kommunikationspartner situationsabhängig reagieren zu können.
+Antwort: ~
+- Definition der grundlegenden Anwendungsbegriffe bzw. Konzepte  
+- Festlegung der Protokollelemente, mit denen Kommunikationspartner Anforderungen stellen und entsprechende Daten erwarten  
+- Bestimmung des Reaktionsverhaltens der Anwendung auf diese Anforderungen (z. B. Zustandsänderungen oder andere Aktionen)  
+- Begründung: Da jede Anwendung eigene Begriffe, Protokollelemente und Reaktionslogiken benötigt, lassen sich diese Aufgaben nicht vollständig unabhängig von der jeweiligen Anwendung verallgemeinern.

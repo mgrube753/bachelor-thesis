@@ -1,6 +1,3 @@
-Frage: Ein Embedded-System muss Telemetriedaten über eine fehleranfällige serielle Leitung an einen Hauptrechner schicken. Der Rechner verarbeitet höchstens alle 50 ms einen Frame von 128 Byte, während der Sender bereits alle 5 ms einen Frame erzeugen kann. Wenden Sie geeignete Mechanismen der Sicherungsschicht (Data Link Layer) an, um  
-1) Bitfehler für höhere Schichten unsichtbar zu machen und  
-2) eine Überlastung des Rechners zu verhindern.  
-Welches Verfahren setzen Sie konkret ein und wie funktioniert es in dieser Situation?
+Frage: Sie entwickeln für ein lokales Netzwerk ein Data-Link-Protokoll, in dem ein sehr schneller Sender auf einen wesentlich langsameren Empfänger trifft. Welche im Text beschriebene Data-Link-Layer-Mechanik müssen Sie anwenden, um ein Überfluten des Empfängers zu vermeiden, und wie funktioniert sie auf Frame-Ebene?
 
-Antwort: ~Der Sender implementiert ein Stop-and-Wait-ARQ-Protokoll: Er packt die Nutzdaten in 128-Byte-Frames, sendet jeweils nur einen Frame und wartet auf ein positives ACK des Rechners, bevor er den nächsten Frame überträgt. Fehlende oder negative ACKs lösen eine erneute Übertragung aus (Fehlerbehebung), und das explizite Warten auf jedes ACK sorgt dafür, dass der Rechner nur so viele Frames erhält, wie er in seinem 50-ms-Takt verarbeiten kann (Flusskontrolle).
+Antwort: ~Man setzt eine Flusskontrolle (traffic regulation) ein, bei der der Empfänger dem Sender per Rückmeldung – etwa durch Empfangsbestätigungen oder „ready/not ready“-Signale – anzeigt, wann er weitere Frames verarbeiten kann; der Sender überträgt neue Frames erst nach dieser Freigabe und verhindert so eine Überlastung des Empfängers.

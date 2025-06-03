@@ -1,3 +1,3 @@
-**Frage:** Gemäß dem gegebenen Text sind Adressierung, Routing und Flusssteuerung die Kernaufgaben des Network Layer (Layer 3) des ISO-OSI-Modells. Welche dieser Aufgaben ist dafür zuständig, Adressen technologieübergreifend einzuführen, um die Kommunikation zwischen Geräten in unterschiedlichen Netzwerken zu ermöglichen, ohne die spezifische Technologie kennen zu müssen?
+**Korrekte Antwort:** Knoten-zu-Knoten-Flusssteuerung und Ende-zu-Ende-Flusssteuerung.
 
-**Korrekte Antwort:** Adressierung
+Gemäß dem gegebenen Text, welche zwei verschiedenen Aspekte der Flusssteuerung werden als Kernaufgabe des Network Layers (Layer 3) des ISO-OSI-Modells unterschieden?

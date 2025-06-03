@@ -1,3 +1,9 @@
-A) Verbindungsloser Datenaustausch.
+**Korrekte Antwort: A**
 
-Frage: Welche Art des Datenaustauschs ermöglicht die Session Layer 5 gemäß der Beschreibung?
+**Frage:** Welche der folgenden Kernaufgaben ist charakteristisch für den Session Layer (Schicht 5) des ISO-OSI-Modells, basierend auf der gegebenen Beschreibung?
+
+**Antworten:**
+A) Das spontane Erstellen, Senden, Empfangen und sofortige Verwerfen von Datagrammen.
+B) Die Sicherstellung von Zwischenpunkten und Bestätigungen zur Gewährleistung der Datenintegrität.
+C) Das Zusammenführen von Einzelteilen unabhängiger Datenpakete zu einer kohärenten Einheit.
+D) Die Bereitstellung von Funktionen für den verbindungsorientierten Datenaustausch zwischen Kommunikationspartnern.

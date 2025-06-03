@@ -1,9 +1,3 @@
-Frage: Welche der folgenden Aufgaben gehören zum Data Link Layer (Schicht 2) des ISO-OSI-Modells?
+Frage: Welche Strategien werden im Data Link Layer zur Lösung des Problems der Flusskontrolle eingesetzt, wenn der Sender für den Empfänger zu schnell sendet?
 
-Korrekte Antwort: Fehlerkontrolle, Flusskontrolle, Segmentierung, Identifikation und Medienzugriff
-
-Antwortmöglichkeiten:
-A) Fehlerkontrolle, Flusskontrolle, Segmentierung, Identifikation und Medienzugriff
-B) Fehlerkontrolle, Adressierung, Verschlüsselung, Routing und Übersetzung
-C) Sessionverwaltung, Flusskontrolle, Medienzugriff und Darstellung
-D) Fehlererkennung, Signalmodulation, Segmentierung und Datenkompression
+Korrekte Antwort: Die Strategien im Data Link Layer zur Flusskontrolle umfassen: 1) Verwendung von Zwischenpuffern, um empfangene Daten zwischenzuspeichern, 2) Herunterregeln der Gegenseite durch explizite Aufforderung, langsamer zu senden, und 3) Verzögerung von Bestätigungen, um implizit einen langsameren Datenfluss zu bewirken.

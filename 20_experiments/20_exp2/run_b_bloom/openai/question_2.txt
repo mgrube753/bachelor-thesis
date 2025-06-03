@@ -1,7 +1,3 @@
-Frage: Wie heißt die spezielle Unterschicht der Sicherungsschicht, die in Broadcast-Netzen den Zugriff auf das gemeinsam genutzte Übertragungsmedium kontrolliert?
+Frage: Erklären Sie, wie die Data-Link-Schicht im ISO-OSI-Modell durch ihre Mechanismen der Fehler- und Flusskontrolle sicherstellt, dass der Network Layer weder Übertragungsfehler noch Überlastungen des Empfängers wahrnimmt.
 
-Antwortmöglichkeiten:
-- ~Medium Access Control (MAC)-Sublayer
-- Logical Link Control (LLC)-Sublayer
-- Transport Control Unit (TCU)
-- Physical Service Access Point (PSAP)
+Antwort: ~Die Data-Link-Schicht zerlegt die Eingangsdaten beim Sender in einzelne Frames, überträgt diese nacheinander und verlangt für jedes korrekt empfangene Frame eine Bestätigung (Acknowledgement); dadurch werden Übertragungsfehler erkannt und für den Network Layer verborgen. Parallel dazu setzt sie ein Verkehrsregelungsverfahren ein, das dem Sender anhand von Rückmeldungen anzeigt, wann der Empfänger weitere Daten aufnehmen kann, sodass ein schneller Sender einen langsameren Empfänger nicht überlastet.

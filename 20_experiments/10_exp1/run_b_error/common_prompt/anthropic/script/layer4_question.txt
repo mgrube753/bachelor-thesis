@@ -1,9 +1,8 @@
-FRAGE: Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe der Transportschicht (Layer 4) im ISO-OSI-Modell?
+**Frage: Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe der Transportschicht (Layer 4) im ISO-OSI-Modell?**
 
-KORREKTE ANTWORT: Sicherstellung der Quality of Service (QoS) mit Garantien für Kapazität und Fehlerfreiheit
+A) Die Bereitstellung von Garantien für Quality of Service (QoS)
+B) Die Identifizierung durch Geräte-spezifische Kennungen
+C) Das Ignorieren der Teilnehmer-Charakteristik beim Datenstau
+D) Die Erbringung eines Speicherdienstes ohne Garantien für Kapazität
 
-ANTWORTMÖGLICHKEITEN:
-A) Identifizierung mittels Geräte-spezifischer Kennungen
-B) Ignorieren der Teilnehmer-Charakteristik bei Datenstau
-C) Bereitstellung einer Speicherung für festgelegte Teilnehmerpaare
-D) Sicherstellung der Quality of Service (QoS) mit Garantien für Kapazität und Fehlerfreiheit
+**Korrekte Antwort: A**

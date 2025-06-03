@@ -1,7 +1,7 @@
-Frage: Das im Text geschilderte Szenario, in dem ein Browser mittels HTTP eine Webseite von einem Server anfordert, illustriert vor allem welches Grundprinzip des ISO/OSI-Schichtenmodells?
+Frage: Der Instruktionstext beschreibt die Rolle von HTTP beim Abruf einer Webseite. Welches der folgenden Merkmale ist basierend auf diesem Text am besten geeignet, HTTP dem Application Layer des ISO/OSI-Modells zuzuordnen?
 
 Antwortmöglichkeiten:
-- ~Das Prinzip, dass Interaktionen für den Benutzer auf der Anwendungsschicht abstrahiert werden, während die Details der darunterliegenden Schichten verborgen bleiben.
-- Die Notwendigkeit, vor jeder Datenübertragung zunächst die Transportverbindung auf der Transportschicht durch einen Three-Way-Handshake aufzubauen.
-- Den Mechanismus, mit dem die Sicherungsschicht Kollisionen im gemeinsamen Medium auflöst.
-- Die Nutzung von Routingtabellen der Vermittlungsschicht zur Pfadfindung zwischen autonomen Systemen.
+- ~HTTP definiert den inhaltlichen Dialog (z. B. „Name der angeforderten Seite“) zwischen Browser und Server und stellt somit unmittelbar Funktionen bereit, die der Nutzer benötigt.
+- HTTP verwaltet die Paketvermittlung und bestimmt den Weg der Daten durch das Netz.
+- HTTP übernimmt die Verschlüsselung und Präsentation der Daten, sodass alle Endsysteme Inhalte identisch anzeigen können.
+- HTTP garantiert die zuverlässige Übertragung, indem es verlorene Pakete erkennt und erneut sendet.

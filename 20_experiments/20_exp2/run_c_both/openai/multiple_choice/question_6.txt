@@ -1,7 +1,7 @@
-Frage: Sie sollen für ein Broadcast-Netzwerk ein neues Datenlink-Protokoll konstruieren. Welche der folgenden zusammen­gestellten Entwürfe integriert alle im Text beschriebenen Mechanismen (Fehlermaskierung, Flusskontrolle und Kanalzugriff) zu einem kohärenten Ganzen?
+Frage: Entwickeln Sie ein neues Data‐Link‐Protokoll für ein Broadcast-LAN, das die Netzwerkschicht vor Übertragungsfehlern verbirgt, einen schnellen Sender an einen langsamen Empfänger anpasst und einen fairen Zugang zum gemeinsamen Medium bereitstellt. Welche der folgenden neu zusammengestellten Architekturen integriert die im Text beschriebenen Teilfunktionen am schlüssigsten zu einem einheitlichen Protokolldesign?
 
 Antwortmöglichkeiten:
-- ~Segmentierung der Nutzdaten in fortlaufend nummerierte Frames mit Empfangsbestätigungen zur Fehlermaskierung, gleitendem Fenster zur Flusskontrolle sowie einer separaten Medium-Access-Control-Sublayer zur Koordinierung des Kanalzugriffs
-- Segmentierung der Nutzdaten in Frames und zyklische Redundanzprüfung; Flusskontrolle und Kanalzugriff werden dem Netzwerk- bzw. Anwendungslayer überlassen
-- Einsatz einer reinen Rundsendung ohne Frame-Struktur; Fehlerbehandlung erfolgt erst in der Vermittlungsschicht, während Flusskontrolle vollständig weggelassen wird
-- Nutzung einer Medium-Access-Control-Sublayer für den Kanalzugriff, jedoch Verzicht auf Empfangsbestätigungen und Flusskontrollverfahren, um Latenz zu minimieren
+- ~Rahmenbildung mit Sequenznummern und CRC, quittierungsbasiertes Sliding-Window-Verfahren zur Flusssteuerung sowie eine eigenständige Medium-Access-Control-Sublayer mit Kollisionsvermeidung
+- Polling-basiertes End-zu-End-Fehlermanagement ohne Rahmenbildung, statische Zeitschlitzvergabe zur Flusssteuerung und Wegfall einer separaten MAC-Sublayer
+- Nutzung variabler Paketlängen ohne Prüfsumme, Stop-and-Wait-Flusssteuerung nur auf Transportebene und reiner Zufallszugriff ohne Prioritätsregeln
+- Ausschließliche Fehlerkorrektur durch höhere Schichten, Rückmeldungen erst nach kompletter Dateiübertragung und ein tokenloser, konfliktfreier Rundlaufmechanismus für den Medienzugriff

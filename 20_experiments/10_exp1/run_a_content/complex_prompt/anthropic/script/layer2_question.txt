@@ -1,9 +1,9 @@
-```markdown
-Frage: In einem Netzwerk mit mehreren Endgeräten werden regelmäßig Pakete übertragen. Bei hoher Netzwerklast kommt es zu Kollisionen und einzelne Datenpakete werden nicht korrekt übertragen. Welche zwei Kernaufgaben des Data Link Layers arbeiten in diesem Szenario primär zusammen, um eine zuverlässige Datenübertragung trotz dieser Probleme zu gewährleisten?
+```
+Frage: In einem Hochgeschwindigkeitsnetzwerk treten sporadisch Datenverluste auf, obwohl die physische Übertragung (Physical Layer) einwandfrei funktioniert. Ein Systemanalytiker vermutet, dass das Problem auf Ebene des Data Link Layers liegt. Welche zwei der fünf Kernaufgaben des Data Link Layers stehen in diesem Szenario wahrscheinlich in einer direkten Wechselwirkung, die zu den beobachteten Datenverlusten führen könnte?
 
 Antwortmöglichkeiten:
-- ~Fehlerkontrolle und Medienzugriff
+- ~Flußkontrolle und Fehlerkontrolle
 - Segmentierung und Identifikation
-- Flusskontrolle und Segmentierung
-- Identifikation und Fehlerkontrolle
+- Medienzugriff und Segmentierung
+- Identifikation und Medienzugriff
 ```

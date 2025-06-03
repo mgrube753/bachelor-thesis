@@ -1,9 +1,5 @@
-```markdown
-Frage: Ein Netzwerkadministrator beobachtet, dass bei einer bestimmten Verbindung Datenpakete verloren gehen, wenn der sendende Server unter Hochlast arbeitet. Welcher Mechanismus des Data Link Layers adressiert dieses Problem primär, und welche Konsequenz hätte es, wenn dieser Mechanismus nicht implementiert wäre?
+```
+Frage: Wenn ein Netzwerkgerät einen Übertragungsfehler feststellt und gleichzeitig mit einer Überlastungssituation konfrontiert ist, welche konzeptionellen Konflikte könnten zwischen den Mechanismen der Fehlerkontrolle und der Flusskontrolle entstehen, und wie wirkt sich dies auf die Effizienz der Datenübertragung im Data Link Layer aus?
 
-Antwortmöglichkeiten:
-- ~Die Flusskontrolle, da sie verhindert, dass ein schneller Sender einen langsameren Empfänger überlastet. Ohne sie würden Datenpuffer überlaufen und Pakete verloren gehen, ohne dass der Sender dies bemerkt.
-- Die Fehlerkontrolle, da sie beschädigte Bits während der Übertragung identifiziert. Ohne sie würden fehlerhafte Daten unerkannt bleiben und zu Anwendungsfehlern führen.
-- Die Segmentierung, da sie große Datenströme in handhabbare Einheiten unterteilt. Ohne sie würde die Übertragung bei Hochlast komplett zusammenbrechen.
-- Die Identifikation, da sie sicherstellt, dass Pakete korrekt adressiert werden. Ohne sie würden Pakete falsch zugestellt und als verloren gemeldet werden.
+Antwort: ~Ein konzeptioneller Konflikt entsteht, wenn die Fehlerkontrolle eine erneute Übertragung fehlerhafter Daten anfordert, während die Flusskontrolle gleichzeitig versucht, die Übertragungsrate zu reduzieren. Dies kann zu widersprüchlichen Signalen führen: Einerseits werden mehr Daten angefordert (durch Neuübertragungsanfragen), andererseits wird die Übertragungsgeschwindigkeit gedrosselt. Die Effizienz leidet, da Neuübertragungen zusätzliche Bandbreite benötigen, während Flusskontrollmechanismen wie verzögerte Bestätigungen die Fehlerbehebung verlangsamen. Außerdem können sich die Puffer füllen, wenn fehlerhafte Pakete zwischengespeichert werden müssen, während gleichzeitig neue Daten ankommen, was zu Pufferüberläufen führen kann.
 ```

@@ -1,9 +1,5 @@
-```markdown
-Frage: Ein Netzwerktechniker beobachtet bei einer mediengebundenen Datenübertragung sporadische Übertragungsfehler, obwohl die Signalpegel am Empfänger ausreichend stark sind. Welche der folgenden Aspekte des Physical Layers könnte die wahrscheinlichste Ursache für dieses Problem sein, und warum?
+```
+Frage: Welche konzeptionelle Herausforderung entsteht beim Physical Layer speziell durch die Dualität von Lichtübertragung, und welche Implikationen hat dies für die Implementierung aller drei Kernaufgaben dieses Layers in unterschiedlichen Netzwerkumgebungen?
 
-Antwortmöglichkeiten:
-- [Die Bandbreite des Übertragungsmediums ist zu gering für die gewählte Übertragungsrate]
-- ~[Fehler in der Dekodierungsphase aufgrund unzureichender Detektionsbereiche oder falscher Abtastzeitpunkte]
-- [Ein Transportproblem durch elektromagnetische Störungen in der Umgebung]
-- [Inkompatible Codierungsverfahren zwischen Sender und Empfänger]
+Antwort: ~Die Herausforderung liegt in der Doppelfunktion des Lichts als sowohl medienfrei (direkter Lichtstrahl) als auch mediengebunden (Lichtwellenleiter) übertragbares Signal. Dies erfordert unterschiedliche Ansätze für alle drei Kernaufgaben: Bei der Codierung müssen unterschiedliche Modulations- und Pulsverfahren für Freistrahl- versus Faseroptik verwendet werden; beim Transport müssen die physikalischen Eigenschaften und Störeinflüsse beider Übertragungswege berücksichtigt werden; und bei der Dekodierung werden unterschiedliche Detektions- und Abtastverfahren benötigt, um aus den verschiedenartig transportierten Lichtsignalen wieder korrekte logische Werte zu rekonstruieren.
 ```

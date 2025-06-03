@@ -1,2 +1,2 @@
-Antwort: Anwendungsschicht (Application Layer)  
-Frage: In welcher Schicht des ISO-OSI-Modells ist das Protokoll HTTP angesiedelt?
+KORREKTE ANTWORT: HTTP  
+Frage: Welches Protokoll bildet die Grundlage des World Wide Web und wird von Browsern verwendet, um Web-Seiten von Servern anzufordern?

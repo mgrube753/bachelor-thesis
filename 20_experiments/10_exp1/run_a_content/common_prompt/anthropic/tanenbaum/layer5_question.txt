@@ -1,8 +1,8 @@
-**Korrekte Antwort: c)**
+KORREKTE ANTWORT: Die Session Layer bietet Dialog-Kontrolle, Token-Management und Synchronisation als Dienste an.
 
-Welche der folgenden Funktionen gehört NICHT zu den Aufgaben der Sitzungsschicht (Session Layer) im ISO-OSI-Modell?
+Welche Funktionen werden laut Text von der Session Layer des ISO-OSI-Modells bereitgestellt?
 
-a) Dialog-Kontrolle (Nachverfolgen, wer an der Reihe ist zu übertragen)
-b) Token-Management (Verhindern gleichzeitiger kritischer Operationen)
-c) Routing von Datenpaketen zwischen verschiedenen Netzwerken
-d) Synchronisation (Setzen von Prüfpunkten bei langen Übertragungen)
+A) Routing, Adressierung und Fehlererkennung
+B) Dialog-Kontrolle, Token-Management und Synchronisation
+C) Datenverschlüsselung, Authentifizierung und Autorisierung
+D) Bitübertragung, Modulation und physische Verbindung

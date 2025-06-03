@@ -1,9 +1,5 @@
-```markdown
-Frage: Angenommen, ein Unternehmen entwickelt eine neue Anwendung, die Finanzdaten zwischen Systemen mit unterschiedlichen Datenformaten austauschen soll. Welche spezifische Funktion der Präsentationsschicht ist dabei am kritischsten, und warum ist diese Funktion nicht den darunterliegenden Schichten zugeordnet?
+```
+Frage: Welche fundamentale Verschiebung im Verarbeitungsfokus findet auf der Präsentationsschicht im Vergleich zu den darunterliegenden Schichten des OSI-Modells statt, und welche Implikationen hat dies für die Interoperabilität zwischen Systemen mit unterschiedlichen internen Datenrepräsentationen?
 
-Antwortmöglichkeiten:
-- [Die Bitübertragung zwischen den Systemen, da unterschiedliche Hardware verwendet wird]
-- [Die Fehlererkennung während der Übertragung, um Datenverlust zu vermeiden]
-- ~[Die abstrakte Definition und Standardkodierung der Datenstrukturen, da die Präsentationsschicht sich mit der Syntax und Semantik befasst, während tiefere Schichten primär für den Transport der Bits zuständig sind]
-- [Die Segmentierung der Finanzdaten in kleine Pakete, um eine effiziente Übertragung zu gewährleisten]
+Antwort: ~Die Präsentationsschicht markiert einen Paradigmenwechsel von der primären Beschäftigung mit der Bitübertragung (in den unteren Schichten) hin zur Verarbeitung von Syntax und Semantik der übertragenen Informationen. Diese Verschiebung ermöglicht die Definition abstrakter Datenstrukturen mit standardisierten Kodierungen, wodurch Systeme mit unterschiedlichen internen Datenrepräsentationen miteinander kommunizieren können, ohne die spezifischen Implementierungsdetails des jeweils anderen Systems kennen zu müssen.
 ```

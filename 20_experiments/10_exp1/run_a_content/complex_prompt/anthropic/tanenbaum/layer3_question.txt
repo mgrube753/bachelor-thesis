@@ -1,9 +1,5 @@
-```markdown
-Frage: Betrachten Sie ein Szenario, in dem ein multinationaler Konzern ein globales Netzwerk betreibt, das unterschiedliche lokale Netzwerke mit variierenden Protokollen und Adressierungsschemen verbindet. Die Netzwerkbelastung schwankt stark je nach Tageszeit und geografischer Region. Welche Aussage beschreibt am präzisesten die optimale Strategie für die Netzwerkschicht in diesem Kontext?
+```
+Frage: Ein Unternehmen möchte zwei unterschiedliche Netzwerke miteinander verbinden, die verschiedene Adressierungsschemata, Paketgrößen und Protokolle verwenden. Welche konzeptionelle Herausforderung wird hier primär angesprochen und welche Schicht des ISO/OSI-Modells trägt die Hauptverantwortung für die Lösung dieses Problems? Analysieren Sie die Aufgabenstellung dieser Schicht in diesem spezifischen Kontext.
 
-Antwortmöglichkeiten:
-- [Statisches Routing sollte implementiert werden, da es die zuverlässigste Methode für heterogene Netzwerke darstellt]
-- ~[Dynamisches Routing mit kontinuierlicher Anpassung an die aktuelle Netzwerkauslastung kombiniert mit Protokollübersetzungsmechanismen zwischen heterogenen Netzwerken bietet die beste Lösung]
-- [Die Implementierung eines reinen Broadcast-Netzwerks würde die Komplexität der Netzwerkschicht erheblich reduzieren und ist daher optimal]
-- [Routing sollte nur zu Beginn jeder Kommunikationssitzung festgelegt werden, um sowohl Flexibilität als auch Konsistenz zu gewährleisten]
+Antwort: ~Diese Situation beschreibt eine klassische Herausforderung der Netzwerkschicht (Network Layer), die für die Überwindung von Heterogenität zwischen verschiedenen Netzwerken verantwortlich ist. Die Netzwerkschicht muss hier die unterschiedlichen Adressierungsschemata übersetzen, mit variierenden Paketgrößen umgehen (möglicherweise durch Fragmentierung) und Protokollunterschiede ausgleichen, um eine Ende-zu-Ende-Kommunikation zu ermöglichen. Diese Interoperabilität zwischen heterogenen Netzwerken ist eine der Kernaufgaben dieser Schicht, neben Routing-Entscheidungen und Congestion Control. Im Gegensatz dazu würde diese Aufgabe in reinen Broadcast-Netzwerken eine geringere Rolle spielen, da dort die Netzwerkschicht typischerweise dünner implementiert ist.
 ```

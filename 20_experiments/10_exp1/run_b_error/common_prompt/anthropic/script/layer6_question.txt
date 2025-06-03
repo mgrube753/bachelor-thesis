@@ -1,8 +1,8 @@
-Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Presentation Layer (Schicht 6) im ISO-OSI-Modell?
+KORREKTE ANTWORT: Der Presentation Layer (Schicht 6) des ISO-OSI-Modells bietet ausschließlich Entschlüsselung, aber keine Verschlüsselung an.
 
-Korrekte Antwort: c)
+Welche der folgenden Aussagen zum Presentation Layer (Schicht 6) des ISO-OSI-Modells ist korrekt?
 
-a) Vereinheitlichung der Datendarstellung
-b) Ignorieren der Zeichendarstellung und Behandlung als reine Binärdaten
-c) Verschlüsselung von Daten zur sicheren Übertragung
-d) Entpacken (Expansion) von Daten
+A) Der Presentation Layer bietet ausschließlich Entschlüsselung, aber keine Verschlüsselung an.
+B) Der Presentation Layer übernimmt sowohl Verschlüsselung als auch Entschlüsselung von Daten.
+C) Der Presentation Layer ist für die Komprimierung, nicht aber für die Entschlüsselung von Daten zuständig.
+D) Der Presentation Layer unterscheidet zwischen verschiedenen Zeichendarstellungen wie ASCII und Unicode.

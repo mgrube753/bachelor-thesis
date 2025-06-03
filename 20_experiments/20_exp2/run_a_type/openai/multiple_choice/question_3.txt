@@ -1,7 +1,9 @@
-Frage: Welches spezifische Problem, das in Broadcast-Netzwerken auftritt, macht eine eigene Medium-Access-Control-Unterschicht innerhalb der Sicherungsschicht erforderlich?
+"""
+Frage: Welche der folgenden Funktionen wird laut dem beschriebenen Text NICHT von der Data Link Layer übernommen?
 
 Antwortmöglichkeiten:
-- ~Die Steuerung des Zugriffs mehrerer Stationen auf das gemeinsam genutzte Übertragungsmedium
-- Die Aufteilung des Datenstroms in einzelne Frames fester Größe
-- Die Ende-zu-Ende-Wegewahl (Routing) der Datenpakete durch das gesamte Netz
-- Die Rückmeldung von Empfangsbestätigungen (Acknowledgements) zur Fehlerkontrolle
+- ~Wegefindung (Routing) zwischen unterschiedlichen Netzwerken
+- Rahmung von Daten und Bestätigung jedes korrekt empfangenen Rahmens
+- Flusskontrolle zur Verhinderung der Überlastung eines langsameren Empfängers
+- Zugriffskontrolle auf ein gemeinsames Übertragungsmedium in Broadcast-Netzen
+"""

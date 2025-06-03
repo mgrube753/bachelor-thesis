@@ -1,8 +1,9 @@
-**Korrekte Antwort: A**
+**Korrekte Antwort:** A) Ermöglichen des Aufbaus von Sitzungen zwischen Benutzern auf verschiedenen Maschinen, Steuerung des Dialogs, Verwaltung von Tokens und Synchronisation.
 
-Frage: Welche der folgenden Dienstleistungen werden gemäß dem Text von der Sitzungsschicht (Session Layer) des ISO-OSI-Modells bereitgestellt?
+**Frage:** Welche der folgenden Aufgaben ist eine Kernfunktion der Sitzungsschicht (Session Layer) im ISO-OSI-Modell, basierend auf dem bereitgestellten Text?
 
-A) Dialogkontrolle, Token-Management und Synchronisierung
-B) Physikalische Adressierung und Fehlererkennung
-C) Routenwahl und logische Adressierung
-D) Datenformatierung und Verschlüsselung
+**Antwortmöglichkeiten:**
+A) Ermöglichen des Aufbaus von Sitzungen zwischen Benutzern auf verschiedenen Maschinen, Steuerung des Dialogs, Verwaltung von Tokens und Synchronisation.
+B) Sicherstellung der Ende-zu-Ende-Verbindung und der zuverlässigen Datenübertragung.
+C) Transformation von Daten in ein Format, das von der Anwendung verstanden wird.
+D) Bereitstellung von logischen Adressierungs- und Routing-Mechanismen.

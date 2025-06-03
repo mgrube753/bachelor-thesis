@@ -1,3 +1,8 @@
-Frage: Analysieren Sie den obigen Abschnitt und ordnen Sie jede der drei dort genannten Hauptherausforderungen im Data-Link-Layer (A: Übertragungsfehler, B: Geschwindigkeitsunterschiede zwischen Sender und Empfänger, C: gemeinsamer Kanal in Broadcast-Netzen) dem Mechanismus bzw. der Sublayer zu, mit dem sie laut Text bewältigt wird.  
+Frage: Ordnen Sie die vier im Text genannten Mechanismen der Sicherungsschicht – 1) Aufteilen des Bitstroms in Rahmen, 2) Senden von Bestätigungsrahmen, 3) Verkehrsregulierung zwischen Sender und Empfänger sowie 4) Medium-Access-Control im Broadcast-Betrieb – jeweils dem konkreten Teilproblem zu, das sie lösen. Analysieren Sie anschließend, wie das Zusammenspiel dieser Teilmechanismen dazu führt, dass die Netzwerkschicht eine scheinbar fehlerfreie und geordnete Übertragungsstrecke erhält.
 
-Antwort: ~A → Framing + Acknowledgement-Rahmen zur Fehlermaskierung; B → Verkehrs-/Flusskontrollmechanismus zur Regulierung des Senders; C → Medium Access Control (MAC)-Sublayer zur Kanalzugriffssteuerung
+Antwort: ~
+1) Rahmenbildung isoliert Bitfehler lokal, sodass Fehlerprüfungen auf einzelne Blöcke statt auf den gesamten Strom anwendbar sind.  
+2) Bestätigungsrahmen koppeln Fehlererkennung mit Wiederholung, maskieren verlorene / beschädigte Rahmen und liefern Zuverlässigkeit.  
+3) Verkehrsregulierung verhindert Überlastung eines langsameren Empfängers, sichert damit geordnete und vollständige Zustellung ohne Pufferüberläufe.  
+4) Das MAC-Teilschichtverfahren koordiniert den Zugriff mehrerer Stationen auf das gemeinsame Medium, vermeidet Kollisionen und garantiert faire Kanalnutzung.  
+Gemeinsam isolieren diese Mechanismen Fehler, Verlust, Überlastung und Konkurrenz um das Medium; ihre koordinierte Wirkung präsentiert der Netzwerkschicht eine Verbindung, die wie eine zuverlässige Punkt-zu-Punkt-Leitung erscheint, obwohl darunter physikalische Fehler und Konkurrenzsituationen auftreten.

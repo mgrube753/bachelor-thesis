@@ -1,6 +1,5 @@
-**Frage:** Welche drei zentralen Kernaufgaben werden dem Physical Layer im ISO-OSI-Modell zugeschrieben?  
+**Frage:**  
+Welche drei zentralen Kernaufgaben werden laut Text auf dem Physical Layer des ISO-OSI-Modells festgelegt?  
 
-**A. Codierung, Transport, Dekodierung**  
-B. Datenflusskontrolle, Fehlererkennung, Adressierung  
-C. Verschlüsselung, Paketvermittlung, Synchronisation  
-D. Segmentierung, Multiplexing, Bitübertragung
+**Korrekte Antwort:**  
+Codierung, Transport, Dekodierung.

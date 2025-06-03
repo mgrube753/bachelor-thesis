@@ -1,7 +1,7 @@
-Frage: Beschreiben Sie, welche der folgenden Aussagen nach dem gegebenen Text die Hauptaufgabe der Sicherungsschicht (Data Link Layer) im ISO-OSI-Modell korrekt definiert.
+Frage: Benennen Sie die spezielle Teilschicht der Sicherungsschicht (Data Link Layer), die in Broadcast-Netzen den Zugriff auf den gemeinsamen Kanal regelt.
 
 Antwortmöglichkeiten:
-- ~Umwandeln einer rohen Übertragungsstrecke in eine Leitung, die für höhere Schichten frei von unentdeckten Übertragungsfehlern erscheint
-- Verschlüsseln der Datenpakete, um Ende-zu-Ende-Sicherheit zwischen den Kommunikationspartnern zu gewährleisten
-- Berechnen des kürzesten Pfades durch das Netzwerk, um Latenzzeiten zu minimieren
-- Bereitstellen einer Programmierschnittstelle (API) für Anwendungsprozesse zum direkten Versenden von Nachrichten
+- ~Medium Access Control Sublayer
+- Logical Link Control Sublayer
+- Session Management Sublayer
+- Transport Control Sublayer

@@ -1,9 +1,5 @@
-```markdown
-Frage: Warum ist die Presentation Layer des ISO-OSI-Modells bewusst auf "nur Entschlüsseln" und "nur Expandieren" beschränkt, anstatt auch Verschlüsselung und Komprimierung anzubieten? Welcher grundlegende Architekturgedanke des Schichtenmodells wird dadurch unterstützt?
+```
+Frage: Im Text wird beschrieben, dass der Presentation Layer (Schicht 6) nur für "Expansion" (Entpacken) und "Offenlegung" (Entschlüsseln) zuständig ist, nicht aber für die entgegengesetzten Operationen des Packens und Verschlüsselns. Welche architektonische Konsequenz hat diese einseitige Ausrichtung für die Kommunikation zwischen zwei Systemen, und wie würde ein vollständiger Datenaustausch dennoch funktionieren?
 
-Antwortmöglichkeiten:
-- ~Diese Einwegfunktionalität unterstützt das Prinzip der Kapselung, indem die Presentation Layer sich auf die Aufbereitung der Daten für die Anwendungsschicht konzentriert, während die Vorbereitung ausgehender Daten in anderen Schichten oder außerhalb des Modells stattfindet
-- Diese Beschränkung existiert, weil Verschlüsselung und Komprimierung rechenintensive Operationen sind, die auf höheren Schichten effizienter implementiert werden können
-- Die Presentation Layer bietet in Wirklichkeit beide Richtungen an, der Text enthält einen Fehler in der Beschreibung der Kernaufgaben
-- Diese Einschränkung wurde eingeführt, um Kompatibilitätsprobleme zwischen verschiedenen Betriebssystemen zu vermeiden, die unterschiedliche Verschlüsselungs- und Komprimierungsalgorithmen verwenden
+Antwort: ~Diese einseitige Ausrichtung bedeutet, dass der Presentation Layer in einem empfangenden System arbeitet, während das sendende System diese Operationen in einer anderen Schicht (typischerweise auch Schicht 6, aber mit umgekehrter Funktionalität) durchführen muss. Für einen vollständigen Datenaustausch implementieren beide kommunizierenden Systeme den Presentation Layer mit komplementären Funktionen: Während System A Daten komprimiert und verschlüsselt (was nicht Teil der beschriebenen Funktionalität ist), übernimmt System B das Entpacken und Entschlüsseln. Bei Richtungswechsel der Kommunikation tauschen die Systeme diese Rollen. Dies folgt dem Client-Server-Prinzip des OSI-Modells, bei dem jede Schicht konzeptionell mit der entsprechenden Schicht des Kommunikationspartners kommuniziert.
 ```

@@ -1,3 +1,9 @@
-**Korrekte Antwort:** Die Vermittlungsschicht (Network Layer) ist dafür zuständig, Probleme wie unterschiedliche Adressierungsschemata, Paketgrößenbeschränkungen und abweichende Protokolle zu überwinden, um die Interkonnektion heterogener Netzwerke zu ermöglichen.
+**Frage:** Welche der folgenden Aufgaben fallen laut dem vorliegenden Text in den Verantwortungsbereich der Netzwerkschicht (Network Layer) des ISO-OSI-Modells?
 
-**Frage:** Welche zentrale Aufgabe der Vermittlungsschicht (Network Layer) ist entscheidend, um die problemlose Verbindung von heterogenen Netzwerken zu gewährleisten und welche Schwierigkeiten müssen dabei typischerweise überwunden werden?
+**Korrekte Antwort: B**
+
+**Antwortmöglichkeiten:**
+A) Die Umwandlung von Daten in ein Format, das von der Anwendungsschicht verarbeitet werden kann, und die Sicherstellung der Datenintegrität während der Übertragung.
+B) Die Bestimmung, wie Pakete von der Quelle zum Ziel geleitet werden, die Bewältigung von Überlastungen und die Überwindung von Problemen bei der Verbindung heterogener Netzwerke.
+C) Die physische Übertragung von Bits über das Übertragungsmedium und die Bereitstellung elektrischer, mechanischer und funktionaler Schnittstellenspezifikationen.
+D) Das Management von Sitzungen zwischen Anwendungen und die Synchronisierung von Datenflüssen für Dialogkontrolle.

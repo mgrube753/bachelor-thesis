@@ -1,9 +1,5 @@
-```markdown
-Frage: Im Kontext des Transport Layers (Schicht 4) werden verschiedene Anforderungen für unterschiedliche Anwendungstypen beschrieben. Welcher der folgenden QoS-Parameter wäre bei einer kritischen Fehlerkorrektur für ein Betriebssystem-Update am wichtigsten, und warum unterscheidet sich diese Priorisierung von den Anforderungen eines Echtzeit-Videostreams?
+```
+Frage: Inwiefern spiegelt sich das im Text beschriebene Prinzip der "teilnehmerbezogenen Anpassung" in modernen Netzwerkarchitekturen wider, und welche konzeptionellen Spannungen könnten zwischen den drei Kernaufgaben des Transport Layers (Adressierung, Flusssteuerung, Dienstqualität) entstehen, wenn unterschiedliche Teilnehmer mit gegensätzlichen Anforderungen dasselbe Netzwerk nutzen?
 
-Antwortmöglichkeiten:
-- [Jitter, da zeitliche Schwankungen bei der Übertragung größerer Datenpakete zu Komplikationen bei der Installation führen können]
-- [Bandbreite, da höhere Übertragungsraten die Fehlerrate durch redundante Übertragung ausgleichen können]
-- ~[Fehlerrate, da bei Software-Updates jedes fehlende oder verfälschte Bit die Funktionalität oder Sicherheit des Systems beeinträchtigen kann, während bei Videostreams einzelne Pixelfehler kaum wahrnehmbar sind]
-- [Latenz, da verzögerungsfreie Übertragung die Wahrscheinlichkeit von Übertragungsfehlern durch Timeouts minimiert]
+Antwort: ~Im modernen Netzwerkdesign manifestiert sich die teilnehmerbezogene Anpassung durch differenzierte Dienstklassen und Traffic-Shaping-Mechanismen, die unterschiedlichen Anwendungen entsprechende Ressourcen zuweisen. Die konzeptionelle Spannung entsteht primär zwischen Flusssteuerung und Dienstqualität, da zeitkritische Anwendungen (wie Videostreaming) niedrige Latenz benötigen, während datenintensive Anwendungen hohe Bandbreite fordern. Die Adressierung kann in Konflikt mit beiden geraten, wenn das Routing-System versucht, optimale Pfade für unterschiedliche Verkehrstypen zu finden, besonders in konvergenten Netzwerken, wo Daten-, Voice- und Videodienste gleichzeitig transportiert werden. Dies führt zu Kompromissen zwischen garantierter Bandbreite, Fehlertoleranz und Verzögerungszeiten, wie im Beispiel der unterschiedlichen Fehlertoleranz bei Videostreaming versus Software-Updates illustriert.
 ```

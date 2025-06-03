@@ -1,8 +1,9 @@
-Korrekte Antwort: C) Presentation Layer
+Richtige Antwort: C) Präsentationsschicht (Presentation Layer)
 
-Frage: Welcher Layer des ISO-OSI-Modells ist für Aufgaben wie Zeichensatz-Konvertierung, Kompression, Verschlüsselung sowie die Anpassung von Datendarstellungen (z. B. Little/Big Endian) zuständig?
+Frage: Welche Schicht des ISO/OSI-Modells ist für Aufgaben wie Datendarstellungskonvertierung (z. B. Little-/Big-Endian), Zeichensatzumwandlung, Kompression und Verschlüsselung zuständig?
 
-A) Transport Layer  
-B) Session Layer  
-C) Presentation Layer  
-D) Application Layer
+Antwortmöglichkeiten:
+A) Anwendungsschicht (Application Layer)  
+B) Sitzungsschicht (Session Layer)  
+C) Präsentationsschicht (Presentation Layer)  
+D) Transportschicht (Transport Layer)

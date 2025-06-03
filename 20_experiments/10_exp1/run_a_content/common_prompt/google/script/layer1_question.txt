@@ -1,3 +1,6 @@
-**Korrekte Antwort:** Bereitstellung einer physikalischen Konzeption für Codierung, Transport und Decodierung logischer Werte.
-
-**Frage:** Welche primäre Funktion erfüllt der Physical Layer (Schicht 1) im ISO-OSI-Modell?
+KORREKTE ANTWORT: A
+Welche drei Kernaufgaben werden dem Physical Layer (Schicht 1) im ISO-OSI-Modell gemäß dem gegebenen Text zugeschrieben?
+A. Codierung, Transport und Decodierung
+B. Adressierung, Fragmentierung und Routenwahl
+C. Sitzungsaufbau, -verwaltung und -abbau
+D. Formatierung, Komprimierung und Verschlüsselung

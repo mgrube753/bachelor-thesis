@@ -1,10 +1,3 @@
-```markdown
-Frage: Der Instruktionstext beschreibt die Hauptaufgabe des Data Link Layer als die "Bereitstellung einer fehlergesicherten Übertragung über einen möglicherweise nicht fehlergesicherten Physical Layer". Welche der fünf Kernaufgaben des Data Link Layer ist primär und direkt dafür verantwortlich, die *Fehlerfreiheit* dieser Übertragung zu gewährleisten, während andere Aufgaben sich eher auf die *effiziente und geordnete Bereitstellung* der Übertragung konzentrieren?
+Frage: Der Data Link Layer ist dafür konzipiert, eine fehlergesicherte Übertragung über einen möglicherweise nicht fehlergesicherten Physical Layer zu gewährleisten. Wenn jedoch die "Segmentierung" in ihrer Funktion stark eingeschränkt oder gar nicht mehr ausführbar wäre, welche der anderen Kernaufgaben des Data Link Layers würde primär und unmittelbar in ihrer Wirksamkeit beeinträchtigt, obwohl sie scheinbar unabhängig agiert, und warum wäre diese Beeinträchtigung eine direkte Konsequenz der fehlenden Segmentierung im Kontext der gesicherten Übertragung?
 
-Antwortmöglichkeiten:
-- Flußkontrolle
-- Medienzugriff
-- ~Fehlerkontrolle
-- Identifikation
-- Segmentierung
-```
+Antwort: ~Die "Fehlerkontrolle" wäre primär und unmittelbar in ihrer Wirksamkeit beeinträchtigt. Ohne die Segmentierung, die einzelne Bits zu größeren Einheiten (wie 8-bit Bytes) zusammenfasst, gäbe es keine kohärenten Dateneinheiten, auf denen eine sinnvolle Fehlererkennung, -behebung oder -signalisierung durchgeführt werden könnte. Die Fehlerkontrolle benötigt definierte Datenblöcke, um Prüfsummen oder ähnliche Mechanismen anzuwenden und die Integrität der Daten zu gewährleisten; das bloße Erkennen von Fehlern auf Bit-Ebene ohne Kontext einer größeren Einheit wäre ineffizient und unzureichend für eine "fehlergesicherte" Übertragung im Sinne des Layers.

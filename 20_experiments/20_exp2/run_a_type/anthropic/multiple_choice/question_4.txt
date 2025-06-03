@@ -1,9 +1,9 @@
-```markdown
-Frage: Welche der folgenden Aussagen charakterisiert am besten die komplexe Beziehung zwischen den verschiedenen Funktionen der Data Link Layer im OSI-Modell?
+"""
+Frage: Welche funktionale Beziehung beschreibt am präzisesten die Komplexität der Datenlink-Schicht in Netzwerken mit unterschiedlichen Übertragungsgeschwindigkeiten?
 
 Antwortmöglichkeiten:
-- ~Die Data Link Layer transformiert fehleranfällige Übertragungswege in scheinbar fehlerfreie Verbindungen, indem sie Daten in Frames aufteilt, während sie gleichzeitig Mechanismen zur Flusssteuerung und (bei Broadcast-Netzwerken) zur Medienzugriffssteuerung implementiert.
-- Die Data Link Layer dient primär der Verschlüsselung von Daten und der Auflösung von IP-Adressen in physische Adressen, während sie gleichzeitig die Zugriffssteuerung auf den gemeinsamen Kanal reguliert.
-- Die Data Link Layer ist hauptsächlich für End-to-End-Fehlerkorrektur und Fragmentierung großer Datenpakete verantwortlich, ohne sich mit der Geschwindigkeitsregulierung zwischen Sender und Empfänger zu befassen.
-- Die Data Link Layer implementiert ausschließlich die Medienzugriffssteuerung in Broadcast-Netzwerken und delegiert Fehlererkennungsmechanismen an die darunterliegende Physical Layer.
-```
+- ~Die Datenlink-Schicht muss sowohl Fehlererkennungsmechanismen implementieren als auch einen Verkehrsregulierungsmechanismus bereitstellen, um zu verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten
+- Die Datenlink-Schicht ist primär für die Segmentierung von Daten in Frames verantwortlich, während die Kontrolle der Übertragungsgeschwindigkeit ausschließlich durch die Transportschicht erfolgt
+- Die Datenlink-Schicht übernimmt keine Fehlererkennung, sondern leitet fehlerhafte Frames direkt an die darüberliegende Netzwerkschicht weiter
+- Die Hauptaufgabe der Datenlink-Schicht beschränkt sich auf die Medium Access Control bei Broadcast-Netzwerken, während andere Aspekte von höheren Schichten behandelt werden
+"""

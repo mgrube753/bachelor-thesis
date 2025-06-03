@@ -1,7 +1,11 @@
-Welche der folgenden Aussagen beschreibt eine zentrale Eigenschaft des Application Layer (Schicht 7) im ISO-OSI-Modell, wie sie im Text hervorgehoben wird?
+KORREKTE ANTWORT:
+Der Application Layer (Schicht 7) ist stark abhängig von der jeweiligen Anwendung, wodurch wenig Systematisierung möglich ist.
 
-Korrekt: A. Seine Systematisierung ist aufgrund der starken Abhängigkeit von der jeweiligen Anwendung nur begrenzt möglich.
+FRAGE:
+Welche der folgenden Aussagen beschreibt ein wesentliches Merkmal des Application Layers (Schicht 7) im ISO-OSI-Modell, wie im gegebenen Text dargestellt?
 
-B. Er ist für die Wegewahl und die Adressierung von Datenpaketen im Netzwerk verantwortlich.
-C. Er gewährleistet die zuverlässige, fehlerfreie Übertragung von Daten zwischen zwei Endpunkten.
-D. Er standardisiert das Verhalten aller Anwendungen umfassend und anwendungsunabhängig.
+ANTWORTMÖGLICHKEITEN:
+A) Der Application Layer (Schicht 7) ist stark abhängig von der jeweiligen Anwendung, wodurch wenig Systematisierung möglich ist.
+B) Die Protokollelemente des Application Layers lassen sich aufgrund ihrer Struktur sehr gut systematisieren.
+C) Eine der Kernaufgaben des Application Layers ist die Festlegung der physischen Übertragungselemente.
+D) Das Verhalten der Anwendung auf Protokollelemente ist in diesem Layer fest vorgegeben und nicht anpassbar.

@@ -1,7 +1,6 @@
-**Frage:** Welche der folgenden Aufgaben fällt in die Zuständigkeit der Netzwerkschicht des ISO-OSI-Modells?  
+**Frage:** Unter welcher Bedingung ist die Netzwerkschicht im ISO-OSI-Modell laut Text oft dünn oder nicht vorhanden?
 
-**Antwort:**  
-- Bestimmen von Paketrouten von der Quelle zum Ziel  
-- Bewältigung von Überlastung (Congestion) im Subnetz  
-- Sicherstellung der Qualität der Dienstleistung (QoS: Verzögerung, Transitzeit, Jitter)  
-- Überwindung von Problemen bei der Verbindung heterogener Netzwerke (z. B. unterschiedliche Adressierung, Paketgrößen, Protokolle)
+*   **[KORREKTE ANTWORT]** In Broadcast-Netzwerken.
+*   [ ] Bei Verwendung statischer Routing-Tabellen.
+*   [ ] Wenn Pakete zwischen heterogenen Netzwerken weitergeleitet werden müssen.
+*   [ ] Bei hoher Netzwerklast und Überlastung (Congestion).

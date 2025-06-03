@@ -1,9 +1,7 @@
-```markdown
-Frage: Basierend auf der Beschreibung der Data Link Layer, beurteilen Sie, welche der folgenden Aussagen die *kritischste und grundlegendste* Funktion dieser Schicht für die Bereitstellung eines zuverlässigen Kommunikationskanals für die Network Layer hervorhebt.
+Frage: Basierend auf der Beschreibung des Data Link Layers, welche der folgenden Schlussfolgerungen **begründet** am überzeugendsten die kritische Bedeutung der Hauptaufgabe dieses Layers für die Gesamtzuverlässigkeit der Datenübertragung?
 
 Antwortmöglichkeiten:
-- ~Die primäre Funktion ist die Transformation einer fehleranfälligen Übertragungsleitung in eine scheinbar fehlerfreie Verbindung, indem Übertragungsfehler maskiert werden, was eine verlässliche Basis für höhere Schichten schafft.
-- Die wichtigste Aufgabe besteht darin, Mechanismen zur Flusskontrolle zu implementieren, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet.
-- Ihre Hauptbedeutung liegt in der Bereitstellung eines speziellen Sublayers, der den Zugriff auf gemeinsame Kanäle in Broadcast-Netzwerken regelt.
-- Die Kernfunktion ist das Aufteilen von Eingangsdaten in Frames und deren sequentielle Übertragung, um die Datenstruktur für die Netzwerkschicht zu optimieren.
-```
+- ~Die Hauptaufgabe der Fehlerkaschierung transformiert eine rohe Übertragungsleitung in eine scheinbar fehlerfreie Verbindung, was die darüberliegenden Schichten, insbesondere den Network Layer, signifikant entlastet und somit die Zuverlässigkeit der End-zu-End-Kommunikation fundamental absichert.
+- Die Regulierung des Datenflusses zwischen schnellen Sendern und langsamen Empfängern ist zwar wichtig, stellt jedoch eine sekundäre Aufgabe dar, die die Notwendigkeit der grundlegenden Fehlerbereinigung zur Gewährleistung der Integrität der Datenübertragung nicht übertrifft.
+- Die Notwendigkeit der Medium Access Control (MAC) in Broadcast-Netzwerken ist eine spezifische Anforderung, die nicht die universelle und grundlegende Bedeutung der Hauptaufgabe des Data Link Layers für die Fehlerfreiheit aller Kommunikationsformen erreicht.
+- Obwohl die Aufteilung von Eingabedaten in Datenframes und deren sequentielle Übertragung zur Fehlererkennung beitragen, ist die eigentliche Kernleistung des Layers die **Transformation** der Leitung, die das Fundament für alle weiteren Zuverlässigkeitsmechanismen legt.

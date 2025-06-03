@@ -1,9 +1,7 @@
-```markdown
-Frage: Analysieren Sie die im Text beschriebenen Kernfunktionen der Data Link Layer. Wie unterscheiden sich die Mechanismen, die darauf abzielen, eine Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung umzuwandeln, von jenen zur Regulierung des Datenflusses im Hinblick auf die primäre Problemstellung und deren Lösungsansatz?
+Frage: Analysieren Sie die im Text beschriebenen Hauptfunktionen und Herausforderungen der Data Link Layer und bestimmen Sie, welche Mechanismen primär dazu dienen, die Leitung gegenüber der Network Layer als frei von unentdeckten Übertragungsfehlern erscheinen zu lassen.
 
 Antwortmöglichkeiten:
-- ~Die fehlerfreie Leitung konzentriert sich auf die Maskierung von Übertragungsfehlern durch den Austausch von Bestätigungen auf Frame-Ebene, während die Flusskontrolle das Überfluten eines langsamen Empfängers durch einen schnellen Sender mittels Verkehrsregulierungsmechanismen verhindern soll.
-- Die Mechanismen zur fehlerfreien Leitung dienen hauptsächlich der Adressierung und Weiterleitung von Datenpaketen, während die Flusskontrolle die Reihenfolge der Paketankünfte sicherstellt.
-- Die fehlerfreie Leitung optimiert die Zugriffskontrolle auf den gemeinsamen Kanal in Broadcast-Netzwerken, wohingegen die Flusskontrolle die Datenintegrität durch Prüfsummen gewährleistet.
-- Der Hauptzweck der fehlerfreien Leitung ist die Verschlüsselung von Daten, um unbefugten Zugriff zu verhindern, während die Flusskontrolle die physikalische Verbindung zwischen Geräten herstellt und aufrechterhält.
-```
+- ~Die Zerlegung von Eingabedaten in Datenrahmen, deren sequentielle Übertragung und die Bestätigung des korrekten Empfangs durch Bestätigungsrahmen, um die Maskierung von realen Fehlern zu gewährleisten.
+- Die Mechanismen zur Verkehrsregelung und die Kontrolle des Zugriffs auf den gemeinsam genutzten Kanal in Broadcast-Netzwerken, welche eine Überflutung des Empfängers verhindern.
+- Die Fähigkeit, unentdeckte Übertragungsfehler zu maskieren, während gleichzeitig eine schnelle Übertragung von Rohdaten an die obere Schicht gewährleistet wird.
+- Die primäre Aufgabe, Daten in Frames zu zerlegen und an die physikalische Schicht weiterzuleiten, ohne dabei eine Fehlerbehandlung zu berücksichtigen, da dies die Aufgabe der höheren Schichten ist.

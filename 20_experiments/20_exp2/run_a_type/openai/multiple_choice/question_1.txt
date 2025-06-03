@@ -1,9 +1,7 @@
-```markdown
-Frage: Welches der folgenden Probleme wird gemäß dem Text explizit in der Sicherungsschicht – gegebenenfalls durch ihre Medium-Access-Control-Unterschicht – gelöst und nicht erst in höheren OSI-Schichten?
+Frage: Welches Aufgabenkombinations­paar wird laut obigem Text explizit der Sicherungsschicht (Data Link Layer) zugeschrieben, um eine für höhere Schichten fehlerfreie und geordnete Übertragung zu gewährleisten?
 
 Antwortmöglichkeiten:
-- ~Die Steuerung des Zugriffs mehrerer Stationen auf ein gemeinsames Übertragungsmedium in Broadcast-Netzen.
-- Die Auswahl des optimalen Routers entlang eines Ende-zu-Ende-Pfades durch mehrere Netze.
-- Die Priorisierung konkurrierender Transportströme zur Vermeidung von Überlastungen im Gesamtnetz.
-- Die transparente Verschlüsselung und Entschlüsselung von Nutzdaten für Ende-zu-Ende-Sicherheit.
-```
+- ~Maskierung von Übertragungsfehlern und Durchführung einer Flusskontrolle zwischen Sender und Empfänger
+- Zuweisung logischer Netzadressen und Durchführung der Wegewahl durch das Netz
+- Verschlüsselung der Nutzdaten und Ende-zu-Ende-Fehlerbehebung auf Transportebene
+- Segmentierung großer Nachrichten in Pakete und globale Stauvermeidung im Kernnetz

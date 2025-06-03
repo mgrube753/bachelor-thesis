@@ -1,3 +1,2 @@
-Antwort: Die Übertragung roher Bits über einen Kommunikationskanal.
-
-Frage: Womit beschäftigt sich die Physical Layer des ISO-OSI-Modells in erster Linie?
+Korrekte Antwort: Physical Layer  
+Frage: Welche Schicht des ISO-OSI-Modells ist für die Übertragung roher Bits über einen Kommunikationskanal zuständig?

@@ -1,9 +1,5 @@
-```markdown
-Frage: Welcher der folgenden Aspekte ist KEIN konzeptioneller Vorteil, der sich aus den drei Kernaufgaben der Anwendungsschicht (Layer 7) des OSI-Modells ergibt, und warum ist diese Antwort falsch?
+```
+Frage: Welcher konzeptionelle Zusammenhang besteht zwischen den drei Kernaufgaben der Anwendungsschicht (Universalkonzepte, Standardelemente, Standardverhalten), und warum ermöglicht gerade dieser Zusammenhang die "hohe Systematisierung und Wiederverwendbarkeit" dieser Schicht?
 
-Antwortmöglichkeiten:
-- Erhöhte Betriebssystemunabhängigkeit durch Universalkonzepte, die für alle Anwendungen gültig sind
-- ~Schnellere Datenübertragungsraten durch die Standardisierung von Elementen und Datenstrukturen
-- Vereinfachte Entwicklung neuer Anwendungen durch hohe Systematisierung und Wiederverwendbarkeit
-- Verbesserte Interoperabilität zwischen verschiedenen Anwendungen durch definiertes Standardverhalten
+Antwort: ~Der konzeptionelle Zusammenhang besteht in einer Abstraktion auf drei Ebenen: Universalkonzepte definieren domänenübergreifende Begriffe, Standardelemente übersetzen diese in wiederverwendbare Datenstrukturen, und das Standardverhalten implementiert einheitliche Reaktionsmuster auf diese Elemente. Diese dreistufige Abstraktion ermöglicht hohe Systematisierung und Wiederverwendbarkeit, weil sie spezifische Anwendungsfunktionalitäten in generische, universell einsetzbare Konzepte transformiert, die unabhängig von der konkreten Anwendung konsistent implementiert werden können. Dadurch werden anwendungsspezifische Eigenschaften von der eigentlichen Implementierung entkoppelt und können in verschiedenen Kontexten wiederverwendet werden.
 ```

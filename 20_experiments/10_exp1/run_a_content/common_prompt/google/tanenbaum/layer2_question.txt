@@ -1,9 +1,7 @@
-KORREKTE ANTWORT: A
+Korrekte Antwort: C) Die Steuerung des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken und die Regulierung des Datenflusses zwischen schnellem Sender und langsamem Empfänger.
 
-**Frage:** Gemäß dem gegebenen Text, welche Aussage beschreibt am besten die Hauptaufgabe der Sicherungsschicht (Data Link Layer) im ISO-OSI-Modell?
-
-**Antwortmöglichkeiten:**
-A) Die Hauptaufgabe der Sicherungsschicht ist es, eine rohe Übertragungseinrichtung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint, indem sie die tatsächlichen Fehler maskiert.
-B) Sie ist dafür zuständig, die kürzesten Pfade zwischen zwei Endsystemen zu finden und Datenpakete weiterzuleiten.
-C) Ihre Hauptaufgabe ist es, die Daten für die physische Übertragung vorzubereiten, indem sie diese in Bitströme umwandelt.
-D) Sie kümmert sich hauptsächlich um die Verschlüsselung und Komprimierung von Daten, bevor diese gesendet werden.
+Frage: Welche der folgenden Herausforderungen werden laut Text primär in der Datenverbindungsschicht (Data Link Layer) behandelt?
+A) Die Umwandlung von Daten in ein anwendungsspezifisches Format und die Verschlüsselung für die Sicherheit.
+B) Die logische Adressierung von Geräten im Netzwerk und das Routing von Datenpaketen über Netzwerkgrenzen hinweg.
+C) Die Steuerung des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken und die Regulierung des Datenflusses zwischen schnellem Sender und langsamem Empfänger.
+D) Die Komprimierung von Daten zur effizienteren Übertragung und die Fehlerkorrektur auf Bit-Ebene.

@@ -1,7 +1,7 @@
-Frage: In einem heterogenen Netzwerk soll ein komplexes Objekt, das aus Ganzzahlen und Zeichenketten besteht, von einem Rechner mit Little-Endian-Architektur und UTF-8-Kodierung zu einem Rechner mit Big-Endian-Architektur und EBCDIC-Kodierung übertragen werden. Welche der folgenden Aufgabenzusammenstellungen wird ausschließlich im Presentation Layer (Schicht 6) des ISO-OSI-Modells durchgeführt?
+Frage: Bei der Übertragung komplexer Datenobjekte zwischen zwei Rechnern müssen folgende Anforderungen umgesetzt werden: 
+1. Umwandlung der Byte-Reihenfolge (Little/Big Endian), 
+2. Konvertierung verschiedener Zeichensätze (ASCII, Unicode, EBCDIC, länderspezifische Sonderzeichen), 
+3. verlustfreie Datenkompression sowie anschließende Verschlüsselung.  
+Auf welcher Ebene des ISO/OSI-Modells müssen diese Funktionen zentral realisiert werden, damit sie unabhängig von Transport- und Netzdetails konsistent wirken?
 
-Antwortmöglichkeiten:
-- ~Konvertierung der Byte-Reihenfolge von Little nach Big Endian, Umwandlung von UTF-8 nach EBCDIC, Kompression des Objekts, anschließende Verschlüsselung der komprimierten Daten
-- Aufbau einer TCP-Verbindung, Segmentierung des Datenstroms, Verwaltung von Portnummern
-- Weiterleitung von Paketen auf Basis von IP-Adressen, Aktualisierung von Routingtabellen
-- Modulation und Demodulation physikalischer Signale auf dem Übertragungsmedium
+Antwort: ~Presentation Layer (Layer 6)

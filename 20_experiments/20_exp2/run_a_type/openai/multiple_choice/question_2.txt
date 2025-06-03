@@ -1,9 +1,9 @@
-```markdown
-Frage: Gemäß dem bereitgestellten Text wird unter bestimmten Netzwerkbedingungen eine spezielle Sublayer innerhalb der Sicherungsschicht notwendig. Welches Szenario aktiviert diese Sublayer und welche Hauptaufgabe übernimmt sie?
+"""
+Frage: Welche Aussage beschreibt laut Text die wesentliche Art und Weise, wie der Data Link Layer das Network Layer entlastet?
 
 Antwortmöglichkeiten:
-- ~Das Vorhandensein eines Broadcast-Netzwerks aktiviert die Medium Access Control (MAC)-Sublayer, deren Aufgabe es ist, den Zugriff mehrerer Stationen auf das gemeinsam genutzte Übertragungsmedium zu koordinieren.
-- Eine Punkt-zu-Punkt-Verbindung erfordert die MAC-Sublayer, damit Router automatisch den kürzesten Weiterleitungsweg wählen.
-- Ein schneller Sender gegenüber einem langsamen Empfänger aktiviert die MAC-Sublayer, um Flusskontrolle zwischen den Geräten durchzuführen.
-- Hohe physikalische Bitfehlerraten bedingen die MAC-Sublayer, welche Fehlererkennung und -korrektur mittels Prüfsummen übernimmt.
-```
+- ~Der Data Link Layer maskiert Übertragungsfehler, sodass das Network Layer einen scheinbar fehlerfreien Kanal erhält.
+- Das Network Layer maskiert Übertragungsfehler, sodass der Data Link Layer sich nur um Flusskontrolle kümmern muss.
+- Der Data Link Layer übernimmt das Routing der Pakete, um das Network Layer von dieser Aufgabe zu befreien.
+- Das Network Layer steuert den Zugriff auf das gemeinsam genutzte Medium, um Kollisionen zu vermeiden.
+"""

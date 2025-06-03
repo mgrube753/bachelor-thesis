@@ -1,3 +1,3 @@
-Antwort: Adressierung, Flusssteuerung und Dienstqualität (Quality of Service)
+Antwort: Transportschicht (Layer 4)
 
-Frage: Welche drei Kernaufgaben erfüllt die Transportschicht (Layer 4) im ISO-OSI-Modell?
+Frage: Welche Schicht des ISO-OSI-Modells stellt eine Ende-zu-Ende-Übertragung zwischen beliebigen Netzteilnehmern bereit und übernimmt Adressierung, Flusssteuerung sowie die Sicherung der Dienstqualität (QoS)?

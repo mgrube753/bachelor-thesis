@@ -1,8 +1,11 @@
-**Frage: Welche drei Parameter werden im Text als "wesentliche Parameter in Quality of Service (QoS)" auf der Transport-Schicht des OSI-Modells genannt?**
+# Frage zum Transport Layer im ISO-OSI-Modell
 
-**Korrekte Antwort: Bandbreite, Latenz, Jitter**
+Welche der folgenden Aussagen beschreibt die Kernaufgaben des Transport Layers (Schicht 4) im ISO-OSI-Modell korrekt?
 
-Mögliche falsche Antworten:
-- Adressierung, Flusssteuerung, Fehlerrate
-- Fehlerrate, Bandbreite, Adressierung
-- Latenz, Adressierung, Dienstqualität
+## Korrekte Antwort:
+A) Adressierung von Teilnehmern, Flusssteuerung und Sicherstellung der Dienstqualität (Quality of Service)
+
+## Weitere Antwortmöglichkeiten:
+B) Fehlerkorrektur, Komprimierung und Synchronisation
+C) Routing zwischen verschiedenen Netzwerken, Adressierung und Switching
+D) Bitsynchronisation, Medienzugriff und physikalische Übertragung

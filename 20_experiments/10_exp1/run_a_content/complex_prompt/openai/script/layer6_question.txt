@@ -1,8 +1,3 @@
-Frage: Welche der folgenden Aufgaben fällt NICHT in den Verantwortungsbereich der Präsentationsschicht (Layer 6) des ISO-OSI-Modells?
+Frage: Während eines Dateitransfers stellt die Anwendung fest, dass dieselbe Bitfolge auf zwei unterschiedlichen Rechnersystemen zu zwei verschiedenen Ganzzahlwerten führt. Auf Basis der im Text beschriebenen Kernaufgaben der Präsentationsschicht: Welche dieser Aufgaben muss zwingend aktiv werden, um die semantische Konsistenz der übertragenen Anwendungsdaten sicherzustellen?
 
-Antwortmöglichkeiten:  
-- Endian-Konvertierung  
-- Zeichensatzumwandlung  
-- Datenkompression  
-- Verschlüsselung  
-- ~Wegewahl (Routing)
+Antwort: ~Endian-Ness – Konvertieren der Datendarstellung (z.B. Anpassung zwischen little und big endian)

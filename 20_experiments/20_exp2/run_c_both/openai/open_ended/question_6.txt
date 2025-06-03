@@ -1,19 +1,8 @@
-Frage: Entwickeln Sie ein integriertes Daten­link-Protokoll für ein Broadcast-Netz, das zuverlässige Übertragung, Flusskontrolle und Medienzugriff in einem einzigen Rahmenformat vereint. Stellen Sie dazu 1) die Felder Ihres Frame-Aufbaus zusammen und beschreiben Sie deren Funktion, 2) konstruieren Sie den Ablauf der Rahmenübertragung inklusive der notwendigen Steuer- und Bestätigungsrahmen, und 3) erläutern Sie, wie Ihr Entwurf die drei Herausforderungen (Fehlermaskierung, Empfänger-Überlastschutz, kollisionsfreier Zugriff) in einem kohärenten Mechanismus reorganisiert.
+Frage: Entwerfen Sie ein integriertes Datenlink-Layer-Protokoll für ein drahtloses Broadcast-Netzwerk, das gleichzeitig - Fehlererkennung und -behebung, - Flusskontrolle zwischen schnellen Sendern und langsamen Empfängern sowie - einen fairen, effizienten Zugriff auf das gemeinsame Medium realisiert. Stellen Sie zusammen, wie Sie Framing, Quittierungsmechanismen und einen adaptiven Medium-Access-Algorithmus zu einem kohärenten Gesamtdesign reorganisieren würden, und erläutern Sie, in welcher Weise Ihr Konzept die im Ausgangstext beschriebenen Herausforderungen adressiert und verbessert.  
 
-Antwort: ~Beispielhafte Lösung:  
-1) Frame-Format:  
-   • Präambel (Synchronisation)  
-   • Dest-MAC / Src-MAC (Adressierung)  
-   • Typ/Länge  
-   • Seq-Nr. (Fehlerkontrolle + Ordnung)  
-   • Fenstergröße (dynamische Flusskontrolle)  
-   • Zugriffscode (CSMA/CA-Slot-Nummer + Priorität)  
-   • Nutzdaten  
-   • CRC  
-
-2) Übertragungs­ablauf: Sender lauscht Medium, reserviert Slot über Zugriffscode, sendet Frame. Empfänger sendet nach zufälliger Wartezeit ACK mit eigener Fenstergröße. Ausbleibendes ACK → Retransmission. Fenstergröße 0 friert Sender, bis ein RESTART-ACK kommt.  
-
-3) Integration:  
-   • Fehlermaskierung durch Seq-Nr. + CRC + selektive Wiederholung.  
-   • Flusskontrolle über gleitendes Fenster, das der Empfänger dynamisch im ACK anpasst.  
-   • Kollisionsfreier Zugriff durch dezentrale Slot-Reservierung im Zugriffscode-Feld, kombiniert mit Backoff-Strategie, wodurch separate MAC-Sublayer überflüssig wird und alle drei Funktionen nahtlos in einem Rahmenformat zusammengeführt sind.
+Antwort: ~Ein möglicher Entwurf kombiniert 3 Komponenten zu einem einzigen Protokollrahmen:  
+- Framing: Feste Rahmengröße von 1024 Byte mit Header-Feld für Sequenznummer, Prüfsumme (CRC-32) und Prioritätsklasse.  
+- Fehlerkontrolle: Selektives Repeat ARQ mit gleitendem Fenster; verlorene Frames werden anhand ihrer Sequenznummern selektiv erneut gesendet.  
+- Flusskontrolle: Empfänger vergibt dynamisch Credits im ACK-Frame; das Sendefenster schrumpft oder wächst in Abhängigkeit von Pufferbelegung.  
+- Medium Access: Hybrid-MAC, das zyklisch reservierte Time-Slots mit CSMA/CA kombiniert. Nodes mit hoher Priorität erhalten garantierte Slots; übrige nutzen eine adaptiv angepasste Back-off-Zeit, die sich nach aktueller Kollision­srate richtet.  
+Durch die Zusammenführung dieser Bausteine entsteht eine einheitliche Steuerlogik: Sender prüfen vor jeder Übertragung sowohl freie Slots als auch verfügbare Credits, verpacken Daten in nummerierte Frames mit CRC, versenden sie und warten auf ACK + Credit-Update. Somit werden Bitfehler maskiert, Empfänger nicht überlastet und das Medium effizient geteilt, wie es die Anforderungen des Textes verlangen.

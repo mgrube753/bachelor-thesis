@@ -1,3 +1,8 @@
-Frage: In welcher Schicht des ISO-OSI-Modells ist das HTTP-Protokoll angesiedelt?
+FRAGE: Welches Protokoll wird im Text als Grundlage für das World Wide Web beschrieben?
 
-Korrekte Antwort: Application Layer (Anwendungsschicht)
+RICHTIGE ANTWORT: HTTP (HyperText Transfer Protocol)
+
+WEITERE ANTWORTMÖGLICHKEITEN:
+- FTP (File Transfer Protocol)
+- SMTP (Simple Mail Transfer Protocol)
+- DNS (Domain Name System)

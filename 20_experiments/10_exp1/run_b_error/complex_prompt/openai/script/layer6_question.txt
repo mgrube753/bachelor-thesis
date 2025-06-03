@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Operationen entspricht den im Text spezifizierten Aufgaben der Presentation Layer (Schicht 6) des ISO/OSI-Modells?
+Frage: Ein Entwicklerteam plant mehrere Funktionsmodule für die Präsentationsschicht eines neuen Netzwerkstacks. Welche der folgenden geplanten Funktionen widerspricht explizit den im obigen Text beschriebenen Kernaufgaben dieser Schicht?
 
 Antwortmöglichkeiten:
-- ~Umwandlung eines Little-Endian-Bitstroms in Big-Endian-Reihenfolge
-- Komprimieren eines Bitstroms, um Bandbreite zu sparen
-- Verschlüsselung eines bereits entschlüsselten Datenstroms zur Gewährleistung der Vertraulichkeit
-- Konvertierung eines UTF-8-kodierten Textes nach UTF-16, um Zeichensatzkompatibilität herzustellen
+- ~Anbieten einer optionalen symmetrischen Verschlüsselung des Datenstroms bevor er an die Transportschicht übergeben wird
+- Implementierung eines einzigen big-endian Serialisierungsformats für alle Strukturdaten
+- Ignorieren jeglicher Zeichenkodierung und Behandlung eingehender Daten als rohe Binärfolgen
+- Automatisches Dekomprimieren von komprimierten Nutzdatenpaketen

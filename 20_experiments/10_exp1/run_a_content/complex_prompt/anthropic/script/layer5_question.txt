@@ -1,9 +1,5 @@
-```markdown
-Frage: In einem verteilten System müssen Datentransfers zwischen zwei Anwendungen auch nach kurzzeitigen Netzwerkausfällen fortgesetzt werden können, ohne die gesamte Übertragung neu starten zu müssen. Welche spezifische Kernfunktion der Session Layer (Schicht 5) des OSI-Modells adressiert dieses Problem am direktesten und warum?
+```
+Frage: In einem verteilten System werden große Datenmengen zwischen zwei Anwendungen übertragen. Warum könnte die "Synchronisation mit Zwischenpunkten" der Session Layer (Schicht 5) in diesem Szenario besonders wichtig sein, und welche konkreten Probleme löst diese Funktion?
 
-Antwortmöglichkeiten:
-- [Bündelung, da sie zusammengehörige Transaktionen gruppiert und so einen gemeinsamen Neustart ermöglicht]
-- ~[Synchronisation, da durch das Setzen von Zwischenpunkten die Übertragung nach einem Ausfall an diesen fortgesetzt werden kann]
-- [Sitzungsverwaltung, da beim erneuten Verbindungsaufbau automatisch die letzte Position erkannt wird]
-- [Sitzungsbeendigung, da durch kontrolliertes Beenden der Übertragung Datenverluste vermieden werden]
+Antwort: ~Die Synchronisation mit Zwischenpunkten erlaubt es, bei einem Verbindungsabbruch nicht die gesamte Übertragung neu starten zu müssen, sondern nur ab dem letzten erfolgreich übertragenen Zwischenpunkt fortzusetzen. Dies ist besonders bei großen Datenmengen effizient, da es Bandbreite spart, die Übertragungszeit verkürzt und Ressourcen schont. Zudem ermöglicht es die Wiederherstellung nach Fehlern ohne Datenverlust und bietet definierte Punkte für Integritätsprüfungen während der Übertragung.
 ```

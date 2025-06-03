@@ -1,9 +1,7 @@
-```markdown
-Frage: Welche der folgenden Aussagen fasst die Kernaufgaben und spezifischen Herausforderungen der Sicherungsschicht (Data Link Layer) gemäß dem bereitgestellten Text am prägnantesten zusammen?
+Frage: Welche Aussage beschreibt am präzisesten die **grundlegende Funktionsweise** der Data Link Layer, um ihre primäre Aufgabe der Fehlerverwaltung und zuverlässigen Datenübertragung gemäß dem bereitgestellten Text zu erfüllen?
 
 Antwortmöglichkeiten:
-- ~Die Sicherungsschicht ist primär dafür verantwortlich, eine rohe Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung zu transformieren, indem sie Übertragungsfehler maskiert, und adressiert zusätzlich die Herausforderungen der Flusskontrolle zwischen Sendern und Empfängern sowie die Medienzugriffskontrolle in Broadcast-Netzwerken.
-- Die Sicherungsschicht fokussiert sich hauptsächlich auf die logische Adressierung von Geräten und die Weiterleitung von Datenpaketen über verschiedene Netzwerke hinweg, während die Fehlerkorrektur vollständig von höheren Schichten übernommen wird.
-- Die Hauptaufgabe der Sicherungsschicht besteht darin, die Daten in kleine Frames aufzuteilen und diese zu verschlüsseln, um die Vertraulichkeit während der Übertragung zu gewährleisten, wobei der Fluss nur durch Empfangsbestätigungen geregelt wird.
-- Die Sicherungsschicht ist ausschließlich für die Umwandlung von Bitströmen in elektrische oder optische Signale zuständig und verwaltet die physikalischen Eigenschaften der Übertragungsmedien, ohne sich um Fehler oder den Datenfluss zu kümmern.
-```
+- ~Die Data Link Layer zerlegt Eingabedaten in Datenframes und überträgt diese sequenziell, wobei der Empfänger bei zuverlässigem Dienst den korrekten Empfang jedes Frames durch Bestätigungs-Frames quittiert, um die nächsthöhere Schicht vor unentdeckten Übertragungsfehlern zu schützen.
+- Sie ist primär dafür zuständig, schnelle Sender zu regulieren, damit langsame Empfänger nicht überflutet werden, indem sie spezielle Sublayer für die Flusskontrolle implementiert, die den Netzwerk-Layer direkt informieren.
+- Die Hauptaufgabe des Data Link Layers ist die ausschließliche Steuerung des Zugriffs auf gemeinsam genutzte Kanäle in Broadcast-Netzwerken durch den Medium Access Control Sublayer, wodurch Fehler im Netzwerk-Layer direkt korrigiert werden.
+- Sie wandelt eine Rohübertragungseinrichtung in eine fehlerfreie Leitung um, indem sie alle Übertragungsfehler proaktiv verhindert und somit die Notwendigkeit von Bestätigungs-Frames oder einer Fehlerverdeckung obsolet macht.

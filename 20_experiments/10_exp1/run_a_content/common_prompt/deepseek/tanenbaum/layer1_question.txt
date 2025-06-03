@@ -1,4 +1,6 @@
-**Frage:** Welche der folgenden Aspekte sind primäre Anliegen der Physikalischen Schicht im ISO-OSI-Modell?  
+**Frage:** Welche Aufgabe beschreibt die primäre Funktion der Physical Layer im ISO-OSI-Modell laut dem gegebenen Text?
 
-**Korrekte Antwort:**  
-- Übertragung roher Bits über einen Kommunikationskanal sowie die Gestaltung mechanischer, elektrischer und zeitlicher Schnittstellen.
+**(A)** Die Adressierung von Paketen über das Netzwerk  
+**(B)** Die Erkennung und Korrektur von Übertragungsfehlern  
+**(C)** Die Übertragung roher Bits über einen Kommunikationskanal ✅  
+**(D)** Die Formatierung der Daten für die Darstellung auf dem Endgerät

@@ -1,9 +1,7 @@
-**Korrekte Antwort: A**
+[KORREKTE ANTWORT]: B
+Welche der folgenden Aspekte gehören laut dem Text zu den Hauptanliegen und typischen Designfragen der Bitübertragungsschicht (Physical Layer)?
 
-**Frage:** Womit befasst sich die Bitübertragungsschicht (Physical Layer) des ISO-OSI-Modells laut dem gegebenen Text hauptsächlich?
-
-**Antworten:**
-A) Mit der Übertragung von Rohbits über einen Kommunikationskanal und der Sicherstellung, dass gesendete Bits korrekt empfangen werden, wobei die Designfragen sich weitgehend mit mechanischen, elektrischen und zeitlichen Schnittstellen sowie dem physikalischen Übertragungsmedium befassen.
-B) Mit der logischen Adressierung von Geräten und dem Routing von Datenpaketen durch das Netzwerk.
-C) Mit der Fehlererkennung und -korrektur auf Rahmenebene sowie der Flusskontrolle zwischen benachbarten Knoten.
-D) Mit der Etablierung, Verwaltung und Beendigung von Sitzungen zwischen Anwendungen auf verschiedenen Hosts.
+A) Die logische Adressierung von Geräten und die Wegewahl von Datenpaketen im Netzwerk.
+B) Die Übertragung roher Bits, die Festlegung von elektrischen Signalen für 1- und 0-Bits, die Bitdauer, die Richtung der Übertragung sowie mechanische, elektrische und zeitliche Schnittstellen.
+C) Die Fehlererkennung und Flusskontrolle auf Frame-Ebene sowie die Verwaltung von MAC-Adressen.
+D) Die Sicherstellung der Ende-zu-Ende-Kommunikation zwischen Anwendungen und die Segmentierung von Daten.

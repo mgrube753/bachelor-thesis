@@ -1,4 +1,5 @@
-**Frage:** Welche sind die drei Kernaufgaben des Network Layer im ISO-OSI-Modell?  
+**Frage:**  
+Welche drei Kernaufgaben werden im Text dem Network Layer (Schicht 3) des ISO-OSI-Modells zugeordnet?  
 
-**Korrekte Antwort:**  
-A. Adressierung, Routing, Flusssteuerung.
+**Antwort:**  
+(A) Adressierung, Routing und Flusssteuerung

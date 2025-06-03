@@ -1,7 +1,8 @@
-Frage: Angesichts der im Text beschriebenen Kernaufgaben des Session Layers 5 – "Datagramme" (spontanes Erstellen, Senden, Empfangen und sofortiges Verwerfen), "Asynchronität" (Vermeidung von Zwischenpunkten und Bestätigungen) und "Atomisierung" (Aufspaltung unabhängiger Datenpakete in Einzelteile) – welche Eigenschaft des Datenaustauschs wird durch die *kombinierte* Anwendung von "Datagramme" und "Asynchronität" am stärksten gefördert und welche mögliche Konsequenz ergibt sich daraus für die Zuverlässigkeit einer Kommunikationsbeziehung?
+Frage: Angesichts der im Session Layer 5 beschriebenen Kernaufgaben – insbesondere der "Asynchronität" und der Handhabung von "Datagrammen" – welche der folgenden Aussagen ist eine logische Implikation für die Art und Weise, wie die Integrität oder Vollständigkeit einer gesamten Kommunikationsbeziehung auf dieser Schicht gewährleistet wird?
 
 Antwortmöglichkeiten:
-- Eine erhöhte Latenz aufgrund komplexer Bestätigungsprotokolle und somit eine Reduzierung der Datendurchsatzrate.
-- ~Eine Maximierung der Geschwindigkeit und Effizienz des Datentransports durch den Verzicht auf Overhead, was jedoch eine potenziell geringere oder nicht garantierte Zuverlässigkeit der Datenübermittlung zur Folge hat.
-- Die Bildung stabiler, zustandsbehafteter Verbindungen, welche die Wiederherstellung von Sitzungen bei Unterbrechungen ermöglichen.
-- Eine prioritäre Behandlung von Datenpaketen mit garantiertem Empfang in der korrekten Reihenfolge, selbst bei Netzüberlastung.
+- Aufgrund der spontanen Erstellung und des sofortigen Verwerfens von Datagrammen sowie der Vermeidung von Zwischenpunkten und Bestätigungen kann der Session Layer 5 eine garantierte Zustellung oder eine integrierte Übertragung über eine längere Kommunikationsbeziehung hinweg nicht intrinsisch sicherstellen.
+- Die Atomisierung ermöglicht es dem Session Layer 5, verlorene Datenpakete durch eine detaillierte Nachverfolgung der Einzelteile zuverlässig zu identifizieren und neu anzufordern.
+- Der verbindungslos Datenaustausch im Session Layer 5 impliziert, dass jeder Datagramaustausch eine eigene, temporäre Verbindung aufbaut, die nach dem Versand eine automatische Bestätigung anfordert.
+- Die Asynchronität gewährleistet eine übergeordnete Fehlerkorrektur, indem sie redundante Datenkopien bereitstellt, um den Verlust von Datagrammen auszugleichen.
+- ~Die Kombination aus "Datagrammen", die spontan verworfen werden können, und "Asynchronität", die Bestätigungen vermeidet, führt dazu, dass der Session Layer 5 die Verantwortung für die Sicherstellung der Vollständigkeit oder geordneten Ankunft von Datenpaketen an höhere Schichten delegiert.

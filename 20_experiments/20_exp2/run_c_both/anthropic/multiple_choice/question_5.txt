@@ -1,9 +1,9 @@
-```markdown
-Frage: Bewerten Sie, welche der folgenden Aussagen die kritischste Schwachstelle in der Implementierung der Data Link Layer darstellt, wenn ein Netzwerk unter hoher Last betrieben wird.
+"""
+Frage: Bewerten Sie die Effektivität der im Data Link Layer implementierten Fehlerkontrollmechanismen im Vergleich zu alternativen Ansätzen. Welche Schlussfolgerung ist am zutreffendsten?
 
 Antwortmöglichkeiten:
-- ~Ein unzureichender Verkehrsregulierungsmechanismus, der nicht verhindert, dass schnelle Sender langsame Empfänger mit Daten überfluten
-- Die Unfähigkeit der Data Link Layer, Übertragungsfehler vollständig zu eliminieren, anstatt sie nur zu maskieren
-- Der erhöhte Overhead durch die Aufteilung der Daten in Frames und die sequentielle Übertragung
-- Die Notwendigkeit von Bestätigungsframes (acknowledgements) bei jedem erfolgreichen Empfang eines Datenframes
-```
+- ~Die Kombination aus Datensegmentierung in Frames und Bestätigungsprotokollen bietet einen effektiven Kompromiss zwischen Fehlerkorrektur und Netzwerkeffizienz, da sie Fehler isoliert und gleichzeitig die Notwendigkeit von Neuübertragungen minimiert.
+- Die Implementierung von Fehlerkontrollmechanismen auf dem Data Link Layer ist überflüssig, da moderne Übertragungsmedien bereits nahezu fehlerfrei arbeiten und physikalische Fehler direkt auf der physikalischen Schicht behoben werden können.
+- End-to-End-Fehlerkorrektur auf höheren Schichten (wie Transport Layer) wäre generell effizienter als Link-Level-Fehlerkontrolle, da sie Overhead reduziert und die Komplexität des Netzwerks verringert.
+- Die Fehlerkorrektur durch Datensegmentierung und Bestätigungsprotokolle ist zwar funktional, aber durch den hohen Overhead für Bestätigungsframes grundsätzlich ineffizienter als Forward Error Correction Methoden, die keine Bestätigungen benötigen.
+"""

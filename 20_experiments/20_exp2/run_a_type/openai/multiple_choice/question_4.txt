@@ -1,9 +1,9 @@
-```markdown
-Frage: Welche im Text genannte Maßnahme der Sicherungsschicht adressiert explizit das Problem, dass ein schneller Sender einen langsameren Empfänger mit Daten überflutet?
+"""
+Frage: In Broadcast-Netzwerken kann es vorkommen, dass mehrere Stationen gleichzeitig auf das gemeinsam genutzte Übertragungsmedium zugreifen möchten. Welcher Teil des Data-Link-Layers ist laut obigem Text speziell dafür zuständig, diesen konkurrierenden Zugriff zu steuern?
 
 Antwortmöglichkeiten:
-- ~Ein Mechanismus zur Verkehrsregulierung, der dem Sender signalisiert, wann der Empfänger weitere Daten akzeptieren kann
-- Die Aufteilung der Eingangsdaten in Frames, um Bitfehler zu maskieren
-- Das Senden von Bestätigungsframes, um die zuverlässige Übertragung sicherzustellen
-- Der Einsatz der MAC-Unterschicht zur Steuerung des Zugriffs auf ein gemeinsames Übertragungsmedium
-```
+- ~Die Medium Access Control (MAC) Sublayer
+- Die Logical Link Control (LLC) Sublayer
+- Das Flow-Control-Modul der Transportschicht
+- Die Session-Layer-Steuerlogik
+"""

@@ -1,7 +1,3 @@
-Frage: Welche spezielle Teilschicht (Sublayer) der Sicherungsschicht ist in Broadcast-Netzen dafür zuständig, den Zugriff auf das gemeinsam genutzte Übertragungsmedium zu steuern?
+Frage: Benennen Sie das spezielle Sublayer der Sicherungsschicht (Data Link Layer), das sich in Broadcast-Netzen mit der Kontrolle des Zugriffs auf den gemeinsamen Übertragungskanal befasst.
 
-Antwortmöglichkeiten:
-- ~Medium Access Control (MAC) Sublayer
-- Logical Link Control (LLC) Sublayer
-- Transport Control Sublayer
-- Network Access Sublayer
+Antwort: ~Medium Access Control (MAC) Sublayer

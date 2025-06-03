@@ -1,8 +1,9 @@
-**A. Bandbreite, Latenz, Jitter, Fehlerrate**
+**Korrekte Antwort: A**
 
-Welche der folgenden Parameter werden im Text als wesentliche Aspekte der Dienstqualität (Quality of Service) auf dem Transport Layer genannt?
+**Frage:** Welche Kernaufgaben des Transport Layers im ISO-OSI-Modell ermöglichen es, auf die spezifischen Bedürfnisse einzelner Teilnehmer einzugehen und Dienstqualitätsgarantien (Quality of Service, QoS) zu erbringen?
 
-A. Bandbreite, Latenz, Jitter, Fehlerrate
-B. IP-Adresse, Portnummer, Protokoll
-C. Paketgröße, Routing-Tabelle, MAC-Adresse
-D. Topologie, Kabeltyp, Netzwerkkarten-Treiber
+**Antworten:**
+A) Adressierung, Flusssteuerung und Dienstqualität (QoS).
+B) Fehlererkennung und Fehlerkorrektur auf Hardware-Ebene.
+C) Routing von Datenpaketen zwischen verschiedenen Netzen.
+D) Darstellung und Verschlüsselung von Daten für Endanwendungen.
