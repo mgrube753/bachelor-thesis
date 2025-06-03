@@ -5,7 +5,7 @@ from google.genai import types
 
 
 def gen_with_google(client, prompt_text, model_id):
-    # https://github.com/googleapis/python-genai, https://ai.google.dev/gemini-api/docs/thinking https://ai.google.dev/gemini-api/docs/text-generation
+    # https://github.com/googleapis/python-genai, https://ai.google.dev/gemini-api/docs/thinking https://ai.google.dev/gemini-api/docs/text-generation https://cloud.google.com/vertex-ai/docs/reference/rest/v1/GenerateContentResponse
     try:
         response = client.models.generate_content(
             model=model_id,
@@ -15,6 +15,16 @@ def gen_with_google(client, prompt_text, model_id):
                 max_output_tokens=1500,
             ),
         )
+
+        candidate = response.candidates[0]
+        if candidate.finish_reason == "MAX_TOKENS":
+            print("\n[WARNING] Google: Ran out of tokens")
+            if response.text:
+                print("[INFO] Partial output available")
+                return response.text
+            else:
+                print("[WARNING] No output available")
+                return None
         return response.text
     except Exception as e:
         print(f"[ERROR] Gemini API ({model_id}): {e}")
@@ -22,7 +32,7 @@ def gen_with_google(client, prompt_text, model_id):
 
 
 def gen_with_anthropic(client, prompt_text, model_id):
-    # https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-for-making-the-best-use-of-extended-thinking-mode
+    # https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-for-making-the-best-use-of-extended-thinking-mode https://docs.anthropic.com/en/api/handling-stop-reasons
     try:
         response = client.messages.create(
             model=model_id,
@@ -30,6 +40,16 @@ def gen_with_anthropic(client, prompt_text, model_id):
             messages=[{"role": "user", "content": prompt_text}],
             max_tokens=1500,
         )
+
+        if response.stop_reason == "max_tokens":
+            print("\n[WARNING] Claude: Ran out of tokens")
+            for block in response.content:
+                if block.type == "text":
+                    print("[INFO] Partial output available")
+                    return block.text
+            print("[WARNING] No output available")
+            return None
+
         for block in response.content:
             if block.type == "text":
                 return block.text
