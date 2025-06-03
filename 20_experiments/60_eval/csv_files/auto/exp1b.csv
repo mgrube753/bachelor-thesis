@@ -1,4 +1,4 @@
-llm,input_source,layer,prompt_type,relevance,clarity,answerability,challenging,correctness,cosine_similarity,adherence_score
+llm,input_source,layer,prompt_type,relevance,clarity,answerability,challenging,correctness,cosine_similarity,adherence_score_1,adherence_score_2,adherence_score_mean
 anthropic,script_manipulated,1,common,,,,,,,
 anthropic,script_manipulated,1,complex,,,,,,,
 anthropic,script_manipulated,2,common,,,,,,,

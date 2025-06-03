@@ -16,4 +16,6 @@ Verwende für die Ausgabe der Frage und der Antwort(en) exakt das folgende Forma
 {question_type_format}
 """
 
+Verwende klaren Fließtext. Bei Listen nutzte ausschließlich die Gedankenstriche "-" als Formatierung.
+
 Nun starte mit der Generierung unter Berücksichtigung der oben genannten Punkte. Gib nur die Frage und die zugehörige(n) Antwort(en) aus. Achte final auf Korrektheit in Format und Formulierung.

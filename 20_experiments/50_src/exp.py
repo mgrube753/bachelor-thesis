@@ -54,7 +54,9 @@ def generate_task_exp1(
         if not formatted_prompt:
             return None
 
-        generated_question = llm_generation(llm_name, clients, formatted_prompt)
+        generated_question = llm_generation(
+            llm_name, clients, formatted_prompt, max_tokens=1600
+        )
         if generated_question:
             save_result(output_path, generated_question)
             increment_counter(llm_name)
@@ -69,7 +71,9 @@ def generate_task_exp2(llm_name, clients, formatted_prompt, output_path, descrip
         if not formatted_prompt:
             return None
 
-        generated_question = llm_generation(llm_name, clients, formatted_prompt)
+        generated_question = llm_generation(
+            llm_name, clients, formatted_prompt, max_tokens=2400
+        )
         if generated_question:
             save_result(output_path, generated_question)
             increment_counter(llm_name)
