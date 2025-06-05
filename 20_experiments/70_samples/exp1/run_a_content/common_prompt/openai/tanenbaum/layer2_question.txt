@@ -1,0 +1,8 @@
+Richtige Antwort: A
+
+Frage: Welche Hauptaufgabe erfüllt die Sicherungsschicht (Data Link Layer) im ISO/OSI-Modell?
+
+A) Maskierung von Übertragungsfehlern durch Segmentierung in Frames und Verwendung von Bestätigungen, sodass höhere Schichten eine fehlerfreie Verbindung sehen.  
+B) Bereitstellung der Ende-zu-Ende-Wegewahl zwischen Netzwerken.  
+C) Verschlüsselung der Nutzdaten zur Sicherstellung der Vertraulichkeit.  
+D) Festlegung der elektrischen und mechanischen Eigenschaften des Übertragungsmediums.

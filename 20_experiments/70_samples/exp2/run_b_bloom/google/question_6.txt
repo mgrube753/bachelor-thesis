@@ -1,0 +1,14 @@
+Frage: Angenommen, Sie sind ein Ingenieur, der beauftragt wurde, ein grundlegendes Protokoll für die Sicherungsschicht zu konzipieren, das die im Text beschriebenen Kernaufgaben für eine zuverlässige Punkt-zu-Punkt-Verbindung erfüllt, einschließlich Fehlerbehandlung und Flusskontrolle. Entwickeln Sie eine Abfolge von Schritten oder Prinzipien, die sowohl der Sender als auch der Empfänger befolgen müssten, um Datenrahmen fehlerfrei und effizient zu übertragen, wobei mindestens zwei der im Text erwähnten Mechanismen (z.B. Datenrahmen, Bestätigungsrahmen, Verkehrsregelung) integriert werden.
+
+Antwort: ~Ein solches grundlegendes Protokoll könnte folgende Schritte und Prinzipien beinhalten:
+-   **Senderseite:**
+    1.  Die Eingabedaten werden in kleinere *Datenrahmen* zerlegt.
+    2.  Jeder Datenrahmen wird sequenziell gesendet.
+    3.  Nach dem Senden eines Datenrahmens wartet der Sender auf einen *Bestätigungsrahmen* (Acknowledgement) vom Empfänger.
+    4.  Wird innerhalb einer bestimmten Zeit kein Bestätigungsrahmen empfangen oder wird ein negativer Bestätigungsrahmen empfangen, wird der Datenrahmen erneut gesendet (Fehlerbehandlung).
+    5.  Der Sender implementiert einen *Verkehrsregelungsmechanismus*, z.B. ein Schiebefenster oder eine Senderate, die auf Rückmeldungen des Empfängers basiert, um zu verhindern, dass der Empfänger überflutet wird.
+-   **Empfängerseite:**
+    1.  Der Empfänger empfängt Datenrahmen und prüft sie auf Übertragungsfehler.
+    2.  Bei korrektem Empfang eines Datenrahmens sendet der Empfänger einen *Bestätigungsrahmen* an den Sender.
+    3.  Werden fehlerhafte Rahmen empfangen oder fehlen Rahmen, sendet der Empfänger möglicherweise keine Bestätigung oder eine negative Bestätigung, um eine Neuübertragung durch den Sender zu veranlassen.
+    4.  Der Empfänger signalisiert dem Sender durch den Verkehrsregelungsmechanismus (z.B. durch Bestätigungen oder ein Schiebefenster), wann er bereit ist, weitere Daten zu empfangen, um eine Überlastung zu vermeiden.

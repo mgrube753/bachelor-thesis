@@ -1,0 +1,11 @@
+**Frage:**  
+Welche drei Kernkonzepte definiert der Text für den Application Layer (Layer 7) des ISO-OSI-Modells trotz dessen anwendungsspezifischer Natur?  
+
+**Antwortmöglichkeiten:**  
+A) Datenformate, Verschlüsselung, Benutzerauthentifizierung  
+B) Protokollelemente, Daten, Reaktion der Anwendung  
+C) Netzwerkadressierung, Fehlerkontrolle, Datenkompression  
+D) Benutzerschnittstelle, Speicherverwaltung, Prozesssynchronisation  
+
+**Korrekte Antwort:**  
+B) Protokollelemente, Daten, Reaktion der Anwendung

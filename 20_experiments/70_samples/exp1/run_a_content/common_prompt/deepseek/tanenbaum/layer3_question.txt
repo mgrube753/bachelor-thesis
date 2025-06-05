@@ -1,0 +1,6 @@
+**Frage:** Unter welcher Bedingung ist die Netzwerkschicht im ISO-OSI-Modell laut Text oft dünn oder nicht vorhanden?
+
+*   **[KORREKTE ANTWORT]** In Broadcast-Netzwerken.
+*   [ ] Bei Verwendung statischer Routing-Tabellen.
+*   [ ] Wenn Pakete zwischen heterogenen Netzwerken weitergeleitet werden müssen.
+*   [ ] Bei hoher Netzwerklast und Überlastung (Congestion).

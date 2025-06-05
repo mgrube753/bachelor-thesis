@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Herausforderungen der Datenübertragung, die laut dem Text spezifisch durch eine dedizierte Unterschicht der Sicherungsschicht adressiert wird, ist insbesondere in Broadcast-Netzwerken von entscheidender Bedeutung?
+
+Antwortmöglichkeiten:
+- ~Die Kontrolle des Zugriffs auf den geteilten Kanal, um zu verhindern, dass mehrere Sender gleichzeitig Daten übertragen und Kollisionen verursachen.
+- Die zuverlässige Zustellung von Datenrahmen durch Bestätigungen, um sicherzustellen, dass keine Fehler unentdeckt bleiben.
+- Die Regulierung des Datenflusses zwischen einem schnellen Sender und einem langsamen Empfänger, um eine Überflutung des Empfängers zu vermeiden.
+- Die Umwandlung der physischen Übertragungsmedien in eine scheinbar fehlerfreie Leitung für die Netzwerkschicht durch Maskierung realer Übertragungsfehler.

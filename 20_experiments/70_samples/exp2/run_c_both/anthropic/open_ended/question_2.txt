@@ -1,0 +1,13 @@
+"""
+Frage: Erklären Sie die drei Hauptherausforderungen, mit denen die Datenverbindungsschicht konfrontiert ist, und beschreiben Sie, wie diese Schicht mit jeder dieser Herausforderungen umgeht. Stellen Sie dabei dar, wie diese Lösungsansätze zur Gesamtfunktion der Datenverbindungsschicht im Netzwerkmodell beitragen.
+
+Antwort: ~Die Datenverbindungsschicht bewältigt drei zentrale Herausforderungen:
+
+- Umgang mit Übertragungsfehlern: Die Schicht transformiert eine fehleranfällige Übertragungsleitung in eine scheinbar fehlerfreie Verbindung. Dies geschieht durch Aufteilung der Daten in Frames (typischerweise einige hundert oder tausend Bytes), die sequenziell übertragen werden. Bei zuverlässigem Service bestätigt der Empfänger den korrekten Empfang jedes Frames durch Senden eines Bestätigungsframes (Acknowledgement Frame). Dadurch werden Fehler vor höheren Schichten verborgen.
+
+- Regulierung des Datenverkehrs: Die Datenverbindungsschicht verhindert, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet. Hierfür werden Verkehrsregulierungsmechanismen implementiert, die dem Sender signalisieren, wann der Empfänger bereit ist, weitere Daten zu akzeptieren. Dies gewährleistet einen effizienten Datenaustausch ohne Datenverlust durch Überlastung.
+
+- Kanalzugriffskontrolle bei Broadcast-Netzwerken: In Broadcast-Netzwerken, wo mehrere Geräte einen gemeinsamen Kanal nutzen, bewältigt die Medium Access Control (MAC) Unterschicht des Data Link Layers die Herausforderung der Zugriffssteuerung. Sie regelt, welche Station zu welchem Zeitpunkt senden darf, und verhindert so Kollisionen und chaotische Übertragungen.
+
+Diese Funktionen ermöglichen zusammen eine zuverlässige Punkt-zu-Punkt-Kommunikation über physische Verbindungen und bilden die Grundlage für die höheren Protokollschichten.
+"""

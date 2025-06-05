@@ -1,0 +1,6 @@
+**Frage:** Welche Aufgabe beschreibt die primäre Funktion der Physical Layer im ISO-OSI-Modell laut dem gegebenen Text?
+
+**(A)** Die Adressierung von Paketen über das Netzwerk  
+**(B)** Die Erkennung und Korrektur von Übertragungsfehlern  
+**(C)** Die Übertragung roher Bits über einen Kommunikationskanal ✅  
+**(D)** Die Formatierung der Daten für die Darstellung auf dem Endgerät

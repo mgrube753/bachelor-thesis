@@ -1,0 +1,6 @@
+**Frage:** Welche Hauptaufgaben erfüllt der Presentation Layer (Layer 6) im ISO-OSI-Modell laut dem Text?  
+**✅ Korrekte Antwort(en):**  
+- Konvertierung der Datendarstellung (z. B. Little/Big Endian, Zahlen, komplexe Objekte/Graphenstrukturen)  
+- Konvertierung von Zeichendarstellungen (z. B. zwischen ASCII, Unicode, EBCDIC, nationalen Kodierungen)  
+- Durchführung von Kompression/Dekomprimierung  
+- Durchführung von Verschlüsselung/Entschlüsselung

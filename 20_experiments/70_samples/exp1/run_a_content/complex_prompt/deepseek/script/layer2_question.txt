@@ -1,0 +1,19 @@
+Frage:  
+Betrachten Sie die fünf Kernaufgaben der Schicht 2 im ISO-OSI-Modell. Eine dieser Aufgaben umfasst explizit vier spezifische Aspekte: Senden, Warten, Beheben und Reservieren. Welche Kernaufgabe bezieht sich auf diese vier Aspekte, und warum sind diese insbesondere bei geteilten Übertragungsmedien entscheidend für die Systemeffizienz?  
+
+Antwort:  
+~Medienzugriff  
+*(Begründung: Die vier genannten Aspekte beschreiben Mechanismen zur Steuerung des Zugriffs auf ein gemeinsames Medium, z. B. Kollisionserkennung ("Beheben") oder Token-Passing ("Reservieren"). Bei geteilten Medien wie Ethernet oder WLAN verhindern sie Datenkollisionen und gewährleisten fairen Zugriff, was Durchsatz und Stabilität maximiert.)*  
+
+---
+
+**Alternative mit Antwortmöglichkeiten:**  
+
+Frage:  
+Laut Text umfasst eine der fünf Kernaufgaben des Data Link Layers vier spezifische Aspekte: "Senden, Warten, Beheben und Reservieren". Welche der folgenden Aufgaben korrespondiert direkt mit diesen Aspekten?  
+
+Antwortmöglichkeiten:  
+- ~Medienzugriff  
+- Fehlerkontrolle  
+- Segmentierung  
+- Flußkontrolle

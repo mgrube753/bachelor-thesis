@@ -1,0 +1,7 @@
+Frage: Identifizieren Sie die primäre Aufgabe der Sicherungsschicht (Data Link Layer), wie sie im bereitgestellten Text beschrieben wird.
+
+Antwortmöglichkeiten:
+- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint.
+- Die logische Adressierung und das Routing von Datenpaketen zwischen verschiedenen Netzwerken.
+- Die Bereitstellung von Ende-zu-Ende-Kommunikationsdiensten zwischen Anwendungen.
+- Die Verwaltung der physikalischen Übertragung einzelner Bits über das Übertragungsmedium.

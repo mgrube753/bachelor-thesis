@@ -1,0 +1,5 @@
+**Frage:**
+Was beschreibt die Kernfunktion des Application Layer (Schicht 7) im ISO-OSI-Modell gemäß der gegebenen Information?
+
+**Antwort:**
+**Korrekt:** Die Abstraktion von spezifischen Anwendungselementen zu generischen Funktionen.

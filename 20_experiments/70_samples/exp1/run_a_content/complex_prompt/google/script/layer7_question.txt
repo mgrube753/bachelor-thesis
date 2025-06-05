@@ -1,0 +1,7 @@
+Frage: Basierend auf der bereitgestellten Beschreibung der Schicht 7 (Application Layer) und ihrer "3 Kernaufgaben", welche Aussage erklärt am prägnantesten, warum die Schicht als "wenig Systematisierung möglich" charakterisiert wird?
+
+Antwortmöglichkeiten:
+- Die Beschreibung der Schicht konzentriert sich auf die Festlegung spezifischer, anwendungsbezogener Elemente, deren Begriffe, Anforderungen und Verhaltensweisen naturgemäß divergieren und eine standardisierte Abstraktion über verschiedene Anwendungen hinweg erschweren.
+- ~Jede der drei Kernaufgaben (Grundkonzepte, Protokollelemente, Verhalten) befasst sich mit anwendungsspezifischen Details – von einzigartigen Begriffen bis hin zu individuellen Reaktionsweisen auf Anforderungen, was die Bildung allgemeingültiger Muster oder Schemata erheblich einschränkt.
+- Die Abhängigkeit von der jeweiligen Anwendung ist eine Eigenschaft, die ausschließlich durch die Protokollelemente und nicht durch die Grundkonzepte oder das Verhalten der Anwendung bedingt wird.
+- Die "Beschreibung" als erste genannte Aufgabe impliziert, dass die Schicht primär deskriptiv arbeitet, was Systematisierung von Natur aus verhindert.
