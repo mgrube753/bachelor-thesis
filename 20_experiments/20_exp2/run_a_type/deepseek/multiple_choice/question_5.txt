@@ -1,0 +1,7 @@
+Frage: Welche spezifische Funktion des Data Link Layers erfordert explizit die Existenz des MAC-Sublayers gemäß des beschriebenen Textes?
+
+Antwortmöglichkeiten:
+- ~Kontrolle des Zugriffs auf ein gemeinsames Übertragungsmedium in Broadcast-Netzwerken
+- Transformation der rohen Übertragungsstrecke in eine fehlerfrei erscheinende Leitung
+- Sicherstellung, dass ein schneller Sender einen langsamen Empfänger nicht mit Daten überflutet
+- Maskierung von Übertragungsfehlern gegenüber der Netzwerkschicht

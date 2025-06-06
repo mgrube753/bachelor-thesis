@@ -1,0 +1,7 @@
+Frage: Ein Unternehmen betreibt ein drahtloses Büronetzwerk (IEEE 802.11 WLAN), das als Broadcast-Medium fungiert. Es treten regelmäßig zwei Probleme auf: 1) Ein leistungsstarker Server überflutet langsame Drucker mit Daten, was zu Pufferüberläufen führt. 2) Gleichzeitige Übertragungsversuche mehrerer Laptops führen zu Kollisionen und Datenverlust. Welche spezifischen Mechanismen der Data Link Layer (genannt im Text) sind jeweils direkt verantwortlich, um diese Probleme zu adressieren? Nennen Sie die Mechanismen und ordnen Sie sie korrekt den Problemen zu.
+
+Antwortmöglichkeiten:
+- Für Problem 1 (Überflutung): Fehlererkennung durch Frame-Bestätigung (Acknowledgement Frames) | Für Problem 2 (Kollisionen): Flusskontrolle
+- Für Problem 1 (Überflutung): ~Verkehrsregelungsmechanismus (Flow Control) | Für Problem 2 (Kollisionen): ~Medium Access Control (MAC) Sublayer
+- Für Problem 1 (Überflutung): Aufteilung der Daten in Frames (Framing) | Für Problem 2 (Kollisionen): Maskierung von Übertragungsfehlern
+- Für Problem 1 (Überflutung): Medium Access Control (MAC) Sublayer | Für Problem 2 (Kollisionen): Zuverlässiger Dienst mit Acknowledgements

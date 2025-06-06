@@ -1,5 +1,4 @@
 import os
-import constants
 from constants import BLOOM_LEVELS_ORDERED, BLOOM_DATA_FILE, PROMPT_TEMPLATES_PATH
 from file_utils import load_txt
 
@@ -73,15 +72,15 @@ def get_bloom():
 def q_format(q_type):
     if q_type == "Multiple-Choice":
         return (
-            "Frage: [Hier den Frageninhalt einfügen]\n\n"
+            "Frage: Hier den Frageninhalt einfügen\n\n"
             "Antwortmöglichkeiten:\n"
-            "- ~[Beispielsweise hier die korrekte Antwort einfügen]\n"
-            "- [Hier die erste falsche Antwort einfügen]\n"
-            "- [Hier die zweite falsche Antwort einfügen]\n"
-            "- [Hier die dritte falsche Antwort einfügen]"
+            "- ~Beispielsweise hier die korrekte Antwort einfügen\n"
+            "- Hier die erste falsche Antwort einfügen\n"
+            "- Hier die zweite falsche Antwort einfügen\n"
+            "- Hier die dritte falsche Antwort einfügen"
         )
     else:
         return (
-            "Frage: [Hier den Frageninhalt einfügen]\n\n"
-            "Antwort: ~[Hier die Antwort einfügen]"
+            "Frage: Hier den Frageninhalt einfügen\n\n"
+            "Antwort: ~Hier die Antwort einfügen"
         )

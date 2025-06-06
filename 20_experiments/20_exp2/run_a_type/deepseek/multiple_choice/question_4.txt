@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Funktionen der Data-Link-Schicht ist spezifisch für Broadcast-Netzwerke und wird durch den MAC-Sublayer realisiert?
+
+Antwortmöglichkeiten:
+- ~Kontrolle des Zugriffs auf das gemeinsame Übertragungsmedium
+- Unterteilung der Eingangsdaten in Datenframes und sequentielle Übertragung
+- Sicherstellung einer zuverlässigen Übertragung durch Bestätigungsframes
+- Regelung des Datenflusses zur Vermeidung der Überlastung des Empfängers

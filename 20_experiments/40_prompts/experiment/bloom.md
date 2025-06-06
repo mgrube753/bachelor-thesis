@@ -11,7 +11,7 @@
 
 -   Remembering: Definieren, beschreiben, aufzählen, identifizieren, auflisten, zuordnen, benennen, skizzieren, zitieren, auswählen
 -   Understanding: Klarstellen, klassifizieren, vergleichen, gegenüberstellen, detaillieren, erklären, umschreiben, neu schreiben, zusammenfassen, übersetzen
--   Applying: Anwenden, Berechnen, Vorführen, Ermitteln, Untersuchen, Veranschaulichen, Verändern, Simulieren, Lösen, Nutzen
+-   Applying: Anwenden, berechnen, vorführen, ermitteln, untersuchen, veranschaulichen, verändern, simulieren, lösen, nutzen
 -   Analyzing: Analysieren, zerlegen, erkennen, differenzieren, unterscheiden, prüfen, untersuchen, optimieren, in Beziehung setzen, trennen
 -   Evaluating: Bewerten, schlussfolgern, kritisieren, verteidigen, bewerten, benoten, interpretieren, beurteilen, begründen, überprüfen
 -   Creating: Zusammenstellen, codieren, kompilieren, konstruieren, erstellen, entwerfen, entwickeln, erweitern, verbessern, reorganisieren
