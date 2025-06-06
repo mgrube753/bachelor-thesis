@@ -1,0 +1,7 @@
+Frage: Bewerten Sie, welche der folgenden Funktionen der Data Link Layer als primäre und universell notwendige Aufgabe angesehen werden muss, um eine zuverlässige Basis für die Netzwerkkommunikation zu schaffen, basierend auf den beschriebenen Kriterien der Fehlerfreiheit und Schichtentrennung.
+
+Antwortmöglichkeiten:
+- ~Maskierung von Übertragungsfehlern zur Bereitstellung einer scheinbar fehlerfreien Leitung für die Network Layer
+- Implementierung der Flusskontrolle zur Vermeidung der Überlastung langsamer Empfänger
+- Sequenzielle Übertragung von Datenrahmen mit Bestätigungsmechanismen
+- Regelung des Medienzugriffs in Broadcast-Netzwerken durch das MAC-Sublayer

@@ -1,0 +1,13 @@
+Frage: Ein Punkt-zu-Punkt-Link nutzt einen zuverlässigen Data Link Layer-Dienst. Der Sender überträgt große Datenframes schneller, als der Empfänger sie verarbeiten kann, was zu Datenverlust führt. Welche Methode wendet die Data Link Layer an, um dieses Problem zu lösen?
+
+Antwortmöglichkeiten:
+- ~Anpassung der Frame-Größe basierend auf der Verarbeitungsgeschwindigkeit des Empfängers
+- Implementierung von Paketrouting über alternative Netzwerkpfade
+- Verschlüsselung der Frame-Inhalte zur Reduzierung der Datenmenge
+- Nutzung von CSMA/CD für geregelten Kanalzugriff
+
+**Begründung der Antwortoptionen**:  
+- **Korrekt (Applying)**: Die Frame-Größenanpassung nutzt ACK-Signale (implizite Flusskontrolle aus dem Text), um die Übertragungsrate anzupassen – direkte Anwendung der Verkehrsregulierung bei "Fast Transmitter vs. Slow Receiver".  
+- **Falsch 1**: Routing ist Network-Layer-Funktion (nicht Data Link Layer).  
+- **Falsch 2**: Verschlüsselung ist keine im Text erwähnte Lösung für Flusskontrolle.  
+- **Falsch 3**: CSMA/CD betrifft Broadcast-Netze (MAC-Sublayer), nicht Punkt-zu-Punkt-Links.

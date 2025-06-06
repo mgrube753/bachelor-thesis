@@ -1,0 +1,7 @@
+Frage: Entwickeln Sie ein neues Protokoll für die Data Link Layer in einem drahtlosen Broadcast-Netzwerk, das bestehende Ansätze verbessert. Das Protokoll soll gleichzeitig drei Kernprobleme adressieren: zuverlässige Rahmenübertragung trotz Übertragungsfehlern, Verhinderung der Überlastung langsamer Empfänger durch schnelle Sender und faire Kanalzugriffskontrolle in einer hochausgelasteten Umgebung. Welche Kombination von Mechanismen muss Ihr Protokoll zwingend integrieren, um alle drei Anforderungen effektiv zu erfüllen?
+
+Antwortmöglichkeiten:
+- ~Sequentielle Rahmenerstellung mit Quittungsbestätigungen, Fenster-basierte Flusskontrolle und ein CSMA/CA-basiertes MAC-Sublayer
+- Bitorientierte Synchronisation, Prioritäts-basierte Paketverwaltung und IP-basiertes Routing
+- Datenverschlüsselung auf Rahmenebene, Round-Robin-Zeitplanung und Transport-Layer-Fehlerkorrektur
+- Physikalische Signalverstärkung, statische Adresszuweisung und Anwendungsschicht-Authentifizierung

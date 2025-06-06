@@ -1,0 +1,7 @@
+Frage: Welche spezifische Funktion wird im Text explizit dem Medium Access Control (MAC) Sublayer der Datenverbindungsschicht zugeordnet?
+
+Antwortmöglichkeiten:
+- ~Kontrolle des Zugriffs auf gemeinsam genutzte Kanäle
+- Umwandlung der Übertragungsstrecke in eine fehlerfrei erscheinende Verbindung
+- Sicherstellung der Flusskontrolle zwischen Sender und Empfänger
+- Zerlegung der Eingabedaten in Datenrahmen und sequentielle Übertragung
