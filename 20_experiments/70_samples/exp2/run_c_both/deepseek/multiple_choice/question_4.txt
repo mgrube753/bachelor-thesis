@@ -1,0 +1,7 @@
+Frage: Analysieren Sie die primäre Aufgabe der Data Link Layer im ISO-OSI-Modell anhand des Textes: Welcher Mechanismus isoliert Übertragungsfehler effektiv von der Network Layer, und wie wird diese Isolation operational erreicht?
+
+Antwortmöglichkeiten:
+- ~Durch Zerlegung der Daten in Frames und Bestätigung korrekten Empfangs via Acknowledgement-Frames, wodurch Fehler maskiert werden.
+- Durch Regelung der Datenflussrate mittels Traffic-Mechanismen, um eine Überlastung des Empfängers zu verhindern.
+- Durch Steuerung des Medienzugriffs im MAC-Sublayer, insbesondere in Broadcast-Netzwerken.
+- Durch direkte Fehlerkorrektur in der Network Layer, ohne Zwischenschicht-Intervention.

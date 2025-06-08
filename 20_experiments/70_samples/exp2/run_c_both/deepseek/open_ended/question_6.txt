@@ -1,0 +1,10 @@
+Frage: Entwerfen Sie ein verbessertes Data-Link-Layer-Protokoll für ein zuverlässiges Broadcast-Netzwerk, das gleichzeitig drei Kernprobleme adressiert: unerkannte Übertragungsfehler, Überlastung langsamer Empfänger durch schnelle Sender und kollisionsfreien Zugriff auf den gemeinsamen Kanal. Integrieren Sie dabei innovative Mechanismen für Framing, Fehlerbestätigung, Flussregulierung und Medienzugriffskontrolle, die über den Text hinausgehen. Begründen Sie Ihre Design-Entscheidungen.
+
+Antwort: ~Ein mögliches Protokoll könnte folgende Elemente kombinieren:  
+- **Adaptives Sliding Window mit Priorisierung**: Variabel große Fenster basierend auf Empfängerkapazität, wobei Bestätigungsframes (ACKs) dringliche Datenpakete priorisieren, um Stau zu vermeiden.  
+- **Hybride Fehlerkontrolle**: Kombination von selektiver Wiederholung (Selective Repeat) für effiziente Fehlerbehebung mit vorausschauenden Prüfsummen (Predictive CRC), die häufige Fehlermuster erkennen.  
+- **KI-gesteuertes TDMA/CSMA**: Ein MAC-Sublayer, der maschinelles Lernen nutzt, um Zeitslots (TDMA) bei hoher Auslastung dynamisch zuzuweisen und bei niedriger Auslastung auf konfliktbasierten Zugriff (CSMA) mit adaptiven Backoff-Algorithmen umschaltet.  
+*Begründung*:  
+– Das adaptive Fenster reagiert proaktiv auf Empfängerüberlastung (Flusskontrolle), während priorisierte ACKs die Round-Trip-Zeit optimieren.  
+– Hybrid-Fehlerkontrolle reduziert unnötige Wiederholungen und maskiert Fehler effizienter für die Netzwerkebene.  
+– Der intelligente Medienzugriff minimiert Kollisionen in Broadcast-Umgebungen durch kontextabhängige Strategiewechsel, was die Gesamtbandbreite erhöht.

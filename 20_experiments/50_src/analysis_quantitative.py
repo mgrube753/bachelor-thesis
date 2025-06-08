@@ -5,14 +5,20 @@ import concurrent.futures
 import threading
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-import constants
+from constants import (
+    EXP1_PATH,
+    INPUT_SOURCES_PATH,
+    EVAL_PATH,
+    PROMPT_TEMPLATES_PATH,
+    EMBEDDING_MODEL_ID,
+)
 from file_utils import load_txt
 from api_calls import llm_generation
 from api_config import init_clients
 
 
 def load_model():
-    return SentenceTransformer(constants.EMBEDDING_MODEL_ID)
+    return SentenceTransformer(EMBEDDING_MODEL_ID)
 
 
 def calc_cossim_batch(model, questions, sources):
@@ -28,7 +34,7 @@ def calc_cossim_batch(model, questions, sources):
 
 def get_adherence_scores(clients, question, source_text):
     prompt_path = os.path.join(
-        constants.PROMPT_TEMPLATES_PATH, "evaluation", "exp1_adherence_eval.md"
+        PROMPT_TEMPLATES_PATH, "evaluation", "exp1_adherence_eval.md"
     )
     prompt_template = load_txt(prompt_path)
 
@@ -72,9 +78,9 @@ def get_adherence_scores_parallel(clients, questions_sources_pairs, max_workers=
 
 def get_question_path(exp_name, llm, source, layer, prompt_type):
     if exp_name == "exp1a":
-        base_path = os.path.join(constants.EXP1_PATH, "run_a_content")
+        base_path = os.path.join(EXP1_PATH, "run_a_content")
     elif exp_name == "exp1b":
-        base_path = os.path.join(constants.EXP1_PATH, "run_b_error")
+        base_path = os.path.join(EXP1_PATH, "run_b_error")
     else:
         raise ValueError(f"Unknown experiment name: {exp_name}")
 
@@ -85,14 +91,14 @@ def get_question_path(exp_name, llm, source, layer, prompt_type):
 def get_source_file_path(source, layer, is_manipulated=False):
 
     if is_manipulated:
-        source_dir = os.path.join(constants.INPUT_SOURCES_PATH, source, "manipulated")
+        source_dir = os.path.join(INPUT_SOURCES_PATH, source, "manipulated")
         source_type = f"{source} (manipulated)"
     else:
         if source == "script":
-            source_dir = os.path.join(constants.INPUT_SOURCES_PATH, source, "common")
+            source_dir = os.path.join(INPUT_SOURCES_PATH, source, "common")
             source_type = f"{source} (common)"
         else:
-            source_dir = os.path.join(constants.INPUT_SOURCES_PATH, source)
+            source_dir = os.path.join(INPUT_SOURCES_PATH, source)
             source_type = source
 
     filename = f"layer{layer}.txt"
@@ -105,7 +111,7 @@ def process_experiment(exp_name):
 
     model = load_model()
     clients = init_clients()
-    csv_path = os.path.join(constants.EVAL_PATH, "csv_files", "auto", f"{exp_name}.csv")
+    csv_path = os.path.join(EVAL_PATH, "csv_files", "auto", f"{exp_name}.csv")
     df = pd.read_csv(csv_path)
 
     questions = []
@@ -136,7 +142,7 @@ def process_experiment(exp_name):
             continue
 
         print(
-            f"[MATCH {len(questions)+1:3d}] Question: {os.path.relpath(question_path, constants.EXP1_PATH)}"
+            f"[MATCH {len(questions)+1:3d}] Question: {os.path.relpath(question_path, EXP1_PATH)}"
         )
         print(f"             Source:   {source_type} - layer{layer}.txt")
         print(f"             LLM:      {llm} | Prompt: {prompt_type}")

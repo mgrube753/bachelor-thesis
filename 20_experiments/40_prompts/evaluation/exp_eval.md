@@ -21,7 +21,9 @@ Um diese Frage nun professionell zu bewerten, nutze die folgende Rubrik:
 Für ein systematisches Verwenden der Daten soll das Ausgabeformat wie folgt aussehen:
 
 """
-[rubric1_score], [rubric2_score], [rubric3_score], [rubric4_score], [rubric5_score]
+[rubric1_score],[rubric2_score],[rubric3_score],[rubric4_score],[rubric5_score]
 """
+
+Ein Beispiel dafür wäre: `0,10,5,6,3`
 
 Nun bewerte die Frage anhand der Rubrik und gib deine Bewertung im angegebenen Format aus. Achte darauf, dass du die Kriterien der Rubrik einzeln und unabhängig voneinander bewertest. Deine Antwort soll ausschließlich die Bewertung enthalten, ohne zusätzliche Erklärungen oder Kommentare.
