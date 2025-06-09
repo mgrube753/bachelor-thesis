@@ -1,0 +1,9 @@
+llm,input_source,layer,question_type,bloom_original,relevance,clarity,answerability,challenging,bloom_rating,bloom_score
+anthropic,tanenbaum,2,,3,,,,,,
+anthropic,tanenbaum,2,,5,,,,,,
+deepseek,tanenbaum,2,,1,,,,,,
+deepseek,tanenbaum,2,,5,,,,,,
+google,tanenbaum,2,,1,,,,,,
+google,tanenbaum,2,,6,,,,,,
+openai,tanenbaum,2,,1,,,,,,
+openai,tanenbaum,2,,3,,,,,,
