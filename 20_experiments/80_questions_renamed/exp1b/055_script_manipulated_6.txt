@@ -1,0 +1,7 @@
+Frage: Ein Entwickler implementiert eine Präsentationsschicht gemäß der gegebenen Beschreibung (nur Vereinheitlichung des Datenformats, Behandlung als reine Binärdaten, ausschließliches Entpacken und Entschlüsseln). Welches praktische Problem könnte in einem heterogenen Netzwerkumfeld mit Systemen unterschiedlicher Architekturen am ehesten auftreten?
+
+Antwortmöglichkeiten:
+- ~Inkompatibilität bei Systemen, die native Little-Endian-Darstellung oder andere Serialisierungsformate erwarten, da keine Konvertierung angeboten wird
+- Unfähigkeit, Datenverluste durch Paketfehler in der Transportschicht zu erkennen und zu beheben
+- Verletzung der Sicherheitsanforderungen, da die Schicht zwar Entschlüsselung, aber keine Verschlüsselung neuer Daten ermöglicht
+- Abbruch der Kommunikationssitzung bei langen Inaktivitätsphasen durch fehlende Session-Kontrolle

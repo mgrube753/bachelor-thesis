@@ -1,0 +1,3 @@
+Richtige Antwort: Transport Layer (Schicht 4)
+
+Frage: Welche Schicht des ISO/OSI-Modells übernimmt die End-to-End-Datenübertragung und sorgt dafür, dass alle Datenstücke korrekt und in der richtigen Reihenfolge beim Empfänger ankommen?

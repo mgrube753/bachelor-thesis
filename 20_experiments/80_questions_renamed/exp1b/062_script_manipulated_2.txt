@@ -1,0 +1,2 @@
+Richtige Antwort: Fragmentierung  
+Frage: Welche Kernaufgabe des Data Link Layers beschreibt das Aufteilen größerer Einheiten in einzelne Bits?

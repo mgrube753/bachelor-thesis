@@ -1,0 +1,7 @@
+Frage: Analysieren Sie die drei Hauptfunktionen der Sicherungsschicht (Data Link Layer) gemäß dem bereitgestellten Text und erläutern Sie, warum die Zugriffskontrolle in Broadcast-Netzwerken eine spezifische Herausforderung darstellt, die in Punkt-zu-Punkt-Kommunikation nicht existiert. Gehen Sie dabei auf die zugrundeliegenden Probleme ein, die jede Funktion adressiert.
+
+Antwort: ~Die drei Hauptfunktionen umfassen: 
+- Die Transformation der Übertragungseinrichtung in eine fehlerfrei erscheinende Leitung, erreicht durch Aufteilung der Eingangsdaten in Datenrahmen und Bestätigungsrahmen bei zuverlässigem Dienst, um Übertragungsfehler zu maskieren und höhere Schichten zu entlasten. 
+- Die Datenflussregelung, die eine Überlastung des Empfängers durch einen schnellen Sender verhindert, indem sie Übertragungsraten an die Empfangskapazität anpasst. 
+- Die Zugriffskontrolle in Broadcast-Netzwerken, verwaltet durch das MAC-Sublayer, um Kollisionen bei mehreren Teilnehmern auf einem gemeinsamen Kanal zu vermeiden. 
+Die Zugriffskontrolle ist spezifisch für Broadcast-Netzwerke kritisch, da hier mehrere Sender um ein gemeinsames Medium konkurrieren, was Konflikte und Datenkollisionen verursachen kann. In Punkt-zu-Punkt-Verbindungen existiert dieses Problem nicht, da exklusive Direktverbindungen keine Medienkonkurrenz erzeugen.

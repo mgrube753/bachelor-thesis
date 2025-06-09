@@ -1,0 +1,2 @@
+Antwort: Endian-Ness  
+Frage: Wie heißt die Kernaufgabe der Schicht 6 (Presentation Layer) im ISO-OSI-Modell, die die Konvertierung der Datendarstellung, etwa zwischen little und big endian, übernimmt?

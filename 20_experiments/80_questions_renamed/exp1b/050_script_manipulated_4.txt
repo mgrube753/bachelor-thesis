@@ -1,0 +1,7 @@
+Frage: Analysieren Sie kritisch die Darstellung der Transportschicht (Layer 4) im gegebenen Text. Welche der folgenden Aussagen identifiziert korrekt eine konzeptionelle Inkonsistenz oder ein Missverständnis in der Beschreibung der Kernaufgaben dieser Schicht im Vergleich zum standardmäßigen ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- ~Die Beschreibung des "Datenstaus" als "Ignorieren der Teilnehmer-Charakteristik" widerspricht der eigentlichen Aufgabe der Transportschicht, die gerade für Flusskontrolle und Staumanagement verantwortlich ist
+- Die "Identifizierung" mit "Geräte-spezifischen Kennungen" ist keine Aufgabe der Transportschicht, sondern ausschließlich der Sicherungsschicht (Layer 2)
+- Die Beschreibung der "Dienstquantität" ist korrekt, da die Transportschicht grundsätzlich keine Garantien für QoS bieten kann
+- Die Bereitstellung einer "Speicherung für festgelegte Teilnehmerpaare" ist die Hauptfunktion der Transportschicht und korrekt dargestellt

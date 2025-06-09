@@ -1,0 +1,8 @@
+"""
+Frage: Welche drei Hauptprobleme der Datenübertragung adressiert die Sicherungsschicht laut obigem Text, welche konkreten Mechanismen setzt sie jeweils ein, und weshalb ist in Broadcast-Netzen hierfür eine eigene Medium-Access-Control-Teilschicht erforderlich? 
+
+Antwort: ~
+- Fehlererkennung und -behebung: Die Sicherungsschicht zerlegt die Daten in Frames und verlangt für jeden korrekt empfangenen Frame eine Bestätigung (Acknowledgement); fehlende oder fehlerhafte Frames werden erneut gesendet und bleiben so für die Netzwerkschicht unsichtbar.  
+- Flusskontrolle: Durch ein Verkehrsregulierungsverfahren (z. B. Rückmeldungen über Aufnahmekapazität) verhindert die Schicht, dass ein schneller Sender einen langsameren Empfänger überlastet.  
+- Medienzugriff in Broadcast-Netzen: Da mehrere Stationen ein gemeinsames Übertragungsmedium teilen, koordiniert die Medium-Access-Control-Sublayer den Zugriff, um Kollisionen zu vermeiden und die Effizienz der gemeinsamen Leitung sicherzustellen. 
+"""

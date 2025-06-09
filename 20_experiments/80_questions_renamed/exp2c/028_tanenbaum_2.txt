@@ -1,0 +1,9 @@
+"""
+Frage: Entwickeln Sie ein konzeptionelles Framework für ein verbessertes Data Link Layer-Protokoll, das speziell für Hochgeschwindigkeits-Breitbandnetzwerke mit stark variierenden Übertragungsgeschwindigkeiten optimiert ist. Welche der folgenden Architekturen würde die im Text beschriebenen Herausforderungen am effektivsten adressieren?
+
+Antwortmöglichkeiten:
+- ~Ein hybrides System mit adaptiver Framegrößenanpassung, selektivem Acknowledgment-Mechanismus und einem zweischichtigen Zugriffssteuerungsprotokoll, das dynamisch zwischen deterministischen und probabilistischen Methoden wechselt
+- Ein starres System mit fixer Framegröße, globalem Acknowledgment-Mechanismus und einer einschichtigen, rein deterministischen Zugriffssteuerung
+- Ein Protokoll, das vollständig auf Acknowledgments verzichtet und stattdessen redundante Datenübertragung nutzt, mit statischer Framegröße und FIFO-basierter Kanalzuteilung
+- Ein System, das die Fehlerkorrektur und Flusssteuerung vollständig an höhere Schichten delegiert und sich ausschließlich auf die physikalische Übertragung konzentriert
+"""

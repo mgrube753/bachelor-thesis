@@ -1,0 +1,7 @@
+Frage: Ein Router stellt fest, dass der Zielknoten vorübergehend keine weiteren Pakete mehr annehmen kann und reduziert deshalb aktiv seine Sendegeschwindigkeit. Auf welche der drei im Text genannten Kernaufgaben des Network Layer 3 bezieht sich dieses Verhalten primär?
+
+Antwortmöglichkeiten:
+- ~Flußsteuerung
+- Adressierung
+- Routing
+- Kodierung

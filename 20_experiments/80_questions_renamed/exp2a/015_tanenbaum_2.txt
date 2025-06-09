@@ -1,0 +1,9 @@
+"""
+Frage: Welche der folgenden Funktionen wird laut dem beschriebenen Text NICHT von der Data Link Layer übernommen?
+
+Antwortmöglichkeiten:
+- ~Wegefindung (Routing) zwischen unterschiedlichen Netzwerken
+- Rahmung von Daten und Bestätigung jedes korrekt empfangenen Rahmens
+- Flusskontrolle zur Verhinderung der Überlastung eines langsameren Empfängers
+- Zugriffskontrolle auf ein gemeinsames Übertragungsmedium in Broadcast-Netzen
+"""

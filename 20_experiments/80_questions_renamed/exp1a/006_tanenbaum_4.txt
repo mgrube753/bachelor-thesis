@@ -1,0 +1,9 @@
+```
+Frage: Betrachtet man die Aussage, dass die Transportschicht eine "wahre End-zu-End-Schicht" ist, im Gegensatz zu den Schichten 1 bis 3, die als "verkettete" (chained) Schichten beschrieben werden. Welche der folgenden Schlussfolgerungen zeigt das tiefste Verständnis für die architektonischen Implikationen dieser Unterscheidung im Kontext moderner Netzwerkinfrastrukturen?
+
+Antwortmöglichkeiten:
+- Eine Störung auf Schicht 2 (Sicherungsschicht) zwischen zwei Routern würde die End-zu-End-Kommunikation auf Transportebene unterbrechen, obwohl die Transportschicht konzeptionell direkt zwischen Quelle und Ziel kommuniziert
+- Netzwerkoptimierungen auf den Schichten 1-3 können durchgeführt werden, ohne dass Anwendungen auf höheren Schichten angepasst werden müssen, solange die End-zu-End-Semantik der Transportschicht erhalten bleibt
+- ~Die Unterscheidung ermöglicht eine klare Trennung zwischen Infrastruktur- und Anwendungsverantwortlichkeiten, wobei die Transportschicht als Grenzschicht fungiert, die Netzwerkkomplexität vor höheren Schichten verbirgt und gleichzeitig End-zu-End-Garantien bietet
+- Die End-zu-End-Natur der Transportschicht bedeutet, dass Router keine Protokollinformationen der Schichten 4-7 verarbeiten können, was Netzwerkoptimierungen grundsätzlich einschränkt
+```

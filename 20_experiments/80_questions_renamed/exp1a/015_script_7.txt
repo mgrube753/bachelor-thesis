@@ -1,0 +1,11 @@
+**Frage:**  
+Warum ist eine allgemeine Systematisierung der Anwendungsschicht (Layer 7) im ISO-OSI-Modell kaum möglich?  
+
+**Korrekte Antwort:**  
+C) Stark abhängig von der jeweiligen Anwendung  
+
+**Antwortmöglichkeiten:**  
+A) Technische Limitierungen der Hardware  
+B) Fehlende Standardisierung von Protokollen  
+C) Stark abhängig von der jeweiligen Anwendung  
+D) Zu hohe Komplexität der Protokollelemente
