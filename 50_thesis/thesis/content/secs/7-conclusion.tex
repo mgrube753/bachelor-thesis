@@ -8,13 +8,13 @@
 % what have we achieved?
 
 % strengths and weaknesses
-% --> e.g. deepseek does not adhere to the format guidelines, a solution would be a format in json format. that was not used due to the semantic similarity aspect (would decrease the performance in this case)
-% --> better content adherence check at manipulated source content: instead of focusing on many different materials, focus on a few materials, manipulate them a little bit instead of much, and then check the performance of the model on these materials. still this was the secondary goal of rq1, the common goal was the common content adherence check
+% --> e.g. deepseek does not adhere to the format guidelines, a solution would be a format in json format. that was primarily not used due to the semantic similarity aspect (would decrease the performance in this case)
+% --> (better content adherence check at manipulated source content: instead of focusing on many different materials, focus on a few materials, manipulate them a little bit instead of much, and then check the performance of the model on these materials. still this was the secondary goal of rq1, the common goal was the common content adherence check)
 % --> deepseek was prompted manually, which was a challenging task according to correctness of all prompts (pasting content into {...} fields)
 %   --> availability issues due to high demand
 %   --> full automation of the prompting process would be a good idea for future work
 % --> papers/theses with less prompts can focus more on refining the prompts 
-%   --> better explanation of question types (key, stem, distractors at MCQ for example)
+%   --> better explanation of question types (key, stem, challenging distractors at MCQ for example)
 % --> 4 llms were pretty much to handle, but the more problematic part was that all llms have used reasoning, since the RQs were not explicitly addressing the examination of llms with reasoning and llms without 
 % --> examine the thinking process of llms via apis (while o3 not even supports that, just as summaries https://platform.openai.com/docs/guides/reasoning?api-mode=responses)
 %   --> these are catchable with python commands such as: https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking
