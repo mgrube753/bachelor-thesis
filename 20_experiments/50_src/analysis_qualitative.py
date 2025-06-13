@@ -70,7 +70,9 @@ def calculate_bloom_score(exp_name, bloom_rating, bloom_original=None):
 
 
 def process_exp1(exp_name, clients):
-    csv_path = os.path.join(constants.EVAL_PATH, "csv_files", "auto", f"{exp_name}.csv")
+    csv_path = os.path.join(
+        constants.EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv"
+    )
     df = pd.read_csv(csv_path)
     samples_base = os.path.join(constants.EXPERIMENTS_BASE_PATH, "70_samples", "exp1")
     run_folder = "run_a_content" if exp_name == "exp1a" else "run_b_error"
@@ -122,22 +124,29 @@ def process_exp1(exp_name, clients):
             f"[EVAL] {exp_name} - {row['llm']} - {source_info} layer{row['layer']} - {row['prompt_type']}_prompt"
         )
 
-        scores = evaluate_single(clients, "anthropic", question, context, rubric)
-        return idx, scores if len(scores) == 5 else None
+        gemini_scores = evaluate_single(clients, "google", question, context, rubric)
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        return idx, gemini_scores if len(gemini_scores) == 5 else None
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
         results = list(executor.map(process_row, df_filtered.iterrows()))
+
+    for criterion in criteria:
+        df[f"{criterion}_gemini"] = None
+        df[f"{criterion}_expert"] = None
 
     for idx, scores in results:
         if scores:
             for i, criterion in enumerate(criteria):
-                df.at[idx, criterion] = round(scores[i], 1)
+                df.at[idx, f"{criterion}_gemini"] = round(scores[i], 1)
 
     df.to_csv(csv_path, index=False)
 
 
 def process_exp2(exp_name, clients):
-    csv_path = os.path.join(constants.EVAL_PATH, "csv_files", "auto", f"{exp_name}.csv")
+    csv_path = os.path.join(
+        constants.EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv"
+    )
     df = pd.read_csv(csv_path)
     samples_base = os.path.join(constants.EXPERIMENTS_BASE_PATH, "70_samples", "exp2")
     run_folders = {"exp2a": "run_a_type", "exp2b": "run_b_bloom", "exp2c": "run_c_both"}
@@ -225,32 +234,53 @@ def process_exp2(exp_name, clients):
             )
 
         question = find_question(samples_path, pattern)
-        scores = evaluate_single(clients, "openai", question, context, rubric)
-        return idx, scores if len(scores) >= len(criteria) else None
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        openai_scores = evaluate_single(clients, "openai", question, context, rubric)
+        claude_scores = evaluate_single(clients, "anthropic", question, context, rubric)
+
+        return idx, openai_scores, claude_scores
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
         results = list(executor.map(process_row, df_filtered.iterrows()))
 
-    for idx, scores in results:
-        if scores:
-            row = df_filtered.loc[idx]
+    for criterion in criteria:
+        df[f"{criterion}_openai"] = None
+        df[f"{criterion}_claude"] = None
 
-            for i, criterion in enumerate(criteria):
-                if i < len(scores):
-                    df.at[idx, criterion] = round(scores[i], 1)
+    for idx, openai_scores, claude_scores in results:
+        if openai_scores and len(openai_scores) >= len(criteria):
+            for i, criterion in enumerate(criteria[: len(openai_scores)]):
+                df.at[idx, f"{criterion}_openai"] = round(openai_scores[i], 1)
 
-            if len(scores) >= 5:
-                bloom_rating = scores[4]
+        if claude_scores and len(claude_scores) >= len(criteria):
+            for i, criterion in enumerate(criteria[: len(claude_scores)]):
+                df.at[idx, f"{criterion}_claude"] = round(claude_scores[i], 1)
 
-                if exp_name == "exp2a":
-                    bloom_score = calculate_bloom_score(exp_name, bloom_rating)
-                else:
-                    bloom_original = row.get("bloom_original")
-                    bloom_score = calculate_bloom_score(
-                        exp_name, bloom_rating, bloom_original
-                    )
+        if len(openai_scores) >= 5:
+            bloom_rating_openai = openai_scores[4]
+            if exp_name == "exp2a":
+                bloom_score_openai = calculate_bloom_score(
+                    exp_name, bloom_rating_openai
+                )
+            else:
+                bloom_original = df_filtered.loc[idx].get("bloom_original")
+                bloom_score_openai = calculate_bloom_score(
+                    exp_name, bloom_rating_openai, bloom_original
+                )
+            df.at[idx, "bloom_score_openai"] = bloom_score_openai
 
-                df.at[idx, "bloom_score"] = bloom_score
+        if len(claude_scores) >= 5:
+            bloom_rating_claude = claude_scores[4]
+            if exp_name == "exp2a":
+                bloom_score_claude = calculate_bloom_score(
+                    exp_name, bloom_rating_claude
+                )
+            else:
+                bloom_original = df_filtered.loc[idx].get("bloom_original")
+                bloom_score_claude = calculate_bloom_score(
+                    exp_name, bloom_rating_claude, bloom_original
+                )
+            df.at[idx, "bloom_score_claude"] = bloom_score_claude
 
     df.to_csv(csv_path, index=False)
 
