@@ -20,11 +20,91 @@ This section explores current research in \ac{llms} and their application to \ac
 
 \subsection{Current LLMs Research}
 
-\hspace{1.5em}\object{Review Challenges at \ac{llms}} Finding the current state-of-the-art of \ac{llms} with the explained review method did not yield recent results, even if papers such as surveys were published in 2024 or 2025. The reason for this is that the field of \ac{llms} is moving so fast, that the review papers become outdated. So, the trend of the models and their releases were followed manually, as captured in Table \bfref{tab:llm_releases}. It shows the most important releases of \ac{llms} in the past years since ChatGPT \cite{openai_introducing_2022}. The table is not complete, but it shows well-known models and their architecture, including \textit{reasoning} capabilities, if these are known to the public. Reasoning means, in the OpenAI o1 system card \cite{openai_openai_2024-1} for instance, the model thinks in a manner of \ac{cot} before responding to the user. The table is sorted by the release date of the models to obtain a timeline and a way to interpret the development of the models.
+\hspace{1.5em}\object{Review Challenges at \ac{llms}} Finding the current state-of-the-art of \ac{llms} with the explained review method did not yield recent results, even if papers such as surveys were published in 2024 or 2025. The reason for this is that the field of \ac{llms} is moving so fast, that the review papers become outdated. Moreover, the trend of the models and their releases were followed manually, as captured in Table \bfref{tab:llm_releases}. It shows the most important releases of \ac{llms} in the past years since ChatGPT \cite{openai_introducing_2022}. The table is not complete, but it shows well-known models and their architecture, including \textit{reasoning} capabilities, if these are known to the public. Reasoning means, in the OpenAI o1 system card \cite{openai_openai_2024-1} for instance, the model thinks in a manner of \ac{cot} before responding to the user. The table is sorted by the release date of the models to obtain a timeline and a way to interpret the development of the models.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Timeline of Major LLM Releases (2022-2025).}
+    \label{tab:llm_releases}
+    \renewcommand{\arraystretch}{1.3}
+    \definecolor{openaiColor}{HTML}{c6e2ce}   
+    \definecolor{metaColor}{HTML}{9deade}     
+    \definecolor{googleColor}{HTML}{ebd9a1}   
+    \definecolor{anthropicColor}{HTML}{cdd8f2}
+    \definecolor{xaiColor}{HTML}{efd4d0} 
+    \definecolor{deepseekColor}{HTML}{eed6b3} 
+    \definecolor{alibabaColor}{HTML}{cde3b5}
+    % https://medialab.github.io/iwanthue/
+
+    \begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.25cm}|>{\centering\arraybackslash}p{4.5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}X|}
+        \hline
+        \rowcolor{gray!15} \textbf{Date} & \textbf{Developers}                            & \textbf{Model Releases} & \textbf{Architecture} & \textbf{Reasoning} \\
+        \hline
+        Nov 2022                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & ChatGPT/GPT-3.5         & Decoder-only?         & -- \\ % https://openai.com/index/chatgpt/
+        \hline
+        \multirow{2}{*}{Feb 2023}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 65B               & Transformer           & -- \\ % https://arxiv.org/pdf/2302.13971 paper (not really known architecture)
+        \cline{2-5}
+                                         & \cellcolor{googleColor}{\textbf{Google}}       & Bard 137B               & Decoder-only          & -- \\ % https://ai.google/advancing-ai/milestones/?section=bard is decoder only cuz powered by lamda 137B https://arxiv.org/pdf/2201.08239
+        \hline
+        \multirow{2}{*}{Mar 2023}        & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4                   & Decoder-only?         & -- \\ % https://arxiv.org/pdf/2303.08774
+        \cline{2-5}
+                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 1                & --                     & -- \\ % https://www.anthropic.com/news/introducing-claude
+        \hline
+        \multirow{2}{*}{Jul 2023}        & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 2                & --                     & -- \\ % https://www.anthropic.com/news/claude-2
+        \cline{2-5}
+                                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 2 70B             & Decoder-only          & -- \\ % https://arxiv.org/pdf/2307.09288 paper
+        \hline
+        Nov 2023                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-1 314B             & MoE                   & -- \\ % https://x.ai/news/grok & https://x.ai/news/grok-os (here MoE)
+        \hline
+        Dec 2023                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini                  & Decoder-only          & -- \\ % https://arxiv.org/pdf/2312.11805
+        \hline
+        Feb 2024                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 1.5              & Decoder MoE           & -- \\ % https://arxiv.org/pdf/2403.05530
+        \hline
+        Mar 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3                & --                     & -- \\ % https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf
+        \hline
+        Apr 2024                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3 70B             & Decoder-only          & -- \\ % https://ai.meta.com/blog/meta-llama-3/
+        \hline
+        May 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4o                  & Decoder-only?         & -- \\ % https://arxiv.org/pdf/2410.21276
+        \hline
+        Jun 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.5 Sonnet       & --                     & -- \\ % https://www.anthropic.com/news/claude-3-5-sonnet
+        \hline
+        Jul 2024                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3.1 405B          & Decoder-only          & -- \\ % https://arxiv.org/pdf/2407.21783 paper (dense decoder transformer instead of MoE, presented in Shazeer et al. 2017)
+        \hline
+        Aug 2024                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-2                  & --                     & -- \\ % https://x.ai/news/grok-2
+        \hline
+        Sep 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1-mini                 & --                     & Yes \\ % https://openai.com/index/openai-o1-mini-advancing-cost-efficient-reasoning/
+        \hline
+        \multirow{4}{*}{Dec 2024}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3.3 70B           & Decoder-only          & -- \\ % https://ai.meta.com/blog/future-of-ai-built-with-llama/ and https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct (decoder-only there)
+        \cline{2-5}
+                                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.0              & --                     & -- \\ % https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/
+        \cline{2-5}
+                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1/o3-mini              & --                     & Yes \\ % https://arxiv.org/pdf/2412.16720 o1 paper, https://openai.com/index/openai-o3-mini/
+        \cline{2-5}
+                                         & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek-V3 658B        & MoE                   & -- \\ % https://arxiv.org/pdf/2412.19437
+        \hline
+        \multirow{2}{*}{Jan 2025}        & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek R1 658B        & MoE                   & Yes \\ % https://arxiv.org/pdf/2501.12948
+        \cline{2-5}
+                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & Qwen 2.5-Max            & MoE                   & -- \\ % https://qwenlm.github.io/blog/qwen2.5-max/
+        \hline
+        \multirow{3}{*}{Feb 2025}        & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-3                  & --                     & Yes \\ % https://x.ai/news/grok-3
+        \cline{2-5}
+                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.7 Sonnet       & --                     & Yes \\ % https://www.anthropic.com/news/claude-3-7-sonnet
+        \cline{2-5}
+                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & QwQ-Max                 & MoE                   & Yes \\ % https://qwenlm.github.io/blog/qwq-max-preview/ (based on Qwen 2.5-Max, so MoE)
+        \hline
+        Mar 2025                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.5              & --                     & Yes \\ % https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/
+        \hline
+        \multirow{2}{*}{Apr 2025}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 4 109B/400B/2T    & MoE                   & -- \\ % https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+        \cline{2-5}
+                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o3/o4-mini              & --                     & Yes \\ % https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf
+        \hline
+    \end{tabularx}
+\end{table}
 
 \pagebreak
 
 \object{Major LLM Developers and Models} The following list details prominent developers in the \ac{llm} space and provides an overview of their key model releases and architectural trends.
+% #todo interesse erwecken hier. "outperformed"? woran erkennbar. Zu wenig Erläuterung
 \begin{itemize}
     \item \textbf{OpenAI:} With the initial release of ChatGPT \cite{openai_introducing_2022}, which firstly utilized the GPT-3.5 architecture, OpenAI has limited the disclosure of architectural details for its subsequent models. The GPT-4 model \cite{openai_gpt-4_2024} was followed by GPT-4o \cite{openai_gpt-4o_2024}, which outperformed GPT-4. The \enquote{GPT} nomenclature indicates a continuation of the decoder-only transformer architecture, a characteristic of known models up to GPT-3 \cite{brown_language_2020}. OpenAI's current state-of-the-art models emphasize reasoning capabilities, as seen in the o1-mini \cite{openai_openai_2024}, o1 \cite{openai_openai_2024-1}, o3-mini \cite{openai_openai_2025}, and the subsequent o3 and o4-mini \cite{openai_openai_2025-1} releases.
 
@@ -54,11 +134,13 @@ Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the 
 
 \object{Focusing solely on Prompt Engineering} Several studies have investigated the capability of \ac{llms} to generate educational questions aligned with cognitive levels, primarily by refining and optimizing the prompts given to the models. These approaches aim to guide \ac{llms} towards producing questions that meet specific educational objectives without any modification of the underlying model architecture.
 \begin{itemize}
+    % weniger paper, aber mehr inhaltliche Tiefe; z.b. zu den komplexeren bloom levels; leser, die an der forschungsfrage interessiert sind, sollen hier mehr erfahren.
     \item \cite{blobstein_angel_2023} developed Angel, a tool that utilizes GPT-3.5 for generating questions at varying cognitive levels based on Bloom's Taxonomy. The system employs instructional prompts with a few-shot learning approach and textbook content to produce questions categorized by difficulty (easy, medium, hard). The evaluation of the generated questions and their answers was conducted using GPT-3.5 again as an evaluator with a \ac{cot} strategy, focusing on metrics such as \textit{Clarity, Relatedness, Importance,} and \textit{Answerability}. Human evaluation was also performed.
     % Gaps: limited ability to generate questions targeting high cognitive levels, control over question complexity and difficulty, create adequate QA pairs
     % How trying to solve: Angel --> LLM-based generating with advanced prompting (CoT, Few-shot, Bloom instruction) to generate QA pairs wird diverse difficulty levels, also targeting higher cognitive levels; via textbook
     % What not solved: potential was shown for llms in aqg, but bloom adherence not sufficient; future work: more samples needed, more llms for llm-as-evaluator to avoid llm bias
     \item \cite{scaria_how_2024} assessed the capability of \ac{llms}, including GPT-3.5 and GPT-4, to generate high-quality questions across different cognitive levels using zero-shot prompting. The CEFR level was also specified in the prompts. Two annotators evaluated the generated questions based on categories adapted from \cite{horbach_linguistic_2020}, where the \textit{Rephrase} category was modified to \textit{Bloom'sLevel} to assess adherence to the targeted cognitive level. The Inter-annotator agreement was measured using Cohen's Kappa \cite{cohen_coefficient_1960}. Their findings suggest that \ac{llms} can produce relevant and high-quality questions at diverse cognitive levels, indicating their utility for scalable educational content generation, with GPT-4 and GPT-3.5 being notably effective.
+    % #todo cohens kappa mehr erklären, dort oder eben in der evaluation section, wo ich es auch verwende 
     % Gaps: creating pedagogically effective questions, especially at higher skill levels, is challenging and time-consuming; expert eval is necessary to understand the pedagogical aspects of machine generated questions
     % How trying to solve: 5 sota llms using zero-shot for relevant, high quality questions across blooms levels, >91% questions were relevant/high quality
     % What not solved: human expert ratings still needed --> can be time-consuming and subjective; questions at apply and create remained a challenge for most models

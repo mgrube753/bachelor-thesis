@@ -3,7 +3,7 @@
 % \newtodo{Mirroring the expose, what can the readers expect from the thesis? Do not copy the expose text}
 % \newtodo{Claims have to be referenced, maybe add a list of contributions.}
 
-This thesis investigates the capabilities of \ac{llms} for the automatic generation and evaluation of educational questions. The focus is on the growing need for effective educational tools that can support teaching and learning.
+This thesis investigates the capabilities of \ac{llms} for the automatic generation and evaluation of educational questions. The focus is on the growing need for effective educational tools that can support both teaching and learning.
 
 \subsection{Motivation}
 
@@ -13,41 +13,15 @@ Effective learning often relies on engaging actively with educational content, i
 
 \subsection{Role of AI in Education}
 
-\object{Originality of the Problem} Existing \ac{aqg} systems for educational purposes have certain limitations. Many prior approaches focused on the linguistic quality while disregarding the pedagogical value and appropriateness of questions \cite{horbach_linguistic_2020,steuer_i_2021}. Outdated models \cite{cheng_treequestion_2024,elkins_how_2023,bhowmick_automating_2023} or certain \ac{slms} \cite{luo_systematic_2023} were often used, potentially due to power and cost constraints \cite{zhuge_twinstar_2025,vu_chatgpt-based_2024}. Furthermore, the rising reasoning abilities of \ac{llms} were not leveraged in the literature. 
-A significant research gap exists regarding the creation of cognitively challenging questions, particularly the effective implementation and scoring of questions aligned with higher levels of Bloom's Taxonomy. While \ac{llms} such as ChatGPT \cite{openai_introducing_2022} are good at generating questions for lower cognitive levels, they have limitations at the higher levels, often generating oversimplified or unrealistic questions \cite{duong-trung_bloomllm_2024,elkins_how_2023,scaria_automated_2024}. 
+\object{Originality of the Problem} Existing educational \ac{aqg} systems have certain limitations. Many prior approaches focused on the linguistic quality while disregarding the pedagogical value and appropriateness of questions \cite{horbach_linguistic_2020,steuer_i_2021}. Outdated models \cite{cheng_treequestion_2024,elkins_how_2023,bhowmick_automating_2023} or \ac{slms} \cite{luo_systematic_2023} were often used, potentially due to power and cost constraints \cite{zhuge_twinstar_2025,vu_chatgpt-based_2024}. Furthermore, novel models with \textit{reasoning} capabilities, known from e.g.\ OpenAI o1 \cite{openai_openai_2024-1} and DeepSeek R1 \cite{deepseek-ai_deepseek-r1_2025}, were not leveraged in the literature. 
 
-% \object{Relevance of the Problem} The development of effective educational tools is increasingly important to support both teaching and learning. Automating the question generation process can significantly reduce the workload for this process, leading to saving the educators' time \cite{biancini_multiple-choice_2024,hang_mcqgen_2024,vu_chatgpt-based_2024,cheng_treequestion_2024}. By leveraging \ac{llms} for this purpose, the systems can support the scalability of educational content, creating question banks for various learning modules \cite{vu_chatgpt-based_2024} and enabling personalized education for varying student needs and learning styles \cite{hang_mcqgen_2024,yang_heuristic_2024}.
+A significant research gap exists in creating cognitively challenging questions, particularly the effective implementation and scoring of questions aligned with higher levels of Bloom's Taxonomy. While \ac{llms} are good at generating questions for lower cognitive levels, they have limitations at the higher levels \cite{elkins_how_2023,scaria_automated_2024}, often generating oversimplified or unrealistic questions \cite{duong-trung_bloomllm_2024}. 
 
 \object{Relevance of the Problem} The development of effective educational tools is increasingly important to support both teaching and learning. Automating question generation, particularly for educational assessments, can significantly reduce the workload for educators, leading to saving the educators' time \cite{biancini_multiple-choice_2024,hang_mcqgen_2024,vu_chatgpt-based_2024,cheng_treequestion_2024}. 
-Leveraging \ac{llms} can support the creation of scalable educational content, such as question banks for various learning modules \cite{vu_chatgpt-based_2024}. Furthermore, these models have potential to enable personalized education for varying needs and learning styles, enhancing student engagement and understanding \cite{hang_mcqgen_2024}.
+\ac{llms} can support the creation of scalable educational content, such as question banks for various learning modules \cite{vu_chatgpt-based_2024}. Furthermore, these models have potential to enable personalized education for varying needs and learning styles, enhancing student engagement and understanding \cite{hang_mcqgen_2024}.
 
 \object{Expected Contributions}
 This work contributes to the field through offering a systematic evaluation for assessing educational questions generated by \ac{llms}. A key focus is evaluating the adherence of generated questions to certain ISO-OSI model-based source materials, ensuring that the questions can be answered based on the provided content. This research also investigates the capabilities of \ac{llms} in \ac{aqg} while considering different cognitive levels of Bloom's Taxonomy. The evaluation's insights imply guidelines for optimizing prompts for educational purposes, since the prompt design is crucial for the quality of generated questions.
-
-% \begin{itemize}
-%     \item A systematic evaluation for assessing \ac{llm}-generated educational questions
-%     \item connection between questions and given source material
-%     \item Empirical evidence of current \ac{llms}' capabilities across different cognitive levels
-%     \item Guidelines for optimizing question generation prompts for educational purposes
-%     \item Insights into the practical application of \ac{llms} in educational content creation
-% \end{itemize}
-
-% ----------------------------------------------------
-
-% \object{Evaluation Criteria}
-% \begin{itemize}
-%      \item Cognitive Complexity According to Bloom
-%      \item Content Accuracy
-%      \item Pedagogical Suitability
-%      \item Variability of Generated Questions
-% \end{itemize}
-% \object{Scope and Limitations}
-% \begin{itemize}
-%      \item Focus on Text-Based Questions
-%      \item Restriction to Technical Educational Content
-% \end{itemize}
-
-% \vp
 
 \subsection{Research Questions}
 
