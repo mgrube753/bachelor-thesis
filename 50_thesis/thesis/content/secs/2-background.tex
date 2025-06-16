@@ -140,36 +140,34 @@ Each of these cognitive levels is associated with a set of action verbs that can
    \end{tabularx}
  \end{table}
 
-\pagebreak
+% \pagebreak
 
 \subsection{Performance Enhancements}
 \label{sec:performance-enhancements}
 
 To address these challenges and to refine the capabilities of \ac{llms} for specific tasks, such as \ac{aqg}, various performance enhancement strategies have been proposed. These techniques aim to improve the quality and relevance of the generated content, as listed in the following:
 
-\object{In-Context Learning} As highlighted by \cite{zhao_survey_2025}, the advent of GPT-3 \cite{brown_language_2020} introduced the concept of in-context learning. OpenAI further delineated this into subcategories such as zero-shot, one-shot, and few-shot learning, depending on how many examples are provided in the prompt.
+\object{In-Context Learning} As highlighted by \cite{zhao_survey_2025}, the advent of GPT-3 \cite{brown_language_2020} introduced the concept of in-context learning. This method allows \ac{llms} to adapt to new tasks by using a small set of examples directly within the prompt at inference time \cite{minaee_large_2025}. OpenAI further delineated this into subcategories such as zero-shot, one-shot, and few-shot learning, depending on how many examples are provided in the prompt. By this, in-context learning is efficient as it requires minimal task-specific data and no parameter updates in the model itself, while \ac{llms} can adapt without any costly retraining \cite{patil_review_2024,hou_large_2024}.
 
-\object{\ac{cot}} This technique, introduced by \cite{wei_chain--thought_2022}, enhances in-context learning by prompting reasoning steps to elicit the \ac{llms}' step-by-step reasoning \cite{zhao_survey_2025}. Moreover, this method can lead to higher quality questions \cite{scaria_automated_2024}, as depicted in \cite{wei_chain--thought_2022}.
+\object{\ac{cot}} This technique, introduced by \cite{wei_chain--thought_2022}, enhances in-context learning by prompting reasoning steps to elicit the \ac{llms}' step-by-step reasoning \cite{zhao_survey_2025}. Moreover, this method can lead to higher quality questions \cite{scaria_automated_2024}, as depicted in \cite{wei_chain--thought_2022}. What makes \ac{cot} so powerful nowadays is that most of the state-of-the-art \ac{llms} are performing techniques like this on their own before returning the final answer to the user \cite{openai_openai_2024-1}, as depicted in Table \bfref{tab:llm_releases} as the term of \textit{reasoning}.
 
-\object{Role-based Prompting} This technique involves assigning a specific role or persona to the model while prompting it \cite{zhao_survey_2025} to better fulfill the task instruction. The advantages of the approach are further discussed in the according paper \cite{kong_better_2024} independently of the survey paper.
+\object{Role-based Prompting} This technique involves assigning a specific role or persona to the model while prompting it \cite{zhao_survey_2025} to better fulfill the task instruction. The initial phrase of a prompt can look like \enquote{Behave as an expert in the field of $X$}. Independently of the survey \cite{zhao_survey_2025}, the authors of this method \cite{kong_better_2024} have shown that this approach highlights the potential to trigger \ac{cot} implicitly and effectively, leading to enhanced reasoning outcomes. It is worth noting that reasoning here refers to the model's abilities, not the generative step before providing the final answer to the user.
 
-\object{Self-Refinement} By iteratively refining the \ac{llm}-generated output based on feedback \cite{madaan_self-refine_2023}, the overall process and the corresponding solutions can be improved \cite{zhao_survey_2025}.
+\object{Self-Refinement} By iteratively refining the \ac{llm}-generated output based on feedback \cite{madaan_self-refine_2023}, the overall process and the corresponding solutions can be improved \cite{zhao_survey_2025}. For instance, the authors of MCQGen \cite{hang_mcqgen_2024} applied this technique to their \ac{aqg} system, as the model is critiquing and improving its initial outputs in a recursive loop.
 
-\object{Using Special Marks} Emphasizing important parts of the prompt can be achieved by using special marks like quotation marks or line breaks \cite{zhao_survey_2025} to help the \ac{llm} visually distinguish between different parts of the prompt. 
+\object{Using Special Marks} Emphasizing important parts of the prompt can be achieved by using special marks like quotation marks or line breaks \cite{zhao_survey_2025} to help the \ac{llm} visually distinguish between different parts of the prompt. As an example, to emphasize a text block, it can be enclosed in docstring quotation marks, as it is known from Python programming\footnote{\url{https://peps.python.org/pep-0257/}, accessed 06/16/2025}.
 
-\object{Positive Constraints} When formulating the prompt, it is often more useful to tell the model what it should do, rather than what it should not do \cite{zhao_survey_2025}. 
+\object{Positive Constraints} When formulating the prompt, it is often useful to tell the model more what it should do, rather than what it should not do \cite{zhao_survey_2025}, resulting in a balanced and more focused prompt. 
 
-\object{Providing Scoring Standards} For tasks which involve scoring a text, it is crucial to provide a detailed description of the scoring standards in the prompt \cite{zhao_survey_2025}. For instance, this clear rubric helps the \ac{llm} to assess the quality of generated questions \cite{scaria_automated_2024}.
+% \pagebreak
 
-\object{\ac{rag}} This method \cite{lewis_retrieval-augmented_2020}, as used in approach \cite{hang_mcqgen_2024}, highlights how external knowledge sources can be integrated at \ac{aqg} prompts. For this, querying a comprehensive database is needed to retrieve relevant information that is useful the context of the question. This can be realized via e.g.\ knowledge graphs as domain-specific knowledge, which can be based on course content \cite{yang_heuristic_2024}.
+\object{Providing Scoring Standards} For tasks which involve scoring a text, it is crucial to provide a detailed description of the scoring standards in the prompt \cite{zhao_survey_2025}. For instance, using a clear rubric helps the \ac{llm} to assess the quality of generated questions, as it was done in \cite{scaria_automated_2024}. However, in this work -- probably because of the usage of an outdated \ac{llm} --, the evaluation results differ from the human evaluation, which has to be considered when using this technique.
 
-\object{Model Fine-Tuning} A key strategy to adapt general-purpose \ac{llms} to specific tasks by training them on domain-specific data \cite{hou_large_2024}. By this process, models can learn knowledge relevant to a specific context, but traditional full fine-tuning requires vast amounts of data and computational resources \cite{hou_large_2024}. For instance, \cite{duong-trung_bloomllm_2024} fine-tuned their \ac{aqg} model with more than 1000 questions, which is a relatively small amount of data.
+\object{\ac{rag}} This method \cite{lewis_retrieval-augmented_2020}, as used in approach \cite{hang_mcqgen_2024}, highlights how external knowledge sources can be integrated at \ac{aqg} prompts. For this technique, querying a comprehensive database is needed to retrieve relevant information that is useful the context of the question. This can also be realized via e.g.\ knowledge graphs with domain-specific knowledge, which can be based on course content \cite{yang_heuristic_2024}.
 
-\object{Integration of Contextual Knowledge} Several studies \cite{biancini_multiple-choice_2024,blobstein_angel_2023,wang_towards_2022,bhowmick_automating_2023} have injected topic-related contextual information directly into the prompt to avoid hallucinating and give users control over the source of knowledge \cite{biancini_multiple-choice_2024}.
+\object{Model Fine-Tuning} A key strategy to adapt general-purpose \ac{llms} to specific tasks by training them on domain-specific data \cite{hou_large_2024}. By this process, models can learn knowledge relevant to a specific context, but traditional full fine-tuning requires vast amounts of data and computational resources \cite{hou_large_2024}. For instance, \cite{duong-trung_bloomllm_2024} fine-tuned their \ac{aqg} model BloomLLM with more than 1000 questions, which is still a relatively small amount of data. In the end, this GPT-3.5-based model was preferred over GPT-4 according to \ac{aqg}.
 
-% #todo Das sind alles sehr gute Literaturhinweise - allerdings mit wenig Wertung zu den Ansätzen. Dh: Man hat als Leser hier zwar gute Einstiegungspunkte, aber mehr nicht. Es gäbe einen (geringen) Mehrwert, wenn Sie dazu noch (ein wenig) mehr schreiben würden.
-
-\vp
+\object{Integration of Contextual Knowledge} Several studies \cite{biancini_multiple-choice_2024,blobstein_angel_2023,wang_towards_2022,bhowmick_automating_2023} have injected topic-related contextual information directly into the prompt to avoid hallucinating and give users control over the source of knowledge \cite{biancini_multiple-choice_2024}. 
 
 \subsection{Evaluation Methodologies}
 
@@ -182,6 +180,8 @@ The methods to evaluate \ac{llms} at e.g.\ \ac{aqg} can be divided into several 
    \item \textit{\ac{rouge}}, proposed by \cite{lin_rouge_2004}, calculates recall, which is the ratio of $n$-grams from a ground truth text that are also present in the generated text \cite{guo_survey_2024}.
    \item \textit{\ac{meteor}} \cite{banerjee_meteor_2005} calculates the harmonic mean of precision and recall, so it provides a balanced evaluation \cite{guo_survey_2024}.
 \end{itemize}
+
+% \pagebreak
 
 % -------------------------------------------------------------------------
 
