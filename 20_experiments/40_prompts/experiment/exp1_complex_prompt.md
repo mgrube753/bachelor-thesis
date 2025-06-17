@@ -18,7 +18,7 @@ Frage: Hier den Frageninhalt einfügen
 Antwort: ~Hier die Antwort einfügen
 """
 
-Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei eine oder mehrere Antworten durch ein vorangestelltes korrekt markiert werden und an beliebiger Position stehen können:
+Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei eine oder mehrere Antworten durch ein vorangestelltes "~" korrekt markiert werden und an beliebiger Position stehen können:
 
 """
 Frage: Hier den Frageninhalt einfügen
