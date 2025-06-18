@@ -1,0 +1,5 @@
+```
+Frage: Welche Problemstellung im Netzwerkbetrieb wird durch die Synchronisationsfunktion des Session Layers (Schicht 5) primär adressiert, und wie unterscheidet sich dieser Lösungsansatz konzeptionell von den anderen Kernaufgaben dieser Schicht?
+
+Antwort: ~Die Synchronisationsfunktion des Session Layers adressiert primär das Problem der Unterbrechung bei der Übertragung großer Datenmengen, indem sie Zwischenpunkte (Checkpoints) setzt, an denen eine Übertragung nach einem Abbruch wieder aufgenommen werden kann, statt von vorne beginnen zu müssen. Konzeptionell unterscheidet sich dieser Ansatz von den anderen Kernaufgaben dadurch, dass die Sitzungsverwaltung den grundlegenden Kommunikationsrahmen etabliert, während die Bündelung zusammengehörige Transaktionen gruppiert. Die Synchronisation hingegen fokussiert sich auf die Robustheit und Wiederherstellbarkeit innerhalb einer bestehenden Sitzung.
+```

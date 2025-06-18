@@ -1,3 +1,0 @@
-Frage: Welcher spezifische Teil der Sicherungsschicht regelt bei Broadcast-Netzwerken den Zugriff auf das gemeinsame Übertragungsmedium? Benenne diesen Sub-Layer exakt.  
-
-Antwort: ~Medium Access Control Sublayer

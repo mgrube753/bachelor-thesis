@@ -1,3 +1,0 @@
-Frage: Benennen Sie das spezielle Sublayer der Sicherungsschicht (Data Link Layer), das sich in Broadcast-Netzen mit der Kontrolle des Zugriffs auf den gemeinsamen Übertragungskanal befasst.
-
-Antwort: ~Medium Access Control (MAC) Sublayer

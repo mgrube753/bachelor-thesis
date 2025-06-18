@@ -1,0 +1,3 @@
+Frage: Welche Strategien werden im Data Link Layer zur Lösung des Problems der Flusskontrolle eingesetzt, wenn der Sender für den Empfänger zu schnell sendet?
+
+Korrekte Antwort: Die Strategien im Data Link Layer zur Flusskontrolle umfassen: 1) Verwendung von Zwischenpuffern, um empfangene Daten zwischenzuspeichern, 2) Herunterregeln der Gegenseite durch explizite Aufforderung, langsamer zu senden, und 3) Verzögerung von Bestätigungen, um implizit einen langsameren Datenfluss zu bewirken.

@@ -1,0 +1,8 @@
+**Korrekte Antwort: D**
+
+Welche der folgenden Aussagen zur Transport-Schicht (Layer 4) des ISO-OSI-Modells ist basierend auf dem gegebenen Text *falsch*?
+
+A) Eine Kernaufgabe der Transport-Schicht ist die "Identifizierung" mittels geräte-spezifischer Kennungen.
+B) Die Transport-Schicht erbringt einen Speicherdienst, der unabhängig vom jeweiligen Teilnehmer ist.
+C) Beim Umgang mit "Datenstau" ignoriert die Transport-Schicht die Teilnehmer-Charakteristik.
+D) Die Transport-Schicht garantiert einen fehlerfreien Speicherdienst hinsichtlich der "Dienstquantität".

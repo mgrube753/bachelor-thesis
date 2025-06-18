@@ -1,0 +1,9 @@
+```
+Frage: Welche Aussage reflektiert am präzisesten den Zusammenhang zwischen den drei Kernaufgaben des Network Layers im ISO-OSI-Modell bei der Überbrückung heterogener Netzwerke?
+
+Antwortmöglichkeiten:
+- Die Adressierung allein ermöglicht bereits die Kommunikation zwischen verschiedenen Netzwerken, während Routing und Flusssteuerung nur optimierende Funktionen darstellen.
+- Routing-Protokolle lösen alle Adressierungsprobleme automatisch, weshalb die Flusssteuerung der kritischste Aspekt für die Netzwerkperformanz ist.
+- ~Die drei Kernaufgaben ergänzen sich funktional: Die netzwerkübergreifende Adressierung identifiziert die Endpunkte, das Routing bestimmt den Pfad zwischen nicht direkt verbundenen Knoten, und die Flusssteuerung verhindert Überlastungen sowohl zwischen benachbarten Knoten als auch end-to-end.
+- Die Node-to-Node Flusssteuerung ist der Adressierung hierarchisch übergeordnet, da ohne sie keine Pakete korrekt geroutet werden können, unabhängig von der verwendeten Layer 2 Technologie.
+```

@@ -111,7 +111,7 @@ def process_experiment(exp_name):
 
     model = load_model()
     clients = init_clients()
-    csv_path = os.path.join(EVAL_PATH, "csv_files", "auto", f"{exp_name}.csv")
+    csv_path = os.path.join(EVAL_PATH, "csv_files", "quantitative", f"{exp_name}.csv")
     df = pd.read_csv(csv_path)
 
     questions = []

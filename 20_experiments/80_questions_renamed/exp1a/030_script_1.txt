@@ -1,0 +1,9 @@
+```
+Frage: Wenn in einem Netzwerk vermehrt Datenübertragungsfehler auftreten, jedoch die höheren Protokollschichten scheinbar normal funktionieren, welche der folgenden Situationen deutet am stärksten auf ein Problem spezifisch in der Physical Layer hin?
+
+Antwortmöglichkeiten:
+- Daten werden korrekt gesendet, erreichen aber nie den Empfänger
+- Die Datenübertragung erfolgt mit konstant niedriger Geschwindigkeit trotz geringer Netzauslastung
+- ~Die empfangenen Signale weisen Verzerrungen auf, sodass logische 1-Werte gelegentlich als 0-Werte interpretiert werden
+- Alle Pakete kommen an, aber mit erheblicher Verzögerung
+```

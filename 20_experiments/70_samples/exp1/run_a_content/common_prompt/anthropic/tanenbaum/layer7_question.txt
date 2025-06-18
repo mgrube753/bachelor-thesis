@@ -1,0 +1,8 @@
+FRAGE: Welches Protokoll wird im Text als Grundlage für das World Wide Web beschrieben?
+
+RICHTIGE ANTWORT: HTTP (HyperText Transfer Protocol)
+
+WEITERE ANTWORTMÖGLICHKEITEN:
+- FTP (File Transfer Protocol)
+- SMTP (Simple Mail Transfer Protocol)
+- DNS (Domain Name System)

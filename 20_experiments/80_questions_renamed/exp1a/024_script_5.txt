@@ -1,0 +1,8 @@
+[Korrekte Antwort: D]
+
+Frage: Basierend auf der gegebenen Beschreibung, welche der folgenden Aufgaben zählt *nicht* zu den Kernaufgaben des Session Layers (Schicht 5) im ISO-OSI-Modell?
+
+A) Das Aufbauen, Verwalten, Zurückweisen und Beenden von Sitzungen.
+B) Das Setzen von Zwischenpunkten zur Synchronisation.
+C) Die Gruppierung zusammengehöriger Transaktionen (Bündelung).
+D) Die Adressierung und Wegewahl von Datenpaketen durch das Netzwerk.

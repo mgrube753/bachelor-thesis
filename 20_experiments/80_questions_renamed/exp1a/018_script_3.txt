@@ -1,0 +1,2 @@
+Korrekte Antwort: Routing  
+Frage: Welche der drei Kernaufgaben des Network Layer 3 des ISO-OSI-Modells bezeichnet die Auswahl der vermittelnden Zwischenknoten zur Kommunikation nicht direkt verbundener Knoten?

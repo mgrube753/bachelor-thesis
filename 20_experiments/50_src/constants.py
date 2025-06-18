@@ -9,7 +9,7 @@ EXP1_PATH = os.path.join(EXPERIMENTS_BASE_PATH, "10_exp1")
 EXP2_PATH = os.path.join(EXPERIMENTS_BASE_PATH, "20_exp2")
 
 LLM_MODEL_IDS = {
-    "google": "gemini-2.5-flash-preview-05-20",
+    "google": "gemini-2.5-flash",
     "anthropic": "claude-3-7-sonnet-20250219",
     "openai": "o3",
 }

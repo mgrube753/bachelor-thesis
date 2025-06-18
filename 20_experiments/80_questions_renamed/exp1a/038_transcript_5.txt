@@ -1,0 +1,7 @@
+Frage: Welcher der folgenden Vorgänge illustriert die Synchronisationsfunktion des Session Layers (Layer 5) am treffendsten im Kontext einer umfangreichen Dateiübertragung?
+
+Antwortmöglichkeiten:
+- ~Setzen von Wiederaufnahmepunkten, die es erlauben, eine unterbrochene Dateiübertragung exakt an der letzten bestätigten Marke fortzusetzen
+- Verschlüsselung sämtlicher Nutzdaten, um deren Vertraulichkeit während des Transports zu gewährleisten
+- Ermittlung des schnellsten Übertragungswegs durch das Netzwerk, um Latenzen zu minimieren
+- Aufteilen großer Pakete in kleinere Segmente, damit sie in die maximale Übertragungseinheit (MTU) passen

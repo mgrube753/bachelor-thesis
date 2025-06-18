@@ -1,5 +1,11 @@
 from api_config import init_clients
-from exp import run_exp_1a, run_exp_1b, run_exp_2a, run_exp_2b, run_exp_2c
+from question_generation import (
+    run_exp_1a,
+    run_exp_1b,
+    run_exp_2a,
+    run_exp_2b,
+    run_exp_2c,
+)
 from prompt_utils import get_bloom
 
 
