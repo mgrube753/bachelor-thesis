@@ -50,7 +50,8 @@ The transformer follows an encoder-decoder structure \cite{patil_review_2024,min
    \item \textbf{Encoder-only:} Earlier architectures such as Google BERT \cite{devlin_bert_2019} and its derivates, e.g.\ Huawei ERNIE \cite{zhang_ernie_2019}, Meta RoBERTa \cite{liu_roberta_2019} and Google ALBERT \cite{lan_albert_2020} are solely based on the encoder component. This results a niche for these models being suitable for specific \ac{nlp} tasks focused on comprehension. According to the survey \cite{hou_large_2024}, these models process and encode input into hidden representations to capture word relationships and contextual information. Here, models like BERT observe both the left and right context of the currently focused word.
    
    \item \textbf{Decoder-only}:
-   More current models e.g.\ Meta's LLaMA series \cite{touvron_llama_2023}, OpenAI's GPT-1 \cite{radford_improving_2018} to GPT-4 \cite{openai_gpt-4_2024}, and ChatGPT \cite{openai_introducing_2022}, focus on token generation based solely on the preceding tokens \cite{shao_survey_2024}. According to \cite{hou_large_2024}, without the reliance on the encoder, decoder-only transformers can be used for diverse generation tasks, such as code generation and code completion.
+   More current models e.g.\ Meta's LLaMA series \cite{touvron_llama_2023}, OpenAI's GPT-4 \cite{openai_gpt-4_2024} and ChatGPT \cite{openai_introducing_2022}, focus on token generation based solely on the preceding tokens \cite{shao_survey_2024}. According to \cite{hou_large_2024}, without the reliance on the encoder, decoder-only transformers can be used for diverse generation tasks, such as code generation and code completion.
+   % radford_improving_2018 was deleted GPT-1
 
    \item \textbf{Encoder-Decoder}: Certain architectures such as Google's T5 \cite{raffel_exploring_2023} and their BART model \cite{lewis_bart_2019} integrate both the encoder and decoder components. This leads to hybrid capabilities, combining the understanding of the input and the proper generation of the output. According to \cite{wang_history_2024}, these models are applicable to e.g.\ machine translation, text summarization and question answering. However, the complexity of the dual architecture can lead to demanding training processes and slower inference times.
 \end{itemize}
@@ -168,6 +169,7 @@ To address these challenges and to refine the capabilities of \ac{llms} for spec
 \object{Model Fine-Tuning} A key strategy to adapt general-purpose \ac{llms} to specific tasks by training them on domain-specific data \cite{hou_large_2024}. By this process, models can learn knowledge relevant to a specific context, but traditional full fine-tuning requires vast amounts of data and computational resources \cite{hou_large_2024}. For instance, \cite{duong-trung_bloomllm_2024} fine-tuned their \ac{aqg} model BloomLLM with more than 1000 questions, which is still a relatively small amount of data. In the end, this GPT-3.5-based model was preferred over GPT-4 according to \ac{aqg}.
 
 \object{Integration of Contextual Knowledge} Several studies \cite{biancini_multiple-choice_2024,blobstein_angel_2023,wang_towards_2022,bhowmick_automating_2023} have injected topic-related contextual information directly into the prompt to avoid hallucinating and give users control over the source of knowledge \cite{biancini_multiple-choice_2024}. 
+% #todo maybe remove wang_towards_2022
 
 \subsection{Evaluation Methodologies}
 
@@ -199,12 +201,13 @@ The methods to evaluate \ac{llms} at e.g.\ \ac{aqg} can be divided into several 
 
 \begin{itemize}
    \item For instance, \cite{wang_towards_2022} assessed question quality using \textit{Perplexity} (via GPT-2 \cite{radford_language_2019}), \textit{Diversity} (Distinct-3 score \cite{li_diversity-promoting_2016}), \textit{Toxicity, Grammatical Error,} and the resulting \textit{Acceptability} of a question. \cite{yang_heuristic_2024} also adopted \textit{Perplexity, Diversity,} and \textit{Toxicity}.
+   % #todo maybe remove wang_towards_2022 but keep yang_heuristic_2024
    \item Additionally, researchers developing new evaluation metrics often compare their approaches against a range of existing ones. For example, \cite{nguyen_reference-based_2024} benchmarked their proposed metric against \textit{BLEU, ROUGE, BERTScore, QAScore} -- predicting answer extractability from the given context via transformers -- \cite{ji_qascoreunsupervised_2022}, Google's \textit{\ac{bleurt}} -- predicting human judgements of text quality -- \cite{sellam_bleurt_2020}, and the also BERT-based \textit{\ac{rquge}} metric by Meta -- comparing predicted and gold answer spans -- \cite{mohammadshahi_rquge_2023}.
 \end{itemize}
 
 % -------------------------------------------------------------------------
 
-\object{Knowledge Graphs} The authors \cite{luo_systematic_2023} presented a framework leveraging knowledge graphs with facts to systematically assess the factual knowledge of LLMs. Frameworks like this can be used to generate questions and their expected answers from given knowledge graph triplets -- such as \texttt{<subject, relation label, object>} -- to evaluate the \ac{llm}'s accuracy.
+% \object{Knowledge Graphs} The authors \cite{luo_systematic_2023} presented a framework leveraging knowledge graphs with facts to systematically assess the factual knowledge of LLMs. Frameworks like this can be used to generate questions and their expected answers from given knowledge graph triplets -- such as \texttt{<subject, relation label, object>} -- to evaluate the \ac{llm}'s accuracy.
 
 % -------------------------------------------------------------------------
 
@@ -215,11 +218,13 @@ The methods to evaluate \ac{llms} at e.g.\ \ac{aqg} can be divided into several 
    \item Studies such as \cite{steuer_i_2021} and \cite{moore_assessing_2022} adopted this hierarchical scheme and used it for their human question evaluation. For instance, \cite{steuer_i_2021} used it to evaluate their \ac{aqg} system, while \cite{moore_assessing_2022} adopted this scheme to assess the quality of student-generated questions.
    \item Furthermore, the authors in the papers \cite{scaria_how_2024,scaria_automated_2024} used and adapted the evaluation scheme by replacing the criterion \textit{Rephrase} with \textit{Bloom'sLevel}.
    \item  Using \cite{moore_assessing_2022} as a reference, \cite{mi_comparative_2024} proposed another scheme with a maximum of 50 points by covering \textit{Relevance, Clarity, Answerability, Challenging} and \textit{Cognitive Level} as criteria. The latter results in a higher score for questions that are more cognitively demanding, so higher in the Bloom's Taxonomy hierarchy. GPT-4 had most voting agreement with expert ratings in contrast to e.g.\ GPT-3.5 and ERNIE.
-   \item Moreover, \cite{moore_automatic_2024} proposed a novel evaluation toolkit for question usability, called SAQUET. Using the 19-item writing flaw rubric by \cite{tarrant_frequency_2006}, they evaluated the \ac{mcqs}. Based on these criteria, the structural and pedagogical value of the questions was assessed, with SAQUET being slightly more strict at rating than the experts.
+   % \item Moreover, \cite{moore_automatic_2024} proposed a novel evaluation toolkit for question usability, called SAQUET. Using the 19-item writing flaw rubric by \cite{tarrant_frequency_2006}, they evaluated the \ac{mcqs}. Based on these criteria, the structural and pedagogical value of the questions was assessed, with SAQUET being slightly more strict at rating than the experts.
+   % tarrant_frequency_2006 and moore_automatic_2024 removed
 \end{itemize}
 
 % -------------------------------------------------------------------------
 
 \object{LLM as an evaluator} Another approach involves using \ac{llms} themselves as evaluators. For instance, \cite{nguyen_reference-based_2024} introduced NACo, an \ac{llm}-based metric that employs a \ac{cot} strategy to rank the \textit{Naturalness, Complexity} and \textit{Answerability} of generated questions. In contrast to this, \cite{scaria_how_2024} employed Gemini Pro\footnote{\url{https://blog.google/technology/ai/google-gemini-ai/\#performance}, accessed 05/09/2025} to assess \textit{Question Quality} and \textit{Alignment} with Bloom's Taxonomy, revealing discrepancies compared to human evaluators. It is noteworthy that the abilities of \ac{llms} are rapidly evolving, and results from former models, e.g.\ Gemini Pro, might differ with versions nowadays. 
+% #todo maybe skip naco
 
 Other research has also explored using \ac{llms} for tasks like classifying question quality, evaluating answerability, or performing other evaluations based on predefined criteria \cite{moore_assessing_2022,scaria_how_2024,blobstein_angel_2023}. The use of \ac{llms} for evaluation is a promising direction, especially when coupled with human evaluation. Comparing the agreement between the \ac{llm} and the experts can enhance the reliability of the evaluation process.

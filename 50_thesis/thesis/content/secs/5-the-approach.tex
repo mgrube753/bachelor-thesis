@@ -42,6 +42,7 @@ Moreover, the qualitative analysis focused on sampled expert-based and \ac{llm}-
 % #todo experte beschreiben, dozent = Cap, rest sind llms as evaluators
 
 Whether all analysis results are available, the quantitative and qualitative results are processed by means of the \bfhyperref{lst:eval}{eval.py} file and presented in clear tables and plots. These visualizations enable a clear presentation of the results and facilitate the interpretation of the determined data.
+% #todo add sampling (2 questions out of every directory) for llm-based and expert-based evaluation
 
 \object{Implementation Challenges and Solutions}
 Despite the absence of novel technological creations by e.g.\ training, there were some technical challenges that had to be solved. The token limitation of the chosen RoBERTa model required manual shortening of the layer segment texts (if necessary) to ensure a suitable performance of the transformer model for the sentence embeddings. The multilingual processing challenges were tackled by the careful selection of this cross-lingual sentence transformer, which enabled effective handling of both the German lecture materials and the English textbook content.
