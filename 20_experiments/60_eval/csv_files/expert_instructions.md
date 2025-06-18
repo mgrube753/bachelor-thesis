@@ -1,0 +1,80 @@
+# Überblick der Experimente
+
+Dieses Experiment (bestehend aus 1a und 1b) testet die Qualität von automatisiert-generierten Fragen durch diverse Large Language Models und deren Fähigkeit, sich an diverse gegebene Quellinhalte zu halten.
+Als Sonderfall wird zudem im Experiment 1b getestet, ob die Modelle in der Lage sind, Manipulationen im Text zu erkennen, oder ob genau diese straight-forward für die Fragengenerierung genutzt werden.
+
+## Experiment 1a (`exp1a.csv`)
+
+-   **Quelle:** Originalinhalte (TXT) aus drei verschiedenen Quellen zum Thema ISO-OSI-Modell
+-   **Generiert:** Fragen wurden aus folgenden Materialien jeweils erstellt
+-   **Material:**
+    -   `script`: Extrahierte Textauszüge von Prof. Caps Vorlesungs-PDF "Referenzarchitekturen"
+    -   `transcript`: Audio-Text-Fassung dieser Vorlesung, von Doritt Linke bereitgestellt
+    -   `tanenbaum`: Auszüge aus "Computer Networks" von Andrew S. Tanenbaum, bspw. hier: https://csc-knu.github.io/sys-prog/books/Andrew%20S.%20Tanenbaum%20-%20Computer%20Networks.pdf
+
+Die Materialien wurden von mir extrahiert und aufbereitet durch
+
+- Auteilen der Layer in einzelne TXT-Files und
+- gegebenenfalls Kürzung,
+
+sodass sie eine angemessene Länge für die Fragengenerierung haben.
+
+## Experiment 1b (`exp1b.csv`)
+
+-   **Quelle:** Manipulierte Inhalte (TXT)
+-   **Generiert:** Fragen wurden aus absichtlich verfälschten Texten erstellt
+-   **Material:**
+    -   `script (manipulated)`: Bewusst manipulierte Vorlesungstexte
+
+Die Layer-Dateien, aus den Vorlesungsinhalten entnommen, wurden so verändert durch einmaliges LLM-Prompting, sodass sie inhaltlich verfälscht sind, aber dennoch die Struktur des Vorlesungstextes beibehalten.
+
+## Anleitung für Experten
+
+### Schritt 1: Verständnis der Bewertungskriterien
+
+Lesen Sie Subexperiment-spezifischen Rubriken:
+
+-   `exp1a_rubric.md`:
+-   `exp1b_rubric.md`:
+
+### Schritt 2: Verständnis der CSV-Struktur
+
+Die `exp1a.csv` und `exp1b.csv` enthalten:
+
+-   `input_source`: Die Quelle des Textes, aus dem die Frage generiert wurde (z.B. `script`, `transcript`, `tanenbaum`, `script_manipulated`).
+-   `layer`: Der jeweilige Schichttext, aus der die Frage generiert wurde.
+-   Die 5 Kategorien zur Bewertung von 0-10
+
+Anhand der CSV-Dateien können Sie die Fragen und deren Quellen nachvollziehen, um diese Zeile für Zeile zu bewerten.
+Deswegen sind die Dateien der einzelnen Fragen nummeriert, mit der `input_source` und der `layer`-Nummer versehen, um die Zuordnung zu erleichtern.
+Wenn Sie Frage $n$ bewerten, muss das Ergebnis in Zeile $n+1$ der CSV-Datei eingetragen werden, da die erste Zeile den Header enthält, usw. für die weiteren Fragen.
+
+### Schritt 3: Bewertung von Experiment 1a
+
+1. Öffnen Sie `exp1a.csv`.
+2. Für jede Zeile:
+    - Schauen Sie sich die entsprechende Frage in `questions/exp1a/` an.
+    - Prüfen Sie den zur Fragengenerierung genutzten Quelltext in `source/[input_source]/layer[X].txt`.
+    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1a_rubric.md`
+
+### Schritt 4: Bewertung von Experiment 1b
+
+1. Öffnen Sie `exp1b.csv`.
+2. Für jede Zeile mit `script_manipulated`:
+    - Schauen Sie sich die Frage in `questions/exp1b/` an.
+    - Vergleichen Sie mit dem manipulierten Text in `source/script_manipulated/layer[X].txt`.
+    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1b_rubric.md`, wobei die `Correctness`-Bewertung für dieses Subexperiment das Hauptaugenmerk ist
+
+### Schritt 5: CSV-Dokumentation
+
+Tragen Sie Ihre Bewertungen (0-10) in die jeweiligen CSV-Spalten, basierend auf der jeweiligen Bewertungsrubrik, ein:
+
+-   `relevance`
+-   `clarity`
+-   `answerability`
+-   `challenging`
+-   `correctness`
+
+## Dankbarkeit für Ihre Unterstützung
+
+Vielen Dank, dass Sie sich die Zeit nehmen, die Qualität der generierten Fragen meines Experimentes zu bewerten.

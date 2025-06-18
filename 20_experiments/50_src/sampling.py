@@ -6,7 +6,6 @@ import constants
 
 
 def sample_questions(src_path, dest_path, pattern, sample_size=3):
-    """Sample random questions and copy to destination."""
     files = [f for f in os.listdir(src_path) if pattern in f and f.endswith(".txt")]
     if len(files) < sample_size:
         print(f"[WARNING] Only {len(files)} questions available in {src_path}")
@@ -22,7 +21,6 @@ def sample_questions(src_path, dest_path, pattern, sample_size=3):
 
 
 def walk_and_sample(base_path, sample_base, exp_name, pattern, sample_size=3):
-    """Walk through directories and sample questions for each condition."""
     print(f"[INFO] Sampling {exp_name} questions ({sample_size} per condition)...")
     for root, _, files in os.walk(base_path):
         if any(pattern in f and f.endswith(".txt") for f in files):
@@ -34,7 +32,6 @@ def walk_and_sample(base_path, sample_base, exp_name, pattern, sample_size=3):
 
 
 def parse_file_path(parts):
-    """Parse file path parts into record metadata."""
     runs_map = {"run_a_type": "exp2a", "run_b_bloom": "exp2b", "run_c_both": "exp2c"}
 
     if parts[0] == "exp1":
@@ -62,7 +59,6 @@ def parse_file_path(parts):
 
 
 def generate_expert_csvs(sample_base, csv_path):
-    """Generate CSV files for expert evaluation from sampled files."""
     print("\n[INFO] Generating CSV files for expert evaluation from samples...")
 
     records = []
@@ -84,14 +80,12 @@ def generate_expert_csvs(sample_base, csv_path):
 
     df = pd.DataFrame(records)
 
-    # Save temporary CSVs for renaming process
     for exp_name, group in df.groupby("exp_name"):
         group.to_csv(os.path.join(csv_path, f"{exp_name}.csv"), index=False)
         print(
             f"  - Generated {os.path.relpath(os.path.join(csv_path, f'{exp_name}.csv'), constants.EXPERIMENTS_BASE_PATH)}"
         )
 
-    # Create expert evaluation CSVs
     # Exp1: Save to expert_1 through expert_5 folders
     exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b"])]
     for exp_name, group in exp1_data.groupby("exp_name"):
@@ -116,7 +110,6 @@ def generate_expert_csvs(sample_base, csv_path):
         output_df = group[["llm"]].copy()
         output_df["input_source"] = "tanenbaum"
 
-        # Add experiment-specific columns
         if exp_name == "exp2a" and "question_id" in group.columns:
             output_df["question_id"] = group["question_id"].astype(int)
         elif exp_name in ["exp2b", "exp2c"] and "bloom_original" in group.columns:
@@ -124,7 +117,6 @@ def generate_expert_csvs(sample_base, csv_path):
 
         output_df["layer"] = group["layer"]
 
-        # Add evaluation columns
         for col in [
             "relevance",
             "clarity",
@@ -142,7 +134,6 @@ def generate_expert_csvs(sample_base, csv_path):
 
 
 def find_file(samples, exp, row):
-    """Find the corresponding sample file for a CSV row."""
     if exp.startswith("exp1"):
         run = "run_a_content" if exp == "exp1a" else "run_b_error"
         source = row["input_source"].replace("_manipulated", "")
@@ -166,7 +157,7 @@ def find_file(samples, exp, row):
             elif exp == "exp2b":
                 dir_path = os.path.join(samples, "exp2", run, llm)
                 filename = f"question_{int(row['bloom_original'])}.txt"
-            else:  # exp2c
+            else:
                 qtype = row["question_type"].lower().replace("-", "_")
                 dir_path = os.path.join(samples, "exp2", run, llm, qtype)
                 filename = f"question_{int(row['bloom_original'])}.txt"
@@ -178,7 +169,6 @@ def find_file(samples, exp, row):
 
 
 def get_source_type(exp, row):
-    """Get source type for filename generation."""
     if exp.startswith("exp1"):
         src = row.get("input_source", "")
         if "manipulated" in src or exp == "exp1b":
@@ -194,7 +184,6 @@ def get_source_type(exp, row):
 
 
 def rename_samples(samples, csv_path, output_path):
-    """Rename sampled files for manual inspection."""
     print("\n[INFO] Renaming samples for manual inspection...")
 
     for prefix in ["exp1", "exp2"]:
@@ -204,7 +193,7 @@ def rename_samples(samples, csv_path, output_path):
             if f.startswith(prefix) and f.endswith(".csv")
         ]
         for csv in sorted(csvs):
-            count = 1  # Reset counter for each experiment
+            count = 1
             exp = csv.replace(".csv", "")
             df = pd.read_csv(os.path.join(csv_path, csv))
             exp_dir = os.path.join(output_path, exp)
@@ -228,7 +217,6 @@ def main():
     csv_path = os.path.join(base, "60_eval", "csv_files")
     output_path = os.path.join(base, "80_questions_renamed")
 
-    # Clean and sample
     shutil.rmtree(sample_base, ignore_errors=True)
     shutil.rmtree(os.path.join(csv_path, "qualitative"), ignore_errors=True)
     shutil.rmtree(output_path, ignore_errors=True)
@@ -237,7 +225,6 @@ def main():
     walk_and_sample(constants.EXP2_PATH, sample_base, "exp2", "question_", 2)
     print(f"[INFO] Sampling completed. Results: {sample_base}")
 
-    # Generate CSVs and rename samples
     generate_expert_csvs(sample_base, csv_path)
     rename_samples(sample_base, csv_path, output_path)
 
