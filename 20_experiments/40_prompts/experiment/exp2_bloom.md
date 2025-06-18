@@ -13,7 +13,7 @@ Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 
 Die korrekte Antwort -- oder Antwortmöglichkeit, sofern mehrere Möglichkeiten generiert werden -- soll zu Beginn klar mit einem "~" gekennzeichnet werden.
 
-Wenn eine Antwortmöglichkeit generiert wird, soll das Antwortformat somit wie folgt aussehen:
+Wenn eine Antwortmöglichkeit generiert wird, soll das Antwortformat somit wie folgt, zwischen den folgenden Docstring-Symbolen, aussehen:
 
 """
 Frage: Hier den Frageninhalt einfügen
@@ -21,18 +21,18 @@ Frage: Hier den Frageninhalt einfügen
 Antwort: ~Hier die Antwort einfügen
 """
 
-Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei eine oder mehrere Antworten durch ein vorangestelltes "~" korrekt markiert werden und an beliebiger Position stehen können:
+Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil zwischen den folgenden Docstring-Symbolen, wobei die erste und korrekte Antwort durch ein vorangestelltes "~" korrekt markiert wird und an erster Position steht:
 
 """
 Frage: Hier den Frageninhalt einfügen
 
 Antwortmöglichkeiten:
-- ~Beispielsweise hier die korrekte Antwort einfügen
+- ~Hier die korrekte Antwort einfügen
 - Hier die erste falsche Antwort einfügen
 - Hier die zweite falsche Antwort einfügen
 - Hier die dritte falsche Antwort einfügen
 """
 
-Verwende klaren Fließtext. Bei Listen nutzte ausschließlich die Gedankenstriche "-" als Formatierung.
+Verwende klaren Fließtext. Bei Listen nutzte ausschließlich die Gedankenstriche "-" als Formatierung und vermeide jegliche andere Markdown-basierte Formatierung.
 
 Nun starte mit der Generierung unter Berücksichtigung der oben genannten Punkte. Gib nur die Frage und die zugehörige(n) Antwort(en) aus. Achte final auf Korrektheit in Format und Formulierung.

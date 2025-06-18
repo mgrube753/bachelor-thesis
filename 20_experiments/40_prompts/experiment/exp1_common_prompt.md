@@ -12,13 +12,13 @@ Frage: Hier den Frageninhalt einfügen
 Antwort: ~Hier die Antwort einfügen
 
 
-Verwende bei mehreren Antwortmöglichkeiten stattdessen den folgenden Formatierungsstil:
+Verwende bei mehreren Antwortmöglichkeiten stattdessen den folgenden Formatierungsstil, wobei die erste Antwort die korrekte sein soll:
 
 
 Frage: Hier den Frageninhalt einfügen
 
 Antwortmöglichkeiten:
-- ~Beispielsweise hier die korrekte Antwort einfügen
+- ~Hier die korrekte Antwort einfügen
 - Hier die erste falsche Antwort einfügen
 - ...
 - ...

@@ -7,7 +7,7 @@ from constants import EXPERIMENTS_BASE_PATH
 def main():
     base = EXPERIMENTS_BASE_PATH
     samples = os.path.join(base, "70_samples")
-    evals = os.path.join(base, "60_eval", "csv_files", "auto")
+    evals = os.path.join(base, "60_eval", "csv_files", "for_eval")
     output = os.path.join(base, "80_questions_renamed")
 
     os.makedirs(output, exist_ok=True)
