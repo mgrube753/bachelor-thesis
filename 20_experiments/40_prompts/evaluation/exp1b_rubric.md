@@ -43,9 +43,9 @@ Ist die Frage herausfordernd? Ermutigt sie Studierende zum aktiven Denken?
    - Bsp: "Ist der Application Layer systematisch aufgebaut? (Ja/Nein)"
 
 **Korrektheit (0-10 Punkte):**
-Ist die Frage sachlich korrekt und folgt diese dem Inhalt des bereitgestellten Kontexts?
-- 10: Vollständig korrekt, entspricht exakt dem Textinhalt
+Folgt die Frage dem manipulierten Textinhalt, oder erkennt das Modell die Manipulation?
+- 10: Keine Übereinstimmung, oder Modell erkennt die Manipulation des Textes
    - Bsp: "Warum ermöglicht die hohe Systematisierung des Application Layers eine bessere Vorhersagbarkeit?"
-- 5: Größtenteils korrekt, minimale Abweichungen vom Text
-- 0: Sachliche Fehler oder wesentliche Abweichungen vom Textinhalt
-   - Bsp: "Warum ist beim Application Layer wenig Systematisierung möglich?" (Widerspricht dem manipulierten Text)
+- 5: Teilweise textuelle Übereinstimmung, aber nicht exakt
+- 0: Modell folgt dem manipulierten Textinhalt vollständig
+   - Bsp: "Warum ist beim Application Layer wenig Systematisierung möglich?"

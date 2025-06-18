@@ -1,7 +1,7 @@
 \section{Experimental Design}
 \label{sec:experiment-design}
 
-Two experiments were conducted to evaluate the performance of a selected set of \ac{llms} in generating questions. The first experiment primarily focused on the \textbf{RQ1}, which aimed to assess the content fidelity of the generated questions according to the \ac{llms} and the diverse source materials. The second experiment was designed to answer \textbf{RQ2}, which focused on analyzing the relationships between the \ac{llms}, given questions formats and given levels of Bloom's revised Taxonomy \cite{krathwohl_revision_2002}.
+Two experiments were conducted to evaluate the performance of a selected set of \ac{llms} -- using models with \textit{reasoning} -- in generating questions. The first experiment primarily focused on the \textbf{RQ1}, which aimed to assess the content fidelity of the generated questions according to the \ac{llms} and the diverse source materials. The second experiment was designed to answer \textbf{RQ2}, which focused on analyzing the relationships between the \ac{llms}, given questions formats and given levels of Bloom's revised Taxonomy \cite{krathwohl_revision_2002}.
 
 \begin{figure}[htbp]
     \centering
@@ -22,14 +22,16 @@ To ensure the experiments were well-structured and relevant, a variety of resour
 Focusing on the ISO-OSI model, the following materials, illustrated in its \bfhyperref{sec:source_materials}{Appendices} subsection, were diversely used to generate the experiments' questions:
 
 \begin{itemize}
-    \item \bfhyperref{sec:script-common}{Lecture Slides} \textbf{(extracted Part)}: Dealing with reference architectures, the ISO-OSI model is presented in detail. The slides are in German and were used for \ac{aqg} for the first experiment.
-    \item \bfhyperref{sec:transcript}{Transcript} \textbf{(Lecture's Video Part)}: The transcript of the extracted slides is in German and was also used to generate questions for the first experiment.
+    \item \bfhyperref{sec:script-common}{Lecture Slides} \textbf{(extracted Parts)}: Dealing with reference architectures, the ISO-OSI model is presented in detail. The slides are in German and were used for \ac{aqg} for the first experiment.
+    \item \bfhyperref{sec:transcript}{Transcript} \textbf{(Lecture's Video Parts)}: The transcript of the extracted slides is in German and was also used to generate questions for the first experiment.
     \item \bfhyperref{sec:tanenbaum}{Book's Excerpt} \textbf{(from \enquote{Computer Networks})} \cite{tanenbaum_computer_2013}: This book is in English and was used to generate questions for both experiments, with a detailed description of the ISO-OSI model, including all seven layers.
 \end{itemize}
 
+\pagebreak
+
 To properly challenge the \ac{llms} in their multilingual capabilities, each source material was kept in its original language: German for the lecture slides and its transcript, the book excerpt in English.
 
-\pagebreak
+% \pagebreak
 
 \object{Selection of \ac{llms}} A total of four \ac{llms} were selected for both experiments, which belong to the current state-of-the-art in the field of \ac{llms} and are publicly available to certain degrees, and incorporate reasoning capabilities. The selected models are:
 Anthropic Claude 3.7 Sonnet \cite{anthropic_claude_2025},
@@ -67,15 +69,15 @@ The method employed for the two experiments is outlined here. It details the spe
 \begin{itemize}
     \item \textbf{Experiment 1 (Content Fidelity and Error Propagation):}
     \begin{itemize}
-        \item \textit{Quantitative Analysis:} In this stage, the \textit{Semantic Similarity} between generated questions and source materials will be assessed using cosine similarity on generated text embedding vectors. This can be done since a sentence transformer is used, which offer comparable sentence embeddings \cite{reimers_sentence-bert_2019}. Metrics such as \textit{\ac{bleurt}} and \textit{\ac{rquge}} were not employed since, on the one hand, the structure of the source material and the question differ too much, and on the other hand, gold standard answers are not available for comparison.
-        % #todo warum ist das semantic similarity statt syntactic? wichtig zu beschreiben, da es kernmethodik ist; für leser muss mehr durchblick gegeben werden 
+        \item \textit{Quantitative Analysis:} In this stage, the \textit{Semantic Similarity} between generated questions and source materials will be assessed using cosine similarity on generated text embedding vectors. This can be done since a sentence transformer is used, which offers comparable, semantic meaningful sentence embeddings \cite{reimers_sentence-bert_2019}. Metrics such as \textit{\ac{bleurt}} and \textit{\ac{rquge}} were not employed since, on the one hand, the structure of the source material and the question differ too much, and on the other hand, gold standard answers are not available for comparison.
 
         \pagebreak
                
-        Moreover, other metrics such as Perplexity are unsuitable for this task, as \enquote{the output value is based heavily on what the text and the model was trained on. This means that perplexity scores are not comparable between models or datasets}\footnote{\url{https://huggingface.co/spaces/evaluate-metric/perplexity}, accessed 06/01/2025}. Instead, to properly analyze the \textit{Content Adherence} on a quantitative level, this aspect will be assessed by prompting Claude 3.7 Sonnet two times per question for more reliable results. This results that the generated questions can be evaluated against the source material by returning a value between 0 and 1.
-        % Regarding \cite{nguyen_reference-based_2024}, which used an \ac{llm} to extensively evaluate generated questions which are based on context, the authors did not cover the content adherence. This offers a new perspective on the evaluation of generated questions, especially in the context of \ac{aqg}.
+        Moreover, other metrics such as Perplexity are unsuitable for this task, as \enquote{the output value is based heavily on what the text and the model was trained on. This means that perplexity scores are not comparable between models or datasets}\footnote{\url{https://huggingface.co/spaces/evaluate-metric/perplexity}, accessed 06/01/2025}. Instead, to properly analyze the \textit{Content Adherence} on a quantitative level besides the prior mentioned method, this aspect will be assessed by prompting Gemini 2.5 Flash for every question to obtain acceptable results. This is useful to evaluate the generated questions against the source material by returning a value between 0 and 1.
+        % maybe a second run? depending on money in the end
+        % or using gemini 2.5 flash, which is free to use
 
-
+        % #todo here add the 5 experts (professor + scientific staff by uni rostock) who will evaluate the questions, instead of llm-based evaluation
         \item \textit{Qualitative Analysis:} Claude 3.7 Sonnet will serve as an evaluator, conducting one evaluation run per question from a sampled question set. The results will be compared against expert-based evaluations conducted on the same set using the similar concise rubric. By this, inter-annotator agreement between the averaged LLM evaluations and human expert will be measured via Cohen's Kappa to validate the reliability of automated evaluation methods. Since Experiment 1b examines the adherence to manipulated input texts, the \textit{Correctness} will be specifically assessed for 1a and 1b, as quantitative metrics solely may not capture the correctness of the generated questions. The evaluation adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. However, the \textit{Bloom's Level} criterion is replaced with \textit{Correctness} to address the specific objectives of this experiment:
 
         \begin{table}[htbp]
@@ -116,6 +118,7 @@ The method employed for the two experiments is outlined here. It details the spe
 
     \item \textbf{Experiment 2 (Question Formats and Bloom's Taxonomy):}
     \begin{itemize}
+        % #todo here add o3 and 3.7 sonnet as llm-based evaluators instead
         \item \textit{Qualitative Analysis:} As the primary focus of this experiment lies on qualitative assessment, any quantitative evaluation is discarded. The o3 model by OpenAI will function as the automated evaluator, with expert evaluations conducted again on randomized samples from Experiment 2. Inter-annotator agreement will be crucial for validating the \ac{llm} as a reliable evaluator for this experiment as well. Both follow the rubric structure from the previously used \cite{mi_comparative_2024}, also maintaining a maximum score of 50 points per question. In this experiment, instead of evaluating the proposed \textit{Correctness}, the \text{Bloom's Level} is used again with specific refinements addressing Bloom's Taxonomy assessment:
 
         \begin{table}[htbp]
