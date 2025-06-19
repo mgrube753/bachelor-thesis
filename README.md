@@ -22,5 +22,5 @@ Where to get the keys:
 -   [ ] Refine:
       - Related Work
       - Implementation
--   [ ] Optimize inter-annotator agreement calculation for the sampled questions between llms and expert
+-   [ ] Optimize inter-annotator agreement calculation for the sampled questions between llms/experts
 -   [ ] Create eval.py for pandas/matplotlib evaluation based on the csv files created by the analysis*.py scripts & expert eval
