@@ -119,9 +119,95 @@ Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the 
 \subsection{Question Generation Research}
 \label{sec:question-generation-research}
 
-\ac{llms} enable the automation of the time-consuming and demanding procedure of question generation \cite{vu_chatgpt-based_2024}. It has been communicated by the authors \cite{naveed_comprehensive_2024}, that the integration of such models into educational settings offer an opportunity to improve the learning experience, support teachers and encourage the development of educational content. The utilization of \ac{llms} has the potential to assist educators in the creation of diverse and inclusive materials with respect to education. This results in freeing up time for educators to focus on teaching and interacting with students.
+\ac{llms} enable the automation of the time-consuming and demanding procedure of question generation \cite{vu_chatgpt-based_2024}. It has been communicated by \cite{naveed_comprehensive_2024}, that the integration of such models into educational settings offer an opportunity to improve the learning experience, support teachers and encourage the development of educational content. The utilization of \ac{llms} has the potential to assist educators in the creation of diverse and inclusive materials with respect to education. This results in freeing up time for educators to focus on teaching and interacting with students.
 
 \object{Focusing solely on Prompt Engineering} Several studies have investigated the capability of \ac{llms} to generate educational questions aligned with cognitive levels, primarily by refining and optimizing the prompts given to the models. These approaches aim to guide \ac{llms} towards producing questions that meet specific educational objectives without any modification of the underlying model architecture.
+% 1. Doughty et al. (2024) - "A Comparative Study of AI-Generated 
+% (GPT-4) and Human-crafted MCQs in Programming Education". DOI: 
+% https://
+% doi.org/10.1145/3636243.3636256
+%      - Probleme dargelegt: Manuelle Multiple-Choice Fragengenerierung 
+% ist mit hohem Aufwand verbunden; LLMs wurden für Programmier-MCQs 
+% nicht umfassend erforscht; dazu ist die Evaluation bei MCQ-Systemen 
+% begrenzt
+%      - Wie angegangen: Analyse von GPT-4 bei MCQ-Generierung + 
+% Alignment mit spezifischen Lernzielen; vielerlei Infos wurden GPT-4 
+% mitgegeben, e.g. Bloom-Definitionen
+%      - Limitations: Ansatz mit unplausiblen oder falschen Distraktoren 
+% (die falschen Antwortmöglichkeiten) verbunden; Schwierigkeit der MCQs 
+% wurde nicht mit Mensch-generierten Fragen verglichen; 
+% !!Übereinstimmung der MCQs mit Lerninhalt wurde nicht berücksichtigt; 
+% keine Parameter des Modells angepasst sowie auch keine Verfeinerung 
+% der Fragen durch Feedbackgabe des Nutzers
+
+% 2. Al Faraby et al. (2024) - "Analysis of LLMs for educational 
+% question classification and generation". DOI: https://doi.org/10.1016/
+% j.caeai.2024.100298
+%      - Probleme dargelegt: Qualität und pädagogische Effektivität von 
+% generierten Fragen durch Nutzung von Frameworks wie Bloom's Taxonomie 
+% wurden nicht gründlich evaluiert; LLM-basierte Fragengenerierung, bei 
+% deer educational Objectives eingehalten werden sollen, sind 
+% unerforscht
+%      - Wie angegangen: Bildungsfragen klassifizieren, Bewertung LLM- 
+% basierter Fragengenerierung, sowie Vergleich von LLM-Fragen und Fragen 
+% von menschlichen Experten
+%      - Limitations: !!Halluzination ist ein bestehendes Problem, man 
+% sollte sich in Zukunft auf den Abgleich der Fragen bzgl. des 
+% Eingabetextes fokussieren!!; Geringe Anzahl an Annotatoren; breitere 
+% Range von LLMs wären besser
+
+% 3. Blobstein et al. (2023) - "Angel: A New Generation Tool for 
+% Learning Material based Questions and Answers". URL: 
+% https://gaied.org/ neurips2023/files/9/9_paper.pdf
+%      - Probleme dargelegt: Traditionelle Auto-Fragen-Generierungs- 
+% Methoden können keine Fragen auf kognitiv hohen Niveaus generieren, 
+% schwere Kontrollierbarkeit von Komplexität und Schwierigkeit der 
+% Fragen; frühere Arbeiten fokussierte das Einbeziehen von 
+% vorformulierten Antworten bei der Fragengenerierung
+%      - Wie angegangen: ChatGPT-3.5, um Fragen und Antworten basierend 
+% auf Lernmaterial zu generieren; Qualitätsauswertung auch via GPT-3.5 + 
+% menschliche Evaluation bei pädagogischer Güte/Bloom Niveau
+%      - Limitations: !!Selbst mit diesem Ansatz hat der Evaluator fast 
+% alle Fragen als "Remembering" eingestuft; weitere Arbeit und 
+% menschliche Evaluation sind nötig, um das Ergebnis genauer zu analysieren!!
+
+% 4. Maity et al. (2025) - "Can large language models meet the challenge 
+% of generating school-level questions?". DOI: https://doi.org/10.1016/
+% j.caeai.2025.100370
+%      - Probleme dargelegt: Erstellen eigener Fragen ist zeitaufwendig 
+% und mühsam; !!systematisches Auswerten von generierten Fragen durch 
+% Einbeziehen von Frameworks wie Bloom ist oft nicht in prior Work 
+% integriert!!, oder haben keine umfassenden Methoden einbezogen, um 
+% Vollständigkeit und Relevanz der Fragen zu ermitteln
+%      - Wie angegangen: Diverse LLMs wie GPT-3.5/4 etc. mittels 
+% Zero-Shot und Few-Shot Prompting (+ Schulbüchern) angesteuert, um eine 
+% vollständige Fragemenge zu generieren (welche mit Bloom einhergehen); 
+% 8- shot war laut der human Evaluators dabei besser in Quality und 
+% Bloom Adherence (da ich keine Beispielfragen für das Modell habe, bin 
+% ich ein Konkurrent mit Zero-Shot Prompting) + Leistungsvergleich ggü. 
+% humaner Fragen
+%      - Limitations: (Ich finde: Nur menschliche Auswertung --> 
+% subjektive Auswirkung möglich), sonst wurde nur gesagt, dass man 16- 
+% und 32-Shot Prompting ausprobieren möchte
+
+% 5. Scaria et al. (2024) - "How Good are Modern LLMs in Generating 
+% Relevant and High-Quality Questions at Different Bloom`s Skill Levels 
+% for Indian High School Social Science Curriculum?". URL: https:// 
+% aclanthology.org/2024.bea-1.1/
+%      - Probleme dargelegt: Kreieren von pädagogisch effektiven Fragen, 
+% vor allem bei hohen Skill Levels, ist herausfordernd und 
+% zeitaufwendig; Experten-basierte Auswertung ist von Nöten, um 
+% pädagogische Aspekte bei Maschinen-generierten Fragen zu verstehen (da 
+% automatisierte Metriken eher die linguistischen Aspekte analysieren)
+%      - Wie angegangen: Diverse LLMs angesteuert mit Zero-Shot 
+% Prompting, um relevante, hochqualitative Fragen zu generieren (über 
+% alle Bloom- Ebenen); dabei kam bei den Experten heraus, dass 91% 
+% hochqualitativ/ relevant sind; Modell-basierte Unterschiede in 
+% Bloom-Adherence
+%      - Limitations: Der gleiche Prompt wird immer genutzt, kein Few- 
+% Shot, somit keine Diversität in Prompts; Bias in menschlicher 
+% Auswertung möglich; !!Automatisierte Annotation wäre hierbei 
+% hilfreich, damit man Zeit und Aufwand sparen kann!!
 \begin{itemize}
     % #todo weniger paper, aber mehr inhaltliche Tiefe; z.b. zu den komplexeren bloom levels; leser, die an der forschungsfrage interessiert sind, sollen hier mehr erfahren.
     \item \cite{blobstein_angel_2023} developed Angel, a tool that utilizes GPT-3.5 for generating questions at varying cognitive levels based on Bloom's Taxonomy. The system employs instructional prompts with a few-shot learning approach and textbook content to produce questions categorized by difficulty (easy, medium, hard). The evaluation of the generated questions and their answers was conducted using GPT-3.5 again as an evaluator with a \ac{cot} strategy, focusing on metrics such as \textit{Clarity, Relatedness, Importance,} and \textit{Answerability}. Human evaluation was also performed.
@@ -153,7 +239,7 @@ Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the 
     % What not solved: llms can lack logical factors --> issues in data for calculative exercises; links to other concepts lacking or just vague --> potentially limiting pedagogical effectiveness for deep learning
 \end{itemize}
 
-\object{Focusing solely on \ac{llm} Fine-Tuning} Another avenue of research involves fine-tuning pre-trained \ac{llms} on domain-specific or task-specific data to enhance their question generation capabilities. This approach aims to adapt the models to better understand educational contexts and produce more relevant and accurate questions.
+% \object{Focusing solely on \ac{llm} Fine-Tuning} Another avenue of research involves fine-tuning pre-trained \ac{llms} on domain-specific or task-specific data to enhance their question generation capabilities. This approach aims to adapt the models to better understand educational contexts and produce more relevant and accurate questions.
 % \begin{itemize}
     % \item \cite{duong-trung_bloomllm_2024} introduced BloomLLM, a fine-tuned GPT-3.5-turbo model, which was developed to generate educational questions with respect to Bloom's Taxonomy via descriptive zero-shot prompting. The fine-tuning was based on manually annotated questions considering the cognitive levels of Bloom's Taxonomy. 46 master's students were asked to tell which questions were preferred, and the results show that BloomLLM's questions have a higher relevance across all levels of Bloom's Taxonomy in contrast to the successor GPT-4.
     % Gaps: foundational llms struggle with bloom alignment for personalized qgen in higher education; lack of interdependence between cognitive levels, failing at semantic connections; poor apply level performance; unrealistic higher-level questions
@@ -187,7 +273,7 @@ Visible in Table \bfref{tab:llm_releases}, the current state-of-the-art for the 
     % How trying to solve: personalized knowledge paths from a knowledge graph with RAG to guide GLM-4 in generating controllable, heuristic question sequences for self-learning --> addressing hallucination
     % What not solved: optimizing response time, integrating approach across multiple disciplines; incorporating more student learning behaviors beyond test records and enhancing language features; refining the evaluation mechanism beyond the current metrics
 
-    % \item \cite{hang_mcqgen_2024} presented MCQGen, a system that generates \ac{mcqs} for personalized learning by using GPT-4. They employed \ac{rag} and advanced prompting techniques, drawing on an external knowledge base. The approach leveraged the advanced semantic understanding and summarization capabilities of GPT-4. Both human- and \ac{llm}-based evaluators were used to assess the generated questions to provide a comprehensive assessment. Mixed outcomes were observed between e.g.\ LLaMA2 and GPT-3.5 versus human lecturers. While utilizing \ac{cot} prompting with self-refinement, the evaluation focused on \textit{Grammar, Answerability, Diversity, Complexity,} and \textit{Relevance}. Diversity and answerability lacked in both evaluation methods, suggesting that prompt optimization and expanding the knowledge base could address these limitations. 
+    \item \cite{hang_mcqgen_2024} presented MCQGen, a system that generates \ac{mcqs} for personalized learning by using GPT-4. They employed \ac{rag} and advanced prompting techniques, drawing on an external knowledge base. The approach leveraged the advanced semantic understanding and summarization capabilities of GPT-4. Both human- and \ac{llm}-based evaluators were used to assess the generated questions to provide a comprehensive assessment. Mixed outcomes were observed between e.g.\ LLaMA2 and GPT-3.5 versus human lecturers. While utilizing \ac{cot} prompting with self-refinement, the evaluation focused on \textit{Grammar, Answerability, Diversity, Complexity,} and \textit{Relevance}. Diversity and answerability lacked in both evaluation methods, suggesting that prompt optimization and expanding the knowledge base could address these limitations. 
     % Gaps: efficient and effective mcq generation is needed in modern teaching; manual mcqgen is resource-intensive and time-consuming; automated systems depend heavily on model understanding and still return ineffective distractors or even errors
     % How trying to solve: mcqgen with GPT-4, using RAG and advanced prompting (cot, self-refinement) via an external knowledge base (based on instructor and student mcqs) --> automate personalized mcq creation
     % What not solved: diversity and complexity were sometimes limited, possibly due to prompt engineering and the knowledge base; only 1 model (gpt-4), only computer science, only english language
