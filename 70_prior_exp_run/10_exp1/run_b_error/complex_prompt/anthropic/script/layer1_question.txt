@@ -1,0 +1,9 @@
+```
+Frage: Betrachten Sie die im Text beschriebenen Kernaufgaben des Physical Layer 1: Verschlüsselung, Speicherung und Kompression. Inwiefern steht diese Beschreibung im Widerspruch zum standardmäßigen ISO-OSI-Referenzmodell, und welche Aussage trifft am besten zu?
+
+Antwortmöglichkeiten:
+- ~Im klassischen ISO-OSI-Modell ist der Physical Layer (Schicht 1) für die Übertragung von Bitströmen über physische Medien zuständig, während Verschlüsselungsalgorithmen wie AES und RSA typischerweise höheren Schichten (z.B. Presentation Layer oder Application Layer) zugeordnet werden
+- Die Beschreibung stimmt vollständig mit dem standardmäßigen ISO-OSI-Modell überein, da der Physical Layer grundsätzlich für jede Art von Datentransformation zuständig ist
+- Der einzige Widerspruch besteht darin, dass Kompressionsverfahren wie Huffman im ISO-OSI-Modell ausschließlich dem Transport Layer zugeordnet sind
+- Es gibt keinen Widerspruch, da das ISO-OSI-Modell keine klaren Grenzen zwischen den Schichten definiert und Funktionen beliebig zugeordnet werden können
+```

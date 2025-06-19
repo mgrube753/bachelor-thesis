@@ -1,0 +1,7 @@
+Frage: Betrachten Sie die spezifischen Herausforderungen der Data-Link-Layer im ISO/OSI-Modell gemäß dem Text. Welche der folgenden Funktionen stellt ein *ausschließliches* Problem in Broadcast-Netzwerken dar und erfordert daher das spezielle MAC-Sublayer, während es in Point-to-Point-Verbindungen nicht auftritt?
+
+Antwortmöglichkeiten:
+- ~Kontrolle des Zugriffs auf das gemeinsame Übertragungsmedium
+- Sicherstellung der Flusskontrolle zwischen Sender und Empfänger
+- Aufteilung der Eingabedaten in Frames und sequentielle Übertragung
+- Bestätigung korrekt empfangener Frames durch Acknowledgement

@@ -1,0 +1,3 @@
+Korrekte Antwort: Die Begriffe, die in der Anwendung auftreten; die Protokollelemente; und die Information, wie die Anwendung auf Anforderungen reagieren soll.
+
+Welche drei Grundkonzepte müssen laut dem gegebenen Text vom Application Layer (Schicht 7) definiert werden, um die Interaktion einer spezifischen Anwendung zu regeln?

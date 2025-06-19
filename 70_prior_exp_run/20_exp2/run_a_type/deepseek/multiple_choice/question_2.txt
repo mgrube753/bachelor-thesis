@@ -1,0 +1,7 @@
+Frage: Welche besondere Herausforderung in der Sicherungsschicht (Data Link Layer) wird spezifisch durch das MAC-Sublayer (Medium Access Control) adressiert, und in welchem Netzwerktyp tritt diese Herausforderung primär auf?
+
+Antwortmöglichkeiten:
+- ~Kontrolle des Zugriffs auf das gemeinsame Übertragungsmedium in Broadcast-Netzwerken
+- Sicherstellung der zuverlässigen Übertragung durch Framing und Bestätigungen in Punkt-zu-Punkt-Verbindungen
+- Verhinderung der Überlastung eines langsamen Empfängers durch einen schnellen Sender mittels Flusskontrolle
+- Umwandlung der rohen Übertragungsstrecke in eine fehlerfreie Leitung für die Netzwerkschicht

@@ -1,0 +1,9 @@
+```
+Frage: In einem Hochgeschwindigkeitsnetzwerk treten sporadisch Datenverluste auf, obwohl die physische Übertragung (Physical Layer) einwandfrei funktioniert. Ein Systemanalytiker vermutet, dass das Problem auf Ebene des Data Link Layers liegt. Welche zwei der fünf Kernaufgaben des Data Link Layers stehen in diesem Szenario wahrscheinlich in einer direkten Wechselwirkung, die zu den beobachteten Datenverlusten führen könnte?
+
+Antwortmöglichkeiten:
+- ~Flußkontrolle und Fehlerkontrolle
+- Segmentierung und Identifikation
+- Medienzugriff und Segmentierung
+- Identifikation und Medienzugriff
+```

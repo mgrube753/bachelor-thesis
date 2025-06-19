@@ -1,0 +1,7 @@
+Frage: Bei der Übertragung komplexer Datenobjekte zwischen zwei Rechnern müssen folgende Anforderungen umgesetzt werden: 
+1. Umwandlung der Byte-Reihenfolge (Little/Big Endian), 
+2. Konvertierung verschiedener Zeichensätze (ASCII, Unicode, EBCDIC, länderspezifische Sonderzeichen), 
+3. verlustfreie Datenkompression sowie anschließende Verschlüsselung.  
+Auf welcher Ebene des ISO/OSI-Modells müssen diese Funktionen zentral realisiert werden, damit sie unabhängig von Transport- und Netzdetails konsistent wirken?
+
+Antwort: ~Presentation Layer (Layer 6)

@@ -1,0 +1,9 @@
+**Frage:** Welche der folgenden Aufgaben gehört laut dem gegebenen Text *nicht* zu den Hauptfunktionen des Presentation Layers (Schicht 6) des ISO-OSI-Modells?
+
+**Korrekte Antwort:** D
+
+**Antwortmöglichkeiten:**
+A. Konvertierung von Datendarstellungen (z.B. Little und Big Endian).
+B. Bearbeitung von Kompression und Verschlüsselung.
+C. Konvertierung von Zeichendarstellungen (z.B. ASCII, Unicode, EBCDIC).
+D. Routen von Datenpaketen über verschiedene Netzwerke.

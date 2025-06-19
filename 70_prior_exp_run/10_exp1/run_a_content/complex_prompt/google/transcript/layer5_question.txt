@@ -1,0 +1,7 @@
+Frage: Der Session Layer (Layer 5) ist unter anderem für die Synchronisation zuständig, indem er "Zwischenpunkte" setzt, die später genutzt werden können, wie am Beispiel des Übertragens einer großen Datei illustriert. Welche implizite, aber wesentliche Funktionalität wird durch diese Synchronisationsaufgabe des Session Layers maßgeblich unterstützt?
+
+Antwortmöglichkeiten:
+- Es wird eine effiziente Datenkompression vor der Übertragung großer Datenmengen gewährleistet.
+- ~Es ermöglicht die Wiederaufnahme oder den Neustart von Datentransaktionen an definierten Stellen nach einer Unterbrechung oder einem Fehler.
+- Es stellt sicher, dass einzelne Datenpakete einer großen Datei in der korrekten Reihenfolge beim Empfänger ankommen.
+- Es regelt die Vergabe von Prioritäten für den Datenverkehr bei der Übertragung umfangreicher Dateien im Netzwerk.

@@ -1,0 +1,7 @@
+Frage: Der Instruktionstext beschreibt die Rolle von HTTP beim Abruf einer Webseite. Welches der folgenden Merkmale ist basierend auf diesem Text am besten geeignet, HTTP dem Application Layer des ISO/OSI-Modells zuzuordnen?
+
+Antwortmöglichkeiten:
+- ~HTTP definiert den inhaltlichen Dialog (z. B. „Name der angeforderten Seite“) zwischen Browser und Server und stellt somit unmittelbar Funktionen bereit, die der Nutzer benötigt.
+- HTTP verwaltet die Paketvermittlung und bestimmt den Weg der Daten durch das Netz.
+- HTTP übernimmt die Verschlüsselung und Präsentation der Daten, sodass alle Endsysteme Inhalte identisch anzeigen können.
+- HTTP garantiert die zuverlässige Übertragung, indem es verlorene Pakete erkennt und erneut sendet.

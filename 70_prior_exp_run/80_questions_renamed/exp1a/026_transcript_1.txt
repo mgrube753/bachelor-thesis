@@ -1,0 +1,5 @@
+```
+Frage: Welche konzeptionelle Herausforderung entsteht beim Physical Layer speziell durch die Dualität von Lichtübertragung, und welche Implikationen hat dies für die Implementierung aller drei Kernaufgaben dieses Layers in unterschiedlichen Netzwerkumgebungen?
+
+Antwort: ~Die Herausforderung liegt in der Doppelfunktion des Lichts als sowohl medienfrei (direkter Lichtstrahl) als auch mediengebunden (Lichtwellenleiter) übertragbares Signal. Dies erfordert unterschiedliche Ansätze für alle drei Kernaufgaben: Bei der Codierung müssen unterschiedliche Modulations- und Pulsverfahren für Freistrahl- versus Faseroptik verwendet werden; beim Transport müssen die physikalischen Eigenschaften und Störeinflüsse beider Übertragungswege berücksichtigt werden; und bei der Dekodierung werden unterschiedliche Detektions- und Abtastverfahren benötigt, um aus den verschiedenartig transportierten Lichtsignalen wieder korrekte logische Werte zu rekonstruieren.
+```

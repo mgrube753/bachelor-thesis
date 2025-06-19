@@ -1,0 +1,9 @@
+"""
+Frage: Welche Aussage beschreibt am präzisesten die komplexe Beziehung zwischen den Hauptfunktionen der Data Link Layer in Bezug auf Fehlerbehandlung und Datenflusssteuerung?
+
+Antwortmöglichkeiten:
+- ~Die Data Link Layer transformiert eine fehleranfällige Übertragungsstrecke, indem sie Daten in Frames aufteilt, Übertragungsbestätigungen verarbeitet und gleichzeitig einen Regulierungsmechanismus implementiert, um Überlastungen zwischen schnellen Sendern und langsamen Empfängern zu verhindern
+- Die Data Link Layer korrigiert alle auftretenden Übertragungsfehler und setzt beschädigte Datenpakete automatisch zurück, während sie Broadcast-Netzwerke priorisiert
+- Die Data Link Layer dient primär als Puffer zwischen Netzwerk- und Physical Layer, ohne aktive Fehlerkorrektur zu betreiben, konzentriert sich aber auf die Zugangskontrolle bei geteilten Medien
+- Die Data Link Layer vermeidet Übertragungsfehler durch redundante Datenübertragung und eliminiert die Notwendigkeit von Bestätigungsframes zwischen Sender und Empfänger
+"""

@@ -1,0 +1,6 @@
+Frage: Analysieren Sie die drei im Text erwähnten Problemfelder, mit denen die Sicherungsschicht konfrontiert ist (Fehlerbehandlung, Flusskontrolle, Kanalzugriff in Broadcast-Netzen). Erläutern Sie jeweils, welche typischen Mechanismen die Schicht einsetzt, um diese Herausforderungen zu bewältigen, und begründen Sie, weshalb gerade diese Mechanismen geeignet sind.
+
+Antwort: ~
+- Fehlerbehandlung: Durch Aufteilung des Datenstroms in Frames, das Hinzufügen von Prüfsummen und das Verwenden von Bestätigungs- (ACK-) bzw. Wiederholungsrahmen (ARQ) kann die Sicherungsschicht Übertragungsfehler erkennen und korrigieren, sodass der Netzwerk­schicht eine praktisch fehlerfreie Leitung präsentiert wird.
+- Flusskontrolle: Verfahren wie Sliding-Window oder kreditorientierte Protokolle drosseln einen schnellen Sender, indem sie ihm nur dann neue Frames erlauben, wenn der Empfänger freie Pufferkapazität signalisiert; so wird ein langsamer Empfänger nicht „überflutet“.
+- Kanalzugriff in Broadcast-Netzen: Die Medium-Access-Control-Sublayer nutzt Protokolle wie CSMA/CD, CSMA/CA oder Token Passing, um zu koordinieren, welche Station wann senden darf, wodurch Kollisionen minimiert und die gerechte Nutzung des gemeinsamen Mediums sichergestellt wird.

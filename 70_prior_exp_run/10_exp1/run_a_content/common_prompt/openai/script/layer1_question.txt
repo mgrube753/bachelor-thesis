@@ -1,0 +1,7 @@
+Richtige Antwort: A) Codierung
+
+Frage: Welche Kernaufgabe des Physical Layers im ISO-OSI-Modell beschreibt die Abbildung logischer Werte auf physikalische Größen?
+
+A) Codierung  
+B) Transport  
+C) Decodierung

@@ -1,0 +1,9 @@
+"""
+Frage: Identifizieren Sie die Hauptaufgabe der Data Link Layer im ISO-OSI-Modell.
+
+Antwortmöglichkeiten:
+- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
+- Die Bereitstellung von Ende-zu-Ende-Verbindungen zwischen Anwendungen auf verschiedenen Hosts
+- Die Definition von physikalischen Übertragungsmedien und deren elektrischen Eigenschaften
+- Die Übersetzung von IP-Adressen in physische Hardwareadressen
+"""

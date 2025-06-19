@@ -1,0 +1,7 @@
+Frage: Bei der Implementierung der Data Link Layer-Funktionalität in einem Broadcast-Netzwerk stellt sich eine spezifische Herausforderung, die über die Kernaufgaben der Fehlermaskierung und Flusskontrolle hinausgeht. Welches Problem erfordert hier die Einführung einer dedizierten Unterschicht innerhalb der Data Link Layer, wie im Text beschrieben?
+
+Antwortmöglichkeiten:
+- ~Die Kontrolle des Zugriffs auf das gemeinsam genutzte Übertragungsmedium
+- Die Zerlegung der Eingangsdaten in Datenframes für die sequentielle Übertragung
+- Die Sicherstellung der Zuverlässigkeit durch Bestätigungsframes bei zuverlässigem Dienst
+- Die Regulierung der Datenmenge zur Vermeidung der Überlastung langsamer Empfänger

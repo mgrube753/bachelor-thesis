@@ -1,0 +1,9 @@
+"""
+Frage: Welche der folgenden Aussagen beschreibt NICHT eine der Hauptfunktionen oder Herausforderungen der Datenverbindungsschicht (Data Link Layer) gemäß dem Text?
+
+Antwortmöglichkeiten:
+- ~Die direkte Weiterleitung von Datenpaketen zwischen verschiedenen Netzwerken über Router
+- Die Transformation einer Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
+- Die Regulierung des Datenverkehrs, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet
+- Die Kontrolle des Zugriffs auf einen gemeinsam genutzten Kanal in Broadcast-Netzwerken durch die Medium Access Control Sublayer
+"""

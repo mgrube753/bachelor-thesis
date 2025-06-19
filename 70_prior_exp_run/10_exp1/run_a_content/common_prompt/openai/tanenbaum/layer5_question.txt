@@ -1,0 +1,3 @@
+Antwort: Dialogsteuerung (Dialog Control)
+
+Frage: Welche Dienstleistung der Sitzungsschicht sorgt dafür, dass während einer Session festgehalten wird, wer gerade sendeberechtigt ist?

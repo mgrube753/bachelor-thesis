@@ -1,0 +1,12 @@
+Frage: Bewerten Sie kritisch, welche der drei im Text beschriebenen Hauptaufgaben der Sicherungsschicht (Fehlermaskierung, Flusskontrolle, Medienzugriffskontrolle) für die Gesamtfunktionalität von Netzwerken als am kritischsten einzustufen ist. Begründen Sie Ihre Auswahl unter Bezugnahme auf die Konsequenzen, wenn diese Aufgabe nicht zuverlässig implementiert wäre.
+
+Antwort:
+~Die Fehlermaskierung ist als die kritischste Aufgabe einzustufen. Begründung:
+- Sie stellt die grundlegende Datenintegrität sicher. Ohne zuverlässige Fehlererkennung und -maskierung wären höhere Schichten (insbesondere die Vermittlungsschicht) mit korrupten Daten konfrontiert.
+- Dies würde fundamentale Netzwerkfunktionen unmöglich machen:
+  - Korrekte Weiterleitung von Paketen durch die Vermittlungsschicht basiert auf intakten Adressinformationen.
+  - Transportprotokolle (wie TCP) könnten verlorene oder beschädigte Segmente nicht mehr zuverlässig erkennen und korrigieren.
+  - Anwendungen erhielten unbrauchbare Daten.
+- Während Flusskontrolle und Medienzugriffskontrolle für Effizienz und Fairness essenziell sind, ist die Fehlermaskierung die unverzichtbare Voraussetzung dafür, dass überhaupt korrekte Daten ausgetauscht werden können. Ein Netzwerk mit ineffizienter aber funktionierender Flusskontrolle oder Medienzugriff ist grundsätzlich nutzbar; ein Netzwerk ohne zuverlässige Fehlermaskierung liefert hingegen unbrauchbare Ergebnisse.
+
+*(Hinweis: Gut begründete Antworten, die die Flusskontrolle oder Medienzugriffskontrolle als kritischste Aufgabe benennen und deren systemweite Auswirkungen bei Ausfall überzeugend darlegen, wären ebenfalls akzeptabel, solange die Argumentation auf etablierten Kriterien wie Datenintegrität, Systemstabilität oder grundlegender Funktionsfähigkeit des Netzes basiert.)*

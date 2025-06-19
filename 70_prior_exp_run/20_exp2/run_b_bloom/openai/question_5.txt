@@ -1,0 +1,6 @@
+Frage: Beurteilen Sie, ob ein Data-Link-Layer-Protokoll, das vollständig auf Einzel-ACKs verzichtet und stattdessen nur alle 50 übertragenen Frames einen kumulativen Prüfsummenbericht sendet, den im obigen Text beschriebenen Kernaufgaben der Sicherungsschicht (Fehlerfreiheit für höhere Schichten sicherstellen und Überlastung eines langsameren Empfängers verhindern) angemessen nachkommt. Begründen Sie Ihr Urteil anhand klarer, im Text verankerter Kriterien.
+
+Antwort: ~Das vorgeschlagene Protokoll verfehlt wesentliche Anforderungen:  
+- Fehlerkontrolle: Durch das seltene Senden kumulativer Prüfsummen steigt das Zeitfenster, in dem Übertragungsfehler unentdeckt bleiben können; eine unverzügliche Fehlermaskierung, wie sie der Text fordert, ist nicht gewährleistet.  
+- Flusskontrolle: Ohne Einzel-ACKs fehlt dem Sender ein feingranulares Feedback, wann der Empfänger tatsächlich weitere Daten aufnehmen kann. Der Mechanismus verhindert damit nicht zuverlässig, dass ein schneller Sender einen langsamen Empfänger überflutet.  
+In Summe erfüllt das Protokoll die im Text definierten Hauptaufgaben der Sicherungsschicht nur unzureichend und sollte daher abgelehnt oder grundlegend überarbeitet werden.

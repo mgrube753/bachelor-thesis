@@ -1,0 +1,7 @@
+Frage: Welche architektonische Konsequenz ergibt sich aus der im Text beschriebenen Funktionsweise von HTTP und was bedeutet dies für die konzeptionelle Gestaltung anderer Anwendungsprotokolle in der Anwendungsschicht des OSI-Modells?
+
+Antwortmöglichkeiten:
+- ~HTTP implementiert ein Client-Server-Modell, was darauf hindeutet, dass die Anwendungsschicht primär Kommunikationsmuster zwischen Endpunkten definiert, nicht nur Datenformate
+- HTTP ist ein zustandsloses Protokoll, wodurch alle Anwendungsprotokolle in der Anwendungsschicht zwingend zustandslos sein müssen
+- Die Anwendungsschicht ist ausschließlich für die Benutzeroberfläche verantwortlich, nicht für Datenübertragungsmuster
+- HTTP zeigt, dass Anwendungsprotokolle nur Datenaustausch mit Webservern ermöglichen können und nicht für andere Kommunikationsformen geeignet sind

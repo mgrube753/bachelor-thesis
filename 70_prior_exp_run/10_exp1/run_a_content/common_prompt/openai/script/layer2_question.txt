@@ -1,0 +1,2 @@
+Antwort: Fehlerkontrolle  
+Frage: Wie heißt die Kernaufgabe des Data Link Layer im ISO-OSI-Modell, die das Erkennen, Beheben oder Signalisieren von Übertragungsfehlern übernimmt?

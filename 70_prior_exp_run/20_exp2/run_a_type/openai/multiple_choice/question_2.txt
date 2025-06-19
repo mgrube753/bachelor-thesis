@@ -1,0 +1,9 @@
+"""
+Frage: Welche Aussage beschreibt laut Text die wesentliche Art und Weise, wie der Data Link Layer das Network Layer entlastet?
+
+Antwortmöglichkeiten:
+- ~Der Data Link Layer maskiert Übertragungsfehler, sodass das Network Layer einen scheinbar fehlerfreien Kanal erhält.
+- Das Network Layer maskiert Übertragungsfehler, sodass der Data Link Layer sich nur um Flusskontrolle kümmern muss.
+- Der Data Link Layer übernimmt das Routing der Pakete, um das Network Layer von dieser Aufgabe zu befreien.
+- Das Network Layer steuert den Zugriff auf das gemeinsam genutzte Medium, um Kollisionen zu vermeiden.
+"""

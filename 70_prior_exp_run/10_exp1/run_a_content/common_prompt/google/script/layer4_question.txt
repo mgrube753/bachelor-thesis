@@ -1,0 +1,7 @@
+Correct: Dienstqualität
+
+Frage: Welche der folgenden Kernaufgaben des Transport Layer (Schicht 4) des ISO-OSI-Modells ist für die Sicherung von Quality of Service (QoS) mit Garantien für Bandbreite, Latenz, Jitter und Fehlerrate zuständig?
+
+A) Dienstqualität
+B) Adressierung
+C) Flusssteuerung

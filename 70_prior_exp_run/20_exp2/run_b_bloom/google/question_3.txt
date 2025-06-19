@@ -1,0 +1,3 @@
+Frage: Ein sehr schneller Server versucht, Daten über eine Netzwerkverbindung an einen älteren, langsameren Client zu senden. Basierend auf der Beschreibung der Sicherungsschicht (Data Link Layer), welche Maßnahme würde diese Schicht ergreifen, um zu verhindern, dass der schnelle Server den langsamen Client mit Daten überflutet?
+
+Antwort: ~Die Sicherungsschicht würde einen Traffic Regulation Mechanism (Verkehrsregulierungsmechanismus) nutzen, um dem Sender mitzuteilen, wann der Empfänger weitere Daten akzeptieren kann, wodurch eine Überflutung vermieden wird.

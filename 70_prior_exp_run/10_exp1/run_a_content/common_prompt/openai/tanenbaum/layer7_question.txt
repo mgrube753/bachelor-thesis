@@ -1,0 +1,2 @@
+KORREKTE ANTWORT: HTTP  
+Frage: Welches Protokoll bildet die Grundlage des World Wide Web und wird von Browsern verwendet, um Web-Seiten von Servern anzufordern?

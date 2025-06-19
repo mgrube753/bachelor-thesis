@@ -1,0 +1,7 @@
+Frage: Analysieren Sie die im Text genannten Teilfunktionen des Data-Link-Layers und bestimmen Sie jene, die sich speziell auf Broadcast-Netze bezieht, indem sie den Zugriff mehrerer Stationen auf ein gemeinsames Medium in Beziehung setzt, anstatt primär Fehler- oder Flusskontrolle zu leisten.
+
+Antwortmöglichkeiten:
+- ~Implementierung eines Medium Access Control (MAC) Sublayers zur Koordinierung des Kanalzugriffs
+- Einfügen von Acknowledgement-Frames zur Bestätigung des fehlerfreien Empfangs
+- Segmentierung der Nutzdaten in Frames fester Länge
+- Verwendung eines Sliding-Window-Verfahrens zur Anpassung der Senderate an den Empfänger

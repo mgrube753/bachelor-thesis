@@ -1,0 +1,7 @@
+Frage: Basierend auf der im Text beschriebenen Hauptaufgabe der Sicherungsschicht (Data Link Layer), welche übergeordnete Funktion erfüllt sie, um den Transport für höhere Schichten zu optimieren?
+
+Antwortmöglichkeiten:
+- ~Sie wandelt eine fehleranfällige Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung um, indem sie Übertragungsfehler maskiert und Bestätigungsmechanismen implementiert.
+- Sie gewährleistet primär die Zugriffssteuerung auf das gemeinsame Übertragungsmedium in Broadcast-Netzwerken, um Kollisionen zu vermeiden.
+- Sie reguliert hauptsächlich den Datenfluss zwischen Sender und Empfänger, um ein Überfluten langsamer Empfänger zu verhindern.
+- Sie ist verantwortlich für die logische Adressierung und das Routing von Datenpaketen über verschiedene Netzwerke hinweg.

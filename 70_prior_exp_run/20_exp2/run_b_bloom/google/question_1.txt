@@ -1,0 +1,7 @@
+Frage: Welche spezielle Unterschicht des Data Link Layers ist dafür verantwortlich, den Zugriff auf den gemeinsamen Kanal in Broadcast-Netzwerken zu kontrollieren?
+
+Antwortmöglichkeiten:
+- Logical Link Control (LLC) sublayer
+- Network Interface Unit (NIU) sublayer
+- ~Medium Access Control (MAC) sublayer
+- Transmission Control (TC) sublayer

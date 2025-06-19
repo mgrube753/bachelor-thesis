@@ -1,0 +1,9 @@
+"""
+Frage: Welche funktionale Beziehung beschreibt am präzisesten die Komplexität der Datenlink-Schicht in Netzwerken mit unterschiedlichen Übertragungsgeschwindigkeiten?
+
+Antwortmöglichkeiten:
+- ~Die Datenlink-Schicht muss sowohl Fehlererkennungsmechanismen implementieren als auch einen Verkehrsregulierungsmechanismus bereitstellen, um zu verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten
+- Die Datenlink-Schicht ist primär für die Segmentierung von Daten in Frames verantwortlich, während die Kontrolle der Übertragungsgeschwindigkeit ausschließlich durch die Transportschicht erfolgt
+- Die Datenlink-Schicht übernimmt keine Fehlererkennung, sondern leitet fehlerhafte Frames direkt an die darüberliegende Netzwerkschicht weiter
+- Die Hauptaufgabe der Datenlink-Schicht beschränkt sich auf die Medium Access Control bei Broadcast-Netzwerken, während andere Aspekte von höheren Schichten behandelt werden
+"""

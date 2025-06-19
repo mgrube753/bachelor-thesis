@@ -1,0 +1,7 @@
+Frage: Gemäß dem vorliegenden Text über die Data Link Layer, welche der folgenden Aussagen fasst die *zusätzlichen* Herausforderungen und deren Lösungsansätze zusammen, die über die reine Maskierung von Übertragungsfehlern hinausgehen?
+
+Antwortmöglichkeiten:
+- Die Data Link Layer adressiert die Herausforderung der Paketfragmentierung zur effizienteren Übertragung und nutzt dafür Mechanismen der Pfadfindung über mehrere Hops.
+- Die Data Link Layer muss sicherstellen, dass Datenintegrität auf Anwendungsebene gewährleistet ist, und nutzt dazu symmetrische Verschlüsselungsverfahren.
+- ~Die Data Link Layer befasst sich mit der Flusskontrolle, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überflutet, und nutzt dafür Verkehrsregulierungsmechanismen; zudem löst sie in Broadcast-Netzwerken das Problem des Zugriffs auf den gemeinsamen Kanal durch den Medium Access Control (MAC) Sublayer.
+- Die Data Link Layer ist primär für die logische Adressierung innerhalb eines Netzwerks zuständig und setzt dafür IP-Protokolle ein.

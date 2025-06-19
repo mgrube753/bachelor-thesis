@@ -1,0 +1,9 @@
+**Frage:** Welche Funktion der Sicherungsschicht verhindert, dass ein schneller Sender einen langsamen Empfänger mit Daten überlastet?  
+
+**Korrekte Antwort:**  
+- B) Einsatz eines Flusskontrollmechanismus  
+
+**Weitere Antwortoptionen:**  
+- A) Aufteilung der Daten in Frames  
+- C) Verwendung des MAC-Sublayers für Broadcast-Netzwerke  
+- D) Bestätigung korrekt empfangener Frames

@@ -1,0 +1,15 @@
+"""
+Frage: Im Text wird beschrieben, dass die Datenlink-Schicht die Hauptaufgabe hat, eine "rohe Übertragungseinrichtung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint". Analysieren Sie kritisch, wie die beschriebenen Mechanismen (Frames, Bestätigungen, Verkehrsregulierung und Medienzugriffskontrolle) zusammenwirken, um diese Aufgabe zu erfüllen, und erläutern Sie, welche Kompromisse bei der Implementierung dieser Mechanismen in verschiedenen Netzwerkumgebungen (z.B. kabelgebundene vs. drahtlose Netzwerke) eingegangen werden müssen.
+
+Antwort: ~Eine kritische Analyse zeigt, dass die genannten Mechanismen ein komplexes System bilden, um Fehlerfreiheit zu simulieren: 
+
+- Frames ermöglichen die Segmentierung großer Datenmengen in handhabbare Einheiten, wodurch Fehlerlokalisierung und Neuübertragung effizienter werden. Dies erfordert jedoch Overhead durch Header/Trailer.
+
+- Bestätigungen (Acknowledgements) bieten Zuverlässigkeit durch Empfangsbestätigung, führen aber zu erhöhter Latenz und Bandbreitennutzung durch zusätzlichen Datenverkehr.
+
+- Verkehrsregulierungsmechanismen verhindern Überlastungen und damit verbundene Paketverluste, können jedoch bei falscher Konfiguration die Leistung drosseln.
+
+- Die Medienzugriffskontrolle verhindert Kollisionen in geteilten Medien, benötigt aber ausgeklügelte Algorithmen mit eigenen Overhead-Kosten.
+
+Bei kabelgebundenen Netzwerken können strengere Fehlerkorrekturverfahren und weniger aggressive Medienzugriffskontrollen implementiert werden, da die Übertragung stabiler ist. Drahtlose Netzwerke hingegen erfordern robustere Fehlerkorrektur, dynamischere Flusskontrolle und komplexere Medienzugriffsverfahren, um mit Interferenzen, Signalverlust und variablen Übertragungsraten umzugehen. Die Herausforderung liegt darin, diese Mechanismen je nach Netzwerktyp so auszubalancieren, dass eine scheinbar fehlerfreie Verbindung bei akzeptabler Leistung entsteht.
+"""

@@ -1,0 +1,7 @@
+Frage: Der vorliegende Textabschnitt beschreibt die "Network Layer 3" des ISO-OSI-Modells und listet mehrere "Kernaufgaben" sowie eine allgemeine "Beschreibung" auf. Basierend ausschließlich auf den gegebenen Informationen, welche der folgenden Schlussfolgerungen über die Richtigkeit und Relevanz der beschriebenen Funktionen für die Netzwerkschicht ist die zutreffendste?
+
+Antwortmöglichkeiten:
+- Die Beschreibung und die Kernaufgaben sind konsistent mit den primären Funktionen der Netzwerkschicht, wie sie üblicherweise im ISO-OSI-Modell definiert werden.
+- Die im Text genannten Funktionen wie "Speicherung für Geräte", "Zufallspfad" und "Datenbeschleunigung" sind ungewöhnlich oder ungenau beschrieben und weichen von den Kernaufgaben der Netzwerkschicht (z.B. Routing zwischen Netzwerken) ab, was eine kritische Bewertung der Darstellung erfordert.
+- Die Aufgaben "Lokalisierung" und die Übertragungsarten "Punkt-zu-Punkt" sowie "Broadcast" sind korrekt dargestellt und bilden das vollständige Spektrum der Layer-3-Funktionalität ab.
+- ~Der Text enthält Beschreibungen und Aufgaben (z.B. "Speicherung für Geräte, die sich im selben Netzwerk derselben Layer 2 Technologie befinden", "Zufallspfad") die für die Netzwerkschicht im ISO-OSI-Modell untypisch oder irreführend sind, da die primäre Rolle dieser Schicht die netzwerkübergreifende Adressierung und das Routing ist und nicht die interne Speicherung oder zufällige Pfadwahl auf einer solchen Ebene.

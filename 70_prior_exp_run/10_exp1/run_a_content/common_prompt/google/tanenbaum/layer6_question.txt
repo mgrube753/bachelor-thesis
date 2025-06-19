@@ -1,0 +1,3 @@
+**Korrekt: Die Präsentationsschicht ermöglicht die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen, indem sie die auszutauschenden Datenstrukturen abstrakt definiert und eine Standardkodierung für die Übertragung ("on the wire") verwendet.**
+
+Basierend auf dem gegebenen Text: Wie unterstützt die Präsentationsschicht des ISO-OSI-Modells die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen?

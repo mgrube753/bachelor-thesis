@@ -1,0 +1,7 @@
+Frage: Eine Netzwerk-Applikation sendet strukturierte Daten zwischen Systemen unterschiedlicher Architekturen. Welche der folgenden Funktionen werden explizit der Präsentationsschicht (Schicht 6) im OSI-Modell zugeordnet, um die notwendige Daten-Transformation für diese Kommunikation sicherzustellen?
+
+Antwortmöglichkeiten:
+- ~Endianness-Konvertierung, Zeichendarstellungskonvertierung, Kompression und Verschlüsselung
+- Segmentierung, Flusskontrolle, Fehlererkennung und logische Adressierung
+- Validierung des Datenformats gemäß Applikationsprotokoll, Initiierung von Sitzungen und Dialogkontrolle
+- Physikalische Signalumsetzung, Bit-Synchronisation und Topologie-Management

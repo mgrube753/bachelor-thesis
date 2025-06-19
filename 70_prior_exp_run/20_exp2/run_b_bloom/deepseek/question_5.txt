@@ -1,0 +1,7 @@
+Frage: Bewerten Sie die Priorisierung der drei Hauptfunktionen der Data Link Layer (Fehlerkontrolle, Flusskontrolle, Medienzugriffskontrolle) für den Entwurf eines neuen Netzwerkprotokolls in einem gemischten Umfeld mit drahtgebundenen Hochgeschwindigkeitsverbindungen und drahtlosen Broadcast-Netzen. Begründen Sie Ihre Reihenfolge unter Bezugnahme auf die kritischen Risiken bei Vernachlässigung jeder Funktion.
+
+Antwortmöglichkeiten:
+- ~Flusskontrolle zuerst (verhindert Datenverluste durch Überlastung), dann Medienzugriffskontrolle (vermeidet Kollisionen in Broadcast-Segmenten), zuletzt Fehlerkontrolle (kann partiell in höhere Schichten verlagert werden)
+- Medienzugriffskontrolle zuerst (essentiell für Netzstabilität in Shared Media), dann Fehlerkontrolle (garantiert Datenintegrität), zuletzt Flusskontrolle (kann durch Hardware-Puffer gemildert werden)
+- Fehlerkontrolle zuerst (grundlegend für zuverlässige Übertragung), dann Flusskontrolle (schützt Systemressourcen), zuletzt Medienzugriffskontrolle (nur in Subnetzen mit Broadcast relevant)
+- Gleichgewichtige Implementierung aller drei Funktionen von Anfang an (keine Priorisierung möglich, da alle gleich kritisch für Basisfunktionalität)

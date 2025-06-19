@@ -1,0 +1,8 @@
+KORREKTE ANTWORT: Die Session Layer bietet Dialog-Kontrolle, Token-Management und Synchronisation als Dienste an.
+
+Welche Funktionen werden laut Text von der Session Layer des ISO-OSI-Modells bereitgestellt?
+
+A) Routing, Adressierung und Fehlererkennung
+B) Dialog-Kontrolle, Token-Management und Synchronisation
+C) Datenverschlüsselung, Authentifizierung und Autorisierung
+D) Bitübertragung, Modulation und physische Verbindung

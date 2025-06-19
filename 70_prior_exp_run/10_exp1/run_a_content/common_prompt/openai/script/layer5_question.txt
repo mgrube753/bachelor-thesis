@@ -1,0 +1,2 @@
+Antwort: Sitzungen aufbauen, verwalten, zurückweisen und beenden; Synchronisation durch Setzen von Zwischenpunkten; Bündelung bzw. Gruppierung zusammengehöriger Transaktionen.  
+Frage: Welche drei Kernaufgaben erfüllt die Session Layer (Schicht 5) des ISO-OSI-Modells?

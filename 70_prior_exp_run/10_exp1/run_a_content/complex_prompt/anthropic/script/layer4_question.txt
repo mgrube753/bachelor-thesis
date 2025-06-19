@@ -1,0 +1,9 @@
+```
+Frage: Welche der folgenden Aussagen stellt die konzeptionelle Besonderheit der Transport-Schicht (Layer 4) im OSI-Modell korrekt dar, insbesondere in Bezug auf die Kombination ihrer drei Kernaufgaben?
+
+Antwortmöglichkeiten:
+- Die Transport-Schicht bietet lediglich eine Flusskontrolle zwischen physischen Netzwerkgeräten und hat keine Adressierungsfunktionen.
+- ~Die Transport-Schicht ist die erste Schicht (von unten gezählt), die eine Ende-zu-Ende-Verbindung zwischen Anwendungsprozessen ermöglicht, indem sie Teilnehmer-Adressierung, Flusssteuerung und individuelle Dienstqualitätsgarantien kombiniert.
+- Die Transport-Schicht befasst sich ausschließlich mit der Quality of Service, während Adressierung und Flusssteuerung vollständig in der Netzwerkschicht implementiert sind.
+- Die Transport-Schicht ist hauptsächlich für die physische Übertragung von Datenpaketen verantwortlich und verwendet dafür die drei genannten Kernaufgaben.
+```

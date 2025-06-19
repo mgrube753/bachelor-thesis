@@ -104,8 +104,6 @@ The revised taxonomy \cite{krathwohl_revision_2002} is divided into six levels. 
 
 Each of these cognitive levels is associated with a set of action verbs that can be used to formulate learning objectives and assessment questions. A comprehensive list of such verbs, categorized by these cognitive levels, can be found at the University of Arkansas' website\footnote{\url{https://tips.uark.edu/blooms-taxonomy-verb-chart/}, accessed 05/13/2025}. The following table offers a brief overview of the cognitive levels and their corresponding action verbs:
 
-% #todo Du meinst ja oben, dass diese Taxonomy schon genutzt wird, um die Relevanz von LLMs zu untersuchen. Wenn das stimmt, dann würde ich dir empfehlen, hier auch Forschungsbefunde zusammenzufassen. Also was haben die schon untersucht und wo gibt es Forschungslücken, die du jetzt adressieren möchtest
-
 \pagebreak
 
 \begin{table}[htbp]
@@ -168,12 +166,12 @@ To address these challenges and to refine the capabilities of \ac{llms} for spec
 
 \object{Model Fine-Tuning} A key strategy to adapt general-purpose \ac{llms} to specific tasks by training them on domain-specific data \cite{hou_large_2024}. By this process, models can learn knowledge relevant to a specific context, but traditional full fine-tuning requires vast amounts of data and computational resources \cite{hou_large_2024}. For instance, \cite{duong-trung_bloomllm_2024} fine-tuned their \ac{aqg} model BloomLLM with more than 1000 questions, which is still a relatively small amount of data. In the end, this GPT-3.5-based model was preferred over GPT-4 according to \ac{aqg}.
 
-\object{Integration of Contextual Knowledge} Several studies \cite{biancini_multiple-choice_2024,blobstein_angel_2023,wang_towards_2022,bhowmick_automating_2023} have injected topic-related contextual information directly into the prompt to avoid hallucinating and give users control over the source of knowledge \cite{biancini_multiple-choice_2024}. 
-% #todo maybe remove wang_towards_2022
+\object{Integration of Contextual Knowledge} Several studies \cite{biancini_multiple-choice_2024,blobstein_angel_2023,bhowmick_automating_2023} have injected topic-related contextual information directly into the prompt to avoid hallucinating and give users control over the source of knowledge \cite{biancini_multiple-choice_2024}. 
+% # removed wang_towards_2022 from several studies
 
 \subsection{Evaluation Methodologies}
 
-Evaluation is always necessary to assess the quality of LLMs for the task at hand. According to \cite{doughty_comparative_2024}, evaluating automatically generated learning resources is important because they often lack the deep qualities necessary for their effectiveness.
+Evaluation is always necessary to assess the quality of \ac{llms} for the task at hand. According to \cite{doughty_comparative_2024}, evaluating automatically generated learning resources is important because they often lack the deep qualities necessary for their effectiveness.
 The methods to evaluate \ac{llms} at e.g.\ \ac{aqg} can be divided into several categories:
 
 \object{$\mathbf{n}$-gram-based Metrics} These metrics follow a reference-based approach, where the generated text is compared to a reference text. The evaluation is based on the overlap of sequences of $n$ words between the generated and reference text \cite{guo_survey_2024}. The most common metrics in this category are:
@@ -197,13 +195,15 @@ The methods to evaluate \ac{llms} at e.g.\ \ac{aqg} can be divided into several 
    \item Manual cosine similarity calculation can also be calculated by comparing embeddings created by an embedding model, as it was done in \cite{li_planning_2024}.
 \end{itemize}
 
-\object{Other Metrics} Apart from these categories, diverse other methods and metrics are used to evaluate the generated questions:
+\object{Other Metrics} Apart from these categories, diverse other methods and metrics are used to evaluate the generated questions: For instance, \cite{yang_heuristic_2024} utilized \textit{Perplexity, Diversity}, and \textit{Toxicity} to assess the question's quality. Additionally, researchers developing new evaluation metrics compare their approaches against a range of existing ones. For example, \cite{nguyen_reference-based_2024} benchmarked their proposed metric against \textit{BLEU, ROUGE, BERTScore, QAScore} -- predicting answer extractability from the given context via transformers -- \cite{ji_qascoreunsupervised_2022}, Google's \textit{\ac{bleurt}} -- predicting human judgements of text quality -- \cite{sellam_bleurt_2020}, and the also BERT-based \textit{\ac{rquge}} metric by Meta -- comparing predicted and gold answer spans -- \cite{mohammadshahi_rquge_2023}.
 
-\begin{itemize}
-   \item For instance, \cite{wang_towards_2022} assessed question quality using \textit{Perplexity} (via GPT-2 \cite{radford_language_2019}), \textit{Diversity} (Distinct-3 score \cite{li_diversity-promoting_2016}), \textit{Toxicity, Grammatical Error,} and the resulting \textit{Acceptability} of a question. \cite{yang_heuristic_2024} also adopted \textit{Perplexity, Diversity,} and \textit{Toxicity}.
-   % #todo maybe remove wang_towards_2022 but keep yang_heuristic_2024
-   \item Additionally, researchers developing new evaluation metrics often compare their approaches against a range of existing ones. For example, \cite{nguyen_reference-based_2024} benchmarked their proposed metric against \textit{BLEU, ROUGE, BERTScore, QAScore} -- predicting answer extractability from the given context via transformers -- \cite{ji_qascoreunsupervised_2022}, Google's \textit{\ac{bleurt}} -- predicting human judgements of text quality -- \cite{sellam_bleurt_2020}, and the also BERT-based \textit{\ac{rquge}} metric by Meta -- comparing predicted and gold answer spans -- \cite{mohammadshahi_rquge_2023}.
-\end{itemize}
+\pagebreak
+
+% \begin{itemize}
+%    \item For instance, \cite{wang_towards_2022} assessed question quality using \textit{Perplexity} (via GPT-2 \cite{radford_language_2019}), \textit{Diversity} (Distinct-3 score \cite{li_diversity-promoting_2016}), \textit{Toxicity, Grammatical Error,} and the resulting \textit{Acceptability} of a question. \cite{yang_heuristic_2024} also adopted \textit{Perplexity, Diversity,} and \textit{Toxicity}.
+%    % #todo maybe remove wang_towards_2022 but keep yang_heuristic_2024
+%    \item Additionally, researchers developing new evaluation metrics often compare their approaches against a range of existing ones. For example, \cite{nguyen_reference-based_2024} benchmarked their proposed metric against \textit{BLEU, ROUGE, BERTScore, QAScore} -- predicting answer extractability from the given context via transformers -- \cite{ji_qascoreunsupervised_2022}, Google's \textit{\ac{bleurt}} -- predicting human judgements of text quality -- \cite{sellam_bleurt_2020}, and the also BERT-based \textit{\ac{rquge}} metric by Meta -- comparing predicted and gold answer spans -- \cite{mohammadshahi_rquge_2023}.
+% \end{itemize}
 
 % -------------------------------------------------------------------------
 

@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt drei Kernaufgaben des Application Layers (Layer 7) und betont gleichzeitig, dass deren Ausgestaltung stark von der konkreten Anwendung abhängt. Nennen Sie diese drei Aufgaben und begründen Sie in einem Satz, weshalb eine anwendungsfreie Systematisierung an dieser Stelle schwierig ist.
+
+Antwort: ~
+- Definition der grundlegenden Anwendungsbegriffe bzw. Konzepte  
+- Festlegung der Protokollelemente, mit denen Kommunikationspartner Anforderungen stellen und entsprechende Daten erwarten  
+- Bestimmung des Reaktionsverhaltens der Anwendung auf diese Anforderungen (z. B. Zustandsänderungen oder andere Aktionen)  
+- Begründung: Da jede Anwendung eigene Begriffe, Protokollelemente und Reaktionslogiken benötigt, lassen sich diese Aufgaben nicht vollständig unabhängig von der jeweiligen Anwendung verallgemeinern.

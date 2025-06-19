@@ -1,0 +1,7 @@
+Frage: Welche Aufgabe ist charakteristisch für die Data Link Layer im ISO-OSI-Modell und unterscheidet sie grundlegend von der Network Layer, basierend auf der Beschreibung ihrer Kernfunktionen?
+
+Antwortmöglichkeiten:
+- ~Das Maskieren von Übertragungsfehlern, sodass diese für die Network Layer unsichtbar bleiben.
+- Das physikalische Übertragen der Rohbits über das Übertragungsmedium.
+- Das Bestimmen der optimalen Route für Datenpakete durch das Netzwerk.
+- Das Sicherstellen einer Ende-zu-Ende-Verbindung zwischen Anwendungsprozessen.

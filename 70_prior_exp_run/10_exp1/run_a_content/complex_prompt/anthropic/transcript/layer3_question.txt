@@ -1,0 +1,5 @@
+```
+Frage: In einem heterogenen Netzwerk, das Bluetooth-, WLAN- und 5G-Verbindungen umfasst, tritt ein Leistungsengpass auf. Analysieren Sie, warum die Ende-zu-Ende-Flusssteuerung im Network Layer nicht ausreicht und stattdessen eine Kombination mit der Knoten-zu-Knoten-Flusssteuerung erforderlich ist. Welches spezifische Problem würde bei ausschließlicher Verwendung von Ende-zu-Ende-Flusssteuerung in diesem Szenario auftreten?
+
+Antwort: ~Bei ausschließlicher Ende-zu-Ende-Flusssteuerung würden die langsameren Knoten (z.B. Bluetooth-Geräte) in der Übertragungskette überlastet werden, da schnellere Technologien (wie 5G) Daten mit höherer Geschwindigkeit senden können. Diese langsameren Zwischenknoten müssten zu viele Daten zwischenpuffern, was zu Speicherüberlauf, Paketverlust und letztendlich zum Zusammenbruch der Kommunikation führen würde. Die Knoten-zu-Knoten-Flusssteuerung ist notwendig, damit jeder Knoten mit seinem direkten Partner eine gemeinsame Übertragungsgeschwindigkeit aushandeln kann, während die Ende-zu-Ende-Flusssteuerung zusätzlich sicherstellt, dass die gesamte Verbindungsstrecke ohne übermäßige Pufferung funktioniert.
+```

@@ -1,0 +1,8 @@
+Frage: Entwerfen Sie ein integriertes Datenlink-Layer-Protokoll für ein drahtloses Broadcast-Netzwerk, das gleichzeitig - Fehlererkennung und -behebung, - Flusskontrolle zwischen schnellen Sendern und langsamen Empfängern sowie - einen fairen, effizienten Zugriff auf das gemeinsame Medium realisiert. Stellen Sie zusammen, wie Sie Framing, Quittierungsmechanismen und einen adaptiven Medium-Access-Algorithmus zu einem kohärenten Gesamtdesign reorganisieren würden, und erläutern Sie, in welcher Weise Ihr Konzept die im Ausgangstext beschriebenen Herausforderungen adressiert und verbessert.  
+
+Antwort: ~Ein möglicher Entwurf kombiniert 3 Komponenten zu einem einzigen Protokollrahmen:  
+- Framing: Feste Rahmengröße von 1024 Byte mit Header-Feld für Sequenznummer, Prüfsumme (CRC-32) und Prioritätsklasse.  
+- Fehlerkontrolle: Selektives Repeat ARQ mit gleitendem Fenster; verlorene Frames werden anhand ihrer Sequenznummern selektiv erneut gesendet.  
+- Flusskontrolle: Empfänger vergibt dynamisch Credits im ACK-Frame; das Sendefenster schrumpft oder wächst in Abhängigkeit von Pufferbelegung.  
+- Medium Access: Hybrid-MAC, das zyklisch reservierte Time-Slots mit CSMA/CA kombiniert. Nodes mit hoher Priorität erhalten garantierte Slots; übrige nutzen eine adaptiv angepasste Back-off-Zeit, die sich nach aktueller Kollision­srate richtet.  
+Durch die Zusammenführung dieser Bausteine entsteht eine einheitliche Steuerlogik: Sender prüfen vor jeder Übertragung sowohl freie Slots als auch verfügbare Credits, verpacken Daten in nummerierte Frames mit CRC, versenden sie und warten auf ACK + Credit-Update. Somit werden Bitfehler maskiert, Empfänger nicht überlastet und das Medium effizient geteilt, wie es die Anforderungen des Textes verlangen.

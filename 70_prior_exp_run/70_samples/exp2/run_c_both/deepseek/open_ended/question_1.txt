@@ -1,0 +1,6 @@
+Frage: Nennen und beschreiben Sie kurz die drei Hauptfunktionen der Data Link Layer gemäß dem bereitgestellten Text, wobei Sie sich auf die Kernaufgaben und spezifischen Mechanismen konzentrieren.
+
+Antwort: ~Die drei Hauptfunktionen der Data Link Layer sind:
+- Transformation der rohen Übertragungseinrichtung in eine fehlerfreie Leitung durch Aufteilung der Eingabedaten in Datenframes, sequentielle Übertragung und Nutzung von Bestätigungsframes für zuverlässige Dienste.
+- Implementierung von Flusskontrolle, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überlastet, durch Regelmechanismen zur Datenaufnahmekapazität.
+- Bei Broadcast-Netzwerken: Kontrolle des Zugriffs auf den gemeinsamen Kanal mittels des Medium Access Control (MAC) Sublayers.

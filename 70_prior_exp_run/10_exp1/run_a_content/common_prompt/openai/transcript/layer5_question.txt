@@ -1,0 +1,2 @@
+Korrekte Antwort: Session Layer (Layer 5)  
+Frage: Welcher Layer des ISO-OSI-Modells übernimmt die Kernaufgaben Sitzungsverwaltung, Synchronisation und Bündelung?

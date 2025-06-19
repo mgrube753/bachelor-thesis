@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aussagen beschreibt am präzisesten, wie die Sicherungsschicht (Data Link Layer) ihre Kernaufgabe der Transformation einer Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung in Bezug auf die Datenintegrität primär umsetzt?
+
+Antwortmöglichkeiten:
+- ~Die Sicherungsschicht zerlegt Eingangsdaten in Datenrahmen, überträgt diese sequenziell und nutzt bei zuverlässigen Diensten Empfangsbestätigungen, um Fehler vor der Netzwerkschicht zu verbergen.
+- Sie gewährleistet eine fehlerfreie Kommunikation hauptsächlich durch die Implementierung von Mechanismen zur Flusskontrolle, um eine Überflutung langsamer Empfänger zu verhindern.
+- Sie ist primär dafür verantwortlich, über die Medium Access Control (MAC) Unterschicht den Zugang zum gemeinsamen Kanal in Broadcast-Netzwerken zu regeln.
+- Ihre Hauptfunktion besteht darin, die physischen Fehler der Übertragungsmedien direkt zu beheben, bevor die Daten überhaupt in Datenrahmen organisiert werden können.

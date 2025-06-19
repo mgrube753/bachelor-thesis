@@ -1,0 +1,7 @@
+Frage: Eine Videokonferenz-Software nutzt während einer Übertragung automatisch Wiederaufnahmepunkte nach großen Datenpaketen und verhindert gleichzeitiges Ändern der Freigabeeinstellungen durch mehrere Teilnehmer. Welche OSI-Schicht implementiert primär diese beiden spezifischen Funktionalitäten basierend auf ihren Kernservices?
+
+Antwortmöglichkeiten:
+- ~Session Layer
+- Transport Layer
+- Application Layer
+- Network Layer

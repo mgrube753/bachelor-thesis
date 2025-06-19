@@ -1,0 +1,9 @@
+**Frage:**
+Welche der folgenden Aufgaben werden im gegebenen Text als Funktionen des Data Link Layers (Schicht 2) des ISO-OSI-Modells aufgeführt?
+
+**Antwort(en):**
+*   Fehlerkontrolle
+*   Flusskontrolle
+*   Segmentierung
+*   Identifikation
+*   Medienzugriff (Aktivierung des physikalischen Layers)

@@ -1,0 +1,6 @@
+RICHTIGE ANTWORT: C) Routing  
+Frage: Welche der folgenden Aufgaben gehört laut Beschreibung NICHT zu den drei Kernaufgaben des Physical Layer 1?  
+A) Verschlüsselung  
+B) Speicherung  
+C) Routing  
+D) Kompression

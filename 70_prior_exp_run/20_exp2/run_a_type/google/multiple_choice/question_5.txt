@@ -1,0 +1,7 @@
+Frage: Basierend auf den beschriebenen Kernaufgaben und Mechanismen der Sicherungsschicht (Data Link Layer), welche essenzielle Abstraktion oder Dienstleistung erbringt sie primär für die darüberliegende Vermittlungsschicht (Network Layer)?
+
+Antwortmöglichkeiten:
+- ~Die Sicherungsschicht maskiert Übertragungsfehler und implementiert Flusskontrollmechanismen, um der Vermittlungsschicht eine scheinbar fehlerfreie und regulierte Übertragungsleitung zur Verfügung zu stellen.
+- Die Sicherungsschicht ist hauptsächlich für die globale Adressierung von Endgeräten und das Routing von Datenpaketen über verschiedene Netzwerke hinweg verantwortlich.
+- Die Sicherungsschicht standardisiert die Kodierung und Dekodierung von Bitsignalen sowie die physikalische Übertragung auf dem Medium.
+- Die Sicherungsschicht gewährleistet die Ende-zu-Ende-Vollständigkeit von Daten durch die Verwaltung von Sitzungen und die Darstellung von Daten für Anwendungen.

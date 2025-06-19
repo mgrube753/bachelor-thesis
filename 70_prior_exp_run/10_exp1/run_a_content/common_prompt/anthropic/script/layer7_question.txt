@@ -1,0 +1,6 @@
+Frage: Welche der folgenden Aussagen beschreibt NICHT eine der drei Kernaufgaben des Application Layers (Schicht 7) im ISO-OSI-Modell?
+
+A: (Korrekte Antwort) Die Implementierung von Verschlüsselungsalgorithmen zur Datensicherheit
+B: Die Definition von Grundkonzepten und Begriffen, die in der Anwendung auftreten
+C: Die Festlegung von Protokollelementen mit ihren Anforderungen und erwarteten Daten
+D: Die Beschreibung des Verhaltens der Anwendung als Reaktion auf Protokollanforderungen

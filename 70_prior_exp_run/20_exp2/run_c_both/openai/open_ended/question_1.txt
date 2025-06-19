@@ -1,0 +1,5 @@
+Frage: Listen Sie drei spezifische Funktionen der Data-Link-Layer (Sicherungsschicht) im ISO-OSI-Modell auf, die im obigen Text genannt werden.
+
+Antwort: ~- Maskieren von Übertragungsfehlern durch Aufteilung der Daten in Frames und Veranlassen von Empfangsbestätigungen  
+- Flusskontrolle, um einen schnellen Sender daran zu hindern, einen langsameren Empfänger zu überlasten  
+- Steuerung des Zugriffs auf ein gemeinsames Übertragungsmedium über die Medium-Access-Control-Unterschicht

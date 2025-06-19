@@ -1,0 +1,7 @@
+Frage: Beurteilen Sie, welche der folgenden Protokollmaßnahmen die im Text beschriebenen Kernaufgaben der Sicherungsschicht – nämlich Fehlermaskierung, Flusskontrolle und Medienzugriffssteuerung – am konsequentesten erfüllt.
+
+Antwortmöglichkeiten:
+- ~Implementierung eines rahmenbasierten Übertragungsverfahrens mit Quittungen und Fenstersteuerung, das Übertragungsfehler maskiert und den Datenstrom zwischen schnellem Sender und langsamerem Empfänger reguliert.
+- Einführung eines adaptiven Hashing-Algorithmus in der Vermittlungsschicht, um IP-Adressen schneller aufzulösen.
+- Integration einer Ende-zu-Ende-Verschlüsselung auf Anwendungsschichtniveau zur Sicherstellung der Vertraulichkeit der Nutzdaten.
+- Einsatz eines auf Metadaten basierenden Quality-of-Service-Schedulers in der Transportschicht zur Priorisierung von Video-Streams.

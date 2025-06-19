@@ -1,0 +1,9 @@
+"""
+Frage: Vergleichen Sie die Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) und erklären Sie, welche der folgenden Aussagen die primäre Funktion dieser Schicht am besten zusammenfasst.
+
+Antwortmöglichkeiten:
+- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint, durch Aufteilung der Daten in Frames und ggf. Bestätigung des korrekten Empfangs
+- Die Verwaltung logischer Adressen und die Weiterleitung von Paketen zwischen verschiedenen Netzwerken zur Ermöglichung von End-zu-End-Kommunikation
+- Die Gewährleistung einer zuverlässigen Datenübertragung durch Ende-zu-Ende-Fehlerkontrolle und Flusskontrolle zwischen den Endpunkten einer Verbindung
+- Die Bereitstellung von Synchronisation und Signalmodulation, um Bits als elektrische oder optische Signale über das physische Medium zu übertragen
+"""

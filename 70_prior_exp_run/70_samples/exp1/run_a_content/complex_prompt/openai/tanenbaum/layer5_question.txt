@@ -1,0 +1,3 @@
+Frage: Bei einer mehrstündigen Dateiübertragung zwischen zwei Rechnern stürzt der Sender nach 75 % der Übertragung ab. Nach dem Neustart setzen beide Partner die Übertragung exakt an der zuletzt bestätigten Stelle fort, ohne bereits gesendete Daten erneut zu übertragen. Welchen spezifischen Dienst der Sitzungsschicht nutzen sie dafür, und weshalb ist dieser Dienst hier unverzichtbar?
+
+Antwort: ~Synchronisation (Checkpointing), da durch das Setzen von Prüfpunkten während der Übertragung nach einem Absturz an der letzten gesicherten Position weitergearbeitet werden kann und somit Wiederholungen sowie Zeitverluste vermieden werden.

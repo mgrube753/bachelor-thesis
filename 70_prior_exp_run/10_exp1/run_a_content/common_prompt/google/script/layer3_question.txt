@@ -1,0 +1,6 @@
+Welche der folgenden Kernaufgaben des Network Layers (Schicht 3) des ISO-OSI-Modells ist laut dem gegebenen Text für die Auswahl der vermittelnden Zwischenknoten zur Kommunikation nicht direkt verbundener Knoten verantwortlich?
+
+**Korrekte Antwort: A**
+A) Routing
+B) Adressierung
+C) Flusssteuerung

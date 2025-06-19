@@ -1,0 +1,2 @@
+Richtige Antwort: Universalkonzepte, Standardelemente, Standardverhalten  
+Frage: Nennen Sie die drei Kernaufgaben der Anwendungsschicht (Layer 7) im ISO-OSI-Modell.

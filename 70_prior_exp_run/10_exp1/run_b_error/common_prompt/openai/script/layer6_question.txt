@@ -1,0 +1,6 @@
+Korrekte Antwort: B) Datenformat  
+Frage: Welche der folgenden Kernaufgaben der Presentation Layer 6 des ISO-OSI-Modells beschreibt die Vereinheitlichung der Datendarstellung, z. B. durch Festlegung auf big endian als einziges Serialisierungsformat?  
+A) Binärdaten  
+B) Datenformat  
+C) Expansion  
+D) Offenlegung

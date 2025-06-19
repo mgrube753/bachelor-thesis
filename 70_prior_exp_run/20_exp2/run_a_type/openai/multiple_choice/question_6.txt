@@ -1,0 +1,9 @@
+"""
+Frage: Welcher Aufgabenbereich fällt laut Text ausschließlich bei Broadcast-Netzen, nicht aber bei reinen Punkt-zu-Punkt-Verbindungen, in die Verantwortung der Sicherungsschicht?
+
+Antwortmöglichkeiten:
+- ~Regelung des Zugriffs auf das geteilte Übertragungsmedium durch die Medium-Access-Control-Unterschicht
+- Aufteilung des Datenstroms in nummerierte Rahmen, um Einzelübertragungsfehler zu maskieren
+- Flusskontrolle, damit ein schneller Sender einen langsamen Empfänger nicht überlastet
+- Verschlüsselung der Rahmeninhalte, um Vertraulichkeit auf Bitübertragungsebene sicherzustellen
+"""

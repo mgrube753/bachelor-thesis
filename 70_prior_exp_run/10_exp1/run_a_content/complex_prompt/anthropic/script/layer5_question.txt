@@ -1,0 +1,5 @@
+```
+Frage: In einem verteilten System werden große Datenmengen zwischen zwei Anwendungen übertragen. Warum könnte die "Synchronisation mit Zwischenpunkten" der Session Layer (Schicht 5) in diesem Szenario besonders wichtig sein, und welche konkreten Probleme löst diese Funktion?
+
+Antwort: ~Die Synchronisation mit Zwischenpunkten erlaubt es, bei einem Verbindungsabbruch nicht die gesamte Übertragung neu starten zu müssen, sondern nur ab dem letzten erfolgreich übertragenen Zwischenpunkt fortzusetzen. Dies ist besonders bei großen Datenmengen effizient, da es Bandbreite spart, die Übertragungszeit verkürzt und Ressourcen schont. Zudem ermöglicht es die Wiederherstellung nach Fehlern ohne Datenverlust und bietet definierte Punkte für Integritätsprüfungen während der Übertragung.
+```

@@ -1,0 +1,8 @@
+KORREKTE ANTWORTMÖGLICHKEIT: B
+
+Welche der folgenden Aussagen beschreibt die primäre Funktion von HTTP (HyperText Transfer Protocol) gemäß dem bereitgestellten Text im Kontext der Anwendungsschicht?
+
+A) HTTP wird hauptsächlich für die Übertragung von elektronischen Mails genutzt.
+B) HTTP bildet die Grundlage für das World Wide Web und wird von Browsern verwendet, um Webseiten von Servern anzufordern.
+C) HTTP ist ein Protokoll, das ausschließlich für die sichere Dateiübertragung zwischen Rechnern dient.
+D) HTTP ist ein Protokoll, das hauptsächlich für die Verteilung von Netzwerk-News verwendet wird.

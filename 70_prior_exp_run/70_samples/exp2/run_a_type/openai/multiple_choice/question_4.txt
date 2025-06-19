@@ -1,0 +1,9 @@
+"""
+Frage: In Broadcast-Netzwerken kann es vorkommen, dass mehrere Stationen gleichzeitig auf das gemeinsam genutzte Übertragungsmedium zugreifen möchten. Welcher Teil des Data-Link-Layers ist laut obigem Text speziell dafür zuständig, diesen konkurrierenden Zugriff zu steuern?
+
+Antwortmöglichkeiten:
+- ~Die Medium Access Control (MAC) Sublayer
+- Die Logical Link Control (LLC) Sublayer
+- Das Flow-Control-Modul der Transportschicht
+- Die Session-Layer-Steuerlogik
+"""

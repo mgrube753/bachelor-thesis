@@ -1,0 +1,7 @@
+Frage: Der Text beschreibt mehrere Funktionen des Presentation Layers (Schicht 6 im OSI-Modell), darunter die Handhabung von "NDNS". Welche Hauptaufgabe verbirgt sich primär hinter der Erwähnung von "NDNS" in diesem Kontext, und warum ist diese Aufgabe essenziell für die Kommunikation zwischen heterogenen Systemen?  
+
+Antwortmöglichkeiten:  
+- **~Die Serialisierung und Deserialisierung komplexer Datenstrukturen (wie Objektgraphen)**. Sie ist essenziell, weil unterschiedliche Systeme Daten intern verschieden organisieren (z.B. Zeiger, Objektlayouts). Der Presentation Layer übersetzt diese in ein neutrales Übertragungsformat und rekonstruiert sie beim Empfänger, um semantische Integrität über Plattformen hinweg zu gewährleisten.  
+- Die Konvertierung von Textkodierungen (z.B. ASCII zu Unicode). Sie ist essenziell, um Zeichen auf verschiedenen Systemen korrekt darzustellen und Sonderzeichenverluste zu vermeiden.  
+- Die Verwaltung von Netzwerkadressen und Namensauflösung. Sie ist essenziell, um logische Adressen in physikalische Adressen zu übersetzen und Endgeräte eindeutig zu identifizieren.  
+- Die Steuerung elektrischer Signale auf der Leitung. Sie ist essenziell, um die physikalische Bitübertragung zwischen direkt verbundenen Geräten zu synchronisieren.

@@ -1,0 +1,5 @@
+```
+Frage: Nennen Sie die Hauptaufgabe der Data Link Layer im OSI-Modell.
+
+Antwort: ~Die Hauptaufgabe der Data Link Layer ist es, eine rohe Übertragungsleitung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint.
+```

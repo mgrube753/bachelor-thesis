@@ -1,0 +1,12 @@
+Frage: Entwerfen Sie ein Protokoll für die Data Link Layer, das speziell für ein sensorbasiertes IoT-Netzwerk mit unzuverlässiger Funkverbindung optimiert ist. Beschreiben Sie, wie Ihr Entwurf alle drei Kernaufgaben der Schicht (Fehlermaskierung, Flusskontrolle und Medienzugriff) integriert, um Energieeffizienz und minimale Latenz bei sporadischen Datenpaketen zu priorisieren.
+
+Antwort:  
+~**Protokollentwurf "IoT-Link"**:  
+1. **Fehlermaskierung**: Nutzung von ultrakurzen Frames (128 Byte) mit selektivem Wiederholungs-ARQ (nur fehlerhafte Frames). Bestätigungen via Piggybacking in Sensor-Antworten.  
+2. **Flusskontrolle**: Dynamisches Fenstermanagement (Window Size = 1) mit Receiver-initiiertem Polling – Empfänger fordert Daten nur bei verfügbarer Pufferung an.  
+3. **Medienzugriff**: TDMA-light mit reservierten Mini-Slots für kritische Sensoren und CSMA/CA für Hintergrunddaten, synchronisiert durch Low-Power-Beacon-Frames.  
+
+**Begründung**:  
+- Kleine Frames + selektives ARQ reduzieren Energieverbrauch bei Paketverlusten.  
+- Polling-basierte Flusskontrolle vermeidet Überlastung bei sporadischem Verkehr.  
+- Hybrid-Zugriff minimiert Kollisionen und priorisiert Echtzeitdaten ohne ständige Empfangsbereitschaft.

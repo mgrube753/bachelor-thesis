@@ -1,0 +1,9 @@
+Frage: Womit beschäftigt sich die physische Schicht (Physical Layer) des ISO-OSI-Modells hauptsächlich?
+
+Korrekte Antwort: Mit der Übertragung von Rohbits über einen Kommunikationskanal und der Sicherstellung, dass gesendete Bits korrekt empfangen werden.
+
+Weitere Antwortmöglichkeiten:
+a) Mit der Adressierung von Datenpaketen im Netzwerk
+b) Mit der Fehlerkorrektur auf Protokollebene
+c) Mit der Verschlüsselung von Daten
+d) Mit dem Routing zwischen verschiedenen Netzwerken

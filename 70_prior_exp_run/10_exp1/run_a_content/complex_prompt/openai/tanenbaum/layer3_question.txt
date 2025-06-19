@@ -1,0 +1,7 @@
+Frage: Welcher der folgenden Aspekte gehört laut Text NICHT zu den Aufgaben der Network Layer?
+
+Antwortmöglichkeiten:
+- ~Erkennung und Behebung von Bitfehlern in einzelnen Frames
+- Auswahl dynamischer oder statischer Routen für Pakete
+- Behandlung von Überlastsituationen (Congestion Handling)
+- Gewährleistung von Verzögerungs- und Laufzeitanforderungen (Quality of Service)

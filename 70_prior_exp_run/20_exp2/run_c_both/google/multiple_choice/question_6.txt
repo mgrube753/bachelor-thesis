@@ -1,0 +1,7 @@
+Frage: Angenommen, Sie sind beauftragt, ein neuartiges Kommunikationsprotokoll für ein drahtloses Sensornetzwerk zu *entwickeln*, das sowohl eine hohe Zuverlässigkeit der Datenübertragung als auch eine effiziente Nutzung der gemeinsam genutzten Funkressourcen gewährleisten muss. Wie würden Sie die Kernfunktionalitäten der Data-Link-Schicht *zusammenstellen*, um diesen Anforderungen gerecht zu werden?
+
+Antwortmöglichkeiten:
+- ~Eine Kombination aus Frame-Erstellung zur Fehlerkaschierung und Bestätigungsrahmen für zuverlässigen Empfang, einem Flusskontrollmechanismus zur Regulierung der Sendergeschwindigkeit sowie einem spezialisierten Medium Access Control (MAC)-Unterlayer zur Steuerung des Zugriffs auf den gemeinsamen Kanal.
+- Die Implementierung einer umfassenden Ende-zu-Ende-Verschlüsselung der Datenpakete und die Zuweisung fester Zeitfenster für jeden Sender, um Kollisionen zu vermeiden.
+- Die ausschließliche Konzentration auf die Adressierung von Geräten innerhalb des lokalen Netzwerks, um sicherzustellen, dass Daten nur an die beabsichtigten Empfänger gelangen.
+- Die Entwicklung von Routing-Algorithmen, die den optimalen Pfad für Datenpakete durch das Netzwerk bestimmen, um Übertragungsverzögerungen zu minimieren.

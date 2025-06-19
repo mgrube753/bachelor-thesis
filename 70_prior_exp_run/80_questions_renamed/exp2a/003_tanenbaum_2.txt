@@ -1,0 +1,9 @@
+"""
+Frage: Welche der folgenden Aussagen beschreibt am besten die konzeptionelle Beziehung zwischen den Hauptaufgaben der Datenverbindungsschicht und den dafür implementierten Mechanismen?
+
+Antwortmöglichkeiten:
+- ~Die Datenverbindungsschicht abstrahiert physikalische Übertragungsfehler durch Framing und Bestätigungsmechanismen, während sie gleichzeitig Probleme der Datenflusssteuerung und des gemeinsamen Kanalzugriffs löst
+- Die Datenverbindungsschicht ist primär für die Fehlerkorrektur auf Bitebene verantwortlich und übergibt Flusskontrollprobleme an höhere Schichten
+- Die Datenverbindungsschicht fungiert hauptsächlich als Router zwischen verschiedenen Netzwerksegmenten und nutzt Frames ausschließlich zur Adressierung
+- Die Datenverbindungsschicht konzentriert sich auf die Authentifizierung von Datenframes und überlässt die Fehlererkennung vollständig der physikalischen Schicht
+"""

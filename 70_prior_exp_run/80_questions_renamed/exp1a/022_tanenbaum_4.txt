@@ -1,0 +1,3 @@
+**Antwort:** Die Transportschicht ist eine echte Ende-zu-Ende-Schicht und übermittelt Daten von der Quelle direkt zum Ziel, während die Protokolle der unteren Schichten (1-3) zwischen einer Maschine und ihren unmittelbaren Nachbarn arbeiten.
+
+**Frage:** Basierend auf dem gegebenen Text, was ist ein entscheidender Unterschied in der Art der Datenübertragung zwischen der Transportschicht (Schicht 4) und den unteren Schichten (1 bis 3) des ISO-OSI-Modells?

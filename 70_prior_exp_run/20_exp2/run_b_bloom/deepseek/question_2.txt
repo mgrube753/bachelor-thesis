@@ -1,0 +1,7 @@
+Frage: Vergleichen Sie den Zweck der Flusskontrolle mit dem der Medienzugriffskontrolle (MAC) in der Data Link Layer des ISO-OSI-Modells und erklären Sie, warum beide Mechanismen benötigt werden.
+
+Antwortmöglichkeiten:
+- ~Die Flusskontrolle verhindert, dass ein schneller Sender einen langsamen Empfänger mit Daten überlastet, während die Medienzugriffskontrolle den Zugriff mehrerer Geräte auf einen gemeinsam genutzten Übertragungskanal in Broadcast-Netzen regelt. Beide sind nötig, weil sie unterschiedliche Probleme lösen: Datenstau bei Geschwindigkeitsunterschieden vs. Kollisionsvermeidung bei gemeinsamer Nutzung.
+- Beide dienen der Fehlererkennung in Datenrahmen: Die Flusskontrolle prüft die Frame-Integrität, während der MAC die Kanalqualität sicherstellt, um Übertragungsfehler zu minimieren.
+- Die Flusskontrolle optimiert die Größe von Datenframes für effizientere Übertragung, während der MAC-Sublayer Bestätigungsrahmen (ACKs) für zuverlässige Kommunikation verwaltet. Sie ergänzen sich in der Fehlerbehebung.
+- Medienzugriffskontrolle beschleunigt die Datenübertragung durch Priorisierung von Frames, während Flusskontrolle die Übertragungsrate reduziert. Zusammen gleichen sie Netzwerkbelastungen aus.

@@ -1,0 +1,9 @@
+**Frage:** Welche der folgenden Aufgaben fallen laut dem vorliegenden Text in den Verantwortungsbereich der Netzwerkschicht (Network Layer) des ISO-OSI-Modells?
+
+**Korrekte Antwort: B**
+
+**Antwortmöglichkeiten:**
+A) Die Umwandlung von Daten in ein Format, das von der Anwendungsschicht verarbeitet werden kann, und die Sicherstellung der Datenintegrität während der Übertragung.
+B) Die Bestimmung, wie Pakete von der Quelle zum Ziel geleitet werden, die Bewältigung von Überlastungen und die Überwindung von Problemen bei der Verbindung heterogener Netzwerke.
+C) Die physische Übertragung von Bits über das Übertragungsmedium und die Bereitstellung elektrischer, mechanischer und funktionaler Schnittstellenspezifikationen.
+D) Das Management von Sitzungen zwischen Anwendungen und die Synchronisierung von Datenflüssen für Dialogkontrolle.

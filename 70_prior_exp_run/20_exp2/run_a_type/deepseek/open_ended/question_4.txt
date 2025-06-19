@@ -1,0 +1,8 @@
+Frage:  
+Welche drei grundlegenden Mechanismen setzt die Sicherungsschicht ein, um aus einer rohen Übertragungsstrecke eine zuverlässige Datenverbindung zu schaffen, und wie adressiert jeder dieser Mechanismen spezifische Herausforderungen der Bitübertragungsschicht?
+
+Antwort:  
+~Die Sicherungsschicht nutzt drei Kernmechanismen:  
+- **Framing und Fehlerkontrolle**: Der Sender segmentiert Daten in Frames. Bei zuverlässigem Dienst bestätigt der Empfänger korrekte Frame-Übertragung durch Acknowledgement-Frames. Dies maskiert Übertragungsfehler für die Vermittlungsschicht und adressiert das Problem der unzuverlässigen physikalischen Übertragung.  
+- **Flusskontrolle**: Reguliert die Datenrate des Senders, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überlastet. Dies löst die Herausforderung von Geschwindigkeitsunterschieden zwischen Sender und Empfänger.  
+- **Zugriffskontrolle (MAC-Sublayer)**: Steuert bei Broadcast-Netzen den Zugriff mehrerer Knoten auf ein gemeinsames Medium. Verhindert Datenkollisionen und adressiert damit das Problem des geteilten Übertragungskanals.

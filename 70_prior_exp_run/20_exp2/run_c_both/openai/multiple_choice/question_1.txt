@@ -1,0 +1,7 @@
+Frage: Benennen Sie die spezielle Teilschicht der Sicherungsschicht (Data Link Layer), die in Broadcast-Netzen den Zugriff auf den gemeinsamen Kanal regelt.
+
+Antwortmöglichkeiten:
+- ~Medium Access Control Sublayer
+- Logical Link Control Sublayer
+- Session Management Sublayer
+- Transport Control Sublayer

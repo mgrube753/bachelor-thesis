@@ -1,0 +1,7 @@
+Frage: Basierend auf der im Text dargestellten Beschreibung der Transportschicht, insbesondere unter Berücksichtigung der Kernaufgabe „Dienstquantität“, die eine Vernachlässigung von Quality of Service (QoS) und die Erbringung eines Speicherdienstes ohne Garantien für Kapazität, Zugriffszeit, Varianz oder Fehlerfreiheit umfasst, welche Implikation ergibt sich daraus für Dienste, die eine verlässliche Datenübertragung mit hohen Anforderungen an die Servicequalität benötigen?
+
+Antwortmöglichkeiten:
+- ~Solche Dienste müssten Mechanismen zur Sicherstellung der Zuverlässigkeit und der Servicequalität auf höheren Schichten implementieren, da die Transportschicht diese nicht gewährleistet.
+- Die Transportschicht ist primär für die Herstellung und Verwaltung zuverlässiger End-to-End-Verbindungen zuständig, die über die genannten Garantien hinausgehen.
+- Die Beschreibungen weisen darauf hin, dass die Transportschicht eine implizite Pufferung für alle Teilnehmer bereitstellt, unabhängig von deren spezifischen Anforderungen.
+- Die Aufgabe der Transportschicht ist die detaillierte Überwachung der Teilnehmer-Charakteristika, um Datenstaus präventiv zu vermeiden.

@@ -1,0 +1,5 @@
+**Frage:**  
+Welches Hauptziel verfolgen die drei Kernaufgaben des Application Layers (Schicht 7) im ISO-OSI-Modell?  
+
+**Antwort:**  
+Universelle Anwendbarkeit für jede Anwendung, um hohe Systematisierung und Wiederverwendbarkeit zu ermöglichen.

@@ -1,0 +1,9 @@
+Frage: Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Session Layers (Schicht 5) im ISO-OSI-Modell?
+
+Korrekte Antwort: Synchronisation von Datenströmen und Gewährleistung von Bestätigungen
+
+Antwortmöglichkeiten:
+A) Synchronisation von Datenströmen und Gewährleistung von Bestätigungen
+B) Spontanes Erstellen, Senden, Empfangen und sofortiges Verwerfen von Datagrammen
+C) Vermeidung von Zwischenpunkten und Bestätigungen (Asynchronität)
+D) Aufspaltung unabhängiger Datenpakete in Einzelteile (Atomisierung)

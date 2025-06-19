@@ -1,0 +1,7 @@
+Frage: Ein Hochleistungs-Server soll große Datensätze an einen Client mit begrenzter Verarbeitungsgeschwindigkeit über eine Netzwerkverbindung übermitteln. Es besteht das Risiko, dass der Server den Client überfordert und dass während der Übertragung Datenkorruption auftritt. Welche zwei primären Mechanismen der Data Link Layer müssen in dieser Situation angewendet werden, um die zuverlässige und geregelte Zustellung der Daten zu gewährleisten?
+
+Antwortmöglichkeiten:
+- ~Die Anwendung von Datenrahmen zur Strukturierung der Übertragung und ein Verkehrsregelungsmechanismus, um die Senderate an die Empfängerfähigkeit anzupassen.
+- Die Nutzung von IP-Adressen zur Routenfindung und die Segmentierung von Daten in Pakete auf der Vermittlungsschicht.
+- Die Verschlüsselung der Daten zur Sicherstellung der Vertraulichkeit und die Komprimierung zur Reduzierung der Datenmenge.
+- Die Einrichtung einer Sitzung zur Verwaltung des Dialogs und die Darstellung von Datenformaten für die Anwendung.

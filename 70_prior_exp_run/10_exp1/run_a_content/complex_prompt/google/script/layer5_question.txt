@@ -1,0 +1,7 @@
+Frage: Der Session Layer (Schicht 5) des OSI-Modells hat die Aufgabe, das "Sitzungs(Session)-Konzept einer Kommunikationsbeziehung" zu implementieren. Welche der drei genannten Kernaufgaben trägt am wesentlichsten dazu bei, die *Integrität* und *effiziente Verarbeitung* zusammengehöriger Informationsflüsse innerhalb einer solchen Sitzung zu gewährleisten, indem sie die logische Ordnung und den Zustand der Kommunikation über potenziell fehleranfällige oder komplexe Transaktionen hinweg aufrechterhält?
+
+Antwortmöglichkeiten:
+- Die Aufgabe, Sitzungen aufzubauen, zu verwalten, zurückzuweisen und zu beenden.
+- Die Aufgabe der Synchronisation durch das Setzen von Zwischenpunkten in Kombination mit der Bündelung von zusammengehörigen Transaktionen.
+- ~Die Kernaufgabe der Synchronisation durch das Setzen von Zwischenpunkten ermöglicht die Wiederherstellung und logische Ordnung, während die Bündelung von zusammengehörigen Transaktionen die effiziente und kohärente Verarbeitung komplexer Abläufe sicherstellt, wodurch gemeinsam die Integrität und Effizienz von Informationsflüssen gefördert wird.
+- Keine der genannten Aufgaben, da diese Funktionen hauptsächlich auf höheren oder tieferen Schichten des OSI-Modells angesiedelt sind.

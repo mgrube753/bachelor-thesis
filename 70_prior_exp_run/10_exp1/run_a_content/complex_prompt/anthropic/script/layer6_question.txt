@@ -1,0 +1,10 @@
+```
+Frage: Ein internationales Unternehmen plant die Implementierung eines neuen Datenaustauschsystems zwischen Niederlassungen in Japan, Deutschland und den USA. Dabei werden Textdaten, Bilddateien und verschlüsselte Finanzdaten übertragen. Welche der folgenden Probleme müsste die Presentation Layer (Schicht 6) des OSI-Modells in diesem Szenario NICHT bewältigen?
+
+Antwortmöglichkeiten:
+- Die Umwandlung von japanischen Kanji-Zeichen in Unicode für die Verarbeitung in verschiedenen Systemen
+- Die Verschlüsselung vertraulicher Finanzdaten vor der Übertragung
+- Die Konvertierung zwischen Little-Endian und Big-Endian Darstellungen für Datenfelder
+- ~Die Auflösung von IP-Adressen der verschiedenen Niederlassungen
+- Die Komprimierung großer Bilddateien zur Reduzierung der Übertragungszeit
+```

@@ -1,0 +1,2 @@
+Richtige Antwort: Lokalisierung  
+Frage: Welche Kernaufgabe der Network Layer 3 beschreibt das Auffinden von netzwerk-internen Positionen?

@@ -1,0 +1,7 @@
+Frage: Laut dem beschriebenen Text, welcher Mechanismus in der Data Link Layer adressiert das Problem, dass ein schneller Sender einen langsamen Empfänger mit Daten überfluten könnte, und ist entscheidend für die Regulierung des Datenverkehrs?
+
+Antwortmöglichkeiten:
+- ~Flusskontrolle
+- Fehlererkennung durch Rahmenbestätigung
+- Medienzugriffskontrolle für Broadcast-Netzwerke
+- Zerlegung der Eingabedaten in Datenrahmen

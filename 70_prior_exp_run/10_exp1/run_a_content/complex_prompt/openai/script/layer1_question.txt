@@ -1,0 +1,7 @@
+Frage: Welcher der folgenden Vorgänge gehört gemäß der Beschreibung des Physical Layer 1 NICHT zu seinen Kernaufgaben?
+
+Antwortmöglichkeiten:
+- ~Verschlüsselung von Datenpaketen, um Vertraulichkeit zu gewährleisten
+- Codierung logischer Werte in physikalische Größen wie NRZ oder Manchester
+- Mediengebundener Transport physikalischer Signale über ein Telefonkabel
+- Decodierung empfangener physikalischer Signale in logische Werte mittels Abtastung

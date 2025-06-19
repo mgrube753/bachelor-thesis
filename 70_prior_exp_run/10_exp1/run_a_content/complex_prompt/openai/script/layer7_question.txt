@@ -1,0 +1,5 @@
+Frage: Das ISO-OSI-Modell sieht für jede Schicht eine klare Aufgabenabgrenzung vor. Analysieren Sie, warum laut obigem Text gerade auf der Anwendungsschicht (Layer 7) kaum Systematisierung möglich ist, und benennen Sie zwei konkrete Herausforderungen, die sich daraus für das Design von Layer-7-Protokollen ergeben.
+
+Antwort: ~Da die Anwendungsschicht direkt von den spezifischen Grundkonzepten, Protokollelementen und Verhaltensanforderungen einzelner Anwendungen abhängt und diese von Anwendung zu Anwendung stark variieren, existiert keine universelle, schichtweite Semantik; folglich muss jedes Layer-7-Protokoll seine Terminologie, Datenerwartungen und Reaktionsmuster individuell festlegen. Dies führt zu zwei zentralen Herausforderungen:  
+- Protokolle müssen anwendungsspezifisch entwickelt werden, was Wiederverwendbarkeit und Standardisierung erschwert.  
+- Interoperabilität erfordert zusätzliche Vereinbarungen über Datenformate und semantische Bedeutungen, die das ISO-OSI-Modell nicht bereitstellt.

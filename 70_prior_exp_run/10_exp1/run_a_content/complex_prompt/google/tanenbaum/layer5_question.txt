@@ -1,0 +1,8 @@
+Frage: Der Session Layer im ISO-OSI-Modell bietet Dienste wie Dialogsteuerung, Token-Management und Synchronisation an. Welche gemeinsame übergeordnete Funktion oder welchen kritischen Aspekt der Kommunikation zwischen verschiedenen Maschinen adressieren diese scheinbar unterschiedlichen Dienste primär, um eine robuste und verlässliche Interaktion über eine längere Zeitspanne zu gewährleisten?
+
+Antwortmöglichkeiten:
+- ~Die kollektive Gewährleistung der Kohärenz, Konfliktvermeidung und Wiederherstellbarkeit komplexer Interaktionsprozesse, die über eine einzelne Anforderung hinausgehen.
+- Die reine Datenkomprimierung zur Effizienzsteigerung der Netzwerkübertragung.
+- Die Verschlüsselung von Datenpaketen zur Sicherstellung der Vertraulichkeit.
+- Die dynamische Zuweisung von IP-Adressen an Endgeräte im Netzwerk.
+- Die Umwandlung von logischen Adressen in physische Hardware-Adressen.

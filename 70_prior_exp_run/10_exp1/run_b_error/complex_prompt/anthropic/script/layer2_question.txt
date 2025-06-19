@@ -1,0 +1,9 @@
+```
+Frage: In der gegebenen Beschreibung des Data Link Layers werden ungewöhnliche Kernaufgaben wie "Fehlererzeugung" und "Medienverweigerung" genannt. Welche kritische Analyse trifft am besten auf die dargestellte Beschreibung zu?
+
+Antwortmöglichkeiten:
+- ~Die Beschreibung ist inhaltlich falsch und stellt eine Umkehrung der tatsächlichen Funktionen des Data Link Layers dar, der eigentlich für Fehlererkennung, Flusssteuerung und zuverlässige Übertragung zuständig ist
+- Die Beschreibung ist korrekt, beschreibt aber eine selten implementierte Variante des Data Link Layers für Testzwecke
+- Die Beschreibung bezieht sich auf die moderne Version des Data Link Layers nach der ISO-OSI-Revision von 2020
+- Die Beschreibung ist korrekt und stellt die Sicherheitsmechanismen des Data Link Layers dar, die bei Angriffen aktiviert werden
+```

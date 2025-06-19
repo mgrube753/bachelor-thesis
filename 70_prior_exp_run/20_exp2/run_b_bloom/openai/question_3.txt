@@ -1,0 +1,3 @@
+Frage: Sie entwickeln für ein lokales Netzwerk ein Data-Link-Protokoll, in dem ein sehr schneller Sender auf einen wesentlich langsameren Empfänger trifft. Welche im Text beschriebene Data-Link-Layer-Mechanik müssen Sie anwenden, um ein Überfluten des Empfängers zu vermeiden, und wie funktioniert sie auf Frame-Ebene?
+
+Antwort: ~Man setzt eine Flusskontrolle (traffic regulation) ein, bei der der Empfänger dem Sender per Rückmeldung – etwa durch Empfangsbestätigungen oder „ready/not ready“-Signale – anzeigt, wann er weitere Frames verarbeiten kann; der Sender überträgt neue Frames erst nach dieser Freigabe und verhindert so eine Überlastung des Empfängers.

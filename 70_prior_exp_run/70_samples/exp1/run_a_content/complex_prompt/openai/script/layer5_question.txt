@@ -1,0 +1,7 @@
+Frage: Bei der Entwicklung eines Dateitransfer-Protokolls soll eine Funktion implementiert werden, die während der Übertragung definierte Wiederaufnahmepunkte (Checkpoints) setzt, sodass Sender und Empfänger nach einer Unterbrechung exakt an derselben Stelle fortfahren können. Welcher Dienst des ISO-OSI-Modells ist für die Realisierung dieser Checkpoints zuständig und auf welcher Schicht ist er angesiedelt?
+
+Antwortmöglichkeiten:
+- ~Synchronisationsdienst der Session Layer (Schicht 5)
+- Fehlererkennungsdienst der Sicherungsschicht (Schicht 2)
+- Flusskontrolle der Transportschicht (Schicht 4)
+- Datenkompressionsdienst der Darstellungsschicht (Schicht 6)

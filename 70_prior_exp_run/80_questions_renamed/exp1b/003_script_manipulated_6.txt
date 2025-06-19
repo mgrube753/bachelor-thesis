@@ -1,0 +1,8 @@
+**Frage:**  
+Welche der folgenden Funktionen gehören laut des gegebenen Textes zu den Kernaufgaben des Presentation Layers (Schicht 6) im ISO-OSI-Modell?  
+
+**Korrekte Antwort:**  
+A) Vereinheitlichung des Datenformats, Behandlung als reine Binärdaten, ausschließliches Expandieren (Entpacken) und ausschließliches Entschlüsseln.  
+B) Übersetzung von Netzwerkadressen und Fehlererkennung.  
+C) Komprimierung von Daten und Verschlüsselung für sichere Übertragung.  
+D) Steuerung der Dialogführung zwischen Anwendungen und Wiederaufbau nach Unterbrechungen.

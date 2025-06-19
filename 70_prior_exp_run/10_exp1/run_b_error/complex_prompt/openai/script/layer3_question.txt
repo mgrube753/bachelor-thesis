@@ -1,0 +1,7 @@
+Frage: Analysieren Sie die im Text beschriebenen „3 Kernaufgaben“ der Layer-3-Schicht. Welche dieser Aufgaben würde man nach strengem ISO/OSI-Verständnis am ehesten einer anderen Schicht als Layer 3 zuordnen, da sie primär die Übertragungsgeschwindigkeit und nicht die logische Adressierung oder Wegfindung betrifft?
+
+Antwortmöglichkeiten:
+- ~Datenbeschleunigung
+- Lokalisierung
+- Zufallspfad
+- Broadcast

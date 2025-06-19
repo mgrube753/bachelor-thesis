@@ -1,0 +1,9 @@
+Frage: Was ist die Hauptfunktion der Präsentationsschicht im ISO-OSI-Modell?
+
+Korrekte Antwort: Die Präsentationsschicht befasst sich mit der Syntax und Semantik der übertragenen Informationen und ermöglicht die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen durch die Verwaltung abstrakter Datenstrukturen.
+
+Antwortmöglichkeiten:
+A) Die Präsentationsschicht befasst sich mit der Syntax und Semantik der übertragenen Informationen und ermöglicht die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen durch die Verwaltung abstrakter Datenstrukturen.
+B) Die Präsentationsschicht ist hauptsächlich für die Übertragung von Bits zwischen verschiedenen Netzwerkknoten zuständig.
+C) Die Präsentationsschicht stellt die Benutzeroberfläche für Netzwerkanwendungen bereit.
+D) Die Präsentationsschicht ist für die Herstellung, Aufrechterhaltung und Beendigung von Verbindungen zwischen Netzwerkknoten verantwortlich.

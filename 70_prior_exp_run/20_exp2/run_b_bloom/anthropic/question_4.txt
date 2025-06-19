@@ -1,0 +1,5 @@
+```
+Frage: Analysieren Sie die im Text beschriebenen Hauptfunktionen der Datensicherungsschicht und untersuchen Sie, wie diese Funktionen miteinander in Beziehung stehen, um die grundlegenden Herausforderungen der Datenübertragung zu bewältigen. Erläutern Sie dabei, welche unterschiedlichen Probleme durch die verschiedenen Mechanismen adressiert werden.
+
+Antwort: ~Die Datensicherungsschicht bewältigt drei zentrale Herausforderungen durch spezifische, aber zusammenhängende Funktionen: 1) Fehlerbehandlung durch Frame-basierte Übertragung und Bestätigungsmechanismen, wodurch Übertragungsfehler für höhere Schichten maskiert werden; 2) Flusssteuerung durch Verkehrsregulierungsmechanismen, die verhindern, dass schnelle Sender langsame Empfänger mit Daten überfordern; und 3) Kanalzugriffskontrolle durch die Medium Access Control Sublayer, die speziell bei Broadcast-Netzwerken den gemeinsamen Kanalzugriff koordiniert. Diese Funktionen ergänzen sich gegenseitig und bilden eine zusammenhängende Strategie zur Transformation einer fehleranfälligen Übertragungseinrichtung in eine zuverlässige Kommunikationsverbindung.
+```

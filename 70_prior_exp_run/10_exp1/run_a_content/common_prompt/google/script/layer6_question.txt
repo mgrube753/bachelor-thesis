@@ -1,0 +1,8 @@
+[KORREKTE ANTWORT]: Die Presentation Layer (Schicht 6) ist hauptsächlich für die Kodierung (Darstellung) der Anwendungsdaten als Bitstrom verantwortlich und führt Aufgaben wie Endian-Ness-Konvertierung, Zeichenkonvertierung, Kompression und Verschlüsselung durch.
+
+Welche der folgenden Aussagen beschreibt die Hauptfunktion und die Kernaufgaben der Presentation Layer (Schicht 6) im ISO-OSI-Modell korrekt?
+
+A) Die Presentation Layer ist für die Segmentierung von Daten und die Flusskontrolle zuständig.
+B) Die Presentation Layer ist verantwortlich für das Routing von Datenpaketen durch ein Netzwerk.
+C) Die Presentation Layer kodiert Anwendungsdaten als Bitstrom und führt Aufgaben wie Endian-Ness-Konvertierung, Zeichenkonvertierung, Kompression und Verschlüsselung durch.
+D) Die Presentation Layer verwaltet Sitzungen und den Dialog zwischen Anwendungen.

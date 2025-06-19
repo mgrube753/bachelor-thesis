@@ -1,0 +1,9 @@
+"""
+Frage: Analysieren Sie die im Text beschriebenen Funktionen der Data Link Layer und bestimmen Sie, welche Beziehung zwischen den verschiedenen Mechanismen besteht.
+
+Antwortmöglichkeiten:
+- ~Die beschriebenen Mechanismen dienen gemeinsam dem Ziel, eine zuverlässige Kommunikation über unzuverlässige physische Kanäle zu gewährleisten, indem sie Fehler maskieren, Überlastung verhindern und Kanalzugriff regulieren
+- Die beschriebenen Mechanismen sind unabhängige Funktionen ohne systematischen Zusammenhang, die je nach Netzwerktyp optional implementiert werden können
+- Die beschriebenen Mechanismen stehen in hierarchischer Beziehung zueinander, wobei die Fehlererkennung die wichtigste Funktion ist und die anderen Funktionen nur unterstützend wirken
+- Die beschriebenen Mechanismen sind primär für die Kommunikation mit der darüberliegenden Netzwerkschicht konzipiert und dienen hauptsächlich als Übersetzer zwischen Physical Layer und Network Layer
+"""

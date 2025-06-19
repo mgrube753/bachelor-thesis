@@ -1,0 +1,2 @@
+Richtige Antwort: Bandbreite, Latenz und Jitter  
+Frage: Welche drei wesentlichen Parameter der Quality of Service (QoS) im Transport Layer werden im Text genannt?

@@ -1,0 +1,11 @@
+# Frage zum Transport Layer im ISO-OSI-Modell
+
+Welche der folgenden Aussagen beschreibt die Kernaufgaben des Transport Layers (Schicht 4) im ISO-OSI-Modell korrekt?
+
+## Korrekte Antwort:
+A) Adressierung von Teilnehmern, Flusssteuerung und Sicherstellung der Dienstqualität (Quality of Service)
+
+## Weitere Antwortmöglichkeiten:
+B) Fehlerkorrektur, Komprimierung und Synchronisation
+C) Routing zwischen verschiedenen Netzwerken, Adressierung und Switching
+D) Bitsynchronisation, Medienzugriff und physikalische Übertragung

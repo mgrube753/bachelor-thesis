@@ -1,0 +1,9 @@
+"""
+Frage: Welche der folgenden Aussagen stellt die konzeptionelle Beziehung zwischen den Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) am präzisesten dar?
+
+Antwortmöglichkeiten:
+- ~Die Datenverbindungsschicht abstrahiert physikalische Übertragungsfehler durch Framing, Fehlererkennung und Flusssteuerung, wodurch eine scheinbar fehlerfreie Verbindung für höhere Schichten geschaffen wird
+- Die Datenverbindungsschicht eliminiert sämtliche Übertragungsfehler durch Acknowledgement-Frames und garantiert dadurch eine vollständig fehlerfreie Datenübertragung
+- Die Datenverbindungsschicht dient primär der Verkehrsregulierung zwischen Sender und Empfänger, während die Fehlererkennung eine Nebenfunktion darstellt
+- Die Datenverbindungsschicht ist ausschließlich für die Zugriffskontrolle auf gemeinsame Kanäle in Broadcast-Netzwerken durch die Medium Access Control-Unterschicht verantwortlich
+"""

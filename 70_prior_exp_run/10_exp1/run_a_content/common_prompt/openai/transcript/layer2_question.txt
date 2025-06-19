@@ -1,0 +1,2 @@
+Antwort: Fehlerkontrolle, Flusskontrolle, Segmentierung, Identifikation und Medienzugriff  
+Frage: Welche fünf Hauptaufgaben hat der Data Link Layer im ISO-OSI-Modell laut Beschreibung?

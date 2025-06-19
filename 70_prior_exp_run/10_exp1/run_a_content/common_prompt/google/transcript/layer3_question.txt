@@ -1,0 +1,3 @@
+**Korrekte Antwort:** Knoten-zu-Knoten-Flusssteuerung und Ende-zu-Ende-Flusssteuerung.
+
+Gemäß dem gegebenen Text, welche zwei verschiedenen Aspekte der Flusssteuerung werden als Kernaufgabe des Network Layers (Layer 3) des ISO-OSI-Modells unterschieden?

@@ -1,0 +1,9 @@
+```
+Frage: In einem Netzwerk mit unterschiedlich schnellen Geräten treten wiederholt Paketverluste auf, obwohl die physische Verbindung einwandfrei funktioniert. Welche Funktion der Data Link Layer adressiert dieses Problem am direktesten, und welcher fundamentale Kompromiss ist mit dieser Lösung verbunden?
+
+Antwortmöglichkeiten:
+- ~Die Verkehrsregulierungsmechanismen, die verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten; der Kompromiss besteht in reduziertem Gesamtdurchsatz zugunsten von Zuverlässigkeit
+- Die Medium Access Control Sublayer, die den Zugriff auf den gemeinsamen Kanal steuert; der Kompromiss besteht in erhöhter Komplexität der Netzwerkhardware
+- Die Fehlerkorrektur durch Acknowledgement Frames; der Kompromiss besteht in erhöhter Latenz durch zusätzlichen Nachrichtenverkehr
+- Die Aufteilung der Daten in kleine Frames; der Kompromiss besteht in erhöhtem Overhead durch Frame-Header und -Footer
+```

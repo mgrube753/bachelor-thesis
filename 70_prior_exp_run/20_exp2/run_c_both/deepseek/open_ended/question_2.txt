@@ -1,0 +1,5 @@
+Frage: Erklären Sie die primäre Aufgabe der Sicherungsschicht im OSI-Modell und stellen Sie dar, wie zwei zusätzliche Herausforderungen in dieser Schicht adressiert werden, insbesondere die Rolle der MAC-Teilschicht bei einer davon.
+
+Antwort: ~Die primäre Aufgabe der Sicherungsschicht ist die Transformation einer rohen Übertragungseinrichtung in eine fehlerfrei erscheinende Leitung, indem Übertragungsfehler maskiert werden. Dies geschieht durch Aufteilung der Daten in Rahmen und bei zuverlässigem Dienst durch Bestätigungen. Zwei zusätzliche Herausforderungen werden adressiert:
+- Flusskontrolle: Regulierung der Datenübertragung, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überlastet, durch Mechanismen zur Rückmeldung der Empfangsbereitschaft.
+- Zugriffskontrolle bei Broadcast-Netzen: Steuerung des Zugriffs mehrerer Geräte auf ein gemeinsames Medium. Diese Aufgabe übernimmt speziell die MAC-Teilschicht (Medium Access Control Sublayer) innerhalb der Sicherungsschicht.

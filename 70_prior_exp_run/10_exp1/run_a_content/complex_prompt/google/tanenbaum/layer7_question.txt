@@ -1,0 +1,3 @@
+Frage: Der vorliegende Text beschreibt die Anwendungsschicht des ISO-OSI-Modells und listet verschiedene Protokolle sowie deren grundlegende Funktionen auf, darunter HTTP, Protokolle für Dateitransfer, E-Mail und Netzwerk-News. Welche zentrale Eigenschaft oder Rolle kann diesen Protokollen gemeinsam zugeschrieben werden, basierend auf der Beschreibung im Text, die sie als Teil der Anwendungsschicht charakterisiert?
+
+Antwort: ~Sie ermöglichen den Nutzern den direkten Zugriff auf netzwerkbasierte Dienste und die Interaktion mit diesen, indem sie spezifische Anwendungen und deren Datenkommunikationsbedürfnisse adressieren.

@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aussagen trifft am präzisesten auf die Bedeutung der "Flusssteuerung" für die "Dienstqualität" im Transport Layer zu, basierend auf dem bereitgestellten Text?
+
+Antwortmöglichkeiten:
+- Die Flusssteuerung stellt primär sicher, dass die Adressierung von Teilnehmern korrekt und effizient erfolgt, was indirekt die Dienstqualität beeinflusst.
+- ~Die Flusssteuerung ist essenziell, um die Übertragungsrate an die "Teilnehmer-Charakteristik" anzupassen und somit die zugesicherten Garantien wie Bandbreite und Latenz für den jeweiligen Teilnehmer effektiv zu gewährleisten.
+- Die Flusssteuerung befasst sich hauptsächlich mit der Priorisierung von Datenpaketen, um Jitter zu minimieren, hat aber keinen direkten Einfluss auf die Bandbreite oder Fehlerrate.
+- Die Flusssteuerung ist eine unabhängige Aufgabe, die keine direkte Beziehung zur Erbringung eines Kommunikationsdienstes mit Garantien für spezifische Teilnehmer hat.

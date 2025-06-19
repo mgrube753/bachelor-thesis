@@ -1,0 +1,8 @@
+KORREKTE ANTWORT: B
+
+Frage: Welche Hauptaufgabe übernimmt die Presentation Layer im ISO-OSI-Modell?
+
+A) Routing von Datenpaketen zwischen unterschiedlichen Netzwerken  
+B) Verwaltung der Syntax und Semantik der übertragenen Daten und Bereitstellung einer standardisierten Codierung  
+C) Aufbau und Abbau physischer Verbindungen  
+D) Gewährleistung einer zuverlässigen Ende-zu-Ende-Datenübertragung

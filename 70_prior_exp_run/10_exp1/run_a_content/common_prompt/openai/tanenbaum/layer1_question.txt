@@ -1,0 +1,2 @@
+Korrekte Antwort: Physical Layer  
+Frage: Welche Schicht des ISO-OSI-Modells ist für die Übertragung roher Bits über einen Kommunikationskanal zuständig?
