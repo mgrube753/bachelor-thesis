@@ -1,49 +1,102 @@
-# Experiments Folder
+# Experiments
 
-This folder shows the experimental setup and data for evaluating automated question generation systems targeting the ISO-OSI networking model.
+This directory contains the experimental framework for evaluating Large Language Model capabilities in educational question generation, focusing on the two assessments of content adherence and Bloom's Taxonomy alignment.
 
-## Structure
+## Structure Overview
 
-### Experiments
+### Question Paths
+- **[`10_exp1/`](10_exp1/)** - Content Adherence & Error Detection
+  - [`run_a_content/`](10_exp1/run_a_content/) - Questions from original source materials
+  - [`run_b_error/`](10_exp1/run_b_error/) - Questions from manipulated source materials
+- **[`20_exp2/`](20_exp2/)** - Question Types & Bloom's Taxonomy
+  - [`run_a_type/`](20_exp2/run_a_type/) - Format-specific question generation
+  - [`run_b_bloom/`](20_exp2/run_b_bloom/) - Cognitive level-targeted questions
+  - [`run_c_both/`](20_exp2/run_c_both/) - Combined format and taxonomy specification
 
--   **10_exp1/** - First experiment comparing content accuracy and error detection
-    -   `run_a_content/` - Questions generated from original source material
-    -   `run_b_error/` - Questions generated from manipulated source material
--   **20_exp2/** - Second experiment evaluating question types and cognitive complexity
-    -   `run_a_type/` - Questions categorized by format (multiple-choice, open-ended)
-    -   `run_b_bloom/` - Questions targeting specific Bloom's taxonomy levels
-    -   `run_c_both/` - Combined type and complexity evaluation
+### Supporting Infrastructure
+- **[`30_input_sources/`](30_input_sources/)** - Source materials (script, transcript, Tanenbaum excerpts)
+- **[`40_prompts/`](40_prompts/)** - Prompt templates for generation and evaluation
+- **[`50_src/`](50_src/)** - Python implementation and analysis scripts
+- **[`60_eval/`](60_eval/)** - Evaluation data and expert assessment materials
+- **[`70_samples/`](70_samples/)** - Representative question samples
+- **[`80_questions_renamed/`](80_questions_renamed/)** - Processed question collections
+
+## Experimental Design
+
+### Models Used
+- **Anthropic Claude 3.7 Sonnet**
+- **Google Gemini 2.5 Flash**
+- **OpenAI o3**
+- **DeepSeek R1**
 
 ### Source Materials
+- **Script**: Lecture content from "Referenzarchitekturen" (Prof. Cap)
+- **Transcript**: Audio-to-text conversion of lecture content
+- **Tanenbaum**: Excerpts from "Computer Networks" textbook
+- **Manipulated Script**: Intentionally altered lecture content for error detection testing
 
--   **30_input_sources/** - Original texts about OSI layers
-    -   `script/` - Lecture script content (original and manipulated versions)
-    -   `tanenbaum/` - Excerpts from Tanenbaum textbook
-    -   `transcript/` - Lecture transcript material
+## Implementation Framework
 
-### Configuration
+### Prompt Engineering
+- **[`40_prompts/experiment/`](40_prompts/experiment/)** - Generation templates
+  - [`exp1_common_prompt.md`](40_prompts/experiment/exp1_common_prompt.md) - Basic question generation
+  - [`exp1_complex_prompt.md`](40_prompts/experiment/exp1_complex_prompt.md) - Advanced cognitive prompting
+  - [`exp2_type.md`](40_prompts/experiment/exp2_type.md) - Format-specific generation
+  - [`exp2_bloom.md`](40_prompts/experiment/exp2_bloom.md) - Taxonomy-aligned generation
+  - [`exp2_both.md`](40_prompts/experiment/exp2_both.md) - Combined specification
 
--   **40_prompts/** - Template prompts for question generation and evaluation
--   **50_src/** - Python scripts for experiment execution and data processing
--   **60_eval/** - Generated evaluation data and results
+### Evaluation System
+- **[`40_prompts/evaluation/`](40_prompts/evaluation/)** - Assessment rubrics
+  - [`exp_eval.md`](40_prompts/evaluation/exp_eval.md) - Expert evaluation template
+  - [`exp1a_rubric.md`](40_prompts/evaluation/exp1a_rubric.md) - Content adherence criteria
+  - [`exp1b_rubric.md`](40_prompts/evaluation/exp1b_rubric.md) - Error detection criteria
+  - [`exp2_rubric.md`](40_prompts/evaluation/exp2_rubric.md) - Format-taxonomy assessment
 
-## Key Components
+### Automation Pipeline
+- **[`50_src/main.py`](50_src/main.py)** - Primary experiment orchestration
+- **[`50_src/question_generation.py`](50_src/question_generation.py)** - LLM question generation
+- **[`50_src/evaluation.py`](50_src/evaluation.py)** - Automated assessment execution
+- **[`50_src/analysis_quantitative.py`](50_src/analysis_quantitative.py)** - Statistical analysis
+- **[`50_src/analysis_qualitative.py`](50_src/analysis_qualitative.py)** - Expert evaluation processing
+- **[`50_src/agreement.py`](50_src/agreement.py)** - Inter-annotator reliability calculation
 
-The experiments evaluate four LLM providers
+## Bloom's Taxonomy Integration
 
--   Anthropic Claude 3.7 Sonnet
--   Google Gemini 2.5 Flash
--   OpenAI o3
--   DeepSeek R1
+The experiments utilize a comprehensive German-language Bloom's framework:
 
-across different source materials and generation strategies, with automated scoring based on relevance, clarity, answerability, cognitive level, and correctness. DeepSeek was manually prompted via their website interface.
+### Cognitive Levels ([`40_prompts/experiment/bloom.md`](40_prompts/experiment/bloom.md))
+1. **Remembering**
+2. **Understanding**
+3. **Applying**
+4. **Analyzing**
+5. **Evaluating**
+6. **Creating**
 
-## Usage
+### Description & Verb Integration
+Each level includes specific German descriptions and action verbs for each Bloom level to construct the prompts, parsed via [`50_src/prompt_utils.py`](50_src/prompt_utils.py) for systematic question generation targeting specific cognitive demands.
 
-1. **Run experiments**: Execute `python main.py` from the root directory to generate questions and evaluations
-2. **Generate automated results**: Run `python analysis.py` to create evaluation metrics using cosine similarity and LLM-based content adherence ratings
-3. **Review experimental data**: Navigate to `10_exp1/` or `20_exp2/` to examine generated questions
-4. **Examine source materials**: Check `30_input_sources/` for the original texts used in question generation
-5. **Analyze prompts**: View `40_prompts/` to understand the templates used for LLM interactions
-6. **Process data**: Use Python scripts in `50_src/` for additional data processing and analysis
-7. **Check evaluations**: Review `60_eval/` for automated scoring results and analysis
+## Usage Instructions
+
+### Basic Execution
+```bash
+# Generate questions and evaluations
+python main.py
+
+# Run quantitative analysis
+python analysis_quantitative.py
+
+# Process qualitative assessments
+python analysis_qualitative.py
+
+# Calculate agreement metrics
+python agreement.py
+```
+
+### Configuration Requirements
+- **API Keys**: OpenAI, Anthropic, Google configured via environment variables
+- **Dependencies**: Listed in root [`requirements.txt`](../requirements.txt)
+ **DeepSeek**: Manual prompting via web interface (R1 model access)
+
+ #TODO more details needed
+
+ #TODO think about 30_documentation as well!
