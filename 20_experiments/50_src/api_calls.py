@@ -1,6 +1,5 @@
 import time
-import constants
-from constants import REQUEST_DELAY_SECONDS
+from constants import REQUEST_DELAY_SECONDS, LLM_MODEL_IDS
 from google.genai import types
 
 
@@ -89,7 +88,7 @@ def gen_with_openai(client, prompt_text, model_id, max_tokens):
 
 def llm_generation(llm_name, clients, prompt_text, max_tokens):
     client = clients.get(llm_name)
-    model_id = constants.LLM_MODEL_IDS.get(llm_name)
+    model_id = LLM_MODEL_IDS.get(llm_name)
 
     if not client or not model_id:
         print(f"[ERROR] Client or model_id not found for LLM: {llm_name}")

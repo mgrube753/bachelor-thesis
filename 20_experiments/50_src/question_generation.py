@@ -13,14 +13,8 @@ import threading
 from tqdm import tqdm
 from collections import defaultdict
 
-print_lock = threading.Lock()
 llm_counters = defaultdict(int)
 counter_lock = threading.Lock()
-
-
-def safe_print(message):
-    with print_lock:
-        print(message)
 
 
 def increment_counter(llm_name):
@@ -55,14 +49,14 @@ def generate_task_exp1(
             return None
 
         generated_question = llm_generation(
-            llm_name, clients, formatted_prompt, max_tokens=1600
+            llm_name, clients, formatted_prompt, max_tokens=1800
         )
         if generated_question:
             save_result(output_path, generated_question)
             increment_counter(llm_name)
             return True
     except Exception as e:
-        safe_print(f"[ERROR] {llm_name}: {description} - {e}")
+        print(f"[ERROR] {llm_name}: {description} - {e}")
     return False
 
 
@@ -79,12 +73,12 @@ def generate_task_exp2(llm_name, clients, formatted_prompt, output_path, descrip
             increment_counter(llm_name)
             return True
     except Exception as e:
-        safe_print(f"[ERROR] {llm_name}: {description} - {e}")
+        print(f"[ERROR] {llm_name}: {description} - {e}")
     return False
 
 
 def run_exp_1a(clients):
-    safe_print("\n[INFO] Experiment 1a: Content Fidelity")
+    print("\n[INFO] Experiment 1a: Content Fidelity")
     reset_counters()
     tasks = []
 
@@ -155,7 +149,7 @@ def run_exp_1a(clients):
 
 
 def run_exp_1b(clients):
-    safe_print("\n[INFO] Experiment 1b: Error Propagation")
+    print("\n[INFO] Experiment 1b: Error Propagation")
     reset_counters()
     source_type = constants.EXP1_SOURCE_TYPE_B
     tasks = []
@@ -181,7 +175,7 @@ def run_exp_1b(clients):
             )
             input_text = load_txt(input_text_path)
             if not input_text:
-                safe_print(f"[WARNING] {source_type}/layer{layer_num}: file not found")
+                print(f"[WARNING] {source_type}/layer{layer_num}: file not found")
                 continue
 
             for llm_name in constants.LLM_NAMES:
@@ -219,7 +213,7 @@ def run_exp_1b(clients):
 
 
 def run_exp_2a(clients):
-    safe_print("\n[INFO] Experiment 2a: Question Type")
+    print("\n[INFO] Experiment 2a: Question Type")
     reset_counters()
 
     tanenbaum_text_path = os.path.join(
@@ -275,7 +269,7 @@ def run_exp_2a(clients):
 
 
 def run_exp_2b(clients):
-    safe_print("\n[INFO] Experiment 2b: Bloom Level")
+    print("\n[INFO] Experiment 2b: Bloom Level")
     reset_counters()
     bloom_data = get_bloom()
 
@@ -332,7 +326,7 @@ def run_exp_2b(clients):
 
 
 def run_exp_2c(clients):
-    safe_print("\n[INFO] Experiment 2c: Combined Type and Bloom")
+    print("\n[INFO] Experiment 2c: Combined Type and Bloom")
     reset_counters()
     bloom_data = get_bloom()
 

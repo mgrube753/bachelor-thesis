@@ -1,6 +1,12 @@
 import os
 import pandas as pd
-import constants
+from constants import (
+    PROMPT_TEMPLATES_PATH,
+    INPUT_SOURCES_PATH,
+    EXPERIMENTS_BASE_PATH,
+    EVAL_PATH,
+    BLOOM_LEVELS_ORDERED,
+)
 import concurrent.futures
 from file_utils import load_txt
 from api_calls import llm_generation
@@ -11,20 +17,16 @@ def get_rubric(exp_name):
     rubric_file = (
         f"{exp_name}_rubric.md" if exp_name in ["exp1a", "exp1b"] else "exp2_rubric.md"
     )
-    return load_txt(
-        os.path.join(constants.PROMPT_TEMPLATES_PATH, "evaluation", rubric_file)
-    )
+    return load_txt(os.path.join(PROMPT_TEMPLATES_PATH, "evaluation", rubric_file))
 
 
 def get_eval_prompt():
-    return load_txt(
-        os.path.join(constants.PROMPT_TEMPLATES_PATH, "evaluation", "exp_eval.md")
-    )
+    return load_txt(os.path.join(PROMPT_TEMPLATES_PATH, "evaluation", "exp_eval.md"))
 
 
 def get_source(source, layer, manipulated=False):
     source_dir = os.path.join(
-        constants.INPUT_SOURCES_PATH,
+        INPUT_SOURCES_PATH,
         source,
         "manipulated" if manipulated else ("common" if source == "script" else ""),
     )
@@ -70,11 +72,9 @@ def calculate_bloom_score(exp_name, bloom_rating, bloom_original=None):
 
 
 def process_exp1(exp_name, clients):
-    csv_path = os.path.join(
-        constants.EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv"
-    )
+    csv_path = os.path.join(EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv")
     df = pd.read_csv(csv_path)
-    samples_base = os.path.join(constants.EXPERIMENTS_BASE_PATH, "70_samples", "exp1")
+    samples_base = os.path.join(EXPERIMENTS_BASE_PATH, "70_samples", "exp1")
     run_folder = "run_a_content" if exp_name == "exp1a" else "run_b_error"
     rubric = get_rubric(exp_name)
     criteria = ["relevance", "clarity", "answerability", "challenging", "correctness"]
@@ -144,11 +144,9 @@ def process_exp1(exp_name, clients):
 
 
 def process_exp2(exp_name, clients):
-    csv_path = os.path.join(
-        constants.EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv"
-    )
+    csv_path = os.path.join(EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv")
     df = pd.read_csv(csv_path)
-    samples_base = os.path.join(constants.EXPERIMENTS_BASE_PATH, "70_samples", "exp2")
+    samples_base = os.path.join(EXPERIMENTS_BASE_PATH, "70_samples", "exp2")
     run_folders = {"exp2a": "run_a_type", "exp2b": "run_b_bloom", "exp2c": "run_c_both"}
     rubric = get_rubric(exp_name)
     context = get_source("tanenbaum", 2)
@@ -209,8 +207,8 @@ def process_exp2(exp_name, clients):
             samples_path = os.path.join(samples_base, run_folders[exp_name], row["llm"])
             pattern = f"question_{row['bloom_original']}"
             bloom_level = (
-                constants.BLOOM_LEVELS_ORDERED[row["bloom_original"] - 1]
-                if row["bloom_original"] <= len(constants.BLOOM_LEVELS_ORDERED)
+                BLOOM_LEVELS_ORDERED[row["bloom_original"] - 1]
+                if row["bloom_original"] <= len(BLOOM_LEVELS_ORDERED)
                 else f"bloom_{row['bloom_original']}"
             )
             print(
@@ -225,8 +223,8 @@ def process_exp2(exp_name, clients):
             )
             pattern = f"question_{row['bloom_original']}"
             bloom_level = (
-                constants.BLOOM_LEVELS_ORDERED[row["bloom_original"] - 1]
-                if row["bloom_original"] <= len(constants.BLOOM_LEVELS_ORDERED)
+                BLOOM_LEVELS_ORDERED[row["bloom_original"] - 1]
+                if row["bloom_original"] <= len(BLOOM_LEVELS_ORDERED)
                 else f"bloom_{row['bloom_original']}"
             )
             print(

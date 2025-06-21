@@ -16,7 +16,10 @@
 \usepackage{hyperref}
     \hypersetup{colorlinks=true, citecolor=purple, filecolor=black, linkcolor=main, urlcolor=blue}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
-% \addbibresource{ref.bib}
+\addbibresource{../../50_thesis/thesis/bibs/Extras.bib}
+\addbibresource{../../50_thesis/thesis/bibs/Positive.bib}
+\addbibresource{../../50_thesis/thesis/bibs/Eigenes.bib}
+
 
 \author[Malte Grube]{\vspace*{-.8em}Malte Grube -- B.\,Sc. Informatik (2021)\inst{1}}
 \title[]{LLMs in der Fragengenerierung}
@@ -26,7 +29,7 @@
     \footnotesize{Betreuer: \textit{Prof.\,Dr. rer.nat.habil. \uline{Clemens H. Cap}}} \vspace*{.25em} \\
     \textit{Jun.-Prof.in Dr.in \uline{Charlott Rubach}} \vspace*{-.25em}
 }
-\date{15. Oktober 2024}
+\date{\today}
 
 \def\cmd#1{\texttt{\color[RGB]{0, 0, 139}\footnotesize $\backslash$#1}}
 \def\env#1{\texttt{\color[RGB]{0, 0, 139}\footnotesize #1}}
@@ -78,28 +81,90 @@
 
 \begin{frame}{Forschungsfragen}
     \begin{itemize}
-        \item Test 
+        \item \textbf{RQ1:} To what extent do \textcolor{RedOrange!80}{LLMs adhere} to the content of diverse provided \textcolor{RedOrange!80}{instructional texts} when generating questions? \vfill
+        \item \textbf{RQ2:} How does the \textcolor{RedOrange!80}{relationship} between diverse question formats and Bloom's Taxonomy levels influence the \textcolor{RedOrange!80}{pedagogical effectiveness} of LLM-generated questions?
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Bloom's Taxonomy in der Bildung}
+\begin{frame}{Bloom's revised Taxonomy}
     \begin{itemize}
-        \item Test 
+        \item Nützliche Grundlage für die Analyse von Fragen
+        \item \textbf{Kognitive Hierarchie:} 6-stufiges Framework zur Klassifizierung von Lernzielen \cite{krathwohl_revision_2002}:
+        \begin{enumerate}
+            {\footnotesize
+            \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
+            \item \textcolor{blue}{Understanding} -- Bedeutung von Anweisungen erkennen
+            \item \textcolor{blue}{Applying} -- Wissen in gegebenen Situationen anwenden
+            \item \textcolor{blue}{Analyzing} -- Material in Komponenten zerlegen
+            \item \textcolor{blue}{Evaluating} -- Urteile basierend auf Kriterien fällen
+            \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
+            }
+        \end{enumerate}
+        \item \textbf{Pädagogische Relevanz:} Ermöglicht systematische Bewertung kognitiver Anforderungen von Fragen
     \end{itemize}
 \end{frame}
 
-\begin{frame}{LLMs in der Fragengenerierung}
+% \begin{frame}{LLMs in der Fragengenerierung}
+%     \begin{itemize}
+%         \item \textbf{Aktuelle Entwicklungen:} Möglichkeit zur Verbesserung der Lehr- und Lernexperience \cite{naveed_comprehensive_2024}
+%         % zeitersparnis fuer Lehrende durch fortschrittliches Lehrmaterial, um mehr zeit fuer lehre und student-interaktion zu haben
+%         \item \textbf{Personalisierung:} Anpassbare Lernmaterialien für individuelle Bedürfnisse \cite{al_faraby_analysis_2024,hang_mcqgen_2024}
+%         \item \textbf{Herausforderungen:} 
+%         \begin{itemize}
+%             \item Inhaltstreue zu Quellmaterialien
+%             \item Alignment mit spezifischen kognitiven Levels \cite{scaria_automated_2024}
+%             \item Pädagogische Evaluation jenseits linguistischer Tests \cite{horbach_linguistic_2020,steuer_i_2021}
+%         \end{itemize}
+%         \item \textbf{Forschungslücke:} Systematische Evaluation von LLM-generierten Fragen bezüglich Inhaltstreue und Bloom's Taxonomy-Alignment
+%     \end{itemize}
+% \end{frame}
+
+\begin{frame}{Herausforderungen aus Literatur}
     \begin{itemize}
-        \item sota of my papers in thesis.tex 
+        \item \textbf{Veraltete Modelle} -- Kein Reasoning
+        % pre-thinking basiert auf dem user prompt, damit das modell verstehen kann, was der user will
+        \item \textbf{Halluzinationen} -- Falsche Antworten
+        % kann man minimieren durch kontext hinzugeben. pre-thinking kann auch dafür sorgen, dass das modell den kontext und die anforderungen hinterfragt
+        \item \textbf{Inhaltstreue} -- Forschung nötig
+        % es mangelt an systemen, welche die inhaltstreue von LLMs evaluieren
+        \item \textbf{Metriken im Fokus} -- Quantitative Evaluation
+        % Problematisch, da grundlegend linguistische Metriken
+        \item \textbf{Expertenbewertung} -- Qualitative Evaluation 
+        % selten performt, weil es aufwendig ist, aber notwendig für geeignete Auswertung
+        \item \textbf{Bloom} -- Hohe kognitive Levels
+        % dies sind die schwersten Levels, welche LLMs nicht gut beherrschen in related work
+        \item \textbf{Prompting} -- Einfluss auf Ergebnisse
+        % Auch ich bin kein prompt engineer, jedoch gibt es viele methoden, um LLMs zu steuern
+        % kontext geben, rollenzuweisung, beispiellösungen geben --> in-context learning, special marks verwenden für mehr "übersicht" und struktur, auch fine-tuning ist möglich, aber auch aufwendig
     \end{itemize}
 \end{frame}
 
 \section{Exp.\ 1 Methodik}
 
-\begin{frame}{Experimentelles Design}
+\begin{frame}[allowframebreaks]{Experimentelles Design}
     \begin{itemize}
-        \item Aufbau und Ziele von Exp1
-        \item Source Materials
+        \item \textbf{Ziel:} Bewertung der Inhaltsadhärenz von LLM-\\ generierten Fragen
+        \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
+        \begin{itemize}
+            \item Script -- Prof. Cap's Vorlesung (DE)
+            \item Transcript -- Audio-zu-Text (DE)  
+            \item \enquote{Computer Networks} -- Textbook (EN)
+        \end{itemize}
+        \item \textbf{Exp 1a:} Nutzt Originaltexte 
+        \item \textbf{Exp 1b:} Manipuliertes Script 
+        \framebreak
+        \item 4 Large Language Models: 
+            \begin{itemize}
+                \item \textbf{DeepSeek R1:} Jan 2025
+                \item \textbf{Claude 3.7 Sonnet:} Feb 2025
+                \item \textbf{Gemini 2.5 Flash:} Mar 2025
+                \item \textbf{OpenAI o3:} Apr 2025
+            \end{itemize}
+        \item 2 Prompt-Strategien:
+            \begin{itemize}
+                \item \textbf{Einfach:}
+                \item \textbf{Komplex:}
+            \end{itemize}
     \end{itemize}
 \end{frame}
 
@@ -118,9 +183,10 @@
 
 \section{Ergebnisse \& Diskussion}
 
-\begin{frame}{Hypothesen}
+\begin{frame}{Hypothesen -- RQ1}
     \begin{itemize}
-        \item Null- und Alternativhypothese! %#Todo
+        \item \textbf{H1:} The usage of a \textcolor{RedOrange!80}{complex prompt} with \textcolor{RedOrange!80}{detailed instructions}, in contrast to a common one, will lead to a \textcolor{RedOrange!80}{higher} content fidelity of the generated questions with respect to the source material, and also \textcolor{RedOrange!80}{higher} final scoring for each question. \vfill
+        \item \textbf{H1':} \textcolor{RedOrange!80}{Both} the common and complex prompts will lead to a \textcolor{RedOrange!80}{similar} content fidelity of the generated questions with respect to the source material, and also \textcolor{RedOrange!80}{similar} final scoring for each question.
     \end{itemize}
 \end{frame}
 
@@ -164,14 +230,34 @@
 
 \begin{frame}{Ausblick auf Exp. 2}
     \begin{itemize}
-        \item Test
+        \item \textbf{Fokus:} Bloom's Taxonomy-Alignment mit LLMs
+        \item \textbf{Fragetypen:} Multiple-Choice \& Freitextfragen
+        \item \textbf{Vorgehen:} Deskriptives Prompting mit
+            \begin{itemize}
+                \item Rollenzuweisung
+                \item (Nicht-)Angabe von Fragetyp
+                \item (Nicht-)Angabe von Bloom Level
+            \end{itemize}
+        \item \textbf{Evaluatoren:} Claude 3.7 Sonnet \& OpenAI o3
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Timeline bis zur Verteidigung}
-    \begin{itemize}
-        \item Test
-    \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{gantt.png}
+        \caption{GANTT-Diagramm bis zur Verteidigung.}
+        \label{fig:gantt}
+    \end{figure}
+\end{frame}
+
+% \begin{frame}[allowframebreaks]{Literaturverzeichnis}
+%     \printbibliography
+% \end{frame}
+
+\begin{frame}
+    \centering
+    \huge \textcolor{Black!80}{Vielen Dank für Ihre Aufmerksamkeit!}
 \end{frame}
 
 \end{document}

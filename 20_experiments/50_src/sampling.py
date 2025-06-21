@@ -2,7 +2,7 @@ import os
 import random
 import shutil
 import pandas as pd
-import constants
+from constants import EXP1_PATH, EXP2_PATH, EXPERIMENTS_BASE_PATH
 
 
 def sample_questions(src_path, dest_path, pattern, sample_size=3):
@@ -83,7 +83,7 @@ def generate_expert_csvs(sample_base, csv_path):
     for exp_name, group in df.groupby("exp_name"):
         group.to_csv(os.path.join(csv_path, f"{exp_name}.csv"), index=False)
         print(
-            f"  - Generated {os.path.relpath(os.path.join(csv_path, f'{exp_name}.csv'), constants.EXPERIMENTS_BASE_PATH)}"
+            f"  - Generated {os.path.relpath(os.path.join(csv_path, f'{exp_name}.csv'), EXPERIMENTS_BASE_PATH)}"
         )
 
     # Exp1: Save to expert_1 through expert_5 folders
@@ -212,7 +212,7 @@ def rename_samples(samples, csv_path, output_path):
 
 def main():
     random.seed(2025)
-    base = constants.EXPERIMENTS_BASE_PATH
+    base = EXPERIMENTS_BASE_PATH
     sample_base = os.path.join(base, "70_samples")
     csv_path = os.path.join(base, "60_eval", "csv_files")
     output_path = os.path.join(base, "80_questions_renamed")
@@ -221,8 +221,8 @@ def main():
     shutil.rmtree(os.path.join(csv_path, "qualitative"), ignore_errors=True)
     shutil.rmtree(output_path, ignore_errors=True)
 
-    walk_and_sample(constants.EXP1_PATH, sample_base, "exp1", "_question", 2)
-    walk_and_sample(constants.EXP2_PATH, sample_base, "exp2", "question_", 2)
+    walk_and_sample(EXP1_PATH, sample_base, "exp1", "_question", 2)
+    walk_and_sample(EXP2_PATH, sample_base, "exp2", "question_", 2)
     print(f"[INFO] Sampling completed. Results: {sample_base}")
 
     generate_expert_csvs(sample_base, csv_path)
