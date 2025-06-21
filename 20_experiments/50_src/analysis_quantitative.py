@@ -5,6 +5,7 @@ import concurrent.futures
 import threading
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from tqdm import tqdm
 from constants import (
     EXP1_PATH,
     INPUT_SOURCES_PATH,
@@ -42,7 +43,7 @@ def get_adherence_scores(clients, question, source_text):
         "{context_text}", source_text
     )
 
-    response = llm_generation("anthropic", clients, prompt, max_tokens=1200)
+    response = llm_generation("google", clients, prompt, max_tokens=1200, temperature=0)
     if response:
         try:
             score = float(response.strip())
@@ -56,14 +57,33 @@ def get_adherence_scores(clients, question, source_text):
         return None
 
 
-def get_adherence_scores_parallel(clients, questions_sources_pairs, max_workers=3):
+def get_adherence_scores_parallel(
+    clients,
+    questions_sources_pairs,
+    max_workers=2,
+    df=None,
+    valid_indices=None,
+    csv_path=None,
+):
     results = [None] * len(questions_sources_pairs)
-    rate_limiter = threading.Semaphore(max_workers)
+    completed_count = 0
+    count_lock = threading.Lock()
 
     def process_single(index, question, source_text):
-        with rate_limiter:
-            result = get_adherence_scores(clients, question, source_text)
-            results[index] = result
+        nonlocal completed_count
+        result = get_adherence_scores(clients, question, source_text)
+        results[index] = result
+
+        # Save incrementally if parameters provided
+        if df is not None and valid_indices is not None and csv_path is not None:
+            with count_lock:
+                idx = valid_indices[index]
+                if result is not None:
+                    df.at[idx, "adherence_score"] = result
+                df.to_csv(csv_path, index=False)
+
+        with count_lock:
+            completed_count += 1
 
     # https://docs.python.org/3/library/concurrent.futures.html
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -71,7 +91,13 @@ def get_adherence_scores_parallel(clients, questions_sources_pairs, max_workers=
             executor.submit(process_single, i, q, s)
             for i, (q, s) in enumerate(questions_sources_pairs)
         ]
-        concurrent.futures.wait(futures)
+
+        with tqdm(
+            total=len(questions_sources_pairs), desc="Adherence scores", unit="pair"
+        ) as pbar:
+            for future in concurrent.futures.as_completed(futures):
+                future.result()
+                pbar.update(1)
 
     return results
 
@@ -173,32 +199,35 @@ def process_experiment(exp_name):
     similarities = calc_cossim_batch(model, questions, sources)
 
     for i, idx in enumerate(valid_indices):
-        df.at[idx, "cosine_similarity"] = round(similarities[i], 4)
+        df.at[idx, "cosine_similarity"] = similarities[i]
         info = comparison_info[i]
         print(
             f"[COSINE] {info['source_type']} layer{info['layer']} -> {info['llm']} ({info['prompt_type']}): {similarities[i]:.4f}"
         )
 
+    df.to_csv(csv_path, index=False)
     print("=" * 80)
 
-    # This takes a while, since the maximum of output tokens for Anthropic is 8000 per minute
+    # This takes a while, since the maximum of output tokens for Google is 10000 per minute, and 10 requests per minute
     print("[INFO] Processing adherence scores in parallel...")
     questions_sources_pairs = list(zip(questions, sources))
-    adherence_results = get_adherence_scores_parallel(clients, questions_sources_pairs)
+    adherence_results = get_adherence_scores_parallel(
+        clients,
+        questions_sources_pairs,
+        max_workers=2,
+        df=df,
+        valid_indices=valid_indices,
+        csv_path=csv_path,
+    )
 
     for i, idx in enumerate(valid_indices):
         adherence_score = adherence_results[i]
-
-        if adherence_score is not None:
-            df.at[idx, "adherence_score"] = round(adherence_score, 4)
-
         info = comparison_info[i]
         print(
             f"[ADHERENCE] {info['source_type']} layer{info['layer']} -> {info['llm']} ({info['prompt_type']}): {adherence_score}"
         )
 
-    df.to_csv(csv_path, index=False)
-    print(f"\n[INFO] Saved results to {csv_path}")
+    print(f"\n[INFO] Final results saved to {csv_path}")
     print("=" * 80)
 
 

@@ -79,8 +79,14 @@ Each level includes specific German descriptions and action verbs for each Bloom
 
 ### Basic Execution
 ```bash
+# (Optional: perform first truncation check for source materials)
+python check_truncation.py
+
 # Generate questions and evaluations
 python main.py
+
+# Perform second truncation check which covers both -- source materials and questions
+python check_truncation.py
 
 # Run quantitative analysis
 python analysis_quantitative.py
@@ -88,8 +94,11 @@ python analysis_quantitative.py
 # Process qualitative assessments
 python analysis_qualitative.py
 
-# Calculate agreement metrics
+# After inserting all results in the csv files, calculate agreement metrics
 python agreement.py
+
+# Perform evaluation step for tables and figures
+python evaluation.py
 ```
 
 ### Configuration Requirements
@@ -99,4 +108,4 @@ python agreement.py
 
  #TODO more details needed
 
- #TODO think about 30_documentation as well!
+ #TODO think about 30_documentation as well so this readme and the documentation do not overlap much

@@ -3,7 +3,7 @@ from constants import REQUEST_DELAY_SECONDS, LLM_MODEL_IDS
 from google.genai import types
 
 
-def gen_with_google(client, prompt_text, model_id, max_tokens):
+def gen_with_google(client, prompt_text, model_id, max_tokens, temperature=None):
     # https://github.com/googleapis/python-genai, https://ai.google.dev/gemini-api/docs/thinking https://ai.google.dev/gemini-api/docs/text-generation https://cloud.google.com/vertex-ai/docs/reference/rest/v1/GenerateContentResponse
     try:
         response = client.models.generate_content(
@@ -12,6 +12,7 @@ def gen_with_google(client, prompt_text, model_id, max_tokens):
             config=types.GenerateContentConfig(
                 thinking_config=types.ThinkingConfig(thinking_budget=1100),
                 max_output_tokens=max_tokens,
+                temperature=temperature,
             ),
         )
 
@@ -30,7 +31,7 @@ def gen_with_google(client, prompt_text, model_id, max_tokens):
         return None
 
 
-def gen_with_anthropic(client, prompt_text, model_id, max_tokens):
+def gen_with_anthropic(client, prompt_text, model_id, max_tokens, temperature=None):
     # https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-for-making-the-best-use-of-extended-thinking-mode https://docs.anthropic.com/en/api/handling-stop-reasons
     try:
         response = client.messages.create(
@@ -38,6 +39,7 @@ def gen_with_anthropic(client, prompt_text, model_id, max_tokens):
             thinking={"type": "enabled", "budget_tokens": 1100},
             messages=[{"role": "user", "content": prompt_text}],
             max_tokens=max_tokens,
+            temperature=temperature,
         )
 
         if response.stop_reason == "max_tokens":
@@ -57,7 +59,7 @@ def gen_with_anthropic(client, prompt_text, model_id, max_tokens):
         return None
 
 
-def gen_with_openai(client, prompt_text, model_id, max_tokens):
+def gen_with_openai(client, prompt_text, model_id, max_tokens, temperature=None):
     # https://platform.openai.com/docs/quickstart?api-mode=responses&lang=python, https://platform.openai.com/docs/guides/reasoning?api-mode=responses
     try:
         response = client.responses.create(
@@ -65,6 +67,7 @@ def gen_with_openai(client, prompt_text, model_id, max_tokens):
             reasoning={"effort": "medium"},
             input=[{"role": "user", "content": prompt_text}],
             max_output_tokens=max_tokens,
+            temperature=temperature,
         )
         # based on https://platform.openai.com/docs/api-reference/responses-streaming/response/incomplete[]
         if (
@@ -86,7 +89,7 @@ def gen_with_openai(client, prompt_text, model_id, max_tokens):
         return None
 
 
-def llm_generation(llm_name, clients, prompt_text, max_tokens):
+def llm_generation(llm_name, clients, prompt_text, max_tokens, temperature):
     client = clients.get(llm_name)
     model_id = LLM_MODEL_IDS.get(llm_name)
 
@@ -96,11 +99,13 @@ def llm_generation(llm_name, clients, prompt_text, max_tokens):
 
     result = None
     if llm_name == "google":
-        result = gen_with_google(client, prompt_text, model_id, max_tokens)
+        result = gen_with_google(client, prompt_text, model_id, max_tokens, temperature)
     elif llm_name == "anthropic":
-        result = gen_with_anthropic(client, prompt_text, model_id, max_tokens)
+        result = gen_with_anthropic(
+            client, prompt_text, model_id, max_tokens, temperature
+        )
     elif llm_name == "openai":
-        result = gen_with_openai(client, prompt_text, model_id, max_tokens)
+        result = gen_with_openai(client, prompt_text, model_id, max_tokens, temperature)
     else:
         print(f"[ERROR] Unknown LLM name '{llm_name}'")
         return None
