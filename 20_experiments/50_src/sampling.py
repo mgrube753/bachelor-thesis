@@ -78,19 +78,12 @@ def generate_expert_csvs(sample_base, csv_path):
     if not records:
         return
 
-    # TODO sampling is better but it is not:
-    """
-    common_prompt/anthropic/script
-                           /tanenbaum
-                           /transcript
-    complex_prompt/anthropic/script
-    ...
-    """
-
-    # TODO it is:
+    # It is:
     """
     common_prompt/anthropic/script
     complex_prompt/anthropic/script
+    common_prompt/deepseek/script
+    complex_prompt/deepseek/script
     ...
     """
     records.sort(
@@ -110,9 +103,29 @@ def generate_expert_csvs(sample_base, csv_path):
 
     for exp_name, group in df.groupby("exp_name"):
         group.to_csv(os.path.join(csv_path, f"{exp_name}.csv"), index=False)
-        print(
-            f"  - Generated {os.path.relpath(os.path.join(csv_path, f'{exp_name}.csv'), EXPERIMENTS_BASE_PATH)}"
-        )
+        print(f"  - Saved: {os.path.join(csv_path, f'{exp_name}.csv')}")
+
+    # Generate special hint files for exp1a and exp1b
+    print("\n[INFO] Generating special hint CSV files for exp1a and exp1b...")
+    hints_path = os.path.join(os.path.dirname(csv_path), "hints_1a_1b")
+    os.makedirs(hints_path, exist_ok=True)
+
+    hint_df = df[df["exp_name"].isin(["exp1a", "exp1b"])].copy()
+
+    if not hint_df.empty:
+        output_columns = [
+            "llm",
+            "prompt_type",
+            "input_source",
+            "layer",
+            "question_id",
+        ]
+
+        for exp_name, group in hint_df.groupby("exp_name"):
+            output_filename = os.path.join(hints_path, f"{exp_name}.csv")
+            group_to_save = group[output_columns]
+            group_to_save.to_csv(output_filename, index=False)
+            print(f"  - Saved hint file: {output_filename}")
 
     # Exp1: Save to expert_1 through expert_5 folders
     exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b"])]
