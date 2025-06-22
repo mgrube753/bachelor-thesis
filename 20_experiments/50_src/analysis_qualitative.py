@@ -11,6 +11,35 @@ import concurrent.futures
 from file_utils import load_txt
 from api_calls import llm_generation
 from api_config import init_clients
+from tqdm import tqdm
+import threading
+from collections import defaultdict
+
+evaluator_counters = defaultdict(int)
+counter_lock = threading.Lock()
+
+
+def inc_evaluator_count(evaluator_name):
+    with counter_lock:
+        evaluator_counters[evaluator_name] += 1
+
+
+def reset_evaluator_count():
+    with counter_lock:
+        evaluator_counters.clear()
+        for evaluator in ["openai", "anthropic"]:
+            evaluator_counters[evaluator] = 0
+
+
+def get_evaluator_progress():
+    with counter_lock:
+        if not evaluator_counters:
+            return "Evaluation Progress"
+        desc_parts = []
+        for evaluator in sorted(evaluator_counters.keys()):
+            count = evaluator_counters[evaluator]
+            desc_parts.append(f"{evaluator}:{count}")
+        return f"Evaluation [{' | '.join(desc_parts)}]"
 
 
 def get_rubric(exp_name):
@@ -48,11 +77,13 @@ def evaluate_single(clients, llm, question, context, rubric):
         .replace("{rubric_text}", rubric)
     )
     response = llm_generation(llm, clients, prompt, max_tokens=1200)
-    return [
+    result = [
         float(x.strip())
         for x in response.strip().split(",")
         if x.strip().replace(".", "").isdigit()
     ]
+    inc_evaluator_count(llm)
+    return result
 
 
 def calculate_bloom_score(exp_name, bloom_rating, bloom_original=None):
@@ -71,81 +102,129 @@ def calculate_bloom_score(exp_name, bloom_rating, bloom_original=None):
     return 0.0
 
 
-def process_exp1(exp_name, clients):
-    csv_path = os.path.join(EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv")
-    df = pd.read_csv(csv_path)
-    samples_base = os.path.join(EXPERIMENTS_BASE_PATH, "70_samples", "exp1")
-    run_folder = "run_a_content" if exp_name == "exp1a" else "run_b_error"
-    rubric = get_rubric(exp_name)
-    criteria = ["relevance", "clarity", "answerability", "challenging", "correctness"]
+# def process_exp1(exp_name, clients):
+#     print(f"\n[INFO] Processing {exp_name} with progress tracking")
+#     reset_evaluator_count()
 
-    def has_sample(row):
-        samples_path = os.path.join(
-            samples_base,
-            run_folder,
-            f"{row['prompt_type']}_prompt",
-            row["llm"],
-            row["input_source"].replace("_manipulated", ""),
-        )
-        return (
-            os.path.exists(samples_path)
-            and find_question(samples_path, f"layer{row['layer']}_question") is not None
-        )
+#     openai_csv_path = os.path.join(
+#         EVAL_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
+#     )
+#     anthropic_csv_path = os.path.join(
+#         EVAL_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
+#     )
 
-    df_filtered = df[df.apply(has_sample, axis=1)].copy()
-    print(df_filtered)
-    print(
-        f"[INFO] {exp_name}: Processing {len(df_filtered)} sampled questions out of {len(df)} total"
-    )
+#     base_csv_path = os.path.join(EVAL_PATH, "csv_files", "initial", f"{exp_name}.csv")
+#     df_base = pd.read_csv(base_csv_path)
 
-    def process_row(args):
-        idx, row = args
-        samples_path = os.path.join(
-            samples_base,
-            run_folder,
-            f"{row['prompt_type']}_prompt",
-            row["llm"],
-            row["input_source"].replace("_manipulated", ""),
-        )
+#     samples_base = os.path.join(EXPERIMENTS_BASE_PATH, "70_samples", "exp1")
+#     run_folder = "run_a_content" if exp_name == "exp1a" else "run_b_error"
+#     rubric = get_rubric(exp_name)
+#     criteria = ["relevance", "clarity", "answerability", "challenging", "correctness"]
 
-        question = find_question(samples_path, f"layer{row['layer']}_question")
-        context = get_source(
-            row["input_source"].replace("_manipulated", ""),
-            row["layer"],
-            exp_name == "exp1b",
-        )
+#     def has_sample(row):
+#         samples_path = os.path.join(
+#             samples_base,
+#             run_folder,
+#             f"{row['prompt_type']}_prompt",
+#             row["llm"],
+#             row["input_source"].replace("_manipulated", ""),
+#         )
+#         return (
+#             os.path.exists(samples_path)
+#             and find_question(samples_path, f"layer{row['layer']}_question") is not None
+#         )
 
-        source_info = row["input_source"] + (
-            "_manipulated"
-            if exp_name == "exp1b" and not row["input_source"].endswith("_manipulated")
-            else ""
-        )
-        print(
-            f"[EVAL] {exp_name} - {row['llm']} - {source_info} layer{row['layer']} - {row['prompt_type']}_prompt"
-        )
+#     df_filtered = df_base[df_base.apply(has_sample, axis=1)].copy()
+#     print(df_filtered)
+#     print(
+#         f"[INFO] {exp_name}: Processing {len(df_filtered)} sampled questions out of {len(df_base)} total"
+#     )
 
-        gemini_scores = evaluate_single(clients, "google", question, context, rubric)
+#     def process_row(args):
+#         idx, row = args
+#         samples_path = os.path.join(
+#             samples_base,
+#             run_folder,
+#             f"{row['prompt_type']}_prompt",
+#             row["llm"],
+#             row["input_source"].replace("_manipulated", ""),
+#         )
 
-        return idx, gemini_scores if len(gemini_scores) == 5 else None
+#         question = find_question(samples_path, f"layer{row['layer']}_question")
+#         context = get_source(
+#             row["input_source"].replace("_manipulated", ""),
+#             row["layer"],
+#             exp_name == "exp1b",
+#         )
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-        results = list(executor.map(process_row, df_filtered.iterrows()))
+#         source_info = row["input_source"] + (
+#             "_manipulated"
+#             if exp_name == "exp1b" and not row["input_source"].endswith("_manipulated")
+#             else ""
+#         )
+#         print(
+#             f"[EVAL] {exp_name} - {row['llm']} - {source_info} layer{row['layer']} - {row['prompt_type']}_prompt"
+#         )
 
-    for criterion in criteria:
-        df[f"{criterion}_gemini"] = None
-        df[f"{criterion}_expert"] = None
+#         openai_scores = evaluate_single(clients, "openai", question, context, rubric)
+#         anthropic_scores = evaluate_single(
+#             clients, "anthropic", question, context, rubric
+#         )
 
-    for idx, scores in results:
-        if scores:
-            for i, criterion in enumerate(criteria):
-                df.at[idx, f"{criterion}_gemini"] = round(scores[i], 1)
+#         return idx, openai_scores, anthropic_scores
 
-    df.to_csv(csv_path, index=False)
+#     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+#         futures = {
+#             executor.submit(process_row, row): row for row in df_filtered.iterrows()
+#         }
+
+#         with tqdm(
+#             total=len(df_filtered), desc=get_evaluator_progress(), unit="eval"
+#         ) as pbar:
+#             results = []
+#             for future in concurrent.futures.as_completed(futures):
+#                 result = future.result()
+#                 results.append(result)
+#                 pbar.set_description(get_evaluator_progress())
+#                 pbar.update(1)
+
+#     df_openai_filtered = df_filtered.copy()
+#     df_anthropic_filtered = df_filtered.copy()
+
+#     for criterion in criteria:
+#         df_openai_filtered[criterion] = None
+#         df_anthropic_filtered[criterion] = None
+
+#     for idx, openai_scores, anthropic_scores in results:
+#         if openai_scores and len(openai_scores) >= len(criteria):
+#             for i, criterion in enumerate(criteria[: len(openai_scores)]):
+#                 df_openai_filtered.at[idx, criterion] = round(openai_scores[i], 1)
+
+#         if anthropic_scores and len(anthropic_scores) >= len(criteria):
+#             for i, criterion in enumerate(criteria[: len(anthropic_scores)]):
+#                 df_anthropic_filtered.at[idx, criterion] = round(anthropic_scores[i], 1)
+
+#     os.makedirs(os.path.dirname(openai_csv_path), exist_ok=True)
+#     os.makedirs(os.path.dirname(anthropic_csv_path), exist_ok=True)
+
+#     df_openai_filtered.to_csv(openai_csv_path, index=False)
+#     df_anthropic_filtered.to_csv(anthropic_csv_path, index=False)
 
 
 def process_exp2(exp_name, clients):
-    csv_path = os.path.join(EVAL_PATH, "csv_files", "for_eval", f"{exp_name}.csv")
-    df = pd.read_csv(csv_path)
+    print(f"\n[INFO] Processing {exp_name} with progress tracking")
+    reset_evaluator_count()
+
+    openai_csv_path = os.path.join(
+        EVAL_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
+    )
+    anthropic_csv_path = os.path.join(
+        EVAL_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
+    )
+
+    base_csv_path = os.path.join(EVAL_PATH, "csv_files", "initial", f"{exp_name}.csv")
+    df_base = pd.read_csv(base_csv_path)
+
     samples_base = os.path.join(EXPERIMENTS_BASE_PATH, "70_samples", "exp2")
     run_folders = {"exp2a": "run_a_type", "exp2b": "run_b_bloom", "exp2c": "run_c_both"}
     rubric = get_rubric(exp_name)
@@ -153,8 +232,10 @@ def process_exp2(exp_name, clients):
 
     criteria = ["relevance", "clarity", "answerability", "challenging", "bloom_rating"]
 
-    if exp_name == "exp2a" and "question_id" not in df.columns:
-        df["question_id"] = df.groupby(["llm", "question_type"]).cumcount() + 1
+    if exp_name == "exp2a" and "question_id" not in df_base.columns:
+        df_base["question_id"] = (
+            df_base.groupby(["llm", "question_type"]).cumcount() + 1
+        )
 
     def has_sample(row):
         if exp_name == "exp2a":
@@ -183,10 +264,10 @@ def process_exp2(exp_name, clients):
             and find_question(samples_path, pattern) is not None
         )
 
-    df_filtered = df[df.apply(has_sample, axis=1)].copy()
+    df_filtered = df_base[df_base.apply(has_sample, axis=1)].copy()
     print(df_filtered)
     print(
-        f"[INFO] {exp_name}: Processing {len(df_filtered)} sampled questions out of {len(df)} total"
+        f"[INFO] {exp_name}: Processing {len(df_filtered)} sampled questions out of {len(df_base)} total"
     )
 
     def process_row(args):
@@ -227,9 +308,6 @@ def process_exp2(exp_name, clients):
                 if row["bloom_original"] <= len(BLOOM_LEVELS_ORDERED)
                 else f"bloom_{row['bloom_original']}"
             )
-            print(
-                f"[EVAL] {exp_name} - {row['llm']} - tanenbaum layer2 - {row['question_type']} - {bloom_level}"
-            )
 
         question = find_question(samples_path, pattern)
 
@@ -239,56 +317,80 @@ def process_exp2(exp_name, clients):
         return idx, openai_scores, claude_scores
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-        results = list(executor.map(process_row, df_filtered.iterrows()))
+        futures = {
+            executor.submit(process_row, row): row for row in df_filtered.iterrows()
+        }
+
+        with tqdm(
+            total=len(df_filtered), desc=get_evaluator_progress(), unit="eval"
+        ) as pbar:
+            results = []
+            for future in concurrent.futures.as_completed(futures):
+                result = future.result()
+                results.append(result)
+                pbar.set_description(get_evaluator_progress())
+                pbar.update(1)
+
+    df_openai_filtered = df_filtered.copy()
+    df_anthropic_filtered = df_filtered.copy()
 
     for criterion in criteria:
-        df[f"{criterion}_openai"] = None
-        df[f"{criterion}_claude"] = None
+        df_openai_filtered[criterion] = None
+        df_anthropic_filtered[criterion] = None
+
+    df_openai_filtered["bloom_score"] = None
+    df_anthropic_filtered["bloom_score"] = None
 
     for idx, openai_scores, claude_scores in results:
         if openai_scores and len(openai_scores) >= len(criteria):
             for i, criterion in enumerate(criteria[: len(openai_scores)]):
-                df.at[idx, f"{criterion}_openai"] = round(openai_scores[i], 1)
+                df_openai_filtered.at[idx, criterion] = round(openai_scores[i], 1)
+
+            if len(openai_scores) >= 5:
+                bloom_rating_openai = openai_scores[4]
+                if exp_name == "exp2a":
+                    bloom_score_openai = calculate_bloom_score(
+                        exp_name, bloom_rating_openai
+                    )
+                else:
+                    bloom_original = df_filtered.loc[idx].get("bloom_original")
+                    bloom_score_openai = calculate_bloom_score(
+                        exp_name, bloom_rating_openai, bloom_original
+                    )
+                df_openai_filtered.at[idx, "bloom_score"] = bloom_score_openai
 
         if claude_scores and len(claude_scores) >= len(criteria):
             for i, criterion in enumerate(criteria[: len(claude_scores)]):
-                df.at[idx, f"{criterion}_claude"] = round(claude_scores[i], 1)
+                df_anthropic_filtered.at[idx, criterion] = round(claude_scores[i], 1)
 
-        if len(openai_scores) >= 5:
-            bloom_rating_openai = openai_scores[4]
-            if exp_name == "exp2a":
-                bloom_score_openai = calculate_bloom_score(
-                    exp_name, bloom_rating_openai
-                )
-            else:
-                bloom_original = df_filtered.loc[idx].get("bloom_original")
-                bloom_score_openai = calculate_bloom_score(
-                    exp_name, bloom_rating_openai, bloom_original
-                )
-            df.at[idx, "bloom_score_openai"] = bloom_score_openai
+            if len(claude_scores) >= 5:
+                bloom_rating_claude = claude_scores[4]
+                if exp_name == "exp2a":
+                    bloom_score_claude = calculate_bloom_score(
+                        exp_name, bloom_rating_claude
+                    )
+                else:
+                    bloom_original = df_filtered.loc[idx].get("bloom_original")
+                    bloom_score_claude = calculate_bloom_score(
+                        exp_name, bloom_rating_claude, bloom_original
+                    )
+                df_anthropic_filtered.at[idx, "bloom_score"] = bloom_score_claude
 
-        if len(claude_scores) >= 5:
-            bloom_rating_claude = claude_scores[4]
-            if exp_name == "exp2a":
-                bloom_score_claude = calculate_bloom_score(
-                    exp_name, bloom_rating_claude
-                )
-            else:
-                bloom_original = df_filtered.loc[idx].get("bloom_original")
-                bloom_score_claude = calculate_bloom_score(
-                    exp_name, bloom_rating_claude, bloom_original
-                )
-            df.at[idx, "bloom_score_claude"] = bloom_score_claude
+    os.makedirs(os.path.dirname(openai_csv_path), exist_ok=True)
+    os.makedirs(os.path.dirname(anthropic_csv_path), exist_ok=True)
 
-    df.to_csv(csv_path, index=False)
+    df_openai_filtered.to_csv(openai_csv_path, index=False)
+    df_anthropic_filtered.to_csv(anthropic_csv_path, index=False)
 
 
 def main():
     clients = init_clients()
 
-    for exp in ["exp1a", "exp1b", "exp2a", "exp2b", "exp2c"]:
+    # for exp in ["exp1a", "exp1b", "exp2a", "exp2b", "exp2c"]:
+    for exp in ["exp2b", "exp2c"]:
         print(f"[INFO] Processing {exp}")
-        (process_exp1 if exp.startswith("exp1") else process_exp2)(exp, clients)
+        # (process_exp1 if exp.startswith("exp1") else process_exp2)(exp, clients)
+        process_exp2(exp, clients)
 
 
 if __name__ == "__main__":
