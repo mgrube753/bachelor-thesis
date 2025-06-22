@@ -1,9 +1,0 @@
-```
-Frage: In der Beschreibung des Session Layers (Schicht 5) wird die "Bereitstellung der Funktionen für den verbindungslosen Datenaustausch" als Hauptaufgabe genannt. Dies scheint jedoch im Widerspruch zur traditionellen Rolle dieser Schicht im OSI-Modell zu stehen. Welche dieser Aussagen erklärt diesen scheinbaren Widerspruch am besten?
-
-Antwortmöglichkeiten:
-- ~Die Beschreibung ist nicht vollständig korrekt, da der Session Layer typischerweise für die Verwaltung von Sitzungen und Verbindungen zwischen Anwendungen zuständig ist, nicht primär für verbindungslosen Datenaustausch
-- Die Beschreibung ist korrekt, da der Session Layer ausschließlich für verbindungslosen Datenaustausch konzipiert wurde
-- Die Begriffe "verbindungslos" und "Kommunikationsbeziehung" widersprechen sich nicht, da sie verschiedene Aspekte der gleichen Funktionalität beschreiben
-- Die genannten Kernaufgaben (Datagramme, Asynchronität, Atomisierung) sind typisch für verbindungslosen Datenaustausch und daher korrekt dem Session Layer zugeordnet
-```

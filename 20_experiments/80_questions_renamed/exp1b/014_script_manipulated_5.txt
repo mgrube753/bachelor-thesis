@@ -1,7 +1,3 @@
-Frage: Eine IoT‐Anwendung sendet in unregelmäßigen Abständen kurze Statusmeldungen, möchte aber aus Effizienzgründen vollständig auf Handshakes sowie Empfangsbestätigungen verzichten. Auf welche Kernaufgabe der Session Layer 5 stützt sich dieses Kommunikationsmuster maßgeblich?
+Antwort: Atomisierung
 
-Antwortmöglichkeiten:
-- ~Asynchronität
-- Atomisierung
-- Datagramme
-- Flusskontrolle
+Frage: Wie lautet die Bezeichnung der Kernaufgabe der Session Layer 5 im ISO-OSI-Modell, bei der unabhängige Datenpakete in Einzelteile aufgespaltet werden?

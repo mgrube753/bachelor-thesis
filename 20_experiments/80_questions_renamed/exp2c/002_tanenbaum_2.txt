@@ -1,5 +1,9 @@
 """
-Frage: Analysieren Sie die Beziehung zwischen den verschiedenen Funktionen der Data Link Layer und untersuchen Sie, wie diese zusammenwirken, um zuverlässige Kommunikation zu gewährleisten. Differenzieren Sie dabei zwischen den Herausforderungen bei der Fehlerkorrektur, der Verkehrsregulierung und der Kanalzugangskontrolle, und erläutern Sie, warum diese Funktionen speziell in dieser Schicht des Netzwerkmodells implementiert sind.
+Frage: Sie überwachen ein Netzwerk, in dem ein Server große Datenmengen an einen älteren Client mit begrenzter Verarbeitungskapazität sendet. Der Client verliert regelmäßig Datenpakete und die Anwendung funktioniert nicht zuverlässig. Wie würden Sie dieses Problem unter Anwendung der Funktionen der Data Link Layer lösen?
 
-Antwort: ~Die Data Link Layer bewältigt drei wesentliche, miteinander verbundene Herausforderungen: Erstens transformiert sie eine fehleranfällige Übertragung in eine scheinbar fehlerfreie Leitung durch Aufteilung der Daten in Frames und sequenzielle Übertragung mit Bestätigungsmechanismen. Diese Fehlerkorrektur ist grundlegend, da höhere Schichten auf eine zuverlässige Übertragung angewiesen sind. Zweitens implementiert sie Verkehrsregulierungsmechanismen, die verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten, was die Effizienz der gesamten Kommunikation sicherstellt. Drittens löst sie durch die Medium Access Control Sublayer das Problem der Kanalzugangskontrolle in Broadcast-Netzwerken. Diese Funktionen sind in der Data Link Layer angesiedelt, weil sie direkt auf die physikalische Übertragung aufbauen und gleichzeitig eine stabile Grundlage für höhere Protokollschichten bieten müssen. Die Schicht fungiert somit als kritische Brücke zwischen der reinen Bitübertragung und den logischen Netzwerkfunktionen, indem sie physikalische Übertragungsprobleme vor höheren Schichten verbirgt und gleichzeitig grundlegende Kommunikationsregeln durchsetzt.
+Antwortmöglichkeiten:
+- ~Implementieren eines Verkehrsregulierungsmechanismus, der den Sender informiert, wann der Empfänger weitere Daten akzeptieren kann
+- Erhöhen der Übertragungsgeschwindigkeit, um die Daten schneller zum Client zu transportieren
+- Vergrößern der Datenframes, um die Effizienz der Übertragung zu steigern
+- Deaktivieren der Acknowledgement-Frames, um den Overhead der Kommunikation zu reduzieren
 """

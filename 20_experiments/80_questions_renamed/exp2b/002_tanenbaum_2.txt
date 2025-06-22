@@ -1,5 +1,5 @@
 ```
-Frage: Nennen Sie die Hauptaufgabe der Data Link Layer im OSI-Modell.
+Frage: Vergleichen Sie die verschiedenen Hauptfunktionen der Datenverbindungsschicht (Data Link Layer) und erklären Sie, wie diese zusammenwirken, um eine zuverlässige Datenübertragung zu gewährleisten.
 
-Antwort: ~Die Hauptaufgabe der Data Link Layer ist es, eine rohe Übertragungsleitung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint.
+Antwort: ~Die Datenverbindungsschicht erfüllt mehrere zusammenhängende Funktionen: Erstens transformiert sie eine fehleranfällige Übertragungseinrichtung in eine scheinbar fehlerfreie Verbindung, indem sie Daten in Frames aufteilt und sequentiell überträgt. Zweitens implementiert sie bei zuverlässigen Diensten einen Bestätigungsmechanismus durch Acknowledgement-Frames. Drittens regelt sie den Datenverkehr, um zu verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten. Bei Broadcast-Netzwerken kommt als vierte Funktion die Steuerung des Zugriffs auf den gemeinsamen Kanal hinzu, wofür die Medium Access Control-Unterschicht zuständig ist. Diese Funktionen ergänzen sich, um eine effiziente und zuverlässige Datenübertragung zu gewährleisten, indem sie Fehler maskieren, Datenfluss regulieren und Kanalzugriff kontrollieren.
 ```

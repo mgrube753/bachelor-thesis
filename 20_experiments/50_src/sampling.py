@@ -78,6 +78,34 @@ def generate_expert_csvs(sample_base, csv_path):
     if not records:
         return
 
+    # TODO sampling is better but it is not:
+    """
+    common_prompt/anthropic/script
+                           /tanenbaum
+                           /transcript
+    complex_prompt/anthropic/script
+    ...
+    """
+
+    # TODO it is:
+    """
+    common_prompt/anthropic/script
+    complex_prompt/anthropic/script
+    ...
+    """
+    records.sort(
+        key=lambda r: (
+            r.get("exp_name", ""),
+            r.get("llm", ""),
+            r.get("input_source", ""),
+            r.get("prompt_type", ""),
+            r.get("layer", 0),
+            r.get("question_type", ""),
+            r.get("question_id", 0),
+            r.get("bloom_original", 0),
+        )
+    )
+
     df = pd.DataFrame(records)
 
     for exp_name, group in df.groupby("exp_name"):

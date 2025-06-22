@@ -1,9 +1,5 @@
 """
-Frage: Welche der folgenden Aussagen beschreibt am besten die konzeptionelle Beziehung zwischen den Hauptaufgaben der Datenverbindungsschicht und den dafür implementierten Mechanismen?
+Frage: Analysieren Sie, wie die Data Link Layer die Balance zwischen Fehlerkorrektur, Geschwindigkeitsregulierung und Kanalzugriffskontrolle herstellt. Inwiefern beeinflussen diese Mechanismen die Effizienz und Zuverlässigkeit der Datenübertragung, und welche Kompromisse müssen dabei möglicherweise eingegangen werden?
 
-Antwortmöglichkeiten:
-- ~Die Datenverbindungsschicht abstrahiert physikalische Übertragungsfehler durch Framing und Bestätigungsmechanismen, während sie gleichzeitig Probleme der Datenflusssteuerung und des gemeinsamen Kanalzugriffs löst
-- Die Datenverbindungsschicht ist primär für die Fehlerkorrektur auf Bitebene verantwortlich und übergibt Flusskontrollprobleme an höhere Schichten
-- Die Datenverbindungsschicht fungiert hauptsächlich als Router zwischen verschiedenen Netzwerksegmenten und nutzt Frames ausschließlich zur Adressierung
-- Die Datenverbindungsschicht konzentriert sich auf die Authentifizierung von Datenframes und überlässt die Fehlererkennung vollständig der physikalischen Schicht
+Antwort: ~Die Data Link Layer balanciert ihre Hauptaufgaben durch verschiedene Mechanismen: Für die Fehlerkorrektur werden Daten in Frames aufgeteilt und sequentiell übertragen, wobei Acknowledgement-Frames zur Bestätigung dienen. Die Geschwindigkeitsregulierung verhindert Datenüberlastung durch Verkehrsregulierungsmechanismen zwischen schnellen Sendern und langsamen Empfängern. Bei Broadcast-Netzwerken übernimmt die Medium Access Control Sublayer die Kanalzugriffskontrolle. Diese Mechanismen erhöhen die Zuverlässigkeit, können aber die Gesamteffizienz durch zusätzlichen Overhead reduzieren. Kompromisse entstehen zwischen Durchsatz und Fehlerresistenz, Latenz und Zuverlässigkeit sowie zwischen der Komplexität der Implementierung und der Leistungsfähigkeit. Die richtige Balance hängt stark vom spezifischen Anwendungsfall ab und beeinflusst direkt, wie die höheren Schichten des OSI-Modells die Netzwerkinfrastruktur wahrnehmen und nutzen können.
 """

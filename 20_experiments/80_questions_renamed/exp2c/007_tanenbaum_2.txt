@@ -1,7 +1,6 @@
-Frage: Erklären Sie die primären Funktionen der Data Link Layer im ISO-OSI-Modell gemäß des Textes und vergleichen Sie dabei, wie sie sich mit Übertragungsfehlern, Datenflussregulierung und Broadcast-Netzwerk-Herausforderungen befassen.
+Frage: Nennen und beschreiben Sie kurz die drei Hauptfunktionen der Data Link Layer gemäß dem bereitgestellten Text, wobei Sie sich auf die Kernaufgaben und spezifischen Mechanismen konzentrieren.
 
-Antwortmöglichkeiten:
-- ~Sie teilt Daten in Frames auf, maskiert Übertragungsfehler für die Netzwerkschicht, regelt den Datenfluss zwischen Sender und Empfänger und steuert via MAC-Sublayer den Kanalzugriff in Broadcast-Netzwerken.
-- Sie verschlüsselt Datenströme zur Sicherung der Übertragung, verwaltet logische Adressen und gewährleistet Ende-zu-Ende-Zuverlässigkeit durch Quittungsmechanismen.
-- Sie wandelt Datenbits in elektrische Signale um, synchronisiert Sender/Empfänger-Takte und kontrolliert die physikalische Verbindungsqualität über Fehlerkorrekturalgorithmen.
-- Sie leitet Pakete über Netzwerkgrenzen hinweg, optimiert Routingpfade durch Lastverteilung und fragmentiert Daten basierend auf MTU-Größen der Zwischenknoten.
+Antwort: ~Die drei Hauptfunktionen der Data Link Layer sind:
+- Transformation der rohen Übertragungseinrichtung in eine fehlerfreie Leitung durch Aufteilung der Eingabedaten in Datenframes, sequentielle Übertragung und Nutzung von Bestätigungsframes für zuverlässige Dienste.
+- Implementierung von Flusskontrolle, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überlastet, durch Regelmechanismen zur Datenaufnahmekapazität.
+- Bei Broadcast-Netzwerken: Kontrolle des Zugriffs auf den gemeinsamen Kanal mittels des Medium Access Control (MAC) Sublayers.

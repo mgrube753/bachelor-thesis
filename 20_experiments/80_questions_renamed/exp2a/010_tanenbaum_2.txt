@@ -1,7 +1,7 @@
-Frage: Erläutern Sie, weshalb im ISO-OSI-Modell die Aufgaben der Fehlererkennung und -behebung, der Flusskontrolle sowie der Medienzugriffskontrolle – trotz ihrer unterschiedlichen Zielsetzungen – sämtlich der Sicherungsschicht zugeordnet sind. Gehen Sie dabei darauf ein, wie diese drei Mechanismen zusammenwirken, um der Netzwerkschicht eine scheinbar fehlerfreie, geordnete und konfliktfreie Punkt-zu-Punkt-Verbindung über ein eventuell geteiltes physisches Medium bereitzustellen.
+Frage: Welche Aussage fasst die primäre Aufgabe und die wesentlichen Mechanismen der Sicherungsschicht (Data Link Layer) am prägnantesten zusammen, um die Transparenz von Übertragungsfehlern für höhere Schichten zu gewährleisten?
 
-Antwort: ~Alle drei Mechanismen dienen demselben übergeordneten Zweck: Sie verbergen physikalische Unzulänglichkeiten vor der darüberliegenden Netzwerkschicht und präsentieren ihr eine logisch zuverlässige Leitung. 
-- Fehlererkennung/-behebung (durch Rahmierung, Prüfsummen und Quittungen) sorgt dafür, dass Bitfehler oder verlorene Frames entdeckt und korrigiert bzw. neu übertragen werden, sodass die Netzwerkschicht nur fehlerfreie Daten sieht. 
-- Flusskontrolle stellt sicher, dass ein schneller Sender einen langsameren Empfänger nicht überlastet; dadurch gehen keine Frames verloren und es entstehen keine Staus, die andernfalls als „Fehler“ erscheinen könnten. 
-- Medienzugriffskontrolle koordiniert bei gemeinsam benutzten Übertragungswegen, wer senden darf, um Kollisionen und damit verbundene Übertragungsfehler zu vermeiden. 
-Erst das koordinierte Zusammenwirken dieser drei Funktionen verwandelt die „rohe“ physische Leitung in den abstrahierten, zuverlässigen Dienst, den die Netzwerkschicht erwartet.
+Antwortmöglichkeiten:
+- ~Die Sicherungsschicht transformiert eine rohe Übertragungsleitung in eine scheinbar fehlerfreie Verbindung, indem sie reale Übertragungsfehler maskiert und Daten in Frames zerlegt, deren korrekten Empfang bei zuverlässigem Dienst mittels Bestätigungen (Acknowledgements) quittiert wird.
+- Die Sicherungsschicht ist hauptsächlich dafür zuständig, den Datenfluss zwischen schnellen Sendern und langsamen Empfängern zu regulieren und den Zugriff auf gemeinsam genutzte Kanäle in Broadcast-Netzwerken zu steuern.
+- Die Hauptaufgabe der Sicherungsschicht besteht darin, eine Ende-zu-Ende-Verbindung über das gesamte Netzwerk herzustellen und logische Adressierung für die Paketweiterleitung zu implementieren.
+- Die Sicherungsschicht priorisiert Netzwerkpakete und leitet diese basierend auf logischen IP-Adressen an das nächste Ziel weiter, um effizientes Routing sicherzustellen.

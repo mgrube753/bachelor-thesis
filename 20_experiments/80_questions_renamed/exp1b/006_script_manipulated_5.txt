@@ -1,3 +1,0 @@
-Antwort: Atomisierung
-
-Frage: Wie lautet die Bezeichnung der Kernaufgabe der Session Layer 5 im ISO-OSI-Modell, bei der unabhängige Datenpakete in Einzelteile aufgespaltet werden?

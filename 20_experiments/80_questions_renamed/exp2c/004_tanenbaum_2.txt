@@ -1,9 +1,5 @@
 """
-Frage: Identifizieren Sie die Hauptaufgabe der Data Link Layer im ISO-OSI-Modell.
+Frage: Analysieren Sie die Beziehung zwischen den verschiedenen Funktionen der Data Link Layer und untersuchen Sie, wie diese zusammenwirken, um zuverlässige Kommunikation zu gewährleisten. Differenzieren Sie dabei zwischen den Herausforderungen bei der Fehlerkorrektur, der Verkehrsregulierung und der Kanalzugangskontrolle, und erläutern Sie, warum diese Funktionen speziell in dieser Schicht des Netzwerkmodells implementiert sind.
 
-Antwortmöglichkeiten:
-- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
-- Die Bereitstellung von Ende-zu-Ende-Verbindungen zwischen Anwendungen auf verschiedenen Hosts
-- Die Definition von physikalischen Übertragungsmedien und deren elektrischen Eigenschaften
-- Die Übersetzung von IP-Adressen in physische Hardwareadressen
+Antwort: ~Die Data Link Layer bewältigt drei wesentliche, miteinander verbundene Herausforderungen: Erstens transformiert sie eine fehleranfällige Übertragung in eine scheinbar fehlerfreie Leitung durch Aufteilung der Daten in Frames und sequenzielle Übertragung mit Bestätigungsmechanismen. Diese Fehlerkorrektur ist grundlegend, da höhere Schichten auf eine zuverlässige Übertragung angewiesen sind. Zweitens implementiert sie Verkehrsregulierungsmechanismen, die verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten, was die Effizienz der gesamten Kommunikation sicherstellt. Drittens löst sie durch die Medium Access Control Sublayer das Problem der Kanalzugangskontrolle in Broadcast-Netzwerken. Diese Funktionen sind in der Data Link Layer angesiedelt, weil sie direkt auf die physikalische Übertragung aufbauen und gleichzeitig eine stabile Grundlage für höhere Protokollschichten bieten müssen. Die Schicht fungiert somit als kritische Brücke zwischen der reinen Bitübertragung und den logischen Netzwerkfunktionen, indem sie physikalische Übertragungsprobleme vor höheren Schichten verbirgt und gleichzeitig grundlegende Kommunikationsregeln durchsetzt.
 """

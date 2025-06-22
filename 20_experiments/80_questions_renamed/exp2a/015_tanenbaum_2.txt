@@ -1,7 +1,7 @@
-Frage: Welche Aussage beschreibt am präzisesten die **grundlegende Funktionsweise** der Data Link Layer, um ihre primäre Aufgabe der Fehlerverwaltung und zuverlässigen Datenübertragung gemäß dem bereitgestellten Text zu erfüllen?
+Frage: Erläutern Sie, weshalb im ISO-OSI-Modell die Aufgaben der Fehlererkennung und -behebung, der Flusskontrolle sowie der Medienzugriffskontrolle – trotz ihrer unterschiedlichen Zielsetzungen – sämtlich der Sicherungsschicht zugeordnet sind. Gehen Sie dabei darauf ein, wie diese drei Mechanismen zusammenwirken, um der Netzwerkschicht eine scheinbar fehlerfreie, geordnete und konfliktfreie Punkt-zu-Punkt-Verbindung über ein eventuell geteiltes physisches Medium bereitzustellen.
 
-Antwortmöglichkeiten:
-- ~Die Data Link Layer zerlegt Eingabedaten in Datenframes und überträgt diese sequenziell, wobei der Empfänger bei zuverlässigem Dienst den korrekten Empfang jedes Frames durch Bestätigungs-Frames quittiert, um die nächsthöhere Schicht vor unentdeckten Übertragungsfehlern zu schützen.
-- Sie ist primär dafür zuständig, schnelle Sender zu regulieren, damit langsame Empfänger nicht überflutet werden, indem sie spezielle Sublayer für die Flusskontrolle implementiert, die den Netzwerk-Layer direkt informieren.
-- Die Hauptaufgabe des Data Link Layers ist die ausschließliche Steuerung des Zugriffs auf gemeinsam genutzte Kanäle in Broadcast-Netzwerken durch den Medium Access Control Sublayer, wodurch Fehler im Netzwerk-Layer direkt korrigiert werden.
-- Sie wandelt eine Rohübertragungseinrichtung in eine fehlerfreie Leitung um, indem sie alle Übertragungsfehler proaktiv verhindert und somit die Notwendigkeit von Bestätigungs-Frames oder einer Fehlerverdeckung obsolet macht.
+Antwort: ~Alle drei Mechanismen dienen demselben übergeordneten Zweck: Sie verbergen physikalische Unzulänglichkeiten vor der darüberliegenden Netzwerkschicht und präsentieren ihr eine logisch zuverlässige Leitung. 
+- Fehlererkennung/-behebung (durch Rahmierung, Prüfsummen und Quittungen) sorgt dafür, dass Bitfehler oder verlorene Frames entdeckt und korrigiert bzw. neu übertragen werden, sodass die Netzwerkschicht nur fehlerfreie Daten sieht. 
+- Flusskontrolle stellt sicher, dass ein schneller Sender einen langsameren Empfänger nicht überlastet; dadurch gehen keine Frames verloren und es entstehen keine Staus, die andernfalls als „Fehler“ erscheinen könnten. 
+- Medienzugriffskontrolle koordiniert bei gemeinsam benutzten Übertragungswegen, wer senden darf, um Kollisionen und damit verbundene Übertragungsfehler zu vermeiden. 
+Erst das koordinierte Zusammenwirken dieser drei Funktionen verwandelt die „rohe“ physische Leitung in den abstrahierten, zuverlässigen Dienst, den die Netzwerkschicht erwartet.

@@ -1,9 +1,9 @@
 llm,input_source,bloom_original,layer,relevance,clarity,answerability,challenging,bloom_rating,bloom_score
-anthropic,tanenbaum,2,2,,,,,,
 anthropic,tanenbaum,1,2,,,,,,
+anthropic,tanenbaum,2,2,,,,,,
 deepseek,tanenbaum,4,2,,,,,,
 deepseek,tanenbaum,6,2,,,,,,
-openai,tanenbaum,4,2,,,,,,
-openai,tanenbaum,6,2,,,,,,
 google,tanenbaum,4,2,,,,,,
 google,tanenbaum,6,2,,,,,,
+openai,tanenbaum,4,2,,,,,,
+openai,tanenbaum,6,2,,,,,,
