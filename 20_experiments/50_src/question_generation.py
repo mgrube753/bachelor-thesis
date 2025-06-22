@@ -1,4 +1,5 @@
 import os
+import csv
 import constants
 from file_utils import load_txt, save_result, slugify
 from prompt_utils import (
@@ -12,6 +13,26 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 from tqdm import tqdm
 from collections import defaultdict
+
+
+def create_csvs(exp_name, headers, rows):
+    try:
+        initial_csv_dir = os.path.join(
+            os.path.dirname(constants.EXP1_PATH), "60_eval", "csv_files", "initial"
+        )
+        file_path = os.path.join(initial_csv_dir, f"{exp_name}.csv")
+
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+        with open(file_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(headers)
+            if rows:
+                writer.writerows(rows)
+        print(f"[INFO] Initial CSV created: {os.path.relpath(file_path)}")
+    except IOError as e:
+        print(f"[ERROR] Could not write to CSV file {file_path}: {e}")
+
 
 llm_counters = defaultdict(int)
 counter_lock = threading.Lock()
@@ -44,6 +65,11 @@ def generate_task_exp1(
     llm_name, clients, prompt_template, input_text, output_path, description
 ):
     try:
+        if llm_name == "deepseek":
+            save_result(output_path, "")
+            increment_counter(llm_name)
+            return True
+
         formatted_prompt = format_prompt(prompt_template, text=input_text)
         if not formatted_prompt:
             return None
@@ -62,6 +88,11 @@ def generate_task_exp1(
 
 def generate_task_exp2(llm_name, clients, formatted_prompt, output_path, description):
     try:
+        if llm_name == "deepseek":
+            save_result(output_path, "")  # Empty DeepSeek file
+            increment_counter(llm_name)
+            return True
+
         if not formatted_prompt:
             return None
 
@@ -94,6 +125,7 @@ def run_exp_1a(clients):
     print("\n[INFO] Experiment 1a: Content Fidelity")
     reset_counters()
     tasks = []
+    csv_rows = []
 
     for prompt_type_file_name in constants.EXP1_PROMPT_TYPES:
         prompt_path = os.path.join(
@@ -148,7 +180,12 @@ def run_exp_1a(clients):
                             description,
                         )
                     )
+                    prompt_type = output_dir_name.replace("_prompt", "")
+                    csv_rows.append([llm_name, source_type, layer_num, prompt_type])
 
+    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
+    headers = ["llm", "input_source", "layer", "prompt_type"]
+    create_csvs("exp1a", headers, csv_rows)
     run_tasks(tasks, generate_task_exp1, "Exp 1a")
 
 
@@ -157,6 +194,7 @@ def run_exp_1b(clients):
     reset_counters()
     source_type = constants.EXP1_SOURCE_TYPE_B
     tasks = []
+    csv_rows = []
 
     for prompt_type_file_name in constants.EXP1_PROMPT_TYPES:
         prompt_path = os.path.join(
@@ -203,18 +241,27 @@ def run_exp_1b(clients):
                         description,
                     )
                 )
+                prompt_type = output_dir_name.replace("_prompt", "")
+                csv_rows.append([llm_name, source_type, layer_num, prompt_type])
 
+    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
+    headers = ["llm", "input_source", "layer", "prompt_type"]
+    create_csvs("exp1b", headers, csv_rows)
     run_tasks(tasks, generate_task_exp1, "Exp 1b")
 
 
 def run_exp_2a(clients):
     print("\n[INFO] Experiment 2a: Question Type")
     reset_counters()
+    tasks = []
+    csv_rows = []
+    source_name = "tanenbaum"
+    layer_num = constants.TANENBAUM_LAYER_FOR_EXP2
 
     tanenbaum_text_path = os.path.join(
         constants.INPUT_SOURCES_PATH,
-        "tanenbaum",
-        f"layer{constants.TANENBAUM_LAYER_FOR_EXP2}.txt",
+        source_name,
+        f"layer{layer_num}.txt",
     )
     base_text_for_exp2 = load_txt(tanenbaum_text_path)
 
@@ -224,12 +271,11 @@ def run_exp_2a(clients):
     if not prompt_template_type:
         return
 
-    tasks = []
-
     for q_type in constants.EXP2_QUESTION_TYPES:
         q_type_slug = slugify(q_type)
         q_type_format_str = q_format(q_type)
         for i in range(6):
+            question_id = i + 1
             formatted_prompt = format_prompt(
                 prompt_template_type,
                 text=base_text_for_exp2,
@@ -243,26 +289,42 @@ def run_exp_2a(clients):
                     "run_a_type",
                     llm_name,
                     q_type_slug,
-                    f"question_{i + 1}.txt",
+                    f"question_{question_id}.txt",
                 )
-                description = f"{q_type} question {i + 1}"
+                description = f"{q_type} question {question_id}"
 
                 tasks.append(
                     (llm_name, clients, formatted_prompt, output_path, description)
                 )
+                csv_rows.append(
+                    [
+                        llm_name,
+                        source_name,
+                        layer_num,
+                        q_type.lower().replace("-", "_"),
+                        question_id,
+                    ]
+                )
 
+    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3], row[4]))
+    headers = ["llm", "input_source", "layer", "question_type", "question_id"]
+    create_csvs("exp2a", headers, csv_rows)
     run_tasks(tasks, generate_task_exp2, "Exp 2a")
 
 
 def run_exp_2b(clients):
     print("\n[INFO] Experiment 2b: Bloom Level")
     reset_counters()
+    tasks = []
+    csv_rows = []
+    source_name = "tanenbaum"
+    layer_num = constants.TANENBAUM_LAYER_FOR_EXP2
     bloom_data = get_bloom()
 
     tanenbaum_text_path = os.path.join(
         constants.INPUT_SOURCES_PATH,
-        "tanenbaum",
-        f"layer{constants.TANENBAUM_LAYER_FOR_EXP2}.txt",
+        source_name,
+        f"layer{layer_num}.txt",
     )
     base_text_for_exp2 = load_txt(tanenbaum_text_path)
 
@@ -272,11 +334,10 @@ def run_exp_2b(clients):
     if not prompt_template_bloom:
         return
 
-    tasks = []
-
     for bloom_level_index, bloom_level_name in enumerate(
         constants.BLOOM_LEVELS_ORDERED
     ):
+        bloom_original = bloom_level_index + 1
         level_data = bloom_data.get(bloom_level_name, {})
         formatted_prompt = format_prompt(
             prompt_template_bloom,
@@ -291,26 +352,34 @@ def run_exp_2b(clients):
                 constants.EXP2_PATH,
                 "run_b_bloom",
                 llm_name,
-                f"question_{bloom_level_index + 1}.txt",
+                f"question_{bloom_original}.txt",
             )
             description = f"{bloom_level_name}"
 
             tasks.append(
                 (llm_name, clients, formatted_prompt, output_path, description)
             )
+            csv_rows.append([llm_name, source_name, layer_num, bloom_original])
 
+    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
+    headers = ["llm", "input_source", "layer", "bloom_original"]
+    create_csvs("exp2b", headers, csv_rows)
     run_tasks(tasks, generate_task_exp2, "Exp 2b")
 
 
 def run_exp_2c(clients):
     print("\n[INFO] Experiment 2c: Combined Type and Bloom")
     reset_counters()
+    tasks = []
+    csv_rows = []
+    source_name = "tanenbaum"
+    layer_num = constants.TANENBAUM_LAYER_FOR_EXP2
     bloom_data = get_bloom()
 
     tanenbaum_text_path = os.path.join(
         constants.INPUT_SOURCES_PATH,
-        "tanenbaum",
-        f"layer{constants.TANENBAUM_LAYER_FOR_EXP2}.txt",
+        source_name,
+        f"layer{layer_num}.txt",
     )
     base_text_for_exp2 = load_txt(tanenbaum_text_path)
 
@@ -320,11 +389,10 @@ def run_exp_2c(clients):
     if not prompt_template_both:
         return
 
-    tasks = []
-
     for q_type in constants.EXP2_QUESTION_TYPES:
         q_type_slug = slugify(q_type)
         for i, bloom_level_name in enumerate(constants.BLOOM_LEVELS_ORDERED):
+            bloom_original = i + 1
             level_data = bloom_data.get(bloom_level_name, {})
             q_type_format_str = q_format(q_type)
 
@@ -344,12 +412,24 @@ def run_exp_2c(clients):
                     "run_c_both",
                     llm_name,
                     q_type_slug,
-                    f"question_{i + 1}.txt",
+                    f"question_{bloom_original}.txt",
                 )
                 description = f"{q_type} {bloom_level_name}"
 
                 tasks.append(
                     (llm_name, clients, formatted_prompt, output_path, description)
                 )
+                csv_rows.append(
+                    [
+                        llm_name,
+                        source_name,
+                        layer_num,
+                        q_type.lower().replace("-", "_"),
+                        bloom_original,
+                    ]
+                )
 
+    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3], row[4]))
+    headers = ["llm", "input_source", "layer", "question_type", "bloom_original"]
+    create_csvs("exp2c", headers, csv_rows)
     run_tasks(tasks, generate_task_exp2, "Exp 2c")

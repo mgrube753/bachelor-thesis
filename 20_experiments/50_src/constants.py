@@ -12,6 +12,7 @@ LLM_MODEL_IDS = {
     "google": "gemini-2.5-flash",
     "anthropic": "claude-3-7-sonnet-20250219",
     "openai": "o3",
+    "deepseek": "deepseek",
 }
 LLM_NAMES = LLM_MODEL_IDS.keys()
 EMBEDDING_MODEL_ID = "T-Systems-onsite/cross-en-de-roberta-sentence-transformer"
