@@ -77,6 +77,19 @@ def generate_task_exp2(llm_name, clients, formatted_prompt, output_path, descrip
     return False
 
 
+def run_tasks(tasks, task_func, exp_desc):
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        futures = {executor.submit(task_func, *task): task for task in tasks}
+
+        with tqdm(
+            total=len(tasks), desc=f"{exp_desc} {get_progress()}", unit="task"
+        ) as pbar:
+            for future in as_completed(futures):
+                future.result()
+                pbar.set_description(f"{exp_desc} {get_progress()}")
+                pbar.update(1)
+
+
 def run_exp_1a(clients):
     print("\n[INFO] Experiment 1a: Content Fidelity")
     reset_counters()
@@ -136,16 +149,7 @@ def run_exp_1a(clients):
                         )
                     )
 
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {executor.submit(generate_task_exp1, *task): task for task in tasks}
-
-        with tqdm(
-            total=len(tasks), desc=f"Exp 1a {get_progress()}", unit="task"
-        ) as pbar:
-            for future in as_completed(futures):
-                future.result()
-                pbar.set_description(f"Exp 1a {get_progress()}")
-                pbar.update(1)
+    run_tasks(tasks, generate_task_exp1, "Exp 1a")
 
 
 def run_exp_1b(clients):
@@ -200,16 +204,7 @@ def run_exp_1b(clients):
                     )
                 )
 
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {executor.submit(generate_task_exp1, *task): task for task in tasks}
-
-        with tqdm(
-            total=len(tasks), desc=f"Exp 1b {get_progress()}", unit="task"
-        ) as pbar:
-            for future in as_completed(futures):
-                future.result()
-                pbar.set_description(f"Exp 1b {get_progress()}")
-                pbar.update(1)
+    run_tasks(tasks, generate_task_exp1, "Exp 1b")
 
 
 def run_exp_2a(clients):
@@ -256,16 +251,7 @@ def run_exp_2a(clients):
                     (llm_name, clients, formatted_prompt, output_path, description)
                 )
 
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {executor.submit(generate_task_exp2, *task): task for task in tasks}
-
-        with tqdm(
-            total=len(tasks), desc=f"Exp 2a {get_progress()}", unit="task"
-        ) as pbar:
-            for future in as_completed(futures):
-                future.result()
-                pbar.set_description(f"Exp 2a {get_progress()}")
-                pbar.update(1)
+    run_tasks(tasks, generate_task_exp2, "Exp 2a")
 
 
 def run_exp_2b(clients):
@@ -313,16 +299,7 @@ def run_exp_2b(clients):
                 (llm_name, clients, formatted_prompt, output_path, description)
             )
 
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {executor.submit(generate_task_exp2, *task): task for task in tasks}
-
-        with tqdm(
-            total=len(tasks), desc=f"Exp 2b {get_progress()}", unit="task"
-        ) as pbar:
-            for future in as_completed(futures):
-                future.result()
-                pbar.set_description(f"Exp 2b {get_progress()}")
-                pbar.update(1)
+    run_tasks(tasks, generate_task_exp2, "Exp 2b")
 
 
 def run_exp_2c(clients):
@@ -375,13 +352,4 @@ def run_exp_2c(clients):
                     (llm_name, clients, formatted_prompt, output_path, description)
                 )
 
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {executor.submit(generate_task_exp2, *task): task for task in tasks}
-
-        with tqdm(
-            total=len(tasks), desc=f"Exp 2c {get_progress()}", unit="task"
-        ) as pbar:
-            for future in as_completed(futures):
-                future.result()
-                pbar.set_description(f"Exp 2c {get_progress()}")
-                pbar.update(1)
+    run_tasks(tasks, generate_task_exp2, "Exp 2c")

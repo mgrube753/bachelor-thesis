@@ -235,7 +235,7 @@ def main():
             os.remove(exp_file_path)
 
     print(
-        f"\nDone. Expert CSVs: {csv_path}/qualitative/ | Renamed samples: {output_path}"
+        f"\nDone. Qualitative Analysis CSVs: {csv_path}/qualitative/ | Renamed samples: {output_path}"
     )
 
 

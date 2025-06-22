@@ -46,8 +46,9 @@ Die `exp1a.csv` und `exp1b.csv` enthalten:
 -   Die 5 Kategorien zur Bewertung von 0-10
 
 Anhand der CSV-Dateien können Sie die Fragen und deren Quellen nachvollziehen, um diese Zeile für Zeile zu bewerten.
-Deswegen sind die Dateien der einzelnen Fragen nummeriert, mit der `input_source` und der `layer`-Nummer versehen, um die Zuordnung zu erleichtern.
+Die Dateien der einzelnen Fragen sind so nummeriert, mit der `input_source` und der `layer`-Nummer versehen, um die Zuordnung zu erleichtern.
 Wenn Sie Frage $n$ bewerten, muss das Ergebnis in Zeile $n+1$ der CSV-Datei eingetragen werden, da die erste Zeile den Header enthält, usw. für die weiteren Fragen.
+Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 an.
 
 ### Schritt 3: Bewertung von Experiment 1a
 
