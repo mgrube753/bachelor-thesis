@@ -44,6 +44,7 @@ Die `exp1a.csv` und `exp1b.csv` enthalten:
 -   `input_source`: Die Quelle des Textes, aus dem die Frage generiert wurde (z.B. `script`, `transcript`, `tanenbaum`, `script_manipulated`).
 -   `layer`: Der jeweilige Schichttext, aus der die Frage generiert wurde.
 -   Die 5 Kategorien zur Bewertung von 0-10
+-   Eine `comments`-Spalte für Ihre Anmerkungen. Dies könnten beispielsweise Indizien sein, wie: Die Frage ist ein Ankerbeispiel für eine bestimmte Kategorie, sodass diese auffällig gut oder schlecht abschneidet, oder auch, dass die Frage nicht beantwortbar ist, weil sie zu unklar formuliert ist.
 
 Anhand der CSV-Dateien können Sie die Fragen und deren Quellen nachvollziehen, um diese Zeile für Zeile zu bewerten.
 Die Dateien der einzelnen Fragen sind so nummeriert, mit der `input_source` und der `layer`-Nummer versehen, um die Zuordnung zu erleichtern.
@@ -56,7 +57,7 @@ Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 a
 2. Für jede Zeile:
     - Schauen Sie sich die entsprechende Frage in `questions/exp1a/` an.
     - Prüfen Sie den zur Fragengenerierung genutzten Quelltext in `source/[input_source]/layer[X].txt`.
-    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1a_rubric.md`
+    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1a_rubric.md` und geben Sie ggf. Ihre Kommentare in die `comments`-Spalte ein.
 
 ### Schritt 4: Bewertung von Experiment 1b
 
@@ -64,7 +65,7 @@ Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 a
 2. Für jede Zeile mit `script_manipulated`:
     - Schauen Sie sich die Frage in `questions/exp1b/` an.
     - Vergleichen Sie mit dem manipulierten Text in `source/script_manipulated/layer[X].txt`.
-    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1b_rubric.md`, wobei die `Correctness`-Bewertung für dieses Subexperiment das Hauptaugenmerk ist
+    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1b_rubric.md`, wobei die `Correctness`-Bewertung für dieses Subexperiment das Hauptaugenmerk ist. Da können Kommentare hilfreich sein.
 
 ### Schritt 5: CSV-Dokumentation
 
@@ -75,6 +76,8 @@ Tragen Sie Ihre Bewertungen (0-10) in die jeweiligen CSV-Spalten, basierend auf 
 -   `answerability`
 -   `challenging`
 -   `correctness`
+
+Bei `comments` können Sie Ihre Anmerkungen zu jeder Frage eintragen, um Ihre Bewertungen ggf. zu erläutern oder auf Besonderheiten hinzuweisen.
 
 ## Dankbarkeit für Ihre Unterstützung
 

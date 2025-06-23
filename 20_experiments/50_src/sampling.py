@@ -128,6 +128,7 @@ def generate_expert_csvs(sample_base, csv_path):
             print(f"  - Saved hint file: {output_filename}")
 
     # Exp1: Save to expert_1 through expert_5 folders
+    # TODO think about a comment column for experts to add comments
     exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b"])]
     for exp_name, group in exp1_data.groupby("exp_name"):
         output_df = group[["input_source", "layer"]].copy()
@@ -137,6 +138,7 @@ def generate_expert_csvs(sample_base, csv_path):
             "answerability",
             "challenging",
             "correctness",
+            "comments",
         ]:
             output_df[col] = ""
 
