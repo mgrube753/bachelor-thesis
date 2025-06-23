@@ -11,9 +11,9 @@ Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 {text}
 """
 
-Die korrekte Antwort -- oder Antwortmöglichkeit, sofern mehrere Möglichkeiten generiert werden -- soll zu Beginn klar mit einem "~" gekennzeichnet werden.
+Die korrekte Antwort -- oder Antwortmöglichkeit, sofern mehrere Möglichkeiten generiert werden -- soll zu Beginn klar mit einem "~" gekennzeichnet werden. Wenn mehrere Antwortmöglichkeiten generiert werden sollen, anhand des Fragetyps, dann überlege, welche Antwortmöglichkeiten durch ein vorangestelltes "~" als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können.
 
-Verwende für die Ausgabe der Frage und der Antwort(en) exakt das folgende Format zwischen den folgenden Docstring-Symbolen::
+Verwende für die Ausgabe der Frage und der Antwort(en) das folgende Format zwischen den folgenden Docstring-Symbolen::
 
 """
 {question_type_format}

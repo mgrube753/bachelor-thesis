@@ -21,13 +21,13 @@ Frage: Hier den Frageninhalt einfügen
 Antwort: ~Hier die Antwort einfügen
 """
 
-Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil zwischen den folgenden Docstring-Symbolen, wobei die erste und korrekte Antwort durch ein vorangestelltes "~" korrekt markiert wird und an erster Position steht:
+Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei du überlegen musst, welche Antwortmöglichkeiten durch ein vorangestelltes "~" als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Hier ein Beispiel zwischen den folgenden Docstring-Symbolen:
 
 """
 Frage: Hier den Frageninhalt einfügen
 
 Antwortmöglichkeiten:
-- ~Hier die korrekte Antwort einfügen
+- ~Beispielsweise hier die korrekte Antwort einfügen
 - Hier die erste falsche Antwort einfügen
 - Hier die zweite falsche Antwort einfügen
 - Hier die dritte falsche Antwort einfügen

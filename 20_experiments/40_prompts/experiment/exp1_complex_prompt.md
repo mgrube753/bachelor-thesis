@@ -18,7 +18,7 @@ Frage: Hier den Frageninhalt einfügen
 Antwort: ~Hier die Antwort einfügen
 """
 
-Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei eine oder mehrere Antworten durch ein vorangestelltes "~" korrekt markiert werden und an beliebiger Position stehen können:
+Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei du überlegen musst, welche Antwortmöglichkeiten durch ein vorangestelltes "~" als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Hier ein Beispiel zwischen den folgenden Docstring-Symbolen:
 
 """
 Frage: Hier den Frageninhalt einfügen
