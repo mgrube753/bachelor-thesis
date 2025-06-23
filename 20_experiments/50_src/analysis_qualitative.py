@@ -281,20 +281,9 @@ def process_exp2(exp_name, clients):
                 row["question_type"].lower().replace("-", "_"),
             )
             pattern = f"question_{row['question_id']}"
-            print(
-                f"[EVAL] {exp_name} - {row['llm']} - tanenbaum layer2 - {row['question_type']}"
-            )
         elif exp_name == "exp2b":
             samples_path = os.path.join(samples_base, run_folders[exp_name], row["llm"])
             pattern = f"question_{row['bloom_original']}"
-            bloom_level = (
-                BLOOM_LEVELS_ORDERED[row["bloom_original"] - 1]
-                if row["bloom_original"] <= len(BLOOM_LEVELS_ORDERED)
-                else f"bloom_{row['bloom_original']}"
-            )
-            print(
-                f"[EVAL] {exp_name} - {row['llm']} - tanenbaum layer2 - {bloom_level}"
-            )
         else:
             samples_path = os.path.join(
                 samples_base,
@@ -303,11 +292,6 @@ def process_exp2(exp_name, clients):
                 row["question_type"].lower().replace("-", "_"),
             )
             pattern = f"question_{row['bloom_original']}"
-            bloom_level = (
-                BLOOM_LEVELS_ORDERED[row["bloom_original"] - 1]
-                if row["bloom_original"] <= len(BLOOM_LEVELS_ORDERED)
-                else f"bloom_{row['bloom_original']}"
-            )
 
         question = find_question(samples_path, pattern)
 
@@ -344,7 +328,10 @@ def process_exp2(exp_name, clients):
     for idx, openai_scores, claude_scores in results:
         if openai_scores and len(openai_scores) >= len(criteria):
             for i, criterion in enumerate(criteria[: len(openai_scores)]):
-                df_openai_filtered.at[idx, criterion] = round(openai_scores[i], 1)
+                if criterion == "bloom_rating":
+                    df_openai_filtered.at[idx, criterion] = int(openai_scores[i])
+                else:
+                    df_openai_filtered.at[idx, criterion] = round(openai_scores[i], 1)
 
             if len(openai_scores) >= 5:
                 bloom_rating_openai = openai_scores[4]
@@ -361,7 +348,12 @@ def process_exp2(exp_name, clients):
 
         if claude_scores and len(claude_scores) >= len(criteria):
             for i, criterion in enumerate(criteria[: len(claude_scores)]):
-                df_anthropic_filtered.at[idx, criterion] = round(claude_scores[i], 1)
+                if criterion == "bloom_rating":
+                    df_anthropic_filtered.at[idx, criterion] = int(claude_scores[i])
+                else:
+                    df_anthropic_filtered.at[idx, criterion] = round(
+                        claude_scores[i], 1
+                    )
 
             if len(claude_scores) >= 5:
                 bloom_rating_claude = claude_scores[4]
