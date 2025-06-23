@@ -73,15 +73,36 @@
 
 \section{Einführung \& Problem}
 
-\begin{frame}{Motivation \& Problemstellung}
+\begin{frame}[allowframebreaks]{Motivation \& Problemstellung}
     \begin{itemize}
-        \item Test 
+        \item \textbf{Motivation:} Aktives Lernen $\to$ gezielte Fragen, aber \\ anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021,vu_chatgpt-based_2024} 
+        \vspace{.5em}
+        \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ Lehrmaterialien verbessern + personalisiertes Lernen \cite{naveed_comprehensive_2024}
+        % biancini: used compliance,
+        % al faraby: future work shall be avoiding hallucinations by utilizing a framework which checks content fidelity
+        % angel: super relatedness to context, but very low bloom levels/adherence
+        % doughty: adherence between question and learning content was not assessed 
+        % elkins: relevance assessed, more interesting the bloom adherence
+        % mcqgen: relevance 100% on experts and llm-based eval (Rag)
+        % lamsiyah: mangel an menschlicher bewertung, um e.g. unterschiede zwischen menschlichen und llm-generierten fragen zu evaluieren
+        % maity: relevance used in eval
+        % mi and li (my rubric): relevance as well!
+        % content fidelity an sich immer nur durch experten bewertet, diverse insights (mal 5/5 nur, andere studie ist e.g. divers dabei)
+        % scaria how good: nutzt horbach rubrik und relevance ergibt sich aus mehreren kategorie-ergebnissen
+        % vu: sagen, dass man content als wissensbasis beilegen soll, um qualitaet zu verbessern
+        % yang: halluzination in bildung inakzeptabel, somit RAG wieder
+        % twinstar: besides bloom adherence also knowledge relevance, measured automatically but unknown
+        \framebreak
+        \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
+        % da auch die pädagogische Eignung bewertet werden muss
+        \vspace{.5em}
+        \item \textbf{Forschungslücke:} Bedarf an Untersuchung der Inhaltstreue und Einhalten kognitiver Anforderungsniveaus
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Forschungsfragen}
     \begin{itemize}
-        \item \textbf{RQ1:} To what extent do \textcolor{RedOrange!80}{LLMs adhere} to the content of diverse provided \textcolor{RedOrange!80}{instructional texts} when generating questions? \vfill
+        \item \textbf{RQ1:} To what extent do \textcolor{RedOrange!80}{LLMs adhere} to the content of diverse provided \textcolor{RedOrange!80}{instructional texts} when generating questions? \vspace{.5em}
         \item \textbf{RQ2:} How does the \textcolor{RedOrange!80}{relationship} between diverse question formats and Bloom's Taxonomy levels influence the \textcolor{RedOrange!80}{pedagogical effectiveness} of LLM-generated questions?
     \end{itemize}
 \end{frame}
@@ -131,11 +152,12 @@
         % Problematisch, da grundlegend linguistische Metriken
         \item \textbf{Expertenbewertung} -- Qualitative Evaluation 
         % selten performt, weil es aufwendig ist, aber notwendig für geeignete Auswertung
-        \item \textbf{Bloom} -- Hohe kognitive Levels
+        \item \textbf{Bloom's Taxonomy} -- Hohe kognitive Levels
         % dies sind die schwersten Levels, welche LLMs nicht gut beherrschen in related work
         \item \textbf{Prompting} -- Einfluss auf Ergebnisse
         % Auch ich bin kein prompt engineer, jedoch gibt es viele methoden, um LLMs zu steuern
         % kontext geben, rollenzuweisung, beispiellösungen geben --> in-context learning, special marks verwenden für mehr "übersicht" und struktur, auch fine-tuning ist möglich, aber auch aufwendig
+        % gewisse literatur hatte minimale Prompts aber mit Beispieloutputs übergeben, andere haben auch komplexe Prompts verwendet
     \end{itemize}
 \end{frame}
 
@@ -146,7 +168,7 @@
         \item \textbf{Ziel:} Bewertung der Inhaltsadhärenz von LLM-\\ generierten Fragen
         \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
         \begin{itemize}
-            \item Script -- Prof. Cap's Vorlesung (DE)
+            \item Script -- Prof. Cap's \enquote{Referenzarchitekturen} (DE)
             \item Transcript -- Audio-zu-Text (DE)  
             \item \enquote{Computer Networks} -- Textbook (EN)
         \end{itemize}
@@ -155,29 +177,69 @@
         \framebreak
         \item 4 Large Language Models: 
             \begin{itemize}
-                \item \textbf{DeepSeek R1:} Jan 2025
-                \item \textbf{Claude 3.7 Sonnet:} Feb 2025
-                \item \textbf{Gemini 2.5 Flash:} Mar 2025
-                \item \textbf{OpenAI o3:} Apr 2025
+                \item \textbf{DeepSeek R1:} Jan 2025 -- manuell
+                \item \textbf{Claude 3.7 Sonnet:} Feb 2025 -- API
+                \item \textbf{Gemini 2.5 Flash:} Mar 2025 -- API
+                \item \textbf{OpenAI o3:} Apr 2025 -- API
+                % 1a: 4llms, 3inputs, 7layers, 2prompts = 168 fragen
+                % 1b: 4llms, 1input, 7layers, 2prompts = 56 fragen
             \end{itemize}
         \item 2 Prompt-Strategien:
             \begin{itemize}
-                \item \textbf{Einfach:}
-                \item \textbf{Komplex:}
+                \item \textbf{Einfach:} Minimale Instruktionen, keine Strukturierung, aber Formatvorlage + Material
+                % generiere zum iso osi modell
+                % korrekte Antwort klar gekennzeichnet (eine oder eben aus möglichkeiten)
+                % klar und präzise Frage, kein weiterer Text soll generiert werden
+                \item \textbf{Komplex:} Rollenzuweisung, detaillierte Anweisungen, fordert nicht-triviales und kritisches Denken, Struktur durch Docstrings, Format-Vorlage + Material 
+                % format für einheitlichen Output bei beiden Prompts --> war das Problem beim einfachen Prompt --> Rerun nötig gewesen
+                % + source material
+                % was war drin:
+                % erfahrener experte im generieren von kognitiv anspruchsvollen fragen, welche nicht triviales und analytisches Denken fordern
+                % untersuchen des iso osi texts, erfassen des wichtigen
+                % soll nur fliesstext statt markdown generieren, nichts anderes soll generiert werden
             \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Datenerhebung \& Durchführung}
     \begin{itemize}
-        \item Python, embedding modell, apis ausser deepseek, automatisierte anfragen mit diversem prompting, diversen source materials, ...
+        % \item Python, embedding modell, apis ausser deepseek, automatisierte anfragen mit diversem prompting, diversen source materials, ...
+        \item \textbf{Python}: automatisierte API-Ansteuerungen
+        \item \textbf{Manuell}: DeepSeek R1
+        \item \textbf{Material}: Layer-weise Aufteilung
+        \item \textbf{Prompt-Variation}: jeweils 1 Frage
+        \item \textbf{Resultate}: 
+            \begin{itemize}
+                \item \textbf{Exp 1a:} 168 Fragen
+                \item \textbf{Exp 1b:} 56 Fragen
+            \end{itemize}
     \end{itemize}
+    \vspace{.5em}
+    $$\textcolor{gray}{4 \text{ LLMs}\times 3 \text{ Inputs}\times 7 \text{ Layers}\times 2 \text{ Prompts} = 168 \text{ Fragen}}$$
+    $$\textcolor{gray}{4 \text{ LLMs}\times 1 \text{ Input}\times 7 \text{ Layers}\times 2 \text{ Prompts} = 56 \text{ Fragen}}$$
 \end{frame}
 
 \begin{frame}{Evaluations-Methodik}
     \begin{itemize}
-        \item quantitative mit metriken (semantic sim, adherence via llm)
-        \item qualitative mit cap als experte ggü. llm as an evaluator (criteria) 
+        \item \textbf{Quantitativ:}
+        \begin{itemize}
+            \item \textbf{Semantic Similarity:} Vergleich generierte Frage vs. Originaltext $\to$ Embedding-Modell \& Cosine Similarity
+            % zu beginn der transformer-ära gab es encoder-decoder transformer, welche den input in eine mathematische Repräsentation mit Bedeutung umwandeln
+            % der decoder generiert dann basierend auf diesem embedding den output token-weise
+            % hat sich aber eher gesplittet in encoder-only und decoder-only transformer
+            % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training als enc-dec-transformer
+            % encoder-only: bert, roberta: können nur text klassifizieren, nicht generieren --> sentence transformers kamen dann auch --> diese Embeddings sind vegleichbar
+            \item \textbf{Adherence:} Inhaltstreue bewerten durch 2x Prompting\,/\,Frage an Gemini 2.5 Flash
+            % temperatur auf 0 für weniger randomness in Antwort
+            % bekommt Rolle eines Experten im Bewerten von metrischen Fragen, Frage studieren, iso osi kontext text studieren
+            % kurze Bewertungsrubrik 0 bis 1, Ausgabe einer Dezimalzahl mit 2 Nachkommastellen, ohne Kommentare etc.
+        \end{itemize}
+        % \item quantitative mit metriken (semantic sim mit Embedding Model, adherence via llm)
+        \item \textbf{Qualitativ:} Prof. Cap + 4 Experten des IuK 
+        \begin{itemize}
+            \item Bewertungsrubrik: 0-10 Punkte\,/\,Frage
+            \item Relevanz, Klarheit, Beantwortbarkeit, Herausforderung, Korrektheit
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
