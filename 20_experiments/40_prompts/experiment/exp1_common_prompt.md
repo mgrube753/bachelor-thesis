@@ -1,27 +1,35 @@
-Generiere eine Frage basierend auf dem gegebenen Text zum ISO-OSI-Modell:
+Generiere eine Frage basierend auf dem folgenden Text zum ISO-OSI-Modell:
 
 {text}
 
-Die korrekte Antwort -- oder Antwortmöglichkeit, sofern mehrere Möglichkeiten generiert werden -- soll zu Beginn klar mit einem "~" gekennzeichnet werden.
+---
 
-Bei einer Antwortmöglichkeit soll das Antwortformat somit wie folgt aussehen:
+Folge den folgenden Anweisungen:
 
+1. Formuliere eine klare und präzise Frage.
+2. Erstelle entweder eine einzelne Antwort oder mehrere Antwortmöglichkeiten.
+3. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
+4. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
+5. Gib nur die Frage und die Antwort(en) aus. Schreibe keinen zusätzlichen Text.
+
+---
+
+Wenn du eine einzelne Antwort generierst, dann soll das Format wie folgt aussehen:
 
 Frage: Hier den Frageninhalt einfügen
 
-Antwort: ~Hier die Antwort einfügen
+Antwort: Hier die Antwort einfügen (Richtig)
 
+---
 
-Verwende bei mehreren Antwortmöglichkeiten stattdessen den folgenden Formatierungsstil, wobei die korrekte(n) Antwortmöglichkeit(en) als diese markiert werden sollen:
-
+Wenn du mehrere Antwortmöglichkeiten generierst, dann soll das Format wie folgt aussehen:
 
 Frage: Hier den Frageninhalt einfügen
 
 Antwortmöglichkeiten:
-- ~Beispielsweise hier die korrekte Antwort einfügen
-- Hier die erste falsche Antwort einfügen
-- ...
+- Beispielsweise hier die korrekte Antwort einfügen (Richtig)
+- Hier eine falsche Antwort einfügen (Falsch)
+- Hier eine weitere falsche Antwort einfügen (Falsch)
 - ...
 
-
-Die Frage soll klar und präzise sein. Neben der Frage und den Antwort(en) soll kein weiterer Text generiert werden.
+Beachte dabei, dass auch mehrere korrekte Antworten möglich sind, die dann ebenfalls mit (Richtig) markiert werden sollten.

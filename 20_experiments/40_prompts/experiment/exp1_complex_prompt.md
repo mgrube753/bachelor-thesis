@@ -1,6 +1,20 @@
-Verhalte dich wie ein erfahrener Experte im Generieren von kognitiv anspruchsvollen Fragen, welche nicht triviales und analytisches Denken fordern. Untersuche den gegebenen Instruktionstext sorgfältig und erfasse alles, was für die ordnungsgemäße Fragengenerierung zum ISO-OSI-Modell wichtig ist.
+Verhalte dich wie ein erfahrener Experte im Generieren von kognitiv anspruchsvollen Fragen, welche nicht triviales und analytisches Denken fordern.
+Deine Aufgabe ist es, eine Frage beliebigen Typs zu dem folgenden Text über das ISO-OSI-Modell zu formulieren.
 
-Deine Aufgabe ist es, eine Frage beliebigen Typs zu formulieren, die auf dem bereitgestellten Text basiert. Die Frage soll klar und präzise sein und den Leser dazu anregen, kritisch über den Inhalt nachzudenken.
+---
+
+Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu generieren:
+
+1. Untersuche den gegebenen Instruktionstext sorgfältig.
+2. Erfasse alles, was für die ordnungsgemäße Fragengenerierung zum ISO-OSI-Modell wichtig ist.
+3. Formuliere eine klare, präzise und kognitiv anspruchsvolle Frage, die zum kritischen Nachdenken anregt.
+4. Erstelle entweder eine einzelne Antwort oder mehrere Antwortmöglichkeiten.
+5. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
+6. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
+7. Verwende für Listen ausschließlich Gedankenstriche (`-`).
+8. Gib nur die Frage und die Antwort(en) im vorgegebenen Format als Fließtext aus. Schreibe keinen zusätzlichen Text und vermeide jegliche Markdown-basierte Formatierung.
+
+---
 
 Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 
@@ -8,28 +22,28 @@ Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 {text}
 """
 
-Die korrekte Antwort -- oder Antwortmöglichkeit, sofern mehrere Möglichkeiten generiert werden -- soll zu Beginn klar mit einem "~" gekennzeichnet werden.
+---
 
-Wenn eine Antwortmöglichkeit generiert wird, soll das Antwortformat somit wie folgt aussehen:
+Wenn du eine einzelne Antwort generierst, dann soll das Format wie folgt aussehen:
 
 """
 Frage: Hier den Frageninhalt einfügen
 
-Antwort: ~Hier die Antwort einfügen
+Antwort: Hier die Antwort einfügen (Richtig)
 """
 
-Wenn mehrere Antwortmöglichkeiten generiert werden, verwende stattdessen den folgenden Formatierungsstil, wobei du überlegen musst, welche Antwortmöglichkeiten durch ein vorangestelltes "~" als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Hier ein Beispiel zwischen den folgenden Docstring-Symbolen:
+---
+
+Wenn du mehrere Antwortmöglichkeiten generierst, dann verwende den folgenden Formatierungsstil. Dabei musst du auch beachten, welche Antwortmöglichkeiten durch ein vorangestelltes `(Richtig)` als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Es folgt ein Beispiel:
 
 """
 Frage: Hier den Frageninhalt einfügen
 
 Antwortmöglichkeiten:
-- ~Beispielsweise hier die korrekte Antwort einfügen
-- Hier die erste falsche Antwort einfügen
-- Hier die zweite falsche Antwort einfügen
-- Hier die dritte falsche Antwort einfügen
+- Beispielsweise hier die korrekte Antwort einfügen (Richtig)
+- Hier eine falsche Antwort einfügen (Falsch)
+- Hier eine weitere falsche Antwort einfügen (Falsch)
+- ...
 """
 
-Verwende klaren Fließtext. Bei Listen nutzte ausschließlich die Gedankenstriche "-" als Formatierung und vermeide jegliche andere Markdown-basierte Formatierung.
-
-Nun starte mit der Generierung unter Berücksichtigung der oben genannten Punkte. Gib nur die Frage und die zugehörige(n) Antwort(en) aus. Achte final auf Korrektheit in Format und Formulierung.
+Beachte dabei, dass auch mehrere korrekte Antworten möglich sind, die dann ebenfalls mit (Richtig) markiert werden sollten.
