@@ -24,7 +24,7 @@ Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 
 ---
 
-Wenn du eine einzelne Antwort generierst, dann soll das Format wie folgt aussehen:
+Wenn du eine einzelne Antwort generierst, dann soll das Format wie folgt aussehen, wie zwischen den Docstring-Symbolen angegeben:
 
 """
 Frage: Hier den Frageninhalt einfügen
@@ -34,7 +34,7 @@ Antwort: Hier die Antwort einfügen (Richtig)
 
 ---
 
-Wenn du mehrere Antwortmöglichkeiten generierst, dann verwende den folgenden Formatierungsstil. Dabei musst du auch beachten, welche Antwortmöglichkeiten durch ein vorangestelltes `(Richtig)` als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Es folgt ein Beispiel:
+Wenn du mehrere Antwortmöglichkeiten generierst, dann verwende den folgenden Formatierungsstil. Dabei musst du auch beachten, welche Antwortmöglichkeiten durch ein vorangestelltes `(Richtig)` als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Es folgt ein Beispiel zwischen den Docstring-Symbolen:
 
 """
 Frage: Hier den Frageninhalt einfügen

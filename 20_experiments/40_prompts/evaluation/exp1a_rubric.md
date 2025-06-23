@@ -48,4 +48,4 @@ Basiert die Frage auf korrekten Annahmen und Fakten aus dem bereitgestellten Tex
    - Bsp: "Warum ist beim Application Layer wenig Systematisierung möglich?"
 - 5: Größtenteils korrekte Annahmen, minimale Ungenauigkeiten
 - 0: Falsche Annahmen oder Widersprüche zum Textinhalt
-   - Bsp: "Welche der fünf Hauptaufgaben des Application Layers ist am wichtigsten?" (Text enthält nur drei Aufgaben)
+   - Bsp: "Welche der fünf Hauptaufgaben des Application Layers ist am wichtigsten?" (Nur drei Aufgaben)

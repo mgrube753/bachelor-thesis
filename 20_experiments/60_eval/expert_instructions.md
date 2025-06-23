@@ -1,6 +1,6 @@
 # Überblick der Experimente -- Malte Grube
 
-Dieses Experiment (bestehend aus 1a und 1b) testet die Qualität von automatisiert-generierten Fragen durch vier Large Language Models und deren Fähigkeit, sich an diverse gegebene Quellinhalte zu halten.
+Dieses Experiment (bestehend aus 1a und 1b) testet die Qualität von automatisiert-generierten Fragen durch vier Large Language Models und deren Fähigkeit, sich an diverse gegebene Quellinhalte zu halten. Dabei wurden zwei verschiedene Prompts verwendet, mit denen die Modelle Fragen generieren sollten. Details zu diesen Prompts werden aufgrund des Blindtests nicht gegeben.
 
 Als Sonderfall wird in Experiment 1b getestet, ob die Modelle in der Lage sind, Manipulationen im Text zu erkennen, oder ob genau diese straight-forward für die Fragengenerierung genutzt werden. Manipulation beschreibt hier, dass gewisse Informationen im Text bewusst verfälscht wurden, um zu prüfen, ob die Modelle diese erkennen und entsprechend Fragen generieren können.
 
@@ -10,7 +10,7 @@ Es folgen die Beschreibungen der beiden Subexperimente, welche Materialien genut
 
 Es wurden folgende Materialien genutzt, um Fragen bei Experiment 1a zu generieren:
 
--   **Quelle:** Originalinhalte aus drei verschiedenen Quellen zum Thema ISO-OSI-Modell
+-   **Eingabequelle:** Originalinhalte aus drei verschiedenen Quellen zum Thema ISO-OSI-Modell
 -   **Generiert:** Fragen wurden aus folgenden Materialien jeweils erstellt
 -   **Material:**
     -   `script`: Extrahierte Textauszüge von Prof. Caps Vorlesungs-PDF "Referenzarchitekturen"
@@ -26,16 +26,16 @@ sodass sie eine angemessene Länge für die Fragengenerierung haben.
 
 ## Experiment 1b (`exp1b.csv`)
 
-Hierbei handelt es sich um ein Subexperiment, welches auf Experiment 1a aufbaut, jedoch mit einem Fokus auf die Manipulation einer Inhaltsquelle.
+Dieses Subexperiment, welches auf Experiment 1a aufbaut, fokussiert sich auf die Manipulation einer Inhaltsquelle.
 
--   **Quelle:** Manipulierte Inhalte (TXT)
+-   **Eingabequelle:** Manipulierte Inhalte (TXT)
 -   **Generiert:** Fragen wurden aus absichtlich verfälschten Texten erstellt
 -   **Material:**
     -   `script (manipulated)`: Extrahierte Textauszüge von Prof. Caps Vorlesungs-PDF "Referenzarchitekturen", jedoch manipuliert
 
-Die Layer-Dateien, aus den Vorlesungsinhalten entnommen, wurden durch einmaliges LLM-Prompting so verändert, dass sie inhaltlich keinen Sinn mehr ergeben, aber dennoch die stichpunktartige Struktur des Vorlesungstextes beibehalten. 
+Die Layer-Dateien, basierend auf den Vorlesungsfolien, wurden durch einmaliges LLM-Prompting so verändert, dass sie inhaltlich keinen Sinn mehr ergeben, aber dennoch die stichpunktartige Struktur des Vorlesungstextes beibehalten.
 
-Durch diese Manipulation wird getestet, ob die Modelle in der Lage sind, die Unstimmigkeiten zu erkennen, oder ob sie diese Informationen für die Fragengenerierung nutzen.
+Durch diese Manipulation wird getestet, ob die Modelle in der Lage sind, die Unstimmigkeiten gegenüber dem ISO-OSI-Modell zu erkennen, oder ob sie diese Informationen für die Fragengenerierung nutzen.
 
 ## Anleitung für Experten
 
@@ -76,20 +76,19 @@ Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 a
 2. Für jede Zeile mit `script_manipulated`:
     - Schauen Sie sich die Frage in `questions/exp1b/` an.
     - Vergleichen Sie mit dem manipulierten Text in `source/script_manipulated/layer[X].txt`.
-    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1b_rubric.md`, wobei die `Correctness`-Bewertung für dieses Subexperiment das Hauptaugenmerk ist. Da können Kommentare hilfreich sein.
+    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1b_rubric.md`, wobei die `manipulation_handling`-Bewertung für dieses Subexperiment das Hauptaugenmerk ist. Da können Kommentare hilfreich sein.
 
 ### Schritt 5: CSV-Dokumentation
 
 Tragen Sie Ihre Bewertungen (0-10) in die jeweiligen CSV-Spalten, basierend auf der jeweiligen Bewertungsrubrik, ein:
 
--   Relevanz: `relevance`
--   Klarheit: `clarity`
--   Beantwortbarkeit: `answerability`
--   Herausfordernd: `challenging`
--   Korrektheit: `correctness`
--   Umgang mit Manipulation: `manipulation_handling` (für Experiment 1b)
-
-Bei `comments` können Sie Ihre Anmerkungen zu jeder Frage eintragen, um Ihre Bewertungen ggf. zu erläutern oder auf Besonderheiten hinzuweisen.
+-   `relevance` (Relevanz)
+-   `clarity` (Klarheit)
+-   `answerability` (Beantwortbarkeit)
+-   `challenging` (Herausfordernd)
+-   `correctness` (Korrektheit) -- Für Experiment 1a
+-   `manipulation_handling` (Umgang mit Manipulationen) -- Für Experiment 1b
+-   `comments` -- Dort können Sie Ihre Anmerkungen zu jeder Frage eintragen, um Ihre Bewertungen ggf. zu erläutern oder auf Besonderheiten hinzuweisen.
 
 ## Dankbarkeit für Ihre Unterstützung
 
