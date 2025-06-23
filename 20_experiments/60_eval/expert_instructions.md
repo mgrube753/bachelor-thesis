@@ -1,16 +1,21 @@
-# Überblick der Experimente
+# Überblick der Experimente -- Malte Grube
 
-Dieses Experiment (bestehend aus 1a und 1b) testet die Qualität von automatisiert-generierten Fragen durch diverse Large Language Models und deren Fähigkeit, sich an diverse gegebene Quellinhalte zu halten.
-Als Sonderfall wird zudem im Experiment 1b getestet, ob die Modelle in der Lage sind, Manipulationen im Text zu erkennen, oder ob genau diese straight-forward für die Fragengenerierung genutzt werden.
+Dieses Experiment (bestehend aus 1a und 1b) testet die Qualität von automatisiert-generierten Fragen durch vier Large Language Models und deren Fähigkeit, sich an diverse gegebene Quellinhalte zu halten.
+
+Als Sonderfall wird in Experiment 1b getestet, ob die Modelle in der Lage sind, Manipulationen im Text zu erkennen, oder ob genau diese straight-forward für die Fragengenerierung genutzt werden. Manipulation beschreibt hier, dass gewisse Informationen im Text bewusst verfälscht wurden, um zu prüfen, ob die Modelle diese erkennen und entsprechend Fragen generieren können.
+
+Es folgen die Beschreibungen der beiden Subexperimente, welche Materialien genutzt und welche zusätzlich manipuliert wurden, sowie eine Anleitung, wie Sie die Bewertungen vornehmen können.
 
 ## Experiment 1a (`exp1a.csv`)
 
--   **Quelle:** Originalinhalte (TXT) aus drei verschiedenen Quellen zum Thema ISO-OSI-Modell
+Es wurden folgende Materialien genutzt, um Fragen bei Experiment 1a zu generieren:
+
+-   **Quelle:** Originalinhalte aus drei verschiedenen Quellen zum Thema ISO-OSI-Modell
 -   **Generiert:** Fragen wurden aus folgenden Materialien jeweils erstellt
 -   **Material:**
     -   `script`: Extrahierte Textauszüge von Prof. Caps Vorlesungs-PDF "Referenzarchitekturen"
-    -   `transcript`: Audio-Text-Fassung dieser Vorlesung, von Doritt Linke bereitgestellt
-    -   `tanenbaum`: Auszüge aus "Computer Networks" von Andrew S. Tanenbaum, bspw. hier: https://csc-knu.github.io/sys-prog/books/Andrew%20S.%20Tanenbaum%20-%20Computer%20Networks.pdf
+    -   `transcript`: Audio-Text-Fassung (TXT) dieser Vorlesung, von Doritt Linke bereitgestellt
+    -   `tanenbaum`: Auszüge aus der "Computer Networks"-PDF von Andrew S. Tanenbaum, bspw. [hier](https://csc-knu.github.io/sys-prog/books/Andrew%20S.%20Tanenbaum%20-%20Computer%20Networks.pdf) einsehbar
 
 Die Materialien wurden von mir extrahiert und aufbereitet durch
 
@@ -21,12 +26,16 @@ sodass sie eine angemessene Länge für die Fragengenerierung haben.
 
 ## Experiment 1b (`exp1b.csv`)
 
+Hierbei handelt es sich um ein Subexperiment, welches auf Experiment 1a aufbaut, jedoch mit einem Fokus auf die Manipulation einer Inhaltsquelle.
+
 -   **Quelle:** Manipulierte Inhalte (TXT)
 -   **Generiert:** Fragen wurden aus absichtlich verfälschten Texten erstellt
 -   **Material:**
-    -   `script (manipulated)`: Bewusst manipulierte Vorlesungstexte
+    -   `script (manipulated)`: Extrahierte Textauszüge von Prof. Caps Vorlesungs-PDF "Referenzarchitekturen", jedoch manipuliert
 
-Die Layer-Dateien, aus den Vorlesungsinhalten entnommen, wurden so verändert durch einmaliges LLM-Prompting, sodass sie inhaltlich verfälscht sind, aber dennoch die Struktur des Vorlesungstextes beibehalten.
+Die Layer-Dateien, aus den Vorlesungsinhalten entnommen, wurden durch einmaliges LLM-Prompting so verändert, dass sie inhaltlich keinen Sinn mehr ergeben, aber dennoch die stichpunktartige Struktur des Vorlesungstextes beibehalten. 
+
+Durch diese Manipulation wird getestet, ob die Modelle in der Lage sind, die Unstimmigkeiten zu erkennen, oder ob sie diese Informationen für die Fragengenerierung nutzen.
 
 ## Anleitung für Experten
 
@@ -34,8 +43,10 @@ Die Layer-Dateien, aus den Vorlesungsinhalten entnommen, wurden so verändert du
 
 Lesen Sie Subexperiment-spezifischen Rubriken:
 
--   `exp1a_rubric.md`:
--   `exp1b_rubric.md`:
+-   `exp1a_rubric.md`
+-   `exp1b_rubric.md`
+
+Diese unterscheiden sich in den Bewertungskriterien innerhalb der letzten Kategorie jedes Subexperiments. Im ersten Subexperiment (1a) wird die **Korrektheit** der Fragen bewertet, während im zweiten Subexperiment (1b) der **Umgang mit Manipulation** im Fokus steht.
 
 ### Schritt 2: Verständnis der CSV-Struktur
 
@@ -43,7 +54,7 @@ Die `exp1a.csv` und `exp1b.csv` enthalten:
 
 -   `input_source`: Die Quelle des Textes, aus dem die Frage generiert wurde (z.B. `script`, `transcript`, `tanenbaum`, `script_manipulated`).
 -   `layer`: Der jeweilige Schichttext, aus der die Frage generiert wurde.
--   Die 5 Kategorien zur Bewertung von 0-10
+-   Die jeweiligen 5 Kategorien zur Bewertung von 0-10
 -   Eine `comments`-Spalte für Ihre Anmerkungen. Dies könnten beispielsweise Indizien sein, wie: Die Frage ist ein Ankerbeispiel für eine bestimmte Kategorie, sodass diese auffällig gut oder schlecht abschneidet, oder auch, dass die Frage nicht beantwortbar ist, weil sie zu unklar formuliert ist.
 
 Anhand der CSV-Dateien können Sie die Fragen und deren Quellen nachvollziehen, um diese Zeile für Zeile zu bewerten.
@@ -71,11 +82,12 @@ Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 a
 
 Tragen Sie Ihre Bewertungen (0-10) in die jeweiligen CSV-Spalten, basierend auf der jeweiligen Bewertungsrubrik, ein:
 
--   `relevance`
--   `clarity`
--   `answerability`
--   `challenging`
--   `correctness`
+-   Relevanz: `relevance`
+-   Klarheit: `clarity`
+-   Beantwortbarkeit: `answerability`
+-   Herausfordernd: `challenging`
+-   Korrektheit: `correctness`
+-   Umgang mit Manipulation: `manipulation_handling` (für Experiment 1b)
 
 Bei `comments` können Sie Ihre Anmerkungen zu jeder Frage eintragen, um Ihre Bewertungen ggf. zu erläutern oder auf Besonderheiten hinzuweisen.
 
