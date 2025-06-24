@@ -1,3 +1,7 @@
-Frage: Warum ist es laut Textaussage schwierig, eine allgemeingültige Systematisierung der Funktionen des Application Layer (Layer 7) im OSI-Modell unabhängig von konkreten Anwendungen vorzunehmen? Erläutern Sie die dafür im Text genannten Gründe.
+Frage: Warum betont der Text, dass eine rein anwendungsfreie Systematisierung der Application-Layer-Funktionen im ISO-OSI-Modell problematisch ist?  
 
-Antwort: ~Die Systematisierung ist schwierig, weil die Funktionen des Application Layers stark von der Art der jeweiligen Anwendung abhängen. Der Text identifiziert drei Kernkonzepte, die anwendungsspezifisch ausgeprägt sind: 1) Die auftretenden Protokollelemente (Kommunikation zwischen Partnern), 2) Die Art der ausgetauschten Daten und 3) Die Reaktion der Anwendung auf eingehende Anforderungen (durch Zustandsänderung oder andere Aktionen). Diese inhärente Abhängigkeit von der konkreten Anwendung macht eine "anwendungsfreie" Systematisierung kaum möglich.
+Antwortmöglichkeiten:  
+- Weil die Kernaufgaben des Layers (Protokollelemente, Daten, Anwendungsreaktion) zwingend kontextabhängig sind und sich je nach spezifischer Anwendung fundamental unterscheiden (Richtig)  
+- Weil der Application Layer technisch veraltet ist und durch moderne Cloud-Architekturen ersetzt wurde (Falsch)  
+- Weil die ISO-Norm hier bewusst Interpretationsspielräume lässt, um Flexibilität für Protokollentwickler zu gewährleisten (Falsch)  
+- Weil Layer 7 ausschließlich hardwarenahe Schnittstellen definiert und keine softwarebasierten Interaktionen (Falsch)

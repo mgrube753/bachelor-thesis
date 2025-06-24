@@ -1,5 +1,8 @@
-```
-Frage: Welche konzeptionelle Herausforderung entsteht beim Physical Layer speziell durch die Dualität von Lichtübertragung, und welche Implikationen hat dies für die Implementierung aller drei Kernaufgaben dieses Layers in unterschiedlichen Netzwerkumgebungen?
+Frage: Ein Netzwerkingenieur plant ein neues System, bei dem Daten über verschiedene Medien übertragen werden sollen. Bei der Analyse der Anforderungen auf dem Physical Layer stellt er fest, dass ein kritischer Prozess fehlt. Welche der folgenden Aussagen beschreibt am besten ein mögliches Problem, das auftreten könnte, wenn eine der drei Kernaufgaben des Physical Layers nicht angemessen implementiert wird?
 
-Antwort: ~Die Herausforderung liegt in der Doppelfunktion des Lichts als sowohl medienfrei (direkter Lichtstrahl) als auch mediengebunden (Lichtwellenleiter) übertragbares Signal. Dies erfordert unterschiedliche Ansätze für alle drei Kernaufgaben: Bei der Codierung müssen unterschiedliche Modulations- und Pulsverfahren für Freistrahl- versus Faseroptik verwendet werden; beim Transport müssen die physikalischen Eigenschaften und Störeinflüsse beider Übertragungswege berücksichtigt werden; und bei der Dekodierung werden unterschiedliche Detektions- und Abtastverfahren benötigt, um aus den verschiedenartig transportierten Lichtsignalen wieder korrekte logische Werte zu rekonstruieren.
-```
+Antwortmöglichkeiten:
+- Wenn die Codierung unzureichend definiert ist, könnten dieselben physikalischen Signale von verschiedenen Empfängern unterschiedlich interpretiert werden, was zu Inkonsistenzen in den übertragenen Daten führt. (Richtig)
+- Wenn die Übertragung über medienfrei erfolgt, ist eine Codierung nicht notwendig, da elektromagnetische Wellen direkt als logische Werte interpretiert werden können. (Falsch)
+- Der Dekodierungsprozess ist nur relevant, wenn unterschiedliche Medientypen verwendet werden, bei homogenen Netzwerken kann dieser Schritt übersprungen werden. (Falsch)
+- Die drei Kernaufgaben (Codierung, Transport, Dekodierung) sind voneinander unabhängig und können daher isoliert implementiert werden, ohne dass dies Auswirkungen auf die Gesamtfunktionalität hat. (Falsch)
+- Bei der Verwendung von Licht als Übertragungsmedium muss der Physical Layer entweder für mediengebundene oder medienfreie Übertragung optimiert sein, eine duale Unterstützung ist technisch unmöglich. (Falsch)

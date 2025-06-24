@@ -1,11 +1,9 @@
-# Frage:
-Was ist die Haupteigenschaft, die die Transportschicht (Layer 4) von den Schichten 1-3 unterscheidet?
+Frage: Welche Eigenschaften treffen auf die Transport-Schicht im ISO-OSI-Modell zu?
 
-## Antwortmöglichkeiten:
-Korrekte Antwort: A) Die Transportschicht arbeitet end-to-end zwischen Quelle und Ziel, während die unteren Schichten nur zwischen benachbarten Geräten kommunizieren.
-
-B) Die Transportschicht ist für die physische Übertragung von Daten zuständig.
-
-C) Die Transportschicht ist nur für das Routing von Paketen verantwortlich.
-
-D) Die Transportschicht kann keine Nachrichten in kleinere Einheiten aufteilen.
+Antwortmöglichkeiten:
+- Die Transport-Schicht ist eine echte End-to-End-Schicht, die Daten von der Quelle bis zum Ziel transportiert. (Richtig)
+- Die Transport-Schicht akzeptiert Daten von höheren Schichten und kann sie bei Bedarf in kleinere Einheiten aufteilen. (Richtig)
+- Die Transport-Schicht kann unterschiedliche Dienste anbieten, wie fehlerfreie Punkt-zu-Punkt-Kanäle oder Broadcasting von Nachrichten. (Richtig)
+- Die Transport-Schicht kommuniziert immer nur mit unmittelbaren Nachbarknoten im Netzwerk. (Falsch)
+- Die Transport-Schicht gehört zu den unteren drei Schichten (1-3) des OSI-Modells, die als verkettete Protokolle bezeichnet werden. (Falsch)
+- Die Transport-Schicht kann keine Garantie für die Reihenfolge der Zustellung von Nachrichten bieten. (Falsch)

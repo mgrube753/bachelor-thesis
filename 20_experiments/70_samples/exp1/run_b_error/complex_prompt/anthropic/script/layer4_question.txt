@@ -1,7 +1,8 @@
-Frage: Analysieren Sie kritisch die Darstellung der Transportschicht (Layer 4) im gegebenen Text. Welche der folgenden Aussagen identifiziert korrekt eine konzeptionelle Inkonsistenz oder ein Missverständnis in der Beschreibung der Kernaufgaben dieser Schicht im Vergleich zum standardmäßigen ISO-OSI-Modell?
+Frage: Analysieren Sie kritisch die im Text beschriebenen Kernaufgaben der Transportschicht (Layer 4) des OSI-Modells. Welche potentiellen Netzwerkprobleme könnten aufgrund der beschriebenen Einschränkungen entstehen, und wie könnte eine Verbesserung dieser Schicht aussehen?
 
 Antwortmöglichkeiten:
-- ~Die Beschreibung des "Datenstaus" als "Ignorieren der Teilnehmer-Charakteristik" widerspricht der eigentlichen Aufgabe der Transportschicht, die gerade für Flusskontrolle und Staumanagement verantwortlich ist
-- Die "Identifizierung" mit "Geräte-spezifischen Kennungen" ist keine Aufgabe der Transportschicht, sondern ausschließlich der Sicherungsschicht (Layer 2)
-- Die Beschreibung der "Dienstquantität" ist korrekt, da die Transportschicht grundsätzlich keine Garantien für QoS bieten kann
-- Die Bereitstellung einer "Speicherung für festgelegte Teilnehmerpaare" ist die Hauptfunktion der Transportschicht und korrekt dargestellt
+- Die Vernachlässigung der Quality of Service könnte zu unvorhersehbaren Übertragungszeiten führen, weshalb eine Implementierung von QoS-Garantien für zeitkritische Anwendungen wie VoIP oder Videostreaming notwendig wäre. (Richtig)
+- Das Ignorieren der Teilnehmer-Charakteristik könnte bei heterogenen Netzwerkteilnehmern zu Ineffizienzen führen; eine adaptive Datenflusssteuerung basierend auf Endgeräte-Kapazitäten wäre eine sinnvolle Verbesserung. (Richtig)
+- Die Speicherdienstbereitstellung ohne Garantien könnte zu Datenverlust führen; robustere Fehlerkorrekturmechanismen und Übertragungswiederholungen wären eine notwendige Ergänzung. (Richtig)
+- Die geräte-spezifischen Kennungen sind optimal für die Netzwerkkommunikation und benötigen keine Verbesserung. (Falsch)
+- Layer 4 sollte komplett durch den Anwendungslayer ersetzt werden, da die beschriebenen Einschränkungen nicht behoben werden können. (Falsch)

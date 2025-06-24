@@ -1,9 +1,7 @@
-```
-Frage: In einem Netzwerk mit unterschiedlich schnellen Geräten treten wiederholt Paketverluste auf, obwohl die physische Verbindung einwandfrei funktioniert. Welche Funktion der Data Link Layer adressiert dieses Problem am direktesten, und welcher fundamentale Kompromiss ist mit dieser Lösung verbunden?
+Frage: Im gegebenen Text werden drei Hauptfunktionen der Datenverbindungsschicht (Data Link Layer) beschrieben. Angenommen, ein Netzwerk würde ohne die beschriebene Fehlerkorrektur- und Flusssteuerungsfunktionalität dieser Schicht betrieben. Analysieren Sie die potentiellen Auswirkungen auf die darüber liegenden Schichten des OSI-Modells und erläutern Sie, welche der genannten Probleme am schwersten durch Mechanismen höherer Schichten zu kompensieren wären.
 
 Antwortmöglichkeiten:
-- ~Die Verkehrsregulierungsmechanismen, die verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten; der Kompromiss besteht in reduziertem Gesamtdurchsatz zugunsten von Zuverlässigkeit
-- Die Medium Access Control Sublayer, die den Zugriff auf den gemeinsamen Kanal steuert; der Kompromiss besteht in erhöhter Komplexität der Netzwerkhardware
-- Die Fehlerkorrektur durch Acknowledgement Frames; der Kompromiss besteht in erhöhter Latenz durch zusätzlichen Nachrichtenverkehr
-- Die Aufteilung der Daten in kleine Frames; der Kompromiss besteht in erhöhtem Overhead durch Frame-Header und -Footer
-```
+- Die fehlende Fehlererkennung und -korrektur würde am schwersten zu kompensieren sein, da höhere Schichten ohne verlässliche Datenintegrität keine konsistenten Dienste anbieten könnten und jede Schicht eigene aufwendige Prüfmechanismen implementieren müsste. (Richtig)
+- Die fehlende Verkehrsregulierung wäre am problematischsten, aber die Transportschicht könnte dies vollständig durch ihre eigenen Flusskontrollmechanismen ausgleichen, ohne signifikante Leistungseinbußen. (Falsch)
+- Der fehlende Medienzugriff bei Broadcast-Netzwerken könnte problemlos von der Netzwerkschicht übernommen werden, da diese ohnehin für die Weiterleitung von Paketen zwischen verschiedenen Netzwerksegmenten zuständig ist. (Falsch)
+- Alle genannten Funktionen der Datenverbindungsschicht sind gleichermaßen unkritisch, da sie vollständig von der Transportschicht übernommen werden können, ohne die Netzwerkleistung zu beeinträchtigen. (Falsch)

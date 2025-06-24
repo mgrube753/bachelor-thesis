@@ -1,3 +1,9 @@
-Antwort: Atomisierung
+Frage: Welche der folgenden Kernaufgaben gehören laut Beschreibung zur Session Layer (Schicht 5) des ISO-OSI-Modells?
 
-Frage: Wie lautet die Bezeichnung der Kernaufgabe der Session Layer 5 im ISO-OSI-Modell, bei der unabhängige Datenpakete in Einzelteile aufgespaltet werden?
+Antwortmöglichkeiten:
+- Datagramme: spontanes Erstellen, Senden, Empfangen und sofortiges Verwerfen (Richtig)
+- Asynchronität: Vermeidung von Zwischenpunkten und Bestätigungen (Richtig)
+- Atomisierung: Aufspaltung unabhängiger Datenpakete in Einzelteile (Richtig)
+- Adressierung von Endgeräten im Netz (Falsch)
+- Bitübertragung über das physische Medium (Falsch)
+- Verschlüsselung auf Anwendungsebene (Falsch)

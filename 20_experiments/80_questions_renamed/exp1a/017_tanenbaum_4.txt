@@ -1,11 +1,6 @@
-**Frage:**  
-Welche OSI-Schicht stellt die erste echte Ende-zu-Ende-Kommunikation zwischen Quelle und Ziel dar?  
+Frage: Welche Schicht im ISO-OSI-Modell wird als echte Ende-zu-Ende-Schicht bezeichnet und kommuniziert direkt zwischen den Programmen auf Quell- und Zielrechner?
 
-**Antwortmöglichkeiten:**  
-A) Schicht 1 (Bitübertragungsschicht)  
-B) Schicht 2 (Sicherungsschicht)  
-C) Schicht 3 (Vermittlungsschicht)  
-D) Schicht 4 (Transportschicht)  
-
-**Korrekte Antwort:**  
-D) Schicht 4 (Transportschicht)
+Antwortmöglichkeiten:
+- Die Transportschicht (Schicht 4) (Richtig)
+- Die Netzwerkschicht (Schicht 3) (Falsch)
+- Die Sicherungsschicht (Schicht 2) (Falsch)

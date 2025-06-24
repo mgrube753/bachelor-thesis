@@ -1,9 +1,11 @@
-Frage: Welche der folgenden Aussagen beschreibt korrekt eine tatsächliche Funktion des Data Link Layers im ISO-OSI-Modell?
-
-Korrekte Antwort: B) Fehlerkorrektur und Fehlererkennung zur Sicherstellung einer zuverlässigen Übertragung
+Frage: Welche der folgenden Aufgaben gehören zu den Kernaufgaben des Data Link Layers im ISO-OSI-Modell laut dem gegebenen Text?
 
 Antwortmöglichkeiten:
-A) Fehlererzeugung durch Ignorieren, Verursachen oder Verschleiern von Übertragungsfehlern
-B) Fehlerkorrektur und Fehlererkennung zur Sicherstellung einer zuverlässigen Übertragung
-C) Anonymisierung durch Verbergen bestimmter Sender oder Empfänger
-D) Medienverweigerung durch Deaktivieren des Physical Layers
+- Fehlererzeugung (Richtig)
+- Datenstau (Richtig)
+- Fragmentierung (Richtig)
+- Anonymisierung (Richtig)
+- Medienverweigerung (Richtig)
+- Fehlerkorrektur (Falsch)
+- Datenkompression (Falsch)
+- Verschlüsselung (Falsch)

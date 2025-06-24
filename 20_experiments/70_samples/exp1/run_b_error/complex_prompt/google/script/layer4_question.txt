@@ -1,7 +1,10 @@
-Frage: Basierend auf der im Text dargestellten Beschreibung der Transportschicht, insbesondere unter Berücksichtigung der Kernaufgabe „Dienstquantität“, die eine Vernachlässigung von Quality of Service (QoS) und die Erbringung eines Speicherdienstes ohne Garantien für Kapazität, Zugriffszeit, Varianz oder Fehlerfreiheit umfasst, welche Implikation ergibt sich daraus für Dienste, die eine verlässliche Datenübertragung mit hohen Anforderungen an die Servicequalität benötigen?
+Frage: Der gegebene Text beschreibt die Dienstquantität der Transportschicht (Layer 4) mit der Aussage, dass sie "ohne Garantien für Kapazität, Zugriffszeit, Varianz, Fehlerfreiheit usw." erbracht wird und die "Vernachlässigung der Quality of Service (QoS)" beinhaltet. Welche spezifischen Auswirkungen hat diese Charakteristik auf die Zuverlässigkeit und Art der Datenübertragung, die von einem solchen Dienst auf der Transportschicht erwartet werden kann, insbesondere im Vergleich zu einem hypothetischen Dienst, der diese Garantien bieten würde?
 
-Antwortmöglichkeiten:
-- ~Solche Dienste müssten Mechanismen zur Sicherstellung der Zuverlässigkeit und der Servicequalität auf höheren Schichten implementieren, da die Transportschicht diese nicht gewährleistet.
-- Die Transportschicht ist primär für die Herstellung und Verwaltung zuverlässiger End-to-End-Verbindungen zuständig, die über die genannten Garantien hinausgehen.
-- Die Beschreibungen weisen darauf hin, dass die Transportschicht eine implizite Pufferung für alle Teilnehmer bereitstellt, unabhängig von deren spezifischen Anforderungen.
-- Die Aufgabe der Transportschicht ist die detaillierte Überwachung der Teilnehmer-Charakteristika, um Datenstaus präventiv zu vermeiden.
+Antwort: Ein Dienst auf der Transportschicht, der "ohne Garantien für Kapazität, Zugriffszeit, Varianz, Fehlerfreiheit usw." erbracht wird und QoS vernachlässigt, wie in der Beschreibung angedeutet, entspricht einem verbindungslosen und unzuverlässigen Übertragungsmodus. Dies bedeutet, dass:
+- Es keine Bestätigungen für den Empfang von Datenpaketen gibt.
+- Eine erneute Übertragung verlorener oder fehlerhafter Pakete nicht automatisch vom Protokoll selbst gehandhabt wird.
+- Die Reihenfolge der Paketankunft am Ziel nicht garantiert ist.
+- Es keine Mechanismen zur Flusskontrolle oder Staukontrolle auf dieser Ebene gibt, um die Senderate an die Empfänger- oder Netzwerkkapazität anzupassen.
+- Anwendungen, die Zuverlässigkeit oder bestimmte Leistungsgarantien benötigen (z.B. dateibasierte Übertragungen, sichere Kommunikation), müssten diese Mechanismen selbst implementieren oder auf höheren Schichten aufbauen.
+- Dies ist charakteristisch für Protokolle wie UDP (User Datagram Protocol), im Gegensatz zu verbindungsorientierten und zuverlässigen Protokollen wie TCP (Transmission Control Protocol), die genau diese Garantien (Fehlerfreiheit, Reihenfolge, Flusskontrolle) bieten.
+(Richtig)

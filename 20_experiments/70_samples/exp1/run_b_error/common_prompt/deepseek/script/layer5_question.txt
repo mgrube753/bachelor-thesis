@@ -1,6 +1,7 @@
-**Frage:** Welche der folgenden Kernaufgaben des Session Layers (Schicht 5) im ISO-OSI-Modell beschreibt die Vermeidung von Zwischenpunkten und Bestätigungen?
+Frage: Welche der folgenden Aussagen beschreibt die Kernaufgabe "Asynchronität" im Session Layer (Schicht 5) des ISO-OSI-Modells?
 
-**(Korrekte Antwort:)**
-A) Asynchronität
-B) Atomisierung
-C) Datagramme
+Antwortmöglichkeiten:
+- Vermeidung von Zwischenpunkten und Bestätigungen (Richtig)
+- Aufspaltung unabhängiger Datenpakete in Einzelteile (Falsch)
+- Sicherstellung der zuverlässigen Ende-zu-Ende-Datenübertragung (Falsch)
+- Spontanes Erstellen, Senden, Empfangen und Verwerfen von Datagrammen (Falsch)

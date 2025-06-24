@@ -1,2 +1,11 @@
-Antwort: Fehlerkontrolle  
-Frage: Wie heißt die Kernaufgabe des Data Link Layer im ISO-OSI-Modell, die das Erkennen, Beheben oder Signalisieren von Übertragungsfehlern übernimmt?
+Frage: Welche der folgenden Aufgaben zählen zu den Kernaufgaben des Data Link Layer (Schicht 2) des ISO-OSI-Modells?  
+
+Antwortmöglichkeiten:  
+- Fehlerkontrolle (Richtig)  
+- Flusskontrolle (Richtig)  
+- Segmentierung (Richtig)  
+- Identifikation (Richtig)  
+- Medienzugriff (Richtig)  
+- Routing (Falsch)  
+- End-to-End-Transportsteuerung (Falsch)  
+- Anwendungsschicht-Verschlüsselung (Falsch)

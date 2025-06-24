@@ -1,7 +1,9 @@
-Frage: Ein Entwicklerteam plant mehrere Funktionsmodule für die Präsentationsschicht eines neuen Netzwerkstacks. Welche der folgenden geplanten Funktionen widerspricht explizit den im obigen Text beschriebenen Kernaufgaben dieser Schicht?
+Frage: Welche der folgenden Funktionen der Präsentationsschicht werden in der oben beschriebenen Spezifikation explizit NICHT angeboten? Wählen Sie alle zutreffenden.
 
 Antwortmöglichkeiten:
-- ~Anbieten einer optionalen symmetrischen Verschlüsselung des Datenstroms bevor er an die Transportschicht übergeben wird
-- Implementierung eines einzigen big-endian Serialisierungsformats für alle Strukturdaten
-- Ignorieren jeglicher Zeichenkodierung und Behandlung eingehender Daten als rohe Binärfolgen
-- Automatisches Dekomprimieren von komprimierten Nutzdatenpaketen
+- Verschlüsselung von Daten (Richtig)
+- Kompression (Komprimierung) von Daten (Richtig)
+- Zeichencodierungskonvertierung, z. B. ASCII ↔ Unicode (Richtig)
+- Vereinheitlichung der Byte-Reihenfolge auf big endian (Falsch)
+- Entschlüsselung von Daten (Falsch)
+- Entpacken (Expansion) komprimierter Daten (Falsch)

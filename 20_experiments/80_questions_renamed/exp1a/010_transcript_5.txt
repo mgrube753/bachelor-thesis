@@ -1,8 +1,8 @@
-**Korrekte Antwort: Sitzungsverwaltung, Synchronisation und Bündelung von Transaktionen**
+Frage: Welche drei Kernaufgaben hat der Session Layer (Schicht 5) im ISO-OSI-Modell?
 
-Welche drei Kernaufgaben werden im Text dem Session Layer (Schicht 5) des ISO-OSI-Modells zugeschrieben?
-
-A) Sitzungsverwaltung, Synchronisation und Bündelung von Transaktionen
-B) Adressierung, Routing und Fehlererkennung
-C) Datenkompression, Verschlüsselung und Formatierung
-D) Verbindungsaufbau, Flusskontrolle und Segmentierung
+Antwortmöglichkeiten:
+- Sitzungen, Synchronisation und Bündelung (Richtig)
+- Routing, Switching und Adressierung (Falsch)
+- Fehlerkorrektur, Flusskontrolle und Segmentierung (Falsch)
+- Verschlüsselung, Authentifizierung und Zertifikatsverwaltung (Falsch)
+- Datenkompression, Formatierung und Codierung (Falsch)

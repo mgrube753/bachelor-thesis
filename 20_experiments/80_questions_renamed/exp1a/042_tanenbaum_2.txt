@@ -1,8 +1,9 @@
-Richtige Antwort: A
+Frage: Welche Aufgaben übernimmt die Data-Link-Schicht (Sicherungsschicht) im ISO-OSI-Modell?  
 
-Frage: Welche Hauptaufgabe erfüllt die Sicherungsschicht (Data Link Layer) im ISO/OSI-Modell?
-
-A) Maskierung von Übertragungsfehlern durch Segmentierung in Frames und Verwendung von Bestätigungen, sodass höhere Schichten eine fehlerfreie Verbindung sehen.  
-B) Bereitstellung der Ende-zu-Ende-Wegewahl zwischen Netzwerken.  
-C) Verschlüsselung der Nutzdaten zur Sicherstellung der Vertraulichkeit.  
-D) Festlegung der elektrischen und mechanischen Eigenschaften des Übertragungsmediums.
+Antwortmöglichkeiten:  
+- Sie verwandelt das Übertragungsmedium in eine Verbindung, die für höhere Schichten frei von unentdeckten Übertragungsfehlern erscheint (Richtig)  
+- Sie unterteilt eingehende Daten in Frames und versendet diese sequentiell (Richtig)  
+- Sie reguliert den Datenfluss, damit ein schneller Sender einen langsamen Empfänger nicht überlastet (Richtig)  
+- Sie kontrolliert in Broadcast-Netzen den Zugriff auf das gemeinsame Medium über die MAC-Sublayer (Richtig)  
+- Sie übernimmt die Ende-zu-Ende-Wegewahl (Routing) im Netzwerk (Falsch)  
+- Sie verschlüsselt Anwendungsdaten für die Sitzungsschicht (Falsch)

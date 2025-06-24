@@ -1,2 +1,9 @@
-Korrekte Antwort: Routing  
-Frage: Welche der drei Kernaufgaben des Network Layer 3 des ISO-OSI-Modells bezeichnet die Auswahl der vermittelnden Zwischenknoten zur Kommunikation nicht direkt verbundener Knoten?
+Frage: Welche Kernaufgaben übernimmt die Network Layer (Schicht 3) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Adressierung von Geräten über Netzwerkgrenzen hinweg (Richtig)
+- Auswahl der Vermittlungswege (Routing) zwischen entfernten Knoten (Richtig)
+- Flusssteuerung End-to-End bzw. Node-to-Node (Richtig)
+- Bereitstellung der physischen Übertragungsmedien (Falsch)
+- Verschlüsselung der Daten für Vertraulichkeit (Falsch)
+- Sitzungsaufbau und -abbau zwischen Anwendungen (Falsch)

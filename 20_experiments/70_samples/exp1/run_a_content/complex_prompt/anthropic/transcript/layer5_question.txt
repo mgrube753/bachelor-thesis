@@ -1,5 +1,9 @@
-```
-Frage: Welche Problemstellung im Netzwerkbetrieb wird durch die Synchronisationsfunktion des Session Layers (Schicht 5) primär adressiert, und wie unterscheidet sich dieser Lösungsansatz konzeptionell von den anderen Kernaufgaben dieser Schicht?
+Frage: Stellen Sie sich vor, ein Netzwerkprotokoll verzichtet vollständig auf die Funktionalitäten des Session Layers (Schicht 5). Analysieren Sie kritisch, welche der folgenden Szenarien dadurch negativ beeinflusst würden und warum.
 
-Antwort: ~Die Synchronisationsfunktion des Session Layers adressiert primär das Problem der Unterbrechung bei der Übertragung großer Datenmengen, indem sie Zwischenpunkte (Checkpoints) setzt, an denen eine Übertragung nach einem Abbruch wieder aufgenommen werden kann, statt von vorne beginnen zu müssen. Konzeptionell unterscheidet sich dieser Ansatz von den anderen Kernaufgaben dadurch, dass die Sitzungsverwaltung den grundlegenden Kommunikationsrahmen etabliert, während die Bündelung zusammengehörige Transaktionen gruppiert. Die Synchronisation hingegen fokussiert sich auf die Robustheit und Wiederherstellbarkeit innerhalb einer bestehenden Sitzung.
-```
+Antwortmöglichkeiten:
+- Eine große Dateiübertragung bricht nach 90% ab und muss vollständig neu gestartet werden, da keine Synchronisationspunkte gesetzt wurden, die einen Wiederaufnahmepunkt markieren könnten. (Richtig)
+- Mehrere zusammengehörige Transaktionen werden einzeln und unkoordiniert verarbeitet, was die Integrität komplexer Operationen gefährdet. (Richtig)
+- Eine laufende Videokonferenz kann nicht ordnungsgemäß beendet werden, da der geregelte Sitzungsabbau nicht möglich ist. (Richtig)
+- Die Übertragungsgeschwindigkeit von Datenpaketen sinkt drastisch, da die Flusssteuerung nicht mehr funktioniert. (Falsch)
+- Die Daten erreichen den Empfänger in falscher Reihenfolge, da die Sequenzierung der Pakete nicht mehr gewährleistet ist. (Falsch)
+- Die Verschlüsselung der Daten ist nicht mehr gegeben, wodurch die Sicherheit der Kommunikation gefährdet ist. (Falsch)

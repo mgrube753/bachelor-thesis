@@ -1,10 +1,8 @@
-**Frage:**  
-Welche Hauptfunktion erfüllt der Data Link Layer (Layer 2) im ISO-OSI-Modell laut des gegebenen Textes?  
+Frage: Welche der folgenden Aufgaben gehört zu den Kernfunktionen der Data Link Layer im ISO-OSI-Modell?
 
-**Antwortmöglichkeiten:**  
-A) Segmentierung von Daten in Bytes  
-B) Adressierung von Sendern und Empfängern  
-C) Bereitstellung einer fehlergesicherten Übertragung über den Physical Layer  
-D) Steuerung des Medienzugriffs  
-
-**Korrekte Antwort:** C) Bereitstellung einer fehlergesicherten Übertragung über den Physical Layer
+Antwortmöglichkeiten:
+- Fehlerkontrolle (Erkennen, Beheben oder Signalisieren von Übertragungsfehlern) (Richtig)
+- Segmentierung (Zusammenfassen einzelner Bits zu größeren Einheiten) (Richtig)
+- Medienzugriff (Aktivieren des Physical Layer mit Aspekten wie Senden und Warten) (Richtig)
+- Verschlüsselung der übertragenen Daten (Falsch)
+- Routing von Paketen über verschiedene Netzwerke hinweg (Falsch)

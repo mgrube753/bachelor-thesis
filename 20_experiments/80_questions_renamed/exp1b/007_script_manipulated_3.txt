@@ -1,6 +1,7 @@
-Frage: Identifizieren Sie die Kernaufgabe in der beschriebenen Netzwerkschicht (Layer 3), deren Zuordnung zum OSI-Layer 3 unter Standarddefinitionen am stärksten infrage gestellt werden kann. Begründen Sie kurz, warum diese Aufgabe typischerweise einem anderen OSI-Layer zugeordnet wird.
+Frage: Welche der im Text beschriebenen Kernaufgaben der Netzwerkschicht entspricht NICHT den etablierten Funktionen von Layer 3 im ISO-OSI-Modell, und warum stellt sie eine konzeptionelle Abweichung dar?
 
 Antwortmöglichkeiten:
-- ~**Datenbeschleunigung: Strategien, wenn zu langsam gesendet wird** – Diese Funktion (insbesondere die erwähnten Übertragungsmodi Punkt-zu-Punkt und Broadcast) betrifft primär die effiziente Datenübertragung zwischen direkt verbundenen Knoten. Dies fällt in den Zuständigkeitsbereich der **Sicherungsschicht (Layer 2)**, die für den Zugriff auf das physische Medium und die Fehlererkennung/Korrektur zwischen benachbarten Knoten verantwortlich ist. Layer 3 (Vermittlungsschicht) fokussiert sich auf logische Adressierung und pfadbasierte Weiterleitung über mehrere Hops hinweg, nicht auf die Beschleunigung der Bitübertragung zwischen direkten Nachbarn.
-- Lokalisierung: Netzwerk-interne Positionen – Dies entspricht der logischen Adressierung (z.B. IP-Adressen), einer Kernfunktion von Layer 3 zur Identifikation von Geräten im Netzwerk.
-- Zufallspfad: Zufällige Auswahl von Endknoten zur Kommunikation direkt verbundener Knoten – Dies beschreibt rudimentär das Routing (Pfadauswahl), eine weitere zentrale Aufgabe von Layer 3, auch wenn die Formulierung "zufällig" untypisch ist.
+- Lokalisierung, da die Positionsbestimmung von Geräten im selben Netzwerk mit derselben Layer-2-Technologie eine reine Layer-2-Funktionalität (MAC-Adressierung) ist und nicht zum Routing zwischen Netzwerken gehört (Richtig)
+- Zufallspfad, da die zufällige Auswahl von Endknoten für die Kommunikation direkt verbundener Knoten dem Prinzip des deterministischen Routings widerspricht (Falsch)
+- Datenbeschleunigung, da Strategien bei langsamer Übertragung wie Punkt-zu-Punkt oder Broadcast ausschließlich der Fehlerbehebung auf Layer 1 dienen (Falsch)
+- Alle drei Aufgaben sind korrekte Layer-3-Funktionen gemäß ISO-OSI, da sie die logische Adressierung und Pfadsteuerung betreffen (Falsch)

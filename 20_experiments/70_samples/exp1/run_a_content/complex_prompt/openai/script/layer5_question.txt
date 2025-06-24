@@ -1,7 +1,3 @@
-Frage: Bei der Entwicklung eines Dateitransfer-Protokolls soll eine Funktion implementiert werden, die während der Übertragung definierte Wiederaufnahmepunkte (Checkpoints) setzt, sodass Sender und Empfänger nach einer Unterbrechung exakt an derselben Stelle fortfahren können. Welcher Dienst des ISO-OSI-Modells ist für die Realisierung dieser Checkpoints zuständig und auf welcher Schicht ist er angesiedelt?
+Frage: Erläutern Sie anhand eines Szenarios, in dem ein Videostreaming-Dienst nach einem kurzzeitigen Netzwerkausfall nahtlos fortgesetzt werden soll, welche zwei Kernaufgaben der Session Layer 5 hierbei essenziell zusammenwirken und begründen Sie, wie deren Kooperation sowohl Datenverlust als auch redundante Übertragungen vermeidet.
 
-Antwortmöglichkeiten:
-- ~Synchronisationsdienst der Session Layer (Schicht 5)
-- Fehlererkennungsdienst der Sicherungsschicht (Schicht 2)
-- Flusskontrolle der Transportschicht (Schicht 4)
-- Datenkompressionsdienst der Darstellungsschicht (Schicht 6)
+Antwort: Die Sitzungsverwaltung stellt die Sitzung nach dem Ausfall erneut her oder hält sie logisch offen, während die Synchronisationsfunktion zuvor gesetzte Zwischenpunkte nutzt; gemeinsam ermöglichen sie, dass der Stream exakt ab dem letzten Synchronisationspunkt weiterläuft, sodass keine Daten verlorengehen und bereits empfangene Sequenzen nicht erneut übertragen werden müssen (Richtig)

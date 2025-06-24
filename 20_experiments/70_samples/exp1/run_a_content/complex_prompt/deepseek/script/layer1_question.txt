@@ -1,8 +1,7 @@
-Frage:  
-Warum wird bei der Transportfunktion der Bitübertragungsschicht zwischen "medien-gebunden" und "medien-frei" unterschieden, und welche grundlegende Implikation ergibt sich daraus für die physische Signalübertragung?  
+Frage: Eine drahtlose Bluetooth-Verbindung überträgt Audiodaten zwischen Kopfhörern und einem Smartphone. Welche der drei Kernaufgaben des Physical Layers (Codierung, Transport, Decodierung) sind bei dieser Übertragung direkt beteiligt und warum? Begründe präzise anhand der Funktionsweise von Bluetooth.  
 
 Antwortmöglichkeiten:  
-- ~Die Unterscheidung reflektiert die Abhängigkeit von einem physischen Trägermedium (z. B. Kabel) versus der Nutzung von Wellenausbreitung im Raum. Dies bestimmt maßgeblich die Signalausbreitungscharakteristiken und Störungsanfälligkeit.  
-- Sie kennzeichnet die Übertragungsgeschwindigkeit, wobei medien-freie Methoden grundsätzlich höhere Bandbreiten ermöglichen.  
-- Sie definiert die Codierungsart: Medien-gebundener Transport erfordert Manchester-Codierung, medien-freier hingegen NRZ.  
-- Sie trennt digitale von analoger Signalverarbeitung, wobei medien-freier Transport ausschließlich digitale Signale nutzt.
+- Codierung: Logische Audiodaten werden in hochfrequente Funksignale umgewandelt. Transport: Die modulierten Funksignale werden elektromagnetisch durch die Luft übertragen. Decodierung: Empfangene Signale werden am Zielgerät zurück in logische Werte gewandelt. (Richtig)  
+- Nur Transport: Bluetooth nutzt ausschließlich die medien-freie Übertragung via Funkwellen; Codierung und Decodierung erfolgen in höheren Schichten. (Falsch)  
+- Transport und Decodierung: Die Funkübertragung und Signalrückwandlung sind essenziell, aber die Codierung logischer Werte ist Aufgabe der Anwendungsschicht. (Falsch)  
+- Nur Codierung und Decodierung: Die physikalische Signalwandlung ist relevant, der Transport wird jedoch durch Bluetooth-Protokolle auf Netzwerkebene gesteuert. (Falsch)

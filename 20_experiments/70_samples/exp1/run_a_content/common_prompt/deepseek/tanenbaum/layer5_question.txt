@@ -1,6 +1,7 @@
-**Frage:** Welche drei Hauptdienste bietet die Session-Schicht des ISO-OSI-Modells laut Text?  
+Frage: Welche Dienste bietet die Session Layer laut Text im ISO-OSI-Modell?
 
-**Korrekte Antwort:**  
-1.  Dialogsteuerung (Dialog Control)  
-2.  Token-Verwaltung (Token Management)  
-3.  Synchronisation (Synchronization)
+Antwortmöglichkeiten:
+- Dialogsteuerung, Token-Management und Synchronisation (Richtig)
+- Datenverschlüsselung, Komprimierung und Routing (Falsch)
+- Fehlererkennung, Flusskontrolle und physikalische Übertragung (Falsch)
+- Adressierung, Paketierung und Fehlerkorrektur (Falsch)

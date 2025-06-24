@@ -1,7 +1,7 @@
-Frage: Welcher der folgenden Vorgänge illustriert die Synchronisationsfunktion des Session Layers (Layer 5) am treffendsten im Kontext einer umfangreichen Dateiübertragung?
+Frage: Beim unvermittelten Ausfall einer Verbindung während der Übertragung einer sehr großen Datei soll der Weitertransfer nahtlos ab dem letzten konsistenten Punkt erfolgen. Welche der im Text genannten Funktionen des Session Layers werden hierfür unmittelbar benötigt, und welche anderen OSI-Funktionen wären hier fehl am Platz?
 
 Antwortmöglichkeiten:
-- ~Setzen von Wiederaufnahmepunkten, die es erlauben, eine unterbrochene Dateiübertragung exakt an der letzten bestätigten Marke fortzusetzen
-- Verschlüsselung sämtlicher Nutzdaten, um deren Vertraulichkeit während des Transports zu gewährleisten
-- Ermittlung des schnellsten Übertragungswegs durch das Netzwerk, um Latenzen zu minimieren
-- Aufteilen großer Pakete in kleinere Segmente, damit sie in die maximale Übertragungseinheit (MTU) passen
+- Setzen und Verwenden von Synchronisationspunkten innerhalb der bestehenden Sitzung, um nach Wiederherstellung exakt ab dem letzten bestätigten Punkt fortzufahren (Richtig)
+- Bündelung logisch zusammengehöriger Transaktionen, damit keine Teilstücke doppelt oder unvollständig übertragen werden (Richtig)
+- Neuverhandlung der physischen Signalparameter zur Sicherstellung einer störungsfreien Bitübertragung (Falsch)
+- Verschlüsselung der Nutzdaten, um deren Vertraulichkeit während des Wiederanlaufs zu wahren (Falsch)
