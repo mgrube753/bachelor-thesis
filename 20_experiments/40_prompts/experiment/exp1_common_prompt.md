@@ -7,7 +7,7 @@ Generiere eine Frage basierend auf dem folgenden Text zum ISO-OSI-Modell:
 Folge den folgenden Anweisungen:
 
 1. Formuliere eine klare und präzise Frage.
-2. Erstelle entweder eine einzelne Antwort oder mehrere Antwortmöglichkeiten.
+2. Erstelle passend zur Frage mindestens eine Antwort.
 3. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
 4. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
 5. Gib nur die Frage und die Antwort(en) aus. Schreibe keinen zusätzlichen Text.

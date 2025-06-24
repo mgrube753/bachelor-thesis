@@ -8,7 +8,7 @@ Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu
 1. Untersuche den gegebenen Instruktionstext sorgfältig.
 2. Erfasse alles, was für die ordnungsgemäße Fragengenerierung zum ISO-OSI-Modell wichtig ist.
 3. Formuliere eine klare, präzise und kognitiv anspruchsvolle Frage, die zum kritischen Nachdenken anregt.
-4. Erstelle entweder eine einzelne Antwort oder mehrere Antwortmöglichkeiten.
+4. Erstelle passend zur Frage mindestens eine Antwort.
 5. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
 6. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
 7. Verwende für Listen ausschließlich Gedankenstriche (`-`).

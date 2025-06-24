@@ -16,6 +16,7 @@
 \usepackage{hyperref}
     \hypersetup{colorlinks=true, citecolor=purple, filecolor=black, linkcolor=main, urlcolor=blue}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{caption}[numbered]
 \addbibresource{../../50_thesis/thesis/bibs/Extras.bib}
 \addbibresource{../../50_thesis/thesis/bibs/Positive.bib}
 \addbibresource{../../50_thesis/thesis/bibs/Eigenes.bib}
@@ -75,10 +76,15 @@
 
 \begin{frame}[allowframebreaks]{Motivation \& Problemstellung}
     \begin{itemize}
-        \item \textbf{Motivation:} Aktives Lernen $\to$ gezielte Fragen, aber \\ anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021,vu_chatgpt-based_2024} 
+        \item \textbf{Motivation:} 
+        \begin{itemize}
+            \item Aktives Lernen $\to$ gezielte Fragen
+            \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021,vu_chatgpt-based_2024} 
+            \item Korrektheit von Fragen elementar in Bildung
+        \end{itemize}
         \vspace{.5em}
         \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ Lehrmaterialien verbessern + personalisiertes Lernen \cite{naveed_comprehensive_2024}
-        % biancini: used compliance,
+        % biancini: used e.g. compliance, human eval, no bloom
         % al faraby: future work shall be avoiding hallucinations by utilizing a framework which checks content fidelity
         % angel: super relatedness to context, but very low bloom levels/adherence
         % doughty: adherence between question and learning content was not assessed 
@@ -92,9 +98,12 @@
         % vu: sagen, dass man content als wissensbasis beilegen soll, um qualitaet zu verbessern
         % yang: halluzination in bildung inakzeptabel, somit RAG wieder
         % twinstar: besides bloom adherence also knowledge relevance, measured automatically but unknown
+        % #TODO better content fidelity inclusion in presenatation
         \framebreak
         \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
         % da auch die pädagogische Eignung bewertet werden muss
+        \item[$\to$] Pädagogische Bewertung selten erforscht
+        \item[$\to$] Mangelnde Performance bei höheren kognitiven Levels \cite{cheng_treequestion_2024,elkins_how_2023,scaria_automated_2024}
         \vspace{.5em}
         \item \textbf{Forschungslücke:} Bedarf an Untersuchung der Inhaltstreue und Einhalten kognitiver Anforderungsniveaus
     \end{itemize}
@@ -102,15 +111,17 @@
 
 \begin{frame}{Forschungsfragen}
     \begin{itemize}
-        \item \textbf{RQ1:} To what extent do \textcolor{RedOrange!80}{LLMs adhere} to the content of diverse provided \textcolor{RedOrange!80}{instructional texts} when generating questions? \vspace{.5em}
-        \item \textbf{RQ2:} How does the \textcolor{RedOrange!80}{relationship} between diverse question formats and Bloom's Taxonomy levels influence the \textcolor{RedOrange!80}{pedagogical effectiveness} of LLM-generated questions?
+        \item \textbf{RQ1:} To what extent do \textcolor{RedOrange!60}{LLMs adhere} to the content of diverse provided \textcolor{RedOrange!60}{instructional texts} when generating questions? \vspace{.5em}
+        % Zu welchem Grad halten LLMs sich an den Inhalt verschiedener bereitgestellter Lehrtexte bei der Generierung von Fragen?
+        \item \textbf{RQ2:} How does the \textcolor{RedOrange!60}{relationship} between diverse question formats and Bloom's Taxonomy levels influence the \textcolor{RedOrange!60}{pedagogical effectiveness} of LLM-generated questions?
+        % Wie beeinflusst die Beziehung zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die pädagogische Wirksamkeit von LLM-generierten Fragen?
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Bloom's revised Taxonomy}
     \begin{itemize}
-        \item Nützliche Grundlage für die Analyse von Fragen
-        \item \textbf{Kognitive Hierarchie:} Lernzielklassifizierung \cite{krathwohl_revision_2002}:
+        % Kognitive Analyse von Fragen
+        \item \textbf{Hierarchie:} Lernzielklassifizierung \cite{krathwohl_revision_2002}:
         \begin{enumerate}
             {\footnotesize
             \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
@@ -121,7 +132,7 @@
             \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
             }
         \end{enumerate}
-        \item \textbf{Pädagogische Relevanz:} Ermöglicht systematische Bewertung kognitiver Anforderungen von Fragen
+        \item \textbf{Pädagogische Relevanz:} Systematische Bewertung kognitiver Anforderungen von Fragen
     \end{itemize}
 \end{frame}
 
@@ -144,16 +155,20 @@
     \begin{itemize}
         \item \textbf{Veraltete Modelle} -- Kein Reasoning
         % pre-thinking basiert auf dem user prompt, damit das modell verstehen kann, was der user will
+        % wurde in der literatur noch nicht genutzt, sondern outdated models wie gpt-4/gpt-3.5/llama2
         \item \textbf{Halluzinationen} -- Falsche Antworten
         % kann man minimieren durch kontext hinzugeben. pre-thinking kann auch dafür sorgen, dass das modell den kontext und die anforderungen hinterfragt
         \item \textbf{Inhaltstreue} -- Forschung nötig
         % es mangelt an systemen, welche die inhaltstreue von LLMs evaluieren
+        % inhaltstreue ist ein wenig erforschtes feld bei fragengenerierung
         \item \textbf{Metriken im Fokus} -- Quantitative Evaluation
         % Problematisch, da grundlegend linguistische Metriken
+        % expertenbewertung ist eine notwendige evaluation bei fragengenerierung
         \item \textbf{Expertenbewertung} -- Qualitative Evaluation 
-        % selten performt, weil es aufwendig ist, aber notwendig für geeignete Auswertung
+        % selten ausgiebig performt, weil es aufwendig ist
         \item \textbf{Bloom's Taxonomy} -- Hohe kognitive Levels
         % dies sind die schwersten Levels, welche LLMs nicht gut beherrschen in related work
+        % nicht immer wird bei fragen bloom benutzt, und wenn dann sind die modelle eher schlecht im generieren von höheren kognitiven levels, egal ob man informationen für die levels gibt oder nicht
         \item \textbf{Prompting} -- Einfluss auf Ergebnisse
         % Auch ich bin kein prompt engineer, jedoch gibt es viele methoden, um LLMs zu steuern
         % kontext geben, rollenzuweisung, beispiellösungen geben --> in-context learning, special marks verwenden für mehr "übersicht" und struktur, auch fine-tuning ist möglich, aber auch aufwendig
@@ -165,7 +180,7 @@
 
 \begin{frame}[allowframebreaks]{Experimentelles Design}
     \begin{itemize}
-        \item \textbf{Ziel:} Bewertung der Inhaltsadhärenz von LLM-\\ generierten Fragen
+        \item \textbf{Ziel:} Bewertung der Inhaltstreue von LLM-\\ generierten Fragen
         \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
         \begin{itemize}
             \item Script -- Prof. Cap's \enquote{Referenzarchitekturen} (DE)
@@ -181,11 +196,10 @@
                 \item \textbf{Claude 3.7 Sonnet:} Feb 2025 -- API
                 \item \textbf{Gemini 2.5 Flash:} Mar 2025 -- API
                 \item \textbf{OpenAI o3:} Apr 2025 -- API
-                % 1a: 4llms, 3inputs, 7layers, 2prompts = 168 fragen
-                % 1b: 4llms, 1input, 7layers, 2prompts = 56 fragen
             \end{itemize}
         \item 2 Prompt-Strategien:
             \begin{itemize}
+                % #TODO edit
                 \item \textbf{Einfach:} Minimale Instruktionen, keine Strukturierung, aber Formatvorlage + Material
                 % generiere zum iso osi modell
                 % korrekte Antwort klar gekennzeichnet (eine oder eben aus möglichkeiten)
@@ -204,34 +218,38 @@
 \begin{frame}{Datenerhebung \& Durchführung}
     \begin{itemize}
         % \item Python, embedding modell, apis ausser deepseek, automatisierte anfragen mit diversem prompting, diversen source materials, ...
-        \item \textbf{Python}: automatisierte API-Ansteuerungen
-        \item \textbf{Manuell}: DeepSeek R1
-        \item \textbf{Material}: Layer-weise Aufteilung
-        \item \textbf{Prompt-Variation}: jeweils 1 Frage
-        \item \textbf{Resultate}: 
+        \item \textbf{Python:} Automatisierte API-Ansteuerungen
+        \item \textbf{Manuell:} DeepSeek R1
+        \item \textbf{Material:} Layer-weise Aufteilung
+        \item \textbf{\#Fragen\,/\,Prompt:} 1\,/\,Prompt-Variation 
+        \item \textbf{Resultate:} 
             \begin{itemize}
                 \item \textbf{Exp 1a:} 168 Fragen
                 \item \textbf{Exp 1b:} 56 Fragen
             \end{itemize}
     \end{itemize}
-    \vspace{.5em}
+    \vspace{.0em}
     \begin{align*}
         \textcolor{gray}{4 \text{ LLMs}\times 3 \text{ Inputs}\times 7 \text{ Layers}\times 2 \text{ Prompts}} &= \textcolor{gray}{168 \text{ Fragen}} \\
         \textcolor{gray}{4 \text{ LLMs}\times 1 \text{ Input}\times 7 \text{ Layers}\times 2 \text{ Prompts}} &= \textcolor{gray}{56 \text{ Fragen}}
     \end{align*}
 \end{frame}
 
-\begin{frame}{Evaluations-Methodik}
+\begin{frame}[allowframebreaks]{Evaluations-Methodik}
     \begin{itemize}
         \item \textbf{Quantitativ:}
         \begin{itemize}
-            \item \textbf{Semantic Similarity:} Vergleich generierte Frage vs. Originaltext $\to$ Embedding-Modell \& Cosine Similarity
+            \item \textbf{Semantic Similarity:} Generierte Frage vs. Originaltext
+            \begin{itemize}
+                \item[$\to$] Embedding-Modell \& Cosine Similarity
+                % Bsp: (3,2) und (4,1) --> 3*4 + 2*1 / (sqrt(3^2+2^2) * sqrt(4^2+1^2)) = 14 / (sqrt(13) * sqrt(17)) = 0.94
+            \end{itemize}
             % zu beginn der transformer-ära gab es encoder-decoder transformer, welche den input in eine mathematische Repräsentation mit Bedeutung umwandeln
             % der decoder generiert dann basierend auf diesem embedding den output token-weise
             % hat sich aber eher gesplittet in encoder-only und decoder-only transformer
             % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training als enc-dec-transformer
             % encoder-only: bert, roberta: können nur text klassifizieren, nicht generieren --> sentence transformers kamen dann auch --> diese Embeddings sind vegleichbar
-            \item \textbf{Adherence:} Inhaltstreue bewerten durch 2x Prompting\,/\,Frage an Gemini 2.5 Flash
+            \item \textbf{Adherence Score:} Durch 2x Prompting\,/\,Frage -- Gemini
             % temperatur auf 0 für weniger randomness in Antwort
             % bekommt Rolle eines Experten im Bewerten von metrischen Fragen, Frage studieren, iso osi kontext text studieren
             % kurze Bewertungsrubrik 0 bis 1, Ausgabe einer Dezimalzahl mit 2 Nachkommastellen, ohne Kommentare etc.
@@ -239,56 +257,45 @@
         % \item quantitative mit metriken (semantic sim mit Embedding Model, adherence via llm)
         \item \textbf{Qualitativ:} Prof. Cap + 4 Experten des IuK 
         \begin{itemize}
-            \item Bewertungsrubrik: 0-10 Punkte\,/\,Frage
-            \item Relevanz, Klarheit, Beantwortbarkeit, Herausforderung, Korrektheit
+            \item \textbf{Fleiss Kappa:} Inter-Rater Reliability
+            \item \textbf{Bewertungsrubrik:} 0-10 Punkte\,/\,Kategorie \& Frage
+            % \framebreak
+            \item[$\to$] \textit{\textcolor{gray}{Relevanz, Klarheit, Beantwortbarkeit, Herausfordernd \& Korrektheit vs. Umgang mit Manipulation}}
         \end{itemize}
     \end{itemize}
 \end{frame}
 
 \section{Ergebnisse \& Diskussion}
 
-\begin{frame}{Hypothesen -- RQ1}
-    \begin{itemize}
-        \item \textbf{H1:} The usage of a \textcolor{RedOrange!80}{complex prompt} with \textcolor{RedOrange!80}{detailed instructions}, in contrast to a common one, will lead to a \textcolor{RedOrange!80}{higher} content fidelity of the generated questions with respect to the source material, and also \textcolor{RedOrange!80}{higher} final scoring for each question. \vfill
-        \item \textbf{H1':} \textcolor{RedOrange!80}{Both} the common and complex prompts will lead to a \textcolor{RedOrange!80}{similar} content fidelity of the generated questions with respect to the source material, and also \textcolor{RedOrange!80}{similar} final scoring for each question.
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Quantitative Analyse}
     \begin{itemize}
-        \item Hier müssen viele Tabellen und Grafiken rein!
+        \item Hier müssen viele Tabellen und Grafiken rein
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Qualitative Analyse}
     \begin{itemize}
-        \item Hier müssen viele Tabellen und Grafiken rein!
+        \item Hier wird nicht viel passieren, da die Expertenbewertung noch aussteht. Vielleicht kann ich wenigstens Fleiss Kappa und bisschen Tabellen-Aspekte reinbringen
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Interpretation\,/\,Limitations}
     \begin{itemize}
-        \item Hier müssen viele Tabellen und Grafiken rein!
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Hypothese vs. Forschungsfrage}
-    \begin{itemize}
-        \item Test
+        \item Hier müssen Folgerungen etc. rein
     \end{itemize}
 \end{frame}
 
 \section{Fazit \& Ausblick}
 
-\begin{frame}{Hauptergebnisse}
+\begin{frame}{Hauptergebnisse zu RQ1}
     \begin{itemize}
-        \item Test
+        \item Wird nicht groß sein
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Lessons Learned}
     \begin{itemize}
-        \item Test
+        \item Wird nicht groß sein
     \end{itemize}
 \end{frame}
 
@@ -298,16 +305,17 @@
         \item \textbf{Fragetypen:} Multiple-Choice \& Freitextfragen
         \item \textbf{Vorgehen:} Deskriptives Prompting mit
             \begin{itemize}
-                \item Rollenzuweisung
+                \item Rollenzuweisung etc.
                 \item (Nicht-)Angabe von Fragetyp
                 \item (Nicht-)Angabe von Bloom Level
             \end{itemize}
         \item \textbf{Evaluatoren:} Claude 3.7 Sonnet \& OpenAI o3
+        \item \textbf{Rubrik:} Gleiche Rubrik + \textit{Bloom's Level}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Timeline bis zur Verteidigung}
-    \begin{figure}
+    \begin{figure}[htpb]
         \centering
         \includegraphics[width=\linewidth]{gantt.png}
         \caption{GANTT-Diagramm bis zur Verteidigung.}
