@@ -153,10 +153,20 @@ def process_experiment(exp_name):
         prompt_type = row["prompt_type"]
 
         question_path = get_question_path(exp_name, llm, source, layer, prompt_type)
-        question = load_txt(question_path)
+        question_content = load_txt(question_path)
+
+        if not question_content:
+            print(f"[WARNING] No question found: {question_path}")
+            continue
+
+        question = "\n".join(
+            line
+            for line in question_content.splitlines()
+            if not line.strip().endswith("(Falsch)")
+        )
 
         if not question:
-            print(f"[WARNING] No question found: {question_path}")
+            print(f"[WARNING] Question is empty after filtering: {question_path}")
             continue
 
         is_manipulated = exp_name == "exp1b"

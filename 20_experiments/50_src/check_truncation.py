@@ -14,7 +14,13 @@ def load_embedding_model(model_name):
 def process_file(file_path, model):
     try:
         with open(file_path, "r", encoding="utf-8") as f:
-            text = f.read()
+            content = f.read()
+
+        text = "\n".join(
+            line
+            for line in content.splitlines()
+            if not line.strip().endswith("(Falsch)")
+        )
 
         tokens = model.tokenizer(text, truncation=False, return_length=True)
         token_count = len(tokens["input_ids"])
@@ -86,7 +92,7 @@ def main():
     directories = [
         (INPUT_SOURCES_PATH, "input sources"),
         (EXP1_PATH, "Experiment 1 questions"),
-        (EXP2_PATH, "Experiment 2 questions"),
+        # (EXP2_PATH, "Experiment 2 questions"),
     ]
 
     all_dfs = []
