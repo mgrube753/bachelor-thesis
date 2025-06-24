@@ -1,7 +1,3 @@
-Frage: Welcher der folgenden Vorgänge gehört gemäß der Beschreibung des Physical Layer 1 NICHT zu seinen Kernaufgaben?
+Frage: Analysieren Sie, warum die funktionale Trennung der drei Kernaufgaben Codierung, Transport und Decodierung in der Physical Layer des ISO-OSI-Modells entscheidend für die Interoperabilität zwischen unterschiedlichen Übertragungsmedien ist, und erläutern Sie anhand eines konkreten Beispiels, wie ein Fehler in einer dieser Teilaufgaben die Gesamtdatenübertragung kompromittieren kann.
 
-Antwortmöglichkeiten:
-- ~Verschlüsselung von Datenpaketen, um Vertraulichkeit zu gewährleisten
-- Codierung logischer Werte in physikalische Größen wie NRZ oder Manchester
-- Mediengebundener Transport physikalischer Signale über ein Telefonkabel
-- Decodierung empfangener physikalischer Signale in logische Werte mittels Abtastung
+Antwort: Die klare Aufteilung definiert standardisierte Schnittstellen, wodurch unterschiedliche Hersteller und Medien (z.B. Kupferkabel, Glasfaser, Funk) unabhängig voneinander kompatible Systeme entwickeln können; halten alle Beteiligten dieselben Codierungs- und Dekodierungsschemata ein, genügt es, dass das Transportmedium lediglich die physikalischen Signale unverfälscht überträgt. Kommt es jedoch zu einer Diskrepanz – etwa wenn ein Empfänger Manchester-Dekodierung erwartet, während der Sender NRZ-Codierung nutzt – werden die Signale trotz fehlerfreiem Transport falsch interpretiert, was jedes Bit verfälscht und so die gesamte logische Kommunikation scheitern lässt. (Richtig)

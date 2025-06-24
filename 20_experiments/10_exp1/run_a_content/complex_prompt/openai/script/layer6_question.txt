@@ -1,3 +1,9 @@
-Frage: Während eines Dateitransfers stellt die Anwendung fest, dass dieselbe Bitfolge auf zwei unterschiedlichen Rechnersystemen zu zwei verschiedenen Ganzzahlwerten führt. Auf Basis der im Text beschriebenen Kernaufgaben der Präsentationsschicht: Welche dieser Aufgaben muss zwingend aktiv werden, um die semantische Konsistenz der übertragenen Anwendungsdaten sicherzustellen?
+Frage: Welche der folgenden Funktionen sind originäre Aufgaben der OSI-Schicht 6 (Presentation Layer) und müssen dort ausgeführt werden, damit zwei unterschiedlich aufgebaute Hosts ihre Anwendungsdaten inhaltlich korrekt verstehen, ohne die Verbindungssteuerung anderer Schichten zu beeinflussen?
 
-Antwort: ~Endian-Ness – Konvertieren der Datendarstellung (z.B. Anpassung zwischen little und big endian)
+Antwortmöglichkeiten:
+- Konvertierung von Little-Endian- zu Big-Endian-Darstellungen ganzer Zahlen (Richtig)
+- Komprimieren der Nutzdaten mittels Deflate-Algorithmus vor der Übertragung (Richtig)
+- Zeichensatzabbildung von Unicode auf landesspezifisches EBCDIC (Richtig)
+- Aushandeln von Sitzungsschlüssel-Lebensdauern während eines TLS-Handshakes (Falsch)
+- Verlustrate-basierte Flusskontrolle des Datenstroms (Falsch)
+- Aufbau eines zuverlässigen, ACK-basierten Transportkanals über ein unzuverlässiges Netzwerk (Falsch)

@@ -1,7 +1,0 @@
-Frage: Ein Entwickler entwirft ein Protokoll für Online-Banktransaktionen, das Gruppen zusammenhängender Operationen (z.B. Überweisung mit Buchungsbestätigung) als Einheit behandelt und bei Systemfehlern den automatischen Rollback zum letzten stabilen Zustand ermöglicht. Welche Kernfunktion der OSI-Session-Schicht nutzt er primär für diese Anforderungen kombiniert?
-
-Antwortmöglichkeiten:  
-- Sitzungsaufbau und -verwaltung  
-- ~Synchronisation durch Zwischenpunkte in Verbindung mit Bündelung  
-- Reine Bündelung ohne Synchronisationsmechanismen  
-- Beendigung von Sitzungen nach Einzeltransaktionen

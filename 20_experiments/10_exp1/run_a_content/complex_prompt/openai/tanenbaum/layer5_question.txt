@@ -1,3 +1,7 @@
-Frage: Bei einer mehrstündigen Dateiübertragung zwischen zwei Rechnern stürzt der Sender nach 75 % der Übertragung ab. Nach dem Neustart setzen beide Partner die Übertragung exakt an der zuletzt bestätigten Stelle fort, ohne bereits gesendete Daten erneut zu übertragen. Welchen spezifischen Dienst der Sitzungsschicht nutzen sie dafür, und weshalb ist dieser Dienst hier unverzichtbar?
+Frage: Bei einer verteilten Datenbank-Transaktion müssen zwei Bedingungen erfüllt sein: Erstens darf stets nur ein Knoten die kritische Commit-Phase initiieren können, und zweitens soll eine abgebrochene, sehr große Commit-Protokollübertragung nach einem Neustart exakt an der letzten gesicherten Stelle fortgesetzt werden. Welche Kombination von Sitzungsschicht-Diensten erfüllt beide Anforderungen gleichzeitig?
 
-Antwort: ~Synchronisation (Checkpointing), da durch das Setzen von Prüfpunkten während der Übertragung nach einem Absturz an der letzten gesicherten Position weitergearbeitet werden kann und somit Wiederholungen sowie Zeitverluste vermieden werden.
+Antwortmöglichkeiten:
+- Token Management und Synchronisation (Richtig)
+- Dialog Control und Token Management (Falsch)
+- Dialog Control und Synchronisation (Falsch)
+- Nur Token Management (Falsch)

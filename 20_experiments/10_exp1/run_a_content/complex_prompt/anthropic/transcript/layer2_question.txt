@@ -1,5 +1,9 @@
-```
-Frage: Wenn ein Netzwerkgerät einen Übertragungsfehler feststellt und gleichzeitig mit einer Überlastungssituation konfrontiert ist, welche konzeptionellen Konflikte könnten zwischen den Mechanismen der Fehlerkontrolle und der Flusskontrolle entstehen, und wie wirkt sich dies auf die Effizienz der Datenübertragung im Data Link Layer aus?
+Frage: Ein Netzwerkadministrator beobachtet in seinem Unternehmensnetzwerk folgendes Phänomen: Bei Datenübertragungen zwischen einem leistungsstarken Server und mehreren älteren Arbeitsplatzrechnern kommt es regelmäßig zu Paketverlusten, besonders wenn der Server große Datenmengen sendet. Welche Mechanismen des Data Link Layers könnten dieses Problem adressieren und warum?
 
-Antwort: ~Ein konzeptioneller Konflikt entsteht, wenn die Fehlerkontrolle eine erneute Übertragung fehlerhafter Daten anfordert, während die Flusskontrolle gleichzeitig versucht, die Übertragungsrate zu reduzieren. Dies kann zu widersprüchlichen Signalen führen: Einerseits werden mehr Daten angefordert (durch Neuübertragungsanfragen), andererseits wird die Übertragungsgeschwindigkeit gedrosselt. Die Effizienz leidet, da Neuübertragungen zusätzliche Bandbreite benötigen, während Flusskontrollmechanismen wie verzögerte Bestätigungen die Fehlerbehebung verlangsamen. Außerdem können sich die Puffer füllen, wenn fehlerhafte Pakete zwischengespeichert werden müssen, während gleichzeitig neue Daten ankommen, was zu Pufferüberläufen führen kann.
-```
+Antwortmöglichkeiten:
+- Flusskontrolle durch explizites Herunterregeln des Senders, wobei die Arbeitsplatzrechner dem Server signalisieren, langsamer zu senden, um Pufferüberläufe zu vermeiden (Richtig)
+- Verzögertes Senden von Bestätigungen durch die Arbeitsplatzrechner, um dem Server implizit zu signalisieren, dass ein langsamerer Datenfluss benötigt wird (Richtig)
+- Implementierung größerer Zwischenpuffer auf den Arbeitsplatzrechnern, um temporäre Datenspitzen abzufangen, bevor die Verarbeitung stattfindet (Richtig)
+- Erhöhung der Segmentierungsrate durch Zusammenfassung von 16 statt 8 Bits zu einem Paket, um die Übertragungseffizienz zu verbessern (Falsch)
+- Verbesserte Fehlerkontrolle durch zusätzliche Prüfsummen, was die Datenintegrität erhöht, aber nicht direkt das Geschwindigkeitsproblem löst (Falsch)
+- Neuadressierung der Netzwerkgeräte mit eindeutigen MAC-Adressen, um die Identifikation zu optimieren (Falsch)

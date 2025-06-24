@@ -1,2 +1,8 @@
-Korrekte Antwort: Session Layer (Layer 5)  
-Frage: Welcher Layer des ISO-OSI-Modells übernimmt die Kernaufgaben Sitzungsverwaltung, Synchronisation und Bündelung?
+Frage: Welche der folgenden Aufgaben gehören zum Session Layer (Schicht 5) des ISO-OSI-Modells?
+
+Antwortmöglichkeiten:
+- Aufbau, Verwaltung und Beendigung von Sitzungen (Richtig)
+- Setzen von Synchronisationspunkten bei Datenübertragungen (Richtig)
+- Bündelung zusammengehöriger Transaktionen (Richtig)
+- Routing von Datenpaketen zwischen Netzwerken (Falsch)
+- Verschlüsselung der übertragenen Datenpakete (Falsch)

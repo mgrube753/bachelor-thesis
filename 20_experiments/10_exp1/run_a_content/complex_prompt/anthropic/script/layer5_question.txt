@@ -1,5 +1,8 @@
-```
-Frage: In einem verteilten System werden große Datenmengen zwischen zwei Anwendungen übertragen. Warum könnte die "Synchronisation mit Zwischenpunkten" der Session Layer (Schicht 5) in diesem Szenario besonders wichtig sein, und welche konkreten Probleme löst diese Funktion?
+Frage: Eine Anwendung überträgt große Dateien über ein Netzwerk mit häufigen Verbindungsabbrüchen. Welche spezifische Funktionalität der Session Layer (Schicht 5) des OSI-Modells würde am effektivsten helfen, die Datenübertragung effizienter zu gestalten, ohne bei jedem Verbindungsabbruch die gesamte Übertragung neu starten zu müssen?
 
-Antwort: ~Die Synchronisation mit Zwischenpunkten erlaubt es, bei einem Verbindungsabbruch nicht die gesamte Übertragung neu starten zu müssen, sondern nur ab dem letzten erfolgreich übertragenen Zwischenpunkt fortzusetzen. Dies ist besonders bei großen Datenmengen effizient, da es Bandbreite spart, die Übertragungszeit verkürzt und Ressourcen schont. Zudem ermöglicht es die Wiederherstellung nach Fehlern ohne Datenverlust und bietet definierte Punkte für Integritätsprüfungen während der Übertragung.
-```
+Antwortmöglichkeiten:
+- Die Synchronisationsfunktion mit dem Setzen von Zwischenpunkten, die als Wiederaufnahmepunkte nach Verbindungsabbrüchen dienen können (Richtig)
+- Die Bündelungsfunktion, da sie zusammengehörige Transaktionen gruppiert und dadurch Übertragungsfehler reduziert (Falsch)
+- Die Sitzungsverwaltungsfunktion, die primär für das Beenden von Verbindungen zuständig ist (Falsch)
+- Die Kommunikationsoptimierung durch Priorisierung kritischer Datenpakete, was ein schnelleres Reconnect ermöglicht (Falsch)
+- Die Authentifizierungsfunktion, die nach Verbindungsabbrüchen eine schnellere Wiederherstellung der Sitzung erlaubt (Falsch)

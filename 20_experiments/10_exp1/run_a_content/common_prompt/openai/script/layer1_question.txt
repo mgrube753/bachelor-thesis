@@ -1,7 +1,8 @@
-Richtige Antwort: A) Codierung
+Frage: Welche der folgenden Kernaufgaben werden im Physical Layer (Schicht 1) des ISO-OSI-Modells ausgeführt?
 
-Frage: Welche Kernaufgabe des Physical Layers im ISO-OSI-Modell beschreibt die Abbildung logischer Werte auf physikalische Größen?
-
-A) Codierung  
-B) Transport  
-C) Decodierung
+Antwortmöglichkeiten:
+- Codierung logischer Werte in physikalische Größen (Richtig)
+- Transport physikalischer Größen von einem Ort zum anderen (Richtig)
+- Fehlerkorrektur durch Parity Bits (Falsch)
+- Decodierung physikalischer Größen in logische Werte (Richtig)
+- Routenberechnung zwischen Netzwerken (Falsch)

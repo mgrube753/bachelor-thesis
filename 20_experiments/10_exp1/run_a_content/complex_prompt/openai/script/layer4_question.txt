@@ -1,3 +1,7 @@
-Frage: Ein Telechirurgie-System muss gewährleisten, dass zwischen den beiden Kommunikationspartnern eine Ende-zu-Ende-Verzögerung von höchstens 50 ms mit einer Schwankung (Jitter) von maximal 5 ms aufrechterhalten wird, ohne dass Pakete verloren gehen. Auf welche der drei Kernaufgaben des Transport Layer richtet sich diese Forderung primär und welche konkreten Qualitätsparameter sind dabei betroffen? Begründen Sie Ihre Auswahl kurz.
+Frage: Welches der folgenden Netzszenarien illustriert primär die Dienstqualitäts-Funktion (QoS) der Transportschicht, deren Ziel es ist, verbindungsbezogene Garantien für Bandbreite, Latenz und Jitter sicherzustellen?
 
-Antwort: ~Die Forderung richtet sich primär auf die Kernaufgabe „Dienstqualität“, da hier explizit QoS-Parameter wie Latenz, Jitter und Fehlerrate garantiert werden sollen.
+Antwortmöglichkeiten:
+- Ein IP-Telefongespräch, das unterbrechungsfrei mit fester Bandbreite und geringer Verzögerung übertragen werden muss (Richtig)
+- Das Herunterladen einer großen Datei über FTP, bei dem der Sender kontinuierlich die Fenstergröße anpasst, um einen langsameren Empfänger nicht zu überlasten (Falsch)
+- Ein Router, der die Ziel-Portnummer nutzt, um eingehende Pakete an den richtigen Dienst weiterzuleiten (Falsch)
+- Das Abweisen weiterer Pakete durch einen Empfänger, weil dessen Empfangspuffer bereits voll ist (Falsch)

@@ -1,7 +1,8 @@
-Frage: Welcher der folgenden Aspekte gehört laut Text NICHT zu den Aufgaben der Network Layer?
+Frage: Welche der folgenden Situationen erfordern laut obigem Text explizit Maßnahmen der Netzwerkschicht, um eine Ende-zu-Ende-Übertragung zwischen zwei heterogenen Netzen sicherzustellen?
 
 Antwortmöglichkeiten:
-- ~Erkennung und Behebung von Bitfehlern in einzelnen Frames
-- Auswahl dynamischer oder statischer Routen für Pakete
-- Behandlung von Überlastsituationen (Congestion Handling)
-- Gewährleistung von Verzögerungs- und Laufzeitanforderungen (Quality of Service)
+- In einem heterogenen Verbund stößt ein Paket mit übergroßer Länge auf ein Teilnetz, das kleinere maximale Paketgrößen zulässt (Richtig)
+- Zwei verbundene Netze nutzen unterschiedliche Adressierungsschemata (Richtig)
+- Eine Anwendungsschicht muss ihre Daten mit TLS verschlüsseln, bevor sie versendet werden (Falsch)
+- Das Transportprotokoll entscheidet, ob es Go-Back-N oder Selective-Repeat benutzen soll (Falsch)
+- Die Sicherungsschicht erkennt einen Bitfehler im Frame und fordert eine Wiederholung an (Falsch)

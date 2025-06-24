@@ -1,3 +1,8 @@
-Frage: Angenommen, ein Host A sendet über einen physikalisch stark störungsanfälligen Kanal schneller Daten an Host B, als dessen Eingabepuffer verarbeiten kann. Welche zwei Funktionen des Data-Link-Layers müssen gleichzeitig greifen, um sowohl Überlastung als auch Datenbeschädigung zuverlässig zu vermeiden, und weshalb wäre der isolierte Einsatz nur einer dieser Funktionen unzureichend? Begründen Sie Ihre Wahl anhand der im Text beschriebenen Mechanismen.
+Frage: Welche der folgenden Aufgaben gehören gemäß der Beschreibung zum Data Link Layer des ISO-OSI-Modells?
 
-Antwort: ~Flusskontrolle und Fehlerkontrolle; Flusskontrolle drosselt bzw. puffert den Datenstrom, um die begrenzte Aufnahmefähigkeit von Host B nicht zu überschreiten, während Fehlerkontrolle Bitfehler erkennt und korrigiert bzw. meldet. Würde man nur Flusskontrolle einsetzen, könnten trotz angepasster Datenrate weiterhin unbemerkte Übertragungsfehler auftreten; setzte man hingegen nur Fehlerkontrolle ein, würde Host B bei zu hohem Eingangstempo überlaufen und Pakete verlieren – beide Aufgaben müssen daher kombiniert werden, um gleichzeitig Integrität und Verträglichkeit des Datenflusses sicherzustellen.
+Antwortmöglichkeiten:
+- Erkennen und Signalisieren von Übertragungsfehlern im Rahmen einer Fehlerkontrolle (Richtig)
+- Flusskontrolle durch Herunterregeln der Sendegeschwindigkeit bei Pufferüberlauf (Richtig)
+- Zusammenfassen von Bits zu größeren Einheiten wie Bytes (Richtig)
+- Routing von Datenpaketen über mehrere Netze hinweg anhand von IP-Adressen (Falsch)
+- Ende-zu-Ende-Verschlüsselung der Nutzdaten zur Wahrung von Vertraulichkeit (Falsch)

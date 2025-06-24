@@ -1,8 +1,10 @@
-RICHTIGE ANTWORT: Kompression, Verschlüsselung, Konvertierung der Zeichendarstellung, Konvertieren der Datendarstellung (Endian-Ness)
+Frage: Welche der folgenden Aufgaben gehören zu den Kernfunktionen der Presentation Layer (Schicht 6) im ISO-OSI-Modell?
 
-Welche vier Kernaufgaben erfüllt der Presentation Layer (Schicht 6) im ISO-OSI-Modell?
-
-A) Kompression, Verschlüsselung, Konvertierung der Zeichendarstellung, Konvertieren der Datendarstellung (Endian-Ness)
-B) Routing, Verschlüsselung, Adressierung, Kompression
-C) Fehlerkorrektur, Fehlererkennung, Flusskontrolle, Medienzugriff
-D) Sessionmanagement, Authentifizierung, Synchronisation, Dialog-Kontrolle
+Antwortmöglichkeiten:
+- Konvertierung zwischen little endian und big endian Datendarstellung (Richtig)
+- Zeichenkonvertierung zwischen verschiedenen Standards wie ASCII und Unicode (Richtig)
+- Datenkompression und -dekompression (Richtig)
+- Verschlüsselung und Entschlüsselung von Daten (Richtig)
+- Routing von Datenpaketen im Netzwerk (Falsch)
+- Fehlererkennung und -korrektur auf Bitebene (Falsch)
+- Verwaltung der Sitzung zwischen zwei Kommunikationspartnern (Falsch)

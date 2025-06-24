@@ -1,7 +1,7 @@
-Frage: In einem verteilten System müssen zwei Rechner eine große Datei übertragen, während sie anfällig für sporadische Netzwerkunterbrechungen sind. Welche spezifische Funktion der Session Layer ist am kritischsten, um sicherzustellen, dass die Übertragung auch nach wiederholten Verbindungsabbrüchen erfolgreich abgeschlossen werden kann, und warum?
+Frage: Welche der folgenden Szenarien demonstriert am besten die Notwendigkeit des Token-Management-Dienstes der Session Layer im OSI-Modell, und warum unterscheidet sich dieses von Szenarien, die primär durch andere Session-Layer-Dienste unterstützt werden?
 
 Antwortmöglichkeiten:
-- Dialog-Kontrolle, weil sie sicherstellt, dass beide Systeme wissen, wann sie senden oder empfangen sollen, was Kollisionen nach Wiederverbindung verhindert
-- ~Synchronisation mit Checkpointing, weil dies ermöglicht, dass die Übertragung nach einem Absturz oder einer Unterbrechung von einem bekannten Zustand aus fortgesetzt werden kann, ohne von vorne beginnen zu müssen
-- Token-Management, weil es verhindert, dass beide Systeme gleichzeitig versuchen, die unterbrochene Übertragung fortzusetzen, was zu Datenkorruption führen könnte
-- Sitzungsinitialisierung, weil dadurch nach jeder Unterbrechung automatisch eine neue kompatible Verbindung mit den gleichen Parametern hergestellt wird
+- Ein verteiltes Datenbanksystem, bei dem mehrere Benutzer versuchen könnten, denselben Datensatz gleichzeitig zu aktualisieren. Das Token-Management verhindert hier, dass zwei Parteien dieselbe kritische Operation gleichzeitig durchführen, was zu Dateninkonsistenzen führen könnte. (Richtig)
+- Ein Videokonferenzsystem, das bestimmen muss, welcher Teilnehmer gerade sprechen darf. Dies ist hauptsächlich eine Funktion der Dialog-Kontrolle, nicht des Token-Managements, da es um die Steuerung der Übertragungsreihenfolge geht. (Falsch)
+- Ein Backup-System, das nach einem Systemabsturz die Datenübertragung an einem zuvor gespeicherten Punkt fortsetzt. Dies demonstriert primär die Synchronisationsfunktion mit ihren Checkpoints, nicht das Token-Management. (Falsch)
+- Ein Netzwerkprotokoll, das sicherstellt, dass Datenpakete in der richtigen Reihenfolge ankommen. Dies ist eine Funktion der Transportschicht und nicht der Session-Schicht. (Falsch)

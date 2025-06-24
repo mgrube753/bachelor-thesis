@@ -1,3 +1,7 @@
-Frage: Erläutern Sie, weshalb im beschriebenen Bluetooth-→WLAN-→5G-Szenario eine rein knoten-zu-knoten-basierte Flusssteuerung trotz lokal korrekt abgestimmter Geschwindigkeiten zu einem Datenstau führen kann, und nennen Sie den Mechanismus des Network Layers, der dieses Problem durchgängig adressieren soll.
+Frage: Welche der folgenden Aussagen beschreibt gemäß obigem Text den Hauptunterschied zwischen einer Knoten-zu-Knoten- und einer Ende-zu-Ende-Flusssteuerung im Network Layer?
 
-Antwort: ~Eine ausschließlich knoten-zu-knoten-basierte Flusssteuerung stimmt die Übertragungsraten nur zwischen jeweils benachbarten Knoten ab. Entlang der gesamten Strecke können jedoch unterschiedlich leistungsfähige Teilstrecken auftreten; der langsamste Abschnitt puffert dabei permanent Daten nach, obwohl jede lokale Kopplung scheinbar störungsfrei arbeitet. Dadurch entsteht kumulativer Stau und Verzögerung. Um dieses Ende-zu-Ende-Ungleichgewicht zu erkennen und auszugleichen, implementiert der Network Layer zusätzlich eine ende-zu-ende-Flusssteuerung, die die Datenrate über den gesamten Pfad hinweg an die Kapazität der langsamsten Verbindung anpasst.
+Antwortmöglichkeiten:
+- Knoten-zu-Knoten-Flusssteuerung fokussiert sich auf die Geschwindigkeitsanpassung unmittelbar benachbarter Geräte, während Ende-zu-Ende-Flusssteuerung den Gesamtdatenstrom über alle Zwischenknoten hinweg betrachtet, um Stau am langsamsten Abschnitt zu vermeiden (Richtig)
+- Knoten-zu-Knoten-Flusssteuerung wählt den optimalen Pfad durch das Netz, während Ende-zu-Ende-Flusssteuerung nur Adressübersetzung durchführt (Falsch)
+- Ende-zu-Ende-Flusssteuerung ist ausschließlich Aufgabe des Transport Layers und spielt im Network Layer keine Rolle (Falsch)
+- Knoten-zu-Knoten-Flusssteuerung ignoriert individuelle Geschwindigkeiten der Partnerknoten und setzt stattdessen feste globale Bandbreitenlimits (Falsch)

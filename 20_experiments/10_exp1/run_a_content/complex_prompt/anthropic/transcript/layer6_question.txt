@@ -1,9 +1,10 @@
-```
-Frage: Betrachten Sie die Abgrenzung der Funktionen zwischen dem Presentation Layer (Schicht 6) und anderen Schichten des ISO-OSI-Modells. Welche der folgenden Aufgaben müsste ein Entwickler neu implementieren, wenn er eine Anwendung von einem System mit Little-Endian-Architektur auf ein System mit Big-Endian-Architektur portieren möchte, und dabei NICHT auf die Dienste des Presentation Layers zurückgreifen kann?
+Frage: Ein internationales Softwareunternehmen entwickelt eine neue Anwendung, die Daten zwischen verschiedenen Systemen austauschen soll. Das Entwicklungsteam diskutiert, ob bestimmte Funktionen in der Anwendungsschicht oder im Presentation Layer implementiert werden sollten. Basierend auf den im Text beschriebenen Aufgaben des Presentation Layers, welche der folgenden Szenarien würden korrekt dieser Schicht zugeordnet werden?
 
 Antwortmöglichkeiten:
-- ~Eigene Konvertierungsroutinen für die Byte-Reihenfolge bei Zahlen und komplexen Datenstrukturen
-- Neuimplementierung der Transportprotokolle für die Datenübertragung
-- Anpassung der Sitzungsverwaltung für die Client-Server-Kommunikation
-- Neugestaltung der Benutzeroberfläche für das Zielsystem
-```
+- Ein finnischer Benutzer sendet eine Nachricht mit Sonderzeichen (ä, ö) an einen japanischen Benutzer, dessen System einen anderen Zeichensatz verwendet. Die Konvertierung zwischen diesen Zeichensätzen erfolgt automatisch. (Richtig)
+- Sensible Gesundheitsdaten werden vor der Übertragung durch das Netzwerk mit AES verschlüsselt und beim Empfänger wieder entschlüsselt. (Richtig)
+- Große Bilddateien werden vor der Übertragung komprimiert, um Bandbreite zu sparen, und beim Empfänger wieder dekomprimiert. (Richtig)
+- Ein Programm auf einem Intel-Prozessor (Little Endian) tauscht numerische Daten mit einem Programm auf einem älteren Mainframe-System (Big Endian) aus, wobei die Byte-Reihenfolge angepasst wird. (Richtig)
+- Das System verwaltet die Session-Timeouts und stellt nach Verbindungsabbrüchen automatisch die Kommunikation wieder her. (Falsch)
+- Die Anwendung authentifiziert Benutzer und prüft deren Berechtigungen, bevor sie Zugriff auf bestimmte Funktionen gewährt. (Falsch)
+- Das Protokoll handelt die maximale Paketgröße für die Datenübertragung zwischen den beiden Systemen aus. (Falsch)

@@ -1,5 +1,7 @@
-```
-Frage: Welche fundamentale Verschiebung im Verarbeitungsfokus findet auf der Präsentationsschicht im Vergleich zu den darunterliegenden Schichten des OSI-Modells statt, und welche Implikationen hat dies für die Interoperabilität zwischen Systemen mit unterschiedlichen internen Datenrepräsentationen?
+Frage: Welche konzeptionelle Herausforderung adressiert die Präsentationsschicht des OSI-Modells, die von den unteren Schichten nicht behandelt wird, und wie unterscheidet sich ihr Ansatz fundamental von der Arbeitsweise dieser unteren Schichten?
 
-Antwort: ~Die Präsentationsschicht markiert einen Paradigmenwechsel von der primären Beschäftigung mit der Bitübertragung (in den unteren Schichten) hin zur Verarbeitung von Syntax und Semantik der übertragenen Informationen. Diese Verschiebung ermöglicht die Definition abstrakter Datenstrukturen mit standardisierten Kodierungen, wodurch Systeme mit unterschiedlichen internen Datenrepräsentationen miteinander kommunizieren können, ohne die spezifischen Implementierungsdetails des jeweils anderen Systems kennen zu müssen.
-```
+Antwortmöglichkeiten:
+- Die Präsentationsschicht befasst sich mit Syntax und Semantik der übertragenen Informationen und ermöglicht die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen, während untere Schichten primär auf die Bewegung von Bits fokussiert sind (Richtig)
+- Die Präsentationsschicht ist für die physikalische Übertragung von Daten zwischen verschiedenen Netzwerkknoten verantwortlich, während die unteren Schichten sich mit der logischen Adressierung befassen (Falsch)
+- Die Präsentationsschicht befasst sich ausschließlich mit der Verschlüsselung von Daten, während die unteren Schichten für die Datenkompression zuständig sind (Falsch)
+- Die Präsentationsschicht ist für die Verbindungsherstellung und Terminierung zwischen Netzwerkknoten verantwortlich, während die unteren Schichten nur für die Datenübertragung zuständig sind (Falsch)

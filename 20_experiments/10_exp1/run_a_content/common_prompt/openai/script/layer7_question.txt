@@ -1,2 +1,6 @@
-Richtige Antwort: Grundkonzepte, Protokollelemente, Verhalten  
-Frage: Welche drei Kernaufgaben erfüllt die Anwendungsschicht (Layer 7) im ISO/OSI-Modell?
+Frage: Welche drei Kernaufgaben definiert die Application Layer (Schicht 7) des ISO-OSI-Modells laut Beschreibung?
+
+Antwortmöglichkeiten:
+- Grundkonzepte, Protokollelemente und Verhalten (Richtig)
+- Routing, Switching und Flusskontrolle (Falsch)
+- Codierung, Synchronisation und Leitungsschutz (Falsch)

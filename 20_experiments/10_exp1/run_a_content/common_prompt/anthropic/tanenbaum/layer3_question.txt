@@ -1,8 +1,11 @@
-Frage: Welche der folgenden Aufgaben ist KEINE Hauptverantwortung der Netzwerkschicht (Network Layer) im ISO-OSI-Modell?
+Frage: Welche der folgenden Aussagen beschreiben korrekt die Hauptaufgaben der Netzwerkschicht im ISO-OSI-Modell?
 
-Korrekte Antwort: C
-
-A) Routing von Paketen vom Quell- zum Zielort
-B) Umgang mit Netzwerküberlastungen (Congestion)
-C) Fehlererkennung und -korrektur auf Bit-Ebene
-D) Überwindung von Unterschieden zwischen heterogenen Netzwerken
+Antwortmöglichkeiten:
+- Routing von Paketen vom Quell- zum Zielrechner (Richtig)
+- Handhabung von Netzwerküberlastungen (Congestion) (Richtig)
+- Sicherstellung der Qualität des Services (Delay, Transit Time, Jitter) (Richtig)
+- Überwindung von Inkompatibilitäten zwischen heterogenen Netzwerken (Richtig)
+- Implementierung von Fehlerkorrekturen auf Bitebene (Falsch)
+- Ende-zu-Ende-Verbindungsaufbau zwischen Anwendungen (Falsch)
+- Verschlüsselung der Daten für die sichere Übertragung (Falsch)
+- Synchronisation des Takts zwischen Sender und Empfänger (Falsch)

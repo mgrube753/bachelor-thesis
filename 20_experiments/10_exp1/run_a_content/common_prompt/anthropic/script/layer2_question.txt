@@ -1,10 +1,11 @@
-Frage: Welche der folgenden Aufgaben gehört NICHT zu den 5 Kernaufgaben des Data Link Layers (Schicht 2) im ISO-OSI-Modell?
-
-Korrekte Antwort: Protokollübersetzung
+Frage: Welche der folgenden Aussagen beschreiben korrekt die Kernaufgaben des Data Link Layers (Schicht 2) im ISO-OSI-Modell?
 
 Antwortmöglichkeiten:
-A) Protokollübersetzung
-B) Fehlerkontrolle
-C) Flußkontrolle
-D) Segmentierung
-E) Medienzugriff
+- Die Fehlerkontrolle dient dem Erkennen, Beheben oder Signalisieren von Übertragungsfehlern. (Richtig)
+- Die Flusskontrolle implementiert Strategien, wenn der Sender für den Empfänger zu schnell sendet. (Richtig)
+- Die Segmentierung dient dem Zusammenfassen einzelner Bits zu größeren Einheiten. (Richtig)
+- Die Identifikation ermöglicht die Auswahl bestimmter Sender oder Empfänger durch Adressierung. (Richtig)
+- Der Medienzugriff aktiviert den Physical Layer und umfasst typischerweise die Aspekte Senden, Warten, Beheben und Reservieren. (Richtig)
+- Der Data Link Layer ist für die Ende-zu-Ende-Verschlüsselung der Daten verantwortlich. (Falsch)
+- Die Routenfindung im Netzwerk ist eine Hauptaufgabe des Data Link Layers. (Falsch)
+- Der Data Link Layer etabliert Verbindungen zwischen entfernten Netzwerken über das Internet. (Falsch)

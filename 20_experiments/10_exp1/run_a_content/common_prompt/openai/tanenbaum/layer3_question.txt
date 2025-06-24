@@ -1,3 +1,7 @@
-Richtige Antwort: Schicht 3 – Vermittlungsschicht (Network Layer)
+Frage: Welche der folgenden Aufgaben gehören zur Network Layer im ISO-OSI-Modell?
 
-Frage: Welche Schicht des ISO-OSI-Modells ist verantwortlich für Routing, Staukontrolle und die Gewährleistung der Dienstgüte (Quality of Service)?
+Antwortmöglichkeiten:
+- Bestimmung der Route von Paketen vom Sender zum Empfänger (Richtig)
+- Umgang mit Netzüberlastung (Congestion Control) (Richtig)
+- Verwaltung von Sitzungen zwischen Anwendungen (Falsch)
+- Umwandlung von Zeichensätzen für die Präsentationsebene (Falsch)

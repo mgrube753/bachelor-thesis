@@ -1,3 +1,9 @@
-Antwort: Dialogsteuerung (Dialog Control)
+Frage: Welche der folgenden Dienste werden typischerweise von der Session Layer (Sitzungsschicht) des ISO-OSI-Modells bereitgestellt?
 
-Frage: Welche Dienstleistung der Sitzungsschicht sorgt dafür, dass während einer Session festgehalten wird, wer gerade sendeberechtigt ist?
+Antwortmöglichkeiten:
+- Dialogsteuerung (Richtig)
+- Token-Management (Richtig)
+- Synchronisation/Checkpointing (Richtig)
+- Routing zwischen Netzen (Falsch)
+- Verschlüsselung auf Bit-Ebene (Falsch)
+- Elektrische Signalübertragung von Bits (Falsch)

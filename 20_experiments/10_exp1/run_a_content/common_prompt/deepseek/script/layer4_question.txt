@@ -1,7 +1,0 @@
-**Frage:**  
-Welche der folgenden Aufgaben gehört NICHT zu den Kernaufgaben der Transportschicht im OSI-Modell?  
-
-**(KORREKTE ANTWORT)** D) Verschlüsselung  
-A) Adressierung  
-B) Dienstgüte  
-C) Flusskontrolle

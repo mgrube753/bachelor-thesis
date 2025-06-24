@@ -1,2 +1,8 @@
-Richtige Antwort: Codierung, Transport physikalischer Größen und Dekodierung  
-Frage: Welche drei zentralen Kernaufgaben erfüllt der Physical Layer im ISO-OSI-Modell?
+Frage: Welche der folgenden Aufgaben gehören zu den Kernaufgaben des Physical Layers im ISO/OSI-Modell?
+
+Antwortmöglichkeiten:
+- Codierung logischer Werte in physikalische Größen (Richtig)
+- Transport physikalischer Größen von einem Ort zum anderen (Richtig)
+- Dekodierung physikalischer Größen zu logischen Werten (Richtig)
+- Verschlüsselung der Daten zur Gewährleistung der Vertraulichkeit (Falsch)
+- Sitzungsaufbau, -steuerung und -abbau zwischen Endsystemen (Falsch)

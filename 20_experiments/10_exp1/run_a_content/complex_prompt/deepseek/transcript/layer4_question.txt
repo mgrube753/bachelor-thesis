@@ -1,7 +1,0 @@
-Frage: Ein Entwickler entwirft ein System, das sowohl Dateitransfers als auch Echtzeit-Videokonferenzen über dieselbe Netzwerkinfrastruktur abwickelt. Basierend auf den Kernaufgaben des Transport Layers im ISO-OSI-Modell: Welcher QoS-Parameter muss für die *Dateitransfer*-Komponente besonders strikt garantiert werden, während er für den *Videostream* unter bestimmten Bedingungen toleranter gehandhabt werden kann? Begründen Sie dies mit der im Text beschriebenen Fehlerauswirkung.
-
-Antwortmöglichkeiten:
-- Bandbreite, da Videostreams höhere Datenraten benötigen und Dateitransfers komprimierbar sind
-- Latenz, weil verzögerte Pakete bei Videokonferenzen zu sichtbaren Unterbrechungen führen
-- ~Fehlerrate, da fehlende Bits bei Dateitransfers die Integrität zerstören, während Pixelartefakte in Videos oft kaum wahrnehmbar sind
-- Jitter, weil Schwankungen der Paketlaufzeit bei Echtzeitmedien zu asynchroner Wiedergabe führen

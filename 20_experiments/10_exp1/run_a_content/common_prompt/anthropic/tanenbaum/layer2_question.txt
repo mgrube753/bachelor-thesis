@@ -1,8 +1,9 @@
-Frage: Was ist die Hauptaufgabe der Datenverbindungsschicht (Data Link Layer) im ISO-OSI-Modell?
+Frage: Welche Hauptaufgaben erfüllt die Datenverbindungsschicht (Data Link Layer) im ISO-OSI-Modell?
 
-Korrekte Antwort: Die Transformation einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint, indem sie die tatsächlichen Fehler maskiert, sodass die Netzwerkschicht diese nicht sieht.
-
-Weitere Antwortmöglichkeiten:
-B) Die Festlegung physikalischer Übertragungsmedien und elektrischer Signale.
-C) Die Bereitstellung einer zuverlässigen Ende-zu-Ende-Verbindung zwischen Anwendungen.
-D) Die Umwandlung von IP-Adressen in MAC-Adressen.
+Antwortmöglichkeiten:
+- Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint (Richtig)
+- Aufteilung der Eingabedaten in Datenframes und sequentielle Übertragung dieser Frames (Richtig)
+- Steuerung des Datenflusses, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet (Richtig)
+- Steuerung des Zugriffs auf den gemeinsamen Kanal bei Broadcast-Netzwerken durch die Medium Access Control-Unterschicht (Richtig)
+- Ende-zu-Ende-Verschlüsselung der Daten für sichere Übertragung (Falsch)
+- Routing von Datenpaketen zwischen verschiedenen Netzwerken (Falsch)

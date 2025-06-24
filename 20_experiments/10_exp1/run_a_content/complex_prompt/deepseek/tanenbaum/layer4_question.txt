@@ -1,7 +1,0 @@
-Frage: Warum wird die Transportschicht als "echte Ende-zu-Ende-Schicht" charakterisiert, während die darunterliegenden Schichten (1-3) als "verkettet" beschrieben werden? Erläutern Sie den fundamentalen Unterschied in der Kommunikationslogik zwischen diesen Schichtgruppen anhand ihrer Beziehung zu den Endgeräten und Zwischenknoten.
-
-Antwortmöglichkeiten:
-- ~Weil die Transportschicht eine direkte logische Kommunikation zwischen den Anwendungsprozessen auf dem *Quell-* und *Zielhost* ermöglicht, wobei Zwischenknoten (Router) nur die Schichten 1-3 implementieren, die jeweils nur zwischen *direkt benachbarten* Knoten operieren.
-- Weil die Transportschicht für die physikalische Adressierung der Endgeräte zuständig ist, während die Schichten 1-3 nur logische Adressen auf Router-Ebene verarbeiten.
-- Weil die Transportschicht als einzige Schicht die vollständige Route vom Sender zum Empfänger im Voraus festlegt ("verkettet"), während Schichten 1-3 nur den nächsten Hop bestimmen ("Ende-zu-Ende").
-- Weil die Transportschicht ausschließlich auf Hosts implementiert wird, während die Schichten 1-3 nur in Netzwerkhardware wie Routern und Switches existieren.

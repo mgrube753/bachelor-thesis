@@ -1,9 +1,8 @@
-```
-Frage: Wenn in einem Netzwerk vermehrt Datenübertragungsfehler auftreten, jedoch die höheren Protokollschichten scheinbar normal funktionieren, welche der folgenden Situationen deutet am stärksten auf ein Problem spezifisch in der Physical Layer hin?
+Frage: In einem Netzwerksystem wird ein ungewöhnliches Phänomen beobachtet: Die Daten werden korrekt codiert und physikalisch transportiert, aber am Empfängergerät kommen bei der Decodierung fehlerhafte Werte an. Welche konzeptionellen Zusammenhänge im Physical Layer (Schicht 1) könnten dieses Problem erklären, und wie beeinflussen diese die Integrität der Datenübertragung?
 
 Antwortmöglichkeiten:
-- Daten werden korrekt gesendet, erreichen aber nie den Empfänger
-- Die Datenübertragung erfolgt mit konstant niedriger Geschwindigkeit trotz geringer Netzauslastung
-- ~Die empfangenen Signale weisen Verzerrungen auf, sodass logische 1-Werte gelegentlich als 0-Werte interpretiert werden
-- Alle Pakete kommen an, aber mit erheblicher Verzögerung
-```
+- Die Decodierungsmechanismen am Empfänger verwenden möglicherweise andere Detektionsbereiche als die, die für die ursprüngliche Codierung verwendet wurden, was zu Fehlinterpretationen der physikalischen Signale führt. (Richtig)
+- Das Problem liegt ausschließlich in der Transportschicht (Layer 4), da der Physical Layer nur für die fehlerfreie Übertragung von Bits zuständig ist und keinen Einfluss auf die Datenintegrität hat. (Falsch)
+- Die Codierung auf Senderseite ist fehlerhaft, was zu einer korrekten physikalischen Übertragung aber zwangsläufig zu Decodierungsfehlern führt, da der Physical Layer keinen Fehlererkennungsmechanismus besitzt. (Falsch)
+- Umgebungsinterferenzen oder Signalverzerrungen während des Transports können die physikalischen Eigenschaften des Signals so verändern, dass es zwar ankommt, aber vom Decodierer nicht mehr korrekt in logische Werte zurückgewandelt werden kann. (Richtig)
+- Die NRZ- oder Manchester-Codierung wurde während der Übertragung durch externe Faktoren verändert, was zu einem korrekten Transport aber fehlerhafter Interpretation führt. (Richtig)

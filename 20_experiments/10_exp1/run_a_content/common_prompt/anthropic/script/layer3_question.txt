@@ -1,8 +1,10 @@
-KORREKTE ANTWORT: Adressierung, Routing und Flusssteuerung
+Frage: Welche der folgenden Aufgaben gehören zu den Kernaufgaben des Network Layers (Schicht 3) im ISO-OSI-Modell?
 
-Welche drei Kernaufgaben werden im Network Layer (Schicht 3) des ISO-OSI-Modells ausgeführt?
-
-a) Adressierung, Routing und Flusssteuerung
-b) Fragmentierung, Segmentierung und Verschlüsselung
-c) Synchronisation, Multiplexing und Fehlererkennung
-d) Datenkompression, Kodierung und Übertragung
+Antwortmöglichkeiten:
+- Adressierung über Netzwerkgrenzen hinweg (Richtig)
+- Routing zwischen nicht direkt verbundenen Knoten (Richtig)
+- Flusssteuerung von Sender zu Empfänger (End-to-End) (Richtig)
+- Bitübertragung über das physische Medium (Falsch)
+- Fehlererkennung mittels Prüfsummen (Falsch)
+- Aufbau von Sitzungen zwischen Anwendungen (Falsch)
+- Segmentierung von Daten in übertragbare Einheiten (Falsch)

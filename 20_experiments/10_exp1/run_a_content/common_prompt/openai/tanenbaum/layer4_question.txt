@@ -1,3 +1,7 @@
-Richtige Antwort: Transport Layer (Schicht 4)
+Frage: Welche Hauptaufgabe übernimmt die Transportschicht im ISO-OSI-Modell?
 
-Frage: Welche Schicht des ISO/OSI-Modells übernimmt die End-to-End-Datenübertragung und sorgt dafür, dass alle Datenstücke korrekt und in der richtigen Reihenfolge beim Empfänger ankommen?
+Antwortmöglichkeiten:
+- Sie akzeptiert Daten von höheren Schichten, segmentiert sie bei Bedarf und stellt ihre korrekte, geordnete Zustellung zwischen Endsystemen sicher (Richtig)
+- Sie regelt ausschließlich die elektrische und mechanische Verbindung der Kabel zwischen benachbarten Geräten (Falsch)
+- Sie bestimmt den optimalen Routing-Pfad durch das Netzwerk zwischen allen Routern (Falsch)
+- Sie verschlüsselt grundsätzlich alle Datenpakete auf Bit-Ebene (Falsch)

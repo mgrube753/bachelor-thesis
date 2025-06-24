@@ -1,2 +1,7 @@
-KORREKTE ANTWORT: HTTP  
-Frage: Welches Protokoll bildet die Grundlage des World Wide Web und wird von Browsern verwendet, um Web-Seiten von Servern anzufordern?
+Frage: Welches Protokoll bildet die Grundlage des World Wide Web und gehört zur Application Layer des ISO-OSI-Modells?
+
+Antwortmöglichkeiten:
+- HTTP (HyperText Transfer Protocol) (Richtig)
+- TCP (Transmission Control Protocol) (Falsch)
+- IP (Internet Protocol) (Falsch)
+- Ethernet (Falsch)

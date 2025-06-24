@@ -1,5 +1,8 @@
-```
-Frage: Ein Unternehmen möchte zwei unterschiedliche Netzwerke miteinander verbinden, die verschiedene Adressierungsschemata, Paketgrößen und Protokolle verwenden. Welche konzeptionelle Herausforderung wird hier primär angesprochen und welche Schicht des ISO/OSI-Modells trägt die Hauptverantwortung für die Lösung dieses Problems? Analysieren Sie die Aufgabenstellung dieser Schicht in diesem spezifischen Kontext.
+Frage: Angenommen, ein neues Netzwerkprotokoll soll für ein System entwickelt werden, das zwischen Rechenzentren mit unterschiedlichen Infrastrukturen Daten austauscht und gleichzeitig strenge Echtzeitanforderungen für Videodaten erfüllen muss. Welche Herausforderung wäre basierend auf dem Text NICHT primär eine Aufgabe der Netzwerkschicht des OSI-Modells zu lösen?
 
-Antwort: ~Diese Situation beschreibt eine klassische Herausforderung der Netzwerkschicht (Network Layer), die für die Überwindung von Heterogenität zwischen verschiedenen Netzwerken verantwortlich ist. Die Netzwerkschicht muss hier die unterschiedlichen Adressierungsschemata übersetzen, mit variierenden Paketgrößen umgehen (möglicherweise durch Fragmentierung) und Protokollunterschiede ausgleichen, um eine Ende-zu-Ende-Kommunikation zu ermöglichen. Diese Interoperabilität zwischen heterogenen Netzwerken ist eine der Kernaufgaben dieser Schicht, neben Routing-Entscheidungen und Congestion Control. Im Gegensatz dazu würde diese Aufgabe in reinen Broadcast-Netzwerken eine geringere Rolle spielen, da dort die Netzwerkschicht typischerweise dünner implementiert ist.
-```
+Antwortmöglichkeiten:
+- Die Kompression der Videodaten zur Reduzierung der Bandbreitenanforderungen (Richtig)
+- Die Routenberechnung für Pakete unter Berücksichtigung der aktuellen Netzwerklast (Falsch)
+- Die Überwindung von Adressierungsunterschieden zwischen den verschiedenen Rechenzentren (Falsch)
+- Die Verwaltung von Paketgrößen-Unterschieden zwischen den verbundenen Netzwerken (Falsch)
+- Die Handhabung von Überlastungssituationen durch intelligente Paketweiterleitung (Falsch)

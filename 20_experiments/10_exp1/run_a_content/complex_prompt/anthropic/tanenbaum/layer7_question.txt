@@ -1,7 +1,8 @@
-Frage: Welche architektonische Konsequenz ergibt sich aus der im Text beschriebenen Funktionsweise von HTTP und was bedeutet dies für die konzeptionelle Gestaltung anderer Anwendungsprotokolle in der Anwendungsschicht des OSI-Modells?
+Frage: Basierend auf dem Text, welche architektonische Konsequenz ergibt sich aus der Platzierung von Protokollen wie HTTP in der Anwendungsschicht des OSI-Modells im Vergleich zu einer hypothetischen Alternative, bei der diese Protokolle in einer tieferen Schicht implementiert wären?
 
 Antwortmöglichkeiten:
-- ~HTTP implementiert ein Client-Server-Modell, was darauf hindeutet, dass die Anwendungsschicht primär Kommunikationsmuster zwischen Endpunkten definiert, nicht nur Datenformate
-- HTTP ist ein zustandsloses Protokoll, wodurch alle Anwendungsprotokolle in der Anwendungsschicht zwingend zustandslos sein müssen
-- Die Anwendungsschicht ist ausschließlich für die Benutzeroberfläche verantwortlich, nicht für Datenübertragungsmuster
-- HTTP zeigt, dass Anwendungsprotokolle nur Datenaustausch mit Webservern ermöglichen können und nicht für andere Kommunikationsformen geeignet sind
+- Die Platzierung in der Anwendungsschicht ermöglicht eine klare Trennung zwischen benutzerorientierten Diensten und den darunterliegenden Netzwerkfunktionen, was die Entwicklung neuer Anwendungsprotokolle erleichtert, ohne die Kernfunktionalität des Netzwerks zu beeinträchtigen (Richtig)
+- Die Platzierung in der Anwendungsschicht verlangsamt die Datenübertragung, da jede Anfrage mehrere Schichten durchlaufen muss, was bei einer tieferen Implementation vermieden werden könnte (Falsch)
+- Protokolle in der Anwendungsschicht können nicht direkt mit der Hardware kommunizieren, was ein fundamentaler Nachteil gegenüber einer tieferen Implementation ist (Falsch)
+- Die Anwendungsschicht-Protokolle wie HTTP benötigen keine End-to-End-Kommunikation und könnten daher effizienter in der Transportschicht implementiert werden (Falsch)
+- Die Platzierung in der Anwendungsschicht ermöglicht es, dass diese Protokolle direkt mit Benutzeranwendungen interagieren können, was die Entwicklung von Diensten wie dem World Wide Web unterstützt (Richtig)

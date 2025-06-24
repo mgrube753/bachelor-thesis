@@ -1,7 +1,7 @@
-Frage: Bei der Übertragung komplexer Datenobjekte zwischen zwei Rechnern müssen folgende Anforderungen umgesetzt werden: 
-1. Umwandlung der Byte-Reihenfolge (Little/Big Endian), 
-2. Konvertierung verschiedener Zeichensätze (ASCII, Unicode, EBCDIC, länderspezifische Sonderzeichen), 
-3. verlustfreie Datenkompression sowie anschließende Verschlüsselung.  
-Auf welcher Ebene des ISO/OSI-Modells müssen diese Funktionen zentral realisiert werden, damit sie unabhängig von Transport- und Netzdetails konsistent wirken?
+Frage: Welcher der folgenden Funktionskomplexe beschreibt am treffendsten diejenigen Aufgaben, die im ISO-OSI-Modell dem Presentation Layer (Schicht 6) zugeordnet sind, und nicht denen anderer Schichten?
 
-Antwort: ~Presentation Layer (Layer 6)
+Antwortmöglichkeiten:
+- Kodierung und Dekodierung von Zeichensätzen, Serialisierung komplexer Datenstrukturen sowie Anwendung von Kompression und Verschlüsselung vor der Übertragung (Richtig)
+- Aufbau, Verwaltung und Beendigung von Kommunikationssitzungen zwischen Anwendungen (Falsch)
+- Bestimmung optimaler Routen durch ein vermaschtes Netz und Vermittlung von Paketen zwischen Netzen (Falsch)
+- Mechanismen zur Kollisionsvermeidung auf dem Übertragungsmedium und Rahmenbildung (Falsch)

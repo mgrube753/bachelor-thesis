@@ -1,9 +1,9 @@
-Richtige Antwort: C) Präsentationsschicht (Presentation Layer)
-
-Frage: Welche Schicht des ISO/OSI-Modells ist für Aufgaben wie Datendarstellungskonvertierung (z. B. Little-/Big-Endian), Zeichensatzumwandlung, Kompression und Verschlüsselung zuständig?
+Frage: Welche der folgenden Aufgaben werden typischerweise im Presentation Layer (Schicht 6) des ISO/OSI-Modells ausgeführt?
 
 Antwortmöglichkeiten:
-A) Anwendungsschicht (Application Layer)  
-B) Sitzungsschicht (Session Layer)  
-C) Präsentationsschicht (Presentation Layer)  
-D) Transportschicht (Transport Layer)
+- Konvertierung der Datendarstellung zwischen Little- und Big-Endian-Formaten (Richtig)
+- Zeichensatzkonvertierung, z. B. zwischen ASCII und Unicode (Richtig)
+- Datenkompression und -dekompression (Richtig)
+- Routing der Datenpakete zwischen verschiedenen Netzwerken (Falsch)
+- Festlegung von MAC-Adressen auf dem Übertragungsmedium (Falsch)
+- Sitzungssteuerung und Synchronisation zwischen Anwendungsprozessen (Falsch)

@@ -1,8 +1,7 @@
-KORREKTE ANTWORT: B
+Frage: Welche Funktion übernimmt die Presentation Layer (Schicht 6) im ISO-OSI-Modell?
 
-Frage: Welche Hauptaufgabe übernimmt die Presentation Layer im ISO-OSI-Modell?
-
-A) Routing von Datenpaketen zwischen unterschiedlichen Netzwerken  
-B) Verwaltung der Syntax und Semantik der übertragenen Daten und Bereitstellung einer standardisierten Codierung  
-C) Aufbau und Abbau physischer Verbindungen  
-D) Gewährleistung einer zuverlässigen Ende-zu-Ende-Datenübertragung
+Antwortmöglichkeiten:
+- Sie stellt sicher, dass Syntax und Semantik der ausgetauschten Informationen vereinheitlicht werden, indem sie abstrakte Datenstrukturen definiert und eine Standardkodierung für die Übertragung verwendet (Richtig)
+- Sie kümmert sich um die Wegfindung von Paketen zwischen Routern im Netzwerk (Falsch)
+- Sie regelt den gleichzeitigen Zugriff mehrerer Rechner auf das Übertragungsmedium und erkennt Kollisionen (Falsch)
+- Sie wandelt elektrische Signale in Bits um und legt die Spannungpegel auf dem Kabel fest (Falsch)

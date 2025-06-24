@@ -1,2 +1,9 @@
-Richtige Antwort: Bandbreite, Latenz und Jitter  
-Frage: Welche drei wesentlichen Parameter der Quality of Service (QoS) im Transport Layer werden im Text genannt?
+Frage: Welche der folgenden Aufgaben werden laut Text im Transport Layer des ISO-OSI-Modells ausgeführt?
+
+Antwortmöglichkeiten:
+- Adressierung von Teilnehmern (Richtig)
+- Flusssteuerung basierend auf den Bedürfnissen des Teilnehmers (Richtig)
+- Bereitstellung von Quality of Service (Dienstqualität) (Richtig)
+- Vergabe von MAC-Adressen (Falsch)
+- Physikalische Signalumwandlung (Falsch)
+- Routing zwischen Netzwerken (Falsch)

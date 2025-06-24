@@ -1,9 +1,8 @@
-```
-Frage: In einem Hochgeschwindigkeitsnetzwerk treten sporadisch Datenverluste auf, obwohl die physische Übertragung (Physical Layer) einwandfrei funktioniert. Ein Systemanalytiker vermutet, dass das Problem auf Ebene des Data Link Layers liegt. Welche zwei der fünf Kernaufgaben des Data Link Layers stehen in diesem Szenario wahrscheinlich in einer direkten Wechselwirkung, die zu den beobachteten Datenverlusten führen könnte?
+Frage: In einem Netzwerk treten sporadische Paketverluste auf, und Geräte können zeitweise keine Verbindung herstellen. Ein Netzwerkanalysator zeigt, dass viele Datenpakete bei hohem Verkehrsaufkommen kollidieren. Welche Kernaufgaben der Data Link Layer (Schicht 2) sind direkt mit diesem Problem verbunden und müssten optimiert werden?
 
 Antwortmöglichkeiten:
-- ~Flußkontrolle und Fehlerkontrolle
-- Segmentierung und Identifikation
-- Medienzugriff und Segmentierung
-- Identifikation und Medienzugriff
-```
+- Medienzugriff, da ineffektive Zugriffsverfahren zu Kollisionen führen können, besonders der Aspekt "Beheben" von Kollisionen ist hier relevant (Richtig)
+- Flußkontrolle, weil bei zu schnellem Senden ohne angemessene Regulierung Überlastungen entstehen können (Richtig)
+- Segmentierung, da die falsche Größe der Dateneinheiten zu ineffizienter Netzwerknutzung führen kann und damit das Problem verschärft (Falsch)
+- Fehlerkontrolle, da sie lediglich bereits aufgetretene Übertragungsfehler erkennt, aber nicht deren Ursache behebt (Falsch)
+- Identifikation, da eine verbesserte Adressierung den gezielten Zugriff optimieren und Kollisionen verringern könnte (Richtig)

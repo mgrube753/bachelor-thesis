@@ -1,9 +1,9 @@
-**Frage: Welche der folgenden Aufgaben gehören zu den Kernaufgaben der Transport-Schicht (Layer 4) im ISO-OSI-Modell?**
+Frage: Welche der folgenden Aufgaben gehören zu den drei Kernaufgaben des Transport Layers (Schicht 4) im ISO-OSI-Modell?
 
-**Korrekte Antwort: B**
-
-A) Adressierung, Fragmentierung, Topologie-Management
-B) Adressierung, Flusssteuerung, Dienstqualität (QoS)
-C) Datenverschlüsselung, Adressierung, Flusskontrolle
-D) Flusssteuerung, Routing, Dienstqualität (QoS)
-E) Vermittlung, Adressierung, Fehlerkorrektur
+Antwortmöglichkeiten:
+- Adressierung von Teilnehmern in einem Netzwerk (Richtig)
+- Flusssteuerung zur Nutzung der Teilnehmer-Charakteristik (Richtig)
+- Sicherung der Dienstqualität (QoS) mit Garantien für Bandbreite, Latenz und Fehlerrate (Richtig)
+- Routing von Datenpaketen zwischen verschiedenen Netzwerken (Falsch)
+- Physikalische Übertragung von Signalen über ein Medium (Falsch)
+- Darstellung und Kodierung von Daten in ein standardisiertes Format (Falsch)

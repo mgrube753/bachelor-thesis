@@ -1,3 +1,8 @@
-Antwort: 1. Definition der Grundkonzepte/Begriffe der Anwendung  2. Festlegung der Protokollelemente (Anforderungen und erwartete Daten)  3. Bestimmung der Reaktionsweise der Anwendung (z. B. Änderung des internen Zustands)
+Frage: Welche drei Kernaufgaben des Application Layers (Layer 7) werden im Text beschrieben?
 
-Frage: Welche drei Kernaufgaben erfüllt der Application Layer (Layer 7) laut dem gegebenen Text?
+Antwortmöglichkeiten:
+- Definition der in der Anwendung auftretenden Begriffe (Richtig)
+- Spezifikation der Protokollelemente, mit denen Kommunikationspartner Anforderungen und Daten austauschen (Richtig)
+- Festlegung, wie die Anwendung auf Anforderungen reagiert, z.B. durch Zustandsänderungen (Richtig)
+- Routing von Datenpaketen zwischen Netzwerken (Falsch)
+- Verschlüsselung auf Transportebene (Falsch)

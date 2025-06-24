@@ -1,3 +1,9 @@
-Korrekte Antwort: Adressierung, Routing und Flusssteuerung
+Frage: Welche der folgenden Aufgaben werden im ISO-OSI-Network-Layer laut Text wahrgenommen?
 
-Frage: Welche drei Kernaufgaben übernimmt der Network Layer (Vermittlungsschicht) im ISO-OSI-Modell?
+Antwortmöglichkeiten:
+- Adressierung (Richtig)
+- Routing (Richtig)
+- Flusssteuerung (Richtig)
+- Medienzugriffskontrolle (Falsch)
+- Verschlüsselung auf Anwendungsebene (Falsch)
+- Session Management (Falsch)

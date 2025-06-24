@@ -1,9 +1,8 @@
-```
-Frage: Betrachtet man die Aussage, dass die Transportschicht eine "wahre End-zu-End-Schicht" ist, im Gegensatz zu den Schichten 1 bis 3, die als "verkettete" (chained) Schichten beschrieben werden. Welche der folgenden Schlussfolgerungen zeigt das tiefste Verständnis für die architektonischen Implikationen dieser Unterscheidung im Kontext moderner Netzwerkinfrastrukturen?
+Frage: Ein Systemarchitekt argumentiert: "Da moderne Netzwerktechnologien immer zuverlässiger werden, könnten wir die Transportschicht des OSI-Modells stark vereinfachen oder sogar entfernen, indem wir ihre Aufgaben auf die Netzwerk- und Sitzungsschicht verteilen." Analysieren Sie diese Aussage kritisch unter Berücksichtigung der fundamentalen Eigenschaften der Transportschicht.
 
 Antwortmöglichkeiten:
-- Eine Störung auf Schicht 2 (Sicherungsschicht) zwischen zwei Routern würde die End-zu-End-Kommunikation auf Transportebene unterbrechen, obwohl die Transportschicht konzeptionell direkt zwischen Quelle und Ziel kommuniziert
-- Netzwerkoptimierungen auf den Schichten 1-3 können durchgeführt werden, ohne dass Anwendungen auf höheren Schichten angepasst werden müssen, solange die End-zu-End-Semantik der Transportschicht erhalten bleibt
-- ~Die Unterscheidung ermöglicht eine klare Trennung zwischen Infrastruktur- und Anwendungsverantwortlichkeiten, wobei die Transportschicht als Grenzschicht fungiert, die Netzwerkkomplexität vor höheren Schichten verbirgt und gleichzeitig End-zu-End-Garantien bietet
-- Die End-zu-End-Natur der Transportschicht bedeutet, dass Router keine Protokollinformationen der Schichten 4-7 verarbeiten können, was Netzwerkoptimierungen grundsätzlich einschränkt
-```
+- Die Transportschicht ist die einzige Schicht mit echter End-to-End-Funktionalität zwischen Quelle und Ziel, während die Netzwerkschicht nur zwischen benachbarten Geräten kommuniziert. Diese fundamentale Eigenschaft kann nicht einfach auf andere Schichten verteilt werden. (Richtig)
+- Die Transportschicht ist überflüssig, da fehlerfreie Übertragungskanäle mittlerweile Standard sind und keine zusätzliche Fehlerkorrektur mehr benötigt wird. (Falsch)
+- Die Transportschicht isoliert höhere Schichten von technologischen Veränderungen der Hardware - diese Isolation würde verloren gehen, wenn ihre Funktionen auf andere Schichten verteilt würden. (Richtig)
+- Moderne Netzwerke benötigen keine Dienst-Differenzierung mehr, da alle Anwendungen mit dem gleichen Servicetyp effizient arbeiten können. (Falsch)
+- Die Funktion der Transportschicht, Daten in kleinere Einheiten aufzuteilen und am Ziel wieder korrekt zusammenzusetzen, könnte problemlos von der Sitzungsschicht übernommen werden, ohne die Architektur zu beeinträchtigen. (Falsch)
