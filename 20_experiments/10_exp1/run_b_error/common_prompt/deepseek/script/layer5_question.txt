@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aussagen beschreibt die Kernaufgabe "Asynchronität" im Session Layer (Schicht 5) des ISO-OSI-Modells?
+
+Antwortmöglichkeiten:
+- Vermeidung von Zwischenpunkten und Bestätigungen (Richtig)
+- Aufspaltung unabhängiger Datenpakete in Einzelteile (Falsch)
+- Sicherstellung der zuverlässigen Ende-zu-Ende-Datenübertragung (Falsch)
+- Spontanes Erstellen, Senden, Empfangen und Verwerfen von Datagrammen (Falsch)

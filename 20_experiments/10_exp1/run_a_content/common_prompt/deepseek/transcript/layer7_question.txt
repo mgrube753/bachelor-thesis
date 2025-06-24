@@ -1,0 +1,7 @@
+Frage: Welche drei Kernbegriffe definiert der Text als Grundkonzepte für den Application Layer (Layer 7) des ISO-OSI-Modells?
+
+Antwortmöglichkeiten:
+- Protokollelemente (Richtig)
+- Daten (Richtig)
+- Reaktion der Anwendung (Richtig)
+- Sicherheitsmechanismen (Falsch)

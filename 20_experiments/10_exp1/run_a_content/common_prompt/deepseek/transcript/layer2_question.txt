@@ -1,0 +1,7 @@
+Frage: Welche fünf Hauptaufgaben des Data Link Layer im ISO-OSI-Modell werden im Text genannt?
+
+Antwortmöglichkeiten:
+- Fehlerkontrolle, Flusskontrolle, Segmentierung, Identifikation, Medienzugriff (Richtig)
+- Fehlerkontrolle, Flusskontrolle, Routing, Adressierung, Verschlüsselung (Falsch)
+- Segmentierung, Fehlerkorrektur, Datenkompression, Synchronisation, Medienzugriff (Falsch)
+- Bitübertragung, Paketvermittlung, Flusskontrolle, Fehlererkennung, Adressierung (Falsch)

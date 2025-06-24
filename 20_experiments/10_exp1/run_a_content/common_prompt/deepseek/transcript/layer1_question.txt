@@ -1,0 +1,7 @@
+Frage: Welche drei Kernaufgaben gehören laut Text zum Physical Layer im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Codierung, Transport und Dekodierung (Richtig)
+- Codierung, Medienzugriffskontrolle und Fehlererkennung (Falsch)
+- Adressierung, Paketierung und Synchronisation (Falsch)
+- Modulation, Übertragung und Demodulation (Falsch)

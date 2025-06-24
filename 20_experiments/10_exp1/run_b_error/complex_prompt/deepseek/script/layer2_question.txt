@@ -1,0 +1,7 @@
+Frage: Welcher Aspekt der beschriebenen Kernaufgaben des Data Link Layers im gegebenen Text weicht grundlegend von den tatsächlichen Funktionen gemäß dem ISO-OSI-Modell ab und stellt ein kritisches Missverständnis dar?  
+
+Antwortmöglichkeiten:  
+- Die Fragmentierung größerer Einheiten in 1-bit-Segmente, da dies effiziente Datenübertragung unmöglich macht (Richtig)  
+- Die Medienverweigerung durch Deaktivieren des Physical Layers, da Layer 2 keine Kontrolle über Layer 1 hat (Falsch)  
+- Die Anonymisierung durch Verbergen von Adressen, was die Adressierung im LAN unmöglich macht (Falsch)  
+- Die Datenstau-Strategien wie Verwerfen von Daten, da dies zu unkontrolliertem Datenverlust führt (Falsch)

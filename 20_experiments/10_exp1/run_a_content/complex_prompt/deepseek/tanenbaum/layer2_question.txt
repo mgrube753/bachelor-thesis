@@ -1,0 +1,7 @@
+Frage: Welche grundlegende Herausforderung der Datenübertragung adressieren die drei im Text beschriebenen Hauptfunktionen der Data Link Layer (Fehlerkontrollrahmen, Flusskontrolle, MAC-Sublayer) gemeinsam, um eine "fehlerfrei erscheinende Leitung" für die Network Layer zu schaffen?  
+
+Antwortmöglichkeiten:  
+- Die Überbrückung des Zuverlässigkeitsgefälles zwischen unzuverlässiger physikalischer Übertragung und den Anforderungen höherer Protokollschichten (Richtig)  
+- Die Kompensation von Latenzunterschieden in globalen Netzwerken (Falsch)  
+- Die Verschlüsselung sensibler Daten gegen unbefugten Zugriff (Falsch)  
+- Die Optimierung der Routing-Pfade zwischen verschiedenen Netzwerksegmenten (Falsch)

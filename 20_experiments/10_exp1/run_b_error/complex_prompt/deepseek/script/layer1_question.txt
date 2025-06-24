@@ -1,0 +1,7 @@
+Frage: Welche der im beschriebenen "Physical Layer" genannten Kernaufgaben (Verschlüsselung, Speicherung, Kompression) sind nach dem standardisierten ISO/OSI-Referenzmodell tatsächlich primär in höheren Schichten angesiedelt? Nennen Sie die korrekten OSI-Schichten und begründen Sie kurz.
+
+Antwortmöglichkeiten:
+- Verschlüsselung (Präsentationsschicht), Speicherung (Anwendungsschicht) und Kompression (Präsentationsschicht), da die Präsentationsschicht für Datenrepräsentation und die Anwendungsschicht für datenzentrierte Dienste zuständig sind (Richtig)
+- Ausschließlich Verschlüsselung und Kompression (Transportschicht), da Ende-zu-Ende-Sicherheit gewährleistet werden muss (Falsch)
+- Alle drei Aufgaben (Physical Layer), da physische Werte direkt transformiert werden (Falsch)
+- Speicherung (Sitzungsschicht) und Kompression (Netzwerkschicht), weil Sitzungsdaten persistiert und Netzwerkdaten optimiert werden (Falsch)

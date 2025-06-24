@@ -1,0 +1,7 @@
+Frage: Warum ist die Präsentationsschicht im ISO-OSI-Modell notwendig, um die Kommunikation zwischen Computern mit unterschiedlichen internen Datenrepräsentationen zu ermöglichen?
+
+Antwortmöglichkeiten:
+- Sie definiert abstrakte Datenstrukturen und eine standardisierte Kodierung für den Austausch. (Richtig)
+- Sie regelt die physische Übertragung der Bits über das Netzwerkkabel. (Falsch)
+- Sie verwaltet die Adressierung der Geräte im Netzwerk. (Falsch)
+- Sie stellt Ende-zu-Ende-Verschlüsselung für die übertragenen Daten bereit. (Falsch)

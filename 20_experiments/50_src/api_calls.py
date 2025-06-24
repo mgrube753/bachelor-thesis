@@ -125,14 +125,15 @@ def llm_generation(llm_name, clients, prompt_text, max_tokens, temperature=None)
 
     result = None
     if llm_name == "google":
-        # result = gen_with_google(client, prompt_text, model_id, max_tokens, temperature)
-        pass
+        result = gen_with_google(client, prompt_text, model_id, max_tokens, temperature)
     elif llm_name == "anthropic":
-        result = gen_with_anthropic(
-            client, prompt_text, model_id, max_tokens, temperature
-        )
+        pass
+        # result = gen_with_anthropic(
+        #     client, prompt_text, model_id, max_tokens, temperature
+        # )
     elif llm_name == "openai":
-        result = gen_with_openai(client, prompt_text, model_id, max_tokens, temperature)
+        pass
+        # result = gen_with_openai(client, prompt_text, model_id, max_tokens, temperature)
     else:
         print(f"[ERROR] Unknown LLM name '{llm_name}'")
         return None

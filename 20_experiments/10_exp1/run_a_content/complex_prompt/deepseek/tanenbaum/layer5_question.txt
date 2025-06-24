@@ -1,0 +1,7 @@
+Frage: Bei welchem Problem im Netzwerkbetrieb wäre primär die Sitzungsschicht des ISO-OSI-Modells zu prüfen?  
+
+Antwortmöglichkeiten:  
+- Wenn bei einem Dateitransfer nach einem Absturz die gesamte Datei neu übertragen werden muss, obwohl Teile bereits erfolgreich gesendet wurden (Richtig)  
+- Wenn Pakete aufgrund von Überlastung im Netzwerk verloren gehen (Falsch)  
+- Wenn verschlüsselte Daten nicht entschlüsselt werden können (Falsch)  
+- Wenn ein Server Hostnamen nicht in IP-Adressen auflösen kann (Falsch)

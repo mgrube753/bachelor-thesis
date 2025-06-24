@@ -1,0 +1,7 @@
+Frage: Warum sind sowohl Ende-zu-Ende- als auch Knoten-zu-Knoten-Flusssteuerung im Network Layer notwendig, obwohl beide Mechanismen die Geschwindigkeitsanpassung regulieren?  
+
+Antwortmöglichkeiten:  
+- Weil Knoten-zu-Knoten lokale Geschwindigkeitskonflikte zwischen direkt verbundenen Geräten löst, während Ende-zu-Ende Pufferüberläufe durch akkumulierte Daten entlang des gesamten Übertragungspfads verhindert (Richtig)  
+- Weil Ende-zu-Ende für die Adressierung zuständig ist und Knoten-zu-Knoten ausschließlich Routing-Prozesse optimiert (Falsch)  
+- Weil Knoten-zu-Knoten die physische Übertragungsgeschwindigkeit steuert, während Ende-zu-Ende eine Funktion des Transport Layers ist (Falsch)  
+- Weil beide identische Funktionen redundant implementieren, um Ausfallsicherheit zu gewährleisten (Falsch)

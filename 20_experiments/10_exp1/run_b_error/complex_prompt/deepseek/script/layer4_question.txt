@@ -1,0 +1,8 @@
+Frage: Die Beschreibung der Transport Layer-Implementierung im Text widerspricht konventionellen Erwartungen an QoS und Zuverlässigkeit. Welches OSI-Konzept rechtfertigt diese bewusste Vernachlässigung von Garantien bei gleichzeitiger Fokussierung auf gerätespezifische Identifikation?
+
+Antwortmöglichkeiten:
+- Die Implementierung entspricht einem verbindungslosen Dienst ohne Übertragungsgarantien, wie sie etwa durch UDP realisiert wird (Richtig)
+- Sie stellt eine Fehlfunktion der Sicherungsschicht (Layer 2) dar, die Datenstau verursacht (Falsch)
+- Es handelt sich um eine spezielle Anpassung für Quality of Service (QoS) in Layer 7 (Falsch)
+- Dies beschreibt die Notwendigkeit, Transport Layer-Funktionen in Layer 3 zu integrieren, um Overhead zu reduzieren (Falsch)
+- Die Charakteristik deutet auf eine Netzwerkskalierbarkeitstechnik hin, die Teilnehmerabhängigkeiten bewusst ignoriert (Falsch)

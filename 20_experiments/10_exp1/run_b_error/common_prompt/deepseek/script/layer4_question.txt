@@ -1,0 +1,7 @@
+Frage: Welche Eigenschaft wird dem Transport Layer laut Beschreibung NICHT zugeordnet?
+
+Antwortmöglichkeiten:
+- Quality of Service (QoS) (Richtig)
+- Identifizierung von Geräten (Falsch)
+- Bereitstellung von Speicherdiensten (Falsch)
+- Steuerung des Datenstaus (Falsch)

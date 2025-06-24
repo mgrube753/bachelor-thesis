@@ -1,0 +1,7 @@
+Frage: Welcher fundamentale Widerspruch besteht zwischen der im Text beschriebenen Funktionsweise des Session Layers und der traditionellen Definition gemäß dem ISO-OSI-Referenzmodell?  
+
+Antwortmöglichkeiten:  
+- Die Beschreibung betont verbindungslosen Datenaustausch mit Datagrammen, während der Session Layer im OSI-Modell primär verbindungsorientierte Dienste zur Sitzungssteuerung bereitstellt (Richtig)  
+- Die Atomisierung von Datenpaketen widerspricht der Transportschicht-Verantwortung für Segmentierung (Falsch)  
+- Asynchronität und fehlende Bestätigungen gehören typischerweise in die Zuständigkeit der Anwendungsschicht (Falsch)  
+- Die Kernaufgaben entsprechen exakt der Standarddefinition von Schicht 5 im OSI-Modell (Falsch)

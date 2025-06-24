@@ -1,0 +1,7 @@
+Frage: Welche Parameter garantiert die Dienstqualität (QoS) der Transportebene laut Beschreibung?
+
+Antwortmöglichkeiten:
+- Bandbreite, Latenz, Jitter und Fehlerrate (Richtig)
+- Paketweiterleitung, Verschlüsselung und Zugriffskontrolle (Falsch)
+- MAC-Adressen, IP-Adressen und Portnummern (Falsch)
+- Signalstärke, Übertragungsmedium und Bitrate (Falsch)

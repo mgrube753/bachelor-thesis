@@ -1,0 +1,7 @@
+Frage: Welche Aufgaben gehören zu den Hauptfunktionen des Presentation Layer im ISO-OSI-Modell laut des beschriebenen Textes?
+
+Antwortmöglichkeiten:
+- Konvertierung von Zeichendarstellungen (z.B. ASCII, Unicode, EBCDIC) (Richtig)
+- Durchführung von Datenkompression und -verschlüsselung (Richtig)
+- Zuverlässige Ende-zu-Ende-Datenübertragung mittels TCP (Falsch)
+- Bereitstellung von Anwendungsdiensten wie HTTP oder FTP (Falsch)

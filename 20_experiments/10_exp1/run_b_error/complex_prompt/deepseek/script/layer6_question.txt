@@ -1,0 +1,7 @@
+Frage: Ein Entwickler behauptet, dass die Transportschicht (Schicht 4) und Netzwerkschicht (Schicht 3) des ISO-OSI-Modells beide für die Ende-zu-Ende-Datenzuständigkeit verantwortlich sind. Welche spezifischen Funktionen unterscheiden diese Schichten grundlegend in ihrer Verantwortung für die Kommunikation zwischen Endgeräten?  
+
+Antwortmöglichkeiten:  
+- Die Transportschicht gewährleistet zuverlässige Datenübertragung durch Flusskontrolle und Segmentreassemblierung, während die Netzwerkschicht logische Adressierung und Pfadauswahl über Router hinweg verantwortet (Richtig)  
+- Beide Schichten implementieren Fehlererkennung durch Checksummen, aber nur die Transportschicht verwendet physikalische Adressierung (Falsch)  
+- Die Netzwerkschicht stellt sicher, dass Segmente in der richtigen Reihenfolge ankommen, während die Transportschicht MAC-Adressen verwaltet (Falsch)  
+- Die Transportschicht definiert elektrische Signale für die Übertragung, während die Netzwerkschicht Portnummern für Anwendungen vergibt (Falsch)

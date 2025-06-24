@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aussagen beschreibt die Kernaufgabe "Datenbeschleunigung" der Schicht 3 im ISO-OSI-Modell laut Text?
+
+Antwortmöglichkeiten:
+- Strategien, wenn zu langsam gesendet wird (Richtig)
+- Netzwerk-interne Positionen (Falsch)
+- Zufällige Auswahl von Endknoten zur Kommunikation direkt verbundener Knoten (Falsch)
+- Von einem Knoten zu allen Anderen (Falsch)

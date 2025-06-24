@@ -1,0 +1,7 @@
+Frage: Welche drei Kernaufgaben erfüllt die Netzwerkschicht (Layer 3) im ISO-OSI-Modell gemäß der Beschreibung?
+
+Antwortmöglichkeiten:
+- Adressierung, Routing und Flußsteuerung (Richtig)
+- Adressierung, Verschlüsselung und Fehlerkontrolle (Falsch)
+- Verbindungsaufbau, Routing und Paketvermittlung (Falsch)
+- Flußsteuerung, Segmentierung und logische Adressierung (Falsch)

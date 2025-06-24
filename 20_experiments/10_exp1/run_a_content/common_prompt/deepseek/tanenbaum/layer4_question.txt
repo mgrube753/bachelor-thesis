@@ -1,0 +1,6 @@
+Frage: Welche Schicht im ISO-OSI-Modell wird als echte Ende-zu-Ende-Schicht bezeichnet und kommuniziert direkt zwischen den Programmen auf Quell- und Zielrechner?
+
+Antwortmöglichkeiten:
+- Die Transportschicht (Schicht 4) (Richtig)
+- Die Netzwerkschicht (Schicht 3) (Falsch)
+- Die Sicherungsschicht (Schicht 2) (Falsch)

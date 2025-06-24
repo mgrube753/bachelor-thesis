@@ -1,0 +1,7 @@
+Frage: Welche primäre Herausforderung im Netzwerkverkehr adressiert die Präsentationsschicht des ISO-OSI-Modells durch ihre Fokussierung auf abstrakte Datenstrukturen und Standardkodierung, und warum ist dies für heterogene Systeme unabdingbar?
+
+Antwortmöglichkeiten:
+- Sicherstellung der physikalischen Signalintegrität über verschiedene Übertragungsmedien hinweg (Falsch)
+- Lösung der Inkompatibilität unterschiedlicher interner Datenrepräsentationen zwischen Systemen (Richtig)
+- Garantie der Ende-zu-Ende-Datenübertragung unabhängig von Netzwerkauslastungen (Falsch)
+- Optimierung der Datenkomprimierung zur Reduzierung der Übertragungsbandbreite (Falsch)

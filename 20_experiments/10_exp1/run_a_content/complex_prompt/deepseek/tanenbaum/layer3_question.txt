@@ -1,0 +1,8 @@
+Frage: Welche zwei Hauptverantwortungsbereiche der Netzwerkschicht werden im Text genannt, die besonders bei der Verbindung heterogener Netzwerke kritisch sind?  
+
+Antwortmöglichkeiten:  
+- Bewältigung unterschiedlicher Adressierungsschemata zwischen Netzwerken und Anpassung an Protokollunterschiede (Richtig)  
+- Durchführung von Fehlerkorrektur auf Bit-Ebene und Verwaltung physikalischer Verbindungen (Falsch)  
+- Steuerung der Ende-zu-Ende-Flusskontrolle und Garantie der Anwendungsdatenintegrität (Falsch)  
+- Umgehung von Paketgrößenbeschränkungen und Lösung von Inkompatibilitäten bei der Paketübergabe (Richtig)  
+- Verschlüsselung von Nutzdaten und Authentifizierung von Endgeräten (Falsch)

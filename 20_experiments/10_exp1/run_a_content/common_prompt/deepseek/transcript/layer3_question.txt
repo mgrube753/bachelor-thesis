@@ -1,0 +1,7 @@
+Frage: Warum benötigt der Network Layer im ISO-OSI-Modell sowohl Knoten-zu-Knoten- als auch Ende-zu-Ende-Flusssteuerung?  
+
+Antwortmöglichkeiten:  
+- Weil Knoten-zu-Knoten-Flusssteuerung die Geschwindigkeit zwischen direkt verbundenen Geräten anpasst, während Ende-zu-Ende-Flusssteuerung Überlastungen über den gesamten Pfad verhindert (Richtig)  
+- Weil beide ausschließlich für die globale Steuerung der Netzwerkkapazität verantwortlich sind (Falsch)  
+- Weil Knoten-zu-Knoten-Flusssteuerung TCP-Übertragungen optimiert und Ende-zu-Ende für UDP zuständig ist (Falsch)  
+- Weil nur die Ende-zu-Ende-Flusssteuerung Pufferüberläufe bei langsamen Zwischenknoten verhindert, während Knoten-zu-Knoten redundant ist (Falsch)

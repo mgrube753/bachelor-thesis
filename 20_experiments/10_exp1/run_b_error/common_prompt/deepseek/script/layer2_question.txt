@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Aussagen beschreibt eine echte Kernaufgabe des Data Link Layers im ISO-OSI-Modell, basierend auf korrektem Fachwissen?
+
+Antwortmöglichkeiten:
+- Bereitstellung einer fehlerfreien Übertragung über den Physical Layer mittels Fehlererkennung und -behebung (Richtig)
+- Fragmentierung von Daten in 1-bit Segmente (Falsch)
+- Anonymisierung durch Verbergen von Sender- oder Empfängeradressen (Falsch)
+- Medienverweigerung durch Deaktivieren des Physical Layer (Falsch)
+- Verursachen oder Verschleiern von Übertragungsfehlern (Fehlererzeugung) (Falsch)

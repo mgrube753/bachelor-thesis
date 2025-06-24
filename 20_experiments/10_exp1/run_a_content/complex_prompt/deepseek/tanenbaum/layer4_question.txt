@@ -1,0 +1,7 @@
+Frage: Warum wird der Transport Layer im ISO-OSI-Modell als "wahre End-to-End-Schicht" charakterisiert, und welche fundamentale Unterscheidung besteht hierbei zu den Schichten 1 bis 3?
+
+Antwortmöglichkeiten:
+- Weil er Daten zwischen direkt benachbarten Knoten wie Routern überträgt und die Hardware-Abstraktion für höhere Schichten verwaltet (Falsch)
+- Weil er die vollständige Kommunikation von der Quelle zum Ziel ohne Beteiligung von Zwischenknoten ermöglicht und im Gegensatz zu den unteren Schichten nicht zwischen benachbarten Maschinen agiert (Richtig)
+- Weil er ausschließlich für die Aufteilung der Daten in kleinere Einheiten verantwortlich ist und dadurch eine effiziente Ende-zu-Ende-Übertragung garantiert (Falsch)
+- Weil er Broadcast-Dienste für mehrere Ziele bereitstellt und im Unterschied zu Schicht 1-3 keine physischen Verbindungen benötigt (Falsch)

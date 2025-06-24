@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Designaspekte der physischen Schicht im ISO-OSI-Modell fällt explizit in den Bereich der zeitlichen Schnittstelle, basierend auf der Beschreibung der typischen Designfragen?
+
+Antwortmöglichkeiten:
+- Die elektrischen Signale zur Darstellung von binären 1- und 0-Bits (Falsch)
+- Die Dauer eines Bits in Nanosekunden (Richtig)
+- Die Anzahl der Pins im Netzwerkstecker und deren Funktion (Falsch)
+- Die Fähigkeit zur gleichzeitigen Übertragung in beide Richtungen (Falsch)
+- Der Auf- und Abbau der physischen Verbindung (Falsch)

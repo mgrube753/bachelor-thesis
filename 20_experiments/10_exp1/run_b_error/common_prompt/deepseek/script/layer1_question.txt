@@ -1,0 +1,9 @@
+Frage: Welche der folgenden Aufgaben wird im gegebenen Text als Kernaufgabe des Physical Layer (Schicht 1) im ISO-OSI-Modell beschrieben?
+
+Antwortmöglichkeiten:
+- Abbildung physikalischer Werte auf logische Größen (Richtig)
+- Aufbewahrung logischer Größen an einem festen Ort (Richtig)
+- Umwandlung logischer Größen in physikalische Werte (Richtig)
+- Übertragung von Bitströmen über physikalische Medien (Falsch)
+- Definition elektrischer Signalpegel und Stecker (Falsch)
+- Fehlererkennung in Datenrahmen (Falsch)

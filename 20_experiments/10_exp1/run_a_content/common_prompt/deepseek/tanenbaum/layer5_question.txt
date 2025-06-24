@@ -1,0 +1,7 @@
+Frage: Welche Dienste bietet die Session Layer laut Text im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Dialogsteuerung, Token-Management und Synchronisation (Richtig)
+- Datenverschlüsselung, Komprimierung und Routing (Falsch)
+- Fehlererkennung, Flusskontrolle und physikalische Übertragung (Falsch)
+- Adressierung, Paketierung und Fehlerkorrektur (Falsch)

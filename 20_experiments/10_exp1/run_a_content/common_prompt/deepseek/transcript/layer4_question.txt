@@ -1,0 +1,7 @@
+Frage: Welcher QoS-Parameter ist laut Text besonders entscheidend für die Unterscheidung zwischen einem Dateitransfer und einem Echtzeit-Videostrom?
+
+Antwortmöglichkeiten:
+- Fehlerrate (Richtig)
+- Latenz (Falsch)
+- Jitter (Falsch)
+- Bandbreite (Falsch)

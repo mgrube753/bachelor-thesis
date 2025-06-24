@@ -1,0 +1,7 @@
+Frage: Warum betont der Text, dass eine rein anwendungsfreie Systematisierung der Application-Layer-Funktionen im ISO-OSI-Modell problematisch ist?  
+
+Antwortmöglichkeiten:  
+- Weil die Kernaufgaben des Layers (Protokollelemente, Daten, Anwendungsreaktion) zwingend kontextabhängig sind und sich je nach spezifischer Anwendung fundamental unterscheiden (Richtig)  
+- Weil der Application Layer technisch veraltet ist und durch moderne Cloud-Architekturen ersetzt wurde (Falsch)  
+- Weil die ISO-Norm hier bewusst Interpretationsspielräume lässt, um Flexibilität für Protokollentwickler zu gewährleisten (Falsch)  
+- Weil Layer 7 ausschließlich hardwarenahe Schnittstellen definiert und keine softwarebasierten Interaktionen (Falsch)

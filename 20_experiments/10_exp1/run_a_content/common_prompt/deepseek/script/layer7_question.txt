@@ -1,0 +1,7 @@
+Frage: Welche drei Kernaufgaben der Anwendungsschicht (Layer 7) im ISO-OSI-Modell werden im Text beschrieben?
+
+Antwortmöglichkeiten:
+- Die Festlegung der auftretenden Begriffe (Grundkonzepte), die Definition der Anforderungen und erwarteten Daten (Protokollelemente) sowie die Beschreibung der Reaktion auf diese Anforderungen (Verhalten) (Richtig)
+- Die Kodierung der Daten, die Sicherung der Übertragung und das Routing der Pakete (Falsch)
+- Die Verwaltung der Netzwerkverbindungen, die Fehlererkennung und die Adressierung der Endgeräte (Falsch)
+- Die Darstellung der Daten für den Benutzer, die Steuerung der physischen Verbindung und die Synchronisation der Kommunikation (Falsch)

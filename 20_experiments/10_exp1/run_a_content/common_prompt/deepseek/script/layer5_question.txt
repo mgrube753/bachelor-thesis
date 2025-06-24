@@ -1,0 +1,9 @@
+Frage: Welche der folgenden gehören zu den Kernaufgaben des Session Layers im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Aufbau, Verwaltung und Beendigung von Sitzungen (Richtig)
+- Setzen von Synchronisationspunkten (Zwischenpunkten) (Richtig)
+- Bündelung (Gruppierung) zusammengehöriger Transaktionen (Richtig)
+- Verschlüsselung der übertragenen Daten (Falsch)
+- Fehlererkennung und -korrektur in Datenpaketen (Falsch)
+- Physikalische Übertragung von Bits über das Medium (Falsch)

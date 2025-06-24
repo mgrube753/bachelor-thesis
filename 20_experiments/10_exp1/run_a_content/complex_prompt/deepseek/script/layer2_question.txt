@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Optionen stellt laut dem Text keine Strategie der Flußkontrolle im Data Link Layer dar?
+
+Antwortmöglichkeiten:
+- Zwischenpuffern (Falsch)
+- Herunterregeln (Falsch)
+- Warten lassen (Falsch)
+- Reservieren (Richtig)

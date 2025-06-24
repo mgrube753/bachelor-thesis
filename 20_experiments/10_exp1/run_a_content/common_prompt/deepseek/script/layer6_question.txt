@@ -1,0 +1,10 @@
+Frage: Welche Aufgaben gehören zu den Kernfunktionen des Presentation Layers (Schicht 6) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Konvertieren der Datendarstellung (Endianness) (Richtig)
+- Konvertierung der Zeichendarstellung (Richtig)
+- Komprimieren und Dekomprimieren (Richtig)
+- Verschlüsseln und Entschlüsseln (Richtig)
+- Aufbau und Abbau von Sitzungen (Falsch)
+- Adressierung und logisches Routing (Falsch)
+- Zuverlässige Ende-zu-Ende-Übertragung und Fehlerkontrolle (Falsch)

@@ -1,0 +1,7 @@
+Frage: Eine Netzwerkanwendung überträgt große wissenschaftliche Datensätze, die bei Verbindungsabbruch ab einem definierten Wiederaufsetzungspunkt fortgesetzt werden müssen. Welche OSI-Layer-5-Funktion ermöglicht dies direkt und warum?
+
+Antwortmöglichkeiten:
+- Sitzungsverwaltung, da sie das erneute Aufbauen der Verbindung steuert (Falsch)
+- Synchronisation, durch Setzen von Kontrollpunkten für Wiederaufnahme (Richtig)
+- Bündelung, weil sie Transaktionsgruppen als Einheit behandelt (Falsch)
+- Transport-Flow-Control, zur Vermeidung von Datenverlust (Falsch)

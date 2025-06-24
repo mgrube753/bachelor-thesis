@@ -1,0 +1,7 @@
+Frage: Welche inhärente Eigenschaft des Application Layers (Layer 7) im ISO-OSI-Modell erschwert eine universelle Systematisierung seiner Funktionen am stärksten, und wie manifestiert sich dies in seinen Kernaufgaben gemäß der Beschreibung?
+
+Antwortmöglichkeiten:
+- Aufgrund der Standardisierung auf Protokollebene, was zu starren Verhaltensmustern führt (Falsch)
+- Wegen der notwendigen Hardwareabhängigkeit, die konsistente Implementierungen verhindert (Falsch)
+- Durch die starke Anwendungsabhängigkeit, die zu variablen Grundkonzepten, Protokollelementen und Verhaltensweisen führt (Richtig)
+- Wegen der fehlenden Interaktion mit unteren Schichten, die Isolation und mangelnde Integration verursacht (Falsch)

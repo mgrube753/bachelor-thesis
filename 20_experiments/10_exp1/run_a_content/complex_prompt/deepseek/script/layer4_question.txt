@@ -1,0 +1,7 @@
+Frage: Welche der drei Kernaufgaben der Transportschicht stellt explizit sicher, dass Leistungsgarantien individuell auf die Anforderungen jedes Endteilnehmers angepasst werden?  
+
+Antwortmöglichkeiten:  
+- Adressierung (Falsch)  
+- Flußsteuerung (Falsch)  
+- Dienstqualität (Richtig)  
+- Fehlererkennung (Falsch)

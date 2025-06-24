@@ -1,0 +1,7 @@
+Frage: Welche der im Text beschriebenen Kernaufgaben der Netzwerkschicht entspricht NICHT den etablierten Funktionen von Layer 3 im ISO-OSI-Modell, und warum stellt sie eine konzeptionelle Abweichung dar?
+
+Antwortmöglichkeiten:
+- Lokalisierung, da die Positionsbestimmung von Geräten im selben Netzwerk mit derselben Layer-2-Technologie eine reine Layer-2-Funktionalität (MAC-Adressierung) ist und nicht zum Routing zwischen Netzwerken gehört (Richtig)
+- Zufallspfad, da die zufällige Auswahl von Endknoten für die Kommunikation direkt verbundener Knoten dem Prinzip des deterministischen Routings widerspricht (Falsch)
+- Datenbeschleunigung, da Strategien bei langsamer Übertragung wie Punkt-zu-Punkt oder Broadcast ausschließlich der Fehlerbehebung auf Layer 1 dienen (Falsch)
+- Alle drei Aufgaben sind korrekte Layer-3-Funktionen gemäß ISO-OSI, da sie die logische Adressierung und Pfadsteuerung betreffen (Falsch)

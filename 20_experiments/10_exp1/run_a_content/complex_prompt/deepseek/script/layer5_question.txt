@@ -1,0 +1,7 @@
+Frage: Angenommen, eine Anwendung nutzt die Synchronisationsfunktion der Session-Schicht (Schicht 5) durch Setzen von Zwischenpunkten. Welcher spezifische Zweck wird damit primär erreicht, der nicht durch Mechanismen anderer OSI-Schichten abgedeckt wird?  
+
+Antwortmöglichkeiten:  
+- Gewährleistung der Ende-zu-Ende-Datenintegrität durch Fehlererkennung (Falsch)  
+- Ermöglichen des Wiederanfangens langer Datenübertragungen nach Unterbrechungen an definierten Punkten (Richtig)  
+- Steuerung der Datenflusskontrolle zwischen Endgeräten (Falsch)  
+- Verschlüsselung der Nutzdaten während der Übertragung (Falsch)

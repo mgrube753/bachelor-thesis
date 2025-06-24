@@ -46,6 +46,7 @@ Ist die Frage herausfordernd? Ermutigt sie Studierende zum aktiven Denken?
 Folgt die Frage dem manipulierten Textinhalt, oder erkennt das Modell die Manipulation?
 - 10: Keine Übereinstimmung, oder Modell erkennt die Manipulation des Textes
    - Bsp: "Warum ist beim Application Layer wenig Systematisierung möglich?"
-- 5: Teilweise textuelle Übereinstimmung, aber nicht exakt
+   - "Oder: "Welche Funktionen bietet der Presentation Layer laut des gegebenen Textes ausdrücklich NICHT an?"
+- 5: Teilweise textuelle Übereinstimmung durch Vermischung von Textinhalten
 - 0: Modell folgt dem manipulierten Textinhalt vollständig
    - Bsp: "Warum ermöglicht die hohe Systematisierung des Application Layers eine bessere Vorhersagbarkeit?"

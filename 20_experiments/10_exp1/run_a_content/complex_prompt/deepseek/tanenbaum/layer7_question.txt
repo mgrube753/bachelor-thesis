@@ -1,0 +1,7 @@
+Frage: Welches der folgenden Merkmale kennzeichnet primär Protokolle der Anwendungsschicht gemäß der Beschreibung, wie sie am Beispiel von HTTP illustriert wird?  
+
+Antwortmöglichkeiten:  
+- Direkte Interaktion mit Endnutzern und Bereitstellung dienstspezifischer Funktionen wie Webseitenabruf (Richtig)  
+- Steuerung der physikalischen Datenübertragung zwischen Netzwerkknoten (Falsch)  
+- Festlegung der Datenrepräsentation und Syntax für Anwendungen (Falsch)  
+- Verwaltung von logischen Adressen und Routing-Pfaden im Netzwerk (Falsch)

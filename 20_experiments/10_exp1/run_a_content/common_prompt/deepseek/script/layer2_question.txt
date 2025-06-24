@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Aufgaben gehört zu den Kernfunktionen der Data Link Layer im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Fehlerkontrolle (Erkennen, Beheben oder Signalisieren von Übertragungsfehlern) (Richtig)
+- Segmentierung (Zusammenfassen einzelner Bits zu größeren Einheiten) (Richtig)
+- Medienzugriff (Aktivieren des Physical Layer mit Aspekten wie Senden und Warten) (Richtig)
+- Verschlüsselung der übertragenen Daten (Falsch)
+- Routing von Paketen über verschiedene Netzwerke hinweg (Falsch)

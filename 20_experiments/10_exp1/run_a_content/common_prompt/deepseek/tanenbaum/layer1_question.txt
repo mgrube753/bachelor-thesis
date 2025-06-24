@@ -1,0 +1,7 @@
+Frage: Welche Aufgaben gehören zur Bitübertragungsschicht (Physical Layer) im ISO-OSI-Modell laut des gegebenen Textes?
+
+Antwortmöglichkeiten:
+- Festlegung der elektrischen Signale für 1 und 0, Bestimmung der Bitdauer, Regelung der gleichzeitigen Übertragungsrichtung, Definition der mechanischen und elektrischen Schnittstellen (Richtig)
+- Fehlererkennung und -korrektur in Datenrahmen, Zugriffssteuerung auf das Übertragungsmedium (Falsch)
+- Adressierung von Geräten im Netzwerk, Routing von Datenpaketen über verschiedene Wege (Falsch)
+- Aufbau, Verwaltung und Abbau von Sitzungen zwischen Anwendungen, Synchronisierung der Kommunikation (Falsch)

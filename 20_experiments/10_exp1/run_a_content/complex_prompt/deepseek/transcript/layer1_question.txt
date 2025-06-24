@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aussagen zur Transportfunktion des Physical Layer im ISO-OSI-Modell ist korrekt, basierend auf der Beschreibung der drei Kernaufgaben?
+
+Antwortmöglichkeiten:
+- Die Transportfunktion umfasst ausschließlich die Übertragung physikalischer Größen durch elektromagnetische Wechselwirkung, unabhängig davon, ob diese mediengebunden oder medienfrei erfolgt (Richtig)
+- Die Transportfunktion beinhaltet primär die Übertragung logischer Werte zwischen Netzwerkgeräten über verschiedene Medien (Falsch)
+- Lichtsignale werden ausschließlich als medienfreier Transport klassifiziert, da sie grundsätzlich durch den freien Raum übertragen werden (Falsch)
+- Der Transport ist auf die Anwendung elektromagnetischer Wechselwirkung beschränkt und schließt andere physikalische Übertragungsprinzipien aus (Falsch)

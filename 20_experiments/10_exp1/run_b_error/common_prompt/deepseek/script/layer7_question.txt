@@ -1,0 +1,3 @@
+Frage: Welchen Hauptvorteil bietet die Abstraktion spezifischer Anwendungselemente zu generischen Funktionen in der Anwendungsschicht (Layer 7) des ISO-OSI-Modells?
+
+Antwort: Sie ermöglicht eine hohe Systematisierung und Wiederverwendbarkeit der Funktionen, da sie universell für jede Anwendung anwendbar sind. (Richtig)

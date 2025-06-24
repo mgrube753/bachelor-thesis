@@ -1,0 +1,7 @@
+Frage: Bei welcher der folgenden Anwendungen wäre eine niedrige Fehlerrate prioritär gegenüber niedriger Latenz zu behandeln, basierend auf den QoS-Anforderungen im Transport Layer?
+
+Antwortmöglichkeiten:
+- Software-Update für ein Betriebssystem (Richtig)
+- Echtzeit-Videokonferenz (Falsch)
+- Online-Gaming mit Live-Interaktion (Falsch)
+- VoIP-Telefonie (Falsch)

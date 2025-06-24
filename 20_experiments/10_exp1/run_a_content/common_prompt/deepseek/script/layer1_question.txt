@@ -1,0 +1,8 @@
+Frage: Welche drei Kernaufgaben gehören zur Bitübertragungsschicht (Physical Layer 1) des ISO-OSI-Modells laut der Beschreibung?
+
+Antwortmöglichkeiten:
+- Codierung, Transport, Decodierung (Richtig)
+- Verschlüsselung, Adressierung, Fehlererkennung (Falsch)
+- Segmentierung, Flusskontrolle, Fehlerkorrektur (Falsch)
+- Codierung, Routing, Synchronisation (Falsch)
+- Transport, Multiplexing, Paketvermittlung (Falsch)

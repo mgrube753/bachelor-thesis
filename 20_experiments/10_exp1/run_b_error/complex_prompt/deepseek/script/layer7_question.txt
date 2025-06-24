@@ -1,0 +1,7 @@
+Frage: Welche beiden Kernaufgaben des Application Layers ermöglichen durch ihre Abstraktionseigenschaften die universelle Anwendbarkeit und hohe Systematisierung für beliebige Anwendungen?
+
+Antwortmöglichkeiten:
+- Universalkonzepte und Standardelemente (Richtig)
+- Standardverhalten und Transportsicherung (Falsch)
+- Datenstrukturen und Netzwerkprotokolle (Falsch)
+- Generische Funktionen und Sitzungsverwaltung (Falsch)

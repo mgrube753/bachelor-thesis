@@ -1,0 +1,7 @@
+Frage: Welche Schicht des ISO-OSI-Modells ist primär für die Transformation von Anwendungsdaten verantwortlich, wenn ein System mit Big-Endian-Architektur Daten an ein Little-Endian-System sendet, zusätzlich zur Handhabung von Unicode-zu-ASCII-Konvertierung und AES-256-Verschlüsselung während der Übertragung?
+
+Antwortmöglichkeiten:
+- Transport Layer (Falsch)
+- Presentation Layer (Richtig)
+- Application Layer (Falsch)
+- Session Layer (Falsch)

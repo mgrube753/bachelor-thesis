@@ -1,0 +1,7 @@
+Frage: Welche Funktionen bietet der Presentation Layer laut des gegebenen Textes ausdrücklich *nicht* an?
+
+Antwortmöglichkeiten:
+- Verschlüsseln von Daten (Richtig)
+- Komprimieren von Daten (Falsch)
+- Konvertieren zwischen Zeichensätzen wie ASCII und Unicode (Falsch)
+- Vereinheitlichung der Datendarstellung (z.B. big endian) (Falsch)

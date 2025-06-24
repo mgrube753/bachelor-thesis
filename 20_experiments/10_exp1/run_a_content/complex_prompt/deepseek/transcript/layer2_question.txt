@@ -1,0 +1,7 @@
+Frage: Welcher Mechanismus zur Flusskontrolle im Data Link Layer wirkt implizit durch gezieltes Timing von Bestätigungssignalen, ohne explizite Sendeanforderungen zu stellen?
+
+Antwortmöglichkeiten:
+- Verzögerung von Bestätigungen zur Drosselung der Sendegeschwindigkeit (Richtig)
+- Direkte Anweisung an den Sender, weniger Daten zu übertragen (Falsch)
+- Sofortiges Verwerfen überzähliger Datenpakete (Falsch)
+- Erhöhung der Puffergröße für eingehende Daten (Falsch)

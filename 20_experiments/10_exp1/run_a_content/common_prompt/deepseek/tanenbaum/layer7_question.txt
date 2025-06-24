@@ -1,0 +1,7 @@
+Frage: Welche Funktion erfüllt die Anwendungsschicht im ISO-OSI-Modell laut des Textes?
+
+Antwortmöglichkeiten:
+- Sie stellt Protokolle bereit, die direkt von Anwendungen und Nutzern benötigt werden, wie HTTP oder E-Mail-Protokolle. (Richtig)
+- Sie ist für die physische Übertragung von Daten über das Netzwerkmedium verantwortlich. (Falsch)
+- Sie regelt das Routing von Datenpaketen zwischen verschiedenen Netzwerken. (Falsch)
+- Sie gewährleistet eine zuverlässige Ende-zu-Ende-Datenübertragung zwischen Hosts. (Falsch)

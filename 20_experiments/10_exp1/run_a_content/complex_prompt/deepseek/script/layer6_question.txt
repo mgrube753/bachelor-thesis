@@ -1,0 +1,7 @@
+Frage: Welche konzeptionelle Funktion vereint die vier Kernaufgaben des Presentation Layers (Endianness-Konvertierung, Zeichenkodierung, Kompression und Verschlüsselung) im ISO-OSI-Modell auf Abstraktionsebene?
+
+Antwortmöglichkeiten:
+- Sicherstellung der physischen Übertragungseffizienz durch Reduzierung der Bitmenge (Falsch)
+- Transformation der Anwendungsdaten in eine netzwerkfähige Repräsentationsebene (Richtig)
+- Direkte Steuerung der Dialogkontrolle zwischen Endsystemen (Falsch)
+- Validierung der Datensyntax für anwendungsspezifische Protokolle (Falsch)

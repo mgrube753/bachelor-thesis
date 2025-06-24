@@ -1,0 +1,8 @@
+Frage: Bei der Flußsteuerung in Schicht 3 des ISO-OSI-Modells unterscheidet man zwischen End-to-End- und Node-to-Node-Ansätzen. Welche der folgenden Aussagen beschreibt korrekt den primären Anwendungsbereich der Flußsteuerung auf dieser Schicht gemäß der gegebenen Beschreibung?
+
+Antwortmöglichkeiten:
+- Regulierung der Übertragungsrate zwischen direkt verbundenen Netzwerkinterfaces auf physikalischer Ebene (Falsch)
+- Steuerung der Datenmenge zwischen Endgeräten über mehrere Netzwerkhops hinweg zur Vermeidung von Überlastung (Richtig)
+- Direkte Kontrolle der Frame-Übertragung zwischen Switches innerhalb desselben lokalen Netzwerks (Falsch)
+- Garantie der Paketzustellung durch Retransmission bei Verlusten auf Transportebene (Falsch)
+- Synchronisation der Signalübertragung zwischen benachbarten Routern auf Verbindungsebene (Falsch)

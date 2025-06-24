@@ -1,0 +1,8 @@
+Frage: In welchem Netzwerktyp ist die Netzwerkschicht des ISO-OSI-Modells laut Text oft dünn oder nicht vorhanden?
+
+Antwortmöglichkeiten:
+- In Broadcast-Netzen (Richtig)
+- In Netzwerken mit statischen Routing-Tabellen (Falsch)
+- Bei heterogenen Netzwerken (Falsch)
+- In Netzwerken mit hoher Paketdynamik (Falsch)
+- In Subnetzen mit Überlastung (Falsch)

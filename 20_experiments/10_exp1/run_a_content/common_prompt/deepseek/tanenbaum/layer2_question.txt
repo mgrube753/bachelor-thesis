@@ -1,0 +1,9 @@
+Frage: Welche der folgenden Aufgaben fallen in den Verantwortungsbereich der Data Link Layer im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Transformation der Übertragungseinrichtung in eine fehlerfrei erscheinende Leitung durch Framing und Bestätigungen (Richtig)
+- Kontrolle des Zugriffs auf ein gemeinsames Medium in Broadcast-Netzwerken (z.B. durch das MAC-Sublayer) (Richtig)
+- Regulierung des Datenflusses, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überlastet (Richtig)
+- Zerlegung der Daten in Segmente und End-to-End-Fehlersicherung (Falsch)
+- Adressierung von Datenpaketen über mehrere Netzwerke hinweg und Routing (Falsch)
+- Umsetzung von Datenformaten, Verschlüsselung und Kompression (Falsch)
