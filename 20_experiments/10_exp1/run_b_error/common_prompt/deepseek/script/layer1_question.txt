@@ -1,5 +1,0 @@
-**Frage:**  
-Welche drei Kernaufgaben werden im Text für den Physical Layer (Layer 1) des ISO-OSI-Modells genannt?  
-
-**Korrekte Antwort:**  
-Verschlüsselung, Speicherung, Kompression.

@@ -1,6 +1,8 @@
-RICHTIGE ANTWORT: C) Routing  
-Frage: Welche der folgenden Aufgaben gehört laut Beschreibung NICHT zu den drei Kernaufgaben des Physical Layer 1?  
-A) Verschlüsselung  
-B) Speicherung  
-C) Routing  
-D) Kompression
+Frage: Welche der folgenden Aufgaben gehören laut Text zu den Kernaufgaben der Physical Layer 1 im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Verschlüsselung (Richtig)
+- Routing (Falsch)
+- Speicherung (Richtig)
+- Kompression (Richtig)
+- Sitzungsverwaltung (Falsch)

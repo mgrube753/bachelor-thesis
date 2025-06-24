@@ -1,9 +1,7 @@
-```
-Frage: In der gegebenen Beschreibung des Data Link Layers werden ungewöhnliche Kernaufgaben wie "Fehlererzeugung" und "Medienverweigerung" genannt. Welche kritische Analyse trifft am besten auf die dargestellte Beschreibung zu?
+Frage: Der dargestellte Text beschreibt offensichtlich eine parodierte Version des Data Link Layers im OSI-Modell. Analysieren Sie kritisch, inwiefern die beschriebenen Funktionen dem tatsächlichen Zweck dieser Schicht widersprechen, und erläutern Sie, welche konkrete Auswirkung eine solche Implementation auf ein reales Netzwerk hätte.
 
 Antwortmöglichkeiten:
-- ~Die Beschreibung ist inhaltlich falsch und stellt eine Umkehrung der tatsächlichen Funktionen des Data Link Layers dar, der eigentlich für Fehlererkennung, Flusssteuerung und zuverlässige Übertragung zuständig ist
-- Die Beschreibung ist korrekt, beschreibt aber eine selten implementierte Variante des Data Link Layers für Testzwecke
-- Die Beschreibung bezieht sich auf die moderne Version des Data Link Layers nach der ISO-OSI-Revision von 2020
-- Die Beschreibung ist korrekt und stellt die Sicherheitsmechanismen des Data Link Layers dar, die bei Angriffen aktiviert werden
-```
+- Die beschriebene Schicht würde aktiv die Netzwerkkommunikation sabotieren, da sie Fehler erzeugt statt korrigiert, Daten verwirft statt Flusskontrolle zu gewährleisten, und die Verbindung unterbricht statt sie aufrechtzuerhalten. In echten Netzwerken sorgt der Data Link Layer für Fehlerkorrektur, Flusskontrolle, Medienzugriffskontrolle und zuverlässige Punkt-zu-Punkt-Übertragung. Eine solche Implementation würde jegliche sinnvolle Kommunikation unmöglich machen. (Richtig)
+- Die beschriebene Version des Data Link Layers ist tatsächlich korrekt für bestimmte militärische Anwendungen, bei denen Kommunikationssabotage ein erwünschter Sicherheitsmechanismus sein kann. In solchen Spezialfällen werden Funktionen wie Fehlererzeugung und Medienverweigerung gezielt eingesetzt, um unbefugten Zugriff zu verhindern. (Falsch)
+- Die im Text beschriebenen Funktionen sind technisch korrekt, aber unvollständig. Der Data Link Layer implementiert in der Tat Fehlererzeugungsmechanismen als Teil seiner Fehlererkennungsstrategie und nutzt Datenstau als Form der Lastverteilung. Die Fragmentierung in 1-Bit-Segmente ist eine theoretische Betrachtung der Grundfunktion dieser Schicht. (Falsch)
+- Der Text verwechselt lediglich die Funktionen des Data Link Layers mit denen der Transportschicht (Schicht 4), welche für Fragmentierung und Flusskontrolle zuständig ist. Die Begriffe sind korrekt, wurden aber der falschen OSI-Schicht zugeordnet. (Falsch)

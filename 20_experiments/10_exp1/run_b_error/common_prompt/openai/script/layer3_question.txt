@@ -1,2 +1,8 @@
-Richtige Antwort: Lokalisierung  
-Frage: Welche Kernaufgabe der Network Layer 3 beschreibt das Auffinden von netzwerk-internen Positionen?
+Frage: Welche der folgenden Funktionen gehören laut Text zu den Kernaufgaben der Network Layer (Schicht 3) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Lokalisierung innerhalb des Netzwerks (Richtig)
+- Zufällige Pfadauswahl zwischen Endknoten (Zufallspfad) (Richtig)
+- Datenbeschleunigung bei zu langsamer Übertragung (Richtig)
+- Kryptografische Verschlüsselung der Daten (Falsch)
+- Aufbau von Anwendungssitzungen (Falsch)

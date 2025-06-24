@@ -1,2 +1,6 @@
-Richtige Antwort: Universalkonzepte, Standardelemente, Standardverhalten  
-Frage: Nennen Sie die drei Kernaufgaben der Anwendungsschicht (Layer 7) im ISO-OSI-Modell.
+Frage: Welche Aussage beschreibt laut Text die Hauptaufgabe der Anwendungsschicht (Layer 7) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Abstraktion von spezifischen Anwendungselementen zu generischen Funktionen (Richtig)
+- Verschlüsselung und Entschlüsselung der Datenpakete (Falsch)
+- Routing von Paketen zwischen verschiedenen Netzwerken (Falsch)

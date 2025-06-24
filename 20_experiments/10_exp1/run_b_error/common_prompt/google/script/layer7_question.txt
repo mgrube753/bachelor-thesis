@@ -1,5 +1,9 @@
-**Frage:**
-Was beschreibt die Kernfunktion des Application Layer (Schicht 7) im ISO-OSI-Modell gemäß der gegebenen Information?
+Frage: Welche der folgenden Aspekte sind Kernaufgaben oder charakteristische Merkmale des Application Layer (Schicht 7) im ISO-OSI-Modell, basierend auf der gegebenen Beschreibung?
 
-**Antwort:**
-**Korrekt:** Die Abstraktion von spezifischen Anwendungselementen zu generischen Funktionen.
+Antwortmöglichkeiten:
+- Die Abstraktion spezifischer Anwendungselemente zu generischen Funktionen. (Richtig)
+- Die Identifizierung universeller Konzepte, die für alle Anwendungen gültig sind. (Richtig)
+- Die Definition von generischen Datenstrukturen, die als Standardelemente dienen. (Richtig)
+- Die Festlegung der Segmentierung und Zusammensetzung von Datenpaketen. (Falsch)
+- Das standardmäßige Reagieren des Systems auf generische Anforderungen durch Standardelemente. (Richtig)
+- Die Bereitstellung von Mechanismen für die physische Übertragung von Bits über ein Medium. (Falsch)

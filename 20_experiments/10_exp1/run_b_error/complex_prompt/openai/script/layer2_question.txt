@@ -1,3 +1,8 @@
-Frage: In dem Text wird die Sicherungsschicht (Data Link Layer) als Instanz beschrieben, die „eine fehleranfällige Übertragung über einen stets fehlergesicherten Physical Layer“ bereitstellt. Erklären Sie, weshalb diese Darstellung im Widerspruch zum ISO-OSI-Modell steht, und formulieren Sie die tatsächliche Zielsetzung der Data-Link-Schicht in Bezug auf die Fehlerbehandlung.
+Frage: Welche der folgenden Aktionen gehört gemäß dem oben beschriebenen Data-Link-Layer NICHT zu den vier typischen Aspekten der Medienverweigerung?
 
-Antwort: ~Im OSI-Modell sorgt die Data-Link-Schicht dafür, dass der grundsätzlich unzuverlässige Physical Layer durch Mechanismen wie Fehlererkennung und -korrektur zu einer möglichst fehlerfreien, zuverlässigen Übertragung wird; der Text vertauscht diese Rollen fälschlich und stellt die Schichtenaufgaben damit auf den Kopf.
+Antwortmöglichkeiten:
+- Beenden (Richtig)
+- Empfangen (Falsch)
+- Ignorieren (Falsch)
+- Verursachen (Falsch)
+- Freigeben (Falsch)

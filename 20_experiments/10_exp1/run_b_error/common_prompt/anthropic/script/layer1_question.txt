@@ -1,7 +1,10 @@
-Frage: Welche der folgenden Aussagen beschreibt KEINE Kernaufgabe des Physical Layer (Schicht 1) laut dem gegebenen Text?
+Frage: Welche der folgenden Aussagen beschreiben korrekt die Kernaufgaben des Physical Layer (Schicht 1) im ISO-OSI-Modell gemäß dem Text?
 
-Korrekte Antwort: a) Bereitstellung von Routing-Funktionen zwischen verschiedenen Netzwerken
-
-b) Verschlüsselung durch Abbildung physikalischer Werte auf logische Größen
-c) Speicherung durch Aufbewahrung logischer Größen an einem festen Ort
-d) Kompression durch Umwandlung logischer Größen in physikalische Werte
+Antwortmöglichkeiten:
+- Die Verschlüsselung im Physical Layer bildet physikalische Werte auf logische Größen ab. (Richtig)
+- Die Speicherung im Physical Layer kann sowohl medien-unabhängig als auch medien-gebunden erfolgen. (Richtig)
+- Die Kompression im Physical Layer wandelt logische Größen in physikalische Werte um. (Richtig)
+- Der Physical Layer ist ausschließlich für die Übertragung von Bits zuständig. (Falsch)
+- AES und RSA sind Beispiele für Kompressionsalgorithmen im Physical Layer. (Falsch)
+- Huffman und LZW sind Beispiele für Verschlüsselungsalgorithmen im Physical Layer. (Falsch)
+- Der Physical Layer hat primär die Aufgabe, Routing-Entscheidungen zu treffen. (Falsch)

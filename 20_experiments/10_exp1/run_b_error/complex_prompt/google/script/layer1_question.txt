@@ -1,7 +1,7 @@
-Frage: Der Text beschreibt die „Kompression“ im Kontext des Physical Layer 1. Basierend ausschließlich auf der gegebenen Definition im Text, welche der folgenden Aussagen trifft die Kernfunktion der Kompression laut dieser Beschreibung am präzisesten?
+Frage: Der vorgegebene Text beschreibt die Kernaufgaben des "Physical Layer 1" mit Verschlüsselung, Speicherung und Kompression. Analysieren Sie die bereitgestellten Beschreibungen und Beispiele dieser Aufgaben im Kontext der üblichen Definitionen und Funktionen der physischen Schicht im ISO-OSI-Modell. Welche der folgenden Aussagen trifft oder treffen angesichts der spezifischen Definitionen des Textes zu?
 
 Antwortmöglichkeiten:
-- Kompression beinhaltet die Reduzierung der Dateigröße zur effizienteren Speicherung auf Medien wie Festplatten oder RAM.
-- ~Kompression ist der Prozess, bei dem logische Größen in physikalische Werte umgewandelt werden.
-- Bei der Kompression werden physikalische Werte auf logische Größen abgebildet, um die Sicherheit der Datenübertragung zu gewährleisten.
-- Kompression befasst sich mit der Aufbewahrung logischer Größen an einem festen, medien-unabhängigen Ort.
+- Die im Text angegebene Aufgabe "Kompression: Umwandlung logischer Größen in physikalische Werte" passt zur üblichen Rolle der Bitübertragungsschicht, da sie direkt die Signalumwandlung für die Übertragung beschreibt. (Falsch)
+- Laut Text gehört die Speicherung logischer Größen an einem festen Ort, einschließlich mediengebundener (z.B. RAM) und medienunabhängiger (z.B. Festplatte) Speichermedien, zu den Kernaufgaben des Physical Layer 1. (Richtig)
+- Die im Text aufgeführten Beispiele AES und RSA für Verschlüsselung sind typische Algorithmen, die in der standardmäßigen Implementierung der Bitübertragungsschicht zur Sicherung physikalischer Datenströme eingesetzt werden. (Falsch)
+- Der Text definiert Verschlüsselung als "Abbildung physikalischer Werte auf logische Größen", was von der konventionellen Funktion der physischen Schicht im OSI-Modell abweicht, die sich primär mit der Übertragung roher Bits befasst. (Richtig)

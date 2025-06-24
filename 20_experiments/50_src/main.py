@@ -21,7 +21,7 @@ def main():
     print("[INFO] Pre-loading Bloom data...")
     get_bloom()
 
-    print("[INFO] Starting experiments...")
+    print("[INFO] Starting question generation experiments...")
     run_exp_1a(clients)
     # run_exp_1b(clients)
     # run_exp_2a(clients)

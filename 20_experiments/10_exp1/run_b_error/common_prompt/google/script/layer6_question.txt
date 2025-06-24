@@ -1,3 +1,7 @@
-**Korrekte Antwort:** Die Presentation Layer (Schicht 6) führt ausschließlich das Entpacken (Expandieren) und das Entschlüsseln von Daten durch, bietet aber keine Verschlüsselung oder Kompression an.
+Frage: Gemäß dem bereitgestellten Text, welche der folgenden Aussagen beschreibt *nicht* eine Kernaufgabe der Presentation Layer (Schicht 6) des ISO-OSI-Modells?
 
-**Frage:** Welche Kernaufgaben übernimmt die Presentation Layer (Schicht 6) des ISO-OSI-Modells bezüglich der Datenverarbeitung im Kontext von Kompression/Expansion und Verschlüsselung/Entschlüsselung?
+Antwortmöglichkeiten:
+- Die Vereinheitlichung der Datendarstellung, wie z.B. die Festlegung auf ein einziges Serialisierungs-Format. (Falsch)
+- Das Anbieten von Verschlüsselungsdiensten für die Datenübertragung. (Richtig)
+- Das ausschließliche Entpacken von Daten (Expansion). (Falsch)
+- Die Behandlung von Daten als reine Binärdaten, ohne Unterscheidung von Zeichendarstellungen wie ASCII oder Unicode. (Falsch)

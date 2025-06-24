@@ -1,8 +1,10 @@
-KORREKTE ANTWORT: C
+Frage: Welche der folgenden Aussagen beschreiben korrekt die Kernaufgaben des Application Layers (Schicht 7) im ISO-OSI-Modell?
 
-Frage: Welche der folgenden Aussagen beschreibt NICHT eine der drei Kernaufgaben des Application Layers (Schicht 7) im ISO-OSI-Modell?
-
-A: Die Definition universeller Begriffe, die für alle Anwendungen gültig sind
-B: Die Festlegung von Standardverhalten als Reaktion auf generische Anforderungen
-C: Die Herstellung der direkten Verbindung zwischen Endsystemen
-D: Die Identifikation von Standardanforderungen und generischen Datenstrukturen
+Antwortmöglichkeiten:
+- Die Definition universeller Begriffe, die für alle Anwendungen gültig sind (Richtig)
+- Die Identifikation von Standardanforderungen und generischen Datenstrukturen (Richtig)
+- Die Festlegung von Standardreaktionen des Systems auf generische Anforderungen (Richtig)
+- Die physikalische Übertragung von Bits über das Netzwerkmedium (Falsch)
+- Die Bereitstellung von Ende-zu-Ende-Verbindungen zwischen Netzwerkknoten (Falsch)
+- Die direkte Implementierung anwendungsspezifischer Funktionalitäten ohne Abstraktion (Falsch)
+- Die Abstraktion spezifischer Anwendungselemente zu generischen Funktionen (Richtig)

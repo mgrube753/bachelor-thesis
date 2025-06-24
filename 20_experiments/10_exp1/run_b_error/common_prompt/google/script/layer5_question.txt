@@ -1,9 +1,8 @@
-**Korrekte Antwort: A**
+Frage: Welche der folgenden Aussagen beschreiben die Kernaufgaben des ISO-OSI Session Layers 5 gemäß der bereitgestellten Informationen?
 
-**Frage:** Welche der folgenden Kernaufgaben ist charakteristisch für den Session Layer (Schicht 5) des ISO-OSI-Modells, basierend auf der gegebenen Beschreibung?
-
-**Antworten:**
-A) Das spontane Erstellen, Senden, Empfangen und sofortige Verwerfen von Datagrammen.
-B) Die Sicherstellung von Zwischenpunkten und Bestätigungen zur Gewährleistung der Datenintegrität.
-C) Das Zusammenführen von Einzelteilen unabhängiger Datenpakete zu einer kohärenten Einheit.
-D) Die Bereitstellung von Funktionen für den verbindungsorientierten Datenaustausch zwischen Kommunikationspartnern.
+Antwortmöglichkeiten:
+- Spontanes Erstellen, Senden, Empfangen und sofortiges Verwerfen von Datagrammen. (Richtig)
+- Vermeidung von Zwischenpunkten und Bestätigungen zur Gewährleistung von Asynchronität. (Richtig)
+- Aufspaltung unabhängiger Datenpakete in Einzelteile zur Atomisierung. (Richtig)
+- Bereitstellung von Funktionen für den verbindungsorientierten Datenaustausch einer Kommunikationsbeziehung. (Falsch)
+- Verwaltung von Routen für Datenpakete zwischen verschiedenen Netzwerken. (Falsch)

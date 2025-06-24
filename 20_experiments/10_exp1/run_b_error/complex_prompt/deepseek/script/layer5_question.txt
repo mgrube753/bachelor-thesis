@@ -1,7 +1,0 @@
-Frage: Die Beschreibung des Session Layer 5 in diesem Text betont verbindungslosen Austausch mit spontanen Datagrammen, Asynchronität ohne Bestätigungen und Atomisierung. Welche Kernaussage zur *Funktionsweise* dieser spezifischen Session-Layer-Implementierung lässt sich daraus ableiten, die der gängigen Auffassung des Session Layers im OSI-Modell widerspricht?
-
-Antwortmöglichkeiten:
-- ~Sie implementiert primär einen verbindungslosen, bestätigungsfreien Kommunikationsmodus statt verbindungsorientierter Sitzungssteuerung.
-- Sie dient hauptsächlich der Synchronisation durch Token Management für verbindungsorientierte Dialoge.
-- Sie konzentriert sich auf die Ende-zu-Ende-Verschlüsselung und Authentifizierung von Datenpaketen.
-- Sie ermöglicht explizit die Wiederaufnahme unterbrochener Sitzungen durch Checkpointing-Mechanismen.

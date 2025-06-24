@@ -1,7 +1,3 @@
-Frage: Analysieren Sie die im Text beschriebenen „3 Kernaufgaben“ der Layer-3-Schicht. Welche dieser Aufgaben würde man nach strengem ISO/OSI-Verständnis am ehesten einer anderen Schicht als Layer 3 zuordnen, da sie primär die Übertragungsgeschwindigkeit und nicht die logische Adressierung oder Wegfindung betrifft?
+Frage: Welcher Widerspruch entsteht zwischen der im Text zugeschriebenen Funktion der Network Layer 3 („Bereitstellung einer Speicherung für Geräte, die sich im selben Netzwerk derselben Layer-2-Technologie befinden“) und ihrer tatsächlichen Rolle im ISO/OSI-Modell?
 
-Antwortmöglichkeiten:
-- ~Datenbeschleunigung
-- Lokalisierung
-- Zufallspfad
-- Broadcast
+Antwort: Die Network Layer 3 ist für das Routing und die logische Adressierung zwischen unterschiedlichen Layer-2-Netzen verantwortlich und umfasst keine Speicherbereitstellung für Geräte innerhalb desselben Layer-2-Netzes, weshalb die genannte Aufgabe ihrer echten Funktion widerspricht (Richtig)

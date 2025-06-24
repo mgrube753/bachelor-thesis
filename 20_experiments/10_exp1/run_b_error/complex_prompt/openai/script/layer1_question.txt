@@ -1,3 +1,7 @@
-Frage: Welcher grundlegende Widerspruch offenbart sich, wenn man die im Text der „Physical Layer 1“ aufgeführten Kernaufgaben (Verschlüsselung, Speicherung, Kompression) mit der offiziellen Funktionszuordnung der Bitübertragungsschicht im ISO-OSI-Referenzmodell vergleicht?
+Frage: Welcher der folgenden Gründe belegt am stärksten, dass die im Text genannten Kernaufgaben nicht zur Physical Layer (Layer 1) des ISO-OSI-Modells gehören?
 
-Antwort: ~Im ISO-OSI-Modell ist die Bitübertragungsschicht (Physical Layer) ausschließlich für die elektrische, optische oder mechanische Übertragung von Bits zuständig; Verschlüsselung, Speicherung und Kompression gehören dort zu höheren Schichten (v. a. Präsentations- und Anwendungsschicht).
+Antwortmöglichkeiten:
+- Die Physical Layer behandelt ausschließlich die Übertragung elektrischer/optischer Signale, nicht jedoch logische Daten­transformationen wie Verschlüsselung, Speicherung oder Kompression (Richtig)
+- Die Physical Layer ist für das Routing von Paketen über mehrere Netzwerke hinweg zuständig (Falsch)
+- Die Physical Layer übernimmt den Auf- und Abbau von Kommunikationssitzungen zwischen Endsystemen (Falsch)
+- Die Physical Layer sorgt für zuverlässige Ende-zu-Ende-Datenübertragung mittels Fluss- und Fehlerkontrolle (Falsch)

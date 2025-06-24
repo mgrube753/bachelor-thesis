@@ -1,7 +1,8 @@
-Frage: Analysieren Sie die gegebene Beschreibung der Network Layer 3 und identifizieren Sie, welche der folgenden Aussagen im Hinblick auf das standardisierte ISO-OSI-Modell NICHT korrekt ist.
+Frage: Welche der folgenden Aussagen stellt einen konzeptuellen Widerspruch zur standardmäßigen Funktionsweise des OSI-Layer 3 (Netzwerkschicht) dar, wenn man die im Text beschriebenen Kernaufgaben mit den üblicherweise in der Netzwerktechnik akzeptierten Funktionen dieser Schicht vergleicht?
 
 Antwortmöglichkeiten:
-- Die Beschreibung der "Datenbeschleunigung" entspricht den typischen Funktionen der Netzwerkschicht im OSI-Modell
-- ~Die Netzwerkschicht (Layer 3) ist im OSI-Modell nicht für die "zufällige Auswahl von Endknoten" zuständig, sondern für logische Adressierung und Pfadbestimmung
-- Die "Lokalisierung" von netzwerkinternen Positionen gehört zu den Standardaufgaben der Network Layer 3
-- Die Bereitstellung einer "Speicherung für Geräte im selben Netzwerk" ist eine korrekte Kernfunktion der Netzwerkschicht
+- Die "Zufallspfad"-Funktion widerspricht dem Prinzip der deterministischen Routingentscheidungen, die typischerweise auf Layer 3 getroffen werden, um optimale Pfade zwischen Netzwerken zu finden. (Richtig)
+- Die "Lokalisierung" für netzwerk-interne Positionen steht im Widerspruch zur Aufgabe von Layer 3, da Gerätelokalisierung innerhalb eines Netzwerks typischerweise eine Layer 2-Funktion ist. (Richtig)
+- Die "Datenbeschleunigung" als Reaktion auf zu langsame Übertragungen ist keine standardmäßige Layer 3-Funktion, sondern wird üblicherweise durch Protokolle auf der Transportschicht (Layer 4) wie TCP implementiert. (Richtig)
+- Die Beschreibung "Bereitstellung einer Speicherung für Geräte" entspricht nicht der eigentlichen Funktion von Layer 3, welche die Weiterleitung von Datenpaketen zwischen verschiedenen Netzwerken umfasst. (Richtig)
+- Die Unterscheidung zwischen "Punkt-zu-Punkt" und "Broadcast" Kommunikation ist charakteristisch für Layer 3 und entspricht der Standardfunktionalität dieser Schicht. (Falsch)

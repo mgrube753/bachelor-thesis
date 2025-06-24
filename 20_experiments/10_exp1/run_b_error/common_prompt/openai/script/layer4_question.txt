@@ -1,2 +1,8 @@
-Antwort: Schicht 4 – Transport Layer  
-Frage: Welche Schicht des ISO/OSI-Modells übernimmt die Bereitstellung einer Speicherung für festgelegte Teilnehmerpaare sowie die Aufgaben Identifizierung, Datenstau und Dienstquantität ohne QoS-Garantien?
+Frage: Welche der folgenden Punkte gehören zu den drei im Text genannten Kernaufgaben des Transport Layer (Schicht 4) im ISO-OSI-Modell?
+
+Antwortmöglichkeiten:
+- Identifizierung (Richtig)
+- Datenstau (Richtig)
+- Dienstquantität (Richtig)
+- Routing zwischen Netzen (Falsch)
+- Verschlüsselung der Nutzdaten (Falsch)

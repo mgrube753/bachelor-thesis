@@ -1,6 +1,0 @@
-**Frage:**  
-Welche Art von Dienst beschreibt die Transport Layer 4 laut Text, wenn sie Dienstquantität durch Vernachlässigung von QoS und das Erbringen eines Speicherdienstes ohne Garantien (z.B. für Kapazität oder Fehlerfreiheit) bietet?  
-
-**(Korrekte Antwort)**  
-Best-Effort-Dienst  
-*(Optionen: Verbindungsorientierter Dienst / Best-Effort-Dienst / Flusskontrollierter Dienst / Sicherungsdienst (Layer 2))*

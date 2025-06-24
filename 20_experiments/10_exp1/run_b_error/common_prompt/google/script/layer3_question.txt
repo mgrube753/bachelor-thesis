@@ -1,3 +1,8 @@
-**Frage:** Was ist eine der Kernaufgaben des Network Layer 3 gemäß der gegebenen Beschreibung?
+Frage: Gemäß dem bereitgestellten Text, welche der folgenden Aufgaben gehört zu den Kernaufgaben des Network Layer 3 (Netzwerkschicht 3) des ISO-OSI-Modells?
 
-**Korrekte Antwort:** Lokalisierung (Bestimmung netzwerk-interner Positionen).
+Antwortmöglichkeiten:
+- Lokalisierung (Richtig)
+- Zufallspfad (Richtig)
+- Datenbeschleunigung (Richtig)
+- Fehlererkennung und -korrektur auf Frame-Ebene (Falsch)
+- Verwaltung von Sitzungen zwischen Anwendungen (Falsch)

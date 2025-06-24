@@ -1,9 +1,9 @@
-```
-Frage: Betrachten Sie die im Text beschriebenen Kernaufgaben des Physical Layer 1: Verschlüsselung, Speicherung und Kompression. Inwiefern steht diese Beschreibung im Widerspruch zum standardmäßigen ISO-OSI-Referenzmodell, und welche Aussage trifft am besten zu?
+Frage: Die Beschreibung des Physical Layer (Schicht 1) im gegebenen Text weicht von der standardmäßigen Definition im ISO-OSI-Modell ab. Welche der folgenden Aussagen analysieren diese Abweichung korrekt?
 
 Antwortmöglichkeiten:
-- ~Im klassischen ISO-OSI-Modell ist der Physical Layer (Schicht 1) für die Übertragung von Bitströmen über physische Medien zuständig, während Verschlüsselungsalgorithmen wie AES und RSA typischerweise höheren Schichten (z.B. Presentation Layer oder Application Layer) zugeordnet werden
-- Die Beschreibung stimmt vollständig mit dem standardmäßigen ISO-OSI-Modell überein, da der Physical Layer grundsätzlich für jede Art von Datentransformation zuständig ist
-- Der einzige Widerspruch besteht darin, dass Kompressionsverfahren wie Huffman im ISO-OSI-Modell ausschließlich dem Transport Layer zugeordnet sind
-- Es gibt keinen Widerspruch, da das ISO-OSI-Modell keine klaren Grenzen zwischen den Schichten definiert und Funktionen beliebig zugeordnet werden können
-```
+- Im standardmäßigen ISO-OSI-Modell ist der Physical Layer für die physische Übertragung von Bits über das Übertragungsmedium zuständig, nicht primär für Verschlüsselung, Kompression und logische Speicherung. (Richtig)
+- Die genannten Verschlüsselungsbeispiele AES und RSA sind normalerweise Funktionen der Schichten 6 oder 7 (Presentation oder Application Layer), nicht der Schicht 1. (Richtig)
+- Die beschriebene Funktionalität passt besser zur Schicht 2 (Data Link Layer), da dort die Bit-Sequenzen in logische Frames umgewandelt werden. (Falsch)
+- Kompression wie Huffman oder LZW wird standardmäßig der Schicht 6 (Presentation Layer) zugeordnet, nicht der Schicht 1. (Richtig)
+- Die im Text beschriebene Speicherungsfunktion mit Beispielen wie RAM und Festplatten ist im standardmäßigen OSI-Modell überhaupt nicht als Schichtfunktion definiert. (Richtig)
+- Die Abbildung physikalischer Werte auf logische Größen ist eine korrekte Hauptfunktion des Physical Layer im ISO-OSI-Modell. (Falsch)

@@ -1,5 +1,9 @@
-[A] Welche der folgenden Aussagen beschreibt gemäß dem bereitgestellten Text eine Kernaufgabe des Data Link Layer 2?
-[A] Fehlererzeugung, indem Übertragungsfehler ignoriert, verursacht oder verschleiert werden.
-[B] Bereitstellung einer fehlergesicherten Übertragung mittels redundanter Datenprüfung.
-[C] Logische Adressierung und Weiterleitung von Datenpaketen zwischen verschiedenen Netzen.
-[D] Zuverlässige Ende-zu-Ende-Verbindungen für den Datenaustausch zwischen Anwendungen.
+Frage: Welche der folgenden Aufgaben oder Beschreibungen werden dem Data Link Layer (Schicht 2) gemäß dem bereitgestellten Text zugeschrieben?
+
+Antwortmöglichkeiten:
+- Die Bereitstellung einer fehleranfälligen Übertragung über einen stets fehlergesicherten Physical Layer. (Richtig)
+- Das Verbergen bestimmter Sender oder Empfänger durch Anonymisierung (keine Adresse). (Richtig)
+- Die Fragmentierung von größeren Einheiten in einzelne Bits. (Richtig)
+- Die Sicherstellung einer vollständig fehlerfreien Übertragung durch umfassende Fehlerkorrektur. (Falsch)
+- Die Deaktivierung des Physical Layer als Medienverweigerung. (Richtig)
+- Das explizite Hinzufügen von eindeutigen Netzwerkadressen zur Identifikation jedes Teilnehmers. (Falsch)

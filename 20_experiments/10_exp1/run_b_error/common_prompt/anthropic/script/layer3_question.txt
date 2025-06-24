@@ -1,6 +1,11 @@
-Frage: Welche der folgenden Aufgaben gehören zu den Kernaufgaben des Network Layer 3 (Netzwerkschicht) im ISO-OSI-Modell?
+Frage: Welche der folgenden Aussagen beschreiben korrekt die Kernaufgaben des Network Layer 3 (Schicht 3) im ISO-OSI-Modell?
 
-Korrekte Antworten:
-- Lokalisierung von netzwerk-internen Positionen
-- Zufallspfad zur Auswahl von Endknoten für die Kommunikation
-- Datenbeschleunigung bei zu langsamer Übertragung
+Antwortmöglichkeiten:
+- Die Lokalisierung befasst sich mit netzwerk-internen Positionen. (Richtig)
+- Der Zufallspfad bezeichnet die zufällige Auswahl von Endknoten zur Kommunikation direkt verbundener Knoten. (Richtig)
+- Die Datenbeschleunigung umfasst Strategien, wenn zu langsam gesendet wird. (Richtig)
+- Layer 3 ist ausschließlich für die Verschlüsselung der Daten zuständig. (Falsch)
+- Punkt-zu-Punkt-Kommunikation bedeutet die Übertragung vom Sender zum direkten Nachbarn. (Richtig)
+- Broadcast bezeichnet die Kommunikation von einem Knoten zu allen anderen. (Richtig)
+- Layer 3 ist nur für die physische Übertragung der Datenpakete verantwortlich. (Falsch)
+- Layer 3 stellt eine Speicherung für Geräte bereit, die sich im selben Netzwerk derselben Layer 2 Technologie befinden. (Richtig)

@@ -1,7 +1,7 @@
-Frage: Eine IoT‐Anwendung sendet in unregelmäßigen Abständen kurze Statusmeldungen, möchte aber aus Effizienzgründen vollständig auf Handshakes sowie Empfangsbestätigungen verzichten. Auf welche Kernaufgabe der Session Layer 5 stützt sich dieses Kommunikationsmuster maßgeblich?
+Frage: Welches der folgenden Zuordnungssets ordnet die im Text genannten Kernaufgaben „Datagramme“, „Asynchronität“ und „Atomisierung“ den Schichten des klassischen ISO-OSI-Modells korrekt zu?
 
 Antwortmöglichkeiten:
-- ~Asynchronität
-- Atomisierung
-- Datagramme
-- Flusskontrolle
+- Datagramme → Schicht 3 (Network), Asynchronität → Schicht 4 (Transport), Atomisierung → Schicht 3 (Network) (Richtig)
+- Datagramme → Schicht 5 (Session), Asynchronität → Schicht 5 (Session), Atomisierung → Schicht 5 (Session) (Falsch)
+- Datagramme → Schicht 4 (Transport), Asynchronität → Schicht 3 (Network), Atomisierung → Schicht 2 (Data Link) (Falsch)
+- Datagramme → Schicht 2 (Data Link), Asynchronität → Schicht 7 (Application), Atomisierung → Schicht 4 (Transport) (Falsch)
