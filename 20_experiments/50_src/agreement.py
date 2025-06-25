@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
+import datetime
 from statsmodels.stats.inter_rater import fleiss_kappa
 from constants import EXPERIMENTS_BASE_PATH
 
@@ -119,87 +120,54 @@ def analyze_exp1():
 
 
 def save_markdown_report(df, csv_path):
-    """Save analysis results as markdown report"""
-    import datetime
+    md_content = f"""# Experiment 1: Inter-Rater Agreement
 
-    # Create markdown content
-    md_content = f"""# Experiment 1 Inter-Rater Agreement Analysis
+**Erstellt:** {datetime.datetime.now().strftime('%d.%m.%Y %H:%M')}  
+**Methode:** Fleiss' Kappa mit simulierten Expertenratings  
+**Experten:** 5 pro Subexperiment  
+**Bewertungsskala:** 1-10 (ganzzahlig)  
 
-**Generated:** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  
-**Method:** Fleiss' Kappa with simulated expert ratings  
-**Experts:** 5 experts per experiment  
-**Rating Scale:** 1-10 (integer values)  
+## Ergebnisse
 
-## Overview
-
-This analysis calculates inter-rater agreement for Experiment 1 using Fleiss' kappa coefficient with simulated expert ratings.
-
-## Detailed Results
-
-| Experiment | Category | Kappa | Level | Mean Rating | Std Dev |
-|------------|----------|-------|-------|-------------|---------|
 """
 
-    for _, row in df.iterrows():
-        md_content += f"| {row['Experiment']} | {row['Category']} | {row['Kappa']:.3f} | {row['Level']} | {row['Mean']:.1f} | {row['Std']:.1f} |\n"
+    for exp in ["exp1a", "exp1b"]:
+        exp_data = df[df["Experiment"] == exp]
+        if exp_data.empty:
+            continue
 
-    # Add summary by category
-    md_content += "\n## Summary by Category\n\n"
-    cat_summary = df.groupby("Category")["Kappa"].agg(["mean", "std"]).round(3)
-    md_content += (
-        "| Category | Mean Kappa | Std Dev |\n|----------|------------|----------|\n"
-    )
-    for cat, row in cat_summary.iterrows():
-        md_content += f"| {cat} | {row['mean']:.3f} | {row['std']:.3f} |\n"
+        exp_name = (
+            "Exp1a (Inhaltstreue)" if exp == "exp1a" else "Exp1b (Fehlerfortpflanzung)"
+        )
+        md_content += f"### {exp_name}\n\n"
+        md_content += "| Kategorie | Kappa | Bewertung | Mittelwert | Std |\n"
+        md_content += "|-----------|-------|-----------|------------|-----|\n"
 
-    # Add summary by experiment
-    md_content += "\n## Summary by Experiment\n\n"
-    exp_summary = df.groupby("Experiment")["Kappa"].agg(["mean", "std"]).round(3)
-    md_content += "| Experiment | Mean Kappa | Std Dev |\n|------------|------------|----------|\n"
-    for exp, row in exp_summary.iterrows():
-        md_content += f"| {exp} | {row['mean']:.3f} | {row['std']:.3f} |\n"
+        for _, row in exp_data.iterrows():
+            md_content += f"| {row['Category']} | {row['Kappa']:.3f} | {row['Level']} | {row['Mean']:.1f} | {row['Std']:.1f} |\n"
 
-    # Add interpretation guide
-    md_content += """
-## Kappa Interpretation Guide
+        md_content += "\n"
 
-| Range | Interpretation |
-|-------|---------------|
-| < 0.20 | Slight agreement |
-| 0.20-0.40 | Fair agreement |
-| 0.41-0.60 | Moderate agreement |
-| 0.61-0.80 | Substantial agreement |
-| 0.81-1.00 | Almost perfect agreement |
+    md_content += "## Zusammenfassung\n\n"
+    overall_kappa = df["Kappa"].mean()
+    md_content += f"**Durchschnittliches Kappa:** {overall_kappa:.3f}\n\n"
 
-## Methodology
+    md_content += "**Kappa-Interpretation:**\n"
+    md_content += "- < 0.20: Gering\n"
+    md_content += "- 0.20-0.40: Schwach\n"
+    md_content += "- 0.41-0.60: Moderat\n"
+    md_content += "- 0.61-0.80: Beträchtlich\n"
+    md_content += "- 0.81-1.00: Fast perfekt\n"
 
-- **Simulation Parameters:** Each category has different base rating distributions
-- **Expert Variation:** Individual expert bias and random noise added
-- **Fleiss' Kappa:** Calculated using statsmodels implementation
-- **Rating Scale:** Integer values 1-10, converted to frequency tables for kappa calculation
-
-## Category Parameters Used
-
-| Category | Mean | Std Dev |
-|----------|------|---------|
-| Relevance | 7.5 | 1.2 |
-| Clarity | 6.8 | 1.5 |
-| Answerability | 7.2 | 1.3 |
-| Challenging | 6.5 | 1.8 |
-| Correctness | 7.8 | 1.0 |
-| Manipulation Handling | 6.0 | 2.0 |
-"""
-
-    # Save to qualitative folder
     qualitative_path = os.path.join(
         EXPERIMENTS_BASE_PATH, "..", "40_evaluation", "exp1", "qualitative"
     )
     os.makedirs(qualitative_path, exist_ok=True)
     output_file = os.path.join(qualitative_path, "agreement_analysis.md")
-    with open(output_file, "w") as f:
+    with open(output_file, "w", encoding="utf-8") as f:
         f.write(md_content)
 
-    print(f"\nMarkdown report saved to: {output_file}")
+    print(f"\nMarkdown-Bericht gespeichert: {output_file}")
     return output_file
 
 
@@ -221,7 +189,6 @@ def main():
     exp_summary = df.groupby("Experiment")["Kappa"].agg(["mean", "std"]).round(3)
     print(exp_summary)
 
-    # Save markdown report
     csv_path = os.path.join(
         EXPERIMENTS_BASE_PATH, "60_eval", "csv_files", "qualitative"
     )
