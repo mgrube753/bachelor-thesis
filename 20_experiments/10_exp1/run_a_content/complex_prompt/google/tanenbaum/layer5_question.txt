@@ -1,8 +1,7 @@
-Frage: Der Session Layer im ISO-OSI-Modell bietet Dienste wie Dialogsteuerung, Token-Management und Synchronisation an. Welche gemeinsame übergeordnete Funktion oder welchen kritischen Aspekt der Kommunikation zwischen verschiedenen Maschinen adressieren diese scheinbar unterschiedlichen Dienste primär, um eine robuste und verlässliche Interaktion über eine längere Zeitspanne zu gewährleisten?
+Frage: Der Session Layer bietet Dienste wie Dialogkontrolle, Token-Management und Synchronisierung an. Erklären Sie, inwiefern diese spezifischen Dienste kritisch sind, um die Anwendungsschicht von Komplexitäten zu entlasten, die nicht durch die Funktionalitäten niedrigerer Schichten (z.B. der Transport- oder Netzwerkschicht) abgedeckt werden, und welche Probleme bei verteilten Anwendungen ohne diese Dienste auftreten könnten.
 
 Antwortmöglichkeiten:
-- ~Die kollektive Gewährleistung der Kohärenz, Konfliktvermeidung und Wiederherstellbarkeit komplexer Interaktionsprozesse, die über eine einzelne Anforderung hinausgehen.
-- Die reine Datenkomprimierung zur Effizienzsteigerung der Netzwerkübertragung.
-- Die Verschlüsselung von Datenpaketen zur Sicherstellung der Vertraulichkeit.
-- Die dynamische Zuweisung von IP-Adressen an Endgeräte im Netzwerk.
-- Die Umwandlung von logischen Adressen in physische Hardware-Adressen.
+- Die Transport- und Netzwerkschichten kümmern sich primär um die zuverlässige und geordnete Datenübertragung zwischen Endpunkten oder das Routing von Paketen. Die Dienste des Session Layers hingegen lösen anwendungsnahe Kommunikationsprobleme wie die Koordination von Kommunikationsflüssen (Dialogkontrolle), die Vermeidung von Konflikten bei kritischen Operationen (Token-Management) und die Widerherstellung von Kommunikationszuständen nach Ausfällen (Synchronisierung). Ohne diese Dienste müsste jede Anwendung selbst komplexe Logiken für die Koordination, den exklusiven Ressourcenzugriff und die Fehlerbehandlung auf Sitzungsebene implementieren, was die Entwicklung erschweren und die Interoperabilität reduzieren würde. (Richtig)
+- Die Hauptaufgabe des Session Layers ist es, die Daten zu verschlüsseln und zu entschlüsseln, um die Sicherheit der Kommunikation zu gewährleisten, bevor sie an die Anwendungsschicht weitergeleitet werden. (Falsch)
+- Der Session Layer ist dafür zuständig, logische Adressen in physische Adressen zu übersetzen und den optimalen Pfad für die Datenpakete durch das Netzwerk zu bestimmen, was die Effizienz der gesamten Kommunikation maßgeblich beeinflusst. (Falsch)
+- Die Dienste des Session Layers sind redundant zu denen der Transportschicht, da diese bereits die Ende-zu-Ende-Kommunikation absichern und somit eine eigene Schicht für Dialog- und Synchronisationsdienste überflüssig machen. (Falsch)

@@ -1,3 +1,8 @@
-Frage: Der Text hebt hervor, dass sich die Präsentationsschicht im Gegensatz zu den unteren Schichten primär mit der "Syntax und Semantik der übertragenen Informationen" befasst, während sie gleichzeitig die Kommunikation zwischen Systemen mit unterschiedlichen internen Datenrepräsentationen ermöglicht. Welche tiefgreifende Implikation hat dieser spezifische Fokus der Präsentationsschicht für die Datenverarbeitung und den Austausch über heterogene Systeme hinweg?
+Frage: Angesichts der Beschreibung der Präsentationsschicht, welche der folgenden Szenarien würde ohne die Funktionen dieser Schicht voraussichtlich zu Kommunikationsfehlern oder Ineffizienzen führen, und warum ist ihre Rolle in diesem Kontext entscheidend?
 
-Antwort: ~Dieser Fokus bedeutet, dass die Präsentationsschicht eine universelle Verständigungsebene für Dateninhalte schafft, indem sie plattform- oder anwendungsspezifische Datenformate in eine gemeinsame, abstrakt definierte und standardisiert kodierte Form transformiert. Dies gewährleistet, dass die Bedeutung (Semantik) und Struktur (Syntax) der Informationen über Systemgrenzen hinweg erhalten bleiben und korrekt interpretiert werden können, unabhängig davon, wie die Daten intern in den kommunizierenden Endsystemen dargestellt sind.
+Antwortmöglichkeiten:
+- Zwei Computersysteme mit unterschiedlicher Bytereihenfolge (Big-Endian vs. Little-Endian) versuchen, eine Ganzzahl auszutauschen, ohne eine gemeinsame Datenrepräsentationsebene. (Richtig)
+- Eine Datei wird über ein Netzwerk übertragen, dessen physische Verbindung intermittierende Paketverluste aufweist, was zu unvollständigen Daten am Empfänger führt. (Falsch)
+- Zwei Anwendungen versuchen, miteinander zu kommunizieren, verwenden jedoch unterschiedliche Zeichensätze (z.B. ASCII und EBCDIC), um Textdaten darzustellen. (Richtig)
+- Ein Webserver liefert HTML-Inhalte an einen Browser, und die Komprimierung des Inhalts wird nicht vom Browser verstanden. (Richtig)
+- Die Netzwerkgeräte auf der Übertragungsstrecke leiten IP-Pakete aufgrund falscher Routing-Tabellen an ein inkorrektes Ziel weiter. (Falsch)

@@ -1,3 +1,7 @@
-Frage: Der vorliegende Text beschreibt die Anwendungsschicht des ISO-OSI-Modells und listet verschiedene Protokolle sowie deren grundlegende Funktionen auf, darunter HTTP, Protokolle für Dateitransfer, E-Mail und Netzwerk-News. Welche zentrale Eigenschaft oder Rolle kann diesen Protokollen gemeinsam zugeschrieben werden, basierend auf der Beschreibung im Text, die sie als Teil der Anwendungsschicht charakterisiert?
+Frage: Angesichts der Beschreibung der Anwendungsschicht, die Protokolle wie HTTP, Dateitransfer, elektronische Post und Netzwerk-News umfasst und als "commonly needed by users" charakterisiert wird, welche übergeordnete Funktion erfüllt diese Schicht im Kontext des gesamten ISO-OSI-Modells, die sie von den darunterliegenden Schichten fundamental unterscheidet?
 
-Antwort: ~Sie ermöglichen den Nutzern den direkten Zugriff auf netzwerkbasierte Dienste und die Interaktion mit diesen, indem sie spezifische Anwendungen und deren Datenkommunikationsbedürfnisse adressieren.
+Antwortmöglichkeiten:
+- Sie stellt sicher, dass Datenpakete effizient über das physische Medium übertragen werden, indem sie Übertragungsfehler korrigiert. (Falsch)
+- Sie definiert die Syntax und Semantik der Daten, die von Anwendungssoftware genutzt werden, und bietet Dienste, die direkt auf die Endnutzerbedürfnisse zugeschnitten sind. (Richtig)
+- Ihre primäre Aufgabe ist die logische Adressierung und das Routing von Datenpaketen über verschiedene Netzwerke hinweg. (Falsch)
+- Sie konzentriert sich auf die Bereitstellung einer zuverlässigen Ende-zu-Ende-Kommunikation zwischen Prozessen auf verschiedenen Systemen, unabhängig vom Netzwerktyp. (Falsch)

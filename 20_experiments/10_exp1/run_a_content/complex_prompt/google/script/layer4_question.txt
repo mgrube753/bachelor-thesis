@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Aussagen trifft am präzisesten auf die Bedeutung der "Flusssteuerung" für die "Dienstqualität" im Transport Layer zu, basierend auf dem bereitgestellten Text?
+Frage: Erläutern Sie, wie die drei Kernaufgaben der Transportschicht – Adressierung, Flusssteuerung und Dienstqualität (QoS) – synergistisch zusammenwirken, um die in der Beschreibung genannte „Bereitstellung einer Übertragung zwischen beliebigen Teilnehmern eines Netzes“ unter variierenden Bedingungen zu gewährleisten.
 
 Antwortmöglichkeiten:
-- Die Flusssteuerung stellt primär sicher, dass die Adressierung von Teilnehmern korrekt und effizient erfolgt, was indirekt die Dienstqualität beeinflusst.
-- ~Die Flusssteuerung ist essenziell, um die Übertragungsrate an die "Teilnehmer-Charakteristik" anzupassen und somit die zugesicherten Garantien wie Bandbreite und Latenz für den jeweiligen Teilnehmer effektiv zu gewährleisten.
-- Die Flusssteuerung befasst sich hauptsächlich mit der Priorisierung von Datenpaketen, um Jitter zu minimieren, hat aber keinen direkten Einfluss auf die Bandbreite oder Fehlerrate.
-- Die Flusssteuerung ist eine unabhängige Aufgabe, die keine direkte Beziehung zur Erbringung eines Kommunikationsdienstes mit Garantien für spezifische Teilnehmer hat.
+- Die Adressierung identifiziert die Endpunkte, während die Flusssteuerung und QoS dynamisch die Übertragung an die Charakteristika und Anforderungen dieser spezifischen Teilnehmer anpassen, um eine effiziente und garantierte Kommunikation zu ermöglichen. (Richtig)
+- Die Flusssteuerung und Dienstqualität sind primär für die Routerzustellung zuständig, während die Adressierung nur die logische Geräteerkennung auf globaler Ebene sicherstellt. (Falsch)
+- Die drei Aufgaben arbeiten unabhängig voneinander, wobei die Adressierung die Verbindung aufbaut, die Flusssteuerung für die Paketreihenfolge sorgt und die Dienstqualität nachträglich Fehler korrigiert. (Falsch)
+- Adressierung ermöglicht die Identifikation der Gesprächspartner, Flusssteuerung optimiert die Auslastung der Netzinfrastruktur, und Dienstqualität stellt die Zuverlässigkeit der gesamten Übertragungskette von Quelle zu Ziel sicher, indem sie sich dynamisch an die Eigenschaften und Bedürfnisse der jeweiligen Teilnehmer anpasst. (Richtig)
