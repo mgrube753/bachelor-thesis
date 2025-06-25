@@ -17,7 +17,7 @@ This directory contains the experimental framework for evaluating Large Language
 - **[`30_input_sources/`](30_input_sources/)** - Source materials (script, transcript, Tanenbaum excerpts)
 - **[`40_prompts/`](40_prompts/)** - Prompt templates for generation and evaluation
 - **[`50_src/`](50_src/)** - Python implementation and analysis scripts
-- **[`60_eval/`](60_eval/)** - Evaluation data and expert assessment materials
+- **[`60_analyses/`](60_analyses/)** - Obtained analyses data for evaluation purposes
 - **[`70_samples/`](70_samples/)** - Representative question samples
 - **[`80_questions_renamed/`](80_questions_renamed/)** - Processed question collections
 

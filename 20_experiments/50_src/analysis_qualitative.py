@@ -4,7 +4,7 @@ from constants import (
     PROMPT_TEMPLATES_PATH,
     INPUT_SOURCES_PATH,
     EXPERIMENTS_BASE_PATH,
-    EVAL_PATH,
+    ANALYSES_PATH,
     BLOOM_LEVELS_ORDERED,
 )
 import concurrent.futures
@@ -107,13 +107,13 @@ def calculate_bloom_score(exp_name, bloom_rating, bloom_original=None):
 #     reset_evaluator_count()
 
 #     openai_csv_path = os.path.join(
-#         EVAL_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
+#         ANALYSES_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
 #     )
 #     anthropic_csv_path = os.path.join(
-#         EVAL_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
+#         ANALYSES_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
 #     )
 
-#     base_csv_path = os.path.join(EVAL_PATH, "csv_files", "initial", f"{exp_name}.csv")
+#     base_csv_path = os.path.join(ANALYSES_PATH, "csv_files", "initial", f"{exp_name}.csv")
 #     df_base = pd.read_csv(base_csv_path)
 
 #     samples_base = os.path.join(EXPERIMENTS_BASE_PATH, "70_samples", "exp1")
@@ -216,13 +216,15 @@ def process_exp2(exp_name, clients):
     reset_evaluator_count()
 
     openai_csv_path = os.path.join(
-        EVAL_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
+        ANALYSES_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
     )
     anthropic_csv_path = os.path.join(
-        EVAL_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
+        ANALYSES_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
     )
 
-    base_csv_path = os.path.join(EVAL_PATH, "csv_files", "initial", f"{exp_name}.csv")
+    base_csv_path = os.path.join(
+        ANALYSES_PATH, "csv_files", "initial", f"{exp_name}.csv"
+    )
     df_base = pd.read_csv(base_csv_path)
 
     samples_base = os.path.join(EXPERIMENTS_BASE_PATH, "70_samples", "exp2")

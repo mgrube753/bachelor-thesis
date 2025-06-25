@@ -66,7 +66,7 @@ def ratings_to_fleiss_table(ratings_matrix):
 
 def analyze_exp1():
     csv_path = os.path.join(
-        EXPERIMENTS_BASE_PATH, "60_eval", "csv_files", "qualitative"
+        EXPERIMENTS_BASE_PATH, "60_analyses", "csv_files", "qualitative"
     )
 
     results = []
@@ -190,7 +190,7 @@ def main():
     print(exp_summary)
 
     csv_path = os.path.join(
-        EXPERIMENTS_BASE_PATH, "60_eval", "csv_files", "qualitative"
+        EXPERIMENTS_BASE_PATH, "60_analyses", "csv_files", "qualitative"
     )
     save_markdown_report(df, csv_path)
 

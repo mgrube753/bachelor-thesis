@@ -7,7 +7,7 @@ This directory is designated for evaluation results, illustrated as Tables and P
 It is structured to facilitate the analysis and presentation of results from the experiments conducted in the [`20_experiments/`](../20_experiments/) directory, as depicted in the following structure:
 
 - **Analysis Results** - Processed insights from the [`20_experiments/`](../20_experiments/) folder
-- **Evaluation Data** - Synthesized results from CSV files located in [`20_experiments/60_eval/`](../20_experiments/60_eval/)
+- **Evaluation Data** - Synthesized results from CSV files located in [`20_experiments/60_analyses/`](../20_experiments/60_analyses/)
 - **Tables and Figures** - Statistical summaries and visualizations of experimental results served here
 
 ## Integration with Experimental Framework

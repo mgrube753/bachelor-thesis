@@ -18,7 +18,7 @@ from collections import defaultdict
 def create_csvs(exp_name, headers, rows):
     try:
         initial_csv_dir = os.path.join(
-            os.path.dirname(constants.EXP1_PATH), "60_eval", "csv_files", "initial"
+            os.path.dirname(constants.EXP1_PATH), "60_analyses", "csv_files", "initial"
         )
         file_path = os.path.join(initial_csv_dir, f"{exp_name}.csv")
 

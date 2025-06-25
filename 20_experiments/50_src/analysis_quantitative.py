@@ -9,7 +9,7 @@ from tqdm import tqdm
 from constants import (
     EXP1_PATH,
     INPUT_SOURCES_PATH,
-    EVAL_PATH,
+    ANALYSES_PATH,
     PROMPT_TEMPLATES_PATH,
     EMBEDDING_MODEL_ID,
 )
@@ -151,7 +151,9 @@ def process_experiment(exp_name):
 
     model = load_model()
     clients = init_clients()
-    csv_path = os.path.join(EVAL_PATH, "csv_files", "quantitative", f"{exp_name}.csv")
+    csv_path = os.path.join(
+        ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
+    )
     df = pd.read_csv(csv_path)
 
     questions = []

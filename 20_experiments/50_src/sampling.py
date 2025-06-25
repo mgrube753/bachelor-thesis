@@ -270,7 +270,7 @@ def main():
     random.seed(2025)
     base = EXPERIMENTS_BASE_PATH
     sample_base = os.path.join(base, "70_samples")
-    csv_path = os.path.join(base, "60_eval", "csv_files")
+    csv_path = os.path.join(base, "60_analyses", "csv_files")
     output_path = os.path.join(base, "80_questions_renamed")
 
     shutil.rmtree(sample_base, ignore_errors=True)
