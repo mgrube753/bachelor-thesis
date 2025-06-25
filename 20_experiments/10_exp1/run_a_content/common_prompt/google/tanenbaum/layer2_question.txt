@@ -1,7 +1,8 @@
-Korrekte Antwort: C) Die Steuerung des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken und die Regulierung des Datenflusses zwischen schnellem Sender und langsamem Empfänger.
+Frage: Welche der folgenden Funktionen sind Aufgaben der Sicherungsschicht (Data Link Layer) im ISO-OSI-Modell, wie im Text beschrieben?
 
-Frage: Welche der folgenden Herausforderungen werden laut Text primär in der Datenverbindungsschicht (Data Link Layer) behandelt?
-A) Die Umwandlung von Daten in ein anwendungsspezifisches Format und die Verschlüsselung für die Sicherheit.
-B) Die logische Adressierung von Geräten im Netzwerk und das Routing von Datenpaketen über Netzwerkgrenzen hinweg.
-C) Die Steuerung des Zugriffs auf den gemeinsamen Kanal in Broadcast-Netzwerken und die Regulierung des Datenflusses zwischen schnellem Sender und langsamem Empfänger.
-D) Die Komprimierung von Daten zur effizienteren Übertragung und die Fehlerkorrektur auf Bit-Ebene.
+Antwortmöglichkeiten:
+- Die Maskierung von Übertragungsfehlern, um der Netzwerkschicht eine fehlerfreie Leitung zu simulieren. (Richtig)
+- Die Aufteilung von Eingabedaten in Datenrahmen und deren sequentielle Übertragung. (Richtig)
+- Die Regulierung des Datenflusses, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überflutet. (Richtig)
+- Die Kontrolle des Zugriffs auf den gemeinsam genutzten Kanal in Broadcast-Netzwerken. (Richtig)
+- Die logische Adressierung und das Routing von Datenpaketen zwischen Netzwerken. (Falsch)

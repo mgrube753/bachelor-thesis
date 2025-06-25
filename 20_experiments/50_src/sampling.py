@@ -107,7 +107,7 @@ def generate_expert_csvs(sample_base, csv_path):
 
     # Generate special hint files for exp1a and exp1b
     print("\n[INFO] Generating special hint CSV files for exp1a and exp1b...")
-    hints_path = os.path.join(os.path.dirname(csv_path), "hints_1a_1b")
+    hints_path = os.path.join(csv_path, "qualitative", "hint_csvs_exp1")
     os.makedirs(hints_path, exist_ok=True)
 
     hint_df = df[df["exp_name"].isin(["exp1a", "exp1b"])].copy()
@@ -132,14 +132,28 @@ def generate_expert_csvs(sample_base, csv_path):
     exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b"])]
     for exp_name, group in exp1_data.groupby("exp_name"):
         output_df = group[["input_source", "layer"]].copy()
-        for col in [
-            "relevance",
-            "clarity",
-            "answerability",
-            "challenging",
-            "correctness",
-            "comments",
-        ]:
+
+        # Different categories for exp1a and exp1b
+        if exp_name == "exp1a":
+            categories = [
+                "relevance",
+                "clarity",
+                "answerability",
+                "challenging",
+                "correctness",
+                "comments",
+            ]
+        else:  # exp1b
+            categories = [
+                "relevance",
+                "clarity",
+                "answerability",
+                "challenging",
+                "manipulation_handling",
+                "comments",
+            ]
+
+        for col in categories:
             output_df[col] = ""
 
         for i in range(1, 6):

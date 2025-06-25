@@ -1,3 +1,8 @@
-**Antwort:** Die Transportschicht ist eine echte Ende-zu-Ende-Schicht und übermittelt Daten von der Quelle direkt zum Ziel, während die Protokolle der unteren Schichten (1-3) zwischen einer Maschine und ihren unmittelbaren Nachbarn arbeiten.
+Frage: Welche der folgenden Aussagen beschreiben eine Funktion oder ein Merkmal der Transportschicht im ISO-OSI-Modell gemäß dem bereitgestellten Text?
 
-**Frage:** Basierend auf dem gegebenen Text, was ist ein entscheidender Unterschied in der Art der Datenübertragung zwischen der Transportschicht (Schicht 4) und den unteren Schichten (1 bis 3) des ISO-OSI-Modells?
+Antwortmöglichkeiten:
+- Die Transportschicht isoliert die oberen Schichten von Änderungen in der Hardware-Technologie. (Richtig)
+- Eine der Hauptfunktionen der Transportschicht ist die Weiterleitung von Daten an die physikalische Schicht. (Falsch)
+- Die Transportschicht bestimmt die Art des Dienstes, der der Sitzungsschicht und den Benutzern des Netzwerks zur Verfügung gestellt wird, wie z.B. eine fehlerfreie Punkt-zu-Punkt-Verbindung oder das Broadcasting von Nachrichten. (Richtig)
+- Die Transportschicht ist eine echte End-to-End-Schicht, bei der Programme auf der Quellmaschine direkt mit Programmen auf der Zielmaschine kommunizieren. (Richtig)
+- Protokolle der Transportschicht agieren primär zwischen einer Maschine und ihren unmittelbaren Nachbarn im Netzwerk. (Falsch)

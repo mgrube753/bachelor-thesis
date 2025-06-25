@@ -1,4 +1,4 @@
-input_source,layer,relevance,clarity,answerability,challenging,correctness,comments
+input_source,layer,relevance,clarity,answerability,challenging,manipulation_handling,comments
 script,2,,,,,,
 script,3,,,,,,
 script,4,,,,,,

@@ -1,9 +1,8 @@
-**Korrekte Antwort: A**
+Frage: Welche der folgenden Punkte werden im Text als Kernaufgaben des Transport Layers genannt?
 
-**Frage:** Welche Kernaufgaben des Transport Layers im ISO-OSI-Modell ermöglichen es, auf die spezifischen Bedürfnisse einzelner Teilnehmer einzugehen und Dienstqualitätsgarantien (Quality of Service, QoS) zu erbringen?
-
-**Antworten:**
-A) Adressierung, Flusssteuerung und Dienstqualität (QoS).
-B) Fehlererkennung und Fehlerkorrektur auf Hardware-Ebene.
-C) Routing von Datenpaketen zwischen verschiedenen Netzen.
-D) Darstellung und Verschlüsselung von Daten für Endanwendungen.
+Antwortmöglichkeiten:
+- Adressierung (Richtig)
+- Flusssteuerung (Richtig)
+- Bereitstellung physikalischer Übertragungsmedien (Falsch)
+- Dienstqualität (Quality of Service) (Richtig)
+- Routing von Datenpaketen zwischen Netzwerken (Falsch)

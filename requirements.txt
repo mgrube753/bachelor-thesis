@@ -5,3 +5,4 @@ openai
 sentence-transformers
 pandas
 seaborn
+statsmodels

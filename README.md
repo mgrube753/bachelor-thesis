@@ -18,11 +18,11 @@ Where to get the keys:
 ## Todo
 
 -   [ ] Better exp_eval.md and exp1_adherence_eval.md files
--   [ ] Adopt the novel prompt style to the prompts of exp2
 -   [ ] Optimize inter-annotator agreement calculation for the sampled questions between llms/experts
    - Here think about calculating IAA for each category separately to see if there are any differences in agreement between categories
 -   [ ] Refine:
       - Related Work
       - Implementation
 -   [ ] Create eval.py for pandas/matplotlib evaluation based on the csv files created by the analysis*.py scripts & expert eval
--   [ ] Refine qualitative analysis if needed (first we pass it since we have experts for exp1)
+   - At first, quantitative analysis will be useful + maybe IAA till monday
+-   [ ] (Refine qualitative analysis if needed (first we pass it since we have experts for exp1))

@@ -1,8 +1,8 @@
-KORREKTE ANTWORTMÖGLICHKEIT: B
+Frage: Welche der folgenden Aussagen über die Anwendungsschicht und ihre Protokolle sind basierend auf dem gegebenen Text korrekt?
 
-Welche der folgenden Aussagen beschreibt die primäre Funktion von HTTP (HyperText Transfer Protocol) gemäß dem bereitgestellten Text im Kontext der Anwendungsschicht?
-
-A) HTTP wird hauptsächlich für die Übertragung von elektronischen Mails genutzt.
-B) HTTP bildet die Grundlage für das World Wide Web und wird von Browsern verwendet, um Webseiten von Servern anzufordern.
-C) HTTP ist ein Protokoll, das ausschließlich für die sichere Dateiübertragung zwischen Rechnern dient.
-D) HTTP ist ein Protokoll, das hauptsächlich für die Verteilung von Netzwerk-News verwendet wird.
+Antwortmöglichkeiten:
+- HTTP ist ein weit verbreitetes Anwendungsprotokoll und die Grundlage für das World Wide Web. (Richtig)
+- Die Anwendungsschicht enthält Protokolle, die hauptsächlich von Netzwerkinfrastrukturen und nicht von Endnutzern benötigt werden. (Falsch)
+- Webbrowser verwenden HTTP, um Webseiten von Servern anzufordern, die dann die Seite zurücksenden. (Richtig)
+- Neben HTTP werden andere Anwendungsprotokolle ausschließlich für die Verschlüsselung von Datenübertragungen verwendet. (Falsch)
+- HTTP ist das einzige Anwendungsprotokoll, das im Text erwähnt wird. (Falsch)

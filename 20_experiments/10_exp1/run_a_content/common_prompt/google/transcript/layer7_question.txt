@@ -1,3 +1,7 @@
-Korrekte Antwort: Die Begriffe, die in der Anwendung auftreten; die Protokollelemente; und die Information, wie die Anwendung auf Anforderungen reagieren soll.
+Frage: Welche zwei Kernkonzepte oder -elemente werden laut Text für den Application Layer (Schicht 7) als grundlegend beschrieben?
 
-Welche drei Grundkonzepte müssen laut dem gegebenen Text vom Application Layer (Schicht 7) definiert werden, um die Interaktion einer spezifischen Anwendung zu regeln?
+Antwortmöglichkeiten:
+- Protokollelemente, mit denen Kommunikationspartner Anforderungen stellen und Daten erwarten (Richtig)
+- Die physikalische Übertragung der Datenpakete (Falsch)
+- Informationen darüber, wie eine Anwendung auf Anforderungen oder Protokollelemente reagieren soll (Richtig)
+- Die Bestimmung der optimalen Route für Datenpakete im Netzwerk (Falsch)

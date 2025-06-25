@@ -1,3 +1,8 @@
-**Korrekte Antwort:** Knoten-zu-Knoten-Flusssteuerung und Ende-zu-Ende-Flusssteuerung.
+Frage: Welche der folgenden Aufgaben gehören zu den Kernfunktionen des Network Layers (Schicht 3) im ISO-OSI-Modell, wie im Text beschrieben?
 
-Gemäß dem gegebenen Text, welche zwei verschiedenen Aspekte der Flusssteuerung werden als Kernaufgabe des Network Layers (Layer 3) des ISO-OSI-Modells unterschieden?
+Antwortmöglichkeiten:
+- Die Einführung technologieübergreifender Adressen für die Kommunikation zwischen Geräten in unterschiedlichen Netzwerken. (Richtig)
+- Die Auswahl von vermittelnden Zwischenknoten, um Datenpakete zum Ziel zu leiten. (Richtig)
+- Die Umwandlung von Daten in ein anwendungsspezifisches Format für die Darstellung. (Falsch)
+- Strategien zur Kontrolle des Sendetempos, einschliesslich Ende-zu-Ende- und Knoten-zu-Knoten-Flusssteuerung. (Richtig)
+- Die physische Übertragung von Bits über das Übertragungsmedium. (Falsch)

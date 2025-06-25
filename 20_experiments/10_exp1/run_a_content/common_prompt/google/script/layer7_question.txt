@@ -1,11 +1,8 @@
-KORREKTE ANTWORT:
-Der Application Layer (Schicht 7) ist stark abhängig von der jeweiligen Anwendung, wodurch wenig Systematisierung möglich ist.
+Frage: Welche der folgenden Punkte gehören laut dem bereitgestellten Text zu den Kernaufgaben des Application Layers (Schicht 7) des ISO-OSI-Modells?
 
-FRAGE:
-Welche der folgenden Aussagen beschreibt ein wesentliches Merkmal des Application Layers (Schicht 7) im ISO-OSI-Modell, wie im gegebenen Text dargestellt?
-
-ANTWORTMÖGLICHKEITEN:
-A) Der Application Layer (Schicht 7) ist stark abhängig von der jeweiligen Anwendung, wodurch wenig Systematisierung möglich ist.
-B) Die Protokollelemente des Application Layers lassen sich aufgrund ihrer Struktur sehr gut systematisieren.
-C) Eine der Kernaufgaben des Application Layers ist die Festlegung der physischen Übertragungselemente.
-D) Das Verhalten der Anwendung auf Protokollelemente ist in diesem Layer fest vorgegeben und nicht anpassbar.
+Antwortmöglichkeiten:
+- Festlegung, welche Begriffe in der Anwendung auftreten. (Richtig)
+- Beschreibung, wie die Anwendung auf Anforderungen durch Protokollelemente reagiert. (Richtig)
+- Definition, welche Anforderungen an Protokollelemente gestellt werden können und welche Daten dabei erwartet werden. (Richtig)
+- Die Verwaltung und Beendigung von Sitzungen zwischen Anwendungen. (Falsch)
+- Die Segmentierung von Daten zur Übertragung über das Netzwerk. (Falsch)
