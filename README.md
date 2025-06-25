@@ -17,13 +17,12 @@ Where to get the keys:
 
 ## Todo
 
--   [x] Create analysis setup for expert evaluation, so these can rate the sampled questions based on the same rubrics as the llm-based eval has, blind test
--   [x] Refine the python modules, so they work properly with the new setup
 -   [ ] Better exp_eval.md and exp1_adherence_eval.md files
 -   [ ] Adopt the novel prompt style to the prompts of exp2
--   [ ] Refine qualitative analysis if needed (first we pass it since we have experts for exp1)
 -   [ ] Optimize inter-annotator agreement calculation for the sampled questions between llms/experts
+   - Here think about calculating IAA for each category separately to see if there are any differences in agreement between categories
 -   [ ] Refine:
       - Related Work
       - Implementation
 -   [ ] Create eval.py for pandas/matplotlib evaluation based on the csv files created by the analysis*.py scripts & expert eval
+-   [ ] Refine qualitative analysis if needed (first we pass it since we have experts for exp1)

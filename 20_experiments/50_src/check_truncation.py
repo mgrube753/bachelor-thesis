@@ -2,7 +2,7 @@ import os
 import torch
 import pandas as pd
 from sentence_transformers import SentenceTransformer
-from constants import INPUT_SOURCES_PATH, EMBEDDING_MODEL_ID, EXP1_PATH, EXP2_PATH
+from constants import INPUT_SOURCES_PATH, EMBEDDING_MODEL_ID, EXP1_PATH
 
 
 def load_embedding_model(model_name):
@@ -92,7 +92,6 @@ def main():
     directories = [
         (INPUT_SOURCES_PATH, "input sources"),
         (EXP1_PATH, "Experiment 1 questions"),
-        # (EXP2_PATH, "Experiment 2 questions"),
     ]
 
     all_dfs = []
