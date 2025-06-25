@@ -11,3 +11,9 @@
 # exp1 gets divided in quantitative and qualitative
 
 # both qualitative exp results shall include a minor table for IAA, or a collective one for both in one
+
+# ---
+
+# quantitative analysis for exp1a and exp1b
+
+# set up in notebook
