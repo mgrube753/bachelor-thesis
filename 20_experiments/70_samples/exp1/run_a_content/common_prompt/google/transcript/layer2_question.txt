@@ -1,9 +1,8 @@
-**Frage:**
-Welche der folgenden Aufgaben werden im gegebenen Text als Funktionen des Data Link Layers (Schicht 2) des ISO-OSI-Modells aufgeführt?
+Frage: Welche der folgenden Aufgaben oder Eigenschaften treffen gemäß dem bereitgestellten Text auf den Data Link Layer (Schicht 2) des ISO-OSI-Modells zu?
 
-**Antwort(en):**
-*   Fehlerkontrolle
-*   Flusskontrolle
-*   Segmentierung
-*   Identifikation
-*   Medienzugriff (Aktivierung des physikalischen Layers)
+Antwortmöglichkeiten:
+- Er stellt eine fehlergesicherte Übertragung über einen möglicherweise nicht fehlergesicherten Physical Layer zur Verfügung. (Richtig)
+- Die Flusskontrolle dient dazu, Übertragungsfehler zu erkennen und zu beheben. (Falsch)
+- Die Segmentierung umfasst das Zusammenfassen von einzelnen Bits zu größeren Einheiten wie Bytes. (Richtig)
+- Die Identifikation ermöglicht die Auswahl eines Senders oder Empfängers durch Adressen. (Richtig)
+- Der Data Link Layer ist primär für die Wegewahl (Routing) zwischen Netzwerken zuständig. (Falsch)

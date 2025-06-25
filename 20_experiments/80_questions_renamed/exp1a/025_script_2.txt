@@ -1,7 +1,8 @@
-Correct Answer: D
-Welche der folgenden Aufgaben gehört laut dem gegebenen Text *nicht* zu den Kernaufgaben des Data Link Layers (Schicht 2) im ISO-OSI-Modell?
+Frage: Welche der folgenden Aufgaben gehört *nicht* zu den Kernaufgaben des Data Link Layer (Schicht 2) gemäß dem gegebenen Text?
 
-A) Flusskontrolle
-B) Medienzugriff
-C) Segmentierung
-D) Verschlüsselung von Daten
+Antwortmöglichkeiten:
+- Erkennen, Beheben oder Signalisieren von Übertragungsfehlern. (Falsch)
+- Strategien, wenn Sender für Empfänger zu schnell sendet. (Falsch)
+- Zusammenfassen einzelner Bits zu größeren Einheiten wie 8-bit Bytes. (Falsch)
+- Das Weiterleiten von Datenpaketen zwischen verschiedenen Netzwerken. (Richtig)
+- Auswählen bestimmter Sender oder Empfänger anhand einer Adresse. (Falsch)
