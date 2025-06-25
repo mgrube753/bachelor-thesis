@@ -17,9 +17,6 @@ Where to get the keys:
 
 ## Todo
 
--   [ ] Better exp_eval.md and exp1_adherence_eval.md files
--   [ ] Optimize inter-annotator agreement calculation for the sampled questions between llms/experts
-   - Here think about calculating IAA for each category separately to see if there are any differences in agreement between categories
 -   [ ] Refine:
       - Related Work
       - Implementation

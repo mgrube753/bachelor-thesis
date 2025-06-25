@@ -3,29 +3,17 @@ from constants import REQUEST_DELAY_SECONDS, LLM_MODEL_IDS
 from google.genai import types
 
 
-def gen_with_google(client, prompt_text, model_id, max_tokens, temperature=None):
+def gen_with_google(client, prompt_text, model_id, max_tokens):
     # https://github.com/googleapis/python-genai, https://ai.google.dev/gemini-api/docs/thinking https://ai.google.dev/gemini-api/docs/text-generation https://cloud.google.com/vertex-ai/docs/reference/rest/v1/GenerateContentResponse
     try:
-        if temperature is not None:
-            response = client.models.generate_content(
-                model=model_id,
-                contents=prompt_text,
-                config=types.GenerateContentConfig(
-                    thinking_config=types.ThinkingConfig(thinking_budget=1100),
-                    max_output_tokens=max_tokens,
-                    temperature=temperature,
-                ),
-            )
-        else:
-            response = client.models.generate_content(
-                model=model_id,
-                contents=prompt_text,
-                config=types.GenerateContentConfig(
-                    thinking_config=types.ThinkingConfig(thinking_budget=1100),
-                    max_output_tokens=max_tokens,
-                ),
-            )
-
+        response = client.models.generate_content(
+            model=model_id,
+            contents=prompt_text,
+            config=types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=1100),
+                max_output_tokens=max_tokens,
+            ),
+        )
         candidate = response.candidates[0]
         if candidate.finish_reason == "MAX_TOKENS":
             print(f"\n[WARNING] {model_id} ran out of tokens")
@@ -41,24 +29,15 @@ def gen_with_google(client, prompt_text, model_id, max_tokens, temperature=None)
         return None
 
 
-def gen_with_anthropic(client, prompt_text, model_id, max_tokens, temperature=None):
+def gen_with_anthropic(client, prompt_text, model_id, max_tokens):
     # https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-for-making-the-best-use-of-extended-thinking-mode https://docs.anthropic.com/en/api/handling-stop-reasons
     try:
-        if temperature is not None:
-            response = client.messages.create(
-                model=model_id,
-                thinking={"type": "enabled", "budget_tokens": 1100},
-                messages=[{"role": "user", "content": prompt_text}],
-                max_tokens=max_tokens,
-                temperature=temperature,
-            )
-        else:
-            response = client.messages.create(
-                model=model_id,
-                thinking={"type": "enabled", "budget_tokens": 1100},
-                messages=[{"role": "user", "content": prompt_text}],
-                max_tokens=max_tokens,
-            )
+        response = client.messages.create(
+            model=model_id,
+            thinking={"type": "enabled", "budget_tokens": 1100},
+            messages=[{"role": "user", "content": prompt_text}],
+            max_tokens=max_tokens,
+        )
 
         if response.stop_reason == "max_tokens":
             print(f"\n[WARNING] {model_id} ran out of tokens")
@@ -77,24 +56,15 @@ def gen_with_anthropic(client, prompt_text, model_id, max_tokens, temperature=No
         return None
 
 
-def gen_with_openai(client, prompt_text, model_id, max_tokens, temperature):
+def gen_with_openai(client, prompt_text, model_id, max_tokens):
     # https://platform.openai.com/docs/quickstart?api-mode=responses&lang=python, https://platform.openai.com/docs/guides/reasoning?api-mode=responses
     try:
-        if temperature is not None:
-            response = client.responses.create(
-                model=model_id,
-                reasoning={"effort": "medium"},
-                input=[{"role": "user", "content": prompt_text}],
-                max_output_tokens=max_tokens,
-                temperature=temperature,
-            )
-        else:
-            response = client.responses.create(
-                model=model_id,
-                reasoning={"effort": "medium"},
-                input=[{"role": "user", "content": prompt_text}],
-                max_output_tokens=max_tokens,
-            )
+        response = client.responses.create(
+            model=model_id,
+            reasoning={"effort": "medium"},
+            input=[{"role": "user", "content": prompt_text}],
+            max_output_tokens=max_tokens,
+        )
         # based on https://platform.openai.com/docs/api-reference/responses-streaming/response/incomplete[]
         if (
             response.status == "incomplete"
@@ -115,7 +85,7 @@ def gen_with_openai(client, prompt_text, model_id, max_tokens, temperature):
         return None
 
 
-def llm_generation(llm_name, clients, prompt_text, max_tokens, temperature=None):
+def llm_generation(llm_name, clients, prompt_text, max_tokens):
     client = clients.get(llm_name)
     model_id = LLM_MODEL_IDS.get(llm_name)
 
@@ -125,13 +95,11 @@ def llm_generation(llm_name, clients, prompt_text, max_tokens, temperature=None)
 
     result = None
     if llm_name == "google":
-        result = gen_with_google(client, prompt_text, model_id, max_tokens, temperature)
+        result = gen_with_google(client, prompt_text, model_id, max_tokens)
     elif llm_name == "anthropic":
-        result = gen_with_anthropic(
-            client, prompt_text, model_id, max_tokens, temperature
-        )
+        result = gen_with_anthropic(client, prompt_text, model_id, max_tokens)
     elif llm_name == "openai":
-        result = gen_with_openai(client, prompt_text, model_id, max_tokens, temperature)
+        result = gen_with_openai(client, prompt_text, model_id, max_tokens)
     else:
         print(f"[ERROR] Unknown LLM name '{llm_name}'")
         return None

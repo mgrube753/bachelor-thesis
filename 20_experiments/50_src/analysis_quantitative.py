@@ -33,7 +33,7 @@ def calc_cossim_batch(model, questions, sources):
     return np.diag(similarities)
 
 
-def get_adherence_scores(clients, question, source_text):
+def get_adherence_scores(clients, question, source_text, evaluator):
     prompt_path = os.path.join(
         PROMPT_TEMPLATES_PATH, "evaluation", "exp1_adherence_eval.md"
     )
@@ -43,7 +43,7 @@ def get_adherence_scores(clients, question, source_text):
         "{context_text}", source_text
     )
 
-    response = llm_generation("google", clients, prompt, max_tokens=1200, temperature=0)
+    response = llm_generation(evaluator, clients, prompt, max_tokens=1200)
     if response:
         try:
             score = float(response.strip())
@@ -65,21 +65,33 @@ def get_adherence_scores_parallel(
     valid_indices=None,
     csv_path=None,
 ):
-    results = [None] * len(questions_sources_pairs)
+    results = [(None, None)] * len(questions_sources_pairs)
     completed_count = 0
     count_lock = threading.Lock()
 
     def process_single(index, question, source_text):
         nonlocal completed_count
-        result = get_adherence_scores(clients, question, source_text)
-        results[index] = result
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+            future_openai = executor.submit(
+                get_adherence_scores, clients, question, source_text, "openai"
+            )
+            future_anthropic = executor.submit(
+                get_adherence_scores, clients, question, source_text, "anthropic"
+            )
+            openai_score = future_openai.result()
+            anthropic_score = future_anthropic.result()
+
+        results[index] = (openai_score, anthropic_score)
 
         # Save incrementally if parameters provided
         if df is not None and valid_indices is not None and csv_path is not None:
             with count_lock:
                 idx = valid_indices[index]
-                if result is not None:
-                    df.at[idx, "adherence_score"] = result
+                if openai_score is not None:
+                    df.at[idx, "adherence_score_openai"] = openai_score
+                if anthropic_score is not None:
+                    df.at[idx, "adherence_score_anthropic"] = anthropic_score
                 df.to_csv(csv_path, index=False)
 
         with count_lock:
@@ -93,7 +105,9 @@ def get_adherence_scores_parallel(
         ]
 
         with tqdm(
-            total=len(questions_sources_pairs), desc="Adherence scores", unit="pair"
+            total=len(questions_sources_pairs),
+            desc="Adherence scores (OpenAI & Anthropic)",
+            unit="pair",
         ) as pbar:
             for future in concurrent.futures.as_completed(futures):
                 future.result()
@@ -218,9 +232,10 @@ def process_experiment(exp_name):
     df.to_csv(csv_path, index=False)
     print("=" * 80)
 
-    # This takes a while, since the maximum of output tokens for Google is 10000 per minute, and 10 requests per minute
-    print("[INFO] Processing adherence scores in parallel...")
     questions_sources_pairs = list(zip(questions, sources))
+
+    # --- Process with OpenAI and Anthropic evaluator ---
+    print("[INFO] Processing adherence scores with OpenAI and Anthropic...")
     adherence_results = get_adherence_scores_parallel(
         clients,
         questions_sources_pairs,
@@ -231,10 +246,13 @@ def process_experiment(exp_name):
     )
 
     for i, idx in enumerate(valid_indices):
-        adherence_score = adherence_results[i]
+        openai_score, anthropic_score = adherence_results[i]
         info = comparison_info[i]
         print(
-            f"[ADHERENCE] {info['source_type']} layer{info['layer']} -> {info['llm']} ({info['prompt_type']}): {adherence_score}"
+            f"[ADHERENCE OpenAI] {info['source_type']} layer{info['layer']} -> {info['llm']} ({info['prompt_type']}): {openai_score}"
+        )
+        print(
+            f"[ADHERENCE Anthropic] {info['source_type']} layer{info['layer']} -> {info['llm']} ({info['prompt_type']}): {anthropic_score}"
         )
 
     print(f"\n[INFO] Final results saved to {csv_path}")
@@ -243,4 +261,4 @@ def process_experiment(exp_name):
 
 if __name__ == "__main__":
     process_experiment("exp1a")
-    process_experiment("exp1b")
+    # process_experiment("exp1b")
