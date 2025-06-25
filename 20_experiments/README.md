@@ -82,7 +82,7 @@ Each level includes specific German descriptions and action verbs for each Bloom
 # (Optional: perform first truncation check for source materials)
 python check_truncation.py
 
-# Generate questions and evaluations
+# Generate questions
 python main.py
 
 # Perform second truncation check which covers both -- source materials and questions
@@ -91,10 +91,10 @@ python check_truncation.py
 # Run quantitative analysis
 python analysis_quantitative.py
 
-# Process qualitative assessments
-python analysis_qualitative.py
+# (Process qualitative assessments)
+(python analysis_qualitative.py)
 
-# After inserting all results in the csv files, calculate agreement metrics
+# After inserting all expert results in the csv files, calculate Fleiss' Kappa for inter-annotator agreement
 python agreement.py
 
 # Perform evaluation step for tables and figures

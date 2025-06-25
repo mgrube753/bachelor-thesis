@@ -19,15 +19,13 @@ Has to be created later.
 
 The intermediate defense covers the following key sections:
 
-1. **Einleitung**
+1. **Introduction & Problem**
 
-2. **Theoretische Grundlagen**
+2. **Exp. 1 Methodology**
 
-3. **Exp. 1 Methodik**
+3. **Results & Discussion**
 
-4. **Ergebnisse & Diskussion**
-
-5. **Fazit & Ausblick**
+4. **Conclusion & Outlook**
 
 ## Defense Overview
 

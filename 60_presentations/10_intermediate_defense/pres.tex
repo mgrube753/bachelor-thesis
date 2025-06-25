@@ -81,6 +81,8 @@
             \item Aktives Lernen $\to$ gezielte Fragen
             \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021,vu_chatgpt-based_2024} 
             \item Korrektheit von Fragen elementar in Bildung
+            % Und von interesse ist, wie man gut dies in form von inhaltstreue umsetzen kann
+            % inhaltstreue zu gegebenem text wird aber oft nur als future work erwähnt
         \end{itemize}
         \vspace{.5em}
         \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ Lehrmaterialien verbessern + personalisiertes Lernen \cite{naveed_comprehensive_2024}
@@ -102,8 +104,14 @@
         \framebreak
         \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
         % da auch die pädagogische Eignung bewertet werden muss
-        \item[$\to$] Pädagogische Bewertung selten erforscht
-        \item[$\to$] Mangelnde Performance bei höheren kognitiven Levels \cite{cheng_treequestion_2024,elkins_how_2023,scaria_automated_2024}
+        \begin{itemize}
+            \item Pädagogische Bewertung selten erforscht
+            \item Mangelnde Performance bei höheren kognitiven Levels \cite{cheng_treequestion_2024,elkins_how_2023,scaria_automated_2024}
+        \end{itemize}
+        % die "relevanz" von fragen wird eher bewertet, grundsätzlich aber nicht direkt auf Inhaltstreue hinausgeht
+        % spielraum für automatisierte Verfahren, welche die inhaltstreue von LLMs evaluieren. Semantic similarity ist eine Möglichkeit, aber im grunde nie genutzt worden
+        % sonst viel linguistisch, mangel an menschlicher bewertung
+        % bloom ...
         \vspace{.5em}
         \item \textbf{Forschungslücke:} Bedarf an Untersuchung der Inhaltstreue und Einhalten kognitiver Anforderungsniveaus
     \end{itemize}
@@ -111,29 +119,42 @@
 
 \begin{frame}{Forschungsfragen}
     \begin{itemize}
-        \item \textbf{RQ1:} To what extent do \textcolor{RedOrange!60}{LLMs adhere} to the content of diverse provided \textcolor{RedOrange!60}{instructional texts} when generating questions? \vspace{.5em}
-        % Zu welchem Grad halten LLMs sich an den Inhalt verschiedener bereitgestellter Lehrtexte bei der Generierung von Fragen?
-        \item \textbf{RQ2:} How does the \textcolor{RedOrange!60}{relationship} between diverse question formats and Bloom's Taxonomy levels influence the \textcolor{RedOrange!60}{pedagogical effectiveness} of LLM-generated questions?
+        \item \textbf{RQ1:} Zu welchem Grad \textcolor{RedOrange!60}{halten sich LLMs} an den Inhalt verschiedener bereitgestellter \textcolor{RedOrange!60}{Lehrtexte} bei der Generierung von Fragen? \vspace{.5em}
+        \item[\textcolor{gray}{$\bullet$}] \textcolor{gray}{\textbf{RQ2:} Wie beeinflusst die \textcolor{RedOrange!40}{Beziehung} zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die \textcolor{RedOrange!40}{pädagogische Wirksamkeit} von LLM-generierten Fragen?}
         % Wie beeinflusst die Beziehung zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die pädagogische Wirksamkeit von LLM-generierten Fragen?
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Bloom's revised Taxonomy}
     \begin{itemize}
-        % Kognitive Analyse von Fragen
-        \item \textbf{Hierarchie:} Lernzielklassifizierung \cite{krathwohl_revision_2002}:
-        \begin{enumerate}
-            {\footnotesize
-            \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
-            \item \textcolor{blue}{Understanding} -- Bedeutung von Anweisungen erkennen
-            \item \textcolor{blue}{Applying} -- Wissen in gegebenen Situationen anwenden
-            \item \textcolor{blue}{Analyzing} -- Material in Komponenten zerlegen
-            \item \textcolor{blue}{Evaluating} -- Urteile basierend auf Kriterien fällen
-            \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
-            }
-        \end{enumerate}
         \item \textbf{Pädagogische Relevanz:} Systematische Bewertung kognitiver Anforderungen von Fragen
     \end{itemize}
+    % \begin{itemize}
+        % Kognitive Analyse von Fragen
+        % \item \textbf{Hierarchie:} Lernzielklassifizierung \cite{krathwohl_revision_2002}:
+        % \begin{enumerate}
+        %     {
+        %     \footnotesize
+        %     \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
+        %     % erinnern, wiedererkennen, wiedergeben, benennen, auflisten
+        %     \item \textcolor{blue}{Understanding} -- Bedeutung von Anweisungen erkennen
+        %     % erklären, beschreiben, zusammenfassen, interpretieren, klassifizieren
+        %     \item \textcolor{blue}{Applying} -- Wissen in gegebenen Situationen anwenden
+        %     % anwenden, benutzen, ausführen, demonstrieren, durchführen
+        %     \item \textcolor{blue}{Analyzing} -- Material in Komponenten zerlegen
+        %     % untersuchen, vergleichen, kategorisieren, organisieren, differenzieren
+        %     \item \textcolor{blue}{Evaluating} -- Urteile basierend auf Kriterien fällen
+        %     % bewerten, beurteilen, rechtfertigen, verteidigen, kritisieren
+        %     \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
+        %     % entwerfen, planen, entwickeln, konstruieren, generieren
+        %     }
+        % \end{enumerate}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Blooms-Taxonomy.png}
+            \caption{Bloom's revised Taxonomy \cite{krathwohl_revision_2002}.}
+            \label{fig:bloom}
+        \end{figure}
 \end{frame}
 
 % \begin{frame}{LLMs in der Fragengenerierung}
@@ -151,7 +172,7 @@
 %     \end{itemize}
 % \end{frame}
 
-\begin{frame}{Herausforderungen aus Literatur}
+\begin{frame}{Herausforderungen der Literatur}
     \begin{itemize}
         \item \textbf{Veraltete Modelle} -- Kein Reasoning
         % pre-thinking basiert auf dem user prompt, damit das modell verstehen kann, was der user will
@@ -180,14 +201,14 @@
 
 \begin{frame}[allowframebreaks]{Experimentelles Design}
     \begin{itemize}
-        \item \textbf{Ziel:} Bewertung der Inhaltstreue von LLM-\\ generierten Fragen
+        \item \textbf{Ziel:} Bewertung der Inhaltstreue LLM-\\ generierter Fragen + Qualität
         \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
         \begin{itemize}
             \item Script -- Prof. Cap's \enquote{Referenzarchitekturen} (DE)
             \item Transcript -- Audio-zu-Text (DE)  
             \item \enquote{Computer Networks} -- Textbook (EN)
         \end{itemize}
-        \item \textbf{Exp 1a:} Nutzt Originaltexte 
+        \item \textbf{Exp 1a:} Originaltexte 
         \item \textbf{Exp 1b:} Manipuliertes Script 
         \framebreak
         \item 4 Large Language Models: 
@@ -203,6 +224,7 @@
                 \item \textbf{Einfach:} Minimale Instruktionen, keine Strukturierung, aber Formatvorlage + Material
                 % generiere zum iso osi modell
                 % korrekte Antwort klar gekennzeichnet (eine oder eben aus möglichkeiten)
+                % kein abgrenzen von paragraphen (strukturierung)
                 % klar und präzise Frage, kein weiterer Text soll generiert werden
                 \item \textbf{Komplex:} Rollenzuweisung, detaillierte Anweisungen, fordert nicht-triviales und kritisches Denken, Struktur durch Docstrings, Format-Vorlage + Material 
                 % format für einheitlichen Output bei beiden Prompts --> war das Problem beim einfachen Prompt --> Rerun nötig gewesen
@@ -222,13 +244,13 @@
         \item \textbf{Manuell:} DeepSeek R1
         \item \textbf{Material:} Layer-weise Aufteilung
         \item \textbf{\#Fragen\,/\,Prompt:} 1\,/\,Prompt-Variation 
-        \item \textbf{Resultate:} 
+        \item \textbf{Resultat:} 
             \begin{itemize}
                 \item \textbf{Exp 1a:} 168 Fragen
                 \item \textbf{Exp 1b:} 56 Fragen
             \end{itemize}
     \end{itemize}
-    \vspace{.0em}
+    \vspace{-.25em}
     \begin{align*}
         \textcolor{gray}{4 \text{ LLMs}\times 3 \text{ Inputs}\times 7 \text{ Layers}\times 2 \text{ Prompts}} &= \textcolor{gray}{168 \text{ Fragen}} \\
         \textcolor{gray}{4 \text{ LLMs}\times 1 \text{ Input}\times 7 \text{ Layers}\times 2 \text{ Prompts}} &= \textcolor{gray}{56 \text{ Fragen}}
@@ -249,8 +271,8 @@
             % hat sich aber eher gesplittet in encoder-only und decoder-only transformer
             % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training als enc-dec-transformer
             % encoder-only: bert, roberta: können nur text klassifizieren, nicht generieren --> sentence transformers kamen dann auch --> diese Embeddings sind vegleichbar
-            \item \textbf{Adherence Score:} Durch 2x Prompting\,/\,Frage -- Gemini
-            % temperatur auf 0 für weniger randomness in Antwort
+            \item \textbf{Adherence Score:} o3 \& Claude 3.7 Sonnet Prompting
+            % temperatur auf 0 für weniger randomness in Antwort, geht aber nicht bei thinking mode...
             % bekommt Rolle eines Experten im Bewerten von metrischen Fragen, Frage studieren, iso osi kontext text studieren
             % kurze Bewertungsrubrik 0 bis 1, Ausgabe einer Dezimalzahl mit 2 Nachkommastellen, ohne Kommentare etc.
         \end{itemize}
@@ -259,8 +281,7 @@
         \begin{itemize}
             \item \textbf{Fleiss Kappa:} Inter-Rater Reliability
             \item \textbf{Bewertungsrubrik:} 0-10 Punkte\,/\,Kategorie \& Frage
-            % \framebreak
-            \item[$\to$] \textit{\textcolor{gray}{Relevanz, Klarheit, Beantwortbarkeit, Herausfordernd \& Korrektheit vs. Umgang mit Manipulation}}
+            \item[] \textit{\textcolor{gray}{(Relevanz, Klarheit, Beantwortbarkeit, Herausfordernd \& Korrektheit vs. Umgang mit Manipulation)}}
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -275,13 +296,14 @@
 
 \begin{frame}{Qualitative Analyse}
     \begin{itemize}
-        \item Hier wird nicht viel passieren, da die Expertenbewertung noch aussteht. Vielleicht kann ich wenigstens Fleiss Kappa und bisschen Tabellen-Aspekte reinbringen
+        \item Zeitlich zu knapp...
+        % \item Hier wird nicht viel passieren, da die Expertenbewertung noch aussteht. Vielleicht kann ich wenigstens Fleiss Kappa und bisschen Tabellen-Aspekte reinbringen
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Interpretation\,/\,Limitations}
+\begin{frame}{(Interpretation\,/\,Limitations)}
     \begin{itemize}
-        \item Hier müssen Folgerungen etc. rein
+        \item Hier könnten Folgerungen etc. rein
     \end{itemize}
 \end{frame}
 
@@ -293,11 +315,11 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Lessons Learned}
-    \begin{itemize}
-        \item Wird nicht groß sein
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Lessons Learned}
+%     \begin{itemize}
+%         \item Wird nicht groß sein
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}{Ausblick auf Exp. 2}
     \begin{itemize}
@@ -309,7 +331,7 @@
                 \item (Nicht-)Angabe von Fragetyp
                 \item (Nicht-)Angabe von Bloom Level
             \end{itemize}
-        \item \textbf{Evaluatoren:} Claude 3.7 Sonnet \& OpenAI o3
+        \item \textbf{Evaluatoren:} 2 LLMs\,/\,Experten
         \item \textbf{Rubrik:} Gleiche Rubrik + \textit{Bloom's Level}
     \end{itemize}
 \end{frame}

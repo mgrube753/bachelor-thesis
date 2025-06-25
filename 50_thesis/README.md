@@ -42,8 +42,8 @@ The following research questions guide the thesis:
 ## Bibliography Organization
 
 ### Literature Sources
-- **[`bibs/Positive.bib`](thesis/bibs/Positive.bib)** - Primary research papers (50+ entries)
-- **[`bibs/Extras.bib`](thesis/bibs/Extras.bib)** - Supporting literature and foundational works
+- **[`bibs/Positive.bib`](thesis/bibs/Positive.bib)** - Primary research papers
+- **[`bibs/Extras.bib`](thesis/bibs/Extras.bib)** - Supporting literature cited in the positive papers
 - **[`bibs/Eigenes.bib`](thesis/bibs/Eigenes.bib)** - Self-discovered resources and recent developments
 
 ### Key Research Areas
