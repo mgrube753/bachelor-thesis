@@ -275,11 +275,81 @@
 
 \section{Ergebnisse \& Diskussion}
 
-\begin{frame}{Quantitative Analyse}
-    \begin{itemize}
-        \item Hier müssen viele Tabellen und Grafiken rein
-    \end{itemize}
+\begin{frame}{Quantitative Analyse 1a -- LLMs}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
+        \caption{Verteilung nach LLM}
+        \label{fig:dist_llm}
+    \end{figure}
 \end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- Input Sources}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_input_source.png}
+        \caption{Verteilung nach Eingabequelle}
+        \label{fig:dist_input}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- Prompt Types}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_prompt_type.png}
+        \caption{Verteilung nach Prompt-Typ}
+        \label{fig:dist_prompt}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- Layers}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_layer.png}
+        \caption{Verteilung nach Layer}
+        \label{fig:dist_layer}
+    \end{figure}
+\end{frame}
+
+% --------------------------------------
+
+\begin{frame}{Quantitative Analyse 1b -- LLMs}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_llm.png}
+        \caption{Verteilung nach LLM}
+        \label{fig:dist_llm}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1b -- Input Sources}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_input_source.png}
+        \caption{Verteilung nach Eingabequelle}
+        \label{fig:dist_input}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1b -- Prompt Types}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_prompt_type.png}
+        \caption{Verteilung nach Prompt-Typ}
+        \label{fig:dist_prompt}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1b -- Layers}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_layer.png}
+        \caption{Verteilung nach Layer}
+        \label{fig:dist_layer}
+    \end{figure}
+\end{frame}
+
+% --------------------------------------
 
 \begin{frame}{Qualitative Analyse}
     \begin{itemize}
@@ -288,17 +358,51 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{(Interpretation\,/\,Limitations)}
+\begin{frame}{Limitations}
     \begin{itemize}
-        \item Hier könnten Folgerungen etc. rein
+        \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
+        \item[$\to$] Temperatur nicht einstellbar
+        \item[$\to$] Womöglich hoch/variiert
+        \item[$\to$] Wichtig für Bewertung gewesen
+        \item[$\to$] Nachteil von Reasoning?
+        \item[$\to$] Exp. 2 Bewertung mit solchen Modellen?
+        \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
+        \item[$\to$] Expertenbewertung von Bedeutung
     \end{itemize}
 \end{frame}
 
 \section{Fazit \& Ausblick}
 
-\begin{frame}{Hauptergebnisse zu RQ1}
+\begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
     \begin{itemize}
-        \item Wird nicht groß sein
+        \item Nicht vollständig, da Expertenbewertung aussteht
+        \item Jedoch moderate Ergebnisse
+        \begin{itemize}
+            \item DeepSeek R1 am schwächsten bei cossim, google/anthropic gut, openai okay
+            \item Adherence: llms nah beieinander stattdessen
+            \item Script > Tanenbaum > Transcript bei cossim
+            \item Bringt somit bei Layer-Analyse auch viel Streuung bei 1-4, in adherence nicht spürbar
+            % transcript 1-4 ziehen die Werte runter, da die Quellen sehr lang sind
+            % Script schneidet durch die sehr kurzen Formulierungen besser ab
+            \item unlogisch hingegen adherence score: alle sources ähnlich
+            \item Komplexer Prompt > Einfacher Prompt, aber nicht signifikant
+            \item unlogisch hingegen adherence: andersherum, relative deutlich
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
+    \begin{itemize}
+        \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
+        \item Auch hier, DeepSeek R1 am schwächsten, aber bei beiden Metriken (und streut bei adherence sehr)
+        \item Adherence bei diesem source material wieder viel besser nach oben hin
+        \item Einfacher Prompt > Komplexer Prompt, bei adherence viel diversität in den Werten
+        \item cossim bei layers geringer grundsätzlich ggü. 1a, adherence bei 1 und 3 mehr nach unten
+        \item Cossim bleibt stets hoch, aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
+        \item Adherence Score fällt aber pro LLM nach unten
+        \item Dadurch, dass die Werte sich nicht extrem von denen aus Exp. 1a unterscheiden, ist an sich das Folgen des Textes gegeben
+        \item Ergebnisse jedoch schwer nachvollziehbar, da Phrasen vorkommen wie \enquote{Laut dem widersprüchlichen Text, was sind ...}
+        \item Expertenanalyse von Bedeutung hier
     \end{itemize}
 \end{frame}
 
