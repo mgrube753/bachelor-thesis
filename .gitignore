@@ -41,3 +41,6 @@
 .python-version
 .env
 
+# Python plots
+
+plots/

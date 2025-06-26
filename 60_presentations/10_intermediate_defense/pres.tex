@@ -48,12 +48,6 @@
     frame=shadowbox
 }
 
-% \AtBeginSection[]{
-%   \begin{frame}
-%     \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
-%   \end{frame}
-% }
-
 \begin{document}
 {
 \setbeamertemplate{headline}{}
@@ -74,46 +68,60 @@
 
 \section{Einführung \& Problem}
 
+            % biancini: used e.g. compliance, human eval, no bloom
+            % al faraby: future work shall be avoiding hallucinations by utilizing a framework which checks content fidelity
+            % angel: super relatedness to context, but very low bloom levels/adherence
+            % doughty: adherence between question and learning content was not assessed 
+            % elkins: relevance assessed, more interesting the bloom adherence
+            % mcqgen: relevance 100% on experts and llm-based eval (Rag)
+                % lamsiyah: mangel an menschlicher bewertung, um e.g. unterschiede zwischen menschlichen und llm-generierten fragen zu evaluieren
+            % maity: relevance/coverage used in eval
+            % mi and li (my rubric): relevance as well!
+            % scaria how good: nutzt horbach rubrik und relevance ergibt sich aus mehreren kategorie-ergebnissen von horbach
+            % vu: sagen, dass man content als wissensbasis beilegen soll, um qualitaet zu verbessern
+            % yang: halluzination in bildung inakzeptabel, somit RAG wieder
+            % twinstar: besides bloom adherence also knowledge relevance, measured automatically but unknown, alles automatisiert ausgewertet
+
 \begin{frame}[allowframebreaks]{Motivation \& Problemstellung}
     \begin{itemize}
         \item \textbf{Motivation:} 
         \begin{itemize}
             \item Aktives Lernen $\to$ gezielte Fragen
             \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021,vu_chatgpt-based_2024} 
-            \item Korrektheit von Fragen elementar in Bildung
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ bessere Lehrmaterialien-Erstellung + personalisiertes Lernen \cite{naveed_comprehensive_2024}
+        \framebreak
+
+        \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
+        % da auch die pädagogische Eignung bewertet werden muss über experten, was bis dato selten gemacht wurde
+        \begin{itemize}
+            \item Selten pädagogische Bewertung \cite{zhuge_twinstar_2025,blobstein_angel_2023,scaria_how_2024}
+            % manchmal sind wirklich nur linguistische Metriken genutzt worden, oder eben Expertenbewertung ohne Bloom's Taxonomy
+            \item Mangelnde Performance bei höheren kognitiven Levels \cite{cheng_treequestion_2024,elkins_how_2023,scaria_how_2024}
+            % wurde zumindest festgestellt*, die genutzten Modelle sind auch nicht die neuesten
+            % angel gab es z.b.: gpt-3.5 basiert, super relatedness zu context (selbst bewertet), aber sehr niedrige kognitive levels (human eval)
+            \item Relevanz $\neq$ Inhaltstreue \cite{elkins_how_2023,hang_mcqgen_2024,mi_comparative_2024,scaria_how_2024}
+            % korrektheit von Fragen ist elementar in Bildung
             % Und von interesse ist, wie man gut dies in form von inhaltstreue umsetzen kann
             % inhaltstreue zu gegebenem text wird aber oft nur als future work erwähnt
         \end{itemize}
-        \vspace{.5em}
-        \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ Lehrmaterialien verbessern + personalisiertes Lernen \cite{naveed_comprehensive_2024}
-        % biancini: used e.g. compliance, human eval, no bloom
-        % al faraby: future work shall be avoiding hallucinations by utilizing a framework which checks content fidelity
-        % angel: super relatedness to context, but very low bloom levels/adherence
-        % doughty: adherence between question and learning content was not assessed 
-        % elkins: relevance assessed, more interesting the bloom adherence
-        % mcqgen: relevance 100% on experts and llm-based eval (Rag)
-        % lamsiyah: mangel an menschlicher bewertung, um e.g. unterschiede zwischen menschlichen und llm-generierten fragen zu evaluieren
-        % maity: relevance used in eval
-        % mi and li (my rubric): relevance as well!
-        % content fidelity an sich immer nur durch experten bewertet, diverse insights (mal 5/5 nur, andere studie ist e.g. divers dabei)
-        % scaria how good: nutzt horbach rubrik und relevance ergibt sich aus mehreren kategorie-ergebnissen
-        % vu: sagen, dass man content als wissensbasis beilegen soll, um qualitaet zu verbessern
-        % yang: halluzination in bildung inakzeptabel, somit RAG wieder
-        % twinstar: besides bloom adherence also knowledge relevance, measured automatically but unknown
-        % #TODO better content fidelity inclusion in presenatation
-        \framebreak
-        \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
-        % da auch die pädagogische Eignung bewertet werden muss
-        \begin{itemize}
-            \item Pädagogische Bewertung selten erforscht
-            \item Mangelnde Performance bei höheren kognitiven Levels \cite{cheng_treequestion_2024,elkins_how_2023,scaria_automated_2024}
-        \end{itemize}
-        % die "relevanz" von fragen wird eher bewertet, grundsätzlich aber nicht direkt auf Inhaltstreue hinausgeht
-        % spielraum für automatisierte Verfahren, welche die inhaltstreue von LLMs evaluieren. Semantic similarity ist eine Möglichkeit, aber im grunde nie genutzt worden
+            % content fidelity an sich immer nur durch experten bewertet, sehr selten
+            % spielraum für automatisierte Verfahren, welche die inhaltstreue von LLMs evaluieren (mögliches umgehen von halluzination [al faraby], diese sind inakzeptabel in bildung [yang]). Semantic similarity ist eine Möglichkeit, an sich wurden aber diverse Metriken nur genutzt zwischen generiertem und gold-standard fragen/antworten
+            % nicht immer context gegeben (empfehlenswert sagt vu et al, um qualität zu verbessern)
+            % oder eben nur in grundlegender form von relevanz bewertet, was nicht direkt auf inhaltstreue hinausgeht
+            % wenn war eher bloom als exot bzgl. informatik im fokus
+            % des öfteren als future work erwähnt, dass man inhaltstreue evaluieren sollte, ggf. automatisiert
         % sonst viel linguistisch, mangel an menschlicher bewertung
-        % bloom ...
+        % biancini (prompting geht besser) und maity (0-shot vs 8-shot aber minimal) haben experten-basiert auch inhaltstreue bewerten lassen
         \vspace{.5em}
-        \item \textbf{Forschungslücke:} Bedarf an Untersuchung der Inhaltstreue und Einhalten kognitiver Anforderungsniveaus
+        \item \textbf{Forschungslücken:}
+        \begin{itemize}
+            \item Untersuchung der Inhaltstreue von LLMs
+            \item Einhalten kognitiver Anforderungsniveaus
+        \end{itemize}
+        % bspw. fragen vs. content betrachten, automatisierter + humaner versuch
+        % versuch, mit gutem prompting neue llms besser anhand von bloom zu steuern
     \end{itemize}
 \end{frame}
 
@@ -121,7 +129,6 @@
     \begin{itemize}
         \item \textbf{RQ1:} Zu welchem Grad \textcolor{RedOrange!60}{halten sich LLMs} an den Inhalt verschiedener bereitgestellter \textcolor{RedOrange!60}{Lehrtexte} bei der Generierung von Fragen? \vspace{.5em}
         \item[\textcolor{gray}{$\bullet$}] \textcolor{gray}{\textbf{RQ2:} Wie beeinflusst die \textcolor{RedOrange!40}{Beziehung} zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die \textcolor{RedOrange!40}{pädagogische Wirksamkeit} von LLM-generierten Fragen?}
-        % Wie beeinflusst die Beziehung zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die pädagogische Wirksamkeit von LLM-generierten Fragen?
     \end{itemize}
 \end{frame}
 
@@ -129,12 +136,6 @@
     \begin{itemize}
         \item \textbf{Pädagogische Relevanz:} Systematische Bewertung kognitiver Anforderungen von Fragen
     \end{itemize}
-    % \begin{itemize}
-        % Kognitive Analyse von Fragen
-        % \item \textbf{Hierarchie:} Lernzielklassifizierung \cite{krathwohl_revision_2002}:
-        % \begin{enumerate}
-        %     {
-        %     \footnotesize
         %     \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
         %     % erinnern, wiedererkennen, wiedergeben, benennen, auflisten
         %     \item \textcolor{blue}{Understanding} -- Bedeutung von Anweisungen erkennen
@@ -147,30 +148,13 @@
         %     % bewerten, beurteilen, rechtfertigen, verteidigen, kritisieren
         %     \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
         %     % entwerfen, planen, entwickeln, konstruieren, generieren
-        %     }
-        % \end{enumerate}
         \begin{figure}[htpb]
             \centering
             \includegraphics[width=0.6\linewidth]{Blooms-Taxonomy.png}
-            \caption{Bloom's revised Taxonomy \cite{krathwohl_revision_2002}.}
+            \caption{Kognitive Hierarchie \cite{krathwohl_revision_2002}.}
             \label{fig:bloom}
         \end{figure}
 \end{frame}
-
-% \begin{frame}{LLMs in der Fragengenerierung}
-%     \begin{itemize}
-%         \item \textbf{Aktuelle Entwicklungen:} Möglichkeit zur Verbesserung der Lehr- und Lernexperience \cite{naveed_comprehensive_2024}
-%         % zeitersparnis fuer Lehrende durch fortschrittliches Lehrmaterial, um mehr zeit fuer lehre und student-interaktion zu haben
-%         \item \textbf{Personalisierung:} Anpassbare Lernmaterialien für individuelle Bedürfnisse \cite{al_faraby_analysis_2024,hang_mcqgen_2024}
-%         \item \textbf{Herausforderungen:} 
-%         \begin{itemize}
-%             \item Inhaltstreue zu Quellmaterialien
-%             \item Alignment mit spezifischen kognitiven Levels \cite{scaria_automated_2024}
-%             \item Pädagogische Evaluation jenseits linguistischer Tests \cite{horbach_linguistic_2020,steuer_i_2021}
-%         \end{itemize}
-%         \item \textbf{Forschungslücke:} Systematische Evaluation von LLM-generierten Fragen bezüglich Inhaltstreue und Bloom's Taxonomy-Alignment
-%     \end{itemize}
-% \end{frame}
 
 \begin{frame}{Herausforderungen der Literatur}
     \begin{itemize}
@@ -180,6 +164,7 @@
         \item \textbf{Halluzinationen} -- Falsche Antworten
         % kann man minimieren durch kontext hinzugeben. pre-thinking kann auch dafür sorgen, dass das modell den kontext und die anforderungen hinterfragt
         \item \textbf{Inhaltstreue} -- Forschung nötig
+        % inhaltstreue ist eher nebensächlich [faraby, doughty], mehr Fokus auf Bloom, linguistische Metriken, Expertenrubriken mit anderem Fokus
         % es mangelt an systemen, welche die inhaltstreue von LLMs evaluieren
         % inhaltstreue ist ein wenig erforschtes feld bei fragengenerierung
         \item \textbf{Metriken im Fokus} -- Quantitative Evaluation
@@ -220,8 +205,7 @@
             \end{itemize}
         \item 2 Prompt-Strategien:
             \begin{itemize}
-                % #TODO edit
-                \item \textbf{Einfach:} Minimale Instruktionen, keine Strukturierung, aber Formatvorlage + Material
+                \item \textbf{Einfach:} Weniger Anweisungen, keine Strukturierung, aber Formatvorlage + Material
                 % generiere zum iso osi modell
                 % korrekte Antwort klar gekennzeichnet (eine oder eben aus möglichkeiten)
                 % kein abgrenzen von paragraphen (strukturierung)
@@ -239,7 +223,6 @@
 
 \begin{frame}{Datenerhebung \& Durchführung}
     \begin{itemize}
-        % \item Python, embedding modell, apis ausser deepseek, automatisierte anfragen mit diversem prompting, diversen source materials, ...
         \item \textbf{Python:} Automatisierte API-Ansteuerungen
         \item \textbf{Manuell:} DeepSeek R1
         \item \textbf{Material:} Layer-weise Aufteilung
@@ -263,11 +246,15 @@
         \begin{itemize}
             \item \textbf{Semantic Similarity:} Generierte Frage vs. Originaltext
             \begin{itemize}
-                \item[$\to$] Embedding-Modell \& Cosine Similarity
-                % Bsp: (3,2) und (4,1) --> 3*4 + 2*1 / (sqrt(3^2+2^2) * sqrt(4^2+1^2)) = 14 / (sqrt(13) * sqrt(17)) = 0.94
+                \item[$\to$] Embedding-Modell \& Cosine Similarity \vspace{-.6em}
+                % cosine sim
+                % Bsp: (3,2) und (4,1) --> 3*4 + 2*1 / (sqrt(3^2+2^2) * sqrt(4^2+1^2)) = 14 / (sqrt(13) * sqrt(17)) = 0.94, sonst a mal b / ||a|| * ||b||
             \end{itemize}
-            % zu beginn der transformer-ära gab es encoder-decoder transformer, welche den input in eine mathematische Repräsentation mit Bedeutung umwandeln
-            % der decoder generiert dann basierend auf diesem embedding den output token-weise
+            \begin{align*}
+                \hspace{-3em}\cos(\vec{a}, \vec{b}) &= \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| \cdot ||\vec{b}||} 
+            \end{align*}
+            % zu beginn der transformer-ära gab es encoder-decoder transformer, wo encoder den input in eine mathematische Repräsentation mit Bedeutung umwandelt
+            % dann generiert der decoder basierend auf diesem embedding den output token-weise
             % hat sich aber eher gesplittet in encoder-only und decoder-only transformer
             % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training als enc-dec-transformer
             % encoder-only: bert, roberta: können nur text klassifizieren, nicht generieren --> sentence transformers kamen dann auch --> diese Embeddings sind vegleichbar
@@ -280,8 +267,8 @@
         \item \textbf{Qualitativ:} Prof. Cap + 4 Experten des IuK 
         \begin{itemize}
             \item \textbf{Fleiss Kappa:} Inter-Rater Reliability
-            \item \textbf{Bewertungsrubrik:} 0-10 Punkte\,/\,Kategorie \& Frage
-            \item[] \textit{\textcolor{gray}{(Relevanz, Klarheit, Beantwortbarkeit, Herausfordernd \& Korrektheit vs. Umgang mit Manipulation)}}
+            \item \textbf{Bewertungsrubrik:} 0-10 Punkte\,/\,Kategorie \& Frage:
+            \item[] \textit{\textcolor{gray}{Relevanz, Klarheit, Beantwortbarkeit, Herausfordernd \& Korrektheit vs. Umgang mit Manipulation}}
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -332,7 +319,7 @@
                 \item (Nicht-)Angabe von Bloom Level
             \end{itemize}
         \item \textbf{Evaluatoren:} 2 LLMs\,/\,Experten
-        \item \textbf{Rubrik:} Gleiche Rubrik + \textit{Bloom's Level}
+        \item \textbf{Rubrik:} Gleiche mit \textit{Bloom's Level}
     \end{itemize}
 \end{frame}
 
