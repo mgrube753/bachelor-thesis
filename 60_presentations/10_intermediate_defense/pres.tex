@@ -284,9 +284,34 @@
 
 \begin{frame}{Quantitative Analyse 1 -- Fragetypen}
     \begin{itemize}
-        \item \textbf{Exp 1a:} 9/168 Fragen Freitext, Rest Multiple-Choice
-        \item \textbf{Exp 1b:} 4/56 Fragen Freitext
+        \item \textbf{Exp 1a:} 9/168 Fragen Freitext, Rest Multiple-Choice, alle im komplexen Prompt
+        \item \textbf{Exp 1b:} 4/56 Fragen Freitext, eine im einfachen Prompt
     \end{itemize}
+    {\scriptsize
+    \begin{table}[htbp]
+    \centering
+    \caption{Freitext-Scoring aus 1a und 1b.}
+    \label{tab:free_text_scores}
+    \begin{tabular}{lccccccc}
+        \toprule
+        & \multicolumn{3}{c}{Cosine Similarity} & \multicolumn{3}{c}{Adherence Score} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7}
+        Experiment & Mean & Std & Count & Mean & Std & Count \\
+        \midrule
+        Exp1a & 0.6727 & 0.0793 & 9 & 0.9200 & 0.1683 & 9 \\
+        Exp1b & 0.5010 & 0.1844 & 4 & 0.7638 & 0.3380 & 4 \\
+        \bottomrule
+    \end{tabular}
+    \end{table}}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- LLMs}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
+        \caption{Verteilung nach LLM}
+        \label{fig:dist_llm}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Quantitative Analyse 1a -- LLMs}
