@@ -298,8 +298,8 @@
         \cmidrule(lr){2-4} \cmidrule(lr){5-7}
         Experiment & Mean & Std & Count & Mean & Std & Count \\
         \midrule
-        Exp1a & 0.6727 & 0.0793 & 9 & 0.9200 & 0.1683 & 9 \\
-        Exp1b & 0.5010 & 0.1844 & 4 & 0.7638 & 0.3380 & 4 \\
+        Exp1a & 0.673 & 0.079 & 9 & 0.920 & 0.168 & 9 \\
+        Exp1b & 0.501 & 0.184 & 4 & 0.764 & 0.338 & 4 \\
         \bottomrule
     \end{tabular}
     \end{table}}
@@ -309,17 +309,8 @@
     \begin{figure}
         \centering
         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
-        \caption{Verteilung nach LLM}
-        \label{fig:dist_llm}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Quantitative Analyse 1a -- LLMs}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
-        \caption{Verteilung nach LLM}
-        \label{fig:dist_llm}
+        \caption{Verteilung nach LLM.}
+        \label{fig:dist_llm_a}
     \end{figure}
 \end{frame}
 
@@ -327,17 +318,17 @@
     \begin{figure}
         \centering
         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_input_source.png}
-        \caption{Verteilung nach Eingabequelle}
-        \label{fig:dist_input}
+        \caption{Verteilung nach Eingabequelle.}
+        \label{fig:dist_input_a}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Quantitative Analyse 1a -- Prompt Types}
+\begin{frame}{Quantitative Analyse 1a -- Input Sources}
     \begin{figure}
         \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_prompt_type.png}
-        \caption{Verteilung nach Prompt-Typ}
-        \label{fig:dist_prompt}
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_input_source.png}
+        \caption{Heatmap LLMs vs. Eingabequellen.}
+        \label{fig:combined_llm_vs_input_source_a}
     \end{figure}
 \end{frame}
 
@@ -345,8 +336,17 @@
     \begin{figure}
         \centering
         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_layer.png}
-        \caption{Verteilung nach Layer}
-        \label{fig:dist_layer}
+        \caption{Verteilung nach Layer.}
+        \label{fig:dist_layer_a}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- Prompt Types}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_prompt_type.png}
+        \caption{Heatmap LLMs vs. Prompt-Typen.}
+        \label{fig:combined_llm_vs_prompt_type_a}
     \end{figure}
 \end{frame}
 
@@ -357,27 +357,38 @@
         \centering
         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_llm.png}
         \caption{Verteilung nach LLM}
-        \label{fig:dist_llm}
+        \label{fig:dist_llm_b}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Quantitative Analyse 1b -- Input Sources}
-    \begin{figure}
+    \begin{table}[htbp]
         \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_input_source.png}
-        \caption{Verteilung nach Eingabequelle}
-        \label{fig:dist_input}
-    \end{figure}
+        \caption{Adherence Score pro LLM für manipuliertes Script.}
+        \label{tab:exp1b_metrics_llm_script_manipulated}
+        \begin{tabular}{lcccc}
+        \toprule
+        & \multicolumn{2}{c}{Cosine Similarity} & \multicolumn{2}{c}{Adherence Score} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        LLM & Mean & Std & Mean & Std \\
+        \midrule
+        Anthropic & 0.640 & 0.121 & 0.904 & 0.123 \\
+        DeepSeek & 0.536 & 0.121 & 0.731 & 0.356 \\
+        Google & 0.618 & 0.156 & 0.920 & 0.143 \\
+        OpenAI & 0.600 & 0.107 & 0.806 & 0.359 \\
+        \bottomrule
+        \end{tabular}
+    \end{table}
 \end{frame}
 
-\begin{frame}{Quantitative Analyse 1b -- Prompt Types}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_prompt_type.png}
-        \caption{Verteilung nach Prompt-Typ}
-        \label{fig:dist_prompt}
-    \end{figure}
-\end{frame}
+% \begin{frame}{Quantitative Analyse 1b -- Prompt Types}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_prompt_type.png}
+%         \caption{Verteilung nach Prompt-Typ}
+%         \label{fig:dist_prompt}
+%     \end{figure}
+% \end{frame}
 
 \begin{frame}{Quantitative Analyse 1b -- Layers}
     \begin{figure}
@@ -385,6 +396,15 @@
         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_layer.png}
         \caption{Verteilung nach Layer}
         \label{fig:dist_layer}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1b -- Prompt Type}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/combined_llm_vs_prompt_type.png}
+        \caption{Heatmap LLMs vs. Prompt-Typen.}
+        \label{fig:combined_llm_vs_prompt_type_b}
     \end{figure}
 \end{frame}
 
