@@ -280,6 +280,24 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{How to: Fleiss Kappa}
+    \begin{itemize}
+        \item \textbf{Ziel:} Inter-Rater Reliability der Experten
+        \item \textbf{Berechnung:} 
+        \begin{align*}
+            \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
+        \end{align*}
+        $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall
+        \begin{align*}
+            % N anzahl der Rater, n Anzahl der Kategorien, n_{ij} Anzahl der Rater, die Kategorie i für Frage j gewählt haben
+            p_o &= \frac{\sum_{i=1}^{n}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (N-1)} \\
+            p_e &= \sum_{i=1}^{n} p_i^2
+            % wie viele rater haben in der kategorie i eine zustimmung gegeben (2 kategorien, in der einen 8/21 eintraege, bei der anderen 13/21 einträge)
+        \end{align*}
+        
+    \end{itemize}
+\end{frame}
+
 \section{Ergebnisse \& Diskussion}
 
 \begin{frame}{Quantitative Analyse 1 -- Fragetypen}
@@ -412,8 +430,7 @@
 
 \begin{frame}{Qualitative Analyse}
     \begin{itemize}
-        \item Zeitlich zu knapp...
-        \item[$\to$] Expertenbewertung ausstehend
+        \item Expertenbewertung ausstehend
     \end{itemize}
 \end{frame}
 
@@ -433,32 +450,33 @@
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
     \begin{itemize}
         % \item Nicht vollständig, da Expertenbewertung aussteht
-        \item CosSim: DeepSeek schwächstes, Google bestes
-        \item Adherence: Ergebnisse nah beieinander
+        \item \textbf{CosSim:} DeepSeek schwächstes, Google bestes
+        \item \textbf{Adherence:} Ergebnisse nah beieinander \vspace{1em}
         % dort sind präferenzen/probleme nicht wirklich erkennbar
-        \item Source: Script > Tanenbaum > Transcript
+        \item \textbf{Source:} Script > Tanenbaum > Transcript
         % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
         % Script schneidet durch die sehr kurzen Formulierungen besser ab
-        \item Adherence Sources ähnlich
-        \item CosSim: Komplexer Prompt > Einfacher Prompt
+        \item[] Adherence ähnlich \vspace{1em}
+        \item \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
         % aber nicht signifikant
-        \item Adherence: Eher andersherum
+        \item \textbf{Adherence:} Eher andersherum
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
     \begin{itemize}
         % \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
-        \item DeepSeek R1 schwächstes bei beiden Metriken
+        \item \textbf{DeepSeek R1:} schwächstes bei beiden Metriken
         % (und streut bei adherence sehr)
-        \item Adherence besser wiederum
-        \item Einfacher Prompt > Komplexer Prompt
+        \item \textbf{Adherence:} Instabil, grundsätzlich schwer nachvollziehbar
+        \item \textbf{Beide Metriken:} Einfacher Prompt > Komplexer Prompt
         % bei adherence viel diversität in den Werten
-        \item Cossim bleibt stets hoch, aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
+        \item \textbf{CosSim:} Stets hoch 
+        % aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
         % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
         % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
-        \item Adherence Score fällt aber pro LLM nach unten
-        \item Ergebnisse schwer nachvollziehbar durch Phrasen wie \enquote{Laut dem widersprüchlichen Text, was sind [...]?}
+        \item \textbf{Adherence:} Fällt pro LLM nach unten, DeepSeek und OpenAI im komplexen Prompt
+        \item Problem: \enquote{Laut dem zum ISO-OSI-Modell wider- sprüchlichen Text, was sind [...]?}
         \item[$\to$] Expertenanalyse von Bedeutung
     \end{itemize}
 \end{frame}
