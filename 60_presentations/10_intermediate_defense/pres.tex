@@ -210,7 +210,7 @@
                 % korrekte Antwort klar gekennzeichnet (eine oder eben aus möglichkeiten)
                 % kein abgrenzen von paragraphen (strukturierung)
                 % klar und präzise Frage, kein weiterer Text soll generiert werden
-                \item \textbf{Komplex:} Rollenzuweisung, detaillierte Anweisungen, fordert nicht-triviales und kritisches Denken, Struktur durch Docstrings, Format-Vorlage + Material 
+                \item \textbf{Komplex:} Rollenzuweisung, detaillierte Anweisungen, fordert nicht-triviales und kritisches Denken, Struktur durch Docstrings, Formatvorlage + Material 
                 % format für einheitlichen Output bei beiden Prompts --> war das Problem beim einfachen Prompt --> Rerun nötig gewesen
                 % + source material
                 % was war drin:
@@ -284,8 +284,8 @@
 
 \begin{frame}{Quantitative Analyse 1 -- Fragetypen}
     \begin{itemize}
-        \item \textbf{Exp 1a:} 9/168 Fragen Freitext, Rest Multiple-Choice, alle im komplexen Prompt
-        \item \textbf{Exp 1b:} 4/56 Fragen Freitext, eine im einfachen Prompt
+        \item \textbf{Exp 1a:} 9/168 Fragen Freitext, nur komplexer Prompt\\ 8x OpenAI, 1x Google
+        \item \textbf{Exp 1b:} 4/56 Fragen Freitext, 1x einfacher Prompt\\ 1x DeepSeek, 3x Google
     \end{itemize}
     {\scriptsize
     \begin{table}[htbp]
@@ -332,14 +332,14 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Quantitative Analyse 1a -- Layers}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_layer.png}
-        \caption{Verteilung nach Layer.}
-        \label{fig:dist_layer_a}
-    \end{figure}
-\end{frame}
+% \begin{frame}{Quantitative Analyse 1a -- Layers}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_layer.png}
+%         \caption{Verteilung nach Layer.}
+%         \label{fig:dist_layer_a}
+%     \end{figure}
+% \end{frame}
 
 \begin{frame}{Quantitative Analyse 1a -- Prompt Types}
     \begin{figure}
@@ -361,25 +361,25 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Quantitative Analyse 1b -- Input Sources}
-    \begin{table}[htbp]
-        \centering
-        \caption{Adherence Score pro LLM für manipuliertes Script.}
-        \label{tab:exp1b_metrics_llm_script_manipulated}
-        \begin{tabular}{lcccc}
-        \toprule
-        & \multicolumn{2}{c}{Cosine Similarity} & \multicolumn{2}{c}{Adherence Score} \\
-        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-        LLM & Mean & Std & Mean & Std \\
-        \midrule
-        Anthropic & 0.640 & 0.121 & 0.904 & 0.123 \\
-        DeepSeek & 0.536 & 0.121 & 0.731 & 0.356 \\
-        Google & 0.618 & 0.156 & 0.920 & 0.143 \\
-        OpenAI & 0.600 & 0.107 & 0.806 & 0.359 \\
-        \bottomrule
-        \end{tabular}
-    \end{table}
-\end{frame}
+% \begin{frame}{Quantitative Analyse 1b -- Input Sources}
+%     \begin{table}[htbp]
+%         \centering
+%         \caption{Adherence Score pro LLM für manipuliertes Script.}
+%         \label{tab:exp1b_metrics_llm_script_manipulated}
+%         \begin{tabular}{lcccc}
+%         \toprule
+%         & \multicolumn{2}{c}{Cosine Similarity} & \multicolumn{2}{c}{Adherence Score} \\
+%         \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+%         LLM & Mean & Std & Mean & Std \\
+%         \midrule
+%         Anthropic & 0.640 & 0.121 & 0.904 & 0.123 \\
+%         DeepSeek & 0.536 & 0.121 & 0.731 & 0.356 \\
+%         Google & 0.618 & 0.156 & 0.920 & 0.143 \\
+%         OpenAI & 0.600 & 0.107 & 0.806 & 0.359 \\
+%         \bottomrule
+%         \end{tabular}
+%     \end{table}
+% \end{frame}
 
 % \begin{frame}{Quantitative Analyse 1b -- Prompt Types}
 %     \begin{figure}
@@ -390,14 +390,14 @@
 %     \end{figure}
 % \end{frame}
 
-\begin{frame}{Quantitative Analyse 1b -- Layers}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_layer.png}
-        \caption{Verteilung nach Layer}
-        \label{fig:dist_layer}
-    \end{figure}
-\end{frame}
+% \begin{frame}{Quantitative Analyse 1b -- Layers}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_layer.png}
+%         \caption{Verteilung nach Layer}
+%         \label{fig:dist_layer}
+%     \end{figure}
+% \end{frame}
 
 \begin{frame}{Quantitative Analyse 1b -- Prompt Type}
     \begin{figure}
@@ -413,21 +413,18 @@
 \begin{frame}{Qualitative Analyse}
     \begin{itemize}
         \item Zeitlich zu knapp...
-        % \item Hier wird nicht viel passieren, da die Expertenbewertung noch aussteht. Vielleicht kann ich wenigstens Fleiss Kappa und bisschen Tabellen-Aspekte reinbringen
+        \item[$\to$] Expertenbewertung ausstehend
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Limitations}
     \begin{itemize}
         \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
-        \item[$\to$] Temperatur nicht einstellbar
-        \item[$\to$] Womöglich hoch/variiert
+        \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
         \item[$\to$] Wichtig für Bewertung gewesen
-        \item[$\to$] Nachteil von Reasoning?
-        \item[$\to$] Exp. 2 Bewertung mit solchen Modellen?
+        \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
         \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
         \item[$\to$] Expertenbewertung von Bedeutung
-        \item neues problem: sehr viele MC fragen resultiert
     \end{itemize}
 \end{frame}
 
@@ -435,34 +432,34 @@
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
     \begin{itemize}
-        \item Nicht vollständig, da Expertenbewertung aussteht
-        \item Jedoch moderate Ergebnisse
-        \begin{itemize}
-            \item DeepSeek R1 am schwächsten bei cossim, google/anthropic gut, openai okay
-            \item Adherence: llms nah beieinander stattdessen
-            \item Script > Tanenbaum > Transcript bei cossim
-            \item Bringt somit bei Layer-Analyse auch viel Streuung bei 1-4, in adherence nicht spürbar
-            % transcript 1-4 ziehen die Werte runter, da die Quellen sehr lang sind
-            % Script schneidet durch die sehr kurzen Formulierungen besser ab
-            \item unlogisch hingegen adherence score: alle sources ähnlich
-            \item Komplexer Prompt > Einfacher Prompt, aber nicht signifikant
-            \item unlogisch hingegen adherence: andersherum, relative deutlich
-        \end{itemize}
+        % \item Nicht vollständig, da Expertenbewertung aussteht
+        \item CosSim: DeepSeek schwächstes, Google bestes
+        \item Adherence: Ergebnisse nah beieinander
+        % dort sind präferenzen/probleme nicht wirklich erkennbar
+        \item Source: Script > Tanenbaum > Transcript
+        % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
+        % Script schneidet durch die sehr kurzen Formulierungen besser ab
+        \item Adherence Sources ähnlich
+        \item CosSim: Komplexer Prompt > Einfacher Prompt
+        % aber nicht signifikant
+        \item Adherence: Eher andersherum
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
     \begin{itemize}
-        \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
-        \item Auch hier, DeepSeek R1 am schwächsten, aber bei beiden Metriken (und streut bei adherence sehr)
-        \item Adherence bei diesem source material wieder viel besser nach oben hin
-        \item Einfacher Prompt > Komplexer Prompt, bei adherence viel diversität in den Werten
-        \item cossim bei layers geringer grundsätzlich ggü. 1a, adherence bei 1 und 3 mehr nach unten
+        % \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
+        \item DeepSeek R1 schwächstes bei beiden Metriken
+        % (und streut bei adherence sehr)
+        \item Adherence besser wiederum
+        \item Einfacher Prompt > Komplexer Prompt
+        % bei adherence viel diversität in den Werten
         \item Cossim bleibt stets hoch, aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
+        % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
+        % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
         \item Adherence Score fällt aber pro LLM nach unten
-        \item Dadurch, dass die Werte sich nicht extrem von denen aus Exp. 1a unterscheiden, ist an sich das Folgen des Textes gegeben
-        \item Ergebnisse jedoch schwer nachvollziehbar, da Phrasen vorkommen wie \enquote{Laut dem widersprüchlichen Text, was sind ...}
-        \item Expertenanalyse von Bedeutung hier
+        \item Ergebnisse schwer nachvollziehbar durch Phrasen wie \enquote{Laut dem widersprüchlichen Text, was sind [...]?}
+        \item[$\to$] Expertenanalyse von Bedeutung
     \end{itemize}
 \end{frame}
 
