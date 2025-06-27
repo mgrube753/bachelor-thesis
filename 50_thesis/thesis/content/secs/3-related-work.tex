@@ -139,16 +139,16 @@ Focusing personalized learning, \cite{hang_mcqgen_2024} described that both effi
 
 \subsection{Research Gaps Addressed}
 
-\tcr{Based on the conducted literature review, as presented in the previous sections of the thesis, there are several research gaps this work aims to address and solve with the novel evaluation framework:}
+Based on the conducted literature review, presented in the previous sections of the thesis, there are several research gaps this work aims to address: 
 
-% in short form written
+\object{Outdated Models} Current studies rely on \ac{llms} from 2023 or earlier, such as GPT-4, GPT-3.5, and LLaMA2 \cite{scaria_how_2024, maity_can_2025, al_faraby_analysis_2024}. These evaluations lack in capturing the capabilities of recent models that incorporate advanced \textit{reasoning} mechanisms to think before answering. To address this, the thesis investigates four current state-of-the-art models, as detailed in Section \bfref{sec:experiment-design}. This ensures that the evaluation of \ac{aqg} capabilities is conducted using the most recent technologies, resulting in a more up-to-date understanding of \ac{llms}' potential in educational contexts.
 
-\begin{itemize}
-    \item Current existing studies rely on outdated models from 2023, using e.g.\ GPT-4 or LLaMA2. This thesis investigates four -- an acceptable amount of \ac{llms} -- mostly current state-of-the-art models, such as OpenAI o3, Claude 3.7 Sonnet, and Gemini 2.5 Flash, and DeepSeek R1.
-    \item Based on this, the novel reasoning capabilities of the models were not explored in the context of \ac{aqg}. So, all four models were used with their internal reasoning approach.
-    \pagebreak
-    \item While studies mentioned the problem of hallucination in \ac{aqg} \cite{al_faraby_analysis_2024}, the content adherence between a given context and the resulted questions remains underexplored. RQ1 addresses this gap by evaluating the content adherence of the generated questions to the given context, by also covering the problem of malicious context injection.
-    \item Qualitative evaluation of \ac{aqg} is often limited, since certain approaches rely on quantitative metrics, but expert-based evaluation is crucial.
-    \item The evaluation of \ac{aqg} using Bloom's Taxonomy is not often performed, and if so, the used models (outdated) performed poorly at higher levels, generating undoable questions, 
-    \item While prompt engineering is explored, some studies do not use numerous prompts instead of the same one for all experimental settings, or they do not explore the potential of prompting strategies, such as knowledge injection, role-based prompting
-\end{itemize}
+\pagebreak
+
+\object{Limited Content Adherence Evaluation} A persistent challenge in \ac{aqg} is the problem of hallucination, which is unacceptable in education \cite{yang_heuristic_2024}. \ac{llms} can generate misleading or irrelevant information which are not directly supported by e.g.\ the source text \cite{al_faraby_analysis_2024,duong-trung_bloomllm_2024}. While some studies mention this issue, the content adherence between a provided context and the generated questions still remains underexplored. This thesis investigates this problem in RQ1, since this evaluation is crucial for generating reliable educational questions that can be answered accurately using the source material, as done in \cite{scaria_how_2024,maity_can_2025,blobstein_angel_2023}. Though highlighted in related research such as \cite{biancini_multiple-choice_2024}, it is important to inject knowledge directly into prompts to contrast hallucinations and give educators control over the source text.
+% #TODO maybe refinement?
+
+\object{Bloom's Taxonomy Integration and Qualitative Evaluation} ... needed based on 3.2 primarily
+% #TODO later
+
+All these gaps highlight the need for a comprehensive evaluation framework that can evaluate modern \ac{llms} using current methods. The proposed framework below aims to bridge the research gaps and provide a foundation for future research in \ac{aqg} and \ac{llms}.
