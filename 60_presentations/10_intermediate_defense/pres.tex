@@ -48,6 +48,8 @@
     frame=shadowbox
 }
 
+\AtBeginBibliography{\scriptsize}
+
 \begin{document}
 {
 \setbeamertemplate{headline}{}
@@ -87,7 +89,7 @@
         \item \textbf{Motivation:} 
         \begin{itemize}
             \item Aktives Lernen $\to$ gezielte Fragen
-            \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021,vu_chatgpt-based_2024} 
+            \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021} 
         \end{itemize}
         \vspace{.5em}
         \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ bessere Lehrmaterialien-Erstellung + personalisiertes Lernen \cite{naveed_comprehensive_2024}
@@ -98,7 +100,7 @@
         \begin{itemize}
             \item Selten pädagogische Bewertung \cite{zhuge_twinstar_2025,blobstein_angel_2023,scaria_how_2024}
             % manchmal sind wirklich nur linguistische Metriken genutzt worden, oder eben Expertenbewertung ohne Bloom's Taxonomy
-            \item Mangelnde Performance bei höheren kognitiven Levels \cite{cheng_treequestion_2024,elkins_how_2023,scaria_how_2024}
+            \item Mangelnde Performance bei höheren kognitiven Levels \cite{elkins_how_2023,scaria_how_2024}
             % wurde zumindest festgestellt*, die genutzten Modelle sind auch nicht die neuesten
             % angel gab es z.b.: gpt-3.5 basiert, super relatedness zu context (selbst bewertet), aber sehr niedrige kognitive levels (human eval)
             \item Relevanz $\neq$ Inhaltstreue \cite{elkins_how_2023,hang_mcqgen_2024,mi_comparative_2024,scaria_how_2024}
@@ -282,19 +284,20 @@
 
 \begin{frame}{How to: Fleiss Kappa}
     \begin{itemize}
-        \item \textbf{Ziel:} Inter-Rater Reliability der Experten
-        \item \textbf{Berechnung:} 
+        \item \textbf{Ziel:} Inter-Rater Reliability der Experten durch:
         \begin{align*}
             \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
         \end{align*}
-        $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall
+        $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
+        $N$ Anzahl der Rater, \\
+        $n$ Anzahl der Kategorien
         \begin{align*}
             % N anzahl der Rater, n Anzahl der Kategorien, n_{ij} Anzahl der Rater, die Kategorie i für Frage j gewählt haben
-            p_o &= \frac{\sum_{i=1}^{n}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (N-1)} \\
+            p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
+            % 0^2 + 3^2 \\ + 1^2 + 2^2 ...
             p_e &= \sum_{i=1}^{n} p_i^2
             % wie viele rater haben in der kategorie i eine zustimmung gegeben (2 kategorien, in der einen 8/21 eintraege, bei der anderen 13/21 einträge)
         \end{align*}
-        
     \end{itemize}
 \end{frame}
 
@@ -450,42 +453,51 @@
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
     \begin{itemize}
         % \item Nicht vollständig, da Expertenbewertung aussteht
-        \item \textbf{CosSim:} DeepSeek schwächstes, Google bestes
-        \item \textbf{Adherence:} Ergebnisse nah beieinander \vspace{1em}
-        % dort sind präferenzen/probleme nicht wirklich erkennbar
-        \item \textbf{Source:} Script > Tanenbaum > Transcript
-        % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
-        % Script schneidet durch die sehr kurzen Formulierungen besser ab
-        \item[] Adherence ähnlich \vspace{1em}
-        \item \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
-        % aber nicht signifikant
-        \item \textbf{Adherence:} Eher andersherum
+        \item \textbf{Bezüglich der LLMs:}
+        \begin{itemize}
+            \item[$\to$] \textbf{CosSim:} DeepSeek R1 schwächstes, Gemini bestes
+            \item[$\to$] \textbf{Adherence:} Ergebnisse nah beieinander
+            % dort sind präferenzen/probleme nicht wirklich erkennbar
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Eingabequellen:}
+        \begin{itemize}
+            \item[$\to$] \textbf{CosSim:} Script > Tanenbaum > Transcript
+            % Script schneidet durch die sehr kurzen Formulierungen besser ab
+            % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
+            \item[$\to$] \textbf{Adherence:} Quellen-übergreifend ähnlich
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Prompt-Strategien:}
+        \begin{itemize}
+            \item[$\to$] \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
+            % aber nicht signifikant
+            \item[$\to$] \textbf{Adherence:} Eher andersherum
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
     \begin{itemize}
         % \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
-        \item \textbf{DeepSeek R1:} schwächstes bei beiden Metriken
-        % (und streut bei adherence sehr)
-        \item \textbf{Adherence:} Instabil, grundsätzlich schwer nachvollziehbar
-        \item \textbf{Beide Metriken:} Einfacher Prompt > Komplexer Prompt
-        % bei adherence viel diversität in den Werten
-        \item \textbf{CosSim:} Stets hoch 
-        % aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
-        % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
-        % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
-        \item \textbf{Adherence:} Fällt pro LLM nach unten, DeepSeek und OpenAI im komplexen Prompt
-        \item Problem: \enquote{Laut dem zum ISO-OSI-Modell wider- sprüchlichen Text, was sind [...]?}
+        \item \textbf{Manipulierte Inhalte -- Performance:}
+        \begin{itemize}
+            \item[$\to$] \textbf{DeepSeek R1:} schwächstes bei beiden Metriken
+            % (und streut bei adherence sehr)
+            \item[$\to$] \textbf{CosSim:} Stets hoch, Manipulation erkannt?
+            % aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
+            % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
+            % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
+            \item[$\to$] \textbf{Adherence:} Instabil, DeepSeek und OpenAI besonders betroffen im komplexen Prompt
+            % alles schwer nachvollziehbar
+            % bei adherence viel diversität in den Werten
+            \item[$\to$] \textbf{Beide Metriken:} Einfacher Prompt > Komplexer Prompt
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Kritisch:} \enquote{Laut dem zum ISO-OSI-Modell wider\-sprüchlichen Text, was sind [...]?}
         \item[$\to$] Expertenanalyse von Bedeutung
     \end{itemize}
 \end{frame}
-
-% \begin{frame}{Lessons Learned}
-%     \begin{itemize}
-%         \item Wird nicht groß sein
-%     \end{itemize}
-% \end{frame}
 
 \begin{frame}{Ausblick auf Exp. 2}
     \begin{itemize}
@@ -511,9 +523,11 @@
     \end{figure}
 \end{frame}
 
-% \begin{frame}[allowframebreaks]{Literaturverzeichnis}
-%     \printbibliography
-% \end{frame}
+\appendix
+\setbeamertemplate{headline}{}
+\begin{frame}[allowframebreaks]{Literaturverzeichnis}
+    \printbibliography[heading=none]
+\end{frame}
 
 \begin{frame}
     \centering
