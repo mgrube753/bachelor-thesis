@@ -103,7 +103,7 @@
             \item Mangelnde Performance bei höheren kognitiven Levels \cite{elkins_how_2023,scaria_how_2024}
             % wurde zumindest festgestellt*, die genutzten Modelle sind auch nicht die neuesten
             % angel gab es z.b.: gpt-3.5 basiert, super relatedness zu context (selbst bewertet), aber sehr niedrige kognitive levels (human eval)
-            \item Relevanz $\neq$ Inhaltstreue \cite{elkins_how_2023,hang_mcqgen_2024,mi_comparative_2024,scaria_how_2024}
+            \item Relevanz $\neq$ Inhaltstreue \cite{elkins_how_2023,hang_mcqgen_2024,mi_comparative_2024}
             % korrektheit von Fragen ist elementar in Bildung
             % Und von interesse ist, wie man gut dies in form von inhaltstreue umsetzen kann
             % inhaltstreue zu gegebenem text wird aber oft nur als future work erwähnt
@@ -163,12 +163,11 @@
         \item \textbf{Veraltete Modelle} -- Kein Reasoning
         % pre-thinking basiert auf dem user prompt, damit das modell verstehen kann, was der user will
         % wurde in der literatur noch nicht genutzt, sondern outdated models wie gpt-4/gpt-3.5/llama2
-        \item \textbf{Halluzinationen} -- Falsche Antworten
+        \item \textbf{Halluzinationen} -- Falsche Ausgaben
         % kann man minimieren durch kontext hinzugeben. pre-thinking kann auch dafür sorgen, dass das modell den kontext und die anforderungen hinterfragt
         \item \textbf{Inhaltstreue} -- Forschung nötig
         % inhaltstreue ist eher nebensächlich [faraby, doughty], mehr Fokus auf Bloom, linguistische Metriken, Expertenrubriken mit anderem Fokus
         % es mangelt an systemen, welche die inhaltstreue von LLMs evaluieren
-        % inhaltstreue ist ein wenig erforschtes feld bei fragengenerierung
         \item \textbf{Metriken im Fokus} -- Quantitative Evaluation
         % Problematisch, da grundlegend linguistische Metriken
         % expertenbewertung ist eine notwendige evaluation bei fragengenerierung
@@ -176,8 +175,9 @@
         % selten ausgiebig performt, weil es aufwendig ist
         \item \textbf{Bloom's Taxonomy} -- Hohe kognitive Levels
         % dies sind die schwersten Levels, welche LLMs nicht gut beherrschen in related work
-        % nicht immer wird bei fragen bloom benutzt, und wenn dann sind die modelle eher schlecht im generieren von höheren kognitiven levels, egal ob man informationen für die levels gibt oder nicht
-        \item \textbf{Prompting} -- Einfluss auf Ergebnisse
+        % nicht immer wird bei fragen bloom benutzt, und wenn dann sind die modelle eher schlecht im generieren von höheren kognitiven levels
+
+        % \item \textbf{Prompting} -- Einfluss auf Ergebnisse
         % Auch ich bin kein prompt engineer, jedoch gibt es viele methoden, um LLMs zu steuern
         % kontext geben, rollenzuweisung, beispiellösungen geben --> in-context learning, special marks verwenden für mehr "übersicht" und struktur, auch fine-tuning ist möglich, aber auch aufwendig
         % gewisse literatur hatte minimale Prompts aber mit Beispieloutputs übergeben, andere haben auch komplexe Prompts verwendet
@@ -235,7 +235,6 @@
         \item \textbf{Python:} Automatisierte API-Ansteuerungen
         \item \textbf{Manuell:} DeepSeek R1
         \item \textbf{Material:} Layer-weise Aufteilung
-        \item \textbf{\#Fragen\,/\,Prompt:} 1\,/\,Prompt-Variation 
         \item \textbf{Resultat:} 
             \begin{itemize}
                 \item \textbf{Exp 1a:} 168 Fragen
@@ -265,7 +264,7 @@
             % zu beginn der transformer-ära gab es encoder-decoder transformer, wo encoder den input in eine mathematische Repräsentation mit Bedeutung umwandelt
             % dann generiert der decoder basierend auf diesem embedding den output token-weise
             % hat sich aber eher gesplittet in encoder-only und decoder-only transformer
-            % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training als enc-dec-transformer
+            % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training + inferenz als enc-dec-transformer
             % encoder-only: bert, roberta: können nur text klassifizieren, nicht generieren --> sentence transformers kamen dann auch --> diese Embeddings sind vegleichbar
             \item \textbf{Adherence Score:} o3 \& Claude 3.7 Sonnet Prompting
             % temperatur auf 0 für weniger randomness in Antwort, geht aber nicht bei thinking mode...
@@ -289,10 +288,11 @@
             \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
         \end{align*}
         $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
-        $N$ Anzahl der Rater, \\
-        $n$ Anzahl der Kategorien
+        $N$ Anzahl der Fragen, \\
+        $n$ Anzahl der Rater
         \begin{align*}
-            % N anzahl der Rater, n Anzahl der Kategorien, n_{ij} Anzahl der Rater, die Kategorie i für Frage j gewählt haben
+            % n_{ij} Anzahl der Rater, die für Frage i das Rating j abgegeben haben
+            % k Menge der Auswahlmöglichkeiten 0,2,4,6,8,10
             p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
             % 0^2 + 3^2 \\ + 1^2 + 2^2 ...
             p_e &= \sum_{i=1}^{n} p_i^2
