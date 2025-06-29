@@ -294,6 +294,7 @@
             % n_{ij} Anzahl der Rater, die für Frage i das Rating j abgegeben haben
             % k Menge der Auswahlmöglichkeiten 0,2,4,6,8,10
             p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
+            % nenner ist maximale Anzahl möglicher Übereinstimmungen von Raterpaaren über alle Probanden
             % 0^2 + 3^2 \\ + 1^2 + 2^2 ...
             p_e &= \sum_{j=1}^{k} p_j^2
             % wie viele rater haben in der kategorie i eine zustimmung gegeben (2 kategorien, in der einen 8/21 eintraege, bei der anderen 13/21 einträge)
@@ -334,6 +335,15 @@
         \label{fig:dist_llm_a}
     \end{figure}
 \end{frame}
+% google,transcript,1,complex,0.8341479301452637,0.45,0.7
+% cossim passend, aber adherence geringer.
+
+% openai,transcript,4,common,0.20039741694927216,1.0,0.95
+% cossim etwas unnötig gering, und adherence sehr hoch
+% dieses transcript ist sehr lang, frage etc aber kurz 
+
+% google,script,2,common,0.44263648986816406,0.97,1.0
+% was gehoert NICHT zu den aufgaben ...
 
 \begin{frame}{Quantitative Analyse 1a -- Input Sources}
     \begin{figure}
@@ -384,6 +394,7 @@
 % selbst groß übernommene fragen ggü. dem text bringen nicht unfassbar viel cosine similarity. und ggf. auch niedrige adherence scores. grosse problematik bei den ergebnissen, wobei an sich cossim vielversprechender ist. wenigstens in exp1a. bei 1b
 % deepseek,script_manipulated,6,complex,0.44526606798171997,0.05,0.0
 % hier ist der Text auf ganz anderen Layern fokussiert, nichts mit dem gegebenen mani-Text zutun... aber cossim bleibt moderat.
+% 
 
 % \begin{frame}{Quantitative Analyse 1b -- Input Sources}
 %     \begin{table}[htbp]
@@ -475,8 +486,9 @@
         \begin{itemize}
             \item[$\to$] \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
             % aber nicht signifikant
-            \item[$\to$] \textbf{Adherence:} Eher andersherum
+            \item[$\to$] \textbf{Adherence:} Eher andersherum \vspace{.5em}
         \end{itemize}
+        \item \textbf{Kritisch:} \enquote{Welche Funktionen hat OSI-Layer $n$ nicht?}
     \end{itemize}
 \end{frame}
 
