@@ -17,7 +17,25 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 
 \object{Quantitative Analysis} semantic sim via cossim vs. llm-based content adherence calculation, there are tables and plots needed.
 
-\object{Qualitative Analysis} Exp1 rubric with sampled expert evaluation + Fleiss Kappa, also with tables and plots here.
+\begin{itemize}
+    \item question type was not fixed, but via format constraints limited to either Open-Ended or Multiple-Choice questions. trend towards mc questions, open ended is exp1a 9/168 (only complex prompt, 8x openai, 1x google), exp1b 4/56 questions (1x common prompt deepseek, 3x google). maybe also add here the table 1 from intermed
+    \item hard to interpret these results without the qualitative analysis, since the qualitative will also provide sampled results for content adherence (1a) / manipulation handling (1b). without this, the llms, the input sources and the prompt types are hard to compare.
+    \item 1a:
+    \begin{itemize}
+        \item at llms noticed: deepseek was noticably worse than the others in cossim, google best, anthropic pretty fine as well, openai in the middle / adherence score: all pretty high and similar
+        \item at input sources noticed: the more complex the source, the lower the cossim (script > tanenbaum > cossim), but no real trend in adherence score
+        \item comparison llm vs input source, in cossim still the trend of llms being best at script, medium at tanenbaum and worst at transcript, often noticably visible. adherence scores instead are mixed, but all of these are very high, > 90\%
+        \item llms vs prompt types: at cossim common prompt commonly worse than complex prompt, but not always. adherence shows (pretty flipped) that common prompt results in higher scores than complex prompt, which is questionable.
+    \end{itemize}
+    \item 1b:
+    \begin{itemize}
+        \item at llms noticed: deepseek still worst, but all dont look pretty different from exp 1a here. but the lowest scores in cossim at 1b are higher than these which sometimes occured in 1a/ adherence scores are also high, but way more distributed in lower directions, especially at deepseek, then anthropic, and openai/google are pretty decent still, openai's outliers do not decrease the median much in boxplot, which is close to 1.0. what to interpret here? also common prompt higher scores than complex prompt. 
+        \item extra llm vs prompt type: common prompt same mean or higher than complex prompt, especially seen at anthropic and google / adherence shows that common prompt has way higher scores for each llm in contrast to complex prompt.
+        \item all in all, this method cannot be used to give proper results to see if a model follows the manipulated content, or detects it. 
+    \end{itemize}
+\end{itemize}
+
+\object{Qualitative Analysis} Exp1 rubric with sampled expert evaluation (Cap + 4 iuk members) + Fleiss Kappa, also with tables and plots here.
 
 \vp
 
