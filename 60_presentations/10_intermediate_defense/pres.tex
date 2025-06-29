@@ -92,7 +92,7 @@
             \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021} 
         \end{itemize}
         \vspace{.5em}
-        \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ bessere Lehrmaterialien-Erstellung + personalisiertes Lernen \cite{naveed_comprehensive_2024}
+        \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ bessere Lehrmaterialien-Erstellung + Lernerfahrungen möglich \cite{naveed_comprehensive_2024}
         \framebreak
 
         \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
@@ -381,6 +381,9 @@
         \label{fig:dist_llm_b}
     \end{figure}
 \end{frame}
+% selbst groß übernommene fragen ggü. dem text bringen nicht unfassbar viel cosine similarity. und ggf. auch niedrige adherence scores. grosse problematik bei den ergebnissen, wobei an sich cossim vielversprechender ist. wenigstens in exp1a. bei 1b
+% deepseek,script_manipulated,6,complex,0.44526606798171997,0.05,0.0
+% hier ist der Text auf ganz anderen Layern fokussiert, nichts mit dem gegebenen mani-Text zutun... aber cossim bleibt moderat.
 
 % \begin{frame}{Quantitative Analyse 1b -- Input Sources}
 %     \begin{table}[htbp]
@@ -420,7 +423,7 @@
 %     \end{figure}
 % \end{frame}
 
-\begin{frame}{Quantitative Analyse 1b -- Prompt Type}
+\begin{frame}{Quantitative Analyse 1b -- Prompt Types}
     \begin{figure}
         \centering
         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/combined_llm_vs_prompt_type.png}
