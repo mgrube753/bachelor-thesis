@@ -54,12 +54,21 @@ Die `exp1a.csv` und `exp1b.csv` enthalten:
 
 -   `input_source`: Die Quelle des Textes, aus dem die Frage generiert wurde (z.B. `script`, `transcript`, `tanenbaum`, `script_manipulated`).
 -   `layer`: Der jeweilige Schichttext, aus der die Frage generiert wurde.
--   Die jeweiligen 5 Kategorien zur Bewertung von 0-10
--   Eine `comments`-Spalte für Ihre Anmerkungen. Dies könnten beispielsweise Indizien sein, wie: Die Frage ist ein Ankerbeispiel für eine bestimmte Kategorie, sodass diese auffällig gut oder schlecht abschneidet, oder auch, dass die Frage nicht beantwortbar ist, weil sie zu unklar formuliert ist.
+-   `sample_id`: Eine eindeutige ID für jede Frage, die Ihnen hilft, die Fragen den Quellen zuzuordnen.
+-   Die jeweiligen 7 Kategorien zur Bewertung von 0-10:
+    -   `relevance` (Relevanz)
+    -   `clarity` (Klarheit)
+    -   `answerability` (Beantwortbarkeit)
+    -   `challenging` (Herausfordernd)
+    -   `value` (Wertigkeit)
+    -   `language` (Sprache)
+    -   `correctness` (Korrektheit) - Nur für Experiment 1a
+    -   `manipulation_handling` (Umgang mit Manipulationen) - Nur für Experiment 1b
+-   Eine `answer_problems`-Spalte, in der Sie Antwort-Counter angeben können, bei denen der Wahrheitsgehalt der Antworten angezweifelt wird
+-   Eine `comments`-Spalte für weitere Anmerkungen. Dies könnten beispielsweise Indizien sein, wie: Die Frage ist ein Ankerbeispiel für eine bestimmte Kategorie, sodass diese auffällig gut oder schlecht abschneidet, oder auch, dass die Frage nicht beantwortbar ist, weil sie zu unklar formuliert ist.
 
 Anhand der CSV-Dateien können Sie die Fragen und deren Quellen nachvollziehen, um diese Zeile für Zeile zu bewerten.
-Die Dateien der einzelnen Fragen sind so nummeriert, mit der `input_source` und der `layer`-Nummer versehen, um die Zuordnung zu erleichtern.
-Wenn Sie Frage $n$ bewerten, muss das Ergebnis in Zeile $n+1$ der CSV-Datei eingetragen werden, da die erste Zeile den Header enthält, usw. für die weiteren Fragen.
+Die Dateien der einzelnen Fragen sind durch `sample_id` nummeriert, sodass die Zuordnung erleichtert wird.
 Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 an.
 
 ### Schritt 3: Bewertung von Experiment 1a
@@ -80,15 +89,7 @@ Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 a
 
 ### Schritt 5: CSV-Dokumentation
 
-Tragen Sie Ihre Bewertungen (0-10) in die jeweiligen CSV-Spalten, basierend auf der jeweiligen Bewertungsrubrik, ein:
-
--   `relevance` (Relevanz)
--   `clarity` (Klarheit)
--   `answerability` (Beantwortbarkeit)
--   `challenging` (Herausfordernd)
--   `correctness` (Korrektheit) -- Für Experiment 1a
--   `manipulation_handling` (Umgang mit Manipulationen) -- Für Experiment 1b
--   `comments` -- Dort können Sie Ihre Anmerkungen zu jeder Frage eintragen, um Ihre Bewertungen ggf. zu erläutern oder auf Besonderheiten hinzuweisen.
+Tragen Sie Ihre Bewertungen (0-10) in die jeweiligen CSV-Spalten, basierend auf der jeweiligen Bewertungsrubrik, ein. Kommentare können Sie in der `comments`-Spalte hinterlassen, um Ihre Bewertungen zu erläutern oder auf Besonderheiten hinzuweisen.
 
 ## Dankbarkeit für Ihre Unterstützung
 
