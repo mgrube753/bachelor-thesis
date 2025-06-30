@@ -1,0 +1,544 @@
+\documentclass[usenames, dvipsnames, aspectratio=32]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage[defaultfam, regular]{montserrat}
+\usepackage{csquotes}
+\usepackage[normalem]{ulem}
+\usepackage{latexsym,multicol,booktabs,miama}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{amssymb,amsfonts,amsmath,amsthm,mathrsfs,mathptmx} 
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage[backend=biber,bibencoding=utf8,urldateusetime=true,style=alphabetic,sorting=nyt,natbib=true]{biblatex}
+\usepackage{style}
+\usepackage{hyperref}
+    \hypersetup{colorlinks=true, citecolor=purple, filecolor=black, linkcolor=main, urlcolor=blue}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{caption}[numbered]
+\addbibresource{../../50_thesis/thesis/bibs/Extras.bib}
+\addbibresource{../../50_thesis/thesis/bibs/Positive.bib}
+\addbibresource{../../50_thesis/thesis/bibs/Eigenes.bib}
+
+
+\author[Malte Grube]{\vspace*{-.8em}Malte Grube -- B.\,Sc. Informatik (2021)\inst{1}}
+\title[]{LLMs in der Fragengenerierung}
+\subtitle{--\;Endverteidigung\;--}
+\institute[Universität Rostock]{
+    \inst{1}
+    \footnotesize{Betreuer: \textit{Prof.\,Dr. rer.nat.habil. \uline{Clemens H. Cap}}} \vspace*{.25em} \\
+    \textit{Jun.-Prof.in Dr.in \uline{Charlott Rubach}} \vspace*{-.25em}
+}
+\date{\today}
+
+\def\cmd#1{\texttt{\color[RGB]{0, 0, 139}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color[RGB]{0, 0, 139}\footnotesize #1}}
+
+\lstdefinestyle{texstyle}{
+    language=[LaTeX]TeX,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle={\bfseries\color[RGB]{0, 0, 180}},
+    keywordstyle=[2]{\slshape\color[RGB]{225, 140, 30}},
+    morekeywords=[2]{,itemize, enumerate, equation, table, tabular},
+    stringstyle=\color[RGB]{50, 50, 50},
+    numbers=left,
+    numberstyle=\footnotesize\color{gray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox
+}
+
+\AtBeginBibliography{\scriptsize}
+
+\begin{document}
+{
+\setbeamertemplate{headline}{}
+\begin{frame}
+    \vspace*{1em}
+    \begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.55\linewidth]{../10_intermediate_defense/logo.jpg}
+    \end{figure}
+    \vspace*{-1.5em}
+    \titlepage
+\end{frame}
+}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\section{Einführung \& Problem}
+
+            % biancini: used e.g. compliance, human eval, no bloom
+            % al faraby: future work shall be avoiding hallucinations by utilizing a framework which checks content fidelity
+            % angel: super relatedness to context, but very low bloom levels/adherence
+            % doughty: adherence between question and learning content was not assessed 
+            % elkins: relevance assessed, more interesting the bloom adherence
+            % mcqgen: relevance 100% on experts and llm-based eval (Rag)
+                % lamsiyah: mangel an menschlicher bewertung, um e.g. unterschiede zwischen menschlichen und llm-generierten fragen zu evaluieren
+            % maity: relevance/coverage used in eval
+            % mi and li (my rubric): relevance as well!
+            % scaria how good: nutzt horbach rubrik und relevance ergibt sich aus mehreren kategorie-ergebnissen von horbach
+            % vu: sagen, dass man content als wissensbasis beilegen soll, um qualitaet zu verbessern
+            % yang: halluzination in bildung inakzeptabel, somit RAG wieder
+            % twinstar: besides bloom adherence also knowledge relevance, measured automatically but unknown, alles automatisiert ausgewertet
+
+\begin{frame}[allowframebreaks]{Motivation \& Problemstellung}
+    \begin{itemize}
+        \item \textbf{Motivation:} 
+        \begin{itemize}
+            \item Aktives Lernen $\to$ gezielte Fragen
+            \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021} 
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ bessere Lehrmaterialien-Erstellung + Lernerfahrungen möglich \cite{naveed_comprehensive_2024}
+        \framebreak
+
+        \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
+        % da auch die pädagogische Eignung bewertet werden muss über experten, was bis dato selten gemacht wurde
+        \begin{itemize}
+            \item Selten pädagogische Bewertung \cite{zhuge_twinstar_2025,blobstein_angel_2023,scaria_how_2024}
+            % manchmal sind wirklich nur linguistische Metriken genutzt worden, oder eben Expertenbewertung ohne Bloom's Taxonomy
+            \item Mangelnde Performance bei höheren kognitiven Levels \cite{elkins_how_2023,scaria_how_2024}
+            % wurde zumindest festgestellt*, die genutzten Modelle sind auch nicht die neuesten
+            % angel gab es z.b.: gpt-3.5 basiert, super relatedness zu context (selbst bewertet), aber sehr niedrige kognitive levels (human eval)
+            \item Relevanz $\neq$ Inhaltstreue \cite{elkins_how_2023,hang_mcqgen_2024,mi_comparative_2024}
+            % korrektheit von Fragen ist elementar in Bildung
+            % Und von interesse ist, wie man gut dies in form von inhaltstreue umsetzen kann
+            % inhaltstreue zu gegebenem text wird aber oft nur als future work erwähnt
+        \end{itemize}
+            % content fidelity an sich immer nur durch experten bewertet, sehr selten
+            % spielraum für automatisierte Verfahren, welche die inhaltstreue von LLMs evaluieren (mögliches umgehen von halluzination [al faraby], diese sind inakzeptabel in bildung [yang]). Semantic similarity ist eine Möglichkeit, an sich wurden aber diverse Metriken nur genutzt zwischen generiertem und gold-standard fragen/antworten
+            % nicht immer context gegeben (empfehlenswert sagt vu et al, um qualität zu verbessern)
+            % oder eben nur in grundlegender form von relevanz bewertet, was nicht direkt auf inhaltstreue hinausgeht
+            % wenn war eher bloom als exot bzgl. informatik im fokus
+            % des öfteren als future work erwähnt, dass man inhaltstreue evaluieren sollte, ggf. automatisiert
+        % sonst viel linguistisch, mangel an menschlicher bewertung
+        % biancini (prompting geht besser) und maity (0-shot vs 8-shot aber minimal) haben experten-basiert auch inhaltstreue bewerten lassen
+        \vspace{.5em}
+        \item \textbf{Forschungslücken:}
+        \begin{itemize}
+            \item Untersuchung der Inhaltstreue von LLMs
+            \item Einhalten kognitiver Anforderungsniveaus
+        \end{itemize}
+        % bspw. fragen vs. content betrachten, automatisierter + humaner versuch
+        % versuch, mit gutem prompting neue llms besser anhand von bloom zu steuern
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Forschungsfragen}
+    \begin{itemize}
+        \item \textbf{RQ1:} Zu welchem Grad \textcolor{RedOrange!60}{halten sich LLMs} an den Inhalt verschiedener bereitgestellter \textcolor{RedOrange!60}{Lehrtexte} bei der Generierung von Fragen? \vspace{.5em}
+        \item[\textcolor{gray}{$\bullet$}] \textcolor{gray}{\textbf{RQ2:} Wie beeinflusst die \textcolor{RedOrange!40}{Beziehung} zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die \textcolor{RedOrange!40}{pädagogische Wirksamkeit} von LLM-generierten Fragen?}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Bloom's revised Taxonomy}
+    \begin{itemize}
+        \item \textbf{Pädagogische Relevanz:} Systematische Bewertung kognitiver Anforderungen von Fragen
+    \end{itemize}
+        %     \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
+        %     % erinnern, wiedererkennen, wiedergeben, benennen, auflisten
+        %     \item \textcolor{blue}{Understanding} -- Bedeutung von Anweisungen erkennen
+        %     % erklären, beschreiben, zusammenfassen, interpretieren, klassifizieren
+        %     \item \textcolor{blue}{Applying} -- Wissen in gegebenen Situationen anwenden
+        %     % anwenden, benutzen, ausführen, demonstrieren, durchführen
+        %     \item \textcolor{blue}{Analyzing} -- Material in Komponenten zerlegen
+        %     % untersuchen, vergleichen, kategorisieren, organisieren, differenzieren
+        %     \item \textcolor{blue}{Evaluating} -- Urteile basierend auf Kriterien fällen
+        %     % bewerten, beurteilen, rechtfertigen, verteidigen, kritisieren
+        %     \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
+        %     % entwerfen, planen, entwickeln, konstruieren, generieren
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.6\linewidth]{../10_intermediate_defense/Blooms-Taxonomy.png}
+            \caption{Kognitive Hierarchie \cite{krathwohl_revision_2002}.}
+            \label{fig:bloom}
+        \end{figure}
+\end{frame}
+
+\begin{frame}{Herausforderungen der Literatur}
+    \begin{itemize}
+        \item \textbf{Veraltete Modelle} -- Kein Reasoning
+        % pre-thinking basiert auf dem user prompt, damit das modell verstehen kann, was der user will
+        % wurde in der literatur noch nicht genutzt, sondern outdated models wie gpt-4/gpt-3.5/llama2
+        \item \textbf{Halluzinationen} -- Falsche Ausgaben
+        % kann man minimieren durch kontext hinzugeben. pre-thinking kann auch dafür sorgen, dass das modell den kontext und die anforderungen hinterfragt
+        \item \textbf{Inhaltstreue} -- Forschung nötig
+        % inhaltstreue ist eher nebensächlich [faraby, doughty], mehr Fokus auf Bloom, linguistische Metriken, Expertenrubriken mit anderem Fokus
+        % es mangelt an systemen, welche die inhaltstreue von LLMs evaluieren
+        \item \textbf{Metriken im Fokus} -- Quantitative Evaluation
+        % Problematisch, da grundlegend linguistische Metriken
+        % expertenbewertung ist eine notwendige evaluation bei fragengenerierung
+        \item \textbf{Expertenbewertung} -- Qualitative Evaluation 
+        % selten ausgiebig performt, weil es aufwendig ist
+        \item \textbf{Bloom's Taxonomy} -- Hohe kognitive Levels
+        % dies sind die schwersten Levels, welche LLMs nicht gut beherrschen in related work
+        % nicht immer wird bei fragen bloom benutzt, und wenn dann sind die modelle eher schlecht im generieren von höheren kognitiven levels
+
+        % \item \textbf{Prompting} -- Einfluss auf Ergebnisse
+        % Auch ich bin kein prompt engineer, jedoch gibt es viele methoden, um LLMs zu steuern
+        % kontext geben, rollenzuweisung, beispiellösungen geben --> in-context learning, special marks verwenden für mehr "übersicht" und struktur, auch fine-tuning ist möglich, aber auch aufwendig
+        % gewisse literatur hatte minimale Prompts aber mit Beispieloutputs übergeben, andere haben auch komplexe Prompts verwendet
+    \end{itemize}
+\end{frame}
+
+\section{Exp.\ 1 -- Inhaltstreue}
+
+\begin{frame}[allowframebreaks]{Experimentelles Design}
+    \begin{itemize}
+        \item \textbf{Ziel:} Bewertung der Inhaltstreue LLM-\\ generierter Fragen + Qualität
+        \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
+        \begin{itemize}
+            \item Script -- Prof. Cap's \enquote{Referenzarchitekturen} (DE)
+            \item Transcript -- Audio-zu-Text (DE)  
+            \item \enquote{Computer Networks} -- Textbook (EN)
+        \end{itemize}
+        \item \textbf{Exp 1a:} Originaltexte 
+        \item \textbf{Exp 1b:} Manipuliertes Script 
+        \framebreak
+        \item 4 Large Language Models: 
+            \begin{itemize}
+                \item \textbf{DeepSeek R1:} Jan 2025 -- manuell
+                \item \textbf{Claude 3.7 Sonnet:} Feb 2025 -- API
+                \item \textbf{Gemini 2.5 Flash:} Mar 2025 -- API
+                \item \textbf{OpenAI o3:} Apr 2025 -- API
+            \end{itemize}
+        \item 2 Prompt-Strategien:
+            \begin{itemize}
+                \item \textbf{Einfach:} Weniger Anweisungen, keine Strukturierung, aber Formatvorlage + Material
+                % generiere zum iso osi modell
+                % korrekte Antwort klar gekennzeichnet (eine oder eben aus möglichkeiten)
+                % kein abgrenzen von paragraphen (strukturierung)
+                % klar und präzise Frage, kein weiterer Text soll generiert werden
+                \item \textbf{Komplex:} Rollenzuweisung, detaillierte Anweisungen, fordert nicht-triviales und kritisches Denken, Struktur durch Docstrings, Formatvorlage + Material 
+                % format für einheitlichen Output bei beiden Prompts --> war das Problem beim einfachen Prompt --> Rerun nötig gewesen
+                % + source material
+                % was war drin:
+                % erfahrener experte im generieren von kognitiv anspruchsvollen fragen, welche nicht triviales und analytisches Denken fordern
+                % untersuchen des iso osi texts, erfassen des wichtigen
+                % soll nur fliesstext statt markdown generieren, nichts anderes soll generiert werden
+            \end{itemize}
+        % diese haben keinen festen fragetypen vorgegeben. 
+        % dies ermöglicht, ergebnisse ohne die eine zusätzliche Variable zu verfälschen, da fokus auf inhaltstreue liegt
+        % kann eine fundierung für verbessern der prompts in experiment 2 sein, wo teils auch fragetyp nicht angegeben wird, wie im komplexen prompt auch
+        % dafür ist halt RQ2 da, um mit sowas umzugehen
+        % wir haben eine geeignete vergleichbarkeit durch die lang durchdachte auswertungsrubrik. wäre diese oberflächlich, wäre die vergleichbarkeit wesentlich geringer
+        % auch die quantitative umsetzung ist recht formatunabhängig (habe die falschen antwortmöglichkeiten abgefiltert), kann ja mal zählen wie viele fragen von typ x generiert wurden --> möglicher erkenntnisgewinn bzgl. präferenzen bei fragestellung (multiple-choice bei exp1)
+        % dann kann man in exp2 gucken, was auf den jeweiligen kognitiven leveln passiert, wenn man dort fragetyp vs. bloom level angibt, wie gut das funktioniert
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Datenerhebung \& Durchführung}
+    \begin{itemize}
+        \item \textbf{Python:} Automatisierte API-Ansteuerungen
+        \item \textbf{Manuell:} DeepSeek R1
+        \item \textbf{Material:} Layer-weise Aufteilung
+        \item \textbf{Resultat:} 
+            \begin{itemize}
+                \item \textbf{Exp 1a:} 168 Fragen
+                \item \textbf{Exp 1b:} 56 Fragen
+            \end{itemize}
+    \end{itemize}
+    \vspace{-.25em}
+    \begin{align*}
+        \textcolor{gray}{4 \text{ LLMs}\times 3 \text{ Inputs}\times 7 \text{ Layers}\times 2 \text{ Prompts}} &= \textcolor{gray}{168 \text{ Fragen}} \\
+        \textcolor{gray}{4 \text{ LLMs}\times 1 \text{ Input}\times 7 \text{ Layers}\times 2 \text{ Prompts}} &= \textcolor{gray}{56 \text{ Fragen}}
+    \end{align*}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Evaluations-Methodik}
+    \begin{itemize}
+        \item \textbf{Quantitativ:}
+        \begin{itemize}
+            \item \textbf{Semantic Similarity:} Generierte Frage vs. Originaltext
+            \begin{itemize}
+                \item[$\to$] Embedding-Modell \& Cosine Similarity \vspace{-.6em}
+                % cosine sim
+                % Bsp: (3,2) und (4,1) --> 3*4 + 2*1 / (sqrt(3^2+2^2) * sqrt(4^2+1^2)) = 14 / (sqrt(13) * sqrt(17)) = 0.94, sonst a mal b / ||a|| * ||b||
+            \end{itemize}
+            \begin{align*}
+                \hspace{-3em}\cos(\vec{a}, \vec{b}) &= \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| \cdot ||\vec{b}||} 
+            \end{align*}
+            % zu beginn der transformer-ära gab es encoder-decoder transformer, wo encoder den input in eine mathematische Repräsentation mit Bedeutung umwandelt
+            % dann generiert der decoder basierend auf diesem embedding den output token-weise
+            % hat sich aber eher gesplittet in encoder-only und decoder-only transformer
+            % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training + inferenz als enc-dec-transformer
+            % encoder-only: bert, roberta: können nur text klassifizieren, nicht generieren --> sentence transformers kamen dann auch --> diese Embeddings sind vegleichbar
+            \item \textbf{Adherence Score:} o3 \& Claude 3.7 Sonnet Prompting
+            % temperatur auf 0 für weniger randomness in Antwort, geht aber nicht bei thinking mode...
+            % bekommt Rolle eines Experten im Bewerten von metrischen Fragen, Frage studieren, iso osi kontext text studieren
+            % kurze Bewertungsrubrik 0 bis 1, Ausgabe einer Dezimalzahl mit 2 Nachkommastellen, ohne Kommentare etc.
+        \end{itemize}
+        % \item quantitative mit metriken (semantic sim mit Embedding Model, adherence via llm)
+        \item \textbf{Qualitativ:} Prof. Cap + 4 Experten des IuK 
+        \begin{itemize}
+            \item \textbf{Fleiss Kappa:} Inter-Rater Reliability
+            \item \textbf{Bewertungsrubrik:} 0-10 Punkte\,/\,Kategorie \& Frage:
+            \item[] \textit{\textcolor{gray}{Relevanz, Klarheit, Beantwortbarkeit, Herausfordernd \& Korrektheit vs. Umgang mit Manipulation}}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{How to: Fleiss Kappa}
+    \begin{itemize}
+        \item \textbf{Ziel:} Inter-Rater Reliability der Experten durch:
+        \begin{align*}
+            \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
+        \end{align*}
+        $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
+        $N$ Anzahl der Fragen, \\
+        $n$ Anzahl der Rater
+        \begin{align*}
+            % n_{ij} Anzahl der Rater, die für Frage i das Rating j abgegeben haben
+            % k Menge der Auswahlmöglichkeiten 0,2,4,6,8,10
+            p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
+            % nenner ist maximale Anzahl möglicher Übereinstimmungen von Raterpaaren über alle Probanden
+            % 0^2 + 3^2 \\ + 1^2 + 2^2 ...
+            p_e &= \sum_{j=1}^{k} p_j^2
+            % wie viele rater haben in der kategorie i eine zustimmung gegeben (2 kategorien, in der einen 8/21 eintraege, bei der anderen 13/21 einträge)
+        \end{align*}
+    \end{itemize}
+\end{frame}
+
+\section{Exp.\ 2 -- Bloom Analyse}
+
+\section{Konklusion}
+
+\begin{frame}{Quantitative Analyse 1 -- Fragetypen}
+    \begin{itemize}
+        \item \textbf{Exp 1a:} 9/168 Fragen Freitext, nur komplexer Prompt\\ 8x OpenAI, 1x Google
+        \item \textbf{Exp 1b:} 4/56 Fragen Freitext, 1x einfacher Prompt (DeepSeek), 3x Google
+    \end{itemize}
+    {\scriptsize
+    \begin{table}[htbp]
+    \centering
+    \caption{Freitext-Scoring aus 1a und 1b.}
+    \label{tab:free_text_scores}
+    \begin{tabular}{lccccccc}
+        \toprule
+        & \multicolumn{3}{c}{Cosine Similarity} & \multicolumn{3}{c}{Adherence Score} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7}
+        Experiment & Mean & Std & Count & Mean & Std & Count \\
+        \midrule
+        Exp1a & 0.673 & 0.079 & 9 & 0.920 & 0.168 & 9 \\
+        Exp1b & 0.501 & 0.184 & 4 & 0.764 & 0.338 & 4 \\
+        \bottomrule
+    \end{tabular}
+    \end{table}}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- LLMs}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
+        \caption{Verteilung nach LLM (1a).}
+        \label{fig:dist_llm_a}
+    \end{figure}
+\end{frame}
+% google,transcript,1,complex,0.8341479301452637,0.45,0.7
+% cossim passend, aber adherence geringer.
+
+% openai,transcript,4,common,0.20039741694927216,1.0,0.95
+% cossim etwas unnötig gering, und adherence sehr hoch
+% dieses transcript ist sehr lang, frage etc aber kurz 
+
+% google,script,2,common,0.44263648986816406,0.97,1.0
+% was gehoert NICHT zu den aufgaben ...
+
+\begin{frame}{Quantitative Analyse 1a -- Input Sources}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_input_source.png}
+        \caption{Verteilung nach Eingabequelle (1a).}
+        \label{fig:dist_input_a}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- Input Sources}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_input_source.png}
+        \caption{Heatmap LLMs vs. Eingabequellen (1a).}
+        \label{fig:combined_llm_vs_input_source_a}
+    \end{figure}
+\end{frame}
+
+% \begin{frame}{Quantitative Analyse 1a -- Layers}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_layer.png}
+%         \caption{Verteilung nach Layer.}
+%         \label{fig:dist_layer_a}
+%     \end{figure}
+% \end{frame}
+
+\begin{frame}{Quantitative Analyse 1a -- Prompt Types}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_prompt_type.png}
+        \caption{Heatmap LLMs vs. Prompt-Typen (1a).}
+        \label{fig:combined_llm_vs_prompt_type_a}
+    \end{figure}
+\end{frame}
+
+% --------------------------------------
+
+\begin{frame}{Quantitative Analyse 1b -- LLMs}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_llm.png}
+        \caption{Verteilung nach LLM (1b).}
+        \label{fig:dist_llm_b}
+    \end{figure}
+\end{frame}
+% selbst groß übernommene fragen ggü. dem text bringen nicht unfassbar viel cosine similarity. und ggf. auch niedrige adherence scores. grosse problematik bei den ergebnissen, wobei an sich cossim vielversprechender ist. wenigstens in exp1a. bei 1b
+% deepseek,script_manipulated,6,complex,0.44526606798171997,0.05,0.0
+% hier ist der Text auf ganz anderen Layern fokussiert, nichts mit dem gegebenen mani-Text zutun... aber cossim bleibt moderat.
+% 
+
+% \begin{frame}{Quantitative Analyse 1b -- Input Sources}
+%     \begin{table}[htbp]
+%         \centering
+%         \caption{Adherence Score pro LLM für manipuliertes Script.}
+%         \label{tab:exp1b_metrics_llm_script_manipulated}
+%         \begin{tabular}{lcccc}
+%         \toprule
+%         & \multicolumn{2}{c}{Cosine Similarity} & \multicolumn{2}{c}{Adherence Score} \\
+%         \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+%         LLM & Mean & Std & Mean & Std \\
+%         \midrule
+%         Anthropic & 0.640 & 0.121 & 0.904 & 0.123 \\
+%         DeepSeek & 0.536 & 0.121 & 0.731 & 0.356 \\
+%         Google & 0.618 & 0.156 & 0.920 & 0.143 \\
+%         OpenAI & 0.600 & 0.107 & 0.806 & 0.359 \\
+%         \bottomrule
+%         \end{tabular}
+%     \end{table}
+% \end{frame}
+
+% \begin{frame}{Quantitative Analyse 1b -- Prompt Types}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_prompt_type.png}
+%         \caption{Verteilung nach Prompt-Typ}
+%         \label{fig:dist_prompt}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}{Quantitative Analyse 1b -- Layers}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_layer.png}
+%         \caption{Verteilung nach Layer}
+%         \label{fig:dist_layer}
+%     \end{figure}
+% \end{frame}
+
+\begin{frame}{Quantitative Analyse 1b -- Prompt Types}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/combined_llm_vs_prompt_type.png}
+        \caption{Heatmap LLMs vs. Prompt-Typen (1b).}
+        \label{fig:combined_llm_vs_prompt_type_b}
+    \end{figure}
+\end{frame}
+
+% --------------------------------------
+
+\begin{frame}{Qualitative Analyse}
+    \begin{itemize}
+        \item Expertenbewertung ausstehend
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Limitations}
+    \begin{itemize}
+        \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
+        \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
+        \item[$\to$] Wichtig für Bewertung gewesen
+        \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
+        \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
+        \item[$\to$] Expertenbewertung von Bedeutung
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
+    \begin{itemize}
+        % \item Nicht vollständig, da Expertenbewertung aussteht
+        \item \textbf{Bezüglich der LLMs:}
+        \begin{itemize}
+            \item[$\to$] \textbf{CosSim:} DeepSeek R1 schwächstes, Gemini bestes
+            \item[$\to$] \textbf{Adherence:} Ergebnisse nah beieinander
+            % dort sind präferenzen/probleme nicht wirklich erkennbar
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Eingabequellen:}
+        \begin{itemize}
+            \item[$\to$] \textbf{CosSim:} Script > Tanenbaum > Transcript
+            % Script schneidet durch die sehr kurzen Formulierungen besser ab
+            % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
+            \item[$\to$] \textbf{Adherence:} Quellen-übergreifend ähnlich
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Prompt-Strategien:}
+        \begin{itemize}
+            \item[$\to$] \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
+            % aber nicht signifikant
+            \item[$\to$] \textbf{Adherence:} Eher andersherum \vspace{.5em}
+        \end{itemize}
+        \item \textbf{Kritisch:} \enquote{Welche Funktionen hat OSI-Layer $n$ nicht?}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
+    \begin{itemize}
+        % \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
+        \item \textbf{Manipulierte Inhalte -- Performance:}
+        \begin{itemize}
+            \item[$\to$] \textbf{DeepSeek R1:} Schwächstes bei beiden Metriken
+            % (und streut bei adherence sehr)
+            \item[$\to$] \textbf{CosSim:} Stets hoch, Manipulation erkannt?
+            % aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
+            % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
+            % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
+            \item[$\to$] \textbf{Adherence:} Instabil, DeepSeek und OpenAI besonders betroffen im komplexen Prompt
+            % alles schwer nachvollziehbar
+            % bei adherence viel diversität in den Werten
+            \item[$\to$] \textbf{Beide Metriken:} Einfacher Prompt > Komplexer Prompt
+        \end{itemize}
+        \vspace{.5em}
+        \item \textbf{Kritisch:} \enquote{Laut dem zum ISO-OSI-Modell wider\-sprüchlichen Text, was sind [...]?}
+        \item[$\to$] Expertenanalyse von Bedeutung
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ausblick auf Exp. 2}
+    \begin{itemize}
+        \item \textbf{Fokus:} Bloom's Taxonomy-Alignment mit LLMs
+        \item \textbf{Fragetypen:} Multiple-Choice \& Freitextfragen
+        \item \textbf{Vorgehen:} Deskriptives Prompting mit
+            \begin{itemize}
+                \item Rollenzuweisung etc.
+                \item (Nicht-)Angabe von Fragetyp
+                \item (Nicht-)Angabe von Bloom Level
+            \end{itemize}
+        \item \textbf{Evaluatoren:} Bestenfalls Experten
+        \item \textbf{Rubrik:} Gleiche mit \textit{Bloom's Level}
+    \end{itemize}
+\end{frame}
+
+\appendix
+\setbeamertemplate{headline}{}
+\begin{frame}[allowframebreaks]{Literaturverzeichnis}
+    \printbibliography[heading=none]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \vspace{1em}
+    \huge \textcolor{Black!80}{Vielen Dank für Ihre Aufmerksamkeit!}
+\end{frame}
+
+\end{document}
