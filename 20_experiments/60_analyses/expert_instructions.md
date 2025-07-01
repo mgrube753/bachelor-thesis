@@ -19,8 +19,8 @@ Es wurden folgende Materialien genutzt, um Fragen bei Experiment 1a zu generiere
 
 Die Materialien wurden von mir extrahiert und aufbereitet durch
 
-- Auteilen der Layer in einzelne TXT-Files und
-- gegebenenfalls Kürzung,
+-   Auteilen der Layer in einzelne TXT-Files und
+-   gegebenenfalls Kürzung,
 
 sodass sie eine angemessene Länge für die Fragengenerierung haben.
 
@@ -46,7 +46,7 @@ Lesen Sie Subexperiment-spezifischen Rubriken:
 -   `exp1a_rubric.md`
 -   `exp1b_rubric.md`
 
-Diese unterscheiden sich in den Bewertungskriterien innerhalb der letzten Kategorie jedes Subexperiments. Im ersten Subexperiment (1a) wird die **Korrektheit** der Fragen zum gegebenen Text bewertet, während im zweiten Subexperiment (1b) der **Umgang mit Manipulation** im Fokus steht.
+Diese unterscheiden sich in den Bewertungskriterien innerhalb der letzten Kategorie jedes Subexperiments. Im ersten Subexperiment (1a) wird die **Korrektheit** der Fragen zum gegebenen Text bewertet (um grundlegend eine Form der Content Adherence auf Expertenebene zu analysieren), während im zweiten Subexperiment (1b) der **Umgang mit Manipulation** im Fokus steht (folgen die Modelle den manipulierten Inhalten blind, erkennen sie jene Manipulation, ignoriert das Modell bei der Frage den Text komplett?).
 
 ### Schritt 2: Verständnis der CSV-Struktur
 

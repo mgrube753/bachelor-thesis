@@ -135,9 +135,9 @@ def generate_expert_csvs(sample_base, csv_path):
                 "clarity",
                 "answerability",
                 "challenging",
-                "correctness",
                 "value",
                 "language",
+                "correctness",
                 "answer_problems",
                 "comments",
             ]
@@ -147,9 +147,9 @@ def generate_expert_csvs(sample_base, csv_path):
                 "clarity",
                 "answerability",
                 "challenging",
-                "manipulation_handling",
                 "value",
                 "language",
+                "manipulation_handling",
                 "answer_problems",
                 "comments",
             ]
