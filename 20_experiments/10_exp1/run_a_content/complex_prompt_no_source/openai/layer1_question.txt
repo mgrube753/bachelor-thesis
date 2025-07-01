@@ -1,0 +1,7 @@
+Frage: In einem Hochfrequenz-Backplane-Design verursachen Impedanzdiskontinuitäten deutliche Signalreflexionen, welche die Augenöffnungsbreite der Bitübertragung stark verringern. Welche Maßnahme lässt sich ausschließlich innerhalb der Verantwortlichkeit von Schicht 1 ergreifen, um die Signalqualität zu verbessern, ohne Änderungen in höheren Schichten vorzunehmen?
+
+Antwortmöglichkeiten:
+- Präzises Anpassen der Abschlussimpedanz an die charakteristische Impedanz der Leitung (Richtig)
+- Einführung eines CRC-Felds im Datenrahmen zur Fehlererkennung (Falsch)
+- Aktivieren von Link-Layer-Flow-Control (Falsch)
+- Einsatz adaptiver Routing-Algorithmen im Netzwerk (Falsch)

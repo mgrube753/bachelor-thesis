@@ -1,0 +1,8 @@
+Frage: Bei der Analyse einer Netzwerkarchitektur wurde festgestellt, dass ein benutzerdefiniertes Protokoll sowohl Datendarstellung, Verschlüsselung, Session-Management als auch direkte Socket-Kommunikation in einer einzigen Softwarekomponente implementiert. Welche architektonischen Probleme ergeben sich spezifisch für die Funktionalitäten der Anwendungsschicht (Schicht 7) des ISO-OSI-Modells in diesem Design?
+
+Antwortmöglichkeiten:
+- Die Vermischung von Anwendungsschicht-Funktionen (Datendarstellung, Verschlüsselung) mit Funktionen niedrigerer Schichten verletzt das Prinzip der Schichtenkapselung und erschwert die Interoperabilität mit Standardprotokollen wie HTTP oder SMTP (Richtig)
+- Die direkte Socket-Kommunikation gehört zur Anwendungsschicht und stellt daher kein architektonisches Problem dar (Falsch)
+- Verschlüsselung sollte ausschließlich auf der Transportschicht (Schicht 4) implementiert werden, nie auf der Anwendungsschicht (Falsch)
+- Die Implementierung des Session-Managements in dieser Komponente ist korrekt, da Session-Verwaltung ausschließlich zur Anwendungsschicht gehört (Falsch)
+- Die Bündelung der Datendarstellungsfunktionen mit anderen Funktionen verhindert die Nutzung unterschiedlicher Datenformate wie XML, JSON oder ASN.1, die typischerweise auf der Anwendungsschicht definiert werden (Richtig)

@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Funktionen werden primär von der Transport-Schicht (Schicht 4) des ISO-OSI-Modells bereitgestellt, um eine zuverlässige Ende-zu-Ende-Kommunikation zu ermöglichen? Wählen Sie alle zutreffenden Mechanismen aus.
+
+Antwortmöglichkeiten:
+- Prozessadressierung mittels Ports zur Multiplexierung/Demultiplexierung von Verbindungen (Richtig)
+- Pfadwahl im Netz durch Ausführung eines kürzesten-Pfad-Routing-Algorithmus (Falsch)
+- Flusskontrolle zwischen Sender und Empfänger durch Sliding-Window-Verfahren (Richtig)
+- MAC-Frame-Konfektionierung inklusive Rahmen-Checksequenz (Falsch)
+- Physikalische Codierung von Bits in elektrische oder optische Signale (Falsch)

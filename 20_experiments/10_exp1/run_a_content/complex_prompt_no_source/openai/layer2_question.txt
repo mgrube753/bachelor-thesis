@@ -1,0 +1,3 @@
+Frage: Ein Angreifer setzt in einem geswitchten Ethernet-Netzwerk MAC-Flooding ein, um das Weiterleitungsverhalten des Switches zu manipulieren. Welche fundamentale Eigenschaft der OSI-Schicht 2 wird hierbei ausgenutzt und welche konkrete Layer-2-Gegenmaßnahme begrenzt den Angriff am effektivsten? Begründen Sie kurz.
+
+Antwort: Ausgenutzt wird das dynamische Lernen und Speichern von MAC-zu-Port-Zuordnungen in der CAM-Tabelle des Switches; effektiv begrenzt wird der Angriff durch die Aktivierung von Port Security, welche die Anzahl zulässiger MAC-Adressen pro Port einschränkt und bei Überschreitung den Port deaktiviert. (Richtig)

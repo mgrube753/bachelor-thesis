@@ -1,0 +1,8 @@
+Frage: In einem verteilten CAD-System müssen mehrere Clients abwechselnd exklusiven Schreibzugriff auf dasselbe 3-D-Modell ausüben, ohne dass die zugrunde liegende TCP-Verbindung getrennt wird. Welche der folgenden Mechanismen sind originäre Funktionen der OSI-Schicht 5 und schaffen hierfür die nötige logische Kontrolle? Wählen Sie alle zutreffenden Mechanismen.
+
+Antwortmöglichkeiten:
+- Token-Management zur kontrollierten Vergabe exklusiver Gesprächsberechtigungen (Richtig)
+- Dialogsteuerung, die zwischen Halb- und Vollduplex-Betrieb umschalten kann (Richtig)
+- Sliding-Window-Flow-Control zur Pufferverwaltung zwischen Sender und Empfänger (Falsch)
+- Link-State-Routing zur Bestimmung optimaler Weiterleitungswege (Falsch)
+- ASN.1-Kodierung zur Darstellung komplexer Datenstrukturen (Falsch)

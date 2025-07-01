@@ -2,6 +2,7 @@ from api_config import init_clients
 from question_generation import (
     run_exp_1a,
     run_exp_1b,
+    run_exp_1a_no_source,
     run_exp_2a,
     run_exp_2b,
     run_exp_2c,
@@ -22,11 +23,12 @@ def main():
     get_bloom()
 
     print("[INFO] Starting question generation experiments...")
-    run_exp_1a(clients)
-    run_exp_1b(clients)
-    run_exp_2a(clients)
-    run_exp_2b(clients)
-    run_exp_2c(clients)
+    # run_exp_1a(clients)
+    # run_exp_1b(clients)
+    run_exp_1a_no_source(clients)
+    # run_exp_2a(clients)
+    # run_exp_2b(clients)
+    # run_exp_2c(clients)
 
     print("\n[INFO] All experiments completed.")
 

@@ -61,8 +61,14 @@ def get_progress():
         return f"Progress [{' | '.join(desc_parts)}]"
 
 
-def generate_task_exp1(
-    llm_name, clients, prompt_template, input_text, output_path, description
+def generate_task(
+    llm_name,
+    clients,
+    prompt_or_template,
+    output_path,
+    description,
+    input_text=None,
+    max_tokens=2400,
 ):
     try:
         if llm_name == "deepseek":
@@ -70,12 +76,16 @@ def generate_task_exp1(
             increment_counter(llm_name)
             return True
 
-        formatted_prompt = format_prompt(prompt_template, text=input_text)
+        if input_text is not None:
+            formatted_prompt = format_prompt(prompt_or_template, text=input_text)
+        else:
+            formatted_prompt = prompt_or_template
+
         if not formatted_prompt:
             return None
 
         generated_question = llm_generation(
-            llm_name, clients, formatted_prompt, max_tokens=1800
+            llm_name, clients, formatted_prompt, max_tokens=max_tokens
         )
         if generated_question:
             save_result(output_path, generated_question)
@@ -86,31 +96,9 @@ def generate_task_exp1(
     return False
 
 
-def generate_task_exp2(llm_name, clients, formatted_prompt, output_path, description):
-    try:
-        if llm_name == "deepseek":
-            save_result(output_path, "")  # Empty DeepSeek file
-            increment_counter(llm_name)
-            return True
-
-        if not formatted_prompt:
-            return None
-
-        generated_question = llm_generation(
-            llm_name, clients, formatted_prompt, max_tokens=2400
-        )
-        if generated_question:
-            save_result(output_path, generated_question)
-            increment_counter(llm_name)
-            return True
-    except Exception as e:
-        print(f"[ERROR] {llm_name}: {description} - {e}")
-    return False
-
-
-def run_tasks(tasks, task_func, exp_desc):
+def run_tasks(tasks, exp_desc):
     with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {executor.submit(task_func, *task): task for task in tasks}
+        futures = {executor.submit(generate_task, *task): task for task in tasks}
 
         with tqdm(
             total=len(tasks), desc=f"{exp_desc} {get_progress()}", unit="task"
@@ -175,9 +163,10 @@ def run_exp_1a(clients):
                             llm_name,
                             clients,
                             prompt_template,
-                            input_text,
                             output_path,
                             description,
+                            input_text,
+                            1800,
                         )
                     )
                     prompt_type = output_dir_name.replace("_prompt", "")
@@ -186,7 +175,7 @@ def run_exp_1a(clients):
     csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
     headers = ["llm", "input_source", "layer", "prompt_type"]
     create_csvs("exp1a", headers, csv_rows)
-    run_tasks(tasks, generate_task_exp1, "Exp 1a")
+    run_tasks(tasks, "Exp 1a")
 
 
 def run_exp_1b(clients):
@@ -236,9 +225,10 @@ def run_exp_1b(clients):
                         llm_name,
                         clients,
                         prompt_template,
-                        input_text,
                         output_path,
                         description,
+                        input_text,
+                        1800,
                     )
                 )
                 prompt_type = output_dir_name.replace("_prompt", "")
@@ -247,7 +237,55 @@ def run_exp_1b(clients):
     csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
     headers = ["llm", "input_source", "layer", "prompt_type"]
     create_csvs("exp1b", headers, csv_rows)
-    run_tasks(tasks, generate_task_exp1, "Exp 1b")
+    run_tasks(tasks, "Exp 1b")
+
+
+def run_exp_1a_no_source(clients):
+    print("\n[INFO] Experiment 1a: No Source Content")
+    reset_counters()
+    tasks = []
+    csv_rows = []
+
+    prompt_path = os.path.join(
+        constants.PROMPT_TEMPLATES_PATH,
+        "experiment",
+        "exp1a_complex_prompt_no_source.md",
+    )
+    prompt_template = load_prompt(prompt_path)
+    if not prompt_template:
+        print("[ERROR] Could not load prompt template: exp1a_complex_prompt_no_source")
+        return
+
+    for layer_num in constants.LAYERS:
+        for llm_name in constants.LLM_NAMES:
+            formatted_prompt = format_prompt(prompt_template, layer=layer_num)
+
+            output_path = os.path.join(
+                constants.EXP1_PATH,
+                "run_a_content",
+                "complex_prompt_no_source",
+                llm_name,
+                f"layer{layer_num}_question.txt",
+            )
+            description = f"layer{layer_num}"
+
+            tasks.append(
+                (
+                    llm_name,
+                    clients,
+                    formatted_prompt,
+                    output_path,
+                    description,
+                    None,
+                    1800,
+                )
+            )
+            csv_rows.append([llm_name, "no_source", layer_num, "complex_no_source"])
+
+    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
+    headers = ["llm", "input_source", "layer", "prompt_type"]
+    create_csvs("exp1a_no_source", headers, csv_rows)
+    run_tasks(tasks, "Exp 1 No Source")
 
 
 def run_exp_2a(clients):
@@ -294,7 +332,15 @@ def run_exp_2a(clients):
                 description = f"{q_type} question {question_id}"
 
                 tasks.append(
-                    (llm_name, clients, formatted_prompt, output_path, description)
+                    (
+                        llm_name,
+                        clients,
+                        formatted_prompt,
+                        output_path,
+                        description,
+                        None,  # no input_text
+                        2400,  # max_tokens
+                    )
                 )
                 csv_rows.append(
                     [
@@ -309,7 +355,7 @@ def run_exp_2a(clients):
     csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3], row[4]))
     headers = ["llm", "input_source", "layer", "question_type", "question_id"]
     create_csvs("exp2a", headers, csv_rows)
-    run_tasks(tasks, generate_task_exp2, "Exp 2a")
+    run_tasks(tasks, "Exp 2a")
 
 
 def run_exp_2b(clients):
@@ -357,14 +403,22 @@ def run_exp_2b(clients):
             description = f"{bloom_level_name}"
 
             tasks.append(
-                (llm_name, clients, formatted_prompt, output_path, description)
+                (
+                    llm_name,
+                    clients,
+                    formatted_prompt,
+                    output_path,
+                    description,
+                    None,  # no input_text
+                    2400,  # max_tokens
+                )
             )
             csv_rows.append([llm_name, source_name, layer_num, bloom_original])
 
     csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
     headers = ["llm", "input_source", "layer", "bloom_original"]
     create_csvs("exp2b", headers, csv_rows)
-    run_tasks(tasks, generate_task_exp2, "Exp 2b")
+    run_tasks(tasks, "Exp 2b")
 
 
 def run_exp_2c(clients):
@@ -417,7 +471,15 @@ def run_exp_2c(clients):
                 description = f"{q_type} {bloom_level_name}"
 
                 tasks.append(
-                    (llm_name, clients, formatted_prompt, output_path, description)
+                    (
+                        llm_name,
+                        clients,
+                        formatted_prompt,
+                        output_path,
+                        description,
+                        None,  # no input_text
+                        2400,  # max_tokens
+                    )
                 )
                 csv_rows.append(
                     [
@@ -432,4 +494,4 @@ def run_exp_2c(clients):
     csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3], row[4]))
     headers = ["llm", "input_source", "layer", "question_type", "bloom_original"]
     create_csvs("exp2c", headers, csv_rows)
-    run_tasks(tasks, generate_task_exp2, "Exp 2c")
+    run_tasks(tasks, "Exp 2c")

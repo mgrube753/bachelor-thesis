@@ -1,0 +1,9 @@
+Frage: Ein verteiltes System soll konzipiert werden, bei dem Sensordaten in Echtzeit übertragen werden müssen, gleichzeitig aber eine gewisse Zuverlässigkeit erforderlich ist. Analysieren Sie das Dilemma zwischen den beiden Hauptprotokollen der Transportschicht und erläutern Sie, welche spezifische Erweiterung oder Implementierungstechnik dieses Dilemma am besten lösen könnte.
+
+Antwortmöglichkeiten:
+- Die Implementierung von SCTP (Stream Control Transmission Protocol) bietet eine geeignete Lösung, da es Multistreaming und partielle Zuverlässigkeit unterstützt, wodurch Echtzeitdatenübertragung mit konfigurierbaren Zuverlässigkeitsgarantien möglich wird (Richtig)
+- Die Verwendung von TCP mit reduzierten Timeouts und modifiziertem Congestion-Control-Algorithmus würde die Echtzeitanforderungen erfüllen, ohne die Zuverlässigkeit zu beeinträchtigen (Falsch)
+- UDP mit einer anwendungsspezifischen Fehlerkontrollschicht wäre optimal, da es die niedrigste Latenz bietet und die Fehlerkontrolle den Zuverlässigkeitsanforderungen gerecht werden kann (Richtig)
+- Die gleichzeitige Verwendung von TCP für kritische Daten und UDP für Echtzeitdaten mit einem intelligenten Multiplexing-Mechanismus auf Anwendungsebene (Richtig)
+- Die Implementierung von QUIC als moderne Alternative, da es auf UDP aufbaut, aber gleichzeitig Verbindungsmultiplexing und verbesserte Fehlerkorrekturmechanismen bietet (Richtig)
+- Die Modifikation von UDP durch Hinzufügen von Sequenznummern und selektiven Acknowledgments würde die Echtzeitfähigkeit bewahren und gleichzeitig Zuverlässigkeit gewährleisten (Falsch)

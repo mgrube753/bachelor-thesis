@@ -1,0 +1,9 @@
+Frage: Ein Netzwerkingenieur implementiert ein neues System, bei dem mehrere Geräte sich einen gemeinsamen Übertragungskanal teilen müssen. Bei der Analyse der Layer-2-Funktionalität stellt er fest, dass es häufig zu Kollisionen kommt, wenn mehrere Geräte gleichzeitig senden. Er erwägt nun, zwischen CSMA/CD (Carrier Sense Multiple Access with Collision Detection) und Token-Ring als Medienzugriffsverfahren zu wählen. Welche der folgenden Aussagen treffen in diesem Kontext zu?
+
+Antwortmöglichkeiten:
+- CSMA/CD erkennt Kollisionen erst nach deren Auftreten und leitet dann eine Wiederholung der Übertragung ein (Richtig)
+- Token-Ring verhindert Kollisionen präventiv durch die kontrollierte Weitergabe einer Sendeberechtigung (Token) (Richtig)
+- Die MAC-Adresse (Media Access Control) wird in Schicht 3 des OSI-Modells verwendet und hat keinen Einfluss auf die Kollisionsproblematik (Falsch)
+- CSMA/CD ist besonders effizient bei hoher Netzauslastung, da der Durchsatz mit steigender Last linear zunimmt (Falsch)
+- Switche auf Schicht 2 können das Kollisionsproblem reduzieren, indem sie separate Kollisionsdomänen schaffen (Richtig)
+- Token-Ring-Netzwerke benötigen keine MAC-Adressen, da die physische Anordnung der Geräte die Adressierung übernimmt (Falsch)

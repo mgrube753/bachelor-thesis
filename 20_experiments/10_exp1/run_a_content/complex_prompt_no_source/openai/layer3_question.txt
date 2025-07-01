@@ -1,0 +1,3 @@
+Frage: Welche zentrale Funktion der OSI-Schicht 3 stellt sicher, dass Datenpakete auf alternative Pfade umgeleitet werden können, wenn eine ursprünglich vorgesehene Route durch einen Knotenausfall unbrauchbar wird, und unterscheidet sich dadurch fundamental von verbindungsorientierten Mechanismen höherer Schichten?
+
+Antwort: Die dynamische, paketorientierte Pfadwahl (Routing) auf Basis verteilter Routingtabellen der Netzwerkschicht (Richtig)

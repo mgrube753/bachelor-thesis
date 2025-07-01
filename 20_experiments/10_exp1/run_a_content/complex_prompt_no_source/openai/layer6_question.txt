@@ -1,0 +1,8 @@
+Frage: Beim Entwurf eines verteilten Multimedia-Systems sollen verschiedene Funktionen auf die OSI-Schichten verteilt werden. Analysieren Sie, welche der folgenden Aufgaben sachgerecht in der 6. Schicht umgesetzt werden sollten, um eine klare Trennung der Verantwortlichkeiten zu gewährleisten.
+
+Antwortmöglichkeiten:
+- Konvertierung von UTF-8-codiertem Text in UTF-16 zur Anpassung an die Zielplattform (Richtig)
+- Aushandlung der Bitübertragungsrate mit der Gegenstelle, um Leitungsqualität zu sichern (Falsch)
+- Verlustfreie Kompression der Videodaten mit Hilfe von LZMA, bevor sie an die Sitzungsschicht übergeben werden (Richtig)
+- Verwaltung paralleler Halbduplex-Dialoge zwischen Client und Server (Falsch)
+- Verschlüsselung des Rohdatenstroms mittels AES-CBC, sodass höhere Schichten transparente End-zu-End-Vertraulichkeit erhalten (Richtig)

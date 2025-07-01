@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Verantwortlichkeiten fallen im Kontext eines REST-basierten Webdienstes eindeutig in den Anwendungsbereich der Schicht 7 des ISO-OSI-Modells?
+
+Antwortmöglichkeiten:
+- Festlegung der Semantik von HTTP-Statuscodes wie 201 Created und deren Bedeutung für den Client (Richtig)
+- Aushandlung von Medien- bzw. Datenformaten über Content-Type- und Accept-Header (Content Negotiation) (Richtig)
+- Auswahl einer Cipher Suite während des TLS-Handshakes (Falsch)
+- Verwaltung von TCP-Keep-Alive-Optionen zur Verbindungsaufrechterhaltung (Falsch)

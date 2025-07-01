@@ -1,0 +1,7 @@
+Frage: Ein Systemarchitekt muss eine Anwendung entwickeln, die während der Übertragung großer Dateien automatisch regelmäßige Synchronisationspunkte (Checkpoints) erstellt, damit bei einem Verbindungsabbruch nicht die gesamte Übertragung neu gestartet werden muss. Außerdem soll die Anwendung zwischen verschiedenen Gesprächsmodi (Dialog Control) wechseln können. Welche spezifische Funktionalität der Sitzungsschicht (Schicht 5) ist hier am relevantesten und warum unterscheidet sich diese von den Aufgaben der Transportschicht (Schicht 4)?
+
+Antwortmöglichkeiten:
+- Die Session-Management-Funktionalität der Schicht 5 ist hier zentral, da sie Synchronisationspunkte (Checkpoints) und Dialog-Kontrolle bereitstellt, während die Transportschicht nur End-zu-End-Verbindungen und Datenflusskontrolle ohne Wiederaufnahmepunkte für längere Kommunikationssequenzen bietet. (Richtig)
+- Die Fehlerkorrekturmechanismen der Schicht 5 sind hier entscheidend, da sie Datenverluste erkennen und automatisch beheben können, während die Transportschicht nur für die Segmentierung von Datenpaketen zuständig ist. (Falsch)
+- Die Adressierungsfunktionalität der Schicht 5 ermöglicht die Checkpoint-Erstellung, indem sie jedem Datenpaket eine Session-ID zuweist, während die Transportschicht keine Möglichkeit zur Paketidentifikation bietet. (Falsch)
+- Die Verschlüsselungsmechanismen der Sitzungsschicht erlauben die sichere Übertragung mit Wiederaufnahmepunkten, während die Transportschicht ausschließlich für die Übertragungsgeschwindigkeit verantwortlich ist. (Falsch)

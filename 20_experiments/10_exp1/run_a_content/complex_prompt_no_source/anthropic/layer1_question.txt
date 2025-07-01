@@ -1,0 +1,9 @@
+Frage: Ein Netzwerkadministrator muss ein neues Übertragungssystem planen, das eine hohe Datenrate über Kupferkabel mit minimaler EMI (elektromagnetische Interferenz) ermöglicht. Welche der folgenden Eigenschaften oder Technologien der physikalischen Schicht (Layer 1) tragen am effektivsten zur Reduzierung von EMI bei gleichzeitiger Maximierung der Datenübertragungsrate bei?
+
+Antwortmöglichkeiten:
+- Differenzielle Signalübertragung, bei der zwei komplementäre Signale über ein verdrilltes Leiterpaar gesendet werden, wodurch sich externe Störungen gegenseitig aufheben (Richtig)
+- Verwendung von MLT-3 Codierung, die niedrigere Frequenzkomponenten als NRZ-Codierung bei gleicher Datenrate erzeugt und somit weniger EMI verursacht (Richtig)
+- Erhöhung der Sendeleistung, um das Signal-Rausch-Verhältnis zu verbessern und dadurch Interferenzen zu überwinden (Falsch)
+- Einsatz von Pulsamplitudenmodulation (PAM) mit hoher Anzahl von Spannungsstufen, um mehr Bits pro Symbol zu übertragen (Richtig)
+- Verlängerung der Symboldauer zur Verbesserung der Störfestigkeit bei Hochgeschwindigkeitsübertragungen (Falsch)
+- Verwendung von ungeschirmten Kabeln, da diese weniger Kapazität aufweisen und dadurch höhere Datenraten ermöglichen (Falsch)

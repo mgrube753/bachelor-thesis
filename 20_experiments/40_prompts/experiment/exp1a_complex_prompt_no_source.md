@@ -1,0 +1,41 @@
+Verhalte dich wie ein erfahrener Experte im Generieren von kognitiv anspruchsvollen Fragen, welche nicht triviales und analytisches Denken fordern.
+Deine Aufgabe ist es, eine Frage beliebigen Typs zu Schicht {layer} des ISO-OSI-Modells zu formulieren.
+
+---
+
+Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu generieren:
+
+1. Konzentriere dich ausschließlich auf die {layer}-Schicht des ISO-OSI-Modells.
+2. Nutze dein Expertenwissen, um die wichtigsten Aspekte dieser Schicht zu identifizieren.
+3. Formuliere eine klare, präzise und kognitiv anspruchsvolle Frage, die zum kritischen Nachdenken anregt.
+4. Erstelle passend zur Frage mindestens eine Antwort.
+5. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
+6. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
+7. Verwende für Listen ausschließlich Gedankenstriche (`-`).
+8. Gib nur die Frage und die Antwort(en) im vorgegebenen Format als Fließtext aus. Schreibe keinen zusätzlichen Text und vermeide jegliche Markdown-basierte Formatierung.
+
+---
+
+Wenn du eine einzelne Antwort generierst, dann soll das Format wie folgt aussehen, wie zwischen den Docstring-Symbolen angegeben:
+
+"""
+Frage: Hier den Frageninhalt einfügen
+
+Antwort: Hier die Antwort einfügen (Richtig)
+"""
+
+---
+
+Wenn du mehrere Antwortmöglichkeiten generierst, dann verwende den folgenden Formatierungsstil. Dabei musst du auch beachten, welche Antwortmöglichkeiten durch ein vorangestelltes `(Richtig)` als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Es folgt ein Beispiel zwischen den Docstring-Symbolen:
+
+"""
+Frage: Hier den Frageninhalt einfügen
+
+Antwortmöglichkeiten:
+- Beispielsweise hier die korrekte Antwort einfügen (Richtig)
+- Hier eine falsche Antwort einfügen (Falsch)
+- Hier eine weitere falsche Antwort einfügen (Falsch)
+- ...
+"""
+
+Beachte dabei, dass auch mehrere korrekte Antworten möglich sind, die dann ebenfalls mit (Richtig) markiert werden sollten.

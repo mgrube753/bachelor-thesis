@@ -1,0 +1,8 @@
+Frage: In einem komplexen Unternehmensnetzwerk wurde ein Routing-Loop identifiziert, der durch Inkonsistenzen zwischen OSPF und BGP verursacht wurde. Analysieren Sie, wie dieser Routing-Loop auf Schicht 3 des OSI-Modells entstehen konnte, und erklären Sie, welcher der folgenden Mechanismen am effektivsten zur Vermeidung solcher Schleifen beitragen würde.
+
+Antwortmöglichkeiten:
+- Die Implementierung eines Split-Horizon-Mechanismus mit Poison Reverse, der verhindert, dass Routen an denselben Router zurückgesendet werden, von dem sie gelernt wurden, ergänzt durch Route-Filtering an den BGP-OSPF-Grenzen (Richtig)
+- Die Erhöhung des Time-to-Live (TTL) Wertes in den IP-Headern, um Paketen mehr Zeit zu geben, ihr Ziel zu erreichen, bevor sie verworfen werden (Falsch)
+- Die Deaktivierung der Path Vector-Eigenschaften von BGP und ausschließliche Nutzung des Link-State-Ansatzes von OSPF für alle Routing-Entscheidungen (Falsch)
+- Die Konfiguration von statischen Routen zwischen allen Netzwerksegmenten, um dynamische Routing-Protokolle vollständig zu umgehen (Falsch)
+- Die Implementierung von Administrative Distance-Werten in Kombination mit Route-Maps an den Redistributionspunkten zwischen OSPF und BGP (Richtig)

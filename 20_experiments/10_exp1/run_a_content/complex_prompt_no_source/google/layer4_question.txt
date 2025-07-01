@@ -1,0 +1,19 @@
+Frage: Ein Netzwerkarchitekt muss für zwei unterschiedliche Anwendungen die jeweils optimalen Transportprotokolle auswählen:
+1. Eine Anwendung, die hochauflösende, interaktive Echtzeit-Videokonferenzen über das Internet ermöglicht.
+2. Eine Anwendung, die große, sensible Finanzdatenbanken zwischen Bankfilialen synchronisiert.
+
+Erläutern Sie, welches gängige Transportprotokoll (TCP oder UDP) für jede der beiden Anwendungen präferiert werden sollte. Begründen Sie Ihre Wahl detailliert, indem Sie spezifische Funktionen und Mechanismen der Schicht 4 des ISO/OSI-Modells anführen, die diese Entscheidung untermauern, und die jeweiligen Auswirkungen auf Zuverlässigkeit, Latenz und Overhead beleuchten.
+
+Antwortmöglichkeiten:
+- Für die Echtzeit-Videokonferenz: UDP (User Datagram Protocol) sollte präferiert werden. Begründung:
+  - UDP ist ein verbindungsloses Protokoll mit geringem Overhead, da es keinen dreiseitigen Handshake zur Verbindungsherstellung benötigt und keine Mechanismen für Flusskontrolle, Überlastkontrolle oder Wiederholung verlorener Pakete bietet.
+  - Dies führt zu geringerer Latenz, was für interaktive Echtzeitanwendungen entscheidend ist, da selbst geringe Verzögerungen die Benutzererfahrung stark beeinträchtigen würden.
+  - Datenverlust ist bei Videostreams oft tolerierbar; ein kurzes Glitch ist besser als eine durch erneute Übertragung verursachte Verzögerung. Die Anwendungsschicht kann bei Bedarf rudimentäre Fehlerkorrektur implementieren.
+  - Der Fokus liegt auf Geschwindigkeit und Minimierung von Latenz zu Lasten der Zuverlässigkeit auf Transportebene. (Richtig)
+- Für die Synchronisation von Finanzdatenbanken: TCP (Transmission Control Protocol) sollte präferiert werden. Begründung:
+  - TCP ist ein verbindungsorientiertes Protokoll, das einen zuverlässigen, geordneten und fehlerfreien Datentransfer gewährleistet.
+  - Dies wird durch Mechanismen wie den dreiseitigen Handshake zur Verbindungsherstellung, sequenzierte Segmente, Bestätigungen (ACKs), automatische Wiederholung verlorener Segmente, Flusskontrolle (Vermeidung von Überlastung des Empfängers) und Überlastkontrolle (Anpassung der Sendegeschwindigkeit an die Netzwerkkapazität) erreicht.
+  - Für sensible Finanzdaten ist Datenintegrität und vollständiger, fehlerfreier Empfang absolut kritisch. Ein einzelnes verlorenes oder falsch geordnetes Paket könnte die Konsistenz der Datenbank ernsthaft gefährden.
+  - Die zusätzliche Latenz und der Overhead durch diese Mechanismen sind für die Synchronisation großer Datenmengen akzeptabel, da Zuverlässigkeit und Integrität hier absolute Priorität haben. (Richtig)
+- Für die Echtzeit-Videokonferenz: TCP sollte präferiert werden, da es eine zuverlässige Übertragung sicherstellt, was für die Qualität des Videos unerlässlich ist. (Falsch)
+- Für die Synchronisation von Finanzdatenbanken: UDP sollte verwendet werden, um die Synchronisation zu beschleunigen, da es weniger Overhead hat. (Falsch)

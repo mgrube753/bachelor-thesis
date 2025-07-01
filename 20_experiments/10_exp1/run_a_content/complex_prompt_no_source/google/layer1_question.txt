@@ -1,0 +1,7 @@
+Frage: Betrachten Sie eine Netzwerkinfrastruktur, in der eine signifikant hohe Rate an Bitfehlern und Datenkorruption auf der Empfängerseite festgestellt wird, obwohl auf allen höheren OSI-Schichten (Datenverbindung, Netzwerk, Transport) keine Probleme bei der Fehlererkennung oder Paketverarbeitung gemeldet werden und die logische Konnektivität intakt erscheint. Welche der folgenden physikalischen Phänomene ist *am wahrscheinlichsten* die primäre Ursache dieses Problems auf Schicht 1, das eine direkte Intervention auf dieser Ebene erfordert?
+
+Antwortmöglichkeiten:
+- Eine inkorrekte Frame-Formatierung auf der Datenverbindungsschicht, die zu Discard-Events führt. (Falsch)
+- Ein unzureichendes Signal-Rausch-Verhältnis (SNR) oder übermäßige Dämpfung auf dem Übertragungsmedium, welche die zuverlässige Erkennung von Bit-Zuständen beeinträchtigt. (Richtig)
+- Eine Überlastung der Netzwerkschicht durch ein hohes Aufkommen von Broadcast-Verkehr, der die Verarbeitungsressourcen beansprucht. (Falsch)
+- Fehlende oder inkompatible Netzwerktreiber auf der Transportschicht des Empfängers, die die Datenübertragung behindern. (Falsch)
