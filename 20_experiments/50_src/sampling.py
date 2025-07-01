@@ -126,9 +126,7 @@ def generate_expert_csvs(sample_base, csv_path):
 
         output_df = output_df.reset_index(drop=True)
         output_df["sample_id"] = [f"{i+1:03d}" for i in range(len(output_df))]
-        output_df["sample_id"] = output_df["sample_id"].astype(str)
 
-        # Different categories for exp1a and exp1b
         if exp_name == "exp1a":
             categories = [
                 "relevance",
@@ -141,7 +139,7 @@ def generate_expert_csvs(sample_base, csv_path):
                 "answer_problems",
                 "comments",
             ]
-        else:  # exp1b
+        else:
             categories = [
                 "relevance",
                 "clarity",

@@ -42,7 +42,7 @@ Ist die Frage herausfordernd? Ermutigt sie Studierende zum aktiven Denken?
 - 0: Trivial, keine Denkleistung nötig
    - Bsp: "Ist der Application Layer systematisch aufgebaut? (Ja/Nein)"
 
-**Value (0-10 Punkte):**
+**Wertigkeit/Value (0-10 Punkte):**
 Wird die Frage vom Dozenten als fachlich / didaktisch / technisch sinnvoll erachtet?
 - 10: Fachlich präzise, didaktisch wertvoll
    - Bsp: "Erläutern Sie die Bedeutung der Flusskontrolle im Transport Layer."
