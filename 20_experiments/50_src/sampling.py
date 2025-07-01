@@ -78,14 +78,6 @@ def generate_expert_csvs(sample_base, csv_path):
     if not records:
         return
 
-    # It is:
-    """
-    common_prompt/anthropic/script
-    complex_prompt/anthropic/script
-    common_prompt/deepseek/script
-    complex_prompt/deepseek/script
-    ...
-    """
     records.sort(
         key=lambda r: (
             r.get("exp_name", ""),
@@ -127,10 +119,15 @@ def generate_expert_csvs(sample_base, csv_path):
             group_to_save.to_csv(output_filename, index=False)
             print(f"  - Saved hint file: {output_filename}")
 
-    # Exp1: Save to expert_1 through expert_5 folders
+        # Exp1: Save to expert_1 through expert_5 folders
     exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b"])]
     for exp_name, group in exp1_data.groupby("exp_name"):
         output_df = group[["input_source", "layer"]].copy()
+
+        # Add sample_id for exp1a
+        # if exp_name == "exp1a":
+        output_df = output_df.reset_index(drop=True)
+        output_df["sample_id"] = [f"{i+1:03d}" for i in range(len(output_df))]
 
         # Different categories for exp1a and exp1b
         if exp_name == "exp1a":
@@ -140,6 +137,9 @@ def generate_expert_csvs(sample_base, csv_path):
                 "answerability",
                 "challenging",
                 "correctness",
+                "value",
+                "language",
+                "answer_problems",
                 "comments",
             ]
         else:  # exp1b
@@ -149,6 +149,9 @@ def generate_expert_csvs(sample_base, csv_path):
                 "answerability",
                 "challenging",
                 "manipulation_handling",
+                "value",
+                "language",
+                "answer_problems",
                 "comments",
             ]
 
