@@ -124,10 +124,9 @@ def generate_expert_csvs(sample_base, csv_path):
     for exp_name, group in exp1_data.groupby("exp_name"):
         output_df = group[["input_source", "layer"]].copy()
 
-        # Add sample_id for exp1a
-        # if exp_name == "exp1a":
         output_df = output_df.reset_index(drop=True)
         output_df["sample_id"] = [f"{i+1:03d}" for i in range(len(output_df))]
+        output_df["sample_id"] = output_df["sample_id"].astype(str)
 
         # Different categories for exp1a and exp1b
         if exp_name == "exp1a":

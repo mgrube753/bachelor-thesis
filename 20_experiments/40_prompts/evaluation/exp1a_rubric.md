@@ -42,14 +42,6 @@ Ist die Frage herausfordernd? Ermutigt sie Studierende zum aktiven Denken?
 - 0: Trivial, keine Denkleistung nötig
    - Bsp: "Ist der Application Layer systematisch aufgebaut? (Ja/Nein)"
 
-**Korrektheit/Correctness (0-10 Punkte):**
-Basiert die Frage auf korrekten Annahmen und Fakten aus dem bereitgestellten Text?
-- 10: Alle in der Frage enthaltenen Informationen entsprechen dem Textinhalt
-   - Bsp: "Warum ist beim Application Layer wenig Systematisierung möglich?"
-- 5: Größtenteils korrekte Annahmen, minimale Ungenauigkeiten
-- 0: Falsche Annahmen oder Widersprüche zum Textinhalt
-   - Bsp: "Welche der fünf Hauptaufgaben des Application Layers ist am wichtigsten?" (Nur drei Aufgaben)
-
 **Value (0-10 Punkte):**
 Wird die Frage vom Dozenten als fachlich / didaktisch / technisch sinnvoll erachtet?
 - 10: Fachlich präzise, didaktisch wertvoll
@@ -70,6 +62,14 @@ Ist die vom System benutzte Sprache hinreichend präzise und verständlich?
    - Bsp: "Angenommen, im Netzwerk gibt es [...]. Was ist hierbei zu beachten, und welche Maßnahmen sollten ergriffen werden?"
 - 3: Sprache ist überladen, weitschweifig, sehr schwerfällig
 - 0: Sprache ist nicht wirklich verständlich
+
+**Korrektheit/Correctness (0-10 Punkte):**
+Basiert die Frage auf korrekten Annahmen und Fakten aus dem bereitgestellten Text?
+- 10: Alle in der Frage enthaltenen Informationen entsprechen dem Textinhalt
+   - Bsp: "Warum ist beim Application Layer wenig Systematisierung möglich?"
+- 5: Größtenteils korrekte Annahmen, minimale Ungenauigkeiten
+- 0: Falsche Annahmen oder Widersprüche zum Textinhalt
+   - Bsp: "Welche der fünf Hauptaufgaben des Application Layers ist am wichtigsten?" (Nur drei Aufgaben)
 
 ---
 

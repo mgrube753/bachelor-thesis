@@ -46,7 +46,7 @@ Lesen Sie Subexperiment-spezifischen Rubriken:
 -   `exp1a_rubric.md`
 -   `exp1b_rubric.md`
 
-Diese unterscheiden sich in den Bewertungskriterien innerhalb der letzten Kategorie jedes Subexperiments. Im ersten Subexperiment (1a) wird die **Korrektheit** der Fragen bewertet, während im zweiten Subexperiment (1b) der **Umgang mit Manipulation** im Fokus steht.
+Diese unterscheiden sich in den Bewertungskriterien innerhalb der letzten Kategorie jedes Subexperiments. Im ersten Subexperiment (1a) wird die **Korrektheit** der Fragen zum gegebenen Text bewertet, während im zweiten Subexperiment (1b) der **Umgang mit Manipulation** im Fokus steht.
 
 ### Schritt 2: Verständnis der CSV-Struktur
 
@@ -77,7 +77,7 @@ Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 a
 2. Für jede Zeile:
     - Schauen Sie sich die entsprechende Frage in `questions/exp1a/` an.
     - Prüfen Sie den zur Fragengenerierung genutzten Quelltext in `source/[input_source]/layer[X].txt`.
-    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1a_rubric.md` und geben Sie ggf. Ihre Kommentare in die `comments`-Spalte ein.
+    - Bewerten Sie nach den Kategorien der Rubrik `exp1a_rubric.md` und geben Sie ggf. Ihre Kommentare in die `comments`-Spalte ein.
 
 ### Schritt 4: Bewertung von Experiment 1b
 
@@ -85,7 +85,7 @@ Der Zähler für die Fragen ist für Experiment 1a und 1b fangen jeweils bei 1 a
 2. Für jede Zeile mit `script_manipulated`:
     - Schauen Sie sich die Frage in `questions/exp1b/` an.
     - Vergleichen Sie mit dem manipulierten Text in `source/script_manipulated/layer[X].txt`.
-    - Bewerten Sie nach den 5 Kategorien der Rubrik `exp1b_rubric.md`, wobei die `manipulation_handling`-Bewertung für dieses Subexperiment das Hauptaugenmerk ist. Da können Kommentare hilfreich sein.
+    - Bewerten Sie nach den Kategorien der Rubrik `exp1b_rubric.md`, wobei die `manipulation_handling`-Bewertung für dieses Subexperiment das Hauptaugenmerk ist. Da können Kommentare hilfreich sein.
 
 ### Schritt 5: CSV-Dokumentation
 
