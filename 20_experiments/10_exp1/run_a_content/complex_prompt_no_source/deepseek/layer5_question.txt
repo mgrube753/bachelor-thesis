@@ -1,0 +1,7 @@
+Frage: Welche Funktion der Transportschicht ermöglicht es mehreren Anwendungen auf einem Host, gleichzeitig Netzwerkkommunikation über dieselbe physikalische Verbindung durchzuführen, und durch welchen Mechanismus wird dies realisiert?
+
+Antwortmöglichkeiten:
+- Durch logische Adressierung mittels IP-Adressen, die Anwendungen eindeutig identifizieren (Falsch)
+- Durch das Multiplexing/Demultiplexing von Datenströmen über Portnummern (Richtig)
+- Durch die Synchronisation von Datenpaketen mittels Sequenznummern zur Sicherstellung der richtigen Reihenfolge (Falsch)
+- Durch die Segmentierung von Daten in kleinere Einheiten für die Übertragung auf der Sicherungsschicht (Falsch)

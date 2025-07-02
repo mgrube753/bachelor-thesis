@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Eigenschaften gehört ausschließlich zur Zuständigkeit der Bitübertragungsschicht (Schicht 1) im ISO-OSI-Modell?  
+
+Antwortmöglichkeiten:  
+- Physische Eigenschaften der Übertragungsmedien wie Impedanz oder Abschirmung (Richtig)  
+- Fehlererkennung durch Prüfsummen in Datenrahmen (Falsch)  
+- Logische Adressierung von Netzwerkgeräten (Falsch)  
+- Steuerung des Datenflusses zwischen Endgeräten (Falsch)

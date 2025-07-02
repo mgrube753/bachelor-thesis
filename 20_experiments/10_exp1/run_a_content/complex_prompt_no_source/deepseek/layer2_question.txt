@@ -1,0 +1,3 @@
+Frage: Welche spezifische Funktion erfüllt der Frame-Header in der Schicht 2 des OSI-Modells, und wie trägt dies zur effizienten Kommunikation innerhalb eines lokalen Netzwerks bei?  
+
+Antwort: Der Frame-Header enthält Quell- und Ziel-MAC-Adressen sowie Steuerinformationen für Flusskontrolle und Fehlererkennung. Dies ermöglicht die genaue Adressierung von Geräten im selben Netzsegment und reguliert die Datenübertragung zwischen direkt verbundenen Knoten, wodurch Kollisionen reduziert und die Zuverlässigkeit erhöht werden. (Richtig)

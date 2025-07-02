@@ -1,0 +1,8 @@
+Frage: Welches fundamentale Unterscheidungsmerkmal in der Methodik der Pfadberechnung trennt Distanzvektor-Routingprotokolle (z.B. RIP) von Link-State-Routingprotokollen (z.B. OSPF) auf Schicht 3?
+
+Antwortmöglichkeiten:
+- Distanzvektor-Protokolle verteilen gesamte Routingtabellen an direkt verbundene Nachbarn, während Link-State-Protokolle nur Zustandsänderungen an alle Router im Bereich fluten (Falsch)
+- Distanzvektor-Protokolle berechnen optimal Pfade mittels des Dijkstra-Algorithmus, Link-State-Protokolle nutzen den Bellman-Ford-Algorithmus (Falsch)
+- Distanzvektor-Protokolle treffen Routingentscheidungen basierend auf gesammelten Weginformationen von Nachbarn ohne vollständige Topologieübersicht, während Link-State-Protokolle identische vollständige Topologiedatenbanken aufbauen und lokal unabhängig kürzeste Pfade berechnen (Richtig)
+- Distanzvektor-Protokolle operieren ausschließlich mit Hop-Count als Metrik, Link-State-Protokolle nutzen ausschließlich Bandbreite als Metrik (Falsch)
+- Beide Protokolltypen verlassen sich primär auf manuell konfigurierte statische Routen und unterscheiden sich nur in der Verteilungsmethode (Falsch)

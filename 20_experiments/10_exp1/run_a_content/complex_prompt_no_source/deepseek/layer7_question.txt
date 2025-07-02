@@ -1,0 +1,8 @@
+Frage: Welche der folgenden Aussagen beschreibt ausschließlich die konzeptionelle Rolle der Anwendungsschicht (Layer 7) im OSI-Modell, im Gegensatz zu den darunterliegenden Schichten?
+
+Antwortmöglichkeiten:
+- Gewährleistet die Ende-zu-Ende-Kommunikation zwischen Anwendungsprozessen und interpretiert Daten semantisch durch anwendungsspezifische Protokolle wie HTTP oder SMTP (Richtig)
+- Steuert den Datenfluss zwischen direkt verbundenen Knoten und erkennt Bitübertragungsfehler (Falsch)
+- Verwaltet logische Adressierung und Pfadauswahl über mehrere Netzwerke hinweg (Falsch)
+- Synchronisiert Dialoge zwischen Anwendungen und verantwortet Checkpointing zur Wiederaufsetzbarkeit (Falsch)
+- Bietet transparente Ende-zu-Ende-Datenübertragung mit Flusskontrolle unabhängig vom Netzwerktyp (Falsch)

@@ -1,0 +1,7 @@
+Frage: In einem Echtzeit-Videokonferenzsystem, bei dem minimale Latenz kritisch ist und gelegentliche Paketverluste tolerierbar sind, warum würde die Wahl eines verbindungslosen Transportprotokolls (Schicht 4) gegenüber einem verbindungsorientierten Protokoll eine fundierte Netzwerkdesign-Entscheidung darstellen, und welche spezifischen Mechanismen des verbindungslosen Protokolls ermöglichen diese Leistungsvorteile?
+
+Antwortmöglichkeiten:
+- Verbindungslose Protokolle wie UDP eliminieren den Overhead des Verbindungsaufbaus (z.B. Drei-Wege-Handschlag), garantieren keine Paketneuzustellung bei Verlust und verzichten auf sequenzielle Zustellung, wodurch Latenz reduziert wird – entscheidend für Echtzeitanwendungen (Richtig)
+- Verbindungslose Protokolle priorisieren Pakete basierend auf QoS-Markierungen im IP-Header, was direkten Einfluss auf die Schicht-4-Latenz hat (Falsch)
+- Sie nutzen integrierte Fehlerkorrekturmechanismen durch Forward Error Correction (FEC) im Header, um Paketverluste ohne Retransmissionsverzögerung zu kompensieren (Falsch)
+- Verbindungsorientierte Protokolle wie TCP sind überlegen, da ihre Flusskontrolle Congestion Window Anpassungen ermöglicht, die stets niedrigere Latenzen garantieren (Falsch)

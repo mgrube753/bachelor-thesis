@@ -23,6 +23,10 @@ def sample_questions(src_path, dest_path, pattern, sample_size=3):
 def walk_and_sample(base_path, sample_base, exp_name, pattern, sample_size=3):
     print(f"[INFO] Sampling {exp_name} questions ({sample_size} per condition)...")
     for root, _, files in os.walk(base_path):
+        # Skip no-source directories
+        if "complex_prompt_no_source" in root:
+            continue
+
         if any(pattern in f and f.endswith(".txt") for f in files):
             rel_path = os.path.relpath(root, base_path)
             dest_path = os.path.join(sample_base, exp_name, rel_path)

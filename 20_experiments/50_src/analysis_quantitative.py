@@ -118,17 +118,34 @@ def get_adherence_scores_parallel(
 
 def get_question_path(exp_name, llm, source, layer, prompt_type):
     if exp_name == "exp1a":
-        base_path = os.path.join(EXP1_PATH, "run_a_content")
+        if source == "no_source":
+            # Spezieller Pfad für no_source Fragen
+            base_path = os.path.join(
+                EXP1_PATH, "run_a_content", "complex_prompt_no_source"
+            )
+            filename = f"layer{layer}_question.txt"
+            return os.path.join(base_path, llm, filename)
+        else:
+            # Bestehender Pfad für andere Quellen
+            base_path = os.path.join(EXP1_PATH, "run_a_content")
+            filename = f"layer{layer}_question.txt"
+            return os.path.join(
+                base_path, f"{prompt_type}_prompt", llm, source, filename
+            )
     elif exp_name == "exp1b":
         base_path = os.path.join(EXP1_PATH, "run_b_error")
+        filename = f"layer{layer}_question.txt"
+        return os.path.join(base_path, f"{prompt_type}_prompt", llm, source, filename)
     else:
         raise ValueError(f"Unknown experiment name: {exp_name}")
 
-    filename = f"layer{layer}_question.txt"
-    return os.path.join(base_path, f"{prompt_type}_prompt", llm, source, filename)
-
 
 def get_source_file_path(source, layer, is_manipulated=False):
+    if source == "no_source":
+        source_dir = os.path.join(INPUT_SOURCES_PATH, "script", "common")
+        source_type = "script (common) - reference for no_source"
+        filename = f"layer{layer}.txt"
+        return os.path.join(source_dir, filename), source_type
 
     if is_manipulated:
         source_dir = os.path.join(INPUT_SOURCES_PATH, source, "manipulated")
@@ -151,10 +168,31 @@ def process_experiment(exp_name):
 
     model = load_model()
     clients = init_clients()
-    csv_path = os.path.join(
-        ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
-    )
-    df = pd.read_csv(csv_path)
+
+    if exp_name == "exp1a_no_source":
+        csv_input_path = os.path.join(
+            ANALYSES_PATH, "csv_files", "initial", f"{exp_name}.csv"
+        )
+        csv_output_path = os.path.join(
+            ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
+        )
+        actual_exp_name = "exp1a"
+    else:
+        csv_input_path = os.path.join(
+            ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
+        )
+        csv_output_path = csv_input_path
+        actual_exp_name = exp_name
+
+    df = pd.read_csv(csv_input_path)
+
+    if exp_name == "exp1a_no_source":
+        if "cosine_similarity" not in df.columns:
+            df["cosine_similarity"] = np.nan
+        if "adherence_score_openai" not in df.columns:
+            df["adherence_score_openai"] = np.nan
+        if "adherence_score_anthropic" not in df.columns:
+            df["adherence_score_anthropic"] = np.nan
 
     questions = []
     sources = []
@@ -164,11 +202,13 @@ def process_experiment(exp_name):
     print("[INFO] Loading questions and sources...")
     for idx, row in df.iterrows():
         llm = row["llm"]
-        source = row["input_source"].replace("_manipulated", "")
+        source = row["input_source"]
         layer = row["layer"]
         prompt_type = row["prompt_type"]
 
-        question_path = get_question_path(exp_name, llm, source, layer, prompt_type)
+        question_path = get_question_path(
+            actual_exp_name, llm, source, layer, prompt_type
+        )
         question_content = load_txt(question_path)
 
         if not question_content:
@@ -185,7 +225,7 @@ def process_experiment(exp_name):
             print(f"[WARNING] Question is empty after filtering: {question_path}")
             continue
 
-        is_manipulated = exp_name == "exp1b"
+        is_manipulated = actual_exp_name == "exp1b"
         source_path, source_type = get_source_file_path(source, layer, is_manipulated)
         source_text = load_txt(source_path)
 
@@ -231,12 +271,11 @@ def process_experiment(exp_name):
             f"[COSINE] {info['source_type']} layer{info['layer']} -> {info['llm']} ({info['prompt_type']}): {similarities[i]:.4f}"
         )
 
-    df.to_csv(csv_path, index=False)
+    df.to_csv(csv_output_path, index=False)
     print("=" * 80)
 
     questions_sources_pairs = list(zip(questions, sources))
 
-    # --- Process with OpenAI and Anthropic evaluator ---
     print("[INFO] Processing adherence scores with OpenAI and Anthropic...")
     adherence_results = get_adherence_scores_parallel(
         clients,
@@ -244,7 +283,7 @@ def process_experiment(exp_name):
         max_workers=2,
         df=df,
         valid_indices=valid_indices,
-        csv_path=csv_path,
+        csv_path=csv_output_path,
     )
 
     for i, idx in enumerate(valid_indices):
@@ -257,10 +296,11 @@ def process_experiment(exp_name):
             f"[ADHERENCE Anthropic] {info['source_type']} layer{info['layer']} -> {info['llm']} ({info['prompt_type']}): {anthropic_score}"
         )
 
-    print(f"\n[INFO] Final results saved to {csv_path}")
+    print(f"\n[INFO] Final results saved to {csv_output_path}")
     print("=" * 80)
 
 
 if __name__ == "__main__":
-    process_experiment("exp1a")
+    # process_experiment("exp1a")
     # process_experiment("exp1b")
+    process_experiment("exp1a_no_source")

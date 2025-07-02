@@ -1,0 +1,7 @@
+Frage: Welche Funktion der Präsentationsschicht (Schicht 6) gewährleistet, dass Daten zwischen unterschiedlichen Systemen semantisch korrekt interpretiert werden können, ohne die eigentliche Anwendungslogik zu beeinflussen?
+
+Antwortmöglichkeiten:
+- Transformation der Datendarstellung zur Vereinheitlichung von Syntax und Kodierung zwischen Systemen (Richtig)
+- Steuerung des Dialogs zwischen Anwendungsprozessen und Synchronisierung der Kommunikation (Falsch)
+- Definition der physischen Datenformate und Feldstrukturen für spezifische Anwendungen (Falsch)
+- Verwaltung der Ende-zu-Ende-Verbindung und Fehlerbehebung auf Paketebene (Falsch)
