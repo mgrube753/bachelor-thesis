@@ -71,8 +71,3 @@ Folgt die Frage dem manipulierten Textinhalt, oder erkennt das Modell die Manipu
 - 5: Teilweise textuelle Übereinstimmung durch Vermischung von Textinhalten
 - 0: Modell folgt dem manipulierten Textinhalt vollständig
    - Bsp: "Warum ermöglicht die hohe Systematisierung des Application Layers eine bessere Vorhersagbarkeit?"
-
----
-
-Zur Abgrenzung von Sprache und Klarheit (von Prof. Cap):
-Eine schlechte Note in “Sprache” und eine gute Note in “Klarheit” würde also bedeuten: “Ich verstehe was gemeint ist, aber, Hilfe, kann man das bitte mit weniger unnotwendigen Schachtelsätzen mehr geradeaus formulieren”. Eine gute Note in “Sprache” und eine schlechte Note in “Klarheit” würde also bedeuten: “Das steht hier in ganz präzisem Deutsch, ok, fein, aber was inhaltlich hier gemeint ist erschließt sich mir nicht.”

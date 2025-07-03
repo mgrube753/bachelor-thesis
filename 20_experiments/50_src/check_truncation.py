@@ -3,6 +3,40 @@ import torch
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from constants import INPUT_SOURCES_PATH, EMBEDDING_MODEL_ID, EXP1_PATH
+from io import StringIO
+import sys
+
+
+class OutputCapture:
+    def __init__(self):
+        self.buffer = StringIO()
+        self.stdout = sys.stdout
+        self.output_text = []
+
+    def write(self, text):
+        self.stdout.write(text)
+        self.buffer.write(text)
+        self.output_text.append(text)
+
+    def flush(self):
+        self.stdout.flush()
+        self.buffer.flush()
+
+    def get_output(self):
+        return self.buffer.getvalue()
+
+
+def save_output(output_text):
+    output_dir = os.path.dirname(__file__)
+
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, "note_truncation.md")
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(output_text)
+
+    print(f"\n[INFO] Output saved to {output_file}")
+    return output_file
 
 
 def load_embedding_model(model_name):
@@ -86,50 +120,72 @@ def scan_directory(directory, description, model):
 
 
 def main():
-    model = load_embedding_model(EMBEDDING_MODEL_ID)
-    print(f"[INFO] Model max sequence length: {model.max_seq_length:,} tokens")
+    # Set up output capturing
+    output_capture = OutputCapture()
+    sys.stdout = output_capture
 
-    directories = [
-        (INPUT_SOURCES_PATH, "input sources"),
-        (EXP1_PATH, "Experiment 1 questions"),
-    ]
+    try:
+        model = load_embedding_model(EMBEDDING_MODEL_ID)
+        print(f"[INFO] Model max sequence length: {model.max_seq_length:,} tokens")
 
-    all_dfs = []
-    for directory, description in directories:
-        df = scan_directory(directory, description, model)
-        if not df.empty:
-            df["source"] = description
-            all_dfs.append(df)
+        directories = [
+            (INPUT_SOURCES_PATH, "input sources"),
+            (EXP1_PATH, "Experiment 1 questions"),
+        ]
 
-    if not all_dfs:
-        print("[INFO] No files found to analyze")
-        return
+        all_dfs = []
+        for directory, description in directories:
+            df = scan_directory(directory, description, model)
+            if not df.empty:
+                df["source"] = description
+                all_dfs.append(df)
 
-    combined_df = pd.concat(all_dfs, ignore_index=True)
-    total_files = len(combined_df)
-    total_truncated = combined_df["will_truncate"].sum()
+        if not all_dfs:
+            print("[INFO] No files found to analyze")
+            return
 
-    print("\n" + "=" * 80)
-    print("[INFO] Overall Summary")
-    print(f"[INFO] Total files processed: {total_files:,}")
-    print(
-        f"[INFO] Total files truncated: {total_truncated} ({total_truncated/total_files*100:.1f}%)"
-    )
+        combined_df = pd.concat(all_dfs, ignore_index=True)
+        total_files = len(combined_df)
+        total_truncated = combined_df["will_truncate"].sum()
 
-    if total_truncated > 0:
-        print("\n[INFO] Truncated files sorted by token count:")
-        truncated_df = combined_df[combined_df["will_truncate"]].sort_values(
-            "token_count", ascending=False
-        )
-        for _, row in truncated_df.iterrows():
-            rel_path = os.path.relpath(row["file_path"])
-            print(
-                f"         TRUNCATED {rel_path}: {row['token_count']:,} tokens ({row['usage']:.1f}%)"
-            )
-    else:
+        print("\n" + "=" * 80)
+        print("[INFO] Overall Summary")
+        print(f"[INFO] Total files processed: {total_files:,}")
         print(
-            "\n[INFO] No files require truncation - all files fit within model limits"
+            f"[INFO] Total files truncated: {total_truncated} ({total_truncated/total_files*100:.1f}%)"
         )
+
+        if total_truncated > 0:
+            print("\n[INFO] Truncated files sorted by token count:")
+            truncated_df = combined_df[combined_df["will_truncate"]].sort_values(
+                "token_count", ascending=False
+            )
+            for _, row in truncated_df.iterrows():
+                rel_path = os.path.relpath(row["file_path"])
+                print(
+                    f"         TRUNCATED {rel_path}: {row['token_count']:,} tokens ({row['usage']:.1f}%)"
+                )
+        else:
+            print(
+                "\n[INFO] No files require truncation - all files fit within model limits"
+            )
+
+        # Add summary information at the top
+        if total_truncated > 0:
+            summary = f"{total_truncated} out of {total_files} txt files were longer than the maximum length of {model.max_seq_length} tokens. \n"
+            summary += "the source material files were refined before*\n"
+            summary += f"and now {total_truncated} questions are longer than {model.max_seq_length} tokens.\n\n"
+            full_output = summary + output_capture.get_output()
+        else:
+            summary = f"All {total_files} txt files fit within the maximum length of {model.max_seq_length} tokens.\n\n"
+            full_output = summary + output_capture.get_output()
+
+        # Save to markdown file
+        save_output(full_output)
+
+    finally:
+        # Restore stdout
+        sys.stdout = output_capture.stdout
 
 
 if __name__ == "__main__":

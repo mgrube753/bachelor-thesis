@@ -70,8 +70,3 @@ Basiert die Frage auf korrekten Annahmen und Fakten aus dem bereitgestellten Tex
 - 5: Größtenteils korrekte Annahmen, minimale Ungenauigkeiten
 - 0: Falsche Annahmen oder Widersprüche zum Textinhalt
    - Bsp: "Welche der fünf Hauptaufgaben des Application Layers ist am wichtigsten?" (Nur drei Aufgaben)
-
----
-
-Zur Abgrenzung von Sprache und Klarheit:
-Eine schlechte Note in “Sprache” und eine gute Note in “Klarheit” würde also bedeuten: “Ich verstehe was gemeint ist, aber, Hilfe, kann man das bitte mit weniger unnotwendigen Schachtelsätzen mehr geradeaus formulieren”. Eine gute Note in “Sprache” und eine schlechte Note in “Klarheit” würde also bedeuten: “Das steht hier in ganz präzisem Deutsch, ok, fein, aber was inhaltlich hier gemeint ist erschließt sich mir nicht.” (von Clemens Cap)

@@ -1,3 +1,8 @@
+3 out of 280 txt files were longer than the maximum length of 512 tokens. 
+the source material files were refined before*
+and now 3 questions are longer than 512 tokens.
+
+[INFO] Loading embedding model 'T-Systems-onsite/cross-en-de-roberta-sentence-transformer' on cuda
 [INFO] Model max sequence length: 512 tokens
 
 [INFO] Scanning input sources...
@@ -121,6 +126,34 @@
 [OK]         20_experiments/10_exp1/run_a_content/common_prompt/google/script/layer5_question.txt: 101 tokens (19.7%)
 [OK]         20_experiments/10_exp1/run_a_content/common_prompt/google/script/layer7_question.txt: 102 tokens (19.9%)
 [OK]         20_experiments/10_exp1/run_a_content/common_prompt/google/script/layer1_question.txt: 61 tokens (11.9%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/anthropic/layer2_question.txt: 210 tokens (41.0%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/anthropic/layer3_question.txt: 195 tokens (38.1%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/anthropic/layer6_question.txt: 230 tokens (44.9%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/anthropic/layer4_question.txt: 268 tokens (52.3%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/anthropic/layer5_question.txt: 195 tokens (38.1%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/anthropic/layer7_question.txt: 203 tokens (39.6%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/anthropic/layer1_question.txt: 213 tokens (41.6%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/deepseek/layer2_question.txt: 129 tokens (25.2%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/deepseek/layer3_question.txt: 135 tokens (26.4%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/deepseek/layer6_question.txt: 75 tokens (14.6%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/deepseek/layer4_question.txt: 174 tokens (34.0%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/deepseek/layer5_question.txt: 71 tokens (13.9%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/deepseek/layer7_question.txt: 92 tokens (18.0%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/deepseek/layer1_question.txt: 61 tokens (11.9%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/openai/layer2_question.txt: 160 tokens (31.2%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/openai/layer3_question.txt: 103 tokens (20.1%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/openai/layer6_question.txt: 163 tokens (31.8%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/openai/layer4_question.txt: 115 tokens (22.5%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/openai/layer5_question.txt: 142 tokens (27.7%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/openai/layer7_question.txt: 108 tokens (21.1%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/openai/layer1_question.txt: 117 tokens (22.9%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer2_question.txt: 320 tokens (62.5%)
+[TRUNCATED]  20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer3_question.txt: 545 tokens (106.4%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer6_question.txt: 260 tokens (50.8%)
+[TRUNCATED]  20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer4_question.txt: 616 tokens (120.3%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer5_question.txt: 256 tokens (50.0%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer7_question.txt: 254 tokens (49.6%)
+[OK]         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer1_question.txt: 184 tokens (35.9%)
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/anthropic/transcript/layer2_question.txt: 207 tokens (40.4%)
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/anthropic/transcript/layer3_question.txt: 190 tokens (37.1%)
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/anthropic/transcript/layer6_question.txt: 264 tokens (51.6%)
@@ -191,7 +224,6 @@
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/google/transcript/layer5_question.txt: 215 tokens (42.0%)
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/google/transcript/layer7_question.txt: 170 tokens (33.2%)
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/google/transcript/layer1_question.txt: 373 tokens (72.9%)
-Token indices sequence length is longer than the specified maximum sequence length for this model (714 > 512). Running this sequence through the model will result in indexing errors
 [TRUNCATED]  20_experiments/10_exp1/run_a_content/complex_prompt/google/tanenbaum/layer2_question.txt: 714 tokens (139.5%)
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/google/tanenbaum/layer3_question.txt: 270 tokens (52.7%)
 [OK]         20_experiments/10_exp1/run_a_content/complex_prompt/google/tanenbaum/layer6_question.txt: 180 tokens (35.2%)
@@ -264,15 +296,19 @@ Token indices sequence length is longer than the specified maximum sequence leng
 [OK]         20_experiments/10_exp1/run_b_error/complex_prompt/google/script/layer1_question.txt: 230 tokens (44.9%)
 
 [SUMMARY] Experiment 1 questions
-[INFO] Total files checked: 224
-[INFO] Files that will be truncated: 1 (0.4%)
+[INFO] Total files checked: 252
+[INFO] Files that will be truncated: 3 (1.2%)
 [WARNING] Files requiring truncation:
          20_experiments/10_exp1/run_a_content/complex_prompt/google/tanenbaum/layer2_question.txt: 714 tokens
+         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer4_question.txt: 616 tokens
+         20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer3_question.txt: 545 tokens
 
 ================================================================================
 [INFO] Overall Summary
-[INFO] Total files processed: 252
-[INFO] Total files truncated: 1 (0.4%)
+[INFO] Total files processed: 280
+[INFO] Total files truncated: 3 (1.1%)
 
 [INFO] Truncated files sorted by token count:
          TRUNCATED 20_experiments/10_exp1/run_a_content/complex_prompt/google/tanenbaum/layer2_question.txt: 714 tokens (139.5%)
+         TRUNCATED 20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer4_question.txt: 616 tokens (120.3%)
+         TRUNCATED 20_experiments/10_exp1/run_a_content/complex_prompt_no_source/google/layer3_question.txt: 545 tokens (106.4%)
