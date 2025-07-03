@@ -71,18 +71,19 @@ The method employed for the two experiments is outlined here. It details the spe
         \item \textit{Quantitative Analysis:} In this stage, the \textit{Semantic Similarity} between each generated question and the desired source material will be evaluated. Instead of relying directly on BERTScore \cite{zhang_bertscore_2020}, the cosine similarity between the embedding vectors -- representing the source material and the generated question -- will be computed. These embeddings are obtained using a cross-lingual RoBERTa-based sentence transformer\footnote{\url{https://huggingface.co/T-Systems-onsite/cross-en-de-roberta-sentence-transformer}, accessed 05/09/2025}, which produces semantically meaningful and comparable sentence representations \cite{reimers_sentence-bert_2019}.
         
         Metrics such as \textit{\ac{bleurt}} and \textit{\ac{rquge}} were not employed since, on the one hand, the structure of the source material and the question differ too much, and on the other hand, gold standard answers are not available for comparison.
-        Moreover, other metrics such as Perplexity are unsuitable for this task, as \enquote{the output value is based heavily on what the text and the model was trained on. This means that perplexity scores are not comparable between models or datasets}\footnote{\url{https://huggingface.co/spaces/evaluate-metric/perplexity}, accessed 06/01/2025}. Instead, to properly analyze the \textit{Content Adherence} on a quantitative level besides the \textit{Semantic Similarity}, it will be assessed by prompting Gemini 2.5 Flash for every question to obtain acceptable results. This is useful to evaluate the generated questions against the source material by returning a value between 0 and 1.
-        % maybe a second run? depending on money in the end
-        % or using gemini 2.5 flash, which is free to use
+
+        Moreover, other metrics such as Perplexity are unsuitable for this task, as \enquote{the output value is based heavily on what the text and the model was trained on. This means that perplexity scores are not comparable between models or datasets}\footnote{\url{https://huggingface.co/spaces/evaluate-metric/perplexity}, accessed 06/01/2025}. Instead, to properly analyze the \textit{Content Adherence} on a quantitative level besides the \textit{Semantic Similarity}, it will be assessed by prompting Claude 3.7 Sonnet and OpenAI o3 for every question to obtain acceptable results using the mean of these values. This is useful to evaluate the generated questions against the source material by returning a value between 0 and 1. This aspect will be further discussed in Section \bfref{sec:evaluation}.
 
         % #todo here add the 5 experts (professor + scientific staff by uni rostock) who will evaluate the questions, instead of llm-based evaluation
         % hier haben sich neben meinem Hauptsupervisor noch 4 wissenschaftliche Mitarbeiter der Uni Rostock (des gleichen Lehrstuhls) bereit erklärt, die Fragen zu evaluieren. Passende Bewerter, da das ISO-OSI Modell am Lehrstuhl IuK bekannt ist.
-        \item \textit{Qualitative Analysis:} This phase involves a blind-test with expert-based evaluations of the generated questions. Five experts, including the main supervisor and four scientific staff members from the same university department, will rate a sampled question set using the concise rubric in Table \bfref{tab:exp1_criteria}. To analyze the inter-rater agreement, \tcr{Fleiss Kappa} will be calculated, which is suitable for more than two raters \tcr{cite}. The analysis adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. The authors' rubric was created based on the criteria used by \cite{moore_assessing_2022}. However, the added \textit{Bloom's Level} criterion is replaced with \textit{Correctness} to address the objectives of this experiment. Since Experiment 1b examines the adherence to \textit{manipulated} input texts, the \textit{Correctness} category is split in half, as to be seen below:
+        \item \textit{Qualitative Analysis:} This phase involves a blind-test with expert-based evaluations of the generated questions. Five experts, including the primary supervisor and four scientific staff members from the same university department, will rate a sampled question set using the concise rubric in Table \bfref{tab:exp1_criteria}. To analyze the inter-rater agreement, \tcr{Fleiss Kappa} will be calculated, which is suitable for more than two raters \tcr{cite}. 
+        
+        The analysis adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. The authors' rubric was created based on the criteria used by \cite{moore_assessing_2022}. However, instead of the \textit{Bloom's Level} criterion, the \textit{Correctness}, the \textit{Value} from the lecturer's perspective, and the \textit{Language} and criteria were added to address the objectives of this experiment. Since Experiment 1b examines the adherence to \textit{manipulated} input texts, the \textit{Correctness} is then replaced by \textit{Manipulation Handling}, as to be seen below:
         % \item \textit{Qualitative Analysis:} Claude 3.7 Sonnet will serve as an evaluator, conducting one evaluation run per question from a sampled question set. The results will be compared against expert-based evaluations conducted on the same set using the similar concise rubric. By this, inter-annotator agreement between the averaged \ac{llm} evaluations and human expert will be measured via Cohen's Kappa to validate the reliability of automated evaluation methods. Since Experiment 1b examines the adherence to manipulated input texts, the \textit{Correctness} will be specifically assessed for 1a and 1b, as quantitative metrics solely may not capture the correctness of the generated questions. The evaluation adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. However, the \textit{Bloom's Level} criterion is replaced with \textit{Correctness} to address the specific objectives of this experiment:
 
-        \begin{table}[htbp]
+\begin{table}[htbp]
            \centering
-           \renewcommand{\arraystretch}{1.4}
+           \renewcommand{\arraystretch}{1.8}
            \caption{Experiment 1 Evaluation Criteria.}
            \label{tab:exp1_criteria}
            \begin{tabularx}{\textwidth}{|Z|A|Y|}
@@ -98,13 +99,17 @@ The method employed for the two experiments is outlined here. It details the spe
            \hline
            \textbf{Challenging} & Is the question challenging? Does it encourage students to think actively? & 0-10p \\
            \hline
-           \multirow{2}{*}{\textbf{Correctness}} & \textbf{Original Source Material:} Is the question factually correct \& adhering to the source text? & \vspace{-1em}\begin{itemize} 
+           \textbf{Value} & Is the question considered professionally, didactically, or technically meaningful by the instructor? & 0-10p \\
+           \hline
+           \textbf{Language} & Is the language used by the system sufficiently precise and comprehensible? & 0-10p \\
+           \hline
+           \textbf{Correctness} & \textbf{For Experiment 1a:} Is the question factually correct \& adhering to the source text? & \vspace{-1.1em}\begin{itemize} 
                 \item Correct: 10p
                 \item Partially correct: 5p
                 \item Otherwise: 0p
             \end{itemize} \\
-           \cline{2-3}
-            & \textbf{Manipulated Source Material:} Does the question adhere to the manipulated input text content? & \vspace{-1em}\begin{itemize} 
+           \hline
+           \textbf{Manipulation Handling} & \textbf{For Experiment 1b:} Does the question adhere to the manipulated input text content? & \vspace{-1.2em}\begin{itemize} 
                 \item No Adherence\,/\,Model detects Manipulation: 10p
                 \item Partially adheres: 5p
                 \item Otherwise: 0p
@@ -114,7 +119,11 @@ The method employed for the two experiments is outlined here. It details the spe
          \end{table}
     \end{itemize}
 
-    \pagebreak
+    % #TODO add this to distinguish between clarity and language
+    % Unter Klarheit verstehe ich in der Bewertung vor allem die inhaltliche Eindeutigkeit und die logisch fachliche Klarheit.
+    % Unter Sprache verstehe ich die Komplexität / Schwulstigkeit der Sprache als solches. Eine schlechte Note in “Sprache” und eine gute Note in “Klarheit” würde also bedeuten: “Ich verstehe was gemeint ist, aber, Hilfe, kann man das bitte mit weniger unnotwendigen Schachtelsätzen mehr geradeaus formulieren”. Eine gute Note in “Sprache” und eine schlechte Note in “Klarheit” würde also bedeuten: “Das steht hier in ganz präzisem Deutsch, ok, fein, aber was inhaltlich hier gemeint ist erschließt sich mir nicht.” 
+
+    \vspace{0em}
 
     \item \textbf{Experiment 2 (Question Formats and Bloom's Taxonomy):}
     \begin{itemize}
@@ -123,7 +132,7 @@ The method employed for the two experiments is outlined here. It details the spe
 
         \begin{table}[htbp]
            \centering
-           \renewcommand{\arraystretch}{1.4}
+           \renewcommand{\arraystretch}{1.8}
            \caption{Experiment 2 Evaluation Criteria.}
            \label{tab:exp2_criteria}
            \begin{tabularx}{\textwidth}{|Z|A|Y|}
@@ -139,19 +148,23 @@ The method employed for the two experiments is outlined here. It details the spe
            \hline
            \textbf{Challenging} & Is the question challenging? Does it encourage students to think actively? & 0-10p \\
            \hline
-           \multirow{2}{*}{\textbf{Bloom's Level}} & \textbf{When Bloom level is specified:} Does the question adhere to the given Bloom level? & \vspace{-1em} \begin{itemize}
+           \textbf{Value} & Is the question considered professionally, didactically, or technically meaningful by the instructor? & 0-10p \\
+           \hline
+           \textbf{Language} & Is the language used by the system sufficiently precise and comprehensible? & 0-10p \\
+           \hline
+           \multirow{2}{*}{\textbf{Bloom's Level}} & \textbf{When Bloom level is specified:} Does the question adhere to the given Bloom level? & \vspace{-1.1em} \begin{itemize}
                 \item Correct: 10p
                 \item Off by one: 5p
                 \item Otherwise: 0p
             \end{itemize} \\
            \cline{2-3}
-            & \textbf{When no Bloom level is specified:} Which Bloom level does the question demonstrate? & \vspace{-1em} \begin{itemize}
+            & \textbf{When no Bloom level is specified:} Which Bloom level does the question demonstrate? & \vspace{-1.2em} \begin{itemize}
                 \item Creating: 10p
                 \item Evaluating: 8.5p
                 \item Analyzing: 7p
                 \item Applying: 4.5p
                 \item Understanding: 3p
-                \item Remembering 1.5p
+                \item Remembering: 1.5p
             \end{itemize} \\
            \hline
            \end{tabularx}
@@ -159,6 +172,10 @@ The method employed for the two experiments is outlined here. It details the spe
     \end{itemize}
 \end{itemize}
 
-Since both the human and the \ac{llm}-based evaluation shall be conducted as unbiased blind tests, the evaluators also will not be aware of the used methods to generate each question. This involves the model name, the kind of prompt used, the specified question type and the desired Bloom level for each question. Furthermore, to automatically score the \textit{Bloom's Level} -- based on the guideline in Table \bfref{tab:exp2_criteria}, the \ac{llms} as evaluators shall return solely the Bloom level they perceive for each question.
+\pagebreak
+
+Since all human expert analyses for Experiments 1 and 2, this shall be conducted as unbiased blind tests. To achieve this, the evaluators will not be aware of the used methods to generate each question. This involves the model name, the kind of prompt used, the specified question type and the desired Bloom level for each question.
+
+Furthermore, to properly score the \textit{Bloom's Level} -- based on the guideline in Table \bfref{tab:exp2_criteria}, the evaluators shall return solely the Bloom level they perceive for each question. The proper scoring then will be done automatically based on the returned Bloom level, since the raters will not be aware of the desired Bloom level for each question from the prompting process.
 
 The details about the \bfhyperref{sec:implementation-and-execution}{Implementation and Execution} for this experimental setup will be presented below. The results and discussion of these evaluations will be presented in Section \bfref{sec:evaluation}.

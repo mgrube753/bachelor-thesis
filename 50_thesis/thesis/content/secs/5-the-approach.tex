@@ -7,12 +7,6 @@ This chapter details the practical implementation of the experimental design out
 
 % The Python source files implement the core functionality of the experimental framework:
 %
-% * analysis_quantitative.py: Implements embedding-based semantic similarity metrics 
-%   and automated adherence scoring.
-%
-% * agreement.py: Calculates inter-annotator reliability metrics between expert and 
-%   LLM evaluations.
-%
 % * evaluation.ipynb: Jupyter notebook for interactive analysis and visualization of 
 %   experimental results, providing an exploratory interface for data inspection (right now just quantitative exp1)
 %   so maybe there are multiple notebooks, exp1aquan, exp1aqual, exp2aqual, YES!
@@ -30,28 +24,6 @@ To manage the API configurations, the \bfhyperref{lst:api-config}{api\_config.py
 
 \subsection{Experimental Procedure}
 
-% evaluation/ - Contains prompt templates for evaluating generated questions:
-%
-% * exp_eval.md: Master evaluation prompt pattern that structures the assessment process,
-%   incorporating the question, context, and evaluation rubric with a standardized 
-%   comma-separated numeric output format.
-%
-% * exp1a_rubric.md: Evaluation criteria for Experiment 1a focusing on content fidelity,
-%   featuring 7 dimensions: Relevance, Clarity, Answerability, Challenge level, Value,
-%   Language quality, and Correctness, each with detailed scoring descriptions.
-%
-% * exp1b_rubric.md: Modified evaluation criteria for Experiment 1b focusing on error
-%   propagation, replacing the Correctness criterion with Manipulation Handling to assess
-%   how LLMs respond to deliberately altered source materials.
-%
-% * exp2_rubric.md: Specialized evaluation criteria for Experiment 2 focusing on Bloom's
-%   alignment, featuring 5 dimensions: Relevance, Clarity, Answerability, Challenge level,
-%   and targeted Bloom's Taxonomy level assessment.
-%
-% * exp1_adherence_eval.md: Quantitative evaluation prompt specifically for measuring content
-%   adherence on a scale from 0.0 to 1.0, providing an objective metric for how faithfully
-%   generated questions represent source
-
 \object{Prompt Engineering Strategy}
 The prompting strategy adheres to known suggestions.
 % incorporating role-based prompting, special markers for text and format requirements, and positive constraints.
@@ -67,21 +39,21 @@ The question generation pipeline is initialized and executed via \bfhyperref{lst
 \pagebreak
 
 \object{Data Management and Organization}
-The resulting data follows a systematic directory structure designed for clarity and reproducibility, as good as it can work with \ac{llms}. Source materials containing ISO-OSI content are organized into separate folders for script, transcript, and Tanenbaum book excerpts, enabling efficient access and processing. The generated questions were stored in distinct text files, while the directory path reflects experiment type, \ac{llm} model, source material, prompt variation, and question identifiers, to conduct automated analysis and manual review. Evaluation data is maintained in structured CSV files containing automated analysis and expert annotations, ensuring comprehensive assessment capabilities.
+The resulting data follows a systematic directory structure designed for clarity and reproducibility, as good as it can work with \ac{llms}. The source materials are organized into separate folders each, enabling proper access and processing. The questions were stored in distinct text files, while the directory path reflects experiment type, model, source material, prompt variation, and question identifiers, to conduct automated analysis and manual review. Evaluation data is maintained in structured CSV files containing automated analysis and expert annotations, ensuring comprehensive assessment capabilities.
 
 \subsection{Evaluation Implementation}
 
 \object{Multi-Modal Assessment}
-The analysis steps include quantitative and qualitative evaluation of the generated questions. Both approaches, besides the manual qualitative expert-based evaluation, were implemented in \bfhyperref{lst:analysis-quantitative}{analysis\_quantitative.py}. The quantitative analysis follows semantic similarity evaluation between question and source material embeddings. Furthermore, the \ac{llm}-based content adherence assessment -- returning a value between 0 and 1 -- was conducted to provide another quantitative analysis of the \ac{llms}' content adherence to the source material. The prompt for this manner of quantitative evaluation is shown in \bfhyperref{lst:exp1-adherence-eval}{exp1\_adherence\_eval.md}.
-% #TODO tell about quantitative and qualitative analysis --> results in evaluation via notebooks
+The analysis steps include quantitative and qualitative evaluation of the generated questions. Besides the manual qualitative expert-based evaluation, the quantitative analysis was implemented in \bfhyperref{lst:analysis-quantitative}{analysis\_quantitative.py}. It follows the \textit{Semantic Similarity} evaluation between question and source material embeddings. Furthermore, the \ac{llm}-based \textit{Adherence Score} assessment -- returning a value between 0 and 1 -- was conducted to provide an alternate quantitative analysis of the \ac{llms}' content adherence to the source material. The prompt for this manner of quantitative evaluation is shown in \bfhyperref{lst:exp1-adherence-eval}{exp1\_adherence\_eval.md}.
 
-Moreover, the qualitative analysis focused on sampled expert-based and \ac{llm}-based evaluation, focusing the same criteria. To properly evaluate using the desired rubric variations from Tables \bfref{tab:exp1_criteria} and \bfref{tab:exp2_criteria}, the \ac{llm} as an evaluator was conducting two evaluation runs to ensure consistency and reliability across assessments. After running this approach on the generated questions, the final scores were calculated by the mean of the results of this \ac{llm}. Expert human evaluation follows the structured annotation using the same criteria. To establish the reliability of automated evaluation methods, the calculation of inter-annotator agreement via Cohen's Kappa was needed, addressed with the \bfhyperref{lst:agreement}{agreement.py} file.
-
-Whether all analysis results are available, the quantitative and qualitative results are processed by means of the \bfhyperref{lst:eval}{eval.py} file and presented in clear tables and plots. These visualizations enable a clear presentation of the results and facilitate the interpretation of the determined data.
-% #todo add sampling into the text (2 questions out of every directory) for llm-based and expert-based evaluation
+Moreover, the qualitative analysis was conducted via sampled expert ratings. The randomized extraction of the questions is set up with a seed via \bfhyperref{lst:sampling}{sampling.py}. To properly evaluate the questions, the desired rubric variations from Tables \bfref{tab:exp1_criteria} and \bfref{tab:exp2_criteria} were used. These are also detailed in \bfhyperref{lst:exp1a-rubric}{exp1a\_rubric.md}, \bfhyperref{lst:exp1b-rubric}{exp1b\_rubric.md}, and \bfhyperref{lst:exp2-rubric}{exp2\_rubric.md}. Given that five experts were identified for the analysis, it is crucial to examine the reliability of the ratings each rater has given. To establish this, the calculation of inter-annotator agreement via Fleiss' Kappa is needed, addressed with the \bfhyperref{lst:agreement}{agreement.py} file. By this, for each category in the experiments, the agreement between the experts can be calculated properly.
+% #TODO add numbers how many samples ...
+% (2 questions out of every directory) for llm-based and expert-based evaluation
 % in exp1, 2/7 questions for each dir; in exp2, 2/6 questions for each dir --> 64/224 vs. 40/120 questions sampled
 
+Whether all analysis results are available, the quantitative and qualitative analysis results are processed by several evaluation files using Jupyter Notebook. Using these notebooks, numerous tables and plot figures are available to enable a clear presentation of the results and facilitate the interpretation of the determined data.
+
 \object{Implementation Challenges and Solutions}
-Despite the absence of novel technological creations by e.g.\ training, there were some technical challenges that had to be solved. The token limitation of the chosen RoBERTa model required manual shortening of the layer segment texts (if necessary) to ensure a suitable performance of the transformer model for the sentence embeddings. The multilingual processing challenges were tackled by the careful selection of this cross-lingual sentence transformer, which enabled effective handling of both the German lecture materials and the English textbook content.
+Some technical challenges had to be solved. The token limitation of the chosen modified RoBERTa model required manual shortening of the layer segment texts (if necessary) to ensure a suitable performance of the model to create the sentence embeddings. The multilingual processing challenges were tackled by the careful selection of this cross-lingual sentence transformer, which enabled effective handling of both the German lecture materials and the English textbook content.
 
 The developed \ac{aqg} pipeline proved to be particularly challenging, since it required careful consideration of prompting, model selection, and evaluation methods. In addition to that, the implementation of the effective automation of the generative (excluding DeepSeek) and evaluation processes required a lot of attention to detail.

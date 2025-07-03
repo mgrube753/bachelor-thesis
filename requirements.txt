@@ -6,3 +6,4 @@ sentence-transformers
 pandas
 seaborn
 statsmodels
+ipykernel
