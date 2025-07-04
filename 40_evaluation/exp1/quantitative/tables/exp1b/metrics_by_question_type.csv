@@ -1,4 +1,0 @@
-,cosine_similarity,cosine_similarity,cosine_similarity,adherence_score,adherence_score,adherence_score
-,mean,std,count,mean,std,count
-question_type,,,,,,
-multiple_choice,0.598387850182397,0.1298778792224629,56,0.8402678571428571,0.2735032318952426,56
