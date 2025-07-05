@@ -15,6 +15,46 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 
 \object{Quantitative Analysis} semantic sim via cossim vs. llm-based content adherence calculation, there are tables and plots needed.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/comparison_with_no_source.png}
+    \label{fig:exp1a-source-scores}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/dist_by_llm.png}
+    \label{fig:exp1a-llm-scores-no-source}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
+    \label{fig:exp1a-llm-scores}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_input_source.png}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_prompt_type.png}
+\end{figure}
+
+% #TODO 1b
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_llm.png}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1b/combined_llm_vs_prompt_type.png}
+\end{figure}
+
 \begin{itemize}
     \item question type was not fixed, but via format constraints limited to either Open-Ended or Multiple-Choice questions. trend towards mc questions, open ended is exp1a 9/168 (only complex prompt, 8x openai, 1x google), exp1b 4/56 questions (1x common prompt deepseek, 3x google). maybe also add here the table 1 from intermed
     \item hard to interpret these results without the qualitative analysis, since the qualitative will also provide sampled results for content adherence (1a) / manipulation handling (1b). without this, the llms, the input sources and the prompt types are hard to compare.
