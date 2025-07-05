@@ -76,12 +76,13 @@ The method employed for the two experiments is outlined here. It details the spe
 
         % #todo here add the 5 experts (professor + scientific staff by uni rostock) who will evaluate the questions, instead of llm-based evaluation
         % hier haben sich neben meinem Hauptsupervisor noch 4 wissenschaftliche Mitarbeiter der Uni Rostock (des gleichen Lehrstuhls) bereit erklärt, die Fragen zu evaluieren. Passende Bewerter, da das ISO-OSI Modell am Lehrstuhl IuK bekannt ist.
-        \item \textit{Qualitative Analysis:} This phase involves a blind-test with expert-based evaluations of the generated questions. Five experts, including the primary supervisor and four scientific staff members from the same university department, will rate a sampled question set using the concise rubric in Table \bfref{tab:exp1_criteria}. To analyze the inter-rater agreement, \tcr{Fleiss Kappa} will be calculated, which is suitable for more than two raters \tcr{cite}. 
+        \item \textit{Qualitative Analysis:} This phase involves a blind-test with expert-based evaluations of the generated questions. Five experts, including the primary supervisor and four scientific staff members from the same university department, will rate a sampled question set using the concise rubric in Table \bfref{tab:exp1_criteria}. To analyze the inter-rater agreement between the experts, Fleiss' Kappa will be calculated, which is suitable for at least two raters \cite{fleiss_measuring_1971}.
         
         The analysis adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. The authors' rubric was created based on the criteria used by \cite{moore_assessing_2022}. However, instead of the \textit{Bloom's Level} criterion, the \textit{Correctness}, the \textit{Value} from the lecturer's perspective, and the \textit{Language} and criteria were added to address the objectives of this experiment. Since Experiment 1b examines the adherence to \textit{manipulated} input texts, the \textit{Correctness} is then replaced by \textit{Manipulation Handling}, as to be seen below:
         % \item \textit{Qualitative Analysis:} Claude 3.7 Sonnet will serve as an evaluator, conducting one evaluation run per question from a sampled question set. The results will be compared against expert-based evaluations conducted on the same set using the similar concise rubric. By this, inter-annotator agreement between the averaged \ac{llm} evaluations and human expert will be measured via Cohen's Kappa to validate the reliability of automated evaluation methods. Since Experiment 1b examines the adherence to manipulated input texts, the \textit{Correctness} will be specifically assessed for 1a and 1b, as quantitative metrics solely may not capture the correctness of the generated questions. The evaluation adopts the rubric structure from \cite{mi_comparative_2024}, maintaining a maximum score of 50 points per question. However, the \textit{Bloom's Level} criterion is replaced with \textit{Correctness} to address the specific objectives of this experiment:
 
 \begin{table}[htbp]
+           \vspace{-5em}
            \centering
            \renewcommand{\arraystretch}{1.8}
            \caption{Experiment 1 Evaluation Criteria.}
@@ -128,9 +129,10 @@ The method employed for the two experiments is outlined here. It details the spe
     \item \textbf{Experiment 2 (Question Formats and Bloom's Taxonomy):}
     \begin{itemize}
         \item \textit{Quantitative Analysis:} As the primary focus of this experiment lies on qualitative assessment, any quantitative evaluation is discarded. To simulate a proper blind test for this experiment, the o3 model by OpenAI and Claude 3.7 Sonnet will function as the automated evaluators rating another sampled set of generated questions. Inter-rater agreement via Cohen's Kappa \cite{cohen_coefficient_1960} will be crucial for validating the two \ac{llms} as reliable evaluators for Experiment 2. Both models follow the rubric structure from the previously used \cite{mi_comparative_2024}, also maintaining a maximum score of 50 points per question. In this experiment, instead of evaluating the proposed \textit{Correctness}, the \textit{Bloom's Level} is used again with specific refinements on Bloom's Taxonomy assessment: 
-        % think about at least linear weighted kappa, since these are ordinal scales.
+        % no cohens kappa, could be fleiss kappa with experts as well instead of llm-based
 
         \begin{table}[htbp]
+           \vspace{-5em}
            \centering
            \renewcommand{\arraystretch}{1.8}
            \caption{Experiment 2 Evaluation Criteria.}
@@ -174,8 +176,8 @@ The method employed for the two experiments is outlined here. It details the spe
 
 \pagebreak
 
-Since all human expert analyses for Experiments 1 and 2, this shall be conducted as unbiased blind tests. To achieve this, the evaluators will not be aware of the used methods to generate each question. This involves the model name, the kind of prompt used, the specified question type and the desired Bloom level for each question.
+Since all human expert analyses for Experiments 1 and 2 shall be valid and unbiased, these are conducted as blind tests. To achieve this, the evaluators will not be aware of the used methods to generate each question. This involves the model name, the kind of prompt used, the specified question type and the desired Bloom level for each question. Additionally, to properly analyze criteria such as \textit{Relevance}, \textit{Answerability} and \textit{Correctness}, the evaluators will be provided with the source material for each question.
 
 Furthermore, to properly score the \textit{Bloom's Level} -- based on the guideline in Table \bfref{tab:exp2_criteria}, the evaluators shall return solely the Bloom level they perceive for each question. The proper scoring then will be done automatically based on the returned Bloom level, since the raters will not be aware of the desired Bloom level for each question from the prompting process.
 
-The details about the \bfhyperref{sec:implementation-and-execution}{Implementation and Execution} for this experimental setup will be presented below. The results and discussion of these evaluations will be presented in Section \bfref{sec:evaluation}.
+The details about the \bfhyperref{sec:implementation-and-execution}{Implementation and Execution} for this experimental setup will be presented in the section below. The results and discussion of the evaluation will be presented in Section \bfref{sec:evaluation}.

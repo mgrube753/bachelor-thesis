@@ -2,8 +2,6 @@
 
 This section presents the findings from the two experiments detailed in Section \bfref{sec:experiment-design}. The quantitative and qualitative analyses are discussed, addressing the research questions regarding content fidelity, error propagation, question format generation, and alignment with Bloom's Taxonomy.
 
-\newtodo{How to properly handle/evaluate hypotheses?}
-
 % \newtodo{Need some approaches (LLMs) to compare against and provide metrics.}
 % \newtodo{While benchmarking, compare to something that already exists, hmmmm.}
 % \newtodo{Include an overview of the system's implementation but not too detailed if unnecessary.}
@@ -39,7 +37,7 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 
 \begin{table}[htbp]
     \centering
-    \caption{Example Inter-Rater Agreement for Experiment 1a with $N=48$ Items.}
+    \caption{Example Inter-Rater Agreement with $N=48$ Items (1a).}
     \label{tab:agreement_exp1a}
     \begin{tabular}{lccc}
         \toprule
@@ -61,7 +59,7 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 \begin{figure}[htbp]
     \centering
     \includegraphics[height=.95\textheight]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_analysis.png}
-    \caption{Experiment 1a: LLM Scores across every proposed Criterion.}
+    \caption{LLM Scores across every proposed Criterion (1a).}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -79,7 +77,7 @@ The first experiment of the thesis focused on evaluating the content fidelity of
         \caption{LLM vs Prompt Type Performance.}
         \label{fig:exp1a-llm-prompt-heatmap}
     \end{subfigure}
-    \caption{Experiment 1a: Total Score Heatmaps showing Mean Scores and Standard Deviation for different LLM Combinations. Values are displayed as Mean (Std) format.}
+    \caption{Total Score Heatmaps showing \textit{mean} and \textit{std} for different LLM Combinations (1a).}
     \label{fig:exp1a-heatmaps}
 \end{figure}
 
