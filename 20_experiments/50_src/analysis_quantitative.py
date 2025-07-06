@@ -162,6 +162,24 @@ def get_source_file_path(source, layer, is_manipulated=False):
     return os.path.join(source_dir, filename), source_type
 
 
+def expand_no_source_data(df):
+    expanded_rows = []
+    for _, row in df.iterrows():
+        if row["input_source"] == "no_source":
+            # Für jede no_source Zeile erstelle 3 Zeilen (script, tanenbaum, transcript)
+            for source in ["script", "tanenbaum", "transcript"]:
+                new_row = row.copy()
+                new_row["comparison_source"] = source
+                expanded_rows.append(new_row)
+        else:
+            # Für normale Zeilen setze comparison_source = input_source
+            new_row = row.copy()
+            new_row["comparison_source"] = row["input_source"]
+            expanded_rows.append(new_row)
+
+    return pd.DataFrame(expanded_rows).reset_index(drop=True)
+
+
 def process_experiment(exp_name):
     print(f"[INFO] Processing {exp_name}")
     print("=" * 80)
@@ -177,22 +195,26 @@ def process_experiment(exp_name):
             ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
         )
         actual_exp_name = "exp1a"
+
+        # Expand no_source data to compare with all three sources
+        df_original = pd.read_csv(csv_input_path)
+        df = expand_no_source_data(df_original)
+
+        # Add missing columns for expanded DataFrame
+        for col in [
+            "cosine_similarity",
+            "adherence_score_openai",
+            "adherence_score_anthropic",
+        ]:
+            if col not in df.columns:
+                df[col] = np.nan
     else:
         csv_input_path = os.path.join(
             ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
         )
         csv_output_path = csv_input_path
         actual_exp_name = exp_name
-
-    df = pd.read_csv(csv_input_path)
-
-    if exp_name == "exp1a_no_source":
-        if "cosine_similarity" not in df.columns:
-            df["cosine_similarity"] = np.nan
-        if "adherence_score_openai" not in df.columns:
-            df["adherence_score_openai"] = np.nan
-        if "adherence_score_anthropic" not in df.columns:
-            df["adherence_score_anthropic"] = np.nan
+        df = pd.read_csv(csv_input_path)
 
     questions = []
     sources = []
@@ -202,12 +224,15 @@ def process_experiment(exp_name):
     print("[INFO] Loading questions and sources...")
     for idx, row in df.iterrows():
         llm = row["llm"]
-        source = row["input_source"]
         layer = row["layer"]
         prompt_type = row["prompt_type"]
 
+        # Use comparison_source for source file selection
+        comparison_source = row.get("comparison_source", row["input_source"])
+        input_source = row["input_source"]
+
         question_path = get_question_path(
-            actual_exp_name, llm, source, layer, prompt_type
+            actual_exp_name, llm, input_source, layer, prompt_type
         )
         question_content = load_txt(question_path)
 
@@ -226,7 +251,9 @@ def process_experiment(exp_name):
             continue
 
         is_manipulated = actual_exp_name == "exp1b"
-        source_path, source_type = get_source_file_path(source, layer, is_manipulated)
+        source_path, source_type = get_source_file_path(
+            comparison_source, layer, is_manipulated
+        )
         source_text = load_txt(source_path)
 
         if not source_text:

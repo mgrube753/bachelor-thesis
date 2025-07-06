@@ -182,33 +182,19 @@ The methods to evaluate \ac{llms} at e.g.\ \ac{aqg} can be divided into several 
    \item \textit{\ac{meteor}} \cite{banerjee_meteor_2005} calculates the harmonic mean of precision and recall, so it provides a balanced evaluation \cite{guo_survey_2024}.
 \end{itemize}
 
-% \pagebreak
-
 % -------------------------------------------------------------------------
 
 \object{Diversity-based Metric} The more recent \textit{Distinct-}$n$ \cite{li_diversity-promoting_2016} measures text diversity by calculating the proportion of unique $n$-grams, though it is considered overly simplistic \cite{guo_survey_2024}.
 
 % -------------------------------------------------------------------------
 
-\object{Semantic Similarity} Metrics in this category assess sentence-level comparison, which is vital beyond word-level comparisons \cite{guo_survey_2024}. \textit{BERTScore} \cite{zhang_bertscore_2020} compares contextual sentence-level embedding vectors from a pre-trained BERT model by calculating cosine similarity between the embeddings of the generated and reference text \cite{guo_survey_2024}, as it was done in the study of \cite{li_planning_2024}.
-   % \item Manual cosine similarity calculation can also be calculated by comparing embeddings created by an embedding model, as it was done in \cite{li_planning_2024}.
-% \end{itemize}
+\object{Semantic Similarity} Metrics in this category assess sentence-level comparison, which is vital beyond word-level comparisons \cite{guo_survey_2024}. \textit{BERTScore} \cite{zhang_bertscore_2020} compares contextual sentence-level embedding vectors from a pre-trained BERT model by calculating cosine similarity between the embeddings of the generated and reference text \cite{guo_survey_2024}, as this scoring metric was adopted in the study of \cite{li_planning_2024}.
 
-\object{Other Metrics} Apart from these categories, diverse other methods and metrics are used to evaluate the generated questions: For instance, \cite{yang_heuristic_2024} utilized \textit{Perplexity, Diversity}, and \textit{Toxicity} to assess the question's quality. Additionally, researchers developing new evaluation metrics compare their approaches against a range of existing ones. For example, \cite{nguyen_reference-based_2024} benchmarked their proposed metric against \textit{BLEU, ROUGE, BERTScore, QAScore} -- predicting answer extractability from the given context via transformers -- \cite{ji_qascoreunsupervised_2022}, Google's \textit{\ac{bleurt}} -- predicting human judgements of text quality -- \cite{sellam_bleurt_2020}, and the also BERT-based \textit{\ac{rquge}} metric by Meta -- comparing predicted and gold answer spans -- \cite{mohammadshahi_rquge_2023}.
+\object{Other Metrics} Apart from these categories, diverse other methods and metrics are used to evaluate the generated questions: For instance, \cite{yang_heuristic_2024} utilized \textit{Perplexity, Diversity}, and \textit{Toxicity} to assess the question's quality. 
+
+In addition to that, researchers developing new evaluation metrics compare their approaches against a range of existing ones. For example, \cite{nguyen_reference-based_2024} benchmarked their proposed metric against \textit{BLEU, ROUGE, BERTScore, QAScore} -- predicting answer extractability from the given context via transformers -- \cite{ji_qascoreunsupervised_2022}, Google's \textit{\ac{bleurt}} -- predicting human judgements of text quality -- \cite{sellam_bleurt_2020}, and the also BERT-based \textit{\ac{rquge}} metric by Meta -- comparing predicted and gold answer spans -- \cite{mohammadshahi_rquge_2023}.
 
 \pagebreak
-
-% \begin{itemize}
-%    \item For instance, \cite{wang_towards_2022} assessed question quality using \textit{Perplexity} (via GPT-2 \cite{radford_language_2019}), \textit{Diversity} (Distinct-3 score \cite{li_diversity-promoting_2016}), \textit{Toxicity, Grammatical Error,} and the resulting \textit{Acceptability} of a question. \cite{yang_heuristic_2024} also adopted \textit{Perplexity, Diversity,} and \textit{Toxicity}.
-%    % #todo maybe remove wang_towards_2022 but keep yang_heuristic_2024
-%    \item Additionally, researchers developing new evaluation metrics often compare their approaches against a range of existing ones. For example, \cite{nguyen_reference-based_2024} benchmarked their proposed metric against \textit{BLEU, ROUGE, BERTScore, QAScore} -- predicting answer extractability from the given context via transformers -- \cite{ji_qascoreunsupervised_2022}, Google's \textit{\ac{bleurt}} -- predicting human judgements of text quality -- \cite{sellam_bleurt_2020}, and the also BERT-based \textit{\ac{rquge}} metric by Meta -- comparing predicted and gold answer spans -- \cite{mohammadshahi_rquge_2023}.
-% \end{itemize}
-
-% -------------------------------------------------------------------------
-
-% \object{Knowledge Graphs} The authors \cite{luo_systematic_2023} presented a framework leveraging knowledge graphs with facts to systematically assess the factual knowledge of LLMs. Frameworks like this can be used to generate questions and their expected answers from given knowledge graph triplets -- such as \texttt{<subject, relation label, object>} -- to evaluate the \ac{llm}'s accuracy.
-
-% -------------------------------------------------------------------------
 
 \object{Human Evaluation} This kind of evaluation is considered necessary to judge about the quality of generated questions \cite{horbach_linguistic_2020}.
 
