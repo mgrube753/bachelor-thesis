@@ -15,38 +15,64 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 
 \object{Quantitative Analysis} semantic sim via cossim vs. llm-based content adherence calculation, there are tables and plots needed.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/input_source_vs_no_source_comparison.png}
-    \label{fig:exp1a-source-scores}
-\end{figure}
+\section*{Experiment 1a}
 
-% script > tanenbaum > transcript, and no source is in between these 3 input sources in cossim --> low validity??
-% adherence score is way different from cossim + no source is different from the others --> more reliable??
+\begin{itemize}
+    \item question type was not fixed, but via format constraints limited to either Open-Ended or MC questions. trend towards mc questions, open ended is exp1a 9/168 (only complex prompt, 8x openai, 1x google), exp1b 4/56 questions (1x common prompt deepseek, 3x google). % #TODO maybe also add here the table 1 from intermed
+    \item my way is a bit different from plans in literature, since source texts and llm outputs differ much. \cite{li_planning_2024} used bertscore for semantic similarity scoring, but between generated and ground truth q-a pairs. by this, the cossim results in exp1a are less comparable.
+    \item besides the input sources, the llms were prompted for each layer without using an input source as well. every q-a pair was then compared to every input source, shown in Figure \bfref{fig:exp1a-source-scores}. the cosine similarity unfortunately does not show significant trends as the adherence scores do; in adherence score we see that using no source has a proper impact on the score set at least. the current cossim trend in the sources is that script is shortest, tanenbaum medium and transcript is longest, so the scorings are descending in cossim script > tanenbaum > transcript. 
+    \item nosource shows that cossim can not be used to determine if a model follows the source material, which is not only a sentence.
+    \item cossim via sources plot: input sources vs no source... pretty similar trend even though no source was used in the other case.
+    \item adherence score shows scattering with respect to input sources; adherence score looks more reliable since llms are spreading way more.
+    \item adherence: anthropic and google struggle with minor less scores (also watch std for both), deepseek and openai are more consistent.
+    \item konsequente kontextgebung etwa gleicher laenge und wenig davon (max. 30 woerter) kann für logischere ergebnisse bei cossim sorgen. in diesem fall muss cossim discarded werden 
+\end{itemize}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/dist_by_llm.png}
-    \label{fig:exp1a-llm-scores-no-source}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/dist_by_llm.png}
+%     \label{fig:exp1a-llm-scores-no-source}
+% \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
     \label{fig:exp1a-llm-scores}
+    \caption{Distribution of Cosine Similarity and Adherence Score by LLM (1a).}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/input_source_vs_no_source_comparison.png}
+    \label{fig:exp1a-source-scores}
+    \caption{Distribution Comparison of using Input Sources vs.\ additional Run using no Source for LLMs (1a).}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_input_source.png}
+    \caption{Combined LLM vs.\ Input Source Performance (1a).}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_prompt_type.png}
+    \caption{Combined LLM vs.\ Prompt Type Performance (1a).}
 \end{figure}
 
-% #TODO 1b
+\pagebreak
+
+\section*{Experiment 1b}
+
+\begin{itemize}
+    \item adherence score ausgabe: bei bewertung ist anthropic oft unnötig höher als openai
+    \item in exp1b, cossim cannot detect if an llm follows the manipulated content or llm detects it (tells this somehow and then generates question based on that text (oder frage wie zitate unten)). since the cossim in exp1a was not that reliable, and the cossim is high in 1b (???), it is not reliable and shall be overall discarded.
+    \item mixed outcomes in adherence scores.
+    \item grundsaetzlich folgen die modelle ueberaus dem manipulierten content, tiefe werte sind zurecht dort unten vertreten, grundsaetzlich logisches bild in 1b adherence
+    \item DeepSeek hat es oft erkannt und somit median und mean nach unten gezogen; anthropic und google aehnlich zueinander. openai folgt auch sehr dem content, verzeichnet aber tieferen mean durch erkennungs-outliers. DeepSeek erkennbar \enquote{besser}
+    \item auch im common prompt ist deepseek klar tiefer als die anderen, da gelegentlich auch fragen kommen, wie \enquote{Welche der folgenden Aussagen beschreibt eine echte Kernaufgabe des Data Link Layers im ISO-OSI-Modell, basierend auf korrektem Fachwissen?}, oder \enquote{Welche Eigenschaft wird dem Transport Layer laut Beschreibung NICHT zugeordnet?}
+    \item complex prompt folgert dass die modelle den manipulierten content besser infragestellen!! dass cossim leicht aehnliches zeigt ist aber nicht von bedeutung
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering
@@ -58,25 +84,11 @@ The first experiment of the thesis focused on evaluating the content fidelity of
     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1b/combined_llm_vs_prompt_type.png}
 \end{figure}
 
-\begin{itemize}
-    \item question type was not fixed, but via format constraints limited to either Open-Ended or Multiple-Choice questions. trend towards mc questions, open ended is exp1a 9/168 (only complex prompt, 8x openai, 1x google), exp1b 4/56 questions (1x common prompt deepseek, 3x google). maybe also add here the table 1 from intermed
-    \item hard to interpret these results without the qualitative analysis, since the qualitative will also provide sampled results for content adherence (1a) / manipulation handling (1b). without this, the llms, the input sources and the prompt types are hard to compare.
-    \item 1a:
-    \begin{itemize}
-        \item at llms noticed: deepseek was noticably worse than the others in cossim, google best, anthropic pretty fine as well, openai in the middle / adherence score: all pretty high and similar
-        \item at input sources noticed: the more complex the source, the lower the cossim (script > tanenbaum > cossim), but no real trend in adherence score
-        \item comparison llm vs input source, in cossim still the trend of llms being best at script, medium at tanenbaum and worst at transcript, often noticably visible. adherence scores instead are mixed, but all of these are very high, > 90\%
-        \item llms vs prompt types: at cossim common prompt commonly worse than complex prompt, but not always. adherence shows (pretty flipped) that common prompt results in higher scores than complex prompt, which is questionable.
-    \end{itemize}
-    \item 1b:
-    \begin{itemize}
-        \item at llms noticed: deepseek still worst, but all dont look pretty different from exp 1a here. but the lowest scores in cossim at 1b are higher than these which sometimes occured in 1a/ adherence scores are also high, but way more distributed in lower directions, especially at deepseek, then anthropic, and openai/google are pretty decent still, openai's outliers do not decrease the median much in boxplot, which is close to 1.0. what to interpret here? also common prompt higher scores than complex prompt. 
-        \item extra llm vs prompt type: common prompt same mean or higher than complex prompt, especially seen at anthropic and google / adherence shows that common prompt has way higher scores for each llm in contrast to complex prompt.
-        \item all in all, this method cannot be used to give proper results to see if a model follows the manipulated content, or detects it. 
-    \end{itemize}
-\end{itemize}
+\pagebreak
 
 \object{Qualitative Analysis} Exp1 rubric with sampled expert evaluation (Cap + 4 iuk members) + Fleiss Kappa, also with tables and plots here.
+
+% #TODO talk about NaN values by e.g. Prof. Cap
 
 \begin{table}[htbp]
     \centering
@@ -84,7 +96,7 @@ The first experiment of the thesis focused on evaluating the content fidelity of
     \label{tab:agreement_exp1a}
     \begin{tabular}{lccc}
         \toprule
-        \textbf{Criterion} & \textbf{Fleiss' Kappa $\uparrow$} & \textbf{Mean Rating $\uparrow$} & \textbf{Std Rating $\downarrow$} \\
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Mean Rating $\uparrow$} & \textbf{Std Rating $\downarrow$} \\
         \midrule
         Relevance & 0.313 & \textbf{9.179} & \textbf{2.047} \\
         Clarity & 0.403 & 8.558 & 2.596 \\
@@ -101,28 +113,63 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[height=.95\textheight]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_analysis.png}
-    \caption{LLM Scores across every proposed Criterion (1a).}
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_analysis.png}
+    \caption{LLM-based Scores across every proposed Criterion (1a).}
+    \label{fig:exp1a-llm-analysis}
 \end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_source_analysis.png}
+    \caption{(Optional) Input Source-based Scores across every proposed Criterion (1a).}
+    \label{fig:exp1a-source-analysis}
+\end{figure}
+
+\tcr{\#TODO what about prompt type here?}
+
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{subfigure}[b]{0.48\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_source_heatmap.png}
+%         \caption{LLM vs Input Source Performance.}
+%         \label{fig:exp1a-llm-source-heatmap}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_prompt_heatmap.png}
+%         \caption{LLM vs Prompt Type Performance.}
+%         \label{fig:exp1a-llm-prompt-heatmap}
+%     \end{subfigure}
+%     \caption{Total Score Heatmaps showing \textit{mean} and \textit{std} for different LLM Combinations (1a).}
+%     \label{fig:exp1a-heatmaps}
+% \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_source_heatmap.png}
-        \caption{LLM vs Input Source Performance.}
-        \label{fig:exp1a-llm-source-heatmap}
-    \end{subfigure}
+        \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_llm_source_heatmap.png}
+        \caption{LLM vs.\ Input Source Correctness.}
+    \end{subfigure} 
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_prompt_heatmap.png}
-        \caption{LLM vs Prompt Type Performance.}
-        \label{fig:exp1a-llm-prompt-heatmap}
+    \begin{subfigure}[b]{0.4675\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_llm_prompt_heatmap.png}
+         \caption{LLM vs.\ Prompt Type Correctness.}
     \end{subfigure}
-    \caption{Total Score Heatmaps showing \textit{mean} and \textit{std} for different LLM Combinations (1a).}
-    \label{fig:exp1a-heatmaps}
+    \caption{Correctness Heatmaps showing \textit{mean} and \textit{std} for different LLM Combinations (1a).}
+    \label{fig:exp1a-correctness-heatmaps}
 \end{figure}
+
+\pagebreak
+
+\begin{itemize}
+    \item konträr zu cossim, da hier transcript am besten statt script...
+\end{itemize}
+
+\tcr{Exp1b da sollte eher auch nur Correctness und Total Score angesehen werden, hoechstens noch Clarity/Language als 4er pack}
 
 \vp
 
