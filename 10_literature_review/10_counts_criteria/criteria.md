@@ -1,6 +1,6 @@
 # Criteria for Literature Review
 
-## Pipeline
+## Workflow
 
 1. Get all papers from Google Scholar and Elicit
 2. Filter Duplicates

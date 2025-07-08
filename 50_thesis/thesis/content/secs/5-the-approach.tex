@@ -55,3 +55,5 @@ Whether all analysis results are available, the quantitative and qualitative ana
 Some technical challenges had to be addressed. The token limitation of the chosen modified RoBERTa model, 512 tokens $\approx$ 380 words, required manual shortening of the layer segment texts if necessary to ensure a suitable performance of the model creating the comparable sentence embeddings. The multilingual processing challenges were tackled by the careful selection of this cross-lingual sentence transformer, which enabled effective handling of both the German lecture materials and the English textbook content.
 
 The developed \ac{aqg} pipeline proved to be particularly challenging, since it required careful consideration of prompting, model selection, and evaluation methods. In addition to that, the implementation of the effective automation of the generative (excluding DeepSeek) and evaluation processes required a lot of attention to detail.
+
+% #TODO add that new qgen run had to be done since the output format of exp1 questions was too diverse, so the prompts had to be refined to ensure a proper output format

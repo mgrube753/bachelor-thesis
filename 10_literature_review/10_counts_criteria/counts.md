@@ -1,8 +1,8 @@
-# Counts of papers in the initial literature review
+# Counts of examined Papers in the initial Literature Review
 
--   16 elicit: LLMs
--   16 elicit: Question/Bloom
--   16 elicit: Eval
--   40 scholar + 1x attention is all you need: LLMs
--   60 scholar: Question/Bloom
--   60 scholar: Eval
+-   16 Papers via Elicit: Focusing LLMs
+-   16 Papers via Elicit: Focusing Question Generation/Bloom's Taxonomy
+-   16 Papers via Elicit: Evaluation of LLMs
+-   40 Papers via Google Scholar: Focusing LLMs + "Attention is all you need"
+-   60 Papers via Google Scholar: Question Generation/Bloom's Taxonomy
+-   60 Papers via Google Scholar: Evaluation of LLMs
