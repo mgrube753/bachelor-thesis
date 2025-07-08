@@ -43,7 +43,8 @@
 \usepackage{colortbl}
 
 \usepackage{minted}
-\usepackage{mdframed}
+\usepackage{longtable}
+\usepackage{caption} % For \captionof command
 \definecolor{listingGray}{rgb}{0.95,0.95,0.95}
 
 \setminted{
@@ -67,6 +68,60 @@
     xrightmargin=5pt
 }
 \usemintedstyle{perldoc}
+
+% longlisting environment für lange Code-Listings mit automatischen Seitenumbrüchen
+% Approach: Use normal figure for short listings, special environment for long ones
+\usepackage{newfloat}
+% Use existing listing float from minted package
+% We don't redeclare it since minted already provides it
+
+% Command für normale Code-Listings aus Dateien (with float)
+\newcommand{\listingfromfile}[5][]{%
+    \begin{listing}[#5]
+        \inputminted[#1]{#2}{#3}
+        \caption{#4}
+    \end{listing}
+}
+
+% Command für lange Code-Listings aus Dateien (without float, allows page breaks)
+\newcommand{\longlistingfromfile}[5][]{%
+    \par\noindent
+    \captionsetup{skip=4pt}
+    \parbox{\textwidth}{%
+        \rule{\textwidth}{0.4pt}
+        \captionof{listing}{#4}
+        \ifx\relax#5\relax\else\label{#5}\fi
+        % \rule{\textwidth}{0.4pt}
+    \vspace{-2.5em}%
+    }
+    \inputminted[#1]{#2}{#3}%
+    % \vspace{0.5em}%
+}
+
+% % Environment für normale inline Code-Listings (with float)
+% \newenvironment{listinginline}[4][htbp]{%
+%     \begin{listing}[#1]
+%         \begin{minted}{#2}
+% }{%
+%         \end{minted}
+%         \caption{#3}
+%         \ifx\relax#4\relax\else\label{#4}\fi
+%     \end{listing}
+% }
+
+% % Environment für lange inline Code-Listings (without float, allows page breaks)
+% \newenvironment{longlistinginline}[3]{%
+%     \noindent\rule{\textwidth}{0.4pt}%
+%     \vspace{2pt}%
+%     \begin{minted}{#1}
+% }{%
+%     \end{minted}%
+%     \vspace{2pt}%
+%     \noindent\rule{\textwidth}{0.4pt}%
+%     \captionof{listing}{#2}%
+%     \ifx\relax#3\relax\else\label{#3}\fi%
+%     \vspace{0.5em}%
+% }
 
 \let\oldFootnote\footnote
 \newcommand\nextToken\relax
