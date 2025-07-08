@@ -30,7 +30,7 @@
 *.synctex(busy)
 
 # LaTeX generated files
-/_minted-*/
+_minted/
 
 # LaTeX distribution files
 *.gz

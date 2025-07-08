@@ -19,7 +19,6 @@
 \usepackage{setspace}
 \usepackage{pdfpages}
 \usepackage{lmodern}
-\usepackage{listings}
 \usepackage{enumerate}
 \usepackage{mathtools}
 \usepackage[normalem]{ulem}
@@ -43,6 +42,32 @@
 \usepackage{appendix}
 \usepackage{colortbl}
 
+\usepackage{minted}
+\usepackage{mdframed}
+\definecolor{listingGray}{rgb}{0.95,0.95,0.95}
+
+\setminted{
+    frame=lines,
+    framesep=2mm,
+    baselinestretch=1.2,
+    bgcolor=listingGray,
+    fontsize=\footnotesize,
+    linenos,
+    breaklines=true,
+    tabsize=2
+}
+
+\newminted{python}{
+    frame=single,
+    bgcolor=listingGray,
+    fontsize=\scriptsize,
+    linenos=true,
+    breaklines=true,
+    xleftmargin=15pt,
+    xrightmargin=5pt
+}
+\usemintedstyle{perldoc}
+
 \let\oldFootnote\footnote
 \newcommand\nextToken\relax
 
@@ -60,10 +85,6 @@
   leftmargin=2em,
   itemindent=1pt, 
 }
-
-% \setlength{\abovedisplayskip}{0pt plus 2pt minus 2pt}
-% \setlength{\belowdisplayskip}{0pt plus 2pt minus 2pt}
-% \setlength{\abovedisplayshortskip}{0pt plus 2pt}
 
 \AtBeginEnvironment{align}{%
   \setlength{\abovedisplayskip}{9pt plus 3pt minus 1pt}%
