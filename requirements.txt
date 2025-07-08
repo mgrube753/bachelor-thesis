@@ -7,4 +7,5 @@ pandas
 seaborn
 statsmodels
 ipykernel
+jupyter
 pygments
