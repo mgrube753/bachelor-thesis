@@ -42,5 +42,5 @@ _minted/
 .env
 
 # Python plots and tables
-plots/
-tables/
+**/plots/**/*.png
+**/tables/**/*.csv
