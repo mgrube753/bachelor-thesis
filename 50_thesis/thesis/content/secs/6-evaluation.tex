@@ -55,12 +55,14 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_input_source.png}
+    \label{fig:exp1a-llm-source-comparison}
     \caption{Combined LLM vs.\ Input Source Performance (1a).}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_prompt_type.png}
+    \label{fig:exp1a-llm-prompt-comparison}
     \caption{Combined LLM vs.\ Prompt Type Performance (1a).}
 \end{figure}
 
@@ -150,21 +152,27 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 %     \label{fig:exp1a-heatmaps}
 % \end{figure}
 
-\begin{figure}[htbp]
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{subfigure}[b]{0.48\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_llm_source_heatmap.png}
+%         \caption{LLM vs.\ Input Source Correctness.}
+%     \end{subfigure} 
+%     \hfill
+%     \begin{subfigure}[b]{0.4675\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_llm_prompt_heatmap.png}
+%          \caption{LLM vs.\ Prompt Type Correctness.}
+%     \end{subfigure}
+%     \caption{Correctness Heatmaps showing \textit{mean} and \textit{std} for different LLM Combinations (1a).}
+%     \label{fig:exp1a-correctness-heatmaps}
+% \end{figure}
+
+\begin{figure}
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_llm_source_heatmap.png}
-        \caption{LLM vs.\ Input Source Correctness.}
-    \end{subfigure} 
-    \hfill
-    \begin{subfigure}[b]{0.4675\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_llm_prompt_heatmap.png}
-         \caption{LLM vs.\ Prompt Type Correctness.}
-    \end{subfigure}
+    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_paired_heatmaps.png}
     \caption{Correctness Heatmaps showing \textit{mean} and \textit{std} for different LLM Combinations (1a).}
-    \label{fig:exp1a-correctness-heatmaps}
 \end{figure}
 
 \pagebreak
