@@ -1,0 +1,1 @@
+jupyter-nbconvert --to script 20_experiments/50_src/evaluation*.ipynb

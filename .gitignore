@@ -41,7 +41,6 @@ _minted/
 .python-version
 .env
 
-# Python plots
-
+# Python plots and tables
 plots/
 tables/
