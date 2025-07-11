@@ -132,18 +132,18 @@ Firstly, I want to thank Professor Clemens Cap, my main advisor from the Departm
   \counterwithin{figure}{section}
   \counterwithin{table}{section}
   \counterwithin{listing}{section}
-    \section{Additional Figures} 
-    \begin{figure}[htbp]
-      \caption{Sample Figure} 
-    \end{figure}
+    % \section{Additional Figures} 
+    % \begin{figure}[htbp]
+    %   \caption{Sample Figure} 
+    % \end{figure}
 
-    \vp
+    % \vp
 
-    \section{Additional Tables}
+    % \section{Additional Tables}
     
-    \input{../extra/tables.tex}
+    % \input{../extra/tables.tex}
 
-    \vp
+    % \vp
 
     \section{Question Generation Prompts} % https://www.overleaf.com/learn/latex/Code_listing
     \longlistingfromfile{markdown}{../../../20_experiments/40_prompts/experiment/exp1_common_prompt.md}{Common Prompt for Experiment 1: \textbf{exp1\_common\_prompt.md}}{lst:exp1-common}
@@ -172,36 +172,6 @@ Firstly, I want to thank Professor Clemens Cap, my main advisor from the Departm
     \longlistingfromfile{markdown}{../../../20_experiments/40_prompts/evaluation/exp2_rubric.md}{Experiment 2 Evaluation Rubric: \textbf{exp2\_rubric.md}}{lst:exp2-rubric}
     \vp
     \longlistingfromfile{markdown}{../../../20_experiments/40_prompts/evaluation/exp1_adherence_eval.md}{Experiment 1 Content Adherence Prompt: \textbf{exp1\_adherence\_eval.md}}{lst:exp1-adherence-eval}
-    \vp
-
-    \section{Source Code}
-    \longlistingfromfile{python}{../../../20_experiments/50_src/main.py}{Main Experimental Pipeline Controller: \textbf{main.py}}{lst:main}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/api_calls.py}{API Integration Layer: \textbf{api\_calls.py}}{lst:api-calls}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/api_config.py}{API Configuration Management: \textbf{api\_config.py}}{lst:api-config}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/prompt_utils.py}{Prompt Engineering Framework: \textbf{prompt\_utils.py}}{lst:prompt-utils}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/file_utils.py}{Data Processing Pipeline: \textbf{file\_utils.py}}{lst:file-utils}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/question_generation.py}{Question Generation Code: \textbf{question\_generation.py}}{lst:question-generation}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/sampling.py}{Question Sampling Module: \textbf{sampling.py}}{lst:sampling}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/check_truncation.py}{Truncation Checking: \textbf{check\_truncation.py}}{lst:check-truncation}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/constants.py}{Configuration Constants: \textbf{constants.py}}{lst:constants}
-    \vp
-    % \longlistingfromfile{python}{../../../20_experiments/50_src/agreement.py}{Inter-Annotator Agreement Calculation: \textbf{agreement.py}}{lst:agreement}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/analysis_quantitative.py}{Quantitative Analysis: \textbf{analysis\_quantitative.py}}{lst:analysis-quantitative}
-    \vp
-    % \longlistingfromfile{python}{../../../20_experiments/50_src/analysis_qualitative.py}{Qualitative Analysis: \textbf{analysis\_qualitative.py}}{lst:analysis-qualitative}
-    % \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/evaluation1_quan.py}{Experiment 1 Quantitative Evaluation Notebook: \textbf{evaluation1\_quan.ipynb}}{lst:evaluation1-quan-notebook}
-    \vp
-    \longlistingfromfile{python}{../../../20_experiments/50_src/evaluation1_qual.py}{Experiment 1 Qualitative Evaluation Notebook: \textbf{evaluation1\_qual.ipynb}}{lst:evaluation1-qual-notebook}
     \vp
 
 \section{Source Materials} \label{sec:source_materials}
@@ -267,6 +237,37 @@ Firstly, I want to thank Professor Clemens Cap, my main advisor from the Departm
     \longlistingfromfile{text}{../../../20_experiments/30_input_sources/script/manipulated/layer6.txt}{Layer 6 - Script Manipulated.}{lst:script_layer6_manipulated}
     \vp
     \longlistingfromfile{text}{../../../20_experiments/30_input_sources/script/manipulated/layer7.txt}{Layer 7 - Script Manipulated.}{lst:script_layer7_manipulated}
+    \vp
+
+    \section{Source Code}
+    \longlistingfromfile{python}{../../../20_experiments/50_src/main.py}{Main Experimental Pipeline Controller: \textbf{main.py}}{lst:main}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/api_calls.py}{API Integration Layer: \textbf{api\_calls.py}}{lst:api-calls}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/api_config.py}{API Configuration Management: \textbf{api\_config.py}}{lst:api-config}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/prompt_utils.py}{Prompt Engineering Framework: \textbf{prompt\_utils.py}}{lst:prompt-utils}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/file_utils.py}{Data Processing Pipeline: \textbf{file\_utils.py}}{lst:file-utils}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/question_generation.py}{Question Generation Code: \textbf{question\_generation.py}}{lst:question-generation}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/sampling.py}{Question Sampling Module: \textbf{sampling.py}}{lst:sampling}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/check_truncation.py}{Truncation Checking: \textbf{check\_truncation.py}}{lst:check-truncation}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/constants.py}{Configuration Constants: \textbf{constants.py}}{lst:constants}
+    \vp
+    % \longlistingfromfile{python}{../../../20_experiments/50_src/agreement.py}{Inter-Annotator Agreement Calculation: \textbf{agreement.py}}{lst:agreement}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/analysis_quantitative.py}{Quantitative Analysis: \textbf{analysis\_quantitative.py}}{lst:analysis-quantitative}
+    \vp
+    % \longlistingfromfile{python}{../../../20_experiments/50_src/analysis_qualitative.py}{Qualitative Analysis: \textbf{analysis\_qualitative.py}}{lst:analysis-qualitative}
+    % \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/evaluation1_quan.py}{Experiment 1 Quantitative Evaluation Notebook: \textbf{evaluation1\_quan.ipynb}}{lst:evaluation1-quan-notebook}
+    \vp
+    \longlistingfromfile{python}{../../../20_experiments/50_src/evaluation1_qual.py}{Experiment 1 Qualitative Evaluation Notebook: \textbf{evaluation1\_qual.ipynb}}{lst:evaluation1-qual-notebook}
+
 \end{appendices}
 
 \vp

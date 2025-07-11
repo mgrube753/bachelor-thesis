@@ -198,7 +198,7 @@ for path in [output_dir_exp1a_no_source, output_plot_dir_exp1a_no_source]:
 
 
 llm_metrics_1a = exp1a_df.groupby("llm")[["cosine_similarity", "adherence_score"]].agg(
-    ["mean", "std"]
+    ["mean", "std", "median", "min", "max", "count"]
 )
 tables["exp1a_metrics_by_llm"] = llm_metrics_1a
 display(llm_metrics_1a)
@@ -211,7 +211,7 @@ display(llm_metrics_1a)
 
 input_source_metrics_1a = exp1a_df.groupby("input_source")[
     ["cosine_similarity", "adherence_score"]
-].agg(["mean", "std"])
+].agg(["mean", "std", "median", "min", "max", "count"])
 tables["exp1a_metrics_by_input_source"] = input_source_metrics_1a
 display(input_source_metrics_1a)
 
@@ -223,7 +223,7 @@ display(input_source_metrics_1a)
 
 prompt_type_metrics_1a = exp1a_df.groupby("prompt_type")[
     ["cosine_similarity", "adherence_score"]
-].agg(["mean", "std"])
+].agg(["mean", "std", "median", "min", "max", "count"])
 tables["exp1a_metrics_by_prompt_type"] = prompt_type_metrics_1a
 display(prompt_type_metrics_1a)
 
@@ -392,7 +392,7 @@ llm_vs_input_source_cos_sim_1a = pd.pivot_table(
     values="cosine_similarity",
     index="llm",
     columns="input_source",
-    aggfunc=["mean", "std"],
+    aggfunc=["mean", "std", "median", "min", "max", "count"],
 )
 tables["exp1a_cosine_sim_llm_vs_input_source"] = llm_vs_input_source_cos_sim_1a
 display(llm_vs_input_source_cos_sim_1a)
@@ -470,7 +470,7 @@ def create_dual_heatmap(cosine_pivot, adherence_pivot, title_base, exp_label):
     return fig
 
 adherence_pivot = pd.pivot_table(exp1a_df, values="adherence_score", index="llm", 
-                                columns="input_source", aggfunc=["mean", "std"])
+                                columns="input_source", aggfunc=["mean", "std", "median", "min", "max", "count"])
 
 fig = create_dual_heatmap(llm_vs_input_source_cos_sim_1a, adherence_pivot, 
                          "LLM vs Input Source", "Exp 1a")
@@ -487,7 +487,7 @@ llm_vs_prompt_type_cos_sim_1a = pd.pivot_table(
     values="cosine_similarity",
     index="llm",
     columns="prompt_type",
-    aggfunc=["mean", "std"],
+    aggfunc=["mean", "std", "median", "min", "max", "count"],
 )
 tables["exp1a_cosine_sim_llm_vs_prompt_type"] = llm_vs_prompt_type_cos_sim_1a
 display(llm_vs_prompt_type_cos_sim_1a)
@@ -497,7 +497,7 @@ display(llm_vs_prompt_type_cos_sim_1a)
 
 
 adherence_pivot_prompt = pd.pivot_table(exp1a_df, values="adherence_score", index="llm", 
-                                       columns="prompt_type", aggfunc=["mean", "std"])
+                                       columns="prompt_type", aggfunc=["mean", "std", "median", "min", "max", "count"])
 
 fig = create_dual_heatmap(llm_vs_prompt_type_cos_sim_1a, adherence_pivot_prompt, 
                          "LLM vs Prompt Type", "Exp 1a")
@@ -514,7 +514,7 @@ llm_vs_prompt_type_adherence_1a = pd.pivot_table(
     values="adherence_score",
     index="llm",
     columns="prompt_type",
-    aggfunc=["mean", "std"],
+    aggfunc=["mean", "std", "median", "min", "max", "count"],
 )
 tables["exp1a_adherence_llm_vs_prompt_type"] = llm_vs_prompt_type_adherence_1a
 display(llm_vs_prompt_type_adherence_1a)
@@ -530,7 +530,7 @@ llm_vs_input_source_adherence_1a = pd.pivot_table(
     values="adherence_score",
     index="llm",
     columns="input_source",
-    aggfunc=["mean", "std"],
+    aggfunc=["mean", "std", "median", "min", "max", "count"],
 )
 tables["exp1a_adherence_llm_vs_input_source"] = llm_vs_input_source_adherence_1a
 display(llm_vs_input_source_adherence_1a)
@@ -550,24 +550,6 @@ create_seaborn_boxplot(exp1a_df, 'llm', 'cosine_similarity', ax[0],
 
 create_seaborn_boxplot(exp1a_df, 'llm', 'adherence_score', ax[1],
                       'Adherence Score (0 to 1) Distribution by LLM (Exp 1a)', 
-                      'Adherence Score', 'LLM')
-
-plt.tight_layout()
-plt.show()
-
-
-# In[ ]:
-
-
-fig, ax = plt.subplots(1, 2, figsize=(15, 7))
-plots['exp1b_dist_by_llm'] = fig
-
-create_seaborn_boxplot(exp1b_df, 'llm', 'cosine_similarity', ax[0], 
-                      'Cosine Similarity (-1 to 1) Distribution by LLM (Exp 1b)',
-                      'Cosine Similarity', 'LLM')
-
-create_seaborn_boxplot(exp1b_df, 'llm', 'adherence_score', ax[1],
-                      'Adherence Score (0 to 1) Distribution by LLM (Exp 1b)', 
                       'Adherence Score', 'LLM')
 
 plt.tight_layout()
@@ -598,7 +580,7 @@ plt.show()
 
 fig = create_dual_heatmap(llm_vs_input_source_cos_sim_1a, 
                          pd.pivot_table(exp1a_df, values="adherence_score", index="llm", 
-                                      columns="input_source", aggfunc=["mean", "std"]),
+                                      columns="input_source", aggfunc=["mean", "std", "median", "min", "max", "count"]),
                          "LLM vs Input Source", "Exp 1a")
 
 
@@ -610,10 +592,28 @@ fig = create_dual_heatmap(llm_vs_input_source_cos_sim_1a,
 
 
 llm_metrics_1b = exp1b_df.groupby("llm")[["cosine_similarity", "adherence_score"]].agg(
-    ["mean", "std"]
+    ["mean", "std", "median", "min", "max", "count"]
 )
 tables["exp1b_metrics_by_llm"] = llm_metrics_1b
 display(llm_metrics_1b)
+
+
+# In[ ]:
+
+
+fig, ax = plt.subplots(1, 2, figsize=(15, 7))
+plots['exp1b_dist_by_llm'] = fig
+
+create_seaborn_boxplot(exp1b_df, 'llm', 'cosine_similarity', ax[0], 
+                      'Cosine Similarity (-1 to 1) Distribution by LLM (Exp 1b)',
+                      'Cosine Similarity', 'LLM')
+
+create_seaborn_boxplot(exp1b_df, 'llm', 'adherence_score', ax[1],
+                      'Adherence Score (0 to 1) Distribution by LLM (Exp 1b)', 
+                      'Adherence Score', 'LLM')
+
+plt.tight_layout()
+plt.show()
 
 
 # ### 2.6: Cosine Similarity & Adherence: LLM vs Prompt Type
@@ -626,7 +626,7 @@ llm_vs_prompt_type_cos_sim_1b = pd.pivot_table(
     values="cosine_similarity",
     index="llm",
     columns="prompt_type",
-    aggfunc=["mean", "std"],
+    aggfunc=["mean", "std", "median", "min", "max", "count"],
 )
 tables["exp1b_cosine_sim_llm_vs_prompt_type"] = llm_vs_prompt_type_cos_sim_1b
 display(llm_vs_prompt_type_cos_sim_1b)
@@ -635,8 +635,22 @@ display(llm_vs_prompt_type_cos_sim_1b)
 # In[ ]:
 
 
+llm_vs_prompt_type_adherence_1b = pd.pivot_table(
+    exp1b_df,
+    values="adherence_score",
+    index="llm",
+    columns="prompt_type",
+    aggfunc=["mean", "std", "median", "min", "max", "count"],
+)
+tables["exp1b_adherence_llm_vs_prompt_type"] = llm_vs_prompt_type_adherence_1b
+display(llm_vs_prompt_type_adherence_1b)
+
+
+# In[ ]:
+
+
 adherence_pivot_1b = pd.pivot_table(exp1b_df, values="adherence_score", index="llm", 
-                                   columns="prompt_type", aggfunc=["mean", "std"])
+                                   columns="prompt_type", aggfunc=["mean", "std", "median", "min", "max", "count"])
 
 fig = create_dual_heatmap(llm_vs_prompt_type_cos_sim_1b, adherence_pivot_1b, 
                          "LLM vs Prompt Type", "Exp 1b")
@@ -722,7 +736,7 @@ if exp1a_no_source_df is not None:
     plt.tight_layout()
     plt.show()
     
-    comparison_summary = comparison_df.groupby('input_source')[['cosine_similarity', 'adherence_score']].agg(['mean', 'std', 'count'])
+    comparison_summary = comparison_df.groupby('input_source')[['cosine_similarity', 'adherence_score']].agg(['mean', 'std', 'median', 'min', 'max', 'count'])
     tables['exp1a_input_source_vs_no_source_summary'] = comparison_summary
     
     print("\nSummary Statistics:")
