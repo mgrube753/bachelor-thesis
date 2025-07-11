@@ -31,28 +31,18 @@ Two metrics were employed to assess content adherence: the calculation of \texti
 % \end{itemize}
 
 
-\object{Experiment 1a -- Content Fidelity} The manner of evaluation revealed several key patterns in \ac{llm} behavior. The question type for each question was not explicitly constrained, but to provide a valid analysis by the experts, the questions' output formats were limited to either Open-Ended or Multiple-Choice questions. This resulted in a trend toward \ac{mcqs}, with only 9 out of 168 questions being Open-Ended in Experiment 1a -- with 8 questions from OpenAI, and 1 from Google --, based on the complex prompt. With regard to this finding, the trend was consistent across the \ac{llm} set, demonstrating an inherent bias toward structured question formats.
+\object{Experiment 1a -- Content Fidelity} The manner of evaluation revealed several key patterns in the \ac{llms}' behavior. The question type for each question was not explicitly constrained, but to provide a valid analysis by the experts, the questions' output formats were limited to either Open-Ended or Multiple-Choice questions. This resulted in a trend toward \ac{mcqs}, with only 9 out of 168 questions being Open-Ended in Experiment 1a -- with 7 questions from OpenAI, and 2 from Google --, based on the complex prompt. With regard to this finding, the trend was consistent across the \ac{llm} set, demonstrating an inherent bias toward structured question formats.
 
-As an introductory step, to observe if both approaches are valid, the \ac{llms} were prompted to generate a question for each ISO-OSI layer without using an input source. Here, a key observation is that the cosine similarity approach did not reliably distinguish between questions generated with or without input sources. As shown in Figure \bfref{fig:exp1a-source-scores}, the scores for the ones without a source were similar to those using actual source material, indicating that cosine similarity is not a robust indicator of content fidelity for these kinds of texts. In contrast, the adherence score provided a clearer differentiation. Using no source led to noticeably lower adherence overall in the median, the mean and a broader range of scores, confirming that this metric better presents whether the model follows the source material or not. Additionally, a certain trend in cosine similarity across the sources is also visible in Figure \bfref{fig:exp1a-llm-source-comparison}. There is to be seen that the precise script is indicating best results, Tanenbaum excerpts are in the middle, and the long transcript parts equipped with examples are the ones with the widest range of scores, the lowest median and mean values. This trend appears to be influenced by the amount of words in the source materials rather than content quality, limiting its overall usefulness. The adherence scores showed some outliers, but the scoring in this heatmap shows individual \ac{llm} performance according to the diverse input sources, overall above 90\%.
+As an introductory step, to observe if both approaches are valid, the \ac{llms} were prompted to generate a question for each ISO-OSI layer without using an input source. Here, a key observation is that the cosine similarity approach did not reliably distinguish between questions generated with or without input sources. As shown in Figure \bfref{fig:exp1a-source-scores}, the scores for the ones without a source -- maintaining a mean $\approx 0.533$ and a median $\approx 0.538$ -- were quite similar to those using actual source material with means between $[0.496_{\text{transcript}},0.637_{\text{script}}]$ and nearby medians at $[0.511_{\text{transcript}},0.651_{\text{script}}]$, indicating that cosine similarity is not a robust indicator of content fidelity for these kinds of texts. 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/input_source_vs_no_source_comparison.png}
+    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/input_source_vs_no_source_comparison.png}
     \caption{Distribution Comparison of using Input Sources vs.\ additional Run without any (1a).}
     \label{fig:exp1a-source-scores}
 \end{figure}
 
-Regarding the observations solely sorted by the \ac{llms}, the results in Figure \bfref{fig:exp1a-llm-scores} also reveal that the cosine similarity scores were generally lower and also differ a lot from the adherence scores. Supported by the expert results by the primary thesis supervisor, the cosine similarity scores were not reliable for this task, as they did not properly reflect the content fidelity of the generated questions in Experiment 1a. The adherence scores, however, provided a more nuanced view of model performance, showing that DeepSeek and OpenAI were more consistent in adhering to the content, while Anthropic and Google exhibited slightly lower and more variable scores.
-
-These findings suggest that, while cosine similarity may be suitable for short, sentence-level comparisons -- as the \textit{Sentence Transformer} expression suggests --, it is less appropriate for evaluating content fidelity between generated questions and also long, more complex educational texts. Consistent context e.g.\ up to 30 words might improve cosine similarity's reliability, but in this setting, it will be disregarded as a primary metric for Experiment 1a, since the thesis deals with texts which are longer than a single sentence and contain complex information. As an example, \cite{li_planning_2024} used BERTScore for semantic similarity scoring, but between generated and ground truth question-answer pairs. This is not the case in this thesis, since the source texts and \ac{llm} outputs differ significantly.
-
-\pagebreak
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/dist_by_llm.png}
-%     \label{fig:exp1a-llm-scores-no-source}
-% \end{figure}
+In contrast, the adherence score provided a clearer differentiation. Using no source led to noticeably lower adherence overall in the mean $\approx 0.714$, the median $\approx 0.768$ and a broader range of scores. Additionally, a certain trend in cosine similarity across the sources is visible in Figures \bfref{fig:exp1a-source-scores} and \bfref{fig:exp1a-llm-source-comparison}. There is to be seen that the precise lecture script is indicating best results, Tanenbaum excerpts are situated in the middle, and the extensive transcript parts equipped with examples keep the widest range of scores, the lowest mean and median values. This trend appears to be influenced by the amount of words in the source materials rather than content quality itself, limiting its overall usefulness. Moreover, the adherence scores showed few outliers in the box plot, and the scoring in the heatmap shows quite individual \ac{llm} performance according to the diverse input sources, overall located above 90\%.
 
 \begin{figure}[htbp]
     \centering
@@ -61,16 +51,26 @@ These findings suggest that, while cosine similarity may be suitable for short, 
     \label{fig:exp1a-llm-source-comparison}
 \end{figure}
 
+Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} also reveals that the cosine similarity scores were lower and also differ a lot from the adherence scores. Expert results by the primary thesis supervisor, later discussed under \textit{Correctness} in e.g.\ Figure \bfref{fig:exp1a-correctness-heatmaps}, the cosine similarity was unreliable for this task, as this did not properly reflect the content fidelity of the generated questions in Experiment 1a. The adherence scores in this quantitative analysis, however, provided a quite nuanced view of model performance, showing that DeepSeek and OpenAI were more consistent in adhering to the source content, while Anthropic and Google exhibited slightly lower and more variable scores.
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
+    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
     \caption{Distribution of Cosine Similarity and Adherence Score by LLM (1a).}
     \label{fig:exp1a-llm-scores}
 \end{figure}
 
 % \pagebreak
 
-The evaluation also included a comparison of the performance of different \ac{llms} against the prompt type used, as shown in Figure \bfref{fig:exp1a-llm-prompt-comparison}. Here, the results between cosine similarity and adherence scores were again significantly different. On the one hand, cosine similarity tends to higher scoring values for the complex prompt. On the other hand, adherence scores show that the common prompt leads to better results -- best for OpenAI and DeepSeek --, while the complex prompt leads to slightly lower scores instead. This is also indicated by the expert results by the primary supervisor, which suggest that the common prompt is more effective in content adherence than the complex prompt.
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/dist_by_llm.png}
+%     \label{fig:exp1a-llm-scores-no-source}
+% \end{figure}
+
+% \pagebreak
+
+To get a proper view of the content adherence, the evaluation also included a comparison of the performance of the \ac{llms} against the used prompt type, as shown in Figure \bfref{fig:exp1a-llm-prompt-comparison}. Here, the results between cosine similarity and adherence scores were again significantly different. On the one hand, the hardly comprehensible cosine similarity tends to higher scoring values for the complex prompt. On the other hand, adherence scores show that the common prompt leads to better results -- best for OpenAI ($\approx 0.992$ vs.\ $0.94$) and DeepSeek ($\approx 0.973$ vs.\ $0.945$) --, while the complex prompt leads to slightly lower scores instead for all models, especially for Google and Anthropic. This is also indicated by the expert results by the primary supervisor, which suggest that the common prompt is more effective in content adherence than the complex prompt.
 
 \begin{figure}[htbp]
     \centering
@@ -79,9 +79,11 @@ The evaluation also included a comparison of the performance of different \ac{ll
     \label{fig:exp1a-llm-prompt-comparison}
 \end{figure}
 
+These findings suggest that, while cosine similarity may be suitable for short, sentence-level comparisons -- as the \textit{Sentence Transformer} expression suggests --, it is less appropriate for evaluating content fidelity between generated questions and also long, more complex educational texts. Consistent context e.g.\ up to 30 words might improve cosine similarity's reliability, but in this setting, it will be disregarded as a primary metric for Experiment 1a, since the thesis deals with texts which are longer than a single sentence and contain complex information. As an example, \cite{li_planning_2024} used BERTScore for semantic similarity scoring, but between generated and ground truth question-answer pairs. This is not the case in this thesis, since the source texts and \ac{llm} outputs differ significantly.
+
 \pagebreak
 
-\object{Experiment 1b -- Error Handling} This subexperiment focused on evaluating how well the \ac{llms} handle manipulated content to test their ability to detect errors and what the models generated based on that content. It is worth noting that using the cosine similarity approach here -- as to be seen in Figure \bfref{fig:exp1b-llm-scores} -- is worse than in Experiment 1a, since the embedding model can not detect if a question by an \ac{llm} follows the manipulated content flawlessly, or if the model detects the manipulation and asks inversely. 
+\object{Experiment 1b -- Error Handling} This sub-experiment focused on evaluating how well the \ac{llms} handle manipulated lecture script content to test their ability to detect errors and what the models generated based on that content. A total of 4/56 resulted in open-ended questions, one time DeepSeek using the common prompt, two times Google and one time OpenAI using the complex prompt. Overall, it is worth noting that using the cosine similarity approach here -- as to be seen in Figure \bfref{fig:exp1b-llm-scores} -- is less useful than in Experiment 1a, since the embedding model can not detect if a question by an \ac{llm} follows the manipulated content flawlessly, or if the model detects the manipulation and generated the question inversely.
 
 % \begin{itemize}
 %     \item adherence score ausgabe: bei bewertung ist anthropic oft unnötig höher als openai
@@ -95,18 +97,23 @@ The evaluation also included a comparison of the performance of different \ac{ll
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_llm.png}
+    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_llm.png}
     \caption{Distribution of Cosine Similarity and Adherence Score by LLM (1b).}
     \label{fig:exp1b-llm-scores}
 \end{figure}
 
 \pagebreak
 
-Some examples of such questions are \enquote{Which of the following statements describes a real core task of the Data Link Layer in the ISO-OSI model, based on correct technical knowledge?} or \enquote{Which property is NOT assigned to the Transport Layer according to the description?}.
+\noindent Some examples of such questions are:
 
-Overall, the high cosine similarity scores in Experiment 1b are not reliable for this kind of evaluation. The adherence scores instead illustrate a reliable course in the plots, showing that Google and Anthropic sticked more often to the manipulated content, while OpenAI and especially DeepSeek often recognized the manipulation and generated questions where this aspect is understandable for both humans and \ac{llms}. In this subexperiment, DeepSeek -- as the oldest of the four chosen models -- also convinced with the lowest median, mean adherence scores and a wide range of values, indicating that it often recognized the manipulation.
+\begin{itemize}
+    \item \enquote{Which of the following statements describes a \textbf{real core task} of the Data Link Layer in the ISO-OSI model, based on \textbf{correct} technical knowledge?} or 
+    \item \enquote{Which property is \textbf{NOT} assigned to the Transport Layer according to the \textbf{description?}}.
+\end{itemize}
 
-Furthermore, the used type of prompt had an impact on the results, as shown in Figure \bfref{fig:exp1b-llm-prompt-comparison}. In this case, both cosine similarity and adherence scores indicate that the common prompt led to higher results than the complex prompt. As stated, the cosine similarity cannot reliably determine if an \ac{llm} follows the manipulated content or if it detects it and generates a question based on that text. In the end, the adherence scores show more reliable results, indicating that the complex prompt led to lower scores, as the models often questioned the manipulated content. Like in Experiment 1a, DeepSeek and OpenAI were more convincing in their performance, while Anthropic and Google showed more high adherence scores.
+However, the adherence scores illustrate a proper course in the plots, showing that Google and Anthropic maintain more often to the manipulated content -- based on value range and the high means $\approx 0.92$ and $\approx 0.904$. Instead, OpenAI and especially DeepSeek detected the manipulation in some cases and generated questions where this aspect is recognizable. The rightly present outliers for OpenAI separate its mean from its median -- the highest one -- by a value of $0.988-0.806=0.182$. Moreover, the DeepSeek model -- the oldest of the four chosen models -- convinced regarding the lowest median $\approx 0.88$, mean adherence $\approx 0.731$ and a wide range of values, indicating that it often recognized the OSI-layer manipulation.
+
+Furthermore, the used type of prompt had an impact on the results, as shown in Figure \bfref{fig:exp1b-llm-prompt-comparison}. In this case, both cosine similarity and adherence scores indicate that the common prompt led to higher results than the complex prompt, which is unwanted here. As stated, the cosine similarity cannot reliably determine if an \ac{llm} follows the manipulated content or if it detects it and generates a question based on that text. In the end, the adherence scores provide more reliable results, showing that the complex prompt led to lower scores for all \ac{llms}. Like in Experiment 1a, DeepSeek and OpenAI were more convincing in their performance -- here with lower mean adherence scores ($\approx 0.598$ and $\approx 0.619$) --, while Anthropic and Google still have shown higher adherence scores. Overall, OpenAI and DeepSeek were the models that recognized the manipulation more often, but in this sub-experiment, the complex prompt led to \enquote{better} adherence scores than the common prompt.
 
 \begin{figure}[htbp]
     \centering
@@ -127,7 +134,7 @@ Furthermore, the used type of prompt had an impact on the results, as shown in F
 
 % #TODO talk about NaN values by e.g. Prof. Cap, that there were questions where the rubric was not capable to evaluate the question, seen as NaN values
 
-\object{Experiment 1a -- Content Fidelity} The qualitative analysis of Experiment 1a involved a detailed rubric evaluation of the generated questions by five experts, the primary thesis supervisor and four members of the department's team. The following criteria were used to assess the questions: \textit{Relevance}, \textit{Clarity}, \textit{Answerability}, \textit{Challenging}, \textit{Value}, \textit{Language}, and \textit{Correctness}. Each criterion was rated on a scale from 1 to 10, with 10 being the best score. The experts were asked to evaluate the questions based on these criteria, and the results were aggregated to provide an overall assessment of the question quality.
+\object{Experiment 1a -- Content Fidelity} The sampled qualitative analysis of Experiment 1a involved a detailed rubric evaluation of the generated questions by five experts, the primary thesis supervisor and four members of the department's team. The following criteria were used to assess the questions: \textit{Relevance}, \textit{Clarity}, \textit{Answerability}, \textit{Challenging}, \textit{Value}, \textit{Language}, and \textit{Correctness}. Each criterion was rated on a scale from 1 to 10, with 10 being the best score. The experts were asked to evaluate the questions based on these criteria, and the results were aggregated to provide an overall assessment of the question quality.
 
 Regarding Figure \bfref{fig:exp1a-llm-analysis} from my primary supervisor, certain patterns emerged from the supervisor-based evaluation. Most questions were rated highly relevant to the material's topic, with OpenAI and Google as the highest scores. Only the OpenAI model could achieve 10/10 points for every question, also to be seen at clarity. DeepSeek was also rated high, but Anthropic and Google had a larger scale of points, indicating that they were more inconsistent at generating clear and logical questions. Moreover, the \textit{Answerability} criterion showed that OpenAI and DeepSeek were the best-performing models again, while Anthropic's and Google's scores were spreading more. 
 
@@ -203,7 +210,7 @@ Regarding the heatmap focusing on the prompt type, there is a trend that the com
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_paired_heatmaps.png}
+    \includegraphics[width=.8\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_paired_heatmaps.png}
     \caption{Correctness Heatmaps showing \textit{mean} and \textit{std} for different LLM Combinations (1a).}
     \label{fig:exp1a-correctness-heatmaps}
 \end{figure}

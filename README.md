@@ -18,13 +18,16 @@ Where to get the keys:
 
 ## Todo
 
--   [ ] Refine:
-      - Related Work
-      - Implementation
--   [ ] Create eval.py for pandas/matplotlib evaluation based on the csv files created by the analysis*.py scripts & expert eval
+-   [ ] Continue refining Eval chapter
+-   [ ] Preparation for Exp 2:
+    - [ ] Proper prompts more based on the ... common prompt?
+    - [ ] Refine experimental setup in workspace (better path structure)
+    - [ ] Create instruction manual for the experts for Exp 2
+-   [ ] Refine evaluation setups via notebooks
+-   [ ] Use the expert reviews to get insights for exp 1a and 1b
    - At first, quantitative analysis will be useful + maybe IAA till monday
+
 ---
--   [ ] (Refine qualitative analysis if needed (first we pass it since we have experts for exp1))
 
 ## License
 
