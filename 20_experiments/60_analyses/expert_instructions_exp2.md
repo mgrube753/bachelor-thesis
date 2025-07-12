@@ -48,7 +48,9 @@ Lesen Sie die Experiment 2-spezifische Rubrik:
 
 -   `exp2_rubric.md`
 
-Diese Rubrik fokussiert sich auf die Bewertung der Fragen hinsichtlich ihrer pädagogischen Qualität und dem erreichten Bloom's Taxonomy-Level. Im Gegensatz zu Experiment 1 wird hier anstelle der **Korrektheit** bzw. **Umgang mit Manipulation** das **Bloom's Level** bewertet, um die kognitive Anspruchsebene der generierten Fragen zu analysieren.
+Diese Rubrik fokussiert sich auf die Bewertung der Fragen hinsichtlich ihrer pädagogischen Qualität und dem erreichten Bloom's Taxonomy-Level. **Bloom's Level** wird bewertet, um die kognitive Anspruchsebene der generierten Fragen zu analysieren.
+
+Primär war der Plan gewesen, dass die Fragen durch Large Language Models ebenso ausgewertet werden sollen, jedoch wurde dies durch die Experten-Verfügbarkeit verworfen. Deshalb steht in der Experten-Rubrik zu jedem Bloom's Level eine kurze Beschreibung, was die jeweilige Stufe umfasst, und Trigger-Verben, die auf diese Stufe hinweisen.  
 
 ### Schritt 2: Verständnis der CSV-Struktur
 

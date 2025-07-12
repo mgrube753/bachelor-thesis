@@ -42,6 +42,27 @@ Ist die Frage herausfordernd? Ermutigt sie Studierende zum aktiven Denken?
 - 0: Trivial, keine Denkleistung nötig
    - Bsp: "Ist der Application Layer systematisch aufgebaut? (Ja/Nein)"
 
+**Wertigkeit/Value (0-10 Punkte):**
+Wird die Frage vom Dozenten als fachlich / didaktisch / technisch sinnvoll erachtet?
+- 10: Fachlich präzise, didaktisch wertvoll
+   - Bsp: "Erläutern Sie die Bedeutung der Flusskontrolle im Transport Layer."
+- 8: Gute Frage mit kleineren Schwächen
+- 6: Grundanliegen erkennbar, aber ist ungünstig positioniert
+- 4: Frage ist fachlich oder didaktisch unglücklich
+- 2: Frage ist größtenteils problematisch
+- 0: Frage ist nicht sinnvoll verwendbar
+   - Bsp: "Wie viele Transport Layer gibt es?" (Missverständnis)
+
+**Sprache/Language (0-10 Punkte):**
+Ist die vom System benutzte Sprache hinreichend präzise und verständlich?
+- 10: Sprache ist präzise und angemessen
+   - Bsp: "Welche Aufgaben erfüllt der Application Layer?"
+- 7: Sprache ist verständlich, könnte präziser sein
+- 5: Sprache ist aufgebläht, schwulstig, schwerfällig
+   - Bsp: "Angenommen, im Netzwerk gibt es [...]. Was ist hierbei zu beachten, und welche Maßnahmen sollten ergriffen werden?"
+- 3: Sprache ist überladen, weitschweifig, sehr schwerfällig
+- 0: Sprache ist nicht wirklich verständlich
+
 **Bloom's Level (Stufen 1-6):**
 Bestimme das Niveau der Frage bezüglich Bloom's Taxonomie (Zahl zwischen 1 bis 6). Studiere dazu, welche kognitiven Prozesse die einzelnen Stufen der Taxonomie beschreiben. Gib somit final die Stufe an, die am besten zu der Frage passt. Die Stufen sind:
 

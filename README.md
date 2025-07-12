@@ -22,7 +22,7 @@ Where to get the keys:
 -   [ ] Preparation for Exp 2:
     - [ ] Proper prompts more based on the ... common prompt?
     - [ ] Refine experimental setup in workspace (better path structure)
-    - [ ] Create instruction manual for the experts for Exp 2
+    - [x] Create instruction manual for the experts for Exp 2
 -   [ ] Refine evaluation setups via notebooks
 -   [ ] Use the expert reviews to get insights for exp 1a and 1b
    - At first, quantitative analysis will be useful + maybe IAA till monday
