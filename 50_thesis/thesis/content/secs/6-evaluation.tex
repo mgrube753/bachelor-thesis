@@ -83,7 +83,7 @@ These findings suggest that, while cosine similarity may be suitable for short, 
 
 \pagebreak
 
-\object{Experiment 1b -- Error Handling} This sub-experiment focused on evaluating how well the \ac{llms} handle manipulated lecture script content to test their ability to detect errors and what the models generated based on that content. A total of 4/56 resulted in open-ended questions, one time DeepSeek using the common prompt, two times Google and one time OpenAI using the complex prompt. Overall, it is worth noting that using the cosine similarity approach here -- as to be seen in Figure \bfref{fig:exp1b-llm-scores} -- is less useful than in Experiment 1a, since the embedding model can not detect if a question by an \ac{llm} follows the manipulated content flawlessly, or if the model detects the manipulation and generated the question inversely.
+\object{Experiment 1b -- Error Handling} This sub-experiment focused on evaluating how well the \ac{llms} handle manipulated lecture script content to test their ability to detect errors and what the models generated based on that content. A total of 4/56 resulted in open-ended questions, one time DeepSeek using the common prompt, two times Google plus one time OpenAI both using the complex prompt. Overall, it is worth noting that using the cosine similarity approach here -- as to be seen in Figure \bfref{fig:exp1b-llm-scores} -- is less useful than in Experiment 1a, since the embedding model can not detect if a question by an \ac{llm} follows the manipulated content flawlessly, or if the model detects the manipulation and e.g.\ generated the question inversely.
 
 % \begin{itemize}
 %     \item adherence score ausgabe: bei bewertung ist anthropic oft unnötig höher als openai
@@ -191,7 +191,7 @@ Taking the overall results into account, OpenAI performed best in the supervisor
 
 \begin{table}[htbp]
     \centering
-    \caption[Supervisor-based qualitative Analysis Results by Input Source (1a).]{Supervisor-based qualitative Analysis Results by Input Source (1a.) The best means are highlighted in \textbf{bold}, while the best medians are \textit{italicized}.}
+    \caption[Supervisor-based qualitative Analysis Results by Input Source (1a).]{Supervisor-based qualitative Analysis Results by Input Source (1a). The best means are highlighted in \textbf{bold}, while the best medians are \textit{italicized}.}
     \label{tab:exp1a-source-results}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{lccccccccc}
@@ -248,18 +248,24 @@ Taking the overall results into account, OpenAI performed best in the supervisor
 
 \object{Experiment 1b -- Error Handling}
 
-The qualitative analysis of Experiment 1b was conducted similarly to Experiment 1a, using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the primary thesis supervisor analyzed the questions, followed by the staff members regarding the next paragraph.
+The qualitative analysis of Experiment 1b was conducted similarly to Experiment 1a, using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the primary thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
 
 % #TODO boxplot with every criterion?
 % #TODO also add table for every criterion based on prompt type
 % #TODO heatmap based on the prompt type for manipulation handling (llm vs. prompt type)
 
-\paragraph*{Qualitative Analysis -- Staff-based with Comparison}
+\paragraph*{Qualitative Analysis -- Staff-based with Comparison} \label{sec:exp1b-staff-analysis}
 
 % #TODO talk about the coupled ratings by the staff members via same figures/tables like Supervisor
 % #TODO set up fleiss kappa for each subexerpiment for each criterion (4 members)
 % #TODO also set up IAA for supervisor vs. staff members, since the supervisor (professor) plays a different role (1 vs. 4 members)
 % #TODO while writing, talk about similarities and differences between the supervisor's and staff members' results
+
+In this sub-experiment, the staff members were asked again to evaluate the question set based on the same criteria as the supervisor... 
+
+\object{Experiment 1a -- Content Fidelity} 
+
+\object{Experiment 1b -- Error Handling}
 
 \vp
 
@@ -270,7 +276,9 @@ The second experiment addressed evaluating the relationship between question for
 
 \requ{2}{How does the relationship between diverse question formats and Bloom's Taxonomy levels influence the pedagogical effectiveness of \ac{llm}-generated questions?}
 
-\object{Qualitative Analysis} Exp2 rubric with sampled llm-based evaluation via Claude 3.7 Sonnet and OpenAI o3, also with tables and plots here + inter-annotator agreement via Cohen's Kappa. \tcr{can happen that here we get experts from Prof. Rubach}
+\paragraph*{Qualitative Analysis -- Student-based} 
+
+Exp2 rubric with sampled llm-based evaluation via students from the secondary supervisor, fleiss kappa here as well, also with tables and plots
 
 \vp
 
