@@ -112,14 +112,26 @@ def process_exp1(exp_name, clients):
     reset_evaluator_count()
 
     openai_csv_path = os.path.join(
-        ANALYSES_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
+        ANALYSES_PATH,
+        "csv",
+        "qualitative",
+        "exp1",
+        "experts",
+        "expert_1",
+        f"{exp_name}.csv",
     )
     anthropic_csv_path = os.path.join(
-        ANALYSES_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
+        ANALYSES_PATH,
+        "csv",
+        "qualitative",
+        "exp1",
+        "experts",
+        "expert_2",
+        f"{exp_name}.csv",
     )
 
     base_csv_path = os.path.join(
-        ANALYSES_PATH, "csv_files", "initial", f"{exp_name}.csv"
+        ANALYSES_PATH, "csv", "initial", "exp1", f"{exp_name}.csv"
     )
     df_base = pd.read_csv(base_csv_path)
 
@@ -223,14 +235,26 @@ def process_exp2(exp_name, clients):
     reset_evaluator_count()
 
     openai_csv_path = os.path.join(
-        ANALYSES_PATH, "csv_files", "qualitative", "expert_openai", f"{exp_name}.csv"
+        ANALYSES_PATH,
+        "csv",
+        "qualitative",
+        "exp2",
+        "students",
+        "student_1",
+        f"{exp_name}.csv",
     )
     anthropic_csv_path = os.path.join(
-        ANALYSES_PATH, "csv_files", "qualitative", "expert_anthropic", f"{exp_name}.csv"
+        ANALYSES_PATH,
+        "csv",
+        "qualitative",
+        "exp2",
+        "students",
+        "student_2",
+        f"{exp_name}.csv",
     )
 
     base_csv_path = os.path.join(
-        ANALYSES_PATH, "csv_files", "initial", f"{exp_name}.csv"
+        ANALYSES_PATH, "csv", "initial", "exp2", f"{exp_name}.csv"
     )
     df_base = pd.read_csv(base_csv_path)
 

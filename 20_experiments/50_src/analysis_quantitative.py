@@ -135,7 +135,10 @@ def get_question_path(exp_name, llm, source, layer, prompt_type):
     elif exp_name == "exp1b":
         base_path = os.path.join(EXP1_PATH, "run_b_error")
         filename = f"layer{layer}_question.txt"
-        return os.path.join(base_path, f"{prompt_type}_prompt", llm, source, filename)
+        actual_source = "script" if source == "script_manipulated" else source
+        return os.path.join(
+            base_path, f"{prompt_type}_prompt", llm, actual_source, filename
+        )
     else:
         raise ValueError(f"Unknown experiment name: {exp_name}")
 
@@ -148,7 +151,7 @@ def get_source_file_path(source, layer, is_manipulated=False):
         return os.path.join(source_dir, filename), source_type
 
     if is_manipulated:
-        source_dir = os.path.join(INPUT_SOURCES_PATH, source, "manipulated")
+        source_dir = os.path.join(INPUT_SOURCES_PATH, "script", "manipulated")
         source_type = f"{source} (manipulated)"
     else:
         if source == "script":
@@ -189,10 +192,10 @@ def process_experiment(exp_name):
 
     if exp_name == "exp1a_no_source":
         csv_input_path = os.path.join(
-            ANALYSES_PATH, "csv_files", "initial", f"{exp_name}.csv"
+            ANALYSES_PATH, "csv", "initial", "exp1", f"{exp_name}.csv"
         )
         csv_output_path = os.path.join(
-            ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
+            ANALYSES_PATH, "csv", "quantitative", "exp1", f"{exp_name}.csv"
         )
         actual_exp_name = "exp1a"
 
@@ -210,7 +213,7 @@ def process_experiment(exp_name):
                 df[col] = np.nan
     else:
         csv_input_path = os.path.join(
-            ANALYSES_PATH, "csv_files", "quantitative", f"{exp_name}.csv"
+            ANALYSES_PATH, "csv", "quantitative", "exp1", f"{exp_name}.csv"
         )
         csv_output_path = csv_input_path
         actual_exp_name = exp_name
@@ -329,5 +332,5 @@ def process_experiment(exp_name):
 
 if __name__ == "__main__":
     # process_experiment("exp1a")
-    # process_experiment("exp1b")
-    process_experiment("exp1a_no_source")
+    process_experiment("exp1b")
+    # process_experiment("exp1a_no_source")

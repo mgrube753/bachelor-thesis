@@ -1,0 +1,49 @@
+input_source,layer,sample_id,relevance,clarity,answerability,challenging,value,language,correctness,answer_problems,comments
+script,3,1,10,6,10,1,8,10,10,,"Ich empfinde entgegen der Erläuterung in exp1a_rubric die Frage nach „Kernaufgaben“ als alles andere als klar. Ich wüsste nicht warum Flusssteuerung eine Kernaufgabe sein soll aber Fehlererkennung mittels Prüfsummen nicht, da letzteres auch von IP für den Header erledigt wird. Natürlich hat das LLM hier schlechte Karten da es in der Quelle natürlich genau so drin steht."
+script,5,2,10,10,10,1,8,8,10,,Selbiges wie oben nur für diese Frage nicht so kritisch.
+script,1,3,9,2,4,8,2,6,4,"Antwortmöglichkeit 2 passt nicht zur Frage da nach L1 gefragt wurde, Antwortmöglichkeiten 3 und 4 passen nicht zur Frage da in der Frage steht dass codierung und transport korrekt verlaufen sind, Antwortmöglichkeit 5 macht keinen Sinn denn falls Codierung durch externe Faktoren verändert ist der Transport nicht korrekt",
+script,3,4,10,7,8,4,4,7,5,Antwortmöglichkeiten 1 und 5 sind das gleiche nur anders formuliert.,"Die Formulierung welche Kernaufgabe betroffen ist ist etwas merkwürdig, da es Aufgabe der Flusskontrolle ist bei Überlastung Pakete zu droppen. Dementsprechend wäre diese eigl. Nicht betroffen sondern dafür verantwortlich und betroffen dann eher das Routing."
+tanenbaum,4,5,10,10,10,2,10,10,10,Antwortmöglichkeit 4 finde ich etwas albern,
+tanenbaum,7,6,10,4,10,2,10,10,10,,„gemäß dem Text“ passt für Klausur natürlich nicht
+tanenbaum,2,7,7,4,1,10,6,7,2,Die Richtigkeit der Antwortmöglichkeiten ist grundlegend streitbar und auch nicht Gegenstand des Quelltextes,"auch hier referenziert das LLM den „gegebenen Text“ was für eine Klausur ja keinen Sinn macht, Fragetext passt nicht zu Multiple Choice Frage"
+tanenbaum,3,8,6,3,1,4,2,3,1,,Die Frage ließt sich wie eine extrem unnötig komplizierte Frage nach den Aufgaben von L3. Wobei der letzte Satz der Frage grammatikalisch nicht so recht Sinn macht und daher schwer zu verstehen ist was die Frage wirklich möchte.
+transcript,2,9,10,10,10,2,10,10,10,,
+transcript,5,10,10,10,10,1,8,10,10,,
+transcript,1,11,10,8,8,4,7,7,10,Formulierung der Antwortmöglichkeiten passt nicht ideal zum Fragetext.,
+transcript,5,12,8,6,6,4,6,6,4,"Richtigkeit der 2. Antwortmöglichkeit würde ich anzweiflen, verstehe nicht was damit gemeint ist","Fragetext passt nicht zu Multiple Choice, was soll „Szenario negativ beeinflussen“ sein?"
+script,2,13,10,10,10,2,10,10,10,,
+script,3,14,10,10,10,2,10,8,10,,„gemäß der Beschreibung“ passt nicht zu Klausur
+script,1,15,7,8,4,5,2,9,1,,"Fragestellung passt nicht zu Klausur, die 3 Aufgaben sind immer relevant bei L1"
+script,4,16,10,7,7,1,6,7,10,,Sehr generische Formulierung und Begriffsverwendung bei der die Antwort eigl. Schon im Fragetext steht.
+tanenbaum,4,17,10,7,7,1,6,10,7,L3 kann auch schon als E2E Schicht bezeichnet werden,
+tanenbaum,5,18,10,8,10,1,10,8,10,Dialogsteuerung habe ich im deutschen so noch nicht gehört.,„Laut Text“ passt nicht zu Klausur
+tanenbaum,3,19,10,10,9,3,10,10,10,,Formulierung passt nicht zu Klausur
+tanenbaum,7,20,10,6,7,2,9,10,3,"Streitbar ob HTTP direkte Endnutzerinteraktion hat, steht so auch nicht im Text","Formulierung passt nicht zu Klausur, was hat HTTP da im Fragentext zu suchen"
+transcript,2,21,10,10,10,1,10,10,10,,Formulierung passt nicht zu Klausur
+transcript,6,22,10,10,10,1,10,10,10,,Formulierung passt nicht zu Klausur
+transcript,2,23,10,7,10,2,6,8,10,Antwort steht im Grunde in der Frage,
+transcript,7,24,10,6,7,3,6,8,9,,Referenz auf in Klausur nicht vorhandenen Text
+script,2,25,10,7,10,2,8,8,10,Unnötig kompliziert durch Negation,Referenz auf in Klausur nicht vorhandenen Text
+script,5,26,10,10,10,1,10,10,10,,
+script,2,27,10,9,10,6,10,10,10,,
+script,5,28,10,8,6,5,10,10,6,Würde die richtig markierte Antwortmöglichkeit nicht als falsch ansehen aber die Informationen stehen nicht im Quellmaterial,
+tanenbaum,2,29,10,10,10,1,10,9,10,Teilweise vlt. Etwas unübliche Übersetzung,Referenz auf in Klausur nicht vorhandenen Text
+tanenbaum,4,30,10,10,10,2,10,10,5,Antwortmöglichkeit 3 halte ich für falsch. Das ist ein Dienst der Schicht aber die bestimmt nicht „selbstständig“ die Art der Kommunikation,Referenz auf in Klausur nicht vorhandenen Text
+tanenbaum,2,31,10,7,4,7,9,8,9,,"Referenz auf in Klausur nicht vorhandenen Text, Erläutern passt nicht zu Multiple Choice"
+tanenbaum,3,32,7,8,4,7,6,6,5,,Referenz auf in Klausur nicht vorhandenen Text
+transcript,2,33,10,10,10,1,10,10,10,,Referenz auf in Klausur nicht vorhandenen Text
+transcript,4,34,10,10,10,1,10,10,10,,Referenz auf in Klausur nicht vorhandenen Text
+transcript,1,35,4,6,1,8,3,8,0,Spätestens die Antworten wirken eher ausgedacht und haben auch keinen Bezug zum Quelltext,Referenz auf in Klausur nicht vorhandenen Text
+transcript,3,36,10,8,8,7,9,10,7,,"Referenz auf in Klausur nicht vorhandenen Text, was soll kritisch erklären sein, und ob Knoten-zu-Knoten alleine nicht ausreicht ist auch etwas vom Quelltext entfernt"
+script,2,37,10,10,10,1,10,10,10,,
+script,3,38,10,10,10,1,10,10,10,,
+script,2,39,10,9,10,2,10,10,10,Antwortmöglichkeit müssten dann eher paarweise angegeben werden,
+script,5,40,10,10,8,3,10,10,8,Antwort geht inhaltlich etwas über Quelltext hinaus aber immerhin nicht falsch,
+tanenbaum,1,41,10,10,10,1,8,10,10,sehr vereinfachte Antwortmöglichkeiten,
+tanenbaum,2,42,10,10,10,1,10,10,10,,
+tanenbaum,2,43,10,10,10,3,10,10,10,,Etwas komisch zusammengesetzte Frage aber an sich in Ordnung.
+tanenbaum,5,44,1,3,0,6,0,10,0,,LLM hatte hier definitiv zu viel Fantasie und hat eine merkwürdige Datenbankenfrage erstellt.
+transcript,1,45,10,10,10,1,10,10,10,,
+transcript,4,46,10,10,10,1,10,10,2,Adressierung von Teilnehmern ist keine Aufgabe von L4,Referenz auf in Klausur nicht vorhandenen Text
+transcript,5,47,10,10,10,3,10,10,6,Bin mir sehr unsicher ob Bündelung etwas mit dem in der Aufgabenstellung beschriebenen Problem zu tun hat,
+transcript,6,48,10,10,10,1,10,10,10,,

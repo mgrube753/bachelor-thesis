@@ -1,0 +1,17 @@
+llm,question_id,question_type
+anthropic,2,multiple_choice
+anthropic,6,multiple_choice
+anthropic,5,open_ended
+anthropic,6,open_ended
+deepseek,4,multiple_choice
+deepseek,5,multiple_choice
+deepseek,4,open_ended
+deepseek,6,open_ended
+google,4,multiple_choice
+google,6,multiple_choice
+google,1,open_ended
+google,3,open_ended
+openai,3,multiple_choice
+openai,4,multiple_choice
+openai,1,open_ended
+openai,2,open_ended

@@ -23,7 +23,6 @@ def sample_questions(src_path, dest_path, pattern, sample_size=3):
 def walk_and_sample(base_path, sample_base, exp_name, pattern, sample_size=3):
     print(f"[INFO] Sampling {exp_name} questions ({sample_size} per condition)...")
     for root, _, files in os.walk(base_path):
-        # Skip no-source directories
         if "complex_prompt_no_source" in root:
             continue
 
@@ -51,12 +50,12 @@ def parse_file_path(parts):
         record = {"exp_name": exp_name, "llm": parts[2], "layer": 2}
 
         if exp_name == "exp2a":
-            record["question_type"] = parts[3].replace("_", "-")
+            record["question_type"] = parts[3].replace("-", "_")
             record["question_id"] = int(parts[4].split("_")[1].replace(".txt", ""))
         elif exp_name == "exp2b":
             record["bloom_original"] = int(parts[3].split("_")[1].replace(".txt", ""))
         elif exp_name == "exp2c":
-            record["question_type"] = parts[3].replace("_", "-")
+            record["question_type"] = parts[3].replace("-", "_")
             record["bloom_original"] = int(parts[4].split("_")[1].replace(".txt", ""))
         return record
     return None
@@ -97,33 +96,74 @@ def generate_expert_csvs(sample_base, csv_path):
 
     df = pd.DataFrame(records)
 
+    # Ensure integer columns are properly typed
+    if "question_id" in df.columns:
+        df["question_id"] = df["question_id"].astype("Int64")
+    if "bloom_original" in df.columns:
+        df["bloom_original"] = df["bloom_original"].astype("Int64")
+    if "layer" in df.columns:
+        df["layer"] = df["layer"].astype("Int64")
+
+    # Save initial CSVs
     for exp_name, group in df.groupby("exp_name"):
-        group.to_csv(os.path.join(csv_path, f"{exp_name}.csv"), index=False)
-        print(f"  - Saved: {os.path.join(csv_path, f'{exp_name}.csv')}")
+        if exp_name.startswith("exp1"):
+            initial_path = os.path.join(csv_path, "initial", "exp1", f"{exp_name}.csv")
+        elif exp_name.startswith("exp2"):
+            initial_path = os.path.join(csv_path, "initial", "exp2", f"{exp_name}.csv")
+        else:
+            initial_path = os.path.join(csv_path, "initial", f"{exp_name}.csv")
 
-    # Generate special hint files for exp1a and exp1b
-    print("\n[INFO] Generating special hint CSV files for exp1a and exp1b...")
-    hints_path = os.path.join(csv_path, "qualitative", "hint_csvs_exp1")
-    os.makedirs(hints_path, exist_ok=True)
+        os.makedirs(os.path.dirname(initial_path), exist_ok=True)
+        group.to_csv(initial_path, index=False)
+        print(f"  - Saved: {os.path.relpath(initial_path)}")
 
-    hint_df = df[df["exp_name"].isin(["exp1a", "exp1b"])].copy()
+    # Generate quantitative CSVs for exp1
+    exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b", "exp1a_no_source"])]
+    for exp_name, group in exp1_data.groupby("exp_name"):
+        quant_path = os.path.join(csv_path, "quantitative", "exp1", f"{exp_name}.csv")
+        os.makedirs(os.path.dirname(quant_path), exist_ok=True)
+        group.to_csv(quant_path, index=False)
+        print(f"  - Saved quantitative: {os.path.relpath(quant_path)}")
 
-    if not hint_df.empty:
-        output_columns = [
-            "llm",
-            "prompt_type",
-            "input_source",
-            "layer",
-            "question_id",
-        ]
+    # Generate hint files for exp1
+    print("\n[INFO] Generating hint CSV files for exp1...")
+    exp1_hint_data = df[df["exp_name"].isin(["exp1a", "exp1b"])].copy()
 
-        for exp_name, group in hint_df.groupby("exp_name"):
-            output_filename = os.path.join(hints_path, f"{exp_name}.csv")
+    if not exp1_hint_data.empty:
+        output_columns = ["llm", "prompt_type", "input_source", "layer"]
+
+        for exp_name, group in exp1_hint_data.groupby("exp_name"):
+            hints_path = os.path.join(
+                csv_path, "qualitative", "exp1", "hints", f"{exp_name}_hints.csv"
+            )
+            os.makedirs(os.path.dirname(hints_path), exist_ok=True)
             group_to_save = group[output_columns]
-            group_to_save.to_csv(output_filename, index=False)
-            print(f"  - Saved hint file: {output_filename}")
+            group_to_save.to_csv(hints_path, index=False)
+            print(f"  - Saved hint file: {os.path.relpath(hints_path)}")
 
-        # Exp1: Save to expert_1 through expert_5 folders
+    # Generate hint files for exp2
+    print("\n[INFO] Generating hint CSV files for exp2...")
+    exp2_hint_data = df[df["exp_name"].isin(["exp2a", "exp2b", "exp2c"])].copy()
+
+    if not exp2_hint_data.empty:
+        for exp_name, group in exp2_hint_data.groupby("exp_name"):
+            hints_path = os.path.join(
+                csv_path, "qualitative", "exp2", "hints", f"{exp_name}_hints.csv"
+            )
+            os.makedirs(os.path.dirname(hints_path), exist_ok=True)
+
+            if exp_name == "exp2a":
+                output_columns = ["llm", "question_id", "question_type"]
+            elif exp_name == "exp2b":
+                output_columns = ["llm", "bloom_original"]
+            else:  # exp2c
+                output_columns = ["llm", "bloom_original", "question_type"]
+
+            group_to_save = group[output_columns]
+            group_to_save.to_csv(hints_path, index=False)
+            print(f"  - Saved hint file: {os.path.relpath(hints_path)}")
+
+    # Exp1: Save to expert_1 through expert_5 folders
     exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b"])]
     for exp_name, group in exp1_data.groupby("exp_name"):
         output_df = group[["input_source", "layer"]].copy()
@@ -160,37 +200,35 @@ def generate_expert_csvs(sample_base, csv_path):
             output_df[col] = ""
 
         for i in range(1, 6):
-            expert_dir = os.path.join(csv_path, "qualitative", f"expert_{i}")
+            expert_dir = os.path.join(
+                csv_path, "qualitative", "exp1", "experts", f"expert_{i}"
+            )
             os.makedirs(expert_dir, exist_ok=True)
             output_df.to_csv(os.path.join(expert_dir, f"{exp_name}.csv"), index=False)
 
-    # Exp2: Save to expert_anthropic and expert_openai folders
+    # Exp2: Save to student folders (only evaluation columns, no sensitive data)
     exp2_data = df[df["exp_name"].isin(["exp2a", "exp2b", "exp2c"])]
     for exp_name, group in exp2_data.groupby("exp_name"):
-        output_df = group[["llm"]].copy()
-        output_df["input_source"] = "tanenbaum"
-
-        if exp_name == "exp2a" and "question_id" in group.columns:
-            output_df["question_id"] = group["question_id"].astype(int)
-        elif exp_name in ["exp2b", "exp2c"] and "bloom_original" in group.columns:
-            output_df["bloom_original"] = group["bloom_original"].astype(int)
-
-        output_df["layer"] = group["layer"]
+        output_df = pd.DataFrame()
+        output_df["sample_id"] = [f"{i+1:03d}" for i in range(len(group))]
 
         for col in [
             "relevance",
             "clarity",
             "answerability",
             "challenging",
+            "value",
+            "language",
             "bloom_rating",
-            "bloom_score",
         ]:
             output_df[col] = ""
 
-        for expert_type in ["expert_anthropic", "expert_openai"]:
-            expert_dir = os.path.join(csv_path, "qualitative", expert_type)
-            os.makedirs(expert_dir, exist_ok=True)
-            output_df.to_csv(os.path.join(expert_dir, f"{exp_name}.csv"), index=False)
+        for i in range(1, 5):  # student_1 to student_4
+            student_dir = os.path.join(
+                csv_path, "qualitative", "exp2", "students", f"student_{i}"
+            )
+            os.makedirs(student_dir, exist_ok=True)
+            output_df.to_csv(os.path.join(student_dir, f"{exp_name}.csv"), index=False)
 
 
 def find_file(samples, exp, row):
@@ -246,16 +284,21 @@ def get_source_type(exp, row):
 def rename_samples(samples, csv_path, output_path):
     print("\n[INFO] Renaming samples for manual inspection...")
 
-    for prefix in ["exp1", "exp2"]:
+    # Look for initial CSV files in the new structure
+    for exp_prefix in ["exp1", "exp2"]:
+        exp_csv_dir = os.path.join(csv_path, "initial", exp_prefix)
+        if not os.path.exists(exp_csv_dir):
+            continue
+
         csvs = [
             f
-            for f in os.listdir(csv_path)
-            if f.startswith(prefix) and f.endswith(".csv")
+            for f in os.listdir(exp_csv_dir)
+            if f.startswith(exp_prefix) and f.endswith(".csv")
         ]
         for csv in sorted(csvs):
             count = 1
             exp = csv.replace(".csv", "")
-            df = pd.read_csv(os.path.join(csv_path, csv))
+            df = pd.read_csv(os.path.join(exp_csv_dir, csv))
             exp_dir = os.path.join(output_path, exp)
             os.makedirs(exp_dir, exist_ok=True)
 
@@ -274,7 +317,7 @@ def main():
     random.seed(2025)
     base = EXPERIMENTS_BASE_PATH
     sample_base = os.path.join(base, "70_samples")
-    csv_path = os.path.join(base, "60_analyses", "csv_files")
+    csv_path = os.path.join(base, "60_analyses", "csv")
     output_path = os.path.join(base, "80_samples_renamed")
 
     shutil.rmtree(sample_base, ignore_errors=True)
@@ -287,12 +330,6 @@ def main():
 
     generate_expert_csvs(sample_base, csv_path)
     rename_samples(sample_base, csv_path, output_path)
-
-    # Cleanup temporary CSV files
-    for exp_file in ["exp1a.csv", "exp1b.csv", "exp2a.csv", "exp2b.csv", "exp2c.csv"]:
-        exp_file_path = os.path.join(csv_path, exp_file)
-        if os.path.exists(exp_file_path):
-            os.remove(exp_file_path)
 
     print(
         f"\nDone. Qualitative Analysis CSVs: {csv_path}/qualitative/ | Renamed samples: {output_path}"

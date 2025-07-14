@@ -18,13 +18,12 @@ Where to get the keys:
 
 ## Todo
 
--   [ ] Create documentation-like markdowns for the python scripts in `20_experiments/50_src/`
+-   [ ] Refine evaluation setups via notebooks since the dir structure changed
 -   [ ] Continue refining Eval chapter
 -   [ ] Preparation for Exp 2:
-    - [ ] Refine experimental setup in workspace (better path structure!)
+    - [x] Refine experimental setup in workspace (better path structure!)
     - [x] Proper prompts more based on both prompts
     - [x] Create instruction manual for the experts for Exp 2
--   [ ] Refine evaluation setups via notebooks
 -   [ ] Use the expert reviews to get insights for exp 1a and 1b
 
 ---

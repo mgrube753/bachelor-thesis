@@ -18,9 +18,17 @@ from collections import defaultdict
 def create_csvs(exp_name, headers, rows):
     try:
         initial_csv_dir = os.path.join(
-            os.path.dirname(constants.EXP1_PATH), "60_analyses", "csv_files", "initial"
+            os.path.dirname(constants.EXP1_PATH), "60_analyses", "csv", "initial"
         )
-        file_path = os.path.join(initial_csv_dir, f"{exp_name}.csv")
+        # Create experiment subdirectory
+        if exp_name.startswith("exp1"):
+            exp_subdir = os.path.join(initial_csv_dir, "exp1")
+        elif exp_name.startswith("exp2"):
+            exp_subdir = os.path.join(initial_csv_dir, "exp2")
+        else:
+            exp_subdir = initial_csv_dir
+
+        file_path = os.path.join(exp_subdir, f"{exp_name}.csv")
 
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
