@@ -19,7 +19,7 @@ This directory contains the experimental framework for evaluating Large Language
 - **[`50_src/`](50_src/)** - Python implementation and analysis scripts
 - **[`60_analyses/`](60_analyses/)** - Obtained analyses data for evaluation purposes
 - **[`70_samples/`](70_samples/)** - Representative question samples
-- **[`80_questions_renamed/`](80_questions_renamed/)** - Processed question collections
+- **[`80_samples_renamed/`](80_samples_renamed/)** - Processed question collections
 
 ## Experimental Design
 

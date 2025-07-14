@@ -275,7 +275,7 @@ def main():
     base = EXPERIMENTS_BASE_PATH
     sample_base = os.path.join(base, "70_samples")
     csv_path = os.path.join(base, "60_analyses", "csv_files")
-    output_path = os.path.join(base, "80_questions_renamed")
+    output_path = os.path.join(base, "80_samples_renamed")
 
     shutil.rmtree(sample_base, ignore_errors=True)
     shutil.rmtree(os.path.join(csv_path, "qualitative"), ignore_errors=True)

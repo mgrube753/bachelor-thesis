@@ -31,7 +31,7 @@ The script performs a three-step process to prepare the evaluation materials:
 -   `rename_samples(samples, csv_path, output_path)`:
     -   Reads the CSVs generated in the previous step.
     -   For each sampled question, it creates a new, standardized filename (e.g., `001_script_manipulated_1.txt`).
-    -   Copies the files to the `80_questions_renamed` directory, making them ready for manual review without revealing the LLM that generated them.
+    -   Copies the files to the `80_samples_renamed` directory, making them ready for manual review without revealing the LLM that generated them.
 
 -   `main()`:
     -   The main execution function that orchestrates the entire process.
