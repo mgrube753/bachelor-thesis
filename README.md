@@ -18,12 +18,9 @@ Where to get the keys:
 
 ## Todo
 
--   [ ] Refine evaluation setups via notebooks since the dir structure changed
+-   [ ] Refine documentation files according to the new structure
 -   [ ] Continue refining Eval chapter
--   [ ] Preparation for Exp 2:
-    - [x] Refine experimental setup in workspace (better path structure!)
-    - [x] Proper prompts more based on both prompts
-    - [x] Create instruction manual for the experts for Exp 2
+-   [ ] Run Experiment 2 and send it to students
 -   [ ] Use the expert reviews to get insights for exp 1a and 1b
 
 ---

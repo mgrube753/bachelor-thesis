@@ -23,7 +23,7 @@ The script performs a three-step process to prepare the evaluation materials:
 -   `generate_expert_csvs(sample_base, csv_path)`:
     -   Walks through the `70_samples` directory.
     -   Uses `parse_file_path` to create a structured record for each sampled question.
-    -   Generates several CSV files in the `60_analyses/csv_files/qualitative` directory, formatted specifically for different expert evaluators and analysis types (e.g., for `exp1a`, `exp1b`, and the different phases of `exp2`).
+    -   Generates several CSV files in the `60_analyses/csv/` directory, organized by analysis type (initial, quantitative, qualitative) and experiment, formatted specifically for different expert evaluators and analysis types (e.g., for `exp1a`, `exp1b`, and the different phases of `exp2`).
 
 -   `find_file(...)` and `get_source_type(...)`:
     -   Helper functions to locate the original file path of a sampled question and determine its source type for the renaming process.
