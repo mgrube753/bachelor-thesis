@@ -74,10 +74,10 @@ def q_format(q_type):
         return (
             "Frage: Hier den Frageninhalt einfügen\n\n"
             "Antwortmöglichkeiten:\n"
-            "- Beispielsweise hier die korrekte Antwort einfügen (Richtig)\n"
-            "- Hier eine falsche Antwort einfügen (Falsch)\n"
-            "- Hier eine weitere falsche Antwort einfügen (Falsch)\n"
-            "- ..."
+            "a) Beispielsweise hier die korrekte Antwort einfügen (Richtig)\n"
+            "b) Hier eine falsche Antwort einfügen (Falsch)\n"
+            "c) Hier eine weitere falsche Antwort einfügen (Falsch)\n"
+            "d) ..."
         )
     else:
         return (

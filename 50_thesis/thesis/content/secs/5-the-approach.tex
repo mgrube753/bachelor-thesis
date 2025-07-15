@@ -5,12 +5,6 @@ This chapter details the practical implementation of the experimental design out
 
 \subsection{Technical Implementation}
 
-% The Python source files implement the core functionality of the experimental framework:
-%
-% * evaluation.ipynb: Jupyter notebook for interactive analysis and visualization of 
-%   experimental results, providing an exploratory interface for data inspection (right now just quantitative exp1)
-%   so maybe there are multiple notebooks, exp1aquan, exp1aqual, exp2aqual, YES!
-
 \object{Development Environment and Tools}
 The experimental pipeline was implemented using Python 3.10.14 as the primary development platform, chosen for its robust ecosystem of machine learning libraries and API integration capabilities. The implementation based on the thesis progress follows a pipeline with specialized components for API interactions, prompt engineering, data processing, and analysis.
 
@@ -36,7 +30,7 @@ The question generation pipeline is initialized and executed via \bfhyperref{lst
 \pagebreak
 
 \object{Data Management and Organization}
-The resulting data follows a systematic directory structure designed for clarity and reproducibility, as good as it can work with \ac{llms}. The source materials are organized into separate folders each, enabling proper access and processing. The questions were stored in distinct TXT files, while the file path reflects experiment type, model, source material, prompt variation, and question identifiers -- e.g.\ OSI layer or Bloom level, to conduct automated analysis and manual review. Evaluation data is maintained in structured CSV files containing automated analysis and expert annotations, ensuring comprehensive assessments.
+The resulting data follows a systematic directory structure designed for clarity and reproducibility, as good as it can work with \ac{llms}. The source materials are organized into separate folders each, enabling proper access and processing. The questions were stored in distinct TXT files, while the file path reflects experiment type, model, source material, prompt variation, and question identifiers -- e.g.\ OSI layer or Bloom level --, to conduct automated analysis and manual review. Evaluation data is maintained in structured CSV files containing automated analysis and expert annotations, ensuring comprehensive assessments.
 
 \subsection{Evaluation Implementation}
 
@@ -45,7 +39,7 @@ The analysis steps include quantitative and qualitative evaluation of the genera
 
 Moreover, the qualitative analysis consists of sampled expert ratings. The randomized extraction of the questions is set up with a seed via \bfhyperref{lst:sampling}{sampling.py}. This resulted in $\frac{64}{224}$ questions in Experiment 1, an $\frac{40}{120}$ questions in Experiment 2, which offers a proper question set for expert-based evaluation. To properly evaluate the questions, the desired rubric variations from Tables \bfref{tab:exp1_criteria} and \bfref{tab:exp2_criteria} were used, also detailed in \bfhyperref{lst:exp1a-rubric}{exp1a\_rubric.md}, \bfhyperref{lst:exp1b-rubric}{exp1b\_rubric.md}, and \bfhyperref{lst:exp2-rubric}{exp2\_rubric.md}. 
 
-Whether all analysis results are available, the quantitative and qualitative analysis results are processed by several evaluation files using Jupyter Notebook. With these notebooks, numerous tables and plot figures are available to enable a clear presentation of the results and facilitate the interpretation of the determined data. Given that five experts were identified for the analysis, it is crucial to examine the reliability of the ratings each rater has given. To establish this, the calculation of inter-annotator agreement via Fleiss' Kappa is needed, set up in the notebooks handling the qualitative analysis for each experiment.
+Whether all analysis results are available, the analysis results are processed by several evaluation files using Jupyter Notebook. With these notebooks (quantitative: \bfhyperref{lst:evaluation1-quan-notebook}{evaluation1\_quan.ipynb}, qualitative: \bfhyperref{lst:evaluation1-qual-notebook}{evaluation2\_qual.ipynb} and ...), numerous tables and plot figures are available to interprete the determined data. Given that five experts were identified for the analysis, it is crucial to examine the reliability of the ratings each rater has given. To establish this, the calculation of inter-annotator agreement via Fleiss' Kappa is needed, set up in the notebooks handling the qualitative analysis for each experiment.
 
 \object{Implementation Challenges and Solutions}
 Some technical challenges had to be addressed. The token limitation of the chosen modified RoBERTa model, 512 tokens $\approx$ 380 words, required manual shortening of the layer segment texts if necessary to ensure a suitable performance of the model creating the comparable sentence embeddings. The multilingual processing challenges were tackled by the careful selection of this cross-lingual sentence transformer, which enabled effective handling of both the German lecture materials and the English textbook content.

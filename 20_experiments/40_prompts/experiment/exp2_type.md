@@ -7,11 +7,12 @@ Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu
 
 1. Untersuche den gegebenen Instruktionstext sorgfältig.
 2. Formuliere eine klare, präzise und kognitiv anspruchsvolle Frage vom Typ {question_type}, die zum kritischen Nachdenken anregt.
-3. Erstelle passend zur Frage mindestens eine Antwort.
-4. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
-5. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
-6. Verwende für Listen ausschließlich alphabetische Aufzählungen wie `a) `, `b) `, `c) `, etc., und beginne die Aufzählung mit `a) `.
-7. Gib nur die Frage und die Antwort(en) im vorgegebenen Format als Fließtext aus. Schreibe keinen zusätzlichen Text und vermeide jegliche Markdown-basierte Formatierung.
+3. Die Frage soll in einer Prüfungsform formuliert sein. Somit sind Formulierungen wie "laut dem Text" oder "basierend auf dem Text" zu vermeiden, um eine direkte und klare Prüfungsfrage zu stellen.
+4. Erstelle passend zur Frage mindestens eine Antwort.
+5. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
+6. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
+7. Verwende für Listen ausschließlich alphabetische Aufzählungen wie `a) `, `b) `, `c) `, etc., und beginne die Aufzählung mit `a) `.
+8. Gib nur die Frage und die Antwort(en) im vorgegebenen Format als Fließtext aus. Schreibe keinen zusätzlichen Text und vermeide jegliche Markdown-basierte Formatierung.
 
 ---
 
