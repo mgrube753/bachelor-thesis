@@ -124,13 +124,11 @@ Furthermore, the used type of prompt had an impact on the results, as shown in F
 
 \pagebreak
 
+% #TODO add anchor examples
+
 \paragraph*{Qualitative Analysis -- Supervisor-based} 
 
 To evaluate the generated questions properly and make a comparison with the automated analysis, a sampled qualitative analysis of Experiment 1a was conducted. This involved a detailed rubric evaluation of the generated questions by five experts, the primary thesis supervisor and four staff members of the department's team. 
-
-% Exp1 rubric with sampled expert evaluation (Cap + 4 iuk members) + Fleiss Kappa, also with tables and plots here.
-
-% #TODO the questions often mentioned the "given text", that was not the case to create. so the prompting in exp2 has to be refined to avoid this
 
 % #TODO talk about NaN values by e.g. Prof. Cap, that there were questions where the rubric was not capable to evaluate the question, seen as NaN values
 
@@ -148,7 +146,7 @@ The \textit{Language} criterion has a similar trend like the \textit{Clarity} cr
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_analysis.png}
+    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_analysis_supervisor.png}
     \caption{Supervisor-based LLM Scores across every proposed Criterion (1a).}
     \label{fig:exp1a-llm-analysis}
 \end{figure}
@@ -161,7 +159,7 @@ Since the \textit{Correctness} criterion is the most important one for this thes
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_paired_heatmaps.png}
+    \includegraphics[width=.8\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_paired_heatmaps_supervisor.png}
     \caption{Supervisor-based Correctness Heatmaps for different LLM Combinations (1a).}
     \label{fig:exp1a-correctness-heatmaps}
 \end{figure}
@@ -173,8 +171,6 @@ Since the input source and the prompt type are worth discussing, the results of 
 \pagebreak
 
 Overall, there is a trend that the extensive transcript excerpts lead to the best results, followed by the precise script and the Tanenbaum book excerpts. The latter two sources were on par at the \textit{Language} criterion. Furthermore, while the transcript questions were the most accurate regarding the given context to the \ac{llms}, the Tanenbaum's and especially script's \textit{Correctness} scores were rated lower, but the \textit{Challenging} criterion was rated highest for the script instead. Even if the transcript was the best material for many criteria, the script's mean \textit{Total Score} was the highest with 55.06 out of 70 points, followed closely by the transcript with 54.75 points and the Tanenbaum excerpts with 51.25 points. Regarding the median values, the transcript was rated highest with 62/70 points instead, but the questions generated based on this source were not as challenging as the other ones.
-
-% Taking the overall results into account, OpenAI performed best in the supervisor's qualitative analysis. While DeepSeek struggled with generating challenging questions with high instructor's value, this model was still rated high in the other criteria. Anthropic performed a little worse than DeepSeek, but Google's total scoring indicates less potential in generating high-quality questions based on the source materials. 
 
 % \begin{table}[htbp]
 %     \centering
@@ -194,8 +190,6 @@ Overall, there is a trend that the extensive transcript excerpts lead to the bes
 %         \bottomrule
 %     \end{tabular}
 % \end{table}
-
-% \tcr{\#TODO also for exp1b needed}
 
 \begin{table}[htbp]
     \centering
@@ -248,8 +242,6 @@ Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results}
     \end{tabular}}
 \end{table}
 
-% #TODO talk about the tables here
-
 \pagebreak
 
 \object{Experiment 1b -- Error Handling} The qualitative analysis of Experiment 1b was conducted similarly to Experiment 1a, using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the primary thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
@@ -258,22 +250,99 @@ Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results}
 % #TODO also add table for every criterion based on prompt type
 % #TODO heatmap based on the prompt type for manipulation handling (llm vs. prompt type)
 
-\object{Supervisor-based Analysis Problems}
+\object{Supervisor-based Analysis Complications}
+
+\tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien}
+
+\tcr{muss man sehen ob man hier ankerbeispiele Pro und Contra hintut oder in-text eher.}
 
 \paragraph*{Qualitative Analysis -- Staff-based with Comparison} \label{sec:exp1b-staff-analysis}
 
-% #TODO talk about the coupled ratings by the staff members via same figures/tables like Supervisor
 % #TODO set up fleiss kappa for each subexerpiment for each criterion (4 members)
 % #TODO also set up IAA for supervisor vs. staff members, since the supervisor (professor) plays a different role (1 vs. 4 members)
-% #TODO while writing, talk about similarities and differences between the supervisor's and staff members' results
+% #TODO talk about similarities and differences between the supervisor's and staff's results
 
 In this sub-experiment, our staff members were asked to evaluate the same question set based on the criteria rubric, as the supervisor did before. This paragraph discusses the staff members' outcomes plus primarily the similarities and differences to the supervisor's results, based on the figures, tables and inter-rater agreement analysis.
 
 \object{Experiment 1a -- Content Fidelity} 
 
+\begin{figure}[htbp]
+   \centering
+    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_analysis_staff.png}
+    \caption{Staff-based LLM Scores across every proposed Criterion (1a).}
+    \label{fig:exp1a-llm-analysis-staff} 
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_paired_heatmaps_staff.png}
+    \caption{Staff-based Correctness Heatmaps for different LLM Combinations (1a).}
+    \label{fig:exp1a-correctness-heatmaps-staff}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \caption[Staff-based qualitative Analysis Results by Input Source (1a).]{Staff-based qualitative Analysis Results by Input Source (1a). The best means are highlighted in \textbf{bold}, while the best medians are \textit{italicized}.}
+    \label{tab:exp1a-source-results-staff}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccccccc}
+        \toprule
+        \textbf{Source} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Correctness} & \textbf{Total Score} \\
+        \midrule
+        \multirow{3}{*}{Script} 
+        & Mean & 9.38 & 8.50 & 8.25 & \textbf{5.50} & 7.38 & 8.88 & 7.67 & \textbf{55.06} \\
+        & Std & 2.03 & 2.37 & 2.52 & 3.54 & 3.32 & 2.19 & 3.72 & 10.23 \\
+        & Median & 10.0 & 10.0 & 10.0 & \textit{6.0} & 10.0 & 10.0 & 10.0 & 61.0 \\
+        \midrule
+        \multirow{3}{*}{Tanenbaum} 
+        & Mean & 9.12 & 8.25 & 7.12 & 5.38 & 7.14 & 8.88 & 8.33 & 51.25 \\
+        & Std & 2.19 & 3.26 & 3.79 & 4.05 & 4.05 & 2.19 & 3.26 & 14.88 \\
+        & Median & 10.0 & 10.0 & 10.0 & 5.0 & 10.0 & 10.0 & 10.0 & 61.5 \\
+        \midrule
+        \multirow{3}{*}{Transcript} 
+        & Mean & \textbf{9.47} & \textbf{9.33} & \textbf{9.33} & 2.93 & \textbf{7.87} & \textbf{9.19} & \textbf{9.67} & 54.75 \\
+        & Std & 2.07 & 2.09 & 1.80 & 2.49 & 4.10 & 1.94 & 1.29 & 15.88 \\
+        & Median & 10.0 & 10.0 & 10.0 & 2.0 & 10.0 & 10.0 & 10.0 & \textit{62.0} \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Staff-based qualitative Analysis Results by Prompt Type (1a).}
+    \label{tab:exp1a-prompt-results-staff}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccccccc}
+        \toprule
+        \textbf{Prompt} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Correctness} & \textbf{Total Score} \\
+        \midrule
+        \multirow{3}{*}{Common} 
+        & Mean & \textbf{10.00} & \textbf{10.00} & \textbf{9.92} & 2.50 & \textbf{9.55} & \textbf{10.00} & \textbf{9.35} & \textbf{60.12} \\
+        & Std & 0.00 & 0.00 & 0.41 & 1.69 & 2.13 & 0.00 & 2.29 & 6.56 \\
+        & Median & 10.0 & 10.0 & \textit{10.0} & 2.0 & \textit{10.0} & 10.0 & 10.0 & \textit{62.0} \\
+        \midrule
+        \multirow{3}{*}{Complex} 
+        & Mean & 8.61 & 7.30 & 6.43 & \textbf{6.87} & 5.48 & 7.96 & 7.63 & 47.25 \\
+        & Std & 2.79 & 3.23 & 3.36 & 3.66 & 3.92 & 2.56 & 3.48 & 15.93 \\
+        & Median & 10.0 & 10.0 & 6.0 & \textit{8.0} & 4.0 & 10.0 & 10.0 & 48.5 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+\pagebreak
+
 \object{Experiment 1b -- Error Handling}
 
-\object{Staff-based Analysis Problems}
+\begin{figure}[htbp]
+   \centering
+    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1b_llm_analysis_staff.png}
+    \caption{Staff-based LLM Scores across every proposed Criterion (1b).}
+    \label{fig:exp1b-llm-analysis-staff} 
+\end{figure}
+
+\object{Mixed Analysis Complications}
+
+\tcr{es fiel den bewertern auch auf, dass die fragen oft \enquote{auf den text} bezogen waren, was nicht der fall sein sollte. also das prompting muss hier angepasst werden, damit die llms nicht mehr so oft \enquote{auf den text} referenzieren, siehe exp2}
 
 \vp
 
