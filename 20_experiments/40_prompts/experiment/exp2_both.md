@@ -16,14 +16,14 @@ Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu
 
 Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 
-"""
+
 {text}
-"""
 
-Verwende für die Ausgabe der Frage und der Antwort(en) das folgende Format zwischen den folgenden Docstring-Symbolen:
 
-"""
+Verwende für die Ausgabe der Frage und der Antwort(en) das folgende Format:
+
+
 {question_type_format}
-"""
+
 
 Beachte dabei, dass auch mehrere korrekte Antworten möglich sind, die dann ebenfalls mit (Richtig) markiert werden sollten.

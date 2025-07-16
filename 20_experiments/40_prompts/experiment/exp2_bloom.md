@@ -16,21 +16,21 @@ Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu
 
 Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 
-"""
+
 {text}
-"""
 
-Wenn du eine einzelne Antwort generierst, dann soll das Format wie folgt aussehen, wie zwischen den Docstring-Symbolen angegeben:
 
-"""
+Wenn du eine einzelne Antwort generierst, dann soll das Format wie folgt aussehen:
+
+
 Frage: Hier den Frageninhalt einfügen
 
 Antwort: Hier die Antwort einfügen (Richtig)
-"""
 
-Wenn du mehrere Antwortmöglichkeiten generierst, dann verwende den folgenden Formatierungsstil. Dabei musst du auch beachten, welche Antwortmöglichkeiten durch ein vorangestelltes `(Richtig)` als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Es folgt ein Beispiel zwischen den Docstring-Symbolen:
 
-"""
+Wenn du mehrere Antwortmöglichkeiten generierst, dann verwende den folgenden Formatierungsstil. Dabei musst du auch beachten, welche Antwortmöglichkeiten durch ein vorangestelltes `(Richtig)` als korrekt markiert werden müssen, und wo diese an beliebiger Position stehen können. Es folgt ein Beispiel:
+
+
 Frage: Hier den Frageninhalt einfügen
 
 Antwortmöglichkeiten:
@@ -38,6 +38,6 @@ a) Beispielsweise hier die korrekte Antwort einfügen (Richtig)
 b) Hier eine falsche Antwort einfügen (Falsch)
 c) Hier eine weitere falsche Antwort einfügen (Falsch)
 d) ...
-"""
+
 
 Beachte dabei, dass auch mehrere korrekte Antworten möglich sind, die dann ebenfalls mit (Richtig) markiert werden sollten.
