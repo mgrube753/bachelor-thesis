@@ -20,7 +20,6 @@ def create_csvs(exp_name, headers, rows):
         initial_csv_dir = os.path.join(
             os.path.dirname(constants.EXP1_PATH), "60_analyses", "csv", "initial"
         )
-        # Create experiment subdirectory
         if exp_name.startswith("exp1"):
             exp_subdir = os.path.join(initial_csv_dir, "exp1")
         elif exp_name.startswith("exp2"):
@@ -40,6 +39,27 @@ def create_csvs(exp_name, headers, rows):
         print(f"[INFO] Initial CSV created: {os.path.relpath(file_path)}")
     except IOError as e:
         print(f"[ERROR] Could not write to CSV file {file_path}: {e}")
+
+
+def concatenate_all_script_layers(script_subdir="common"):
+    concatenated_content = []
+
+    for layer_num in constants.LAYERS:
+        layer_path = os.path.join(
+            constants.INPUT_SOURCES_PATH,
+            "script",
+            script_subdir,
+            f"layer{layer_num}.txt",
+        )
+        layer_content = load_txt(layer_path)
+        if layer_content:
+            concatenated_content.append(layer_content.strip())
+        else:
+            print(
+                f"[WARNING] Could not load layer{layer_num}.txt from script/{script_subdir}"
+            )
+
+    return "\n---\n".join(concatenated_content)
 
 
 llm_counters = defaultdict(int)
@@ -301,15 +321,9 @@ def run_exp_2a(clients):
     reset_counters()
     tasks = []
     csv_rows = []
-    source_name = "tanenbaum"
-    layer_num = constants.TANENBAUM_LAYER_FOR_EXP2
-
-    tanenbaum_text_path = os.path.join(
-        constants.INPUT_SOURCES_PATH,
-        source_name,
-        f"layer{layer_num}.txt",
-    )
-    base_text_for_exp2 = load_txt(tanenbaum_text_path)
+    source_name = "script"
+    layer_specification = "all_layers"
+    base_text_for_exp2 = concatenate_all_script_layers("common")
 
     prompt_template_type = load_prompt(
         os.path.join(constants.PROMPT_TEMPLATES_PATH, "experiment", "exp2_type.md")
@@ -352,16 +366,16 @@ def run_exp_2a(clients):
                 )
                 csv_rows.append(
                     [
+                        "exp2a",
                         llm_name,
-                        source_name,
-                        layer_num,
+                        layer_specification,
                         q_type.lower().replace("-", "_"),
                         question_id,
                     ]
                 )
 
-    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3], row[4]))
-    headers = ["llm", "input_source", "layer", "question_type", "question_id"]
+    csv_rows.sort(key=lambda row: (row[0], row[1], row[2], row[3], row[4]))
+    headers = ["exp_name", "llm", "layers", "question_type", "question_id"]
     create_csvs("exp2a", headers, csv_rows)
     run_tasks(tasks, "Exp 2a")
 
@@ -371,16 +385,12 @@ def run_exp_2b(clients):
     reset_counters()
     tasks = []
     csv_rows = []
-    source_name = "tanenbaum"
-    layer_num = constants.TANENBAUM_LAYER_FOR_EXP2
+    source_name = "script"
+    layer_specification = "all_layers"
     bloom_data = get_bloom()
 
-    tanenbaum_text_path = os.path.join(
-        constants.INPUT_SOURCES_PATH,
-        source_name,
-        f"layer{layer_num}.txt",
-    )
-    base_text_for_exp2 = load_txt(tanenbaum_text_path)
+    # Use concatenated script layers instead of single tanenbaum layer
+    base_text_for_exp2 = concatenate_all_script_layers("common")
 
     prompt_template_bloom = load_prompt(
         os.path.join(constants.PROMPT_TEMPLATES_PATH, "experiment", "exp2_bloom.md")
@@ -421,10 +431,10 @@ def run_exp_2b(clients):
                     2400,  # max_tokens
                 )
             )
-            csv_rows.append([llm_name, source_name, layer_num, bloom_original])
+            csv_rows.append(["exp2b", llm_name, layer_specification, bloom_original])
 
-    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3]))
-    headers = ["llm", "input_source", "layer", "bloom_original"]
+    csv_rows.sort(key=lambda row: (row[0], row[1], row[2], row[3]))
+    headers = ["exp_name", "llm", "layers", "bloom_original"]
     create_csvs("exp2b", headers, csv_rows)
     run_tasks(tasks, "Exp 2b")
 
@@ -434,16 +444,12 @@ def run_exp_2c(clients):
     reset_counters()
     tasks = []
     csv_rows = []
-    source_name = "tanenbaum"
-    layer_num = constants.TANENBAUM_LAYER_FOR_EXP2
+    source_name = "script"
+    layer_specification = "all_layers"
     bloom_data = get_bloom()
 
-    tanenbaum_text_path = os.path.join(
-        constants.INPUT_SOURCES_PATH,
-        source_name,
-        f"layer{layer_num}.txt",
-    )
-    base_text_for_exp2 = load_txt(tanenbaum_text_path)
+    # Use concatenated script layers instead of single tanenbaum layer
+    base_text_for_exp2 = concatenate_all_script_layers("common")
 
     prompt_template_both = load_prompt(
         os.path.join(constants.PROMPT_TEMPLATES_PATH, "experiment", "exp2_both.md")
@@ -491,15 +497,15 @@ def run_exp_2c(clients):
                 )
                 csv_rows.append(
                     [
+                        "exp2c",
                         llm_name,
-                        source_name,
-                        layer_num,
+                        layer_specification,
                         q_type.lower().replace("-", "_"),
                         bloom_original,
                     ]
                 )
 
-    csv_rows.sort(key=lambda row: (row[0], row[1], int(row[2]), row[3], row[4]))
-    headers = ["llm", "input_source", "layer", "question_type", "bloom_original"]
+    csv_rows.sort(key=lambda row: (row[0], row[1], row[2], row[3], row[4]))
+    headers = ["exp_name", "llm", "layers", "question_type", "bloom_original"]
     create_csvs("exp2c", headers, csv_rows)
     run_tasks(tasks, "Exp 2c")

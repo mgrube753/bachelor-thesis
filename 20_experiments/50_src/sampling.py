@@ -117,14 +117,6 @@ def generate_expert_csvs(sample_base, csv_path):
         group.to_csv(initial_path, index=False)
         print(f"  - Saved: {os.path.relpath(initial_path)}")
 
-    # Generate quantitative CSVs for exp1
-    exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b", "exp1a_no_source"])]
-    for exp_name, group in exp1_data.groupby("exp_name"):
-        quant_path = os.path.join(csv_path, "quantitative", "exp1", f"{exp_name}.csv")
-        os.makedirs(os.path.dirname(quant_path), exist_ok=True)
-        group.to_csv(quant_path, index=False)
-        print(f"  - Saved quantitative: {os.path.relpath(quant_path)}")
-
     # Generate hint files for exp1
     print("\n[INFO] Generating hint CSV files for exp1...")
     exp1_hint_data = df[df["exp_name"].isin(["exp1a", "exp1b"])].copy()

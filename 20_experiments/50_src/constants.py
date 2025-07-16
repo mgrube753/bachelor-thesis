@@ -25,7 +25,6 @@ EXP1_SCRIPT_SUBDIR_A = "common"
 EXP1_SCRIPT_SUBDIR_B = "manipulated"
 LAYERS = list(range(1, 8))
 
-TANENBAUM_LAYER_FOR_EXP2 = 2
 EXP2_QUESTION_TYPES = ["Multiple-Choice", "Open-Ended"]
 BLOOM_LEVELS_ORDERED = [
     "Remembering",

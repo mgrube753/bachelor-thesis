@@ -119,14 +119,12 @@ def get_adherence_scores_parallel(
 def get_question_path(exp_name, llm, source, layer, prompt_type):
     if exp_name == "exp1a":
         if source == "no_source":
-            # Spezieller Pfad für no_source Fragen
             base_path = os.path.join(
                 EXP1_PATH, "run_a_content", "complex_prompt_no_source"
             )
             filename = f"layer{layer}_question.txt"
             return os.path.join(base_path, llm, filename)
         else:
-            # Bestehender Pfad für andere Quellen
             base_path = os.path.join(EXP1_PATH, "run_a_content")
             filename = f"layer{layer}_question.txt"
             return os.path.join(
@@ -169,13 +167,11 @@ def expand_no_source_data(df):
     expanded_rows = []
     for _, row in df.iterrows():
         if row["input_source"] == "no_source":
-            # Für jede no_source Zeile erstelle 3 Zeilen (script, tanenbaum, transcript)
             for source in ["script", "tanenbaum", "transcript"]:
                 new_row = row.copy()
                 new_row["comparison_source"] = source
                 expanded_rows.append(new_row)
         else:
-            # Für normale Zeilen setze comparison_source = input_source
             new_row = row.copy()
             new_row["comparison_source"] = row["input_source"]
             expanded_rows.append(new_row)
@@ -331,6 +327,6 @@ def process_experiment(exp_name):
 
 
 if __name__ == "__main__":
-    # process_experiment("exp1a")
+    process_experiment("exp1a")
     process_experiment("exp1b")
-    # process_experiment("exp1a_no_source")
+    process_experiment("exp1a_no_source")
