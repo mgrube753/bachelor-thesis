@@ -5,7 +5,7 @@
 
 # ## Initial Setup
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
@@ -95,7 +95,7 @@ print(f"Output plots: {output_plots_path}")
 
 # ## Data Loading and Preprocessing
 
-# In[ ]:
+# In[2]:
 
 
 def load_and_prepare_data():
@@ -166,7 +166,7 @@ print(f"  Input Sources: {dict(exp1b_df['input_source'].value_counts())}")
 
 # ## 1a.1: Descriptive Statistics
 
-# In[ ]:
+# In[3]:
 
 
 print("EXPERIMENT 1A - DESCRIPTIVE STATISTICS")
@@ -195,7 +195,7 @@ display(exp1a_prompt_stats)
 
 # ## 1a.2: Analysis by LLM
 
-# In[ ]:
+# In[4]:
 
 
 fig, axes = plt.subplots(4, 2, figsize=(14, 20))
@@ -240,7 +240,7 @@ for i, (llm, score) in enumerate(exp1a_llm_overall.items(), 1):
 
 # ## 1a.3: Analysis by Input Source
 
-# In[ ]:
+# In[5]:
 
 
 fig, axes = plt.subplots(4, 2, figsize=(14, 20))
@@ -388,7 +388,7 @@ display(exp1a_llm_source_combinations)
 
 # ## 1a.4: Analysis by Prompt Type
 
-# In[ ]:
+# In[6]:
 
 
 fig, axes = plt.subplots(2, 4, figsize=(20, 10))
@@ -437,7 +437,7 @@ print("\nDetailed Statistics for LLM vs Prompt Type Combinations (Experiment 1a)
 display(exp1a_llm_prompt_combinations)
 
 
-# In[ ]:
+# In[7]:
 
 
 # Correctness-focused Heatmaps
@@ -543,7 +543,7 @@ print("\nDetailed Correctness Statistics by LLM and Prompt Type:")
 display(correctness_llm_prompt_stats)
 
 
-# In[ ]:
+# In[8]:
 
 
 print("\n" + "="*80)
@@ -582,7 +582,7 @@ print(f"  {best_llm_prompt[0].title()} + {best_llm_prompt[1].title()}: {best_llm
 
 # # Experiment 1b: Manipulated Content Analysis
 
-# In[ ]:
+# In[9]:
 
 
 print("EXPERIMENT 1B - DATA AVAILABILITY CHECK")
@@ -611,7 +611,7 @@ print(f"\nSample Exp1b structure:")
 display(exp1b_df[['input_source', 'layer', 'llm', 'prompt_type'] + numeric_cols_1b].head())
 
 
-# In[ ]:
+# In[10]:
 
 
 if analyze_exp1b:
@@ -638,7 +638,7 @@ else:
     print("The structure is ready for analysis of manipulation handling capabilities.")
 
 
-# In[ ]:
+# In[11]:
 
 
 if analyze_exp1b:
@@ -716,7 +716,7 @@ else:
 
 # ## Inter-Rater Agreement Analysis
 
-# In[ ]:
+# In[12]:
 
 
 from statsmodels.stats.inter_rater import fleiss_kappa
@@ -783,7 +783,7 @@ def calculate_agreement_for_experiment(df, criteria_cols):
     return pd.DataFrame(results)
 
 
-# In[ ]:
+# In[13]:
 
 
 agreement_exp1a = calculate_agreement_for_experiment(exp1a_df, numeric_cols_1a)
@@ -794,7 +794,7 @@ print("="*50)
 display(agreement_exp1a.round(3))
 
 
-# In[ ]:
+# In[14]:
 
 
 if analyze_exp1b:
@@ -821,7 +821,7 @@ else:
     display(agreement_exp1b_placeholder)
 
 
-# In[ ]:
+# In[15]:
 
 
 print("EXPERIMENT 1 - KEY INSIGHTS")
@@ -884,7 +884,7 @@ print(f"• Continue monitoring manipulation handling capabilities in 1b")
 # 
 # Save all tables and plots for use in thesis and presentations.
 
-# In[ ]:
+# In[16]:
 
 
 def save_all_results():
@@ -893,20 +893,20 @@ def save_all_results():
     tables_saved = 0
     for table_name, table_data in tables.items():
         try:
-            csv_path = os.path.join(output_tables_path, f"{table_name}.csv")
+            csv_path = os.path.join(output_tables_path, f"{table_name}_supervisor.csv")
             table_data.to_csv(csv_path)
             tables_saved += 1
-            print(f"Saved table: {table_name}.csv")
+            print(f"Saved table: {table_name}_supervisor.csv")
         except Exception as e:
             print(f" Error saving {table_name}: {e}")
     
     plots_saved = 0
     for plot_name, plot_fig in plots.items():
         try:
-            png_path = os.path.join(output_plots_path, f"{plot_name}.png")
+            png_path = os.path.join(output_plots_path, f"{plot_name}_supervisor.png")
             plot_fig.savefig(png_path, dpi=300, bbox_inches='tight')
             plots_saved += 1
-            print(f"Saved plot: {plot_name}.png")
+            print(f"Saved plot: {plot_name}_supervisor.png")
         except Exception as e:
             print(f" Error saving {plot_name}: {e}")
     

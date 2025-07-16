@@ -3,7 +3,7 @@
 
 # # Notebook: Quantitative Evaluation -- Experiment 1
 
-# In[24]:
+# In[ ]:
 
 
 import pandas as pd
@@ -194,7 +194,7 @@ for path in [output_dir_exp1a_no_source, output_plot_dir_exp1a_no_source]:
 
 # ### 1.1: Metrics by LLM
 
-# In[26]:
+# In[ ]:
 
 
 llm_metrics_1a = exp1a_df.groupby("llm")[["cosine_similarity", "adherence_score"]].agg(
@@ -206,7 +206,7 @@ display(llm_metrics_1a)
 
 # ### 1.2: Metrics by Input Source
 
-# In[27]:
+# In[ ]:
 
 
 input_source_metrics_1a = exp1a_df.groupby("input_source")[
@@ -218,7 +218,7 @@ display(input_source_metrics_1a)
 
 # ### 1.3: Metrics by Prompt Type
 
-# In[28]:
+# In[ ]:
 
 
 prompt_type_metrics_1a = exp1a_df.groupby("prompt_type")[
@@ -230,7 +230,7 @@ display(prompt_type_metrics_1a)
 
 # ### 1.5 Analysis how many MCQ / Open-Ended Questions were generated
 
-# In[29]:
+# In[ ]:
 
 
 import os
@@ -384,7 +384,7 @@ else:
 
 # ### 1.5: Cosine Similarity: LLM vs Input Source
 
-# In[30]:
+# In[ ]:
 
 
 llm_vs_input_source_cos_sim_1a = pd.pivot_table(
@@ -398,7 +398,7 @@ tables["exp1a_cosine_sim_llm_vs_input_source"] = llm_vs_input_source_cos_sim_1a
 display(llm_vs_input_source_cos_sim_1a)
 
 
-# In[31]:
+# In[ ]:
 
 
 def create_annotation_matrix(mean_df, std_df):
@@ -479,7 +479,7 @@ plots['exp1a_combined_llm_vs_input_source'] = fig
 
 # ### 1.6: Cosine Similarity: LLM vs Prompt Type
 
-# In[32]:
+# In[ ]:
 
 
 llm_vs_prompt_type_cos_sim_1a = pd.pivot_table(
@@ -493,7 +493,7 @@ tables["exp1a_cosine_sim_llm_vs_prompt_type"] = llm_vs_prompt_type_cos_sim_1a
 display(llm_vs_prompt_type_cos_sim_1a)
 
 
-# In[33]:
+# In[ ]:
 
 
 adherence_pivot_prompt = pd.pivot_table(exp1a_df, values="adherence_score", index="llm", 
@@ -506,7 +506,7 @@ plots['exp1a_combined_llm_vs_prompt_type'] = fig
 
 # ### 1.7: Adherence Score: LLM vs Prompt Type
 
-# In[34]:
+# In[ ]:
 
 
 llm_vs_prompt_type_adherence_1a = pd.pivot_table(
@@ -522,7 +522,7 @@ display(llm_vs_prompt_type_adherence_1a)
 
 # ### 1.8: Adherence Score: LLM vs Input Source
 
-# In[35]:
+# In[ ]:
 
 
 llm_vs_input_source_adherence_1a = pd.pivot_table(
@@ -538,7 +538,7 @@ display(llm_vs_input_source_adherence_1a)
 
 # ### 1.9: Distribution Plots
 
-# In[36]:
+# In[ ]:
 
 
 fig, ax = plt.subplots(1, 2, figsize=(15, 7))
@@ -556,7 +556,7 @@ plt.tight_layout()
 plt.show()
 
 
-# In[37]:
+# In[ ]:
 
 
 # OPTIONAL: Boxplot for cosine_similarity and adherence_score by input_source (no source coupling is another plot)
@@ -575,7 +575,7 @@ plt.tight_layout()
 plt.show()
 
 
-# In[38]:
+# In[ ]:
 
 
 fig = create_dual_heatmap(llm_vs_input_source_cos_sim_1a, 
@@ -588,7 +588,7 @@ fig = create_dual_heatmap(llm_vs_input_source_cos_sim_1a,
 
 # ### 2.1: Metrics by LLM
 
-# In[39]:
+# In[ ]:
 
 
 llm_metrics_1b = exp1b_df.groupby("llm")[["cosine_similarity", "adherence_score"]].agg(
@@ -598,7 +598,7 @@ tables["exp1b_metrics_by_llm"] = llm_metrics_1b
 display(llm_metrics_1b)
 
 
-# In[40]:
+# In[ ]:
 
 
 fig, ax = plt.subplots(1, 2, figsize=(15, 7))
@@ -618,7 +618,7 @@ plt.show()
 
 # ### 2.6: Cosine Similarity & Adherence: LLM vs Prompt Type
 
-# In[41]:
+# In[ ]:
 
 
 llm_vs_prompt_type_cos_sim_1b = pd.pivot_table(
@@ -632,7 +632,7 @@ tables["exp1b_cosine_sim_llm_vs_prompt_type"] = llm_vs_prompt_type_cos_sim_1b
 display(llm_vs_prompt_type_cos_sim_1b)
 
 
-# In[42]:
+# In[ ]:
 
 
 llm_vs_prompt_type_adherence_1b = pd.pivot_table(
@@ -646,7 +646,7 @@ tables["exp1b_adherence_llm_vs_prompt_type"] = llm_vs_prompt_type_adherence_1b
 display(llm_vs_prompt_type_adherence_1b)
 
 
-# In[43]:
+# In[ ]:
 
 
 adherence_pivot_1b = pd.pivot_table(exp1b_df, values="adherence_score", index="llm", 
@@ -659,7 +659,7 @@ plots['exp1b_combined_llm_vs_prompt_type'] = fig
 
 # ### Including a Run without a Source
 
-# In[44]:
+# In[ ]:
 
 
 if exp1a_no_source_df is not None:
@@ -705,7 +705,7 @@ else:
     print("Skipping exp1a_no_source plots - data not available.")
 
 
-# In[45]:
+# In[ ]:
 
 
 # Combined Input Source vs No Source Comparison
@@ -749,7 +749,7 @@ else:
 
 # ## Save all tables and plots
 
-# In[46]:
+# In[ ]:
 
 
 def save_all_tables_and_plots():
