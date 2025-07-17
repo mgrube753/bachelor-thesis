@@ -1,7 +1,7 @@
-Frage: Untersuchen Sie folgende Situation: Ein schneller Sender überträgt Datenrahmen deutlich schneller, als ein langsamer Empfänger sie verarbeiten kann. Welches Verfahren sollten Sie auf der Sicherungsschicht (Data Link Layer) anwenden, um das Problem gemäß ISO-OSI-Modell zu lösen?
+Frage: Ein Netzwerkingenieur soll für einen Videostreaming-Dienst garantierte Bandbreite, geringe Latenz und minimalen Jitter bereitstellen, ohne dabei Änderungen an den Übertragungsmedien selbst vorzunehmen. Ermitteln Sie, auf welcher OSI-Schicht er vorrangig QoS-Mechanismen konfigurieren sollte, um dieses Ziel zu erreichen.
 
 Antwortmöglichkeiten:
-- ~Ein Flusskontrollverfahren einsetzen, das dem Sender signalisiert, wann der Empfänger weitere Rahmen annehmen kann
-- Ein Routing-Protokoll konfigurieren, das alternative Pfade zum Empfänger auswählt
-- Die physikalische Sendeleistung erhöhen, um die Bitfehlerrate zu verringern
-- Eine Ende-zu-Ende-Verschlüsselung der Nutzdaten in der Sitzungsschicht aktivieren
+a) Transport Layer (Schicht 4) (Richtig)
+b) Physical Layer (Schicht 1) (Falsch)
+c) Data Link Layer (Schicht 2) (Falsch)
+d) Presentation Layer (Schicht 6) (Falsch)

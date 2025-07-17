@@ -1,13 +1,13 @@
-"""
-Frage: Entwerfen Sie ein verbessertes Kommunikationsprotokoll auf der Datenverbindungsschicht, das die im Text beschriebenen Funktionen (Fehlerkorrektur, Flusssteuerung und Medienzugriffskontrolle) erweitert und optimiert. Entwickeln Sie dabei innovative Mechanismen, die speziell für moderne Netzwerkanforderungen wie extrem hohe Datenraten, variable Latenzzeiten und energieeffiziente IoT-Geräte geeignet sind. Konstruieren Sie Ihren Entwurf so, dass er die klassischen Herausforderungen der Datenverbindungsschicht überwindet und erläutern Sie, wie Ihre Lösungen die Leistung im Vergleich zu bestehenden Protokollen verbessern würden.
+Frage: Entwerfen Sie ein neuartiges Netzwerkprotokoll für das Internet der Dinge (IoT), das die besonderen Anforderungen von Geräten mit begrenzter Energieversorgung und geringer Rechenleistung berücksichtigt. Beschreiben Sie detailliert, welche spezifischen Anpassungen Sie auf mindestens vier Schichten des OSI-Modells vornehmen würden und begründen Sie Ihre Entscheidungen.
 
-Antwort: ~Ein verbessertes Datenverbindungsschichtprotokoll könnte folgende Innovationen enthalten:
+Antwort: Ein IoT-optimiertes Protokoll könnte wie folgt gestaltet werden:
 
-- Adaptive Framegrößen, die sich basierend auf aktuellen Netzwerkbedingungen und Fehlerraten dynamisch anpassen, um optimale Übertragungseffizienz zu gewährleisten
-- Hybride Fehlerkorrekturmechanismen, die zwischen Forward Error Correction (FEC) für Hochgeschwindigkeitsverbindungen und traditionellen ARQ-Methoden für kritische Daten umschalten können
-- Prädiktive Flusssteuerungsmechanismen, die maschinelles Lernen nutzen, um Empfängerkapazitäten vorherzusagen und Übertragungsraten proaktiv anzupassen
-- Energieeffiziente Medienzugriffskontrolle mit Schlafmodi für IoT-Geräte, die dennoch schnelle Reaktionszeiten bei Bedarf ermöglichen
-- Prioritätsbasierte Kanalzugriffsmechanismen, die latenzempfindlichen Anwendungen Vorrang einräumen, während sie gleichzeitig Fairness für andere Datenströme gewährleisten
-- Kontextbewusste Fehlermasking-Techniken, die unterschiedliche Strategien für verschiedene Datentypen implementieren (z.B. Streaming-Medien vs. Steuerungsinformationen)
-- Integration mit höheren Schichten durch Cross-Layer-Optimierung, um Ende-zu-Ende-Leistung zu verbessern und gleichzeitig die OSI-Schichtenunabhängigkeit zu wahren
-"""
+Physical Layer: Implementierung eines adaptiven Modulationsverfahrens, das zwischen energiesparender Übertragung (niedrige Datenrate) und höherer Datenrate je nach Batteriestand dynamisch wechselt. Zusätzlich könnten Wake-on-Radio-Funktionen integriert werden, die das Gerät nur bei relevanten Signalen aktivieren, um Energie zu sparen.
+
+Data Link Layer: Einführung eines vereinfachten Medienzugriffsverfahrens mit sehr kurzen Übertragungsframes (unter 32 Byte), die minimale Verarbeitungsleistung erfordern. Fehlerkontrolle wird auf das Wesentliche reduziert mit automatischer Neuübertragung nur für kritische Daten, während weniger wichtige Sensordaten ohne Neuübertragung gesendet werden, um Energieverbrauch zu minimieren.
+
+Network Layer: Entwicklung eines leichtgewichtigen Routing-Protokolls, das Energieeffizienz in die Routing-Entscheidungen einbezieht. Routen würden bevorzugt über Geräte mit stabiler Energieversorgung geführt, während batteriebetriebene Geräte je nach Ladestand geschont werden. Zudem wird eine kompakte Adressierung mit variablen Längen implementiert, die für lokale Kommunikation nur 4 Bit benötigt.
+
+Transport Layer: Bereitstellung eines zustandslosen Transportprotokolls für typische Sensor-Daten, das ohne aufwändigen Verbindungsaufbau auskommt. Wichtige Steuerungsbefehle könnten optional über einen vereinfachten, verbindungsorientierten Mechanismus mit minimalen Handshakes übertragen werden. Die Dienstqualität wird durch Priorisierung essenzieller Nachrichten sichergestellt. (Richtig)
+
+Frage: Entwerfen Sie ein neuartiges Netzwerkprotokoll für das Internet der Dinge (IoT), das die besonderen Anforderungen von Geräten mit begrenzter Energieversorgung und geringer Rechenleistung berücksichtigt. Beschreiben Sie detailliert, welche spezifischen Anpassungen Sie auf mindestens vier Schichten des OSI-Modells vornehmen würden und begründen Sie Ihre Entscheidungen.

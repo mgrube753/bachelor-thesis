@@ -1,11 +1,3 @@
-"""
-Frage: Beschreiben Sie die Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) im ISO-OSI-Modell laut dem gegebenen Text.
+Frage: Beschreiben Sie die Kernaufgaben des Transport Layers (Schicht 4) im ISO-OSI-Modell und erläutern Sie kurz, was unter dem Begriff "Dienstqualität" in diesem Zusammenhang zu verstehen ist.
 
-Antwort: ~Die Hauptaufgaben der Datenverbindungsschicht sind:
-- Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
-- Maskierung realer Fehler, sodass die Netzwerkschicht diese nicht sieht
-- Aufteilen der Eingabedaten in Datenrahmen (Data Frames) und sequenzielle Übertragung dieser Rahmen
-- Bei zuverlässigem Dienst: Bestätigung des korrekten Empfangs jedes Rahmens durch Rücksendung eines Bestätigungsrahmens (Acknowledgement Frame)
-- Regelung des Datenverkehrs, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet
-- Für Broadcast-Netzwerke: Kontrolle des Zugriffs auf den gemeinsam genutzten Kanal mittels der Medium Access Control Sublayer
-"""
+Antwort: Der Transport Layer (Schicht 4) hat drei Kernaufgaben: Adressierung (für Teilnehmer-Adressen), Flußsteuerung (Nutzen der Teilnehmer-Charakteristik) und Dienstqualität. Die Dienstqualität (Quality of Service, QoS) bezieht sich auf die Sicherung eines Kommunikationsdienstes mit Garantien für Parameter wie Bandbreite, Latenz, Jitter und Fehlerrate. Diese Garantien werden speziell auf den jeweiligen Teilnehmer zugeschnitten. (Richtig)

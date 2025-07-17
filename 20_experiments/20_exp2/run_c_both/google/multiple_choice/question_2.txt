@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Aussagen fasst die primäre Funktion und die zentralen Herausforderungen des Data Link Layers gemäß dem bereitgestellten Text am präzisesten zusammen?
+Frage: Wie lässt sich die primäre Rolle des Network Layer (Schicht 3) im OSI-Modell am präzisesten umschreiben?
 
 Antwortmöglichkeiten:
-- ~Der Data Link Layer transformiert eine Rohübertragungseinrichtung in eine fehlerfreie Kommunikationsleitung, indem er Übertragungsfehler maskiert, den Datenfluss durch die Zerlegung in Frames und Bestätigungen reguliert und bei Broadcast-Netzwerken den Zugriff auf den gemeinsamen Kanal kontrolliert.
-- Der Data Link Layer ist hauptsächlich für die logische Adressierung und das Routing von Datenpaketen durch unterschiedliche Netzwerke verantwortlich, um eine End-zu-End-Verbindung zu gewährleisten.
-- Die Hauptaufgabe des Data Link Layers ist die Verschlüsselung und Entschlüsselung von Daten, um die Sicherheit der Kommunikation zwischen den Anwendungen zu gewährleisten.
-- Der Data Link Layer sorgt für die physische Übertragung von Bits über das Medium und definiert elektrische, mechanische und prozedurale Schnittstellen für die Netzwerkgeräte.
+a) Der Network Layer ist zuständig für die physikalische Codierung und Decodierung von Daten sowie deren Transport über verschiedene Medien. (Falsch)
+b) Er gewährleistet eine fehlergesicherte Übertragung von Daten über eine direkte Verbindung und die korrekte Segmentierung von Bitströmen. (Falsch)
+c) Seine Hauptaufgabe ist die Bereitstellung einer netzwerkübergreifenden Kommunikation zwischen Geräten, die sich in potenziell unterschiedlichen Netzwerken befinden, inklusive Adressierung und Routing. (Richtig)
+d) Er verantwortet die Bereitstellung von Kommunikationssitzungen und die Synchronisation des Datenaustauschs zwischen Anwendungen. (Falsch)

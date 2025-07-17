@@ -1,17 +1,17 @@
-"""
-Frage: Untersuchen Sie, wie die Mechanismen der Data Link Layer in einem industriellen Netzwerk angewendet werden können, um die zuverlässige Übertragung von zeitkritischen Steuerungsdaten zwischen einem zentralen Kontrollsystem und mehreren Fertigungsmaschinen zu gewährleisten. Veranschaulichen Sie dabei, welche spezifischen Herausforderungen auftreten könnten, wenn einige Maschinen deutlich langsamer Daten verarbeiten als andere, und wie die verschiedenen Funktionen der Data Link Layer (Fehlermasking, Framing, Bestätigungsmechanismen und Verkehrsregulierung) konkret eingesetzt werden sollten, um diese Probleme zu lösen.
+Frage: Untersuchen Sie einen typischen Vorgang beim Versenden einer verschlüsselten E-Mail über das Internet und ordnen Sie die beteiligten Prozesse den entsprechenden OSI-Schichten zu. Erläutern Sie dabei, welche spezifischen Aufgaben jede involvierte Schicht bei diesem Kommunikationsvorgang übernimmt.
 
-Antwort: ~In einem industriellen Netzwerk müssten die Data Link Layer-Mechanismen wie folgt angewendet werden:
+Antwort: Bei der Übertragung einer verschlüsselten E-Mail sind mehrere OSI-Schichten beteiligt:
 
-- Fehlermasking: Implementierung robuster CRC-Prüfsummen oder ähnlicher Fehlererkennungscodes, die speziell für Industrieumgebungen mit elektromagnetischen Störungen geeignet sind, um Bitfehler zu erkennen und zu korrigieren, bevor sie die Steuerungsbefehle verfälschen.
+Die Anwendungsschicht (Layer 7) stellt die E-Mail-Anwendung bereit, definiert das SMTP-Protokoll für den E-Mail-Versand und bietet die Benutzeroberfläche zur Erstellung der Nachricht.
 
-- Framing: Aufteilung der Steuerungsdaten in kleinere Frames mit priorisierter Kennzeichnung für zeitkritische Befehle, sodass wichtige Steuersignale vorrangig behandelt werden können.
+Die Präsentationsschicht (Layer 6) übernimmt die Verschlüsselung der E-Mail-Inhalte, wandelt die Texte in entsprechende Zeichencodierungen wie Unicode oder ASCII um und komprimiert möglicherweise die Anhänge.
 
-- Bestätigungsmechanismen: Einrichtung eines zuverlässigen Acknowledgement-Systems mit kurzen Timeouts für zeitkritische Daten, wobei nicht bestätigte Frames sofort erneut gesendet werden, um Produktionsunterbrechungen zu minimieren.
+Die Sitzungsschicht (Layer 5) verwaltet die Kommunikationssitzung zwischen dem E-Mail-Client und dem Server, baut die Verbindung auf und beendet sie nach erfolgreicher Übertragung.
 
-- Verkehrsregulierung: Implementierung eines angepassten Flow-Control-Mechanismus, der die unterschiedlichen Verarbeitungsgeschwindigkeiten der Maschinen berücksichtigt, etwa durch dynamische Puffergrößen oder variable Senderate, basierend auf Feedback der langsameren Maschinen.
+Die Transportschicht (Layer 4) verwendet typischerweise TCP für die zuverlässige Übertragung der E-Mail-Daten, sorgt für eine korrekte Reihenfolge der Datenpakete und adressiert den E-Mail-Dienst über den Port 25 (SMTP).
 
-- Medium Access Control: Bei gemeinsam genutzten Übertragungskanälen könnte ein deterministisches Zugriffsverfahren wie Token-Passing oder TDMA implementiert werden, das jeder Maschine garantierte Zeitslots zuweist und so Kollisionen verhindert, die in zeitkritischen Anwendungen nicht tolerierbar sind.
+Die Vermittlungsschicht (Layer 3) kümmert sich um die IP-Adressierung und das Routing zwischen verschiedenen Netzwerken, wodurch die E-Mail über das Internet zum Zielserver geleitet wird.
 
-Diese Lösungen müssten je nach spezifischen Anforderungen des industriellen Prozesses und der physischen Netzwerkstruktur angepasst werden.
-"""
+Die Sicherungsschicht (Layer 2) überträgt die Daten über lokale Netzwerke mittels MAC-Adressen und sorgt für eine fehlerfreie Übertragung auf den jeweiligen Teilstrecken.
+
+Die Bitübertragungsschicht (Layer 1) wandelt die digitalen Daten in physikalische Signale um, die über die jeweiligen Übertragungsmedien (Kabel, WLAN, etc.) transportiert werden. (Richtig)

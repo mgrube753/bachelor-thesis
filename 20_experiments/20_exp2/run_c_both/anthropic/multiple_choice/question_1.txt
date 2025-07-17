@@ -1,9 +1,8 @@
-"""
-Frage: Identifizieren Sie die Hauptaufgabe der Data Link Layer im ISO-OSI-Modell.
+Frage: Welche Kernaufgaben sind dem Network Layer (Schicht 3) des ISO-OSI-Modells zugeordnet?
 
 Antwortmöglichkeiten:
-- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
-- Die Bereitstellung von Ende-zu-Ende-Verbindungen zwischen Anwendungen auf verschiedenen Hosts
-- Die Definition von physikalischen Übertragungsmedien und deren elektrischen Eigenschaften
-- Die Übersetzung von IP-Adressen in physische Hardwareadressen
-"""
+a) Adressierung, Routing und Flußsteuerung (Richtig)
+b) Fehlerkontrolle, Flußkontrolle und Segmentierung (Falsch)
+c) Codierung, Transport und Decodierung (Falsch)
+d) Sitzungen, Synchronisation und Bündelung (Falsch)
+e) Endian-Ness, Zeichen, Kompression und Verschlüsselung (Falsch)

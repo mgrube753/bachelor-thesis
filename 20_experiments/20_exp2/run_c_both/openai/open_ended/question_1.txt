@@ -1,5 +1,4 @@
-Frage: Listen Sie drei spezifische Funktionen der Data-Link-Layer (Sicherungsschicht) im ISO-OSI-Modell auf, die im obigen Text genannt werden.
+Frage: Listen Sie die sieben Schichten des ISO-OSI-Modells in der korrekten Reihenfolge von Layer 1 bis Layer 7.
 
-Antwort: ~- Maskieren von Übertragungsfehlern durch Aufteilung der Daten in Frames und Veranlassen von Empfangsbestätigungen  
-- Flusskontrolle, um einen schnellen Sender daran zu hindern, einen langsameren Empfänger zu überlasten  
-- Steuerung des Zugriffs auf ein gemeinsames Übertragungsmedium über die Medium-Access-Control-Unterschicht
+Antwort: a) Physical Layer, b) Data Link Layer, c) Network Layer, d) Transport Layer, e) Session Layer, f) Presentation Layer, g) Application Layer (Richtig)
+Antwort: a) Data Link Layer, b) Physical Layer, c) Network Layer, d) Transport Layer, e) Session Layer, f) Presentation Layer, g) Application Layer (Falsch)

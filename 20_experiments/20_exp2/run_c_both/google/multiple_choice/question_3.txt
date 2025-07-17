@@ -1,7 +1,7 @@
-Frage: Ein Hochleistungs-Server soll große Datensätze an einen Client mit begrenzter Verarbeitungsgeschwindigkeit über eine Netzwerkverbindung übermitteln. Es besteht das Risiko, dass der Server den Client überfordert und dass während der Übertragung Datenkorruption auftritt. Welche zwei primären Mechanismen der Data Link Layer müssen in dieser Situation angewendet werden, um die zuverlässige und geregelte Zustellung der Daten zu gewährleisten?
+Frage: Ein Netzwerkadministrator stellt fest, dass Datenpakete zwischen zwei Geräten, die sich in unterschiedlichen Subnetzen befinden, trotz korrekter physischer Verbindung nicht ihr Ziel erreichen, weil der optimale Übertragungsweg durch verschiedene Router nicht ermittelt wird. Welche Kernaufgabe eines OSI-Layers muss in diesem Szenario primär überprüft und konfiguriert werden, um das Problem zu lösen?
 
 Antwortmöglichkeiten:
-- ~Die Anwendung von Datenrahmen zur Strukturierung der Übertragung und ein Verkehrsregelungsmechanismus, um die Senderate an die Empfängerfähigkeit anzupassen.
-- Die Nutzung von IP-Adressen zur Routenfindung und die Segmentierung von Daten in Pakete auf der Vermittlungsschicht.
-- Die Verschlüsselung der Daten zur Sicherstellung der Vertraulichkeit und die Komprimierung zur Reduzierung der Datenmenge.
-- Die Einrichtung einer Sitzung zur Verwaltung des Dialogs und die Darstellung von Datenformaten für die Anwendung.
+a) Die Fehlerkontrolle im Data Link Layer (Falsch)
+b) Die Segmentierung im Data Link Layer (Falsch)
+c) Das Routing im Network Layer (Richtig)
+d) Die Dienstqualität im Transport Layer (Falsch)

@@ -1,7 +1,7 @@
-Frage: Identifizieren Sie die primäre Aufgabe der Sicherungsschicht (Data Link Layer), wie sie im bereitgestellten Text beschrieben wird.
+Frage: Welche der folgenden Kernaufgaben ist dem Presentation Layer 6 zugeordnet?
 
 Antwortmöglichkeiten:
-- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint.
-- Die logische Adressierung und das Routing von Datenpaketen zwischen verschiedenen Netzwerken.
-- Die Bereitstellung von Ende-zu-Ende-Kommunikationsdiensten zwischen Anwendungen.
-- Die Verwaltung der physikalischen Übertragung einzelner Bits über das Übertragungsmedium.
+a) Fehlerkontrolle (Falsch)
+b) Kompression (Richtig)
+c) Routing (Falsch)
+d) Medienzugriff (Falsch)

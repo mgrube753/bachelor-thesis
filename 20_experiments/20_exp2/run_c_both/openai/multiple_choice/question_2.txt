@@ -1,9 +1,7 @@
-"""
-Frage: Erklären Sie, welche der folgenden Aussagen die im Text klarstellte Hauptaufgabe des Data Link Layer im ISO/OSI-Modell am besten umschreibt.
+Frage: Vergleichen Sie die Flusssteuerungsfunktionen von Schicht 2 (Data Link) und Schicht 3 (Network) des ISO-OSI-Modells und wählen Sie die korrekte Aussage aus.
 
 Antwortmöglichkeiten:
-- ~Er maskiert Übertragungsfehler, indem er Daten in Frames zerlegt, ihre fehlerfreie Ankunft bestätigt und so der Netzwerkschicht eine scheinbar fehlerfreie Leitung bereitstellt.
-- Er verschlüsselt sämtliche Nutzdaten, um deren Vertraulichkeit während der Übertragung zu gewährleisten.
-- Er bestimmt den schnellsten Pfad durch das Netzwerk, um Pakete effizient zu routen.
-- Er wandelt analoge Signale in digitale Bitströme um, damit Endgeräte sie direkt interpretieren können.
-"""
+a) Die Data-Link-Schicht begrenzt den Datenstrom ausschließlich zwischen unmittelbar verbundenen Knoten, wohingegen die Network-Schicht Verfahren sowohl für End-to-End- als auch für Node-to-Node-Flusssteuerung bereitstellt. (Richtig)
+b) Die Data-Link-Schicht implementiert End-to-End-Flusssteuerung, während die Network-Schicht Flusskontrolle nur zwischen Nachbarknoten bietet. (Falsch)
+c) Flusssteuerung ist in den Schichten 2 und 3 nicht vorgesehen; sie wird erst vollständig von der Transportschicht übernommen. (Falsch)
+d) Die Network-Schicht beschränkt ihre Flusssteuerung ausschließlich auf Puffer innerhalb der Anwendungsschicht des Empfängers. (Falsch)

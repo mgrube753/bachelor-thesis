@@ -1,9 +1,7 @@
-"""
-Frage: Vergleichen Sie die Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) und erklären Sie, welche der folgenden Aussagen die primäre Funktion dieser Schicht am besten zusammenfasst.
+Frage: Vergleichen Sie die Flusssteuerung in verschiedenen Schichten des OSI-Modells. Welche Aussage beschreibt korrekt den Unterschied zwischen der Flusssteuerung im Data Link Layer und der Flusssteuerung im Network Layer?
 
 Antwortmöglichkeiten:
-- ~Die Umwandlung einer rohen Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint, durch Aufteilung der Daten in Frames und ggf. Bestätigung des korrekten Empfangs
-- Die Verwaltung logischer Adressen und die Weiterleitung von Paketen zwischen verschiedenen Netzwerken zur Ermöglichung von End-zu-End-Kommunikation
-- Die Gewährleistung einer zuverlässigen Datenübertragung durch Ende-zu-Ende-Fehlerkontrolle und Flusskontrolle zwischen den Endpunkten einer Verbindung
-- Die Bereitstellung von Synchronisation und Signalmodulation, um Bits als elektrische oder optische Signale über das physische Medium zu übertragen
-"""
+a) Die Flusssteuerung im Data Link Layer betrifft die Kommunikation zwischen direkt verbundenen Geräten, während die Flusssteuerung im Network Layer sowohl End-to-End (Sender zum entfernten Empfänger) als auch Node-to-Node (von jedem Knoten zum Nächsten) umfasst. (Richtig)
+b) Die Flusssteuerung im Data Link Layer ist ausschließlich für die Komprimierung von Daten zuständig, während die Flusssteuerung im Network Layer die Verschlüsselung der Daten regelt. (Falsch)
+c) Die Flusssteuerung im Network Layer wird nur zwischen Geräten im selben Netzwerk eingesetzt, während die Flusssteuerung im Data Link Layer netzwerkübergreifend funktioniert. (Falsch)
+d) Die Flusssteuerung im Data Link Layer befasst sich mit der Quality of Service, während die Flusssteuerung im Network Layer sich ausschließlich mit der Adressierung beschäftigt. (Falsch)
