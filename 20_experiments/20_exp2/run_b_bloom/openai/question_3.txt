@@ -1,3 +1,7 @@
-Frage: Sie entwickeln für ein lokales Netzwerk ein Data-Link-Protokoll, in dem ein sehr schneller Sender auf einen wesentlich langsameren Empfänger trifft. Welche im Text beschriebene Data-Link-Layer-Mechanik müssen Sie anwenden, um ein Überfluten des Empfängers zu vermeiden, und wie funktioniert sie auf Frame-Ebene?
+Frage: Ein Netzwerktechniker stellt fest, dass bei einer Punkt-zu-Punkt-Verbindung der Sender dauerhaft schneller Daten überträgt, als der Empfänger verarbeiten kann, was zu Pufferüberläufen führt. Untersuchen Sie das ISO-OSI-Modell und bestimmen Sie, welche Schicht mitsamt ihrer spezifischen Kernaufgabe angewendet werden muss, um dieses Problem direkt auf der Verbindung zu beheben.
 
-Antwort: ~Man setzt eine Flusskontrolle (traffic regulation) ein, bei der der Empfänger dem Sender per Rückmeldung – etwa durch Empfangsbestätigungen oder „ready/not ready“-Signale – anzeigt, wann er weitere Frames verarbeiten kann; der Sender überträgt neue Frames erst nach dieser Freigabe und verhindert so eine Überlastung des Empfängers.
+Antwortmöglichkeiten:
+a) Data Link Layer – Flusskontrolle (Richtig)
+b) Physical Layer – Codierung (Falsch)
+c) Network Layer – Routing (Falsch)
+d) Transport Layer – Dienstqualität (Falsch)

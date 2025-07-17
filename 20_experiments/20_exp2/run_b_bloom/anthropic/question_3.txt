@@ -1,5 +1,8 @@
-```
-Frage: In einem Industrienetzwerk müssen Sensordaten von einer Produktionsanlage zu einer zentralen Steuerungseinheit übertragen werden. Die Produktionsanlage sendet große Datenmengen mit hoher Geschwindigkeit, während die Steuerungseinheit eine begrenzte Verarbeitungskapazität hat. Wenden Sie die Konzepte der Datenverbindungsschicht an, um ein geeignetes Übertragungsprotokoll zu entwerfen, das sowohl Übertragungsfehler behandelt als auch das Problem eines zu schnellen Senders löst.
+Frage: Bei der Analyse eines Netzwerkproblems stellen Sie fest, dass Datenpakete zwischen zwei Rechnern in verschiedenen Netzwerken nicht korrekt weitergeleitet werden. Der physische Verbindungsaufbau und die Datenübertragung auf Linkebene funktionieren einwandfrei, jedoch kommt es zu Fehlern bei der Weiterleitung zwischen den Netzwerken. Welche Schicht des ISO-OSI-Modells müssen Sie untersuchen, um dieses Problem zu beheben, und welche Kernaufgabe dieser Schicht ist vermutlich betroffen?
 
-Antwort: ~Ein geeignetes Übertragungsprotokoll auf der Datenverbindungsschicht sollte folgende Elemente beinhalten: 1) Aufteilung der Sensordaten in kleinere Datenframes mit fester maximaler Größe, 2) Implementierung eines Bestätigungsmechanismus, bei dem die Steuerungseinheit den korrekten Empfang jedes Frames durch ein Acknowledgement-Frame bestätigt, 3) Einführung eines Flusssteuerungsmechanismus wie "Sliding Window" oder "Stop-and-Wait", der verhindert, dass die Produktionsanlage mehr Daten sendet als die Steuerungseinheit verarbeiten kann, 4) Integration von Fehlererkennungscodes (z.B. CRC) in jedem Frame, um Übertragungsfehler zu erkennen, und 5) Implementierung von Timeouts und Neuübertragungen für Frames, die nicht bestätigt wurden.
-```
+Antwortmöglichkeiten:
+a) Network Layer (Layer 3) mit Fokus auf die Routing-Funktionalität, da hier die Weiterleitung zwischen verschiedenen Netzwerken stattfindet. (Richtig)
+b) Transport Layer (Layer 4) mit Fokus auf die Dienstqualität, da hier die Ende-zu-Ende-Verbindung zwischen den Rechnern hergestellt wird. (Falsch)
+c) Data Link Layer (Layer 2) mit Fokus auf Fehlerkontrolle, da hier möglicherweise Übertragungsfehler nicht korrekt erkannt werden. (Falsch)
+d) Physical Layer (Layer 1) mit Fokus auf Decodierung, da die Interpretation der physikalischen Signale fehlerhaft sein könnte. (Falsch)
+e) Session Layer (Layer 5) mit Fokus auf Synchronisation, da die Sitzung zwischen den Kommunikationspartnern nicht korrekt aufgebaut wird. (Falsch)

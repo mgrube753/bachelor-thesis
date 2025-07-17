@@ -1,5 +1,8 @@
-```
-Frage: Bewerten Sie kritisch die Prioritätssetzung der im Text beschriebenen Aufgaben der Data Link Layer im Kontext moderner Netzwerkanforderungen. Welche der genannten Funktionen würden Sie als essenziell einstufen und welche könnten in bestimmten Netzwerkszenarien an Bedeutung verlieren?
+Frage: Bewerten Sie kritisch, wie sich die Ausfallsicherheit eines Netzwerksystems verändert, wenn die Fehlerkorrektur vom Data Link Layer (Schicht 2) zum Transport Layer (Schicht 4) verlagert wird.
 
-Antwort: ~Eine kritische Bewertung zeigt, dass die Fehlerkorrektur und das Erschaffen einer scheinbar fehlerfreien Verbindung als fundamentalste Aufgabe einzustufen ist, da ohne diese Grundfunktion zuverlässige Kommunikation unmöglich wäre. Die Verkehrsregulierung (Flow Control) behält in fast allen Szenarien ihre Wichtigkeit, besonders in heterogenen Netzwerken mit unterschiedlich leistungsfähigen Geräten. Die Medium Access Control ist primär in geteilten Medien (wie WLAN oder traditionelles Ethernet) essenziell, verliert jedoch in Point-to-Point-Verbindungen oder in virtuellen Netzwerkumgebungen mit softwarebasierter Ressourcenzuweisung teilweise an Bedeutung. Die Frame-Bestätigung durch Acknowledgements könnte in Hochgeschwindigkeitsnetzwerken mit sehr niedrigen Fehlerraten oder in Anwendungen, die Verzögerungen nicht tolerieren können (z.B. Echtzeit-Streaming), zugunsten anderer Fehlerkorrekturmechanismen reduziert werden.
-```
+Antwortmöglichkeiten:
+a) Die Verlagerung erhöht die Ausfallsicherheit, da der Transport Layer eine End-to-End-Fehlerkorrektur ermöglicht, während der Data Link Layer nur Verbindungsfehler zwischen direkt verbundenen Knoten korrigieren kann. (Richtig)
+b) Die Verlagerung verringert die Ausfallsicherheit, da Fehler erst spät erkannt werden und dies zu ineffizienten Neuübertragungen ganzer Datenpakete führt. (Richtig)
+c) Die Verlagerung hat keinen Einfluss auf die Ausfallsicherheit, da beide Schichten unabhängig voneinander arbeiten und die gleichen Fehlererkennungsmechanismen verwenden. (Falsch)
+d) Die Verlagerung erhöht die Ausfallsicherheit in jedem Fall, da höhere Schichten grundsätzlich leistungsfähigere Fehlerkorrekturmechanismen implementieren können als niedrigere Schichten. (Falsch)
+e) Die Verlagerung kann die Latenzzeit erhöhen, da Fehler erst am Ziel erkannt werden und nicht bereits auf dem Übertragungsweg, was in zeitkritischen Anwendungen die funktionale Zuverlässigkeit beeinträchtigt. (Richtig)

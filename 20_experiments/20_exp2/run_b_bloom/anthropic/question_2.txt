@@ -1,5 +1,7 @@
-```
-Frage: Vergleichen Sie die verschiedenen Hauptfunktionen der Datenverbindungsschicht (Data Link Layer) und erklären Sie, wie diese zusammenwirken, um eine zuverlässige Datenübertragung zu gewährleisten.
+Frage: Vergleichen Sie die Aufgaben der Flusskontrolle auf den verschiedenen Schichten des OSI-Modells und erklären Sie, worin der wesentliche Unterschied zwischen der Flusskontrolle auf Schicht 2 (Data Link Layer), Schicht 3 (Network Layer) und Schicht 4 (Transport Layer) besteht.
 
-Antwort: ~Die Datenverbindungsschicht erfüllt mehrere zusammenhängende Funktionen: Erstens transformiert sie eine fehleranfällige Übertragungseinrichtung in eine scheinbar fehlerfreie Verbindung, indem sie Daten in Frames aufteilt und sequentiell überträgt. Zweitens implementiert sie bei zuverlässigen Diensten einen Bestätigungsmechanismus durch Acknowledgement-Frames. Drittens regelt sie den Datenverkehr, um zu verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten. Bei Broadcast-Netzwerken kommt als vierte Funktion die Steuerung des Zugriffs auf den gemeinsamen Kanal hinzu, wofür die Medium Access Control-Unterschicht zuständig ist. Diese Funktionen ergänzen sich, um eine effiziente und zuverlässige Datenübertragung zu gewährleisten, indem sie Fehler maskieren, Datenfluss regulieren und Kanalzugriff kontrollieren.
-```
+Antwortmöglichkeiten:
+a) Die Flusskontrolle auf Schicht 2 befasst sich mit Strategien, wenn der Sender für den Empfänger zu schnell sendet (z.B. Zwischenpuffern), während auf Schicht 3 zwischen End-to-End-Flusssteuerung (vom Sender zum entfernten Empfänger) und Node-to-Node-Flusssteuerung (von jedem Knoten zum Nächsten) unterschieden wird. Auf Schicht 4 wird die Flusskontrolle auf die spezifischen Charakteristiken der Teilnehmer zugeschnitten. (Richtig)
+b) Die Flusskontrolle ist auf allen drei Schichten identisch und dient lediglich dazu, die Übertragungsgeschwindigkeit zu regulieren. (Falsch)
+c) Die Flusskontrolle auf Schicht 2 bezieht sich auf End-to-End-Verbindungen, während sie auf Schicht 3 für Node-to-Node-Verbindungen zuständig ist. Schicht 4 bietet keine Flusskontrolle. (Falsch)
+d) Die Flusskontrolle auf Schicht 2 kümmert sich um Fehlerkorrektur, auf Schicht 3 um Routing und auf Schicht 4 um Verschlüsselung der Daten. (Falsch)

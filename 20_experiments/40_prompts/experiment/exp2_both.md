@@ -11,7 +11,7 @@ Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu
 6. Erstelle passend zur Frage mindestens eine Antwort.
 7. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
 8. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
-9. Verwende für Listen ausschließlich alphabetische Aufzählungen wie `a) `, `b) `, `c) `, etc., und beginne die Aufzählung mit `a) `.
+9. Wenn es der Fragetyp zulässt, verwende für Listen ausschließlich alphabetische Aufzählungen wie `a) `, `b) `, `c) `, etc., und beginne die Aufzählung mit `a) `.
 10. Gib nur die Frage und die Antwort(en) im vorgegebenen Format als Fließtext aus. Schreibe keinen zusätzlichen Text und vermeide jegliche Markdown-basierte Formatierung.
 
 Fokussiere dich auf den folgenden Text bei der Fragengenerierung:

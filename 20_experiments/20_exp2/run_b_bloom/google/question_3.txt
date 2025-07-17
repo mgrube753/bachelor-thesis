@@ -1,3 +1,8 @@
-Frage: Ein sehr schneller Server versucht, Daten über eine Netzwerkverbindung an einen älteren, langsameren Client zu senden. Basierend auf der Beschreibung der Sicherungsschicht (Data Link Layer), welche Maßnahme würde diese Schicht ergreifen, um zu verhindern, dass der schnelle Server den langsamen Client mit Daten überflutet?
+Frage: Ein Unternehmen möchte eine Echtzeit-Videokonferenz über das Internet zwischen zwei Standorten etablieren. Die Datenübertragung soll dabei so optimiert werden, dass Übertragungsfehler erkannt und, falls möglich, behoben werden, unterschiedliche Datenformate zwischen den Endgeräten angepasst werden können und die durch die Netzwerkinfrastruktur verursachte Verzögerung (Latenz) möglichst gering gehalten wird, um eine flüssige Kommunikation zu gewährleisten. Untersuchen Sie, welche der folgenden OSI-Schichten maßgeblich an der erfolgreichen Implementierung dieser Anforderungen beteiligt sind und ihre jeweiligen Kernaufgaben anwenden.
 
-Antwort: ~Die Sicherungsschicht würde einen Traffic Regulation Mechanism (Verkehrsregulierungsmechanismus) nutzen, um dem Sender mitzuteilen, wann der Empfänger weitere Daten akzeptieren kann, wodurch eine Überflutung vermieden wird.
+Antwortmöglichkeiten:
+a) Der Network Layer ist für die End-to-End-Flusssteuerung zuständig, um die Datenmenge optimal an die Aufnahmefähigkeit des Empfängers anzupassen. (Falsch)
+b) Der Transport Layer sorgt mit seiner Dienstqualitäts-Aufgabe für Garantien bezüglich Bandbreite und Latenz, um eine flüssige Videokommunikation zu ermöglichen. (Richtig)
+c) Der Data Link Layer identifiziert und korrigiert Übertragungsfehler, die auf der physikalischen Verbindung auftreten könnten, und ermöglicht so eine fehlergesicherte Übertragung innerhalb eines Netzwerksegments. (Richtig)
+d) Der Presentation Layer konvertiert unterschiedliche Videocodecs und Datenformate zwischen den Kommunikationspartnern, um Kompatibilität sicherzustellen. (Richtig)
+e) Der Physical Layer ist für die Auswahl der vermittelnden Zwischenknoten zur Kommunikation nicht direkt verbundener Teilnehmer zuständig. (Falsch)

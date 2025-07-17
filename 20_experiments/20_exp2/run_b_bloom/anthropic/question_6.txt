@@ -1,5 +1,19 @@
-```
-Frage: Entwerfen Sie ein neues Data Link Layer-Protokoll für ein Netzwerk, in dem extrem unterschiedlich schnelle Geräte miteinander kommunizieren müssen (z.B. High-Performance-Server und ressourcenbeschränkte IoT-Geräte). Ihr Protokoll soll alle im Text genannten Hauptfunktionen der Data Link Layer erfüllen, aber speziell die Problematik der Geschwindigkeitsunterschiede innovativ lösen. Beschreiben Sie die Mechanismen für Fehlererkennung, Frame-Übertragung, Empfangsbestätigung und Verkehrsregulierung sowie die Zugriffskontrolle für gemeinsam genutzte Kanäle.
+Frage: Entwerfen Sie ein Sicherheitskonzept für ein Unternehmensnetzwerk, das alle Schichten des ISO-OSI-Modells abdeckt. Beschreiben Sie für jede Schicht mindestens eine spezifische Sicherheitsmaßnahme und erklären Sie, wie diese Maßnahmen zusammenwirken, um einen umfassenden Schutz zu gewährleisten.
 
-Antwort: ~Ein mögliches Protokoll könnte ein adaptives Mehrstufen-Flusskontrollsystem implementieren, das dynamisch Rahmengröße, Übertragungsrate und Bestätigungsmechanismen an die Geräteleistung anpasst. Es verwendet variable Framegrößen (kleine für IoT-Geräte, große für Server) und ein hybrides Bestätigungssystem, das für langsame Geräte Gruppenbestätigungen mit längeren Timeouts erlaubt, während schnelle Geräte Einzelbestätigungen mit kurzen Timeouts nutzen. Für die Fehlererkennung kombiniert es CRC-Prüfsummen mit selektiver Wiederholung (SACK) und implementiert einen prädiktiven Puffermechanismus, der die Empfängerkapazität vorausberechnet. Die Kanalzugriffskontrolle erfolgt über ein zweistufiges Zeitschlitzverfahren, wobei ressourcenstarke Geräte bei Bedarf Zeitfenster abtreten können und priorisierte Warteschlangen für kritischen Traffic sorgen. Ein Adaptive Rate Control Protocol (ARCP) verhandelt kontinuierlich optimale Übertragungsparameter zwischen den kommunizierenden Geräten.
-```
+Antwort: Ein umfassendes Sicherheitskonzept für ein Unternehmensnetzwerk könnte wie folgt aussehen:
+
+Layer 1 (Physical): Installation von Zugangskontrollsystemen für Serverräume und Netzwerkschränke, um unbefugten physischen Zugriff zu verhindern. Verwendung von gesicherten Verkabelungswegen und regelmäßige Überprüfung auf physische Manipulationen.
+
+Layer 2 (Data Link): Implementierung von MAC-Adressfilterung und IEEE 802.1X zur Authentifizierung von Geräten vor Netzwerkzugriff. Einsatz von VLAN-Segmentierung zur Isolation sensibler Netzwerkbereiche.
+
+Layer 3 (Network): Konfiguration von Firewalls mit detaillierten Zugriffskontrolllisten und Einrichtung von Intrusion Detection/Prevention Systemen (IDS/IPS). Implementierung von VPN-Tunneln für sichere Verbindungen zwischen verteilten Netzwerken.
+
+Layer 4 (Transport): Verwendung von TLS/SSL für verschlüsselte Kommunikation und Implementierung von Portfilterung. Einrichtung von Lastverteilungsmechanismen mit integrierter Anomalieerkennung zur Abwehr von DDoS-Angriffen.
+
+Layer 5 (Session): Implementierung von Session-Timeouts und Sitzungsüberwachung. Entwicklung eines Systems zur Erkennung von Session-Hijacking-Versuchen durch Analyse von Sitzungsmustern.
+
+Layer 6 (Presentation): Einsatz von starker Ende-zu-Ende-Verschlüsselung und sicheren Codierungsstandards. Integration von Datenvalidierung zur Erkennung und Neutralisierung von Code-Injection-Angriffen und Malware.
+
+Layer 7 (Application): Implementierung von Web Application Firewalls, regelmäßige Sicherheitsaudits und Penetrationstests. Einrichtung von rollenbasierter Zugriffskontrolle und Multi-Faktor-Authentifizierung für alle kritischen Anwendungen.
+
+Die Maßnahmen wirken zusammen, indem sie einen mehrschichtigen Verteidigungsansatz (Defense-in-Depth) bilden. Während physische Sicherheit und Zugangskontrolle die Grundlage bilden, ergänzen Netzwerksegmentierung und Firewalls die Kontrolle des Datenverkehrs. Verschlüsselung auf Transport- und Präsentationsebene schützt vor Abhörangriffen, während Session-Management und Application-Layer-Schutzmaßnahmen die Sicherheit auf Anwendungsebene gewährleisten. Durch diese Integration entsteht ein ganzheitlicher Schutz, bei dem der Ausfall einer Sicherheitsebene durch andere Ebenen kompensiert wird. (Richtig)

@@ -1,14 +1,26 @@
-Frage: Angenommen, Sie sind ein Ingenieur, der beauftragt wurde, ein grundlegendes Protokoll für die Sicherungsschicht zu konzipieren, das die im Text beschriebenen Kernaufgaben für eine zuverlässige Punkt-zu-Punkt-Verbindung erfüllt, einschließlich Fehlerbehandlung und Flusskontrolle. Entwickeln Sie eine Abfolge von Schritten oder Prinzipien, die sowohl der Sender als auch der Empfänger befolgen müssten, um Datenrahmen fehlerfrei und effizient zu übertragen, wobei mindestens zwei der im Text erwähnten Mechanismen (z.B. Datenrahmen, Bestätigungsrahmen, Verkehrsregelung) integriert werden.
+Frage: Ein multinationales Unternehmen plant die Einführung eines neuen, hochsicheren und latenzarmen Kommunikationssystems für die Steuerung kritischer Infrastrukturen, das weltweit über heterogene Netzwerke hinweg funktionieren muss. Dieses System soll speziell für die Übertragung von Echtzeit-Sensor- und Aktor-Daten optimiert werden, die eine garantierte Dienstqualität (QoS) und Schutz vor Manipulation erfordern. Entwerfen Sie, unter Berücksichtigung der Kernaufgaben relevanter ISO-OSI-Schichten, eine konzeptionelle Skizze der notwendigen Mechanismen und Funktionen. Begründen Sie dabei präzise, welche Kernaufgaben welcher Schichten Sie zur Erfüllung der Anforderungen (Sicherheit, Latenz, QoS, heterogene Netzwerke, Echtzeit-Sensor-/Aktor-Daten) nutzen und wie diese zusammenwirken, um ein kohärentes Gesamtsystem zu erstellen.
 
-Antwort: ~Ein solches grundlegendes Protokoll könnte folgende Schritte und Prinzipien beinhalten:
--   **Senderseite:**
-    1.  Die Eingabedaten werden in kleinere *Datenrahmen* zerlegt.
-    2.  Jeder Datenrahmen wird sequenziell gesendet.
-    3.  Nach dem Senden eines Datenrahmens wartet der Sender auf einen *Bestätigungsrahmen* (Acknowledgement) vom Empfänger.
-    4.  Wird innerhalb einer bestimmten Zeit kein Bestätigungsrahmen empfangen oder wird ein negativer Bestätigungsrahmen empfangen, wird der Datenrahmen erneut gesendet (Fehlerbehandlung).
-    5.  Der Sender implementiert einen *Verkehrsregelungsmechanismus*, z.B. ein Schiebefenster oder eine Senderate, die auf Rückmeldungen des Empfängers basiert, um zu verhindern, dass der Empfänger überflutet wird.
--   **Empfängerseite:**
-    1.  Der Empfänger empfängt Datenrahmen und prüft sie auf Übertragungsfehler.
-    2.  Bei korrektem Empfang eines Datenrahmens sendet der Empfänger einen *Bestätigungsrahmen* an den Sender.
-    3.  Werden fehlerhafte Rahmen empfangen oder fehlen Rahmen, sendet der Empfänger möglicherweise keine Bestätigung oder eine negative Bestätigung, um eine Neuübertragung durch den Sender zu veranlassen.
-    4.  Der Empfänger signalisiert dem Sender durch den Verkehrsregelungsmechanismus (z.B. durch Bestätigungen oder ein Schiebefenster), wann er bereit ist, weitere Daten zu empfangen, um eine Überlastung zu vermeiden.
+Antwort: Zur Erfüllung der Anforderungen des hochsicheren und latenzarmen Kommunikationssystems für kritische Infrastrukturen können die Kernaufgaben verschiedener ISO-OSI-Schichten wie folgt konzeptionell zusammengeführt werden:
+
+Physical Layer (Schicht 1):
+Hier muss eine physikalische Konzeption gewählt werden, die eine extrem niedrige Latenz und hohe Bandbreite ermöglicht. Dies kann durch die Auswahl geeigneter Medien (z.B. Glasfaser für geringe Latenz) und effizienter Codierungsverfahren (z.B. NRZ-Varianten zur Maximierung der Datenrate) erreicht werden, um die physikalische Übertragung der Sensor- und Aktor-Daten zu gewährleisten.
+
+Data Link Layer (Schicht 2):
+Um eine fehlergesicherte Übertragung über möglicherweise nicht fehlergesicherte physikalische Verbindungen zu garantieren, sind die Kernaufgaben Fehlerkontrolle und Flusskontrolle entscheidend. Eine schnelle Fehlererkennung und -behebung (z.B. durch FEC – Forward Error Correction oder schnelle Retransmission bei kleinen Fehlern) minimiert die Latenz durch erneute Übertragung. Die Segmentierung ist für die Zerlegung großer Sensorpakete in kleinere, handhabbare Einheiten notwendig, während die Identifikation die Geräte innerhalb eines lokalen Netzwerksegments adressiert.
+
+Network Layer (Schicht 3):
+Da die Kommunikation weltweit über heterogene Netzwerke erfolgen soll, ist die Netzwerk-übergreifende Adressierung und das Routing unerlässlich. Das Routing muss für Echtzeitdaten optimiert sein, um Pfade mit der geringsten Latenz und höchster Zuverlässigkeit zu wählen. Eine angepasste Flusssteuerung auf dieser Ebene (Node-to-Node) kann Staus in Zwischenknoten verhindern und so zur Latenzstabilität beitragen.
+
+Transport Layer (Schicht 4):
+Die Anforderung an eine garantierte Dienstqualität (QoS) wird maßgeblich auf dieser Schicht realisiert. Die Dienstqualität muss so konfiguriert werden, dass Bandbreite, Latenz und Fehlerrate für die Echtzeit-Sensor- und Aktor-Daten garantiert werden. Dies kann durch Mechanismen wie Ressourcenzusicherung und Priorisierung geschehen. Eine angepasste Flusssteuerung unter Nutzung der Teilnehmer-Charakteristik sorgt dafür, dass Sender und Empfänger optimal aufeinander abgestimmt sind und keine Pufferüberläufe entstehen, die die Latenz negativ beeinflussen könnten. Die Teilnehmer-Adressierung identifiziert die spezifischen Anwendungen oder Prozesse auf den Endgeräten.
+
+Session Layer (Schicht 5):
+Für die Steuerung kritischer Infrastrukturen sind langlebige, aber bei Bedarf schnell wiederherstellbare Kommunikationsbeziehungen wichtig. Die Sitzungen ermöglichen das effiziente Aufbauen, Verwalten und Beenden dieser Beziehungen. Synchronisation durch das Setzen von Zwischenpunkten kann bei Ausfällen helfen, den Zustand schnell wiederherzustellen und Datenverlust zu minimieren, was für die Systemintegrität entscheidend ist. Die Bündelung zusammengehöriger Transaktionen verbessert die Effizienz und Konsistenz.
+
+Presentation Layer (Schicht 6):
+Die Sicherheit vor Manipulation wird hier durch Verschlüsselung und Kompression unterstützt. Die Verschlüsselung schützt die Vertraulichkeit und Integrität der Sensor- und Aktor-Daten während der Übertragung. Kompression reduziert die zu übertragende Datenmenge, was die Bandbreitennutzung optimiert und somit indirekt zur Latenzreduzierung beiträgt. Die Konvertierung der Datendarstellung (Endian-Ness) und Zeichendarstellung stellt die Kompatibilität zwischen heterogenen Systemen sicher.
+
+Application Layer (Schicht 7):
+Auf dieser Schicht werden die Grundkonzepte, Protokollelemente und das Verhalten der spezifischen Anwendung für die Steuerung der kritischen Infrastrukturen definiert. Dies umfasst die Semantik der Sensorwerte, die Befehle an die Aktoren und die spezifischen Interaktionsregeln. Die hier entwickelten Protokolle müssen die Echtzeitanforderungen des Systems direkt widerspiegeln und die vom Transport Layer bereitgestellte QoS nutzen.
+
+Durch die konsequente Integration und Abstimmung dieser Kernaufgaben über die Schichten hinweg kann ein robustes, sicheres und latenzarmes Kommunikationssystem für kritische Infrastrukturen konstruiert werden. (Richtig)

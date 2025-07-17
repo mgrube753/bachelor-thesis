@@ -1,3 +1,8 @@
-Frage: Erklären Sie, wie die Data-Link-Schicht im ISO-OSI-Modell durch ihre Mechanismen der Fehler- und Flusskontrolle sicherstellt, dass der Network Layer weder Übertragungsfehler noch Überlastungen des Empfängers wahrnimmt.
+Frage: Klassifizieren Sie die folgenden Aussagen zu Kernaufgaben innerhalb des ISO-OSI-Modells und entscheiden Sie, welche korrekt zugeordnet sind.
 
-Antwort: ~Die Data-Link-Schicht zerlegt die Eingangsdaten beim Sender in einzelne Frames, überträgt diese nacheinander und verlangt für jedes korrekt empfangene Frame eine Bestätigung (Acknowledgement); dadurch werden Übertragungsfehler erkannt und für den Network Layer verborgen. Parallel dazu setzt sie ein Verkehrsregelungsverfahren ein, das dem Sender anhand von Rückmeldungen anzeigt, wann der Empfänger weitere Daten aufnehmen kann, sodass ein schneller Sender einen langsameren Empfänger nicht überlastet.
+Antwortmöglichkeiten:
+a) Fehlerkontrolle ist eine Kernaufgabe des Data Link Layers. (Richtig)
+b) Endian-Konvertierung wird im Presentation Layer vorgenommen. (Richtig)
+c) Sitzungsverwaltung gehört zum Transport Layer. (Falsch)
+d) Medienzugriffskontrolle wird im Physical Layer realisiert. (Falsch)
+e) Quality-of-Service-Sicherung ist Teilaufgabe des Transport Layers. (Richtig)

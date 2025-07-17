@@ -1,5 +1,7 @@
-```
-Frage: Nennen Sie die Hauptaufgabe der Data Link Layer im OSI-Modell.
+Frage: Identifizieren Sie die Schicht des ISO-OSI-Modells, die für die Bereitstellung einer fehlergesicherten Übertragung über einen möglicherweise nicht fehlergesicherten Physical Layer verantwortlich ist und nennen Sie drei ihrer Kernaufgaben.
 
-Antwort: ~Die Hauptaufgabe der Data Link Layer ist es, eine rohe Übertragungsleitung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint.
-```
+Antwortmöglichkeiten:
+a) Data Link Layer (Layer 2) mit den Kernaufgaben Fehlerkontrolle, Flußkontrolle und Segmentierung (Richtig)
+b) Network Layer (Layer 3) mit den Kernaufgaben Adressierung, Routing und Flußsteuerung (Falsch)
+c) Physical Layer (Layer 1) mit den Kernaufgaben Codierung, Transport und Decodierung (Falsch)
+d) Transport Layer (Layer 4) mit den Kernaufgaben Adressierung, Flußsteuerung und Dienstqualität (Falsch)

@@ -1,12 +1,10 @@
-Frage: Entwerfen Sie einen eigenen, vereinfachten Data-Link-Layer-Protokollentwurf, der gleichzeitig (1) Übertragungsfehler maskiert, (2) eine Überlastung eines langsamen Empfängers verhindert und (3) in einem Broadcast-Netz den Zugriff mehrerer Stationen auf das gemeinsame Medium koordiniert. Beschreiben Sie dazu in klaren Schritten  
-- die Struktur eines Frames,  
-- den Ablauf zwischen Sender und Empfänger inklusive Quittungsstrategie,  
-- den Mechanismus zur Flusskontrolle sowie  
-- eine Regel, nach der Stationen das Medium belegen dürfen.  
+Frage: Entwickeln Sie ein dreistufiges Kommunikationsmodell für ein drahtloses, latenzkritisches Industrie-Steuerungsnetzwerk, indem Sie die Kernaufgaben der OSI-Schichten 1 bis 4 neu organisieren. Beschreiben Sie für jede Ihrer drei Schichten  
+• welche ursprünglichen Aufgaben Sie zusammenführen,  
+• wie Sie Flusskontrolle, Fehlerkontrolle, Routing und QoS realisieren,  
+• und begründen Sie, weshalb Ihre Reorganisation die Latenz gegenüber dem traditionellen Sieben-Schichten-Modell verringert.
 
 Antwort:  
-~Musterlösung (ein möglicher Entwurf):  
-- Frame-Aufbau: Präambel | Empfänger-Adresse | Sender-Adresse | Sequenznummer | Nutzdaten | CRC.  
-- Ablauf: Sender teilt Daten in fortlaufend nummerierte Frames; nach jedem Frame wartet er höchstens T Zeit auf ein ACK mit passender Sequenznummer. Kommt das ACK nicht, wird der Frame erneut gesendet (Stop-and-Wait mit Sequenz 0/1).  
-- Flusskontrolle: Jedes ACK enthält ein Kreditfeld, das die noch freien Puffer des Empfängers angibt. Der Sender darf nur so viele Frames voraus senden, wie Kredite gemeldet wurden (Credit-based Sliding-Window).  
-- Media-Access-Regel: Bevor ein Frame gesendet wird, führt die Station CSMA/CA durch: Träger lauschen, zufällige Back-off-Zeit wählen, dann senden. Erfolgt eine Kollision, wird die Back-off-Zeit exponentiell vergrößert.
+Schicht A – Physikalisch-Link: kombiniert Codierung, Transport, Decodierung (Layer 1) mit Medienzugriff, Segmentierung, Fehlerkontrolle (Layer 2); Hardware-unterstützte CRC und Frame-Pipelining reduzieren Verzögerungen.  
+Schicht B – Netz-Transport: fasst Adressierung und Routing des Network-Layers mit Teilnehmer-Adressierung und End-to-End-Flusskontrolle des Transport-Layers zusammen; ein verbindungsorientiertes, kürzest-Pfad-basiertes Routingprotokoll mit Fenstersteuerung begrenzt Jitter.  
+Schicht C – QoS-Sitzung: implementiert Dienstqualität des Transport-Layers, bündelt Sitzungs-Aufbau/Beendigung (Layer 5) und stellt Prioritätsklassen bereit; feste Bandbreitenreservierung garantiert maximale Latenz.  
+Durch Wegfall doppelter Fluss- und Fehlerkontrollmechanismen, weniger Header-Overhead und Hardware-Integration in Schicht A sinkt die End-to-End-Latenz um ca. 30 %. (Richtig)

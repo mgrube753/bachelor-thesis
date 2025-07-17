@@ -1,7 +1,7 @@
-Frage: Gemäß dem vorliegenden Text über die Data Link Layer, welche der folgenden Aussagen fasst die *zusätzlichen* Herausforderungen und deren Lösungsansätze zusammen, die über die reine Maskierung von Übertragungsfehlern hinausgehen?
+Frage: Erläutern Sie, wie sich die Strategien zur Flusssteuerung (Flow Control) in den Schichten Data Link Layer und Transport Layer nach den Beschreibungen des ISO-OSI-Modells voneinander unterscheiden.
 
 Antwortmöglichkeiten:
-- Die Data Link Layer adressiert die Herausforderung der Paketfragmentierung zur effizienteren Übertragung und nutzt dafür Mechanismen der Pfadfindung über mehrere Hops.
-- Die Data Link Layer muss sicherstellen, dass Datenintegrität auf Anwendungsebene gewährleistet ist, und nutzt dazu symmetrische Verschlüsselungsverfahren.
-- ~Die Data Link Layer befasst sich mit der Flusskontrolle, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger überflutet, und nutzt dafür Verkehrsregulierungsmechanismen; zudem löst sie in Broadcast-Netzwerken das Problem des Zugriffs auf den gemeinsamen Kanal durch den Medium Access Control (MAC) Sublayer.
-- Die Data Link Layer ist primär für die logische Adressierung innerhalb eines Netzwerks zuständig und setzt dafür IP-Protokolle ein.
+a) Der Data Link Layer implementiert Flusssteuerungsstrategien, um das Übertragungsmedium effektiv zu nutzen, wohingegen der Transport Layer Flusssteuerungsmechanismen zur Absicherung von Übertragungsfehlern bereitstellt. (Falsch)
+b) Die Flusssteuerung des Data Link Layers konzentriert sich auf die Regelung des Datenflusses zwischen direkt verbundenen Geräten, um den Empfänger vor Überlastung zu schützen, während die Flusssteuerung des Transport Layers die Charakteristika der beteiligten Anwendungsteilnehmer berücksichtigt, um eine Ende-zu-Ende-Kontrolle zu ermöglichen. (Richtig)
+c) Beide Schichten, der Data Link Layer und der Transport Layer, nutzen identische Zwischenpufferungsstrategien zur Flusssteuerung, wobei der Hauptunterschied in der Adressierung der jeweiligen Kommunikationspartner liegt. (Falsch)
+d) Der Data Link Layer regelt die Flusssteuerung ausschließlich über Reservierung von Übertragungszeit, während der Transport Layer dies durch das Setzen von Synchronisationspunkten bewerkstelligt. (Falsch)

@@ -1,7 +1,7 @@
-Frage: Welche spezielle Unterschicht des Data Link Layers ist dafür verantwortlich, den Zugriff auf den gemeinsamen Kanal in Broadcast-Netzwerken zu kontrollieren?
+Frage: Welchem OSI-Schicht sind die Kernaufgaben "Fehlerkontrolle", "Flusskontrolle" und "Segmentierung" zugeordnet?
 
 Antwortmöglichkeiten:
-- Logical Link Control (LLC) sublayer
-- Network Interface Unit (NIU) sublayer
-- ~Medium Access Control (MAC) sublayer
-- Transmission Control (TC) sublayer
+a) Network Layer 3 (Falsch)
+b) Data Link Layer 2 (Richtig)
+c) Transport Layer 4 (Falsch)
+d) Physical Layer 1 (Falsch)

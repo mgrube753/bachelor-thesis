@@ -1,8 +1,7 @@
-Frage: Ordnen Sie die vier im Text genannten Mechanismen der Sicherungsschicht – 1) Aufteilen des Bitstroms in Rahmen, 2) Senden von Bestätigungsrahmen, 3) Verkehrsregulierung zwischen Sender und Empfänger sowie 4) Medium-Access-Control im Broadcast-Betrieb – jeweils dem konkreten Teilproblem zu, das sie lösen. Analysieren Sie anschließend, wie das Zusammenspiel dieser Teilmechanismen dazu führt, dass die Netzwerkschicht eine scheinbar fehlerfreie und geordnete Übertragungsstrecke erhält.
+Frage: Analysieren Sie die Implementierungen der Flusskontrolle in den ISO-OSI-Schichten 2, 3 und 4 und wählen Sie die Aussage aus, die die jeweiligen Wirkungsbereiche dieser Funktion zutreffend voneinander unterscheidet.
 
-Antwort: ~
-1) Rahmenbildung isoliert Bitfehler lokal, sodass Fehlerprüfungen auf einzelne Blöcke statt auf den gesamten Strom anwendbar sind.  
-2) Bestätigungsrahmen koppeln Fehlererkennung mit Wiederholung, maskieren verlorene / beschädigte Rahmen und liefern Zuverlässigkeit.  
-3) Verkehrsregulierung verhindert Überlastung eines langsameren Empfängers, sichert damit geordnete und vollständige Zustellung ohne Pufferüberläufe.  
-4) Das MAC-Teilschichtverfahren koordiniert den Zugriff mehrerer Stationen auf das gemeinsame Medium, vermeidet Kollisionen und garantiert faire Kanalnutzung.  
-Gemeinsam isolieren diese Mechanismen Fehler, Verlust, Überlastung und Konkurrenz um das Medium; ihre koordinierte Wirkung präsentiert der Netzwerkschicht eine Verbindung, die wie eine zuverlässige Punkt-zu-Punkt-Leitung erscheint, obwohl darunter physikalische Fehler und Konkurrenzsituationen auftreten.
+Antwortmöglichkeiten:
+a) Layer 2 realisiert Flusskontrolle ausschließlich link-lokal zwischen direkt verbundenen Knoten; Layer 3 kann Flusskontrolle sowohl link-lokal als auch end-to-end einsetzen; Layer 4 führt Flusskontrolle speziell bezogen auf die Charakteristik der kommunizierenden Endsysteme end-to-end durch. (Richtig)
+b) Layer 2 und Layer 3 verwenden identische Flusskontrollmechanismen, während Layer 4 keine Flusskontrolle bereitstellt. (Falsch)
+c) Flusskontrolle in Layer 3 beschränkt sich auf Router-interne Pufferverwaltung, während Layer 2 und Layer 4 ausschließlich end-to-end Flusskontrolle liefern. (Falsch)
+d) Die Flusskontrolle wird ausschließlich in Layer 3 durchgeführt; Layer 2 übernimmt nur Fehlerkontrolle und Layer 4 nur Dienstqualität. (Falsch)

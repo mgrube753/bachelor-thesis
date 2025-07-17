@@ -4,15 +4,16 @@ Deine Aufgabe ist es, eine Prüfungsfrage beliebigen Typs zu dem folgenden Text 
 Befolge dabei die folgenden Anweisungen, um eine qualitativ hochwertige Frage zu generieren:
 
 1. Untersuche den gegebenen Instruktionstext sorgfältig.
-2. Formuliere eine klare, präzise und kognitiv anspruchsvolle Frage entsprechend dem Bloom's Level {bloom_level}.
-3. Die Beschreibung dieses Levels ist: {bloom_level_description}.
-4. Verwende dabei Verben wie: {bloom_level_verbs}.
-5. Die Frage soll in einer Prüfungsform formuliert sein. Somit sind Formulierungen wie "laut dem Text" oder "basierend auf dem Text" zu vermeiden, um eine direkte und klare Prüfungsfrage zu stellen.
-6. Erstelle passend zur Frage mindestens eine Antwort.
-7. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
-8. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
-9. Verwende für Listen ausschließlich alphabetische Aufzählungen wie `a) `, `b) `, `c) `, etc., und beginne die Aufzählung mit `a) `.
-10. Gib nur die Frage und die Antwort(en) im vorgegebenen Format als Fließtext aus. Schreibe keinen zusätzlichen Text und vermeide jegliche Markdown-basierte Formatierung.
+2. Entscheide, ob für den gegebenen Text und das Bloom's Level {bloom_level} eine einzelne Antwort oder mehrere Antwortmöglichkeiten generiert werden sollen.
+3. Formuliere eine klare, präzise und kognitiv anspruchsvolle Frage entsprechend dem Bloom's Level {bloom_level}.
+4. Die Beschreibung dieses Levels ist: {bloom_level_description}.
+5. Verwende dabei Verben wie: {bloom_level_verbs}.
+6. Die Frage soll in einer Prüfungsform formuliert sein. Somit sind Formulierungen wie "laut dem Text" oder "basierend auf dem Text" zu vermeiden, um eine direkte und klare Prüfungsfrage zu stellen.
+7. Erstelle passend zur Frage mindestens eine Antwort.
+8. Füge am Ende einer korrekten Antwort `(Richtig)` hinzu.
+9. Füge am Ende jeder falschen Antwort `(Falsch)` hinzu.
+10. Wenn mehrere Antworten generiert werden, dann verwende für Listen ausschließlich alphabetische Aufzählungen wie `a) `, `b) `, `c) `, etc., und beginne die Aufzählung mit `a) `.
+11. Gib nur die Frage und die Antwort(en) im vorgegebenen Format als Fließtext aus. Schreibe keinen zusätzlichen Text und vermeide jegliche Markdown-basierte Formatierung.
 
 Fokussiere dich auf den folgenden Text bei der Fragengenerierung:
 
