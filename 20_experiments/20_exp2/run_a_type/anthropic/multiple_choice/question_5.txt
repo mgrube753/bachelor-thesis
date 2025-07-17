@@ -1,9 +1,8 @@
-"""
-Frage: Welche der folgenden Aussagen beschreibt NICHT eine der Hauptfunktionen oder Herausforderungen der Datenverbindungsschicht (Data Link Layer) gemäß dem Text?
+Frage: Welche spezifischen Aufgaben müssen in einem Szenario koordiniert werden, wenn ein Video-Stream von einem Server über verschiedene Netzwerke an einen Client übertragen wird, der eine begrenzte Bandbreite hat?
 
 Antwortmöglichkeiten:
-- ~Die direkte Weiterleitung von Datenpaketen zwischen verschiedenen Netzwerken über Router
-- Die Transformation einer Übertragungseinrichtung in eine Leitung, die frei von unentdeckten Übertragungsfehlern erscheint
-- Die Regulierung des Datenverkehrs, um zu verhindern, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet
-- Die Kontrolle des Zugriffs auf einen gemeinsam genutzten Kanal in Broadcast-Netzwerken durch die Medium Access Control Sublayer
-"""
+a) Die Kompression auf dem Presentation Layer (Layer 6) reduziert die Datenmenge, während die Dienstqualität (QoS) auf dem Transport Layer (Layer 4) die Bandbreite, Latenz und Jitter garantiert. (Richtig)
+b) Der Physical Layer (Layer 1) führt die Kompression durch, während der Network Layer (Layer 3) für die End-to-End Flusssteuerung verantwortlich ist. (Falsch)
+c) Der Session Layer (Layer 5) übernimmt die Verschlüsselung des Videos, während der Data Link Layer (Layer 2) die Dienstqualität (QoS) sicherstellt. (Falsch)
+d) Die Adressierung auf dem Application Layer (Layer 7) bestimmt den Übertragungsweg, während der Physical Layer (Layer 1) die Flusssteuerung übernimmt, wenn der Client überlastet ist. (Falsch)
+e) Der Network Layer (Layer 3) wählt die optimale Route durch verschiedene Netzwerke, während die Teilnehmeradressierung auf dem Transport Layer (Layer 4) sicherstellt, dass der Stream die richtige Anwendung beim Client erreicht. (Richtig)

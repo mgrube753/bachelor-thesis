@@ -1,7 +1,7 @@
-Frage: Welche der folgenden Herausforderungen der Datenübertragung, die laut dem Text spezifisch durch eine dedizierte Unterschicht der Sicherungsschicht adressiert wird, ist insbesondere in Broadcast-Netzwerken von entscheidender Bedeutung?
+Frage: Welche der folgenden Aussagen beschreibt die korrekte hierarchische Entwicklung der Adressierungs- und Flusssteuerungsmechanismen innerhalb der ISO-OSI-Schichten, basierend auf deren jeweiligen Verantwortlichkeiten?
 
 Antwortmöglichkeiten:
-- ~Die Kontrolle des Zugriffs auf den geteilten Kanal, um zu verhindern, dass mehrere Sender gleichzeitig Daten übertragen und Kollisionen verursachen.
-- Die zuverlässige Zustellung von Datenrahmen durch Bestätigungen, um sicherzustellen, dass keine Fehler unentdeckt bleiben.
-- Die Regulierung des Datenflusses zwischen einem schnellen Sender und einem langsamen Empfänger, um eine Überflutung des Empfängers zu vermeiden.
-- Die Umwandlung der physischen Übertragungsmedien in eine scheinbar fehlerfreie Leitung für die Netzwerkschicht durch Maskierung realer Übertragungsfehler.
+a) Die Adressierung auf Schicht 2 dient der Auswahl spezifischer Geräte innerhalb eines lokalen Segments, während die Schicht 3 netzwerkübergreifende Adressen für die Kommunikation zwischen verschiedenen Netzwerken bereitstellt, und Schicht 4 adressiert individuelle Anwendungen oder Dienste auf Endgeräten. (Richtig)
+b) Die Flusskontrolle auf Schicht 2 verhindert eine Überlastung des direkten Kommunikationspartners durch den Sender, wohingegen die Schicht 3 die Flusssteuerung End-to-End über möglicherweise nicht direkt verbundene Knoten hinweg regelt, und Schicht 4 die Flusssteuerung an die Charakteristik der beteiligten Anwendungen anpasst. (Richtig)
+c) Die Segmentierung ist eine Kernaufgabe der Schicht 2 zur Bündelung von Bits in größere Einheiten, wohingegen die Schicht 5 die Bündelung zusammengehöriger Transaktionen für eine Sitzung ermöglicht und die Schicht 6 die Datenkompression als Form der effizienten Bitstromdarstellung implementiert. (Falsch)
+d) Während die Schicht 1 die physikalische Codierung logischer Werte in elektrische Signale vornimmt, ist die Schicht 6 primär für die Verschlüsselung und Entschlüsselung von Anwendungsdaten zuständig, und die Schicht 7 definiert die spezifischen Protokollelemente und das Verhalten einer Anwendung. (Falsch)

@@ -1,9 +1,9 @@
-"""
-Frage: Welche der folgenden Funktionen wird laut dem beschriebenen Text NICHT von der Data Link Layer übernommen?
+Frage: Welche der folgenden Zuordnungen zwischen OSI-Schicht und Kernaufgabe sind korrekt? Wählen Sie alle zutreffenden Antworten.
 
 Antwortmöglichkeiten:
-- ~Wegefindung (Routing) zwischen unterschiedlichen Netzwerken
-- Rahmung von Daten und Bestätigung jedes korrekt empfangenen Rahmens
-- Flusskontrolle zur Verhinderung der Überlastung eines langsameren Empfängers
-- Zugriffskontrolle auf ein gemeinsames Übertragungsmedium in Broadcast-Netzen
-"""
+a) Codierung/Decodierung logischer Werte – Physical Layer 1 (Richtig)
+b) Medienzugriff – Network Layer 3 (Falsch)
+c) Fehlerkontrolle – Data Link Layer 2 (Richtig)
+d) Endian-Ness-Konvertierung – Presentation Layer 6 (Richtig)
+e) Dienstqualität-Garantien – Session Layer 5 (Falsch)
+f) Sitzungsaufbau und -beendigung – Application Layer 7 (Falsch)

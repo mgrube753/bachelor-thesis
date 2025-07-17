@@ -1,7 +1,7 @@
-Frage: Welche Aussage fasst die primäre Aufgabe und die wesentlichen Mechanismen der Sicherungsschicht (Data Link Layer) am prägnantesten zusammen, um die Transparenz von Übertragungsfehlern für höhere Schichten zu gewährleisten?
+Frage: Welche Aussage(n) beschreibt/beschreiben die konzeptionelle Unterscheidung der Flusssteuerung (Flow Control) innerhalb des ISO-OSI-Modells korrekt?
 
 Antwortmöglichkeiten:
-- ~Die Sicherungsschicht transformiert eine rohe Übertragungsleitung in eine scheinbar fehlerfreie Verbindung, indem sie reale Übertragungsfehler maskiert und Daten in Frames zerlegt, deren korrekten Empfang bei zuverlässigem Dienst mittels Bestätigungen (Acknowledgements) quittiert wird.
-- Die Sicherungsschicht ist hauptsächlich dafür zuständig, den Datenfluss zwischen schnellen Sendern und langsamen Empfängern zu regulieren und den Zugriff auf gemeinsam genutzte Kanäle in Broadcast-Netzwerken zu steuern.
-- Die Hauptaufgabe der Sicherungsschicht besteht darin, eine Ende-zu-Ende-Verbindung über das gesamte Netzwerk herzustellen und logische Adressierung für die Paketweiterleitung zu implementieren.
-- Die Sicherungsschicht priorisiert Netzwerkpakete und leitet diese basierend auf logischen IP-Adressen an das nächste Ziel weiter, um effizientes Routing sicherzustellen.
+a) Die Flusssteuerung auf dem Transport Layer fokussiert sich auf die End-to-End-Steuerung unter Berücksichtigung der individuellen Teilnehmercharakteristiken, während die Flusssteuerung auf dem Data Link Layer primär Übertragungsfehler auf einer direkten Verbindung kompensiert, wenn ein Sender für den Empfänger zu schnell agiert. (Richtig)
+b) Die Flusssteuerung auf dem Network Layer regelt das Übertragungstempo von Knoten zu Knoten innerhalb des Netzwerks, um Engpässe zu vermeiden, wohingegen die Flusssteuerung auf dem Data Link Layer speziell die Segmentierung von Daten in Bytes vor der physikalischen Übertragung orchestriert. (Falsch)
+c) Der Data Link Layer implementiert eine Medienzugriffsstrategie, die implizit die Flusssteuerung beinhaltet, indem er das Senden, Warten und Beheben von Kollisionen koordiniert, wohingegen der Network Layer eine End-to-End-Flusssteuerung für Teilnehmer über unterschiedliche Netzwerktechnologien hinweg sicherstellt. (Falsch)
+d) Die Flusssteuerung des Transport Layers gewährleistet die Quality of Service (QoS) durch spezifische Garantien für Bandbreite und Latenz, während die Flusssteuerung des Network Layers die optimale Auswahl von Zwischenknoten für nicht direkt verbundene Kommunikationspartner sicherstellt. (Falsch)

@@ -1,7 +1,7 @@
-Frage: Welches Aufgabenkombinations­paar wird laut obigem Text explizit der Sicherungsschicht (Data Link Layer) zugeschrieben, um eine für höhere Schichten fehlerfreie und geordnete Übertragung zu gewährleisten?
+Frage: Welche der folgenden Zuordnungen zwischen OSI-Schicht und Charakteristik der dort realisierten Flusskontrolle ist/sind zutreffend?
 
 Antwortmöglichkeiten:
-- ~Maskierung von Übertragungsfehlern und Durchführung einer Flusskontrolle zwischen Sender und Empfänger
-- Zuweisung logischer Netzadressen und Durchführung der Wegewahl durch das Netz
-- Verschlüsselung der Nutzdaten und Ende-zu-Ende-Fehlerbehebung auf Transportebene
-- Segmentierung großer Nachrichten in Pakete und globale Stauvermeidung im Kernnetz
+a) Layer 2 – Steuerung der Datenrate ausschließlich zwischen unmittelbar benachbarten Knoten (Richtig)
+b) Layer 3 – End-to-End-Mechanismen zur Regelung der Datenrate über mehrere Vermittlungsknoten hinweg (Richtig)
+c) Layer 4 – Medienabhängige Pufferstrategien zur Geschwindigkeitsanpassung zwischen Leitung und Modem (Falsch)
+d) Layer 2 – End-to-End-Flusskontrolle unter Einbeziehung sämtlicher Zwischensysteme (Falsch)

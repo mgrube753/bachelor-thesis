@@ -1,3 +1,9 @@
-Frage: Stellen Sie sich vor, ein sehr schneller Sender überträgt Daten an einen deutlich langsameren Empfänger in einem Broadcast-Netz. Welche drei Kernprobleme muss die Data-Link-Schicht unter diesen Bedingungen nacheinander lösen, und auf welche Weise greifen die jeweiligen Mechanismen ineinander, um dem darüberliegenden Netzwerk-Layer eine praktisch fehlerfreie Punkt-zu-Punkt-Verbindung vorzutäuschen?
+Frage: Ein Benutzer lädt eine komprimierte und verschlüsselte Datei von einem Webserver herunter. Erläutern Sie für jede der sieben Schichten des ISO-OSI-Modells a) die im Rahmen dieses Szenarios ausgeführte charakteristische Kernaufgabe und b) ein mögliches technisches Verfahren oder Protokoll, das diese Aufgabe realisiert.
 
-Antwort: ~Die Data-Link-Schicht adressiert erstens die Fehlerkontrolle, indem sie Daten in Frames kapselt, Prüfsummen anfügt und den Empfang jedes fehlerfreien Frames per ACK bestätigen lässt; beschädigte oder verlorene Frames werden erneut gesendet. Zweitens implementiert sie Flusskontrolle (z. B. Stop-and-Wait, Sliding Window), sodass der schnelle Sender nur so viele Frames losschickt, wie der langsame Empfänger verarbeiten kann. Drittens regelt der Medium-Access-Control-Sublayer in Broadcast-Netzen den Zugriff mehrerer Stationen auf das geteilte Medium, etwa durch Kollisionsvermeidung oder Vergabe von Sende­slots. Durch das kombinierte Wirken dieser drei Mechanismen erscheint dem Netzwerk-Layer die Verbindung als kontinuierliche, geordnete und nahezu fehlerfreie Leitung.
+Antwort: a) Physical Layer: Codierung der logischen Bits in elektrische Signale mittels Manchester Encoding auf einer 100BASE-TX-Ethernet-Verbindung  
+b) Data Link Layer: Fehlerkontrolle durch Prüfsummen (CRC) innerhalb des Ethernet-Frames  
+c) Network Layer: Routing des IP-Pakets über Zwischenknoten auf Basis einer globalen IPv4-Adresse  
+d) Transport Layer: Dienstqualität durch TCP-Congestion-Control und Port-Adressierung  
+e) Session Layer: Aufbau und Verwaltung einer TLS-Sitzung einschließlich Aushandlung von Wiederaufnahme-Parametern  
+f) Presentation Layer: Verschlüsselung und optionale Kompression der Nutzdaten im TLS-Record-Layer (z. B. AES-GCM und DEFLATE)  
+g) Application Layer: HTTP-GET-Anfrage mit dem Header „Accept-Encoding: gzip“ und Auslieferung der Datei als gzip-komprimierter Body (Richtig)

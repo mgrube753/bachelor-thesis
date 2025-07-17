@@ -1,7 +1,7 @@
-Frage: Basierend auf den beschriebenen Kernaufgaben und Mechanismen der Sicherungsschicht (Data Link Layer), welche essenzielle Abstraktion oder Dienstleistung erbringt sie primär für die darüberliegende Vermittlungsschicht (Network Layer)?
+Frage: Welche der folgenden Aussagen beschreibt die Kernaufgaben von Schichten des ISO-OSI-Modells korrekt, insbesondere im Hinblick auf deren spezifische Zuständigkeiten und Abgrenzungen?
 
 Antwortmöglichkeiten:
-- ~Die Sicherungsschicht maskiert Übertragungsfehler und implementiert Flusskontrollmechanismen, um der Vermittlungsschicht eine scheinbar fehlerfreie und regulierte Übertragungsleitung zur Verfügung zu stellen.
-- Die Sicherungsschicht ist hauptsächlich für die globale Adressierung von Endgeräten und das Routing von Datenpaketen über verschiedene Netzwerke hinweg verantwortlich.
-- Die Sicherungsschicht standardisiert die Kodierung und Dekodierung von Bitsignalen sowie die physikalische Übertragung auf dem Medium.
-- Die Sicherungsschicht gewährleistet die Ende-zu-Ende-Vollständigkeit von Daten durch die Verwaltung von Sitzungen und die Darstellung von Daten für Anwendungen.
+a) Der Presentation Layer ist ausschließlich für die Umwandlung von logischen Werten in physikalische Größen und deren Rückinterpretation zuständig, um die physikalische Übertragung zu ermöglichen. (Falsch)
+b) Die Dienstqualität (QoS), einschliesslich Garantien für Bandbreite und Latenz, wird primär durch den Transport Layer gewährleistet, um eine auf die Teilnehmer zugeschnittene Kommunikationsdienstleistung zu erbringen. (Richtig)
+c) Die Flusssteuerung auf dem Network Layer regelt das Senden, Warten, Beheben und Reservieren des Physical Layers, um Medienzugriffe zu koordinieren. (Falsch)
+d) Die Bereitstellung einer fehlergesicherten Übertragung über einen potenziell unsicheren Physical Layer ist eine Kernaufgabe des Session Layers, der auch die Synchronisation der Datenströme vornimmt. (Falsch)

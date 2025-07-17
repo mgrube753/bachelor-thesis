@@ -1,9 +1,8 @@
-"""
-Frage: Welche der folgenden Aussagen stellt die konzeptionelle Beziehung zwischen den Hauptaufgaben der Datenverbindungsschicht (Data Link Layer) am präzisesten dar?
+Frage: Welche der folgenden Aussagen beschreibt korrekt die Unterschiede in der Implementierung der Flusssteuerung zwischen verschiedenen Schichten des ISO-OSI-Modells?
 
 Antwortmöglichkeiten:
-- ~Die Datenverbindungsschicht abstrahiert physikalische Übertragungsfehler durch Framing, Fehlererkennung und Flusssteuerung, wodurch eine scheinbar fehlerfreie Verbindung für höhere Schichten geschaffen wird
-- Die Datenverbindungsschicht eliminiert sämtliche Übertragungsfehler durch Acknowledgement-Frames und garantiert dadurch eine vollständig fehlerfreie Datenübertragung
-- Die Datenverbindungsschicht dient primär der Verkehrsregulierung zwischen Sender und Empfänger, während die Fehlererkennung eine Nebenfunktion darstellt
-- Die Datenverbindungsschicht ist ausschließlich für die Zugriffskontrolle auf gemeinsame Kanäle in Broadcast-Netzwerken durch die Medium Access Control-Unterschicht verantwortlich
-"""
+a) Die Flusssteuerung im Data Link Layer (2) konzentriert sich auf Strategien, wenn ein Sender für den Empfänger zu schnell sendet, während die Flusssteuerung im Transport Layer (4) speziell auf die Charakteristik der Teilnehmer zugeschnitten ist. (Richtig)
+b) Die Flusssteuerung ist ausschließlich eine Aufgabe des Network Layers (3) und wird in End-to-End sowie Node-to-Node Kommunikation unterschieden, während andere Schichten keine Flusssteuerungsmechanismen implementieren. (Falsch)
+c) Die Flusssteuerung im Transport Layer (4) regelt hauptsächlich die physikalische Übertragungsrate, während die Flusssteuerung im Data Link Layer (2) sich mit der Anwendungsebene befasst. (Falsch)
+d) Flusssteuerung im Network Layer (3) bezieht sich ausschließlich auf die Priorisierung von Datenströmen nach deren Wichtigkeit, während die Flusssteuerung im Data Link Layer (2) nur die Bandbreite zwischen benachbarten Knoten reguliert. (Falsch)
+e) Die Flusssteuerung im Data Link Layer (2) und Network Layer (3) haben identische Implementierungen und unterscheiden sich nur in ihrer Bezeichnung, da sie redundant im OSI-Modell implementiert wurden. (Falsch)

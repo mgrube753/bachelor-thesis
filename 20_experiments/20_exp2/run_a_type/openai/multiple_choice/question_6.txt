@@ -1,9 +1,8 @@
-"""
-Frage: Welcher Aufgabenbereich fällt laut Text ausschließlich bei Broadcast-Netzen, nicht aber bei reinen Punkt-zu-Punkt-Verbindungen, in die Verantwortung der Sicherungsschicht?
+Frage: Welche der folgenden Kombinationen aus OSI-Schicht und Kernaufgabe ist korrekt zugeordnet?
 
 Antwortmöglichkeiten:
-- ~Regelung des Zugriffs auf das geteilte Übertragungsmedium durch die Medium-Access-Control-Unterschicht
-- Aufteilung des Datenstroms in nummerierte Rahmen, um Einzelübertragungsfehler zu maskieren
-- Flusskontrolle, damit ein schneller Sender einen langsamen Empfänger nicht überlastet
-- Verschlüsselung der Rahmeninhalte, um Vertraulichkeit auf Bitübertragungsebene sicherzustellen
-"""
+a) Data Link Layer – Medienzugriff (Richtig)
+b) Network Layer – Verschlüsselung (Falsch)
+c) Transport Layer – Dienstqualität (Richtig)
+d) Session Layer – Endian-Konvertierung (Falsch)
+e) Presentation Layer – Segmentierung (Falsch)

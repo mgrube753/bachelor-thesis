@@ -1,9 +1,8 @@
-"""
-Frage: Welche der folgenden Aussagen beschreibt am besten die konzeptionelle Beziehung zwischen den Hauptaufgaben der Datenverbindungsschicht und den dafür implementierten Mechanismen?
+Frage: Welche Aussage beschreibt korrekt einen fundamentalen Unterschied zwischen der Flusssteuerung im Transport Layer (4) und der Flusssteuerung im Data Link Layer (2)?
 
 Antwortmöglichkeiten:
-- ~Die Datenverbindungsschicht abstrahiert physikalische Übertragungsfehler durch Framing und Bestätigungsmechanismen, während sie gleichzeitig Probleme der Datenflusssteuerung und des gemeinsamen Kanalzugriffs löst
-- Die Datenverbindungsschicht ist primär für die Fehlerkorrektur auf Bitebene verantwortlich und übergibt Flusskontrollprobleme an höhere Schichten
-- Die Datenverbindungsschicht fungiert hauptsächlich als Router zwischen verschiedenen Netzwerksegmenten und nutzt Frames ausschließlich zur Adressierung
-- Die Datenverbindungsschicht konzentriert sich auf die Authentifizierung von Datenframes und überlässt die Fehlererkennung vollständig der physikalischen Schicht
-"""
+a) Die Flusssteuerung im Transport Layer berücksichtigt die spezifischen Charakteristiken der Teilnehmer, während die Flusssteuerung im Data Link Layer generische Strategien wie Zwischenpuffern oder Herunterregeln verwendet, wenn der Sender zu schnell für den Empfänger sendet. (Richtig)
+b) Die Flusssteuerung im Transport Layer befasst sich ausschließlich mit End-to-End-Kommunikation, während der Data Link Layer ausschließlich für die Node-to-Node-Flusssteuerung zuständig ist. (Falsch)
+c) Der Transport Layer implementiert Flusssteuerung durch Fehlererkennung und -korrektur, während der Data Link Layer dies durch Quality of Service (QoS)-Garantien erreicht. (Falsch)
+d) Die Flusssteuerung im Transport Layer ist optional, während sie im Data Link Layer eine obligatorische Kernaufgabe darstellt. (Falsch)
+e) Der Transport Layer verwendet Segmentierung als Hauptmethode der Flusssteuerung, während der Data Link Layer ausschließlich auf Medienzugriffskontrolle setzt. (Falsch)

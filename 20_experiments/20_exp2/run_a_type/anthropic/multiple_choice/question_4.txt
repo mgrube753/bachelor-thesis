@@ -1,9 +1,8 @@
-"""
-Frage: Welche funktionale Beziehung beschreibt am präzisesten die Komplexität der Datenlink-Schicht in Netzwerken mit unterschiedlichen Übertragungsgeschwindigkeiten?
+Frage: Welche der folgenden Aussagen beschreibt korrekt, wie die verschiedenen Schichten des ISO-OSI-Modells bei der Bewältigung von Überlastungssituationen im Netzwerk zusammenarbeiten?
 
 Antwortmöglichkeiten:
-- ~Die Datenlink-Schicht muss sowohl Fehlererkennungsmechanismen implementieren als auch einen Verkehrsregulierungsmechanismus bereitstellen, um zu verhindern, dass schnelle Sender langsame Empfänger mit Daten überfluten
-- Die Datenlink-Schicht ist primär für die Segmentierung von Daten in Frames verantwortlich, während die Kontrolle der Übertragungsgeschwindigkeit ausschließlich durch die Transportschicht erfolgt
-- Die Datenlink-Schicht übernimmt keine Fehlererkennung, sondern leitet fehlerhafte Frames direkt an die darüberliegende Netzwerkschicht weiter
-- Die Hauptaufgabe der Datenlink-Schicht beschränkt sich auf die Medium Access Control bei Broadcast-Netzwerken, während andere Aspekte von höheren Schichten behandelt werden
-"""
+a) Die Flusssteuerung findet ausschließlich auf dem Transport Layer (Schicht 4) statt, während die unteren Schichten keine Maßnahmen zur Bewältigung von Überlastungssituationen implementieren. (Falsch)
+b) Die Flusskontrolle auf dem Data Link Layer (Schicht 2) befasst sich mit lokalen Überlastungssituationen zwischen direkt verbundenen Geräten, während die Flusssteuerung im Network Layer (Schicht 3) zwischen entfernten Netzwerkknoten (Node-to-Node) und die Flusssteuerung im Transport Layer (Schicht 4) End-to-End zwischen den eigentlichen Kommunikationsteilnehmern arbeitet. (Richtig)
+c) Bei Überlastungssituationen ist ausschließlich der Network Layer (Schicht 3) verantwortlich, da nur diese Schicht Routing-Entscheidungen treffen kann, um alternative Pfade zu finden und so Überlastungen zu umgehen. (Falsch)
+d) Die Qualitätssicherung (QoS) auf dem Transport Layer (Schicht 4) ist die einzige Maßnahme im ISO-OSI-Modell, die sich mit Netzwerküberlastungen befasst, während alle anderen Schichten nur für die fehlerfreie Datenübertragung zuständig sind. (Falsch)
+e) Die Flusskontrolle auf dem Data Link Layer (Schicht 2) und die Flusssteuerung auf dem Network Layer (Schicht 3) sind identische Mechanismen, die lediglich an verschiedenen Stellen des Modells dupliziert wurden, um Redundanz zu gewährleisten. (Falsch)

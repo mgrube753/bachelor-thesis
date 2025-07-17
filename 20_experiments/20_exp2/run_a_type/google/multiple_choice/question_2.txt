@@ -1,7 +1,7 @@
-Frage: Basierend auf der im Text beschriebenen Hauptaufgabe der Sicherungsschicht (Data Link Layer), welche übergeordnete Funktion erfüllt sie, um den Transport für höhere Schichten zu optimieren?
+Frage: Welche der folgenden Aussagen beschreibt die primäre Unterscheidung der Aufgaben zur Flusskontrolle zwischen dem Data Link Layer, dem Network Layer und dem Transport Layer im OSI-Modell?
 
 Antwortmöglichkeiten:
-- ~Sie wandelt eine fehleranfällige Übertragungseinrichtung in eine scheinbar fehlerfreie Leitung um, indem sie Übertragungsfehler maskiert und Bestätigungsmechanismen implementiert.
-- Sie gewährleistet primär die Zugriffssteuerung auf das gemeinsame Übertragungsmedium in Broadcast-Netzwerken, um Kollisionen zu vermeiden.
-- Sie reguliert hauptsächlich den Datenfluss zwischen Sender und Empfänger, um ein Überfluten langsamer Empfänger zu verhindern.
-- Sie ist verantwortlich für die logische Adressierung und das Routing von Datenpaketen über verschiedene Netzwerke hinweg.
+a) Der Data Link Layer handhabt Flusskontrolle für die Übertragung über eine direkte Verbindung, der Network Layer für die pfadbasierte Übertragung zwischen beliebigen Netzknoten, und der Transport Layer für die zuverlässige Datenlieferung zwischen Quell- und Zielanwendungen. (Falsch)
+b) Die Flusskontrolle des Data Link Layers adressiert die Geschwindigkeit der Übertragung auf einer lokalen Verbindung, während die des Network Layers End-to-End-Steuerung für die gesamte Kommunikationsstrecke über verschiedene Netzwerke hinweg bietet und der Transport Layer die Flusskontrolle spezifisch an die Charakteristik der beteiligten Anwendungsteilnehmer anpasst. (Richtig)
+c) Alle drei Schichten implementieren Flusskontrolle identisch, um zu verhindern, dass ein Sender den Empfänger überfordert, jedoch mit unterschiedlichen Protokollelementen. (Falsch)
+d) Der Network Layer ist ausschließlich für die Flusskontrolle zwischen Netzwerken zuständig, während der Transport Layer diese für die Kommunikationspartner innerhalb eines einzelnen Netzwerks optimiert und der Data Link Layer keine explizite Flusskontrolle besitzt. (Falsch)

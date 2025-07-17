@@ -26,8 +26,8 @@ def main():
     # run_exp_1a(clients)
     # run_exp_1b(clients)
     # run_exp_1a_no_source(clients)
-    # run_exp_2a(clients)
-    run_exp_2b(clients)
+    run_exp_2a(clients)
+    # run_exp_2b(clients)
     # run_exp_2c(clients)
 
     print("\n[INFO] All experiments completed.")
