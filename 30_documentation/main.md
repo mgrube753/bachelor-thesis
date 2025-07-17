@@ -20,7 +20,7 @@ The `main` function serves as the master controller for the project's experiment
 3. **Run Experiments**:
    - The script then calls the specific functions for each part of the experiments.
    - The functions (`run_exp_1a`, `run_exp_1b`, etc.) are imported from `question_generation.py`.
-   - The script is structured to allow for selective execution of experiments by commenting or uncommenting the relevant function calls. In the provided state, it is configured to run only `run_exp_1a_no_source(clients)`.
+   - The script is structured to allow for selective execution of experiments by commenting or uncommenting the relevant function calls, depending on the desired experiments to run sequentially.
 
 ## Execution
 

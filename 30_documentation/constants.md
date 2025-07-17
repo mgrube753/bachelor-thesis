@@ -32,7 +32,6 @@ The script constructs absolute paths to the main project directories, ensuring t
 
 ### Experiment 2
 
-- `TANENBAUM_LAYER_FOR_EXP2`: The specific layer of the "tanenbaum" source used.
 - `EXP2_QUESTION_TYPES`: The types of questions generated.
 - `BLOOM_LEVELS_ORDERED`: The levels of Bloom's Taxonomy, in order.
 - `BLOOM_DATA_FILE`: The path to the markdown file containing data related to Bloom's Taxonomy.

@@ -161,7 +161,7 @@ def run_exp_1a(clients):
                     input_text_path = os.path.join(
                         constants.INPUT_SOURCES_PATH,
                         source_type,
-                        constants.EXP1_SCRIPT_SUBDIR_A,
+                        "common",
                         f"layer{layer_num}.txt",
                     )
                 else:
@@ -229,7 +229,7 @@ def run_exp_1b(clients):
             input_text_path = os.path.join(
                 constants.INPUT_SOURCES_PATH,
                 source_type,
-                constants.EXP1_SCRIPT_SUBDIR_B,
+                "manipulated",
                 f"layer{layer_num}.txt",
             )
             input_text = load_txt(input_text_path)

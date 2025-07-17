@@ -2,6 +2,8 @@
 
 This script is the central hub for interacting with various Large Language Model (LLM) APIs. It provides a unified interface to generate text from Google, Anthropic, and OpenAI models.
 
+Note: DeepSeek is not included in this script, as it is handled separately in `question_generation.py` creating empty files for these questions. The questions were generated using DeepSeek on its website instead of through API calls.
+
 ## Core Functionality
 
 The script abstracts the specific implementation details of each API, allowing other parts of the application to request text generation simply by specifying the provider's name.

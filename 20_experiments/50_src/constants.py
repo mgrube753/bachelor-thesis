@@ -21,8 +21,6 @@ REQUEST_DELAY_SECONDS = 10
 EXP1_PROMPT_TYPES = ["exp1_common_prompt", "exp1_complex_prompt"]
 EXP1_SOURCE_TYPES_A = ["script", "transcript", "tanenbaum"]
 EXP1_SOURCE_TYPE_B = "script"
-EXP1_SCRIPT_SUBDIR_A = "common"
-EXP1_SCRIPT_SUBDIR_B = "manipulated"
 LAYERS = list(range(1, 8))
 
 EXP2_QUESTION_TYPES = ["Multiple-Choice", "Open-Ended"]
