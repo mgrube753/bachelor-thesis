@@ -256,6 +256,8 @@ Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results}
 
 \tcr{muss man sehen ob man hier ankerbeispiele Pro und Contra hintut oder in-text eher.}
 
+\vp
+
 \paragraph*{Qualitative Analysis -- Staff-based with Comparison} \label{sec:exp1b-staff-analysis}
 
 % #TODO set up fleiss kappa for each subexerpiment for each criterion (4 members)
@@ -271,6 +273,8 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
     \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_llm_analysis_staff.png}
     \caption{Staff-based LLM Scores across every proposed Criterion (1a).}
     \label{fig:exp1a-llm-analysis-staff} 
+    % erkennen diverser aehnlichkeiten und unterschiede, sehr aehnlich zu prof. cap die verläufe vor allem via mean.
+    % erkennbar, dass prof. cap als spezialist + autor von (tran-)script ist, dass er grundsätzlich höhere werte gibt als die staff members
 \end{figure}
 
 \begin{figure}[htbp]
@@ -278,6 +282,9 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
     \includegraphics[width=.8\textwidth]{../../../40_evaluation/exp1/qualitative/plots/exp1a_correctness_paired_heatmaps_staff.png}
     \caption{Staff-based Correctness Heatmaps for different LLM Combinations (1a).}
     \label{fig:exp1a-correctness-heatmaps-staff}
+    % nach input source sehr verschieden ggü. prof. Cap; grundsätzlich google und anthropic aber auch etwas schwächer
+    % openai als favorit bei Cap nicht erkennbar bei staff, google auch nicht so schlecht bewertet wie bei Cap
+    % besser erkennbar: auch hier ist der common prompt viel inhaltstreuer als der complex prompt
 \end{figure}
 
 \begin{table}[htbp]
@@ -290,22 +297,24 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
         \textbf{Source} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Correctness} & \textbf{Total Score} \\
         \midrule
         \multirow{3}{*}{Script} 
-        & Mean & 9.38 & 8.50 & 8.25 & \textbf{5.50} & 7.38 & 8.88 & 7.67 & \textbf{55.06} \\
-        & Std & 2.03 & 2.37 & 2.52 & 3.54 & 3.32 & 2.19 & 3.72 & 10.23 \\
-        & Median & 10.0 & 10.0 & 10.0 & \textit{6.0} & 10.0 & 10.0 & 10.0 & 61.0 \\
+        & Mean & \textbf{9.16} & 7.86 & \textbf{8.17} & \textbf{4.06} & \textbf{6.67} & 7.89 & \textbf{8.33} & \textbf{52.14} \\
+        & Std & 1.64 & 2.55 & 2.65 & 2.34 & 3.18 & 2.48 & 2.56 & 10.82 \\
+        & Median & 10.0 & 9.0 & 10.0 & \textit{4.0} & \textit{8.0} & 8.0 & 9.5 & \textit{55.0} \\
         \midrule
         \multirow{3}{*}{Tanenbaum} 
-        & Mean & 9.12 & 8.25 & 7.12 & 5.38 & 7.14 & 8.88 & 8.33 & 51.25 \\
-        & Std & 2.19 & 3.26 & 3.79 & 4.05 & 4.05 & 2.19 & 3.26 & 14.88 \\
-        & Median & 10.0 & 10.0 & 10.0 & 5.0 & 10.0 & 10.0 & 10.0 & 61.5 \\
+        & Mean & 8.77 & 7.62 & 7.66 & 3.94 & 5.77 & 7.77 & 8.17 & 49.69 \\
+        & Std & 2.09 & 2.81 & 3.10 & 2.44 & 3.41 & 2.63 & 2.79 & 11.83 \\
+        & Median & 10.0 & 8.0 & 9.5 & 3.0 & 6.0 & 8.0 & 10.0 & 52.0 \\
         \midrule
         \multirow{3}{*}{Transcript} 
-        & Mean & \textbf{9.47} & \textbf{9.33} & \textbf{9.33} & 2.93 & \textbf{7.87} & \textbf{9.19} & \textbf{9.67} & 54.75 \\
-        & Std & 2.07 & 2.09 & 1.80 & 2.49 & 4.10 & 1.94 & 1.29 & 15.88 \\
-        & Median & 10.0 & 10.0 & 10.0 & 2.0 & 10.0 & 10.0 & 10.0 & \textit{62.0} \\
+        & Mean & 8.89 & \textbf{7.89} & 8.19 & 3.80 & 6.06 & \textbf{8.02} & 8.23 & 51.08 \\
+        & Std & 2.02 & 2.85 & 2.81 & 2.32 & 3.10 & 2.72 & 2.73 & 11.23 \\
+        & Median & 10.0 & \textit{10.0} & 10.0 & 3.5 & 6.0 & \textit{10.0} & 10.0 & 54.0 \\
         \bottomrule
     \end{tabular}}
 \end{table}
+
+\tcr{staff members differenzieren nicht stark gegenueber der input sources, grundsaetzlich aber eher das script besser ausser in clarity und language, da ist es besser verständlich und präziser formuliert bei transcript.}
 
 \begin{table}[htbp]
     \centering
@@ -317,17 +326,18 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
         \textbf{Prompt} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Correctness} & \textbf{Total Score} \\
         \midrule
         \multirow{3}{*}{Common} 
-        & Mean & \textbf{10.00} & \textbf{10.00} & \textbf{9.92} & 2.50 & \textbf{9.55} & \textbf{10.00} & \textbf{9.35} & \textbf{60.12} \\
-        & Std & 0.00 & 0.00 & 0.41 & 1.69 & 2.13 & 0.00 & 2.29 & 6.56 \\
-        & Median & 10.0 & 10.0 & \textit{10.0} & 2.0 & \textit{10.0} & 10.0 & 10.0 & \textit{62.0} \\
+        & Mean & \textbf{9.50} & \textbf{9.18} & \textbf{9.43} & 3.09 & \textbf{7.26} & \textbf{9.27} & \textbf{9.46} & \textbf{57.19} \\
+        & Std & 1.13 & 1.54 & 1.18 & 1.83 & 2.91 & 1.19 & 1.19 & 5.61 \\
+        & Median & 10.0 & 10.0 & \textit{10.0} & 2.5 & \textit{8.0} & 10.0 & 10.0 & \textit{58.5} \\
         \midrule
         \multirow{3}{*}{Complex} 
-        & Mean & 8.61 & 7.30 & 6.43 & \textbf{6.87} & 5.48 & 7.96 & 7.63 & 47.25 \\
-        & Std & 2.79 & 3.23 & 3.36 & 3.66 & 3.92 & 2.56 & 3.48 & 15.93 \\
-        & Median & 10.0 & 10.0 & 6.0 & \textit{8.0} & 4.0 & 10.0 & 10.0 & 48.5 \\
+        & Mean & 8.38 & 6.41 & 6.58 & \textbf{4.77} & 5.07 & 6.51 & 7.03 & 44.75 \\
+        & Std & 2.35 & 2.95 & 3.30 & 2.53 & 3.19 & 2.88 & 3.17 & 12.11 \\
+        & Median & 10.0 & 7.0 & 7.0 & \textit{5.0} & 5.0 & 7.0 & 8.0 & 44.5 \\
         \bottomrule
-    \end{tabular}}
+        \end{tabular}}
 \end{table}
+\tcr{gleiches muster wie bei prof. cap: common prompt besser als complex prompt, ausser challenging.}
 
 \pagebreak
 
@@ -376,7 +386,7 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
     \centering
     \caption{Staff-based Manipulation Handling Analysis by LLM and Prompt Type (1b).}
     \label{tab:exp1b-manipulation-handling-staff}
-    \resizebox{.6\textwidth}{!}{%
+    \resizebox{.5\textwidth}{!}{%
     \begin{tabular}{llccc}
         \toprule
         & & \multicolumn{3}{c}{\textbf{Manipulation Handling}} \\
