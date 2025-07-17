@@ -1,49 +1,49 @@
-input_source,layer,sample_id,relevance,clarity,answerability,challenging,value,language,correctness,answer_problems,comments
-script,3,001,,,,,,,,,
-script,5,002,,,,,,,,,
-script,1,003,,,,,,,,,
-script,3,004,,,,,,,,,
-tanenbaum,4,005,,,,,,,,,
-tanenbaum,7,006,,,,,,,,,
-tanenbaum,2,007,,,,,,,,,
-tanenbaum,3,008,,,,,,,,,
-transcript,2,009,,,,,,,,,
-transcript,5,010,,,,,,,,,
-transcript,1,011,,,,,,,,,
-transcript,5,012,,,,,,,,,
-script,2,013,,,,,,,,,
-script,3,014,,,,,,,,,
-script,1,015,,,,,,,,,
-script,4,016,,,,,,,,,
-tanenbaum,4,017,,,,,,,,,
-tanenbaum,5,018,,,,,,,,,
-tanenbaum,3,019,,,,,,,,,
-tanenbaum,7,020,,,,,,,,,
-transcript,2,021,,,,,,,,,
-transcript,6,022,,,,,,,,,
-transcript,2,023,,,,,,,,,
-transcript,7,024,,,,,,,,,
-script,2,025,,,,,,,,,
-script,5,026,,,,,,,,,
-script,2,027,,,,,,,,,
-script,5,028,,,,,,,,,
-tanenbaum,2,029,,,,,,,,,
-tanenbaum,4,030,,,,,,,,,
-tanenbaum,2,031,,,,,,,,,
-tanenbaum,3,032,,,,,,,,,
-transcript,2,033,,,,,,,,,
-transcript,4,034,,,,,,,,,
-transcript,1,035,,,,,,,,,
-transcript,3,036,,,,,,,,,
-script,2,037,,,,,,,,,
-script,3,038,,,,,,,,,
-script,2,039,,,,,,,,,
-script,5,040,,,,,,,,,
-tanenbaum,1,041,,,,,,,,,
-tanenbaum,2,042,,,,,,,,,
-tanenbaum,2,043,,,,,,,,,
-tanenbaum,5,044,,,,,,,,,
-transcript,1,045,,,,,,,,,
-transcript,4,046,,,,,,,,,
-transcript,5,047,,,,,,,,,
-transcript,6,048,,,,,,,,,
+input_source;layer;sample_id;relevance;clarity;answerability;challenging;value;language;correctness;answer_problems;comments
+script;3;1;10;10;10;5;8;8;9;"Begriff ""Netzwerk"" meint hier ""Netz"" oder ""LAN""";
+script;5;2;10;10;10;5;8;10;10;;
+script;1;3;10;5;10;5;10;8;10;"Was ist ein ""Netzwerksystem""?";
+script;3;4;10;8;5;7;10;8;9;"Begriff ""Netzwerk"" hier anders gemeint.";
+tanenbaum;4;5;10;10;10;7;10;10;10;;
+tanenbaum;7;6;10;10;10;4;7;10;10;;
+tanenbaum;2;7;10;5;5;5;1;3;10;;
+tanenbaum;3;8;10;2;5;7;8;2;10;Verneinung macht bei Ja-Nein-Fragen keinen Sinn;
+transcript;2;9;10;10;10;5;8;10;10;;
+transcript;5;10;10;10;10;1;1;10;10;;
+transcript;1;11;10;2;5;7;1;2;5;Subjektiv;
+transcript;5;12;10;5;10;5;5;5;10;;
+script;2;13;10;10;10;5;10;10;10;;
+script;3;14;10;10;10;1;1;10;10;Fragt nach Folieninhalt;
+script;1;15;10;5;10;1;2;8;5;;
+script;4;16;10;10;10;3;5;10;10;;
+tanenbaum;4;17;10;10;10;3;1;10;10;;
+tanenbaum;5;18;10;10;10;5;5;10;10;;
+tanenbaum;3;19;10;10;5;5;1;8;5;Fragt nach Text;
+tanenbaum;7;20;10;5;10;2;1;6;10;;
+transcript;2;21;10;10;10;1;1;10;10;Fragt nach Text;
+transcript;6;22;10;10;10;5;5;10;5;Fragt nach Text;
+transcript;2;23;10;10;10;2;5;10;10;;
+transcript;7;24;10;1;1;1;1;5;3;Subjektiv;
+script;2;25;10;2;5;5;5;10;10;Verneinung macht bei Ja-Nein-Fragen keinen Sinn.;
+script;5;26;10;10;10;5;5;10;10;;
+script;2;27;10;3;3;7;5;3;5;;
+script;5;28;10;3;3;9;1;2;1;Subjektiv;
+tanenbaum;2;29;10;10;10;8;7;10;10;Fragt nach Text;
+tanenbaum;4;30;10;10;10;5;5;9;10;Fragt nach Text;
+tanenbaum;2;31;10;1;1;5;1;1;5;;
+tanenbaum;3;32;10;1;1;5;1;1;8;;
+transcript;2;33;10;5;10;3;5;5;10;;
+transcript;4;34;10;10;10;3;1;10;10;;
+transcript;1;35;10;1;1;10;3;1;8;;
+transcript;3;36;10;5;5;8;5;10;5;;
+script;2;37;10;10;10;2;1;10;10;;
+script;3;38;10;10;10;5;8;8;9;;
+script;2;39;10;5;10;5;3;7;10;;
+script;5;40;10;8;5;8;8;8;10;;
+tanenbaum;1;41;10;10;10;1;1;10;10;;
+tanenbaum;2;42;10;10;10;5;7;10;10;;
+tanenbaum;2;43;10;8;8;3;5;10;8;;
+tanenbaum;5;44;10;8;10;3;3;8;10;;
+transcript;1;45;10;10;10;2;1;10;10;;
+transcript;4;46;10;10;10;3;3;10;10;;
+transcript;5;47;10;10;1;5;5;1;10;;
+transcript;6;48;10;5;10;5;5;7;10;;
