@@ -16,6 +16,7 @@ The documentation directory offers:
 For immediate technical reference, see:
 
 - **Experimental Code**: [`20_experiments/50_src/`](../20_experiments/50_src/) - Python implementation files
+- **Jupyter Notebooks**: in [`20_experiments/50_src/`](../20_experiments/50_src/) - Analysis and evaluation notebooks for experimental results
 - **Configuration**: [`20_experiments/40_prompts/`](../20_experiments/40_prompts/) - Prompt templates and evaluation rubrics  
 - **API Key Setup**: [`.env`](../.env) - Environment variable configuration (see [`README.md`](../README.md) for API key sources)
 - **Dependencies**: [`requirements.txt`](../requirements.txt) - Python package requirements
