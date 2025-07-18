@@ -199,6 +199,8 @@ def generate_expert_csvs(sample_base, csv_path):
             "value",
             "language",
             "bloom_rating",
+            "answer_problems",
+            "comments",
         ]:
             output_df[col] = ""
 
