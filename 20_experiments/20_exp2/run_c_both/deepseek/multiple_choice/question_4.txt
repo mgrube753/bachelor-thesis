@@ -1,0 +1,7 @@
+Frage: Bei welchen OSI-Schichten ist Flußkontrolle eine Kernaufgabe, und worin unterscheidet sich ihre jeweilige Implementierung grundlegend?
+
+Antwortmöglichkeiten:
+a) Schicht 2 (Data Link Layer) und Schicht 4 (Transport Layer); Schicht 2 regelt die Flußkontrolle zwischen direkt verbundenen Knoten (Node-to-Node), während Schicht 4 sie zwischen Endteilnehmern über das gesamte Netzwerk hinweg (End-to-End) implementiert. (Richtig)
+b) Schicht 3 (Network Layer) und Schicht 4 (Transport Layer); Schicht 3 nutzt ausschließlich End-to-End-Flußkontrolle, während Schicht 4 Node-to-Node-Strategien anwendet. (Falsch)
+c) Schicht 2 (Data Link Layer) und Schicht 5 (Session Layer); Schicht 2 steuert die Übertragungsgeschwindigkeit, Schicht 5 synchronisiert die Datenströme. (Falsch)
+d) Schicht 1 (Physical Layer) und Schicht 3 (Network Layer); Schicht 1 steuert den physikalischen Transport, Schicht 3 regelt die logische Übertragung zwischen Netzwerken. (Falsch)

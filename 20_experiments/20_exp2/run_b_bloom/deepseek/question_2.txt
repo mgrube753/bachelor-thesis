@@ -1,0 +1,7 @@
+Frage: Gegenüberstellen Sie die Flußsteuerung im Data Link Layer (Schicht 2) und im Network Layer (Schicht 3) hinsichtlich ihrer Reichweite und typischen Implementierung.
+
+Antwortmöglichkeiten:
+a) Die Flußsteuerung im Data Link Layer operiert end-to-end zwischen Endgeräten, während sie im Network Layer node-to-node zwischen direkt benachbarten Knoten wirkt. (Falsch)
+b) Die Flußsteuerung im Data Link Layer wirkt node-to-node zwischen direkt verbundenen Geräten, oft durch Puffern oder Sendeunterbrechungen. Die Flußsteuerung im Network Layer wirkt end-to-end zwischen ursprünglichem Sender und endgültigem Empfänger. (Richtig)
+c) Beide Schichten implementieren Flußsteuerung ausschließlich end-to-end, unterscheiden sich aber in den verwendeten Strategien wie Puffern oder Herunterregeln. (Falsch)
+d) Die Flußsteuerung im Network Layer ist für die direkte Verbindung zwischen Nachbarknoten verantwortlich, während die Flußsteuerung im Data Link Layer die Kommunikation über mehrere Netzwerkhops hinweg steuert. (Falsch)

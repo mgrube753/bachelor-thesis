@@ -1,0 +1,7 @@
+Frage: Ein Empfänger in einem Netzwerk kann eingehende Daten nur langsam verarbeiten. Vergleiche und kontrastiere, wie die Flußkontrolle im Data Link Layer (Layer 2) und im Transport Layer (Layer 4) dieses Problem adressieren würden.
+
+Antwort:
+a) Beide Layer würden ausschließlich die Senderate direkt am ursprünglichen Sender reduzieren. (Falsch)
+b) Der Data Link Layer (Layer 2) würde die Übertragungsgeschwindigkeit zwischen zwei direkt verbundenen Knoten (Node-to-Node) steuern, typischerweise durch Signalisierung wie Pausen-Frames oder Fenstermechanismen zwischen den Netzwerkadaptern. Der Transport Layer (Layer 4) würde die Gesamtdatenrate von Ende-zu-Ende (End-to-End) zwischen den eigentlichen Kommunikationspartnern steuern, wobei er Mechanismen wie Fensterung nutzt und die Eigenschaften der Endgeräte berücksichtigt. (Richtig)
+c) Der Data Link Layer (Layer 2) ist für die End-to-End-Flußkontrolle zuständig und verwendet Adressierung, während der Transport Layer (Layer 4) die Node-to-Node-Flußkontrolle übernimmt und Segmentierung nutzt. (Falsch)
+d) Layer 2 regelt den Fluß über eine einzelne physische Verbindung, um Überlastung des unmittelbaren Empfängers zu verhindern. Layer 4 regelt den Fluß über das gesamte Netzwerk hinweg zwischen den Anwendungen, um Überlastung des endgültigen Empfängers zu verhindern. (Richtig)

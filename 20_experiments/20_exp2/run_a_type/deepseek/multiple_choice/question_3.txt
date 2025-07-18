@@ -1,0 +1,12 @@
+Frage: In welchen Schichten des ISO-OSI-Referenzmodells ist Flusskontrolle eine Kernaufgabe?  
+Antwortmöglichkeiten:  
+a) Data Link Layer (Richtig)  
+b) Network Layer (Richtig)  
+c) Transport Layer (Richtig)  
+d) Presentation Layer (Falsch)  
+
+**Begründung der Korrektheit:**  
+- **Data Link Layer (a)**: Text nennt explizit "Flußkontrolle" als Kernaufgabe (Strategien bei zu schnellem Senden).  
+- **Network Layer (b)**: Text listet "Flußsteuerung" (End-to-End/Node-to-Node) unter Kernaufgaben.  
+- **Transport Layer (c)**: Text führt "Flußsteuerung" als Nutzung der Teilnehmer-Charakteristik auf.  
+- **Presentation Layer (d)**: Keine Erwähnung von Flusskontrolle; Kernaufgaben sind Datenkonvertierung, Kompression, Verschlüsselung.

@@ -1,0 +1,7 @@
+Frage: Ein Netzwerktechniker muss die Flusskontrolle für die Kommunikation zwischen zwei Computern in weit entfernten Netzwerken implementieren, die über mehrere Router verbunden sind. Welche OSI-Schicht ist primär dafür verantwortlich, Strategien zur Steuerung der Datenübertragungsrate *end-to-end* vom ursprünglichen Sender bis zum endgültigen Empfänger bereitzustellen? Ermitteln Sie die zuständige Schicht.
+
+Antwortmöglichkeiten:
+a) Network Layer (Schicht 3) (Richtig)
+b) Data Link Layer (Schicht 2) (Falsch)
+c) Transport Layer (Schicht 4) (Falsch)
+d) Physical Layer (Schicht 1) (Falsch)

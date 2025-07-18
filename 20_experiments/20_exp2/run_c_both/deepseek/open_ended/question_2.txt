@@ -1,0 +1,5 @@
+Frage: Erklären Sie den Unterschied zwischen der Flußkontrolle im Data Link Layer (Layer 2) und der Flußsteuerung im Transport Layer (Layer 4) des ISO-OSI-Modells.
+
+a) Die Flußkontrolle im Data Link Layer regelt die Übertragungsgeschwindigkeit zwischen direkt verbundenen Knoten (Node-to-Node), während die Flußsteuerung im Transport Layer die Geschwindigkeit zwischen Endteilnehmern über das gesamte Netzwerk hinweg steuert (End-to-End). (Richtig)  
+b) Die Flußkontrolle im Data Link Layer konvertiert Datendarstellungen wie Endianness, während die Flußsteuerung im Transport Layer für die Zeichenkodierung verantwortlich ist. (Falsch)  
+c) Die Flußkontrolle im Data Link Layer segmentiert Daten in Bytes, während die Flußsteuerung im Transport Layer die Dienstgüte (QoS) für Anwendungen garantiert. (Falsch)

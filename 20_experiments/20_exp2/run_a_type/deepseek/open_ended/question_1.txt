@@ -1,0 +1,6 @@
+Frage: Welche drei der fünf Kernaufgaben des Data Link Layers stellen explizit sicher, dass Übertragungsfehler erkannt oder behoben werden?  
+a) Fehlerkontrolle (Richtig)  
+b) Flusskontrolle (Falsch)  
+c) Medienzugriff (Falsch)  
+d) Segmentierung (Falsch)  
+e) Identifikation (Falsch)

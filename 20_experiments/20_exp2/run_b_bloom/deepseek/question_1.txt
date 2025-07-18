@@ -1,0 +1,7 @@
+Frage: Welcher Schicht des ISO-OSI-Modells ist die Kernaufgabe "Kodierung (Darstellung) der Anwendungsdaten als Bitstrom" zugeordnet? Identifizieren Sie die korrekte Schichtnummer.
+
+Antwortmöglichkeiten:
+a) Schicht 1: Physical Layer (Falsch)
+b) Schicht 4: Transport Layer (Falsch)
+c) Schicht 6: Presentation Layer (Richtig)
+d) Schicht 7: Application Layer (Falsch)

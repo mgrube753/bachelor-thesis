@@ -1,0 +1,13 @@
+Frage: In welchen Schichten des ISO-OSI-Modells wird gemäß ihrer Kernaufgaben explizit die Steuerung der Datenflussrate (Flußkontrolle/Flußsteuerung) implementiert?
+
+Antwortmöglichkeiten:
+a) Nur im Transport Layer (Layer 4) (Falsch)
+b) Im Data Link Layer (Layer 2) und im Transport Layer (Layer 4) (Falsch)
+c) Im Data Link Layer (Layer 2), im Network Layer (Layer 3) und im Transport Layer (Layer 4) (Richtig)
+d) Im Network Layer (Layer 3) und im Transport Layer (Layer 4) (Falsch)
+
+**Begründung der Korrektheit (nicht Teil der Ausgabe, nur zur Erläuterung):**
+*   **Data Link Layer (Layer 2):** Der Text listet explizit "Flußkontrolle" als eine der 5 Kernaufgaben auf (Strategien, wenn Sender für Empfänger zu schnell sendet).
+*   **Network Layer (Layer 3):** Der Text listet explizit "Flußsteuerung" als eine der 3 Kernaufgaben auf (Strategien, wenn zu schnell gesendet wird; End-to-End und Node-to-Node).
+*   **Transport Layer (Layer 4):** Der Text listet explizit "Flußsteuerung" als eine der 3 Kernaufgaben auf (Nutzen der Teilnehmer-Charakteristik).
+*   Die anderen Schichten (Physical, Session, Presentation, Application) nennen im vorliegenden Text keine Flußkontrolle/-steuerung als Kernaufgabe.

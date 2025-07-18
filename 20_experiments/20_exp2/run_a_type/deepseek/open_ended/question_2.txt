@@ -1,0 +1,7 @@
+Frage: Vergleichen Sie die Mechanismen der Flusssteuerung in den Schichten 2, 3 und 4 des OSI-Modells hinsichtlich ihres räumlichen Geltungsbereichs und ihrer primären Steuerungsebene.  
+
+Antwort:  
+a) Schicht 2 verwendet End-to-End-Flusssteuerung basierend auf Teilnehmercharakteristiken, Schicht 3 regelt Node-to-Node mittels Zwischenpufferung, Schicht 4 kombiniert Adressierung und QoS-Garantien. (Falsch)  
+b) Schicht 2 steuert zwischen direkt verbundenen Knoten (z.B. durch Puffern oder Herunterregeln), Schicht 3 behandelt End-to-End- und Node-to-Node-Strategien zwischen Netzwerken, Schicht 4 nutzt Teilnehmer-Charakteristiken für die Steuerung. (Richtig)  
+c) Alle drei Schichten implementieren identische Flusskontrollmechanismen, jedoch mit unterschiedlichen Adressierungsformen: MAC-Adressen (Schicht 2), IP-Adressen (Schicht 3), Port-Adressen (Schicht 4). (Falsch)  
+d) Schicht 2 priorisiert Medienzugriffskontrolle, Schicht 3 fokussiert auf Routing-Entscheidungen, Schicht 4 gewährleistet ausschließlich Dienstgüte (QoS) ohne explizite Flusssteuerung. (Falsch)

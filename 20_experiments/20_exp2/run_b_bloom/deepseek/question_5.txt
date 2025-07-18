@@ -1,0 +1,8 @@
+Frage: Bewerten Sie die folgende Aussage kritisch: "Die Fehlerkorrekturmechanismen des Data Link Layer (Layer 2) garantieren eine vollständig fehlerfreie Ende-zu-Ende-Kommunikation zwischen Anwendungen auf dem Application Layer (Layer 7)."
+
+Antwortmöglichkeiten:  
+a) Die Aussage ist falsch, da der Data Link Layer nur die Verbindung zwischen direkt benachbarten Knoten absichert. Fehler können in höheren Schichten (z. B. Router auf Layer 3) oder auf dem Transportweg zwischen verschiedenen Netzwerken erneut auftreten, wofür höhere Schichten (insbesondere Layer 4) zusätzliche Ende-zu-Ende-Sicherungen benötigen. (Richtig)  
+b) Die Aussage ist korrekt, weil der Data Link Layer explizit für die fehlergesicherte Übertragung über den Physical Layer verantwortlich ist und somit alle Fehler bis zum Endgerät behebt. (Falsch)  
+c) Die Aussage ist teilweise richtig, da der Data Link Layer zwar Fehler korrigiert, aber die Garantie für Ende-zu-Ende-Kommunikation ausschließlich durch die Fehlerkontrolle des Physical Layer (Layer 1) erfüllt wird. (Falsch)  
+d) Die Aussage ist richtig, weil Ende-zu-Ende-Kommunikation eine Kernaufgabe des Network Layer (Layer 3) ist, der sich auf die Fehlersicherung des Data Link Layer verlässt. (Falsch)  
+e) Die Aussage ist falsch, da der Data Link Layer nur Punkt-zu-Punkt-Verbindungen sichert. Ende-zu-Ende-Integrität erfordert zusätzliche Mechanismen im Transport Layer (Layer 4), wie z. B. Dienstgüte (QoS) oder Flußsteuerung, die auf Teilnehmerebene wirken. (Richtig)

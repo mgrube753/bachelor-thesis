@@ -1,0 +1,7 @@
+Frage: Analysieren Sie die unterschiedlichen Implementierungsebenen der Flußsteuerung im ISO-OSI-Modell und erläutern Sie, auf welchen Schichten diese Funktion jeweils welche spezifischen Kommunikationsabschnitte betrifft.
+
+Antwort:
+a) Die Flußsteuerung ist ausschließlich Aufgabe des Data Link Layer (Layer 2) und betrifft die direkte Verbindung zwischen zwei benachbarten Knoten. (Falsch)  
+b) Die Flußsteuerung wird primär im Network Layer (Layer 3) und Transport Layer (Layer 4) implementiert, wobei Layer 3 die Steuerung zwischen Netzwerkknoten (Node-to-Node) und Layer 4 die Steuerung zwischen Endteilnehmern (End-to-End) übernimmt. (Richtig)  
+c) Die Flußsteuerung findet auf dem Data Link Layer (Layer 2) für die Verbindung zwischen direkten Nachbarn, dem Network Layer (Layer 3) für die Steuerung zwischen Netzwerkknoten (Node-to-Node) und dem Transport Layer (Layer 4) für die Steuerung zwischen Endteilnehmern (End-to-End) statt. (Richtig)  
+d) Die Flußsteuerung ist eine Kernaufgabe des Application Layer (Layer 7), da sie direkt auf die Anforderungen der Teilnehmer zugeschnitten ist. (Falsch)

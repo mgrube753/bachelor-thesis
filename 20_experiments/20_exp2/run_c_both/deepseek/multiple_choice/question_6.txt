@@ -1,0 +1,7 @@
+Frage: Sie sollen ein neues Protokoll entwerfen, das gezielt Funktionen der Schichten 5 bis 7 des ISO-OSI-Modells nutzt. Welche der folgenden Grundfunktionen ist für dieses Protokoll *nicht* erforderlich, da sie primär in niedrigeren Schichten realisiert wird?
+
+Antwortmöglichkeiten:
+a) Synchronisation durch Setzen von Zwischenpunkten (Richtig)
+b) Adressierung von Teilnehmern im Netzwerk (Falsch)
+c) Sicherung der Dienstgüte (Quality of Service) für Bandbreite und Latenz (Falsch)
+d) Steuerung des Medienzugriffs bei gemeinsam genutzten Übertragungsmedien (Falsch)

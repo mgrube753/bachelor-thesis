@@ -1,0 +1,6 @@
+Frage: Entwerfen Sie ein Kommunikationsprotokoll für eine IoT-Smart-Home-Umgebung, das spezifische Funktionen aus mindestens vier verschiedenen Schichten des ISO-OSI-Modells integriert. Erläutern Sie, wie diese kombinierten Funktionen energieeffiziente Datenübertragung zwischen Sensoren und einer Zentraleinheit bei gleichzeitiger Sicherung gegen unbefugten Zugriff gewährleisten.
+
+Antwort:
+a) Das Protokoll nutzt Physical-Layer-Manchester-Codierung zur Störungsresistenz, Data-Link-Layer-MAC-Adressierung für Geräteidentifikation, Network-Layer-IP-Routing über Wi-Fi/Thread, Presentation-Layer-AES-Verschlüsselung und Transport-Layer-QoS-Priorisierung für Alarmdaten. (Richtig)  
+b) Es kombiniert Application-Layer-Protokollelemente für Temperaturdaten, Session-Layer-Synchronisation mittels Checkpoints, Presentation-Layer-ASCII-Konvertierung und Physical-Layer-Funkübertragung ohne Sicherungsmechanismen. (Falsch)  
+c) Die Lösung integriert Transport-Layer-Flusskontrolle zur Datenratenbegrenzung, Data-Link-Layer-Fehlerkorrektur via CRC, Network-Layer-Subnetzbildung und Presentation-Layer-Kompression zur Reduktion der Nutzdaten. (Richtig)

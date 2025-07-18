@@ -1,0 +1,5 @@
+Frage: Auf welchen Ebenen des ISO/OSI-Referenzmodells wird Flusssteuerung implementiert und wie unterscheiden sich die Ansätze zwischen diesen Ebenen?
+
+a) Ausschließlich auf Ebene 4 durch nutzerorientierte Parameter. (Falsch)  
+b) Auf Ebene 2 (Media Access Control), 3 (Routing-Ebene) und 4 (End-to-End-Transport) mit jeweils unterschiedlichen Fokussen wie Sendergeschwindigkeitsanpassung, Knotenpufferung und Dienstgüte. (Richtig)  
+c) Primär auf Ebene 7 durch Anwendungsprotokolle. (Falsch)

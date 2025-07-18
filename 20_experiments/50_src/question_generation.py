@@ -389,7 +389,6 @@ def run_exp_2b(clients):
     layer_specification = "all_layers"
     bloom_data = get_bloom()
 
-    # Use concatenated script layers instead of single tanenbaum layer
     base_text_for_exp2 = concatenate_all_script_layers("common")
 
     prompt_template_bloom = load_prompt(

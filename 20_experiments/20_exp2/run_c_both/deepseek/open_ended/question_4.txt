@@ -1,0 +1,6 @@
+Frage: Analysieren Sie die Unterschiede in den Flusskontroll-Mechanismen zwischen Data Link Layer, Network Layer und Transport Layer des ISO-OSI-Modells.
+
+Antwort:
+a) Der Data Link Layer implementiert Flusskontrolle zwischen direkt verbundenen Knoten (Node-to-Node), um Überlastung auf einem einzelnen Link zu verhindern. Der Network Layer nutzt Flusskontrolle entweder End-to-End oder Node-to-Node, um die Datenrate über mehrere Netzhops hinweg zu steuern. Der Transport Layer wendet Flusskontrolle End-to-End zwischen den Endteilnehmern an und berücksichtigt dabei spezifische Teilnehmercharakteristika. (Richtig)
+b) Die Flusskontrolle im Data Link Layer adressiert primär die Adressierung von Geräten, während sie im Network Layer für Routing und im Transport Layer für Dienstgüte (QoS) optimiert wird. (Falsch)
+c) Alle drei Schichten verwenden identische Flusskontrollstrategien wie Zwischenpuffern oder Herunterregeln, da der Zweck – die Vermeidung von Überlastung beim Empfänger – in allen Schichten gleich ist. (Falsch)

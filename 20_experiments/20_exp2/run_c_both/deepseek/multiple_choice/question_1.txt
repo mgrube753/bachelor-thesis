@@ -1,0 +1,7 @@
+Frage: Welche der folgenden Aufgaben ist eine Kernfunktion des Physical Layer im ISO-OSI-Modell?  
+
+Antwortmöglichkeiten:  
+a) Codierung logischer Werte auf physikalische Größen (Richtig)  
+b) Erkennen und Beheben von Übertragungsfehlern (Falsch)  
+c) Netzwerk-übergreifende Adressierung (Falsch)  
+d) Konvertierung der Zeichendarstellung (Falsch)

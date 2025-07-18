@@ -1,0 +1,7 @@
+Frage: Bewerten Sie die Notwendigkeit der Implementierung von Flusskontrolle in mehreren Schichten des OSI-Modells (insbesondere Schicht 2 und 4) und begründen Sie dies primär mit den unterschiedlichen Kommunikationseinheiten und Verantwortungsbereichen.
+
+Antwortmöglichkeiten:
+a) Flusskontrolle ist in Schicht 2 (Data Link Layer) notwendig, um die Übertragungsrate zwischen direkt benachbarten Knoten (Frames) zu regulieren, während sie in Schicht 4 (Transport Layer) erforderlich ist, um die Ende-zu-Ende-Datenrate zwischen den eigentlichen Kommunikationspartnern (Segmente) über das gesamte Netzwerk hinweg zu steuern. (Richtig)
+b) Die Implementierung in Schicht 2 dient der Vermeidung von Überlastung der Netzwerkhardware (Router, Switches), während Schicht 4 primär die CPU-Auslastung der Endgeräte durch zu schnelle Datenströme begrenzt. (Falsch)
+c) Schicht 2 regelt die Geschwindigkeit basierend auf der physikalischen Medienkapazität (z.B. Kabel), während Schicht 4 die Geschwindigkeit an die Verarbeitungskapazität der Anwendungsprozesse auf den Endgeräten anpasst. (Falsch)
+d) Die mehrfache Implementierung ist redundant; Flusskontrolle sollte ausschließlich auf Schicht 4 (Transport Layer) implementiert werden, da nur diese Ende-zu-Ende-Kontrolle bietet und Schicht 2 sich nur auf lokale Verbindungen konzentriert. (Falsch)

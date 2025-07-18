@@ -1,0 +1,7 @@
+Frage: In welchen Schichten des OSI-Modells wird Flusskontrolle implementiert?
+
+Antwortmöglichkeiten:
+a) Ausschließlich im Data Link Layer (Falsch)
+b) Ausschließlich im Transport Layer (Falsch)
+c) Im Data Link Layer, Network Layer und Transport Layer (Richtig)
+d) Ausschließlich im Network Layer (Falsch)

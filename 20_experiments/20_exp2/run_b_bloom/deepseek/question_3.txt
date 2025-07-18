@@ -1,0 +1,8 @@
+Frage: Identifizieren Sie alle OSI-Schichten, deren Kernaufgaben explizit die Implementierung von Flußsteuerungsmechanismen umfassen.  
+
+Antwortmöglichkeiten:  
+a) Nur Layer 2, da er Strategien wie Zwischenpuffern bei zu schnellem Senden bereitstellt. (Richtig)  
+b) Layer 1 und Layer 7, da sie den physischen Transport bzw. anwendungsspezifische Reaktionen steuern. (Falsch)  
+c) Layer 2, Layer 3 und Layer 4, da sie Flußkontrolle (L2), Flußsteuerung end-to-end/node-to-node (L3) und nutzerzentrierte Flußsteuerung (L4) definieren. (Richtig)  
+d) Layer 5, da er Sitzungssynchronisation verwaltet. (Falsch)  
+e) Layer 3 und Layer 6, weil Routing (L3) und Kompression (L6) Übertragungsgeschwindigkeit beeinflussen. (Falsch)

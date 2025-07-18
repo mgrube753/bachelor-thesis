@@ -51,7 +51,7 @@ Wird die Frage vom Dozenten als fachlich / didaktisch / technisch sinnvoll erach
 - 4: Frage ist fachlich oder didaktisch unglücklich
 - 2: Frage ist größtenteils problematisch
 - 0: Frage ist nicht sinnvoll verwendbar
-   - Bsp: "Wie viele Transport Layer gibt es?" (Missverständnis)
+   - Bsp: "Wie viele Transport Layer gibt es?" (Missverständnis, weil es nur einen gibt)
 
 **Sprache/Language (0-10 Punkte):**
 Ist die vom System benutzte Sprache hinreichend präzise und verständlich?

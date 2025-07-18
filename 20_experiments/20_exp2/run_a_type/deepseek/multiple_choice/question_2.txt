@@ -1,0 +1,7 @@
+Frage: In welcher Schicht des ISO-OSI-Modells ist die Flusskontrolle primär für die Steuerung der Übertragungsgeschwindigkeit zwischen direkt miteinander verbundenen Geräten (z.B. benachbarte Knoten) verantwortlich?
+
+Antwortmöglichkeiten:
+a) Data Link Layer (Schicht 2) (Richtig)
+b) Transport Layer (Schicht 4) (Falsch)
+c) Physical Layer (Schicht 1) (Falsch)
+d) Session Layer (Schicht 5) (Falsch)
