@@ -1,0 +1,7 @@
+Frage: In welchen Schichten des ISO-OSI-Modells wird Flusskontrolle als Kernaufgabe implementiert, und was ist jeweils der spezifische Fokus oder Anwendungsbereich dieser Flusskontrolle in den betreffenden Schichten?
+
+Antwort:
+a) Nur im Transport Layer (4), wo sie die Charakteristika der Endteilnehmer nutzt, um die Übertragungsrate anzupassen. (Falsch)
+b) Im Data Link Layer (2), wo sie die Übertragungsrate zwischen direkt verbundenen Geräten steuert (z.B. bei zu schnellem Sender für den Empfänger), im Network Layer (3), wo sie end-to-end (Sender zum entfernten Empfänger) oder node-to-node (jeweils zwischen benachbarten Knoten) implementiert wird, und im Transport Layer (4), wo sie die Teilnehmer-Charakteristik nutzt. (Richtig)
+c) Ausschließlich im Network Layer (3), da dieser für die end-to-end- oder node-to-node-Flusssteuerung zwischen Netzwerken verantwortlich ist. (Falsch)
+d) Im Session Layer (5), wo sie die Synchronisation von Datenströmen durch Setzen von Zwischenpunkten gewährleistet, und im Presentation Layer (6), wo sie die Kompression von Datenströmen zur Steuerung der Datenmenge umsetzt. (Falsch)

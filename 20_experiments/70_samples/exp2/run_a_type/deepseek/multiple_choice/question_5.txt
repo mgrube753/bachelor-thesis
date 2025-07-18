@@ -1,0 +1,7 @@
+Frage: In welcher Schicht des ISO-OSI-Modells werden primär Strategien zur Steuerung der Datenübertragungsgeschwindigkeit zwischen direkt verbundenen Knoten implementiert, um Probleme zu adressieren, wenn ein Sender zu schnell für einen Empfänger sendet?
+
+Antwortmöglichkeiten:
+a) Data Link Layer (Schicht 2) (Richtig)
+b) Network Layer (Schicht 3) (Falsch)
+c) Transport Layer (Schicht 4) (Falsch)
+d) Session Layer (Schicht 5) (Falsch)

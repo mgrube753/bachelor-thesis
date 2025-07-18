@@ -1,0 +1,7 @@
+Frage: Nennen Sie die drei Kernaufgaben der Bitübertragungsschicht (Physical Layer) im OSI-Modell.  
+Antwort:  
+a) Codierung (Abbildung logischer Werte auf physikalische Größen) (Richtig)  
+b) Transport (Übertragung physikalischer Größen von einem Ort zum anderen) (Richtig)  
+c) Decodierung (Rückinterpretation physikalischer Größen als logische Werte) (Richtig)  
+d) Fehlerkontrolle (Erkennen und Beheben von Übertragungsfehlern) (Falsch)  
+e) Adressierung (Netzwerk-übergreifende Adressen) (Falsch)

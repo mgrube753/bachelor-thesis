@@ -1,0 +1,13 @@
+Frage: Entwerfen Sie ein Kommunikationsprotokoll, das Quality-of-Service-Garantien (Bandbreite, Latenz) bietet, Synchronisationspunkte während der Übertragung setzt und Ende-zu-Ende-Verschlüsselung gewährleistet. Identifizieren Sie die relevanten OSI-Schichten für die Umsetzung jeder dieser drei Anforderungen.
+
+Antwortmöglichkeiten:  
+a) Transport Layer für QoS, Session Layer für Synchronisation, Presentation Layer für Verschlüsselung (Richtig)  
+b) Network Layer für QoS, Application Layer für Synchronisation, Presentation Layer für Verschlüsselung (Falsch)  
+c) Transport Layer für QoS, Presentation Layer für Synchronisation, Application Layer für Verschlüsselung (Falsch)  
+d) Data Link Layer für QoS, Session Layer für Synchronisation, Transport Layer für Verschlüsselung (Falsch)  
+
+**Erklärung der Korrektheit**:  
+- **QoS (Bandbreite/Latenz)** wird im Transport Layer (Layer 4) durch Dienstqualitätsgarantien umgesetzt.  
+- **Synchronisationspunkte** sind eine Kernaufgabe des Session Layers (Layer 5).  
+- **Ende-zu-Ende-Verschlüsselung** erfolgt im Presentation Layer (Layer 6), der für Verschlüsselung zuständig ist.  
+Die falschen Optionen weisen Anforderungen falschen Schichten zu (z.B. QoS dem Network/Data Link Layer oder Verschlüsselung dem Application Layer), was gegen die im Text definierten Schichtfunktionen verstößt.

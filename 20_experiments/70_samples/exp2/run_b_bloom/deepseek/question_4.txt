@@ -1,0 +1,7 @@
+Frage: Differenzieren Sie die primären Aufgaben der Flusskontrolle im Data Link Layer (Layer 2) von jener im Transport Layer (Layer 4) im ISO-OSI-Modell hinsichtlich ihres Geltungsbereichs und ihrer Zielsetzung.
+
+Antwortmöglichkeiten:  
+a) Die Flusskontrolle im Data Link Layer regelt die Übertragungsgeschwindigkeit zwischen direkt verbundenen Knoten (Node-to-Node), um Pufferüberläufe zu verhindern, während die Flusskontrolle im Transport Layer die Übertragungsrate zwischen Endgeräten über das gesamte Netzwerk hinweg (End-to-End) steuert, um die Kapazitäten des Empfängers zu berücksichtigen. (Richtig)  
+b) Die Flusskontrolle im Data Link Layer ist für die Fehlererkennung und -behebung zwischen Endgeräten verantwortlich, während die Flusskontrolle im Transport Layer die Segmentierung von Daten in Frames für die physikalische Übertragung überwacht. (Falsch)  
+c) Beide Schichten verwenden identische Flusskontrollemechanismen, da sie die gleiche Funktion erfüllen; der einzige Unterschied liegt in der verwendeten Adressierung (MAC vs. Port). (Falsch)  
+d) Die Flusskontrolle im Transport Layer steuert primär den Medienzugriff für kollisionsfreie Übertragungen auf dem Kanal, während die Flusskontrolle im Data Link Layer die Weiterleitung von Paketen über Router hinweg optimiert. (Falsch)

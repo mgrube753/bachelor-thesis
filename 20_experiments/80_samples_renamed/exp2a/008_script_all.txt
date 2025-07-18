@@ -1,0 +1,7 @@
+Frage: Vergleichen Sie die Mechanismen der Flußsteuerung in Layer 2, Layer 3 und Layer 4 des ISO-OSI-Modells hinsichtlich ihres Wirkungsbereichs und ihrer Zielsetzung und nennen Sie jeweils ein charakteristisches Prinzip oder eine typische Maßnahme.
+
+a) Layer 2 (Data Link): Wirkungsbereich zwischen direkt verbundenen Knoten (Node-to-Node), Zielsetzung ist die Anpassung der Senderate an die Verarbeitungsgeschwindigkeit des direkten Empfängers. Typische Maßnahme: Zwischenpuffern oder Herunterregeln der Senderate. (Richtig)  
+b) Layer 3 (Network): Wirkungsbereich entweder End-to-End (vom ursprünglichen Sender zum endgültigen Empfänger) oder Node-to-Node (zwischen Routing-Knoten), Zielsetzung ist die Vermeidung von Überlastung im Netzwerkpfad. Typische Maßnahme: Strategien zur Steuerung bei zu hoher Senderate über mehrere Netzwerkhops hinweg. (Richtig)  
+c) Layer 4 (Transport): Wirkungsbereich End-to-End zwischen den kommunizierenden Teilnehmern, Zielsetzung ist die Anpassung der Senderate an die Charakteristik des entfernten Empfängerteilnehmers. Typische Maßnahme: Nutzung der Teilnehmer-Charakteristik zur Steuerung. (Richtig)  
+d) Layer 2 (Data Link): Wirkungsbereich netzwerkübergreifend, Zielsetzung ist die Garantie von Dienstgüteparametern (QoS) wie Latenz. Typische Maßnahme: Reservieren von Bandbreite. (Falsch)  
+e) Layer 3 (Network): Wirkungsbereich beschränkt auf die Synchronisation von Sitzungspunkten innerhalb einer Verbindung. Typische Maßnahme: Setzen von Zwischenpunkten (Checkpoints). (Falsch)

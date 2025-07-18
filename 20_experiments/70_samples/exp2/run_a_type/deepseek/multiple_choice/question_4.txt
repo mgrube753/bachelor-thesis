@@ -1,0 +1,7 @@
+Frage: Auf welcher Schicht des ISO-OSI-Modells ist die End-to-End-Flusssteuerung zwischen den eigentlichen Kommunikationsendpunkten (Teilnehmern) angesiedelt, die die Charakteristik dieser Teilnehmer berücksichtigt?
+
+Antwortmöglichkeiten:
+a) Data Link Layer (Schicht 2) (Falsch)
+b) Network Layer (Schicht 3) (Falsch)
+c) Transport Layer (Schicht 4) (Richtig)
+d) Application Layer (Schicht 7) (Falsch)

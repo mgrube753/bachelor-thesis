@@ -27,7 +27,7 @@ def walk_and_sample(base_path, sample_base, exp_name, pattern, sample_size=3):
             continue
 
         if any(pattern in f and f.endswith(".txt") for f in files):
-            rel_path = os.path.relpath(root, base_path)
+            rel_path = root.replace(base_path, "").lstrip(os.sep)
             dest_path = os.path.join(sample_base, exp_name, rel_path)
             sampled = sample_questions(root, dest_path, pattern, sample_size)
             if sampled:
@@ -68,9 +68,10 @@ def generate_expert_csvs(sample_base, csv_path):
     for root, _, files in os.walk(sample_base):
         for file in files:
             if file.endswith(".txt"):
-                parts = os.path.relpath(os.path.join(root, file), sample_base).split(
-                    os.sep
-                )
+                # Calculate relative path manually to avoid getcwd issues
+                full_path = os.path.join(root, file)
+                rel_path = full_path.replace(sample_base, "").lstrip(os.sep)
+                parts = rel_path.split(os.sep)
                 try:
                     record = parse_file_path(parts)
                     if record:
@@ -118,7 +119,7 @@ def generate_expert_csvs(sample_base, csv_path):
             os.makedirs(os.path.dirname(hints_path), exist_ok=True)
             group_to_save = group[output_columns]
             group_to_save.to_csv(hints_path, index=False)
-            print(f"  - Saved hint file: {os.path.relpath(hints_path)}")
+            print(f"  - Saved hint file: {os.path.basename(hints_path)}")
 
     # Generate hint files for exp2
     print("\n[INFO] Generating hint CSV files for exp2...")
@@ -140,7 +141,7 @@ def generate_expert_csvs(sample_base, csv_path):
 
             group_to_save = group[output_columns]
             group_to_save.to_csv(hints_path, index=False)
-            print(f"  - Saved hint file: {os.path.relpath(hints_path)}")
+            print(f"  - Saved hint file: {os.path.basename(hints_path)}")
 
     # Exp1: Save to expert_1 through expert_5 folders
     exp1_data = df[df["exp_name"].isin(["exp1a", "exp1b"])]
@@ -304,9 +305,16 @@ def main():
     csv_path = os.path.join(base, "60_analyses", "csv")
     output_path = os.path.join(base, "80_samples_renamed")
 
-    shutil.rmtree(sample_base, ignore_errors=True)
-    shutil.rmtree(os.path.join(csv_path, "qualitative"), ignore_errors=True)
-    shutil.rmtree(output_path, ignore_errors=True)
+    # Ensure directories exist without cleaning them up first.
+    # Cleanup should be handled by a separate script or manually.
+    os.makedirs(sample_base, exist_ok=True)
+    os.makedirs(output_path, exist_ok=True)
+    for exp_folder in ["exp1", "exp2"]:
+        for subfolder in ["experts", "students", "hints"]:
+            path_to_create = os.path.join(
+                csv_path, "qualitative", exp_folder, subfolder
+            )
+            os.makedirs(path_to_create, exist_ok=True)
 
     walk_and_sample(EXP1_PATH, sample_base, "exp1", "_question", 2)
     walk_and_sample(EXP2_PATH, sample_base, "exp2", "question_", 2)
