@@ -51,7 +51,7 @@ In contrast, the adherence score provided a clearer differentiation. Using no so
     \label{fig:exp1a-llm-source-comparison}
 \end{figure}
 
-Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} also reveals that the cosine similarity scores were lower and also differ a lot from the adherence scores. Expert results by the primary thesis supervisor, later discussed under \textit{Correctness} in e.g.\ Figure \bfref{fig:exp1a-correctness-heatmaps}, the cosine similarity was unreliable for this task, as this did not properly reflect the content fidelity of the generated questions in Experiment 1a. The adherence scores in this quantitative analysis, however, provided a quite nuanced view of model performance, showing that DeepSeek and OpenAI were more consistent in adhering to the source content, while Anthropic and Google exhibited slightly lower and more variable scores.
+Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} reveals that the cosine similarity scores were lower and also differ a lot from the adherence scores. Expert results by the primary supervisor, later discussed under \textit{Correctness} in e.g.\ Figure \bfref{fig:exp1a-correctness-heatmaps}, show that cosine similarity was unreliable for this task, as this did not properly reflect the content fidelity of the questions in Experiment 1a. The adherence scores in this quantitative analysis, however, provided a quite nuanced view of model performance, showing that DeepSeek and OpenAI were more consistent in adhering to the source content, while Anthropic and Google exhibited slightly lower and more variable scores.
 
 \begin{figure}[htbp]
     \centering
@@ -70,7 +70,7 @@ Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} 
 
 % \pagebreak
 
-To get a proper view of the content adherence, the evaluation also included a comparison of the performance of the \ac{llms} against the used prompt type, as shown in Figure \bfref{fig:exp1a-llm-prompt-comparison}. Here, the results between cosine similarity and adherence scores were again significantly different. On the one hand, the hardly comprehensible cosine similarity tends to higher scoring values for the complex prompt. On the other hand, adherence scores show that the common prompt leads to better results -- best for OpenAI ($\approx 0.992$ vs.\ $0.94$) and DeepSeek ($\approx 0.973$ vs.\ $0.945$) --, while the complex prompt leads to slightly lower scores instead for all models, especially for Google and Anthropic. This is also indicated by the expert results by the primary supervisor, which suggest that the common prompt is more effective in content adherence than the complex prompt.
+To get a proper view of the content adherence, the evaluation also included a comparison of the performance of the \ac{llms} against the used prompt type, as shown in Figure \bfref{fig:exp1a-llm-prompt-comparison}. Here, the results between cosine similarity and adherence scores were again significantly different. On the one hand, the hardly comprehensible cosine similarity tends to higher scoring values for the complex prompt. On the other hand, adherence scores show that the common prompt leads to better results -- best for OpenAI ($\approx 0.992$ vs.\ $0.94$) and DeepSeek ($\approx 0.973$ vs.\ $0.945$) --, while the complex prompt leads to slightly lower scores instead for all models, especially for Google and Anthropic. This is also indicated by the expert results by the primary supervisor, which indicate that the common prompt is more effective in content adherence than the complex prompt.
 
 \begin{figure}[htbp]
     \centering
@@ -264,7 +264,7 @@ Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results}
 % #TODO also set up IAA for supervisor vs. staff members, since the supervisor (professor) plays a different role (1 vs. 4 members)
 % #TODO talk about similarities and differences between the supervisor's and staff's results
 
-In this sub-experiment, our staff members were asked to evaluate the same question set based on the criteria rubric, as the supervisor did before. This paragraph discusses the staff members' outcomes plus primarily the similarities and differences to the supervisor's results, based on the figures, tables and inter-rater agreement analysis.
+In this sub-experiment, four staff members were asked to evaluate the same question set based on the criteria rubric, as the supervisor did before. This paragraph discusses the staff members' outcomes plus primarily the similarities and differences to the supervisor's results, based on numerous figures, tables and inter-rater agreement analysis.
 
 \object{Experiment 1a -- Content Fidelity} 
 
@@ -275,6 +275,14 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
     \label{fig:exp1a-llm-analysis-staff} 
     % erkennen diverser aehnlichkeiten und unterschiede, sehr aehnlich zu prof. cap die verläufe vor allem via mean.
     % erkennbar, dass prof. cap als spezialist + autor von (tran-)script ist, dass er grundsätzlich höhere werte gibt als die staff members
+    % Relevanz ähnlich, aber breiter Bereich bei staff members, trotzdem aehnlich in mean und median
+    % clarity war cap besonders hoch bei deepseek und openai, aehnliches erkennbar bei staff members, gelegentlich weniger klarheit, DeepSeek und OpenAI aber auch hier am besten
+    % answerability aehnlich, cap aber auch hier besser bei Deepseek und openai, staff members aehnlich, aber vor allem bei deepseek und openai wieder geringer mit mehr ausreissern
+    % challenging bei beiden deepseek und openai nicht so gut, means und medians unter 4, gibt an sich ein aehnliches bild
+    % value vor allem bei openai anders bei staff members, cap hat openai am besten bewertet, staff sind eher on par openai vs. anthropic hier. google bei cap etwas besser grundsaetzlich, deepseek aehnlich bei beiden, anthropic auch strenger bei staff members
+    % language recht aehnlich auch, cap wieder besser bei openai und deepseek; staff findet die auch am besten, gibt aber gelegentlich niedrigere werte; bei beiden evals aber anthropic und google jeweils erkennbar schlechter als die anderen beide modelle
+    % correctness aehnlich, openai bestes, anthropic und deepseek aehnlich bei beiden evals; cap findet google sogar schlechter, was durch den common prompt primär bedingt ist
+    % total score: google bei cap grundsätzlich am schlechtesten; sonst sind mit diversen unterschieden in kriterien anthropic deepseek und google on par; openai bei cap klarer sieger, bei staff members.. auch erkennbar, diese haben strenger bewertet
 \end{figure}
 
 \begin{figure}[htbp]
@@ -284,6 +292,7 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
     \label{fig:exp1a-correctness-heatmaps-staff}
     % nach input source sehr verschieden ggü. prof. Cap; grundsätzlich google und anthropic aber auch etwas schwächer
     % openai als favorit bei Cap nicht erkennbar bei staff, google auch nicht so schlecht bewertet wie bei Cap
+    % bei cap war umgekehrter material trend, dass script schlechter war und transcript das beste, bei staff kaum trend sichtbar, ausser eher etwas in richtung script
     % besser erkennbar: auch hier ist der common prompt viel inhaltstreuer als der complex prompt
 \end{figure}
 
@@ -314,7 +323,11 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
     \end{tabular}}
 \end{table}
 
-\tcr{staff members differenzieren nicht stark gegenueber der input sources, grundsaetzlich aber eher das script besser ausser in clarity und language, da ist es besser verständlich und präziser formuliert bei transcript.}
+% \tcr{staff members differenzieren nicht stark gegenueber der input sources, grundsaetzlich aber eher das script besser ausser in clarity und language, da ist es besser verständlich und präziser formuliert bei transcript.}
+% tanenbaum bei staff eher immer schlechtestes oder mittelfeld oder schlechtestes, bei cap ebenso, bei challenging language und correctness aber tanenbaum auch gut, sonst an total score auch erkennbar dass tanenbaum schlechtestes ist
+% stets geringe ergebnisse bei challenging, wertigkeit fuer dozenten ist auch bei beiden gering gehalten. da wird experiment 2 wohl andere ergebnisse liefern als kontrast.
+% script gewinnt jeweils knapp als beste source; bei cap ist script oft knapp hinter transcript, bei staff members  
+% grundsaetzlich ist tanenbaum ja weniger gut; text war auf englisch, aber bei challenging waren sie ausreichend
 
 \begin{table}[htbp]
     \centering
@@ -337,11 +350,21 @@ In this sub-experiment, our staff members were asked to evaluate the same questi
         \bottomrule
         \end{tabular}}
 \end{table}
-\tcr{gleiches muster wie bei prof. cap: common prompt besser als complex prompt, ausser challenging.}
+
+% \tcr{gleiches muster wie bei prof. cap: common prompt besser als complex prompt, ausser challenging.}
+% allein bei total score stets grosse luecke, aber im grunde waren die staff members etwas strenger bei der bewertung
+% bei staff stets relevanz hoch, clarity hoch, answerability hoch, challenging ebenso niedrig aber noch geringer als bei prof. cap
+% value bei staff vor allem bei complex prompt anders als bei Cap (sehr hoch in mean in median)
+% sprachlich hat der common prompt auch bei staff besser abgeschnitten, bei staff etwas geringer bei common und complex
+% correctness aber sehr aehnlich wiederum
+% grundsätzlich bei common prompt ähnlichere werte wie bei prof. cap
+% \tcr{IAA bei 1a grausam, da Rubrik von 0-10 zu viel Spielraum lässt. Habe 0, 2, 4, ... meistens gemacht aber Bewerter haben auch Werte dazwischen gewählt.}
 
 \pagebreak
 
 \object{Experiment 1b -- Error Handling}
+
+As in the previous sub-experiment, the staff members were asked to evaluate questions based on the same criteria. This time, however, the focus was on error handling capabilities.
 
 \begin{table}[htbp]
     \centering
