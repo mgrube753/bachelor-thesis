@@ -309,12 +309,16 @@ def main():
     # Cleanup should be handled by a separate script or manually.
     os.makedirs(sample_base, exist_ok=True)
     os.makedirs(output_path, exist_ok=True)
-    for exp_folder in ["exp1", "exp2"]:
-        for subfolder in ["experts", "students", "hints"]:
-            path_to_create = os.path.join(
-                csv_path, "qualitative", exp_folder, subfolder
-            )
-            os.makedirs(path_to_create, exist_ok=True)
+
+    # Create exp1 folders (experts and hints only)
+    for subfolder in ["experts", "hints"]:
+        path_to_create = os.path.join(csv_path, "qualitative", "exp1", subfolder)
+        os.makedirs(path_to_create, exist_ok=True)
+
+    # Create exp2 folders (students and hints only)
+    for subfolder in ["students", "hints"]:
+        path_to_create = os.path.join(csv_path, "qualitative", "exp2", subfolder)
+        os.makedirs(path_to_create, exist_ok=True)
 
     walk_and_sample(EXP1_PATH, sample_base, "exp1", "_question", 2)
     walk_and_sample(EXP2_PATH, sample_base, "exp2", "question_", 2)
