@@ -1,4 +1,4 @@
-# Überblick der Experimente -- Malte Grube
+# Überblick des Experiments 1 -- Malte Grube
 
 Dieses Experiment (bestehend aus 1a und 1b) testet die Qualität von automatisiert-generierten Fragen durch vier Large Language Models und deren Fähigkeit, sich an diverse gegebene Quellinhalte zu halten. Dabei wurden zwei verschiedene Prompts verwendet, mit denen die Modelle Fragen generieren sollten. Details zu diesen Prompts werden aufgrund des Blindtests nicht gegeben.
 

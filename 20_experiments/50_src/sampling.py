@@ -104,19 +104,6 @@ def generate_expert_csvs(sample_base, csv_path):
     if "layer" in df.columns:
         df["layer"] = df["layer"].astype("Int64")
 
-    # Save initial CSVs
-    for exp_name, group in df.groupby("exp_name"):
-        if exp_name.startswith("exp1"):
-            initial_path = os.path.join(csv_path, "initial", "exp1", f"{exp_name}.csv")
-        elif exp_name.startswith("exp2"):
-            initial_path = os.path.join(csv_path, "initial", "exp2", f"{exp_name}.csv")
-        else:
-            initial_path = os.path.join(csv_path, "initial", f"{exp_name}.csv")
-
-        os.makedirs(os.path.dirname(initial_path), exist_ok=True)
-        group.to_csv(initial_path, index=False)
-        print(f"  - Saved: {os.path.relpath(initial_path)}")
-
     # Generate hint files for exp1
     print("\n[INFO] Generating hint CSV files for exp1...")
     exp1_hint_data = df[df["exp_name"].isin(["exp1a", "exp1b"])].copy()
@@ -215,7 +202,7 @@ def generate_expert_csvs(sample_base, csv_path):
         ]:
             output_df[col] = ""
 
-        for i in range(1, 5):  # student_1 to student_4
+        for i in range(1, 4):
             student_dir = os.path.join(
                 csv_path, "qualitative", "exp2", "students", f"student_{i}"
             )
@@ -270,7 +257,7 @@ def get_source_type(exp, row):
         if "tanenbaum" in src:
             return "tanenbaum"
         return "unknown"
-    return "tanenbaum"
+    return "script"
 
 
 def rename_samples(samples, csv_path, output_path):
@@ -298,8 +285,11 @@ def rename_samples(samples, csv_path, output_path):
                 src = find_file(samples, exp, row)
                 if src and os.path.exists(src):
                     source_type = get_source_type(exp, row)
-                    layer = row.get("layer", 2)
-                    new_name = f"{count:03d}_{source_type}_{layer}.txt"
+                    if exp.startswith("exp1"):
+                        layer = row.get("layer", 2)
+                        new_name = f"{count:03d}_{source_type}_{layer}.txt"
+                    else:  # exp2
+                        new_name = f"{count:03d}_{source_type}_all.txt"
                     shutil.copy2(src, os.path.join(exp_dir, new_name))
                     print(f"  {os.path.basename(src)} -> {new_name}")
                     count += 1

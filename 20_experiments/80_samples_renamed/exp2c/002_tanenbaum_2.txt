@@ -1,9 +1,0 @@
-"""
-Frage: Sie überwachen ein Netzwerk, in dem ein Server große Datenmengen an einen älteren Client mit begrenzter Verarbeitungskapazität sendet. Der Client verliert regelmäßig Datenpakete und die Anwendung funktioniert nicht zuverlässig. Wie würden Sie dieses Problem unter Anwendung der Funktionen der Data Link Layer lösen?
-
-Antwortmöglichkeiten:
-- ~Implementieren eines Verkehrsregulierungsmechanismus, der den Sender informiert, wann der Empfänger weitere Daten akzeptieren kann
-- Erhöhen der Übertragungsgeschwindigkeit, um die Daten schneller zum Client zu transportieren
-- Vergrößern der Datenframes, um die Effizienz der Übertragung zu steigern
-- Deaktivieren der Acknowledgement-Frames, um den Overhead der Kommunikation zu reduzieren
-"""

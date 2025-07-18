@@ -1,3 +1,0 @@
-Frage: Beschreiben Sie die Hauptaufgabe der Data Link Layer gemäß dem bereitgestellten Text und erläutern Sie, wie diese Aufgabe typischerweise umgesetzt wird.
-
-Antwort: ~Die Hauptaufgabe der Data Link Layer ist es, eine rohe Übertragungseinrichtung in eine Leitung umzuwandeln, die frei von unentdeckten Übertragungsfehlern erscheint, indem sie die tatsächlichen Fehler maskiert. Dies wird erreicht, indem der Sender die Eingabedaten in Datenframes (typischerweise einige hundert oder einige tausend Bytes) zerlegt und diese Frames sequenziell überträgt. Bei einem zuverlässigen Dienst bestätigt der Empfänger den korrekten Empfang jedes Frames, indem er ein Bestätigungsframe zurücksendet.

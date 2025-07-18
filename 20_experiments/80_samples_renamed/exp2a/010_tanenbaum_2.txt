@@ -1,7 +1,0 @@
-Frage: Welche Aussage fasst die primäre Aufgabe und die wesentlichen Mechanismen der Sicherungsschicht (Data Link Layer) am prägnantesten zusammen, um die Transparenz von Übertragungsfehlern für höhere Schichten zu gewährleisten?
-
-Antwortmöglichkeiten:
-- ~Die Sicherungsschicht transformiert eine rohe Übertragungsleitung in eine scheinbar fehlerfreie Verbindung, indem sie reale Übertragungsfehler maskiert und Daten in Frames zerlegt, deren korrekten Empfang bei zuverlässigem Dienst mittels Bestätigungen (Acknowledgements) quittiert wird.
-- Die Sicherungsschicht ist hauptsächlich dafür zuständig, den Datenfluss zwischen schnellen Sendern und langsamen Empfängern zu regulieren und den Zugriff auf gemeinsam genutzte Kanäle in Broadcast-Netzwerken zu steuern.
-- Die Hauptaufgabe der Sicherungsschicht besteht darin, eine Ende-zu-Ende-Verbindung über das gesamte Netzwerk herzustellen und logische Adressierung für die Paketweiterleitung zu implementieren.
-- Die Sicherungsschicht priorisiert Netzwerkpakete und leitet diese basierend auf logischen IP-Adressen an das nächste Ziel weiter, um effizientes Routing sicherzustellen.

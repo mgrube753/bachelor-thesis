@@ -1,9 +1,0 @@
-"""
-Frage: Welche Aussage reflektiert am präzisesten die konzeptionelle Herausforderung, die die Datenverbindungsschicht (Data Link Layer) in einem Netzwerksystem mit unterschiedlichen Verarbeitungsgeschwindigkeiten lösen muss?
-
-Antwortmöglichkeiten:
-- ~Die Implementierung eines Verkehrsregulierungsmechanismus, der verhindert, dass ein schneller Sender einen langsamen Empfänger mit Daten überflutet
-- Die Umwandlung von Datagrammen in Frames zur Sicherstellung fehlerfreier Übertragung
-- Die Koordination der Zugriffskontrolle auf gemeinsame Kanäle ausschließlich in Point-to-Point-Verbindungen
-- Die Bestätigung des korrekten Empfangs von Frames durch den Sender an den Empfänger
-"""
