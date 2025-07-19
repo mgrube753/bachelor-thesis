@@ -128,19 +128,19 @@ Furthermore, the used type of prompt had an impact on the results, as shown in F
 
 \paragraph*{Qualitative Analysis -- Supervisor-based} 
 
-To evaluate the generated questions properly and make a comparison with the automated analysis, a sampled qualitative analysis of Experiment 1a was conducted. This involved a detailed rubric evaluation of the generated questions by five experts, the primary thesis supervisor and four staff members of the department's team. 
-
-% #TODO talk about NaN values by e.g. Prof. Cap, that there were questions where the rubric was not capable to evaluate the question, seen as NaN values
+To evaluate the generated questions properly and make a comparison with the quantitative analysis, a sampled qualitative analysis of Experiment 1a was conducted. This involved a detailed rubric evaluation by the primary thesis supervisor and four department staff members.
 
 \object{Experiment 1a -- Content Fidelity} The following criteria were used to assess the questions: \textit{Relevance}, \textit{Clarity}, \textit{Answerability}, \textit{Challenging}, \textit{Value}, \textit{Language}, and \textit{Correctness}. Each criterion was rated on a scale from 1 to 10, with 10 being the best score. The experts were asked to evaluate the questions based on these criteria, and the results were aggregated to provide an overall assessment of the question quality. In this paragraph, the supervisor's results are firstly discussed, while the staff members' results are presented right after. 
 
-The supervisor -- a professor with extensive lecturing experience -- analyzed the questions first, and the staff members were then asked to evaluate the same questions based on the same criteria. In the meantime, the supervisor noticed that the used rubric was not sufficient to cover all qualitative aspects of the questions, leading to an extension of the rubric. By this, the mentioned criteria \textit{Value} and \textit{Language} were added, which were not part of the original rubric. The \textit{Value} criterion was introduced to rate the meaningfulness of the questions in an e.g.\ educational context, while the \textit{Language} criterion focused on the linguistic complexity and precision of the questions -- since \textit{Clarity} focused the content clarity and logical comprehension.
+The supervisor -- a professor with extensive lecturing experience -- analyzed the questions first, and the staff members were then asked to evaluate the same questions based on the same criteria. In the meantime, the supervisor noticed that the used rubric was not sufficient to cover all qualitative aspects of the questions, leading to an extension of the rubric. By this, the mentioned criteria \textit{Value} and \textit{Language} were added to the rubric, which were not part of the firstly used rubric. The novel \textit{Value} criterion was introduced to rate the meaningfulness of the questions in an e.g.\ educational context, while the \textit{Language} criterion focused on the linguistic complexity and precision of the questions -- since \textit{Clarity} focused the content clarity and logical comprehension.
 
-Regarding Figure \bfref{fig:exp1a-llm-analysis}, certain patterns emerged from the supervisor-based evaluation. Most questions were rated highly \textit{relevant} to the material's topic, with OpenAI and Google as the highest scores. Only the OpenAI model could achieve 10/10 points for every question at \textit{Relevance}, also to be seen at the \textit{Clarity} criterion. Here, DeepSeek was also rated high, but Anthropic and Google had both a large scale of points, indicating that they were more inconsistent at generating clear and logically understandable questions. Moreover, the \textit{Answerability} criterion -- based on the source text -- has shown that OpenAI and DeepSeek were the best-performing models again, while Anthropic's and Google's scores were spreading more. 
+Regarding Figure \bfref{fig:exp1a-llm-analysis}, certain patterns emerged from the supervisor-based evaluation. Most questions were rated highly \textit{relevant} to the material's topic, with OpenAI and Google as the highest scores. While every model achieved a median of 10,only the OpenAI model could achieve a mean of 10 at \textit{Relevance}, also to be seen at the \textit{Clarity} criterion next to this criterion. Here, DeepSeek was also rated high as a valuable competitor of OpenAI. In contrast, Anthropic and Google both had a wide scale of points and means of 7.33 and 7.64, indicating that these two models were more inconsistent at generating clear and logically understandable questions. 
 
-Contrary to this, the questions of these two models were rated as more challenging, compared to the lower OpenAI and DeepSeek scores in this regard. The \textit{Value} criterion, which was introduced to assess the e.g.\ educational value of the questions, indicates that the OpenAI questions were the most valuable ones. The other models were inconsistent in this regard, with Google and Anthropic being rated higher than DeepSeek's model. 
+Moreover, the \textit{Answerability} criterion -- based on the source text -- has shown that OpenAI and DeepSeek were the best-performing models again (with means of 9.33 and 8.5), while Anthropic's and Google's scores (with means of 7.5 and 7.45) were spreading more to lower scores instead. Contrary to this, the questions of these two models were rated as more challenging -- while Anthropic being most consistent with a mean of 6.67 --, compared to the significantly lower OpenAI and DeepSeek scores in both mean (3.17 and 3.5) and median (both at 2) in this regard.
 
-The \textit{Language} criterion has a similar trend like the \textit{Clarity} criterion, with OpenAI and DeepSeek being the best-performing models with 10/10 points almost every time. Anthropic and especially Google were rated lower and more spread, showing that they generated questions which were less precise and unnecessarily complex. 
+The educational \textit{Value} criterion indicates that the OpenAI questions were the most valuable ones with a mean and median of 10. The other models were inconsistent in this regard, with noticeably wide ranges of scores, means between 6 and 7 and DeepSeek having the lowest median of 7.
+
+The \textit{Language} criterion has a similar trend like \textit{Clarity}, with OpenAI and DeepSeek performing best with a mean of 10 each. Anthropic and Google were rated lower and more spread across the scale -- resulting in less means of 8.25 and 7.67, showing that these models generated questions which were less precise and unnecessarily complex. 
 
 \pagebreak
 
@@ -153,9 +153,11 @@ The \textit{Language} criterion has a similar trend like the \textit{Clarity} cr
 
 \pagebreak
 
-Ultimately, the \textit{Correctness} criterion, which was introduced to assess the overall content fidelity of the questions, showed that OpenAI was the best performing model again, with DeepSeek and Anthropic right after. The questions generated by Google were rated all across the board, which shows that the model struggled generating correct questions based on solely the source material.
+Ultimately, the \textit{Correctness} criterion, to assess the overall content fidelity of the questions, has shown that OpenAI was the best performing model again with a 10/10 mean. DeepSeek and Anthropic are situated right after. The questions generated by Google were rated all across the board, which shows that the model struggled generating correct questions which shall be solely based on the source material. 
 
-Since the \textit{Correctness} criterion is the most important one for this thesis experiment, the Heatmaps in Figure \bfref{fig:exp1a-correctness-heatmaps} also show certain patterns to be observed. OpenAI still achieved 10/10 points everywhere in both heatmaps, which is a surprising contrast to the other models. Google's correctness become worse with decreasing complexity of the input source, falling from 10/10 at transcript to 3.3/10 using the precise script. A somewhat similar course can be seen for DeepSeek, but less pronounced. There, the model fell from 10/10 at transcript to 7.5/10 at the script, with also more stable standard deviations. Anthropic's correctness scores were more stable, scaling from 8.8/10 at (tran-)script to 7.5/10 at the Tanenbaum book excerpts.
+Overall, the \textit{Total Score} shows that OpenAI achieved the highest scores with a mean of 62.5/70, a pretty similar median of 62 and a very low range of values. ollowed by DeepSeek and Anthropic with means of 53.25 and 52.83, while Google was rated lowest with a mean of 46.17 and most spread scores.
+
+Since the \textit{Correctness} criterion is the most important one for Experiment 1a, the following Heatmaps in Figure \bfref{fig:exp1a-correctness-heatmaps} also show certain patterns to be observed. OpenAI still achieved 10/10 points everywhere in both heatmaps, which is a surprising contrast to the other models. Google's correctness has become worse with decreasing complexity of the input source, falling from 10/10 at transcript to 3.3/10 using the precise script. A somewhat similar course can be seen for DeepSeek, but less pronounced. There, the model fell from 10/10 at transcript to 7.5/10 at the script, with also more stable standard deviations. Anthropic's correctness scores were more stable, scaling from 8.8/10 at (tran-)script to 7.5/10 at the Tanenbaum book excerpts.
 
 \begin{figure}[H]
     \centering
@@ -166,30 +168,13 @@ Since the \textit{Correctness} criterion is the most important one for this thes
 
 Regarding the heatmap focusing on the prompt type, there is a trend that the common prompt leads to higher correctness scores than the complex prompt, which was also depicted via the quantitative \textit{Adherence Score} in Figure \bfref{fig:exp1a-llm-prompt-comparison}. OpenAI and DeepSeek achieved 10/10 points at the common prompt, Anthropic is at 9.2 points and Google at 8.3 points. The complex prompt instead had decreased correctness scores, except for OpenAI. DeepSeek and Anthropic were both at 7.5/10 points, while Google solely achieved 3.3 points with high standard deviations for both prompt types.
 
-Since the input source and the prompt type are worth discussing, the results of the qualitative analysis are summarized in Tables \bfref{tab:exp1a-source-results} and \bfref{tab:exp1a-prompt-results}. The tables show the mean, standard deviation, and median for each criterion. First of all, visible in Table \bfref{tab:exp1a-source-results}, almost every criterion has a median of 10/10 points, except for \textit{Challenging}. The mean values differ in contrast to the mean. 
-
 \pagebreak
 
-Overall, there is a trend that the extensive transcript excerpts lead to the best results, followed by the precise script and the Tanenbaum book excerpts. The latter two sources were on par at the \textit{Language} criterion. Furthermore, while the transcript questions were the most accurate regarding the given context to the \ac{llms}, the Tanenbaum's and especially script's \textit{Correctness} scores were rated lower, but the \textit{Challenging} criterion was rated highest for the script instead. Even if the transcript was the best material for many criteria, the script's mean \textit{Total Score} was the highest with 55.06 out of 70 points, followed closely by the transcript with 54.75 points and the Tanenbaum excerpts with 51.25 points. Regarding the median values, the transcript was rated highest with 62/70 points instead, but the questions generated based on this source were not as challenging as the other ones.
+Since the input source and the prompt type are still worth discussing, the results of the qualitative analysis are summarized in Tables \bfref{tab:exp1a-source-results} and \bfref{tab:exp1a-prompt-results}. The tables show the mean, standard deviation, and median for each criterion. First of all, visible in Table \bfref{tab:exp1a-source-results}, almost every criterion has a median of 10/10 points, except for \textit{Challenging}. The mean values differ in contrast to the median. 
 
-% \begin{table}[htbp]
-%     \centering
-%     \caption{Example Inter-Rater Agreement with $N=48$ Items (1a).}
-%     \label{tab:agreement_exp1a}
-%     \begin{tabular}{lccc}
-%         \toprule
-%         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Mean Rating $\uparrow$} & \textbf{Std Rating $\downarrow$} \\
-%         \midrule
-%         Relevance & 0.313 & \textbf{9.179} & \textbf{2.047} \\
-%         Clarity & 0.403 & 8.558 & 2.596 \\
-%         Answerability & 0.520 & 8.108 & 2.815 \\
-%         Challenging & 0.536 & 4.692 & 3.315 \\
-%         Value & \textbf{0.551} & 7.450 & 3.398 \\
-%         Language & 0.418 & 8.850 & 2.082 \\
-%         Correctness & 0.477 & 8.529 & 2.559 \\
-%         \bottomrule
-%     \end{tabular}
-% \end{table}
+Overall, there is a trend that the extensive transcript excerpts lead to the best results -- especially in means of \textit{Clarity} (9.33), \textit{Answerability} (9.33), and \textit{Correctness} (9.67)--, followed by the precise script and the Tanenbaum book excerpts. The latter two sources were on par at the \textit{Language} criterion with a mean value of 8.88. In contrast, the questions based on the script were most challenging with a mean of 5.5, followed by Tanenbaum here with 5.38. The transcript-based questions were rated lowest in \textit{Challenging}, only achieving a mean of 2.93 points. Furthermore, while the transcript questions were the most accurate regarding the given context to the \ac{llms} with a mean of 9.67, the Tanenbaum's (8.33) and especially script's \textit{Correctness} (7.67) scores were rated lower instead.
+
+Even if the transcript appears to be the best source material for many criteria, the script's mean \textit{Total Score} was the highest with 55.06/70 points, followed closely by the transcript with 54.75 points and the Tanenbaum excerpts with 51.25 points. Regarding the median values, the transcript was rated highest with 62/70 points instead -- in contrast to the script (61) and Tanenbaum (61.5) --, but the questions generated based on the transcript lose points due to not being as challenging as the other sources.
 
 \begin{table}[htbp]
     \centering
@@ -218,7 +203,11 @@ Overall, there is a trend that the extensive transcript excerpts lead to the bes
     \end{tabular}}
 \end{table}
 
-Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results} show a trend, which was depicted in the quantitative analysis as well. The common prompt led to higher scores in almost every criterion, while the complex prompt was rated lower. The only criterion where the complex prompt was rated higher was \textit{Challenging} in both mean and median values (6.87 vs.\ 2.50 and 8.0 vs 2.0). Overall, the common prompt outperformed the complex prompt with a noticeable gap in the mean \textit{Total Score} of 60.12 vs.\ 47.25 points, as well as in the median of 62.0 vs.\ 48.5 points. The ratings by the supervisor indicate the following: the complex prompt led to less relevant questions, which were less clear and especially answerable, did not share the same value by far as the common prompt questions, and the questions were overly complex and less precisely formulated. The \textit{Correctness} to the source material was also rated lower for the complex prompt, which is crucial for this experiment, but the questions were noticeably more challenging. By these observations, it is a surprising finding that the common prompt performed this well in this sub-experiment.
+Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results} show a trend, which was depicted in the quantitative analysis as well. The common prompt led to higher scores in almost every criterion, while the complex prompt was rated lower. The only criterion where the complex prompt was rated higher was \textit{Challenging} in both mean and median values (6.87 vs.\ 2.50 and 8.0 vs 2.0). Overall, the common prompt outperformed the complex prompt with a noticeable gap in the mean \textit{Total Score} of 60.12 vs.\ 47.25 points, as well as in the median of 62.0 vs.\ 48.5 points. 
+
+\pagebreak
+
+The ratings by the supervisor indicate the following: the complex prompt led to less relevant questions, which were less clear and especially answerable, did not share the same value by far as the common prompt questions, and the questions were overly complex and less precisely formulated. The \textit{Correctness} to the source material was also rated lower for the complex prompt, which is crucial for this experiment, but the questions were noticeably more challenging. By these observations, it is a surprising finding that the common prompt performed this well in this sub-experiment.
 
 \begin{table}[htbp]
     \centering
@@ -242,7 +231,6 @@ Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results}
     \end{tabular}}
 \end{table}
 
-\pagebreak
 
 \object{Experiment 1b -- Error Handling} The qualitative analysis of Experiment 1b was conducted similarly to Experiment 1a, using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the primary thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
 
@@ -252,6 +240,8 @@ Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results}
 
 \object{Supervisor-based Analysis Complications}
 
+% #TODO talk about NaN values by e.g. Prof. Cap, that there were questions where the rubric was not capable to evaluate the question, seen as NaN values
+
 \tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien}
 
 \tcr{muss man sehen ob man hier ankerbeispiele Pro und Contra hintut oder in-text eher.}
@@ -260,8 +250,6 @@ Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results}
 
 \paragraph*{Qualitative Analysis -- Staff-based with Comparison} \label{sec:exp1b-staff-analysis}
 
-% #TODO set up fleiss kappa for each subexerpiment for each criterion (4 members)
-% #TODO also set up IAA for supervisor vs. staff members, since the supervisor (professor) plays a different role (1 vs. 4 members)
 % #TODO talk about similarities and differences between the supervisor's and staff's results
 
 In this sub-experiment, four staff members were asked to evaluate the same question set based on the criteria rubric, as the supervisor did before. This paragraph discusses the staff members' outcomes plus primarily the similarities and differences to the supervisor's results, based on numerous figures, tables and inter-rater agreement analysis.
@@ -359,6 +347,27 @@ In this sub-experiment, four staff members were asked to evaluate the same quest
 % correctness aber sehr aehnlich wiederum
 % grundsätzlich bei common prompt ähnlichere werte wie bei prof. cap
 % \tcr{IAA bei 1a grausam, da Rubrik von 0-10 zu viel Spielraum lässt. Habe 0, 2, 4, ... meistens gemacht aber Bewerter haben auch Werte dazwischen gewählt.}
+% es sind zu viele moeglichkeiten bei 0-10, da kann das empfinden abweichen pro bewerter
+% # TODO auch sagen dass correctness heatmap zwar etwas verschieden ist, aber man muss bedenken 1 vs. 4 bewerter, dafür okay; haette man in der quantitativen analyse die modelle mittels "Correctness" gepromptet, wäre vielleicht ein aehnlicheres bild entstanden. bei common prompt war adherence score nämlich stets hoch, aber qualitativ zeigt anderes
+
+% \begin{table}[htbp]
+%     \centering
+%     \caption{Example Inter-Rater Agreement with $N=48$ Items (1a).}
+%     \label{tab:agreement_exp1a}
+%     \begin{tabular}{lccc}
+%         \toprule
+%         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Mean Rating $\uparrow$} & \textbf{Std Rating $\downarrow$} \\
+%         \midrule
+%         Relevance & 0.313 & \textbf{9.179} & \textbf{2.047} \\
+%         Clarity & 0.403 & 8.558 & 2.596 \\
+%         Answerability & 0.520 & 8.108 & 2.815 \\
+%         Challenging & 0.536 & 4.692 & 3.315 \\
+%         Value & \textbf{0.551} & 7.450 & 3.398 \\
+%         Language & 0.418 & 8.850 & 2.082 \\
+%         Correctness & 0.477 & 8.529 & 2.559 \\
+%         \bottomrule
+%     \end{tabular}
+% \end{table}
 
 \pagebreak
 
@@ -368,7 +377,7 @@ As in the previous sub-experiment, the staff members were asked to evaluate ques
 
 \begin{table}[htbp]
     \centering
-    \caption{Staff-based qualitative Analysis Results by LLM (1b).}
+    \caption{Staff-based qualitative Analysis Results by LLM (1b) TODO.}
     \label{tab:exp1b-llm-results-staff}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{lccccccccc}
@@ -439,7 +448,7 @@ As in the previous sub-experiment, the staff members were asked to evaluate ques
 
 \tcr{es fiel den bewertern auch auf, dass die fragen oft \enquote{auf den text} bezogen waren, was nicht der fall sein sollte. also das prompting muss hier angepasst werden, damit die llms nicht mehr so oft \enquote{auf den text} referenzieren, siehe exp2}
 
-\tcr{stichprobe bei exp1b sehr klein, um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
+\tcr{stichprobe bei exp1b relativ klein (gleiches sampling, aber 1/3 fragen da 1 source), um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
 
 \vp
 
