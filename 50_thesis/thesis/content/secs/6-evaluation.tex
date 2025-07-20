@@ -172,7 +172,7 @@ Regarding the heatmap focusing on the prompt type, there is a trend that the com
 
 Since the input source and the prompt type are still worth discussing, the results of the qualitative analysis are summarized in Tables \bfref{tab:exp1a-source-results} and \bfref{tab:exp1a-prompt-results}. The tables show the mean, standard deviation, and median for each criterion. First of all, visible in Table \bfref{tab:exp1a-source-results}, almost every criterion has a median of 10/10 points, except for \textit{Challenging}. The mean values differ in contrast to the median. 
 
-Overall, there is a trend that the extensive transcript excerpts lead to the best results -- especially in means of \textit{Clarity} (9.33), \textit{Answerability} (9.33), and \textit{Correctness} (9.67)--, followed by the precise script and the Tanenbaum book excerpts. The latter two sources were on par at the \textit{Language} criterion with a mean value of 8.88. In contrast, the questions based on the script were most challenging with a mean of 5.5, followed by Tanenbaum here with 5.38. The transcript-based questions were rated lowest in \textit{Challenging}, only achieving a mean of 2.93 points. Furthermore, while the transcript questions were the most accurate regarding the given context to the \ac{llms} with a mean of 9.67, the Tanenbaum's (8.33) and especially script's \textit{Correctness} (7.67) scores were rated lower instead.
+Overall, there is a trend that the extensive transcript excerpts lead to the best results -- especially in means of \textit{Clarity} (9.33), \textit{Answerability} (9.33), and \textit{Correctness} (9.67) --, followed by the precise script and the Tanenbaum book excerpts. The latter two sources were on par at the \textit{Language} criterion with a mean value of 8.88. In contrast, the questions based on the script were most challenging with a mean of 5.5, followed by Tanenbaum here with 5.38. The transcript-based questions were rated lowest in \textit{Challenging}, only achieving a mean of 2.93 points. Furthermore, while the transcript questions were the most accurate regarding the given context to the \ac{llms} with a mean of 9.67, the Tanenbaum's (8.33) and especially script's \textit{Correctness} (7.67) scores were rated lower instead.
 
 Even if the transcript appears to be the best source material for many criteria, the script's mean \textit{Total Score} was the highest with 55.06/70 points, followed closely by the transcript with 54.75 points and the Tanenbaum excerpts with 51.25 points. Regarding the median values, the transcript was rated highest with 62/70 points instead -- in contrast to the script (61) and Tanenbaum (61.5) --, but the questions generated based on the transcript lose points due to not being as challenging as the other sources.
 
@@ -232,17 +232,17 @@ The ratings by the supervisor indicate the following: the complex prompt led to 
 \end{table}
 
 
-\object{Experiment 1b -- Error Handling} The qualitative analysis of Experiment 1b was conducted similarly to Experiment 1a, using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the primary thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
+\object{Experiment 1b -- Error Handling} A second run was conducted to evaluate \ac{llm}-based questions based on manipulated lecture script content. The qualitative analysis of Experiment 1b was done similarly to Experiment 1a, using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the primary thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
 
-% #TODO boxplot with every criterion?
-% #TODO also add table for every criterion based on prompt type
+The supervisor's evaluation of the questions in Experiment 1b revealed that the rubric was not sufficient for this manner of assessment. Based on this, the \textit{Manipulation Handling} criterion was solely analyzed by the supervisor, and the results are presented in ...
+
 % #TODO heatmap based on the prompt type for manipulation handling (llm vs. prompt type)
+% INSTEAD lets create a table for this + table for manipulation handling by llm
+% so 2 tables only, weil prof. cap gesagt hat es mag MH als einziges kriterium hier nuetzlich sein
 
 \object{Supervisor-based Analysis Complications}
 
-% #TODO talk about NaN values by e.g. Prof. Cap, that there were questions where the rubric was not capable to evaluate the question, seen as NaN values
-
-\tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien}
+\tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien, NaN values}
 
 \tcr{muss man sehen ob man hier ankerbeispiele Pro und Contra hintut oder in-text eher.}
 
@@ -250,7 +250,7 @@ The ratings by the supervisor indicate the following: the complex prompt led to 
 
 % --------------------------------------------------------------------------------
 
-\paragraph*{Qualitative Analysis -- Staff-based with Comparison} \label{sec:exp1b-staff-analysis}
+\paragraph*{Qualitative Analysis -- Staff-based Comparison} \label{sec:exp1b-staff-analysis}
 
 % #TODO talk about similarities and differences between the supervisor's and staff's results
 
@@ -289,9 +289,13 @@ The linguistic complexity and precision of the questions, measured via \textit{L
 
 \pagebreak
 
-For \textit{Correctness}, the staff-based evaluation confirmed OpenAI's proper performance (8.42), with DeepSeek beyond (8.48), though without the clear separation the supervisor observed. Close behind these models, Anthropic and Google were rated lower, with means of 7.94 and 8.15. The gaps between the models differ from the supervisor's evaluation, since the \textit{Correctness} criterion was implemented choosing ratings of 0, 5, or 10. The primary thesis supervisor solely used these three ratings, while the staff members rated values in between, not only in this criterion, but also in the other criteria. Otherwise, the supervisor would have rated the questions differently, not rating this many questions with 10/10 points, but rather values below 10, which would have led to a more similar evaluation to the staff members'.
+For \textit{Correctness}, the staff-based evaluation confirmed OpenAI's proper performance (8.42), with DeepSeek beyond (8.48), though without the clear separation the supervisor observed. Close behind these models, Anthropic and Google were rated lower with means of 7.94 and 8.15. The gaps between the models differ from the supervisor's evaluation, since the \textit{Correctness} criterion was implemented choosing ratings of 0, 5, or 10. The primary thesis supervisor solely used these three ratings, while the staff members rated values in between, across the criteria. Otherwise, the supervisor would have rated the questions differently, not rating this many questions with 10/10 points, but rather values below 10, which would have led to a more similar evaluation to the staff members'.
 
-Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.50) remained the top performer, the advantage was less pronounced in the staff evaluation compared to the supervisor's clear preference (62.5 vs. next best 53.25). The results for the other models were more similar to each other, with means around 50/70 points. This is a contrast to the supervisor's evaluation, where Google especially was often rated lower. 
+Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.5) remained the top performer, but less pronounced compared to the supervisor's clear preference (62.5 vs. DeepSeek with 53.25). The results for the other models were more similar to each other, with means around 50/70 points. This is a contrast to the supervisor's evaluation, where Google especially was often rated lower. 
+
+Regarding the heatmaps in Figure \bfref{fig:exp1a-correctness-heatmaps-staff}, the \textit{Correctness} scores focusing on the input sources differ from the supervisor's evaluation. There is a minor trend similar to the supervisor's evaluation, where OpenAI and DeepSeek tend to be rated higher than the other models. Contrary to the supervisor, the staff members rated OpenAI's questions based on Tanenbaum with a mean of 7.8, which is significantly lower than the supervisor's 10/10 points. Also, the trend that the transcript-based questions were rated highest is not visible in the staff members' mixed picture.
+
+Regarding the second heatmap, the prompt type had the same impact on the correctness scores, with the common prompt leading to higher scores than the complex one. The models were on par with values all above 9/10 in the mean. In the supervisor's evaluation, Google was rated with 8.3 in the common prompt instead. Focusing the complex prompt, the supervisor also rated Google significantly lower with a mean of 3.3/10, while the staff members rated it with 6.8 points. 
 
 \begin{figure}[htbp]
     \centering
@@ -304,6 +308,14 @@ Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.50) re
     % besser erkennbar: auch hier ist der common prompt viel inhaltstreuer als der complex prompt
 \end{figure}
 
+\pagebreak
+
+In the following, the results of the staff-based qualitative analysis are summarized in Tables \bfref{tab:exp1a-source-results-staff} and \bfref{tab:exp1a-prompt-results-staff} to provide more insights into the staff's evaluations. In Table \bfref{tab:exp1a-source-results-staff}, the results between the input sources are compared, showing that the script-based questions were rated highest in most criteria, except for \textit{Clarity} (mean of 7.86), \textit{Answerability} (8.17), and \textit{Language} (7.89), where the transcript-based questions were rated higher in a close manner (7.89, 8.19, and 8.02).  Overall, the results between the input sources do not significantly differ, as the means and medians are often close to each other. 
+
+In contrast, the supervisor mostly rated the transcript questions as the best ones -- often with slightly further ranges in contrast to the staff's results --, while Tanenbaum and especially the script were rated higher at the \textit{Challenging} criterion (5.38 and 5.5 in contrast to 2.93 at transcript). Overall, the staff members' results were lower than the values the supervisor rated. 
+
+There are major rating gaps -- comparing staff and supervisor ratings -- between the best source means, visible in several criteria. \textit{Clarity} is a good example, where the staff rated the transcript with 7.89, while the supervisor rated it with 9.33. The same applies to \textit{Answerability} -- staff rated the transcript with 8.19, the supervisor rated it with 9.33 --, and \textit{Challenging} -- staff rated the script with 4.06, while the supervisor rated it with 5.5. \textit{Language} and \textit{Correctness} are also proper criteria to show differences. The staff rated the transcript as the best source with 8.02 for the \text{Language} criterion, while the supervisor rated it with 9.19. The \textit{Correctness} criterion was rated highest for the script with 8.33 by the staff, and the supervisor had a mean rating of 9.67 for the transcript instead.
+
 \begin{table}[htbp]
     \centering
     \caption[Staff-based qualitative Analysis Results by Input Source (1a).]{Staff-based qualitative Analysis Results by Input Source (1a). The best means are highlighted in \textbf{bold}, while the best medians are \textit{italicized}.}
@@ -314,7 +326,7 @@ Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.50) re
         \textbf{Source} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Correctness} & \textbf{Total Score} \\
         \midrule
         \multirow{3}{*}{Script} 
-        & Mean & \textbf{9.16} & 7.86 & \textbf{8.17} & \textbf{4.06} & \textbf{6.67} & 7.89 & \textbf{8.33} & \textbf{52.14} \\
+        & Mean & \textbf{9.16} & 7.86 & 8.17 & \textbf{4.06} & \textbf{6.67} & 7.89 & \textbf{8.33} & \textbf{52.14} \\
         & Std & 1.64 & 2.55 & 2.65 & 2.34 & 3.18 & 2.48 & 2.56 & 10.82 \\
         & Median & 10.0 & 9.0 & 10.0 & \textit{4.0} & \textit{8.0} & 8.0 & 9.5 & \textit{55.0} \\
         \midrule
@@ -324,20 +336,25 @@ Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.50) re
         & Median & 10.0 & 8.0 & 9.5 & 3.0 & 6.0 & 8.0 & 10.0 & 52.0 \\
         \midrule
         \multirow{3}{*}{Transcript} 
-        & Mean & 8.89 & \textbf{7.89} & 8.19 & 3.80 & 6.06 & \textbf{8.02} & 8.23 & 51.08 \\
+        & Mean & 8.89 & \textbf{7.89} & \textbf{8.19} & 3.80 & 6.06 & \textbf{8.02} & 8.23 & 51.08 \\
         & Std & 2.02 & 2.85 & 2.81 & 2.32 & 3.10 & 2.72 & 2.73 & 11.23 \\
         & Median & 10.0 & \textit{10.0} & 10.0 & 3.5 & 6.0 & \textit{10.0} & 10.0 & 54.0 \\
         \bottomrule
     \end{tabular}}
 \end{table}
-
-\pagebreak
-
 % \tcr{staff members differenzieren nicht stark gegenueber der input sources, grundsaetzlich aber eher das script besser ausser in clarity und language, da ist es besser verständlich und präziser formuliert bei transcript.}
-% tanenbaum bei staff eher immer schlechtestes oder mittelfeld oder schlechtestes, bei cap ebenso, bei challenging language und correctness aber tanenbaum auch gut, sonst an total score auch erkennbar dass tanenbaum schlechtestes ist
+% tanenbaum bei staff eher immer schlechtestes oder mittelfeld, bei cap ebenso, bei challenging language und correctness aber tanenbaum auch gut, sonst an total score auch erkennbar dass tanenbaum schlechtestes ist
 % stets geringe ergebnisse bei challenging, wertigkeit fuer dozenten ist auch bei beiden gering gehalten. da wird experiment 2 wohl andere ergebnisse liefern als kontrast.
 % script gewinnt jeweils knapp als beste source; bei cap ist script oft knapp hinter transcript, bei staff members  
 % grundsaetzlich ist tanenbaum ja weniger gut; text war auf englisch, aber bei challenging waren sie ausreichend
+
+To further investigate the prompt differences, Table \bfref{tab:exp1a-prompt-results-staff} shows that many ratings are pretty similar to the supervisor's evaluation, but the staff's more stringent approach is visible in the means and medians. Overall, the same trend of the common prompt leading to higher scores is visible here as well, with the complex prompt being rated lower in every criterion except for \textit{Challenging} (3.09 vs. 4.77). The supervisor rated this criterion higher for the complex prompt (6.87) in contrast to the common one (2.5). 
+
+\pagebreak
+
+Major differences in the common prompt between the staff-based and supervisor's evaluation are visible in \textit{Relevance} (9.50 vs. 10.0), \textit{Clarity} (9.18 vs. 10.0), \textit{Answerability} (9.43 vs. 9.92), \textit{Value} (7.26 vs. 9.55), and \textit{Language} (9.27 vs. 10.0). The \textit{Correctness} criterion was rated similarly by both groups (9.46 vs. 9.35), but the \textit{Total Score} was lower for the staff members (57.19 vs. 60.12)...
+
+Regarding the complex prompt, 
 
 \begin{table}[htbp]
     \centering
@@ -360,7 +377,6 @@ Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.50) re
         \bottomrule
         \end{tabular}}
 \end{table}
-
 % \tcr{gleiches muster wie bei prof. cap: common prompt besser als complex prompt, ausser challenging.}
 % allein bei total score stets grosse luecke, aber im grunde waren die staff members etwas strenger bei der bewertung
 % bei staff stets relevanz hoch, clarity hoch, answerability hoch, challenging ebenso niedrig aber noch geringer als bei prof. cap
@@ -370,7 +386,8 @@ Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.50) re
 % grundsätzlich bei common prompt ähnlichere werte wie bei prof. cap
 % \tcr{IAA bei 1a grausam, da Rubrik von 0-10 zu viel Spielraum lässt. Habe 0, 2, 4, ... meistens gemacht aber Bewerter haben auch Werte dazwischen gewählt.}
 % es sind zu viele moeglichkeiten bei 0-10, da kann das empfinden abweichen pro bewerter
-% # TODO auch sagen dass correctness heatmap zwar etwas verschieden ist, aber man muss bedenken 1 vs. 4 bewerter, dafür okay; haette man in der quantitativen analyse die modelle mittels "Correctness" gepromptet, wäre vielleicht ein aehnlicheres bild entstanden. bei common prompt war adherence score nämlich stets hoch, aber qualitativ zeigt anderes
+
+% -----------
 
 % \begin{table}[htbp]
 %     \centering
@@ -397,46 +414,46 @@ Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.50) re
 
 As in the previous sub-experiment, the staff members were asked to evaluate questions based on the same criteria. This time, however, the focus was on error handling capabilities.
 
-\begin{table}[htbp]
-    \centering
-    \caption{Staff-based qualitative Analysis Results by LLM (1b) TODO.}
-    \label{tab:exp1b-llm-results-staff}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lccccccccc}
-        \toprule
-        \textbf{LLM} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Manipulation Handling} & \textbf{Total Score} \\
-        \midrule
-        \multirow{3}{*}{Anthropic} 
-        & Mean & 8.92 & 9.08 & 8.33 & 4.08 & 9.08 & 8.25 & 3.50 & 51.25 \\
-        & Std & 1.62 & 1.83 & 2.35 & 2.11 & 1.08 & 2.14 & 4.17 & 7.76 \\
-        & Median & 10.0 & 10.0 & 9.5 & 4.0 & 9.5 & 9.0 & 1.5 & 50.5 \\
-        \midrule
-        \multirow{3}{*}{DeepSeek} 
-        & Mean & 8.33 & 8.33 & 7.50 & 4.17 & 8.42 & 7.75 & \textbf{2.33} & 46.83 \\
-        & Std & 2.57 & 2.57 & 3.53 & 2.82 & 2.43 & 2.70 & 3.31 & 11.02 \\
-        & Median & 10.0 & 10.0 & 9.0 & 4.0 & 10.0 & 9.0 & \textit{0.0} & 51.0 \\
-        \midrule
-        \multirow{3}{*}{Google} 
-        & Mean & \textbf{9.17} & 9.08 & 8.08 & \textbf{5.33} & 8.33 & 7.83 & 5.17 & \textbf{53.00} \\
-        & Std & 1.27 & 1.31 & 2.11 & 3.14 & 1.87 & 2.72 & 4.51 & 7.75 \\
-        & Median & 10.0 & 10.0 & 8.5 & \textit{6.5} & 9.0 & 9.0 & \textit{7.0} & 50.0 \\
-        \midrule
-        \multirow{3}{*}{OpenAI} 
-        & Mean & 7.83 & 7.75 & 7.25 & 3.83 & 7.58 & \textbf{8.25} & 2.42 & 44.92 \\
-        & Std & 3.27 & 3.17 & 3.86 & 2.95 & 3.60 & 3.02 & 3.53 & 13.22 \\
-        & Median & 10.0 & 9.0 & 9.0 & 3.5 & 10.0 & \textit{10.0} & 0.0 & 51.0 \\
-        \bottomrule
-    \end{tabular}}
-\end{table}
+% \begin{table}[htbp]
+%     \centering
+%     \caption{Staff-based qualitative Analysis Results by LLM (1b) TODO.}
+%     \label{tab:exp1b-llm-results-staff}
+%     \resizebox{\textwidth}{!}{%
+%     \begin{tabular}{lccccccccc}
+%         \toprule
+%         \textbf{LLM} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Manipulation Handling} & \textbf{Total Score} \\
+%         \midrule
+%         \multirow{3}{*}{Anthropic} 
+%         & Mean & 8.92 & 9.08 & 8.33 & 4.08 & 9.08 & 8.25 & 3.50 & 51.25 \\
+%         & Std & 1.62 & 1.83 & 2.35 & 2.11 & 1.08 & 2.14 & 4.17 & 7.76 \\
+%         & Median & 10.0 & 10.0 & 9.5 & 4.0 & 9.5 & 9.0 & 1.5 & 50.5 \\
+%         \midrule
+%         \multirow{3}{*}{DeepSeek} 
+%         & Mean & 8.33 & 8.33 & 7.50 & 4.17 & 8.42 & 7.75 & \textbf{2.33} & 46.83 \\
+%         & Std & 2.57 & 2.57 & 3.53 & 2.82 & 2.43 & 2.70 & 3.31 & 11.02 \\
+%         & Median & 10.0 & 10.0 & 9.0 & 4.0 & 10.0 & 9.0 & \textit{0.0} & 51.0 \\
+%         \midrule
+%         \multirow{3}{*}{Google} 
+%         & Mean & \textbf{9.17} & 9.08 & 8.08 & \textbf{5.33} & 8.33 & 7.83 & 5.17 & \textbf{53.00} \\
+%         & Std & 1.27 & 1.31 & 2.11 & 3.14 & 1.87 & 2.72 & 4.51 & 7.75 \\
+%         & Median & 10.0 & 10.0 & 8.5 & \textit{6.5} & 9.0 & 9.0 & \textit{7.0} & 50.0 \\
+%         \midrule
+%         \multirow{3}{*}{OpenAI} 
+%         & Mean & 7.83 & 7.75 & 7.25 & 3.83 & 7.58 & \textbf{8.25} & 2.42 & 44.92 \\
+%         & Std & 3.27 & 3.17 & 3.86 & 2.95 & 3.60 & 3.02 & 3.53 & 13.22 \\
+%         & Median & 10.0 & 9.0 & 9.0 & 3.5 & 10.0 & \textit{10.0} & 0.0 & 51.0 \\
+%         \bottomrule
+%     \end{tabular}}
+% \end{table}
 
-\vp
+% \vp
 
-\begin{figure}[H]
-   \centering
-    \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/staff_exp1b_prompt_analysis.png}
-    \caption{Staff-based Prompt Scores across every proposed Criterion (1b).}
-    \label{fig:exp1b-prompt-analysis-staff} 
-\end{figure}
+% \begin{figure}[H]
+%    \centering
+%     \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/staff_exp1b_prompt_analysis.png}
+%     \caption{Staff-based Prompt Scores across every proposed Criterion (1b).}
+%     \label{fig:exp1b-prompt-analysis-staff} 
+% \end{figure}
 
 \begin{table}[htbp]
     \centering
