@@ -232,13 +232,48 @@ The ratings by the supervisor indicate the following: the complex prompt led to 
 \end{table}
 
 
-\object{Experiment 1b -- Error Handling} A second run was conducted to evaluate \ac{llm}-based questions based on manipulated lecture script content. The qualitative analysis of Experiment 1b was done similarly to Experiment 1a, using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the primary thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
+\object{Experiment 1b -- Error Handling} A second run was conducted to evaluate \ac{llm}-based questions based on manipulated lecture script content. The qualitative analysis of Experiment 1b was done similarly using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
 
-The supervisor's evaluation of the questions in Experiment 1b revealed that the rubric was not sufficient for this manner of assessment. Based on this, the \textit{Manipulation Handling} criterion was solely analyzed by the supervisor, and the results are presented in ...
+Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the rubric was not sufficient for this manner of assessment, since the contextual material is manipulated. Based on this, the \textit{Manipulation Handling} criterion was solely analyzed by the supervisor, and the results are presented in Table \ref{tab:exp1b-manipulation-handling-supervisor}. If this issue had been noticed earlier, the questions could have been evaluated by solely this single criterion, resulting in a bigger sampling set. However, the sampled set of questions is too small to draw any significant conclusions, since many questions where the models noticed the manipulation were not rated by the experts.
 
 % #TODO heatmap based on the prompt type for manipulation handling (llm vs. prompt type)
 % INSTEAD lets create a table for this + table for manipulation handling by llm
 % so 2 tables only, weil prof. cap gesagt hat es mag MH als einziges kriterium hier nuetzlich sein
+
+\begin{table}[htbp]
+    \centering
+    \caption{Supervisor-based Manipulation Handling Analysis by LLM and Prompt Type (1b).}
+    \label{tab:exp1b-manipulation-handling-supervisor}
+    \resizebox{.5\textwidth}{!}{%
+    \begin{tabular}{llccc}
+        \toprule
+        & & \multicolumn{3}{c}{\textbf{Manipulation Handling}} \\
+        \cmidrule{3-5}
+        \textbf{LLM} & \textbf{Prompt Type} & \textbf{Mean} & \textbf{Std} & \textbf{Median} \\
+        \midrule
+        \multirow{2}{*}{Anthropic} 
+        & Common & 0.0 & 0.0 & 0.0 \\
+        & Complex & 2.5 & 3.54 & 2.5 \\
+        \midrule
+        \multirow{2}{*}{DeepSeek} 
+        & Common & 2.5 & 3.54 & 2.5 \\
+        & Complex & 2.5 & 3.54 & 2.5 \\
+        \midrule
+        \multirow{2}{*}{Google} 
+        & Common & 0.0 & 0.0 & 0.0 \\
+        & Complex & 2.5 & 3.54 & 2.5 \\
+        \midrule
+        \multirow{2}{*}{OpenAI} 
+        & Common & 0.0 & 0.0 & 0.0 \\
+        & Complex & 0.0 & --- & 0.0 \\
+        \bottomrule
+    \end{tabular}}
+    % \footnotetext{Standard deviation cannot be calculated with only one data point.}
+\end{table}
+
+\pagebreak
+
+The limited sample size of 16/56 questions led to the table's results. As to be seen, the \textit{Manipulation Handling} criterion was rated with a mean of 2.5/10 or 0, commonly indicating that the models did not handle the manipulation well. Anthropic and Google were rated with a mean of 2.5/10 for the complex prompt each, while the questions based on the common prompt were rated with 0/10 points. DeepSeek's questions were rated with 2.5/10 for both prompt types, while OpenAI's questions show 0/10 points for each prompt type. One of the two complex prompt questions the OpenAI model generated was not rated by the supervisor, since it was hard to evaluate its manipulation handling here. This results in a NaN value, which is why the standard deviation for OpenAI's complex prompt questions is not available. Overall, the supervisor-based evaluation does not provide significant insights into the \ac{llms}' manipulation handling, since the sample size is too small to draw any conclusions.
 
 \object{Supervisor-based Analysis Complications}
 
@@ -433,7 +468,9 @@ Even the gaps between the common and complex prompts are similar to the supervis
 
 \object{Experiment 1b -- Error Handling}
 
-As in the previous sub-experiment, the staff members were asked to evaluate questions based on the same criteria. This time, however, the focus was on error handling capabilities.
+As in the previous sub-experiment, the staff members were asked to evaluate questions based on the same criteria. This time, however, the focus was on error handling capabilities. Since the results are based on four staff members -- instead of one single supervisor --, the results are more diverse and provide a broader perspective on the \ac{llms}' performance in handling errors. The staff members evaluated the questions based on the same criteria as in Experiment 1a, but finally, the \textit{Manipulation Handling} criterion was solely regarded, since the other criteria were properly evaluated in the previous sub-experiment. 
+
+\tcr{Auch ohne Thomas Mundt sieht man, dass komplexer Prompt hier hoehere ergebnisse liefert, jedoch sample size gering, und rater haben zwischen den gegebenen werten 0 5 und 10 bewertet, was das agreement stets niedrig macht} bis dato erkennbar, dass die komplexen prompts besser sind als die common prompts, was auch bei den staff members besonders erkennbar ist. grundsaetzlich hoeher bewertet als supervisor... google am besten, dann anthropic, dann openai und deepseek am schlechtesten. was aber in quantitative nicht so rüberkam. somit ist dies grundsaetzlich durch die kleine samplingmenge nicht genuegend geklaert. aber das auffordern, den text zu studieren etc triggert die LLMs das besser zu erkennen
 
 % \begin{table}[htbp]
 %     \centering
