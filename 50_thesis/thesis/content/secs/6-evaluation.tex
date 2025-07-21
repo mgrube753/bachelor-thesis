@@ -1,6 +1,6 @@
 \section{Evaluation of Results} \label{sec:evaluation}
 
-This section presents the findings from the two experiments detailed in Section \bfref{sec:experiment-design}. The quantitative and qualitative analyses are discussed, addressing the research questions regarding content fidelity, error propagation, question format generation, and alignment with Bloom's Taxonomy.
+This section presents the findings from the two experiments detailed in Section \bfref{sec:experiment-design}. The quantitative and qualitative analyses are discussed, addressing the research questions regarding content fidelity, error handling, question format generation, and alignment with Bloom's Taxonomy.
 
 % \newtodo{Need some approaches (LLMs) to compare against and provide metrics.}
 % \newtodo{While benchmarking, compare to something that already exists, hmmmm.}
@@ -314,7 +314,11 @@ In the following, the results of the staff-based qualitative analysis are summar
 
 In contrast, the supervisor mostly rated the transcript questions as the best ones -- often with slightly further ranges in contrast to the staff's results --, while Tanenbaum and especially the script were rated higher at the \textit{Challenging} criterion (5.38 and 5.5 in contrast to 2.93 at transcript). Overall, the staff members' results were lower than the values the supervisor rated. 
 
-There are major rating gaps -- comparing staff and supervisor ratings -- between the best source means, visible in several criteria. \textit{Clarity} is a good example, where the staff rated the transcript with 7.89, while the supervisor rated it with 9.33. The same applies to \textit{Answerability} -- staff rated the transcript with 8.19, the supervisor rated it with 9.33 --, and \textit{Challenging} -- staff rated the script with 4.06, while the supervisor rated it with 5.5. \textit{Language} and \textit{Correctness} are also proper criteria to show differences. The staff rated the transcript as the best source with 8.02 for the \text{Language} criterion, while the supervisor rated it with 9.19. The \textit{Correctness} criterion was rated highest for the script with 8.33 by the staff, and the supervisor had a mean rating of 9.67 for the transcript instead.
+There are major rating gaps -- comparing staff and supervisor ratings -- between the best source means, visible in several criteria. \textit{Clarity} is a good example, where the staff rated the transcript with 7.89, while the supervisor rated it with 9.33. The same applies to \textit{Answerability} -- staff rated the transcript with 8.19, the supervisor rated it with 9.33 --, and \textit{Challenging} -- staff rated the script with 4.06, while the supervisor rated it with 5.5. 
+
+\textit{Language} and \textit{Correctness} are also proper criteria to disclose differences. The staff rated the transcript as the best source with 8.02 for the \textit{Language} criterion, while the supervisor rated it with 9.19. The \textit{Correctness} criterion was rated slightly highest for the script with 8.33 by the staff, and the supervisor had a mean rating of 9.67 for the transcript instead.
+
+The criteria difference between the staff and supervisor ratings still indicates the same trend in the \textit{Total Score}, where the script was rated slightly highest with a mean of 52.14 -- compared to the supervisor's 55.06 --, followed by the transcript with 51.08 -- compared to the supervisor's 54.75 --, and the Tanenbaum excerpts with 49.69 -- where the supervisor rated it with 51.25 points.
 
 \begin{table}[htbp]
     \centering
@@ -348,13 +352,21 @@ There are major rating gaps -- comparing staff and supervisor ratings -- between
 % script gewinnt jeweils knapp als beste source; bei cap ist script oft knapp hinter transcript, bei staff members  
 % grundsaetzlich ist tanenbaum ja weniger gut; text war auf englisch, aber bei challenging waren sie ausreichend
 
-To further investigate the prompt differences, Table \bfref{tab:exp1a-prompt-results-staff} shows that many ratings are pretty similar to the supervisor's evaluation, but the staff's more stringent approach is visible in the means and medians. Overall, the same trend of the common prompt leading to higher scores is visible here as well, with the complex prompt being rated lower in every criterion except for \textit{Challenging} (3.09 vs. 4.77). The supervisor rated this criterion higher for the complex prompt (6.87) in contrast to the common one (2.5). 
+To further investigate the prompt differences, Table \bfref{tab:exp1a-prompt-results-staff} shows that many ratings are pretty similar to the supervisor's evaluation, but the staff's more stringent approach is visible in the means and medians. 
 
 \pagebreak
 
-Major differences in the common prompt between the staff-based and supervisor's evaluation are visible in \textit{Relevance} (9.50 vs. 10.0), \textit{Clarity} (9.18 vs. 10.0), \textit{Answerability} (9.43 vs. 9.92), \textit{Value} (7.26 vs. 9.55), and \textit{Language} (9.27 vs. 10.0). The \textit{Correctness} criterion was rated similarly by both groups (9.46 vs. 9.35), but the \textit{Total Score} was lower for the staff members (57.19 vs. 60.12)...
+Overall, the same trend of the common prompt leading to higher scores is visible here as well, with the complex prompt being rated lower in every criterion except for \textit{Challenging} (3.09 vs. 4.77). The supervisor rated this criterion higher for the complex prompt (6.87) in contrast to the common one (2.5). 
 
-Regarding the complex prompt, 
+Major differences in the common prompt between the staff-based and supervisor's evaluation are visible in \textit{Clarity} (9.18 vs. 10.0), \textit{Value} (7.26 vs. 9.55), and \textit{Language} (9.27 vs. 10.0). The \textit{Correctness} criterion was rated similarly by both groups (9.46 vs. 9.35), but the \textit{Total Score} was lower for the staff members (57.19 vs. 60.12), indicating their more stringent evaluation approach.
+
+Regarding the complex prompt, the staff members confirmed the supervisor's findings that this prompt type leads to significantly lower performance across most criteria. The staff rated the complex prompt with means of 8.38 for \textit{Relevance}, 6.41 for \textit{Clarity}, and 6.58 for \textit{Answerability} -- all notably lower than the common prompt results.
+
+However, the complex prompt achieved a higher \textit{Challenging} score (4.77 vs. 3.09), which is still lower than the supervisor's assessment (6.87 vs. 2.5). The \textit{Value} was rated lower by the staff (5.07 vs. 7.26 the common prompt), which indicates that this prompt type led to less valuable questions. This insight was more pronounced in the supervisor's evaluation, where the complex prompt was rated with a mean of 5.48, while prompting the common prompt led to a mean of 9.55.
+
+Focusing the \textit{Language} and \textit{Correctness} criteria, the staff ratings resulted in similar gaps between the common and complex prompts, as to be seen in the supervisor's evaluation as well. The complex prompt was rated lower in \textit{Language} (6.51 vs. 9.27) and \textit{Correctness} (7.03 vs. 9.46) by the staff, as the supervisor did at \textit{Language} (7.96 vs. 10.0) and \textit{Correctness} (7.63 vs. 9.35).
+
+Even the gaps between the common and complex prompts are similar to the supervisor's evaluation regarding the \textit{Total Score}.
 
 \begin{table}[htbp]
     \centering
@@ -408,7 +420,7 @@ Regarding the complex prompt,
 %     \end{tabular}
 % \end{table}
 
-\pagebreak
+\vp
 
 \object{Experiment 1b -- Error Handling}
 

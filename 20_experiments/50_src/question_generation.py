@@ -207,7 +207,7 @@ def run_exp_1a(clients):
 
 
 def run_exp_1b(clients):
-    print("\n[INFO] Experiment 1b: Error Propagation")
+    print("\n[INFO] Experiment 1b: Error Handling")
     reset_counters()
     source_type = constants.EXP1_SOURCE_TYPE_B
     tasks = []
