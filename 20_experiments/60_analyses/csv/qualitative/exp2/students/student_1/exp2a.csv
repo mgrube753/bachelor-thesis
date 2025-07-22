@@ -1,17 +1,17 @@
-sample_id,relevance,clarity,answerability,challenging,value,language,bloom_rating,answer_problems,comments
-001,,,,,,,,,
-002,,,,,,,,,
-003,,,,,,,,,
-004,,,,,,,,,
-005,,,,,,,,,
-006,,,,,,,,,
-007,,,,,,,,,
-008,,,,,,,,,
-009,,,,,,,,,
-010,,,,,,,,,
-011,,,,,,,,,
-012,,,,,,,,,
-013,,,,,,,,,
-014,,,,,,,,,
-015,,,,,,,,,
-016,,,,,,,,,
+"sample_id","relevance","clarity","answerability","challenging","value","language","bloom_rating","answer_problems","comments"
+1,-99,10,-99,4,8,10,1,,
+2,-99,8,-99,8,8,7,2,,
+3,-99,8,-99,10,8,7,4,,
+4,-99,8,-99,10,8,10,"(4;2)",,
+5,-99,10,-99,2,4,7,1,,"Kein Operator ""Beschreibe auf welcher ?""oder was mit identfizieren"
+6,-99,8,-99,8,8,7,"(1;2)",,"Kein Operator"
+7,-99,10,-99,8,8,10,"(1;2)",,
+8,-99,10,-99,10,8,10,"(1;2)",,
+9,-99,10,-99,6,8,10,2,,"Kein Operator"
+10,-99,10,-99,6,10,10,2,,
+11,-99,8,-99,8,8,5,"(4;1)",,
+12,-99,8,-99,10,8,5,2,,
+13,-99,10,-99,2,10,10,1,,
+14,-99,8,-99,6,8,7,1,,"Kein Operator"
+15,-99,8,-99,10,8,7,"(1;2)",,"Zu viele Fragen in einer"
+16,-99,8,-99,8,8,7,2,,"Zu lang - drei Fragen in einer"

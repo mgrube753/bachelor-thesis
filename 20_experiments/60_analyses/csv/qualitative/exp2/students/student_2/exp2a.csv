@@ -1,17 +1,17 @@
-sample_id,relevance,clarity,answerability,challenging,value,language,bloom_rating,answer_problems,comments
-001,,,,,,,,,
-002,,,,,,,,,
-003,,,,,,,,,
-004,,,,,,,,,
-005,,,,,,,,,
-006,,,,,,,,,
-007,,,,,,,,,
-008,,,,,,,,,
-009,,,,,,,,,
-010,,,,,,,,,
-011,,,,,,,,,
-012,,,,,,,,,
-013,,,,,,,,,
-014,,,,,,,,,
-015,,,,,,,,,
-016,,,,,,,,,
+"sample_id","relevance","clarity","answerability","challenging","value","language","bloom_rating","answer_problems","comments"
+1,-99,10,-99,6,10,10,1,,"Relevanz & Beantwortbarkeit kann ich ohne Quelle nicht bewerten. Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens"
+2,-99,10,-99,8,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens"
+3,-99,10,-99,8,10,10,"(1;4)",,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1; Analysieren - Level 4"
+4,-99,10,-99,10,10,10,"(4;5)",,"Erläutern - Level 2; Analysieren - Level 4"
+5,-99,10,-99,6,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+6,-99,10,-99,8,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+7,-99,10,-99,8,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+8,-99,10,-99,8,10,10,"(1;2)",,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1; Vergleichen - Level 2"
+9,-99,10,-99,10,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens"
+10,-99,10,-99,8,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+11,-99,10,-99,10,10,10,"(1;4)",,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1; Analysieren - Level 4"
+12,-99,10,-99,8,10,10,"(1;5)",,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1; Erläutern - Level 5"
+13,-99,10,-99,6,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+14,-99,10,-99,6,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+15,-99,10,-99,10,10,10,"(2;3)",,"Erläutern - Level 2; Lösen/Skizzieren eines Lösungsansatzes - Level 3"
+16,-99,10,-99,8,10,10,2,,"Vergleichen - Level 2"

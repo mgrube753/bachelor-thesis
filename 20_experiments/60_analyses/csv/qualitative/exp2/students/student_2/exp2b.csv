@@ -1,9 +1,9 @@
-sample_id,relevance,clarity,answerability,challenging,value,language,bloom_rating,answer_problems,comments
-001,,,,,,,,,
-002,,,,,,,,,
-003,,,,,,,,,
-004,,,,,,,,,
-005,,,,,,,,,
-006,,,,,,,,,
-007,,,,,,,,,
-008,,,,,,,,,
+"sample_id","relevance","clarity","answerability","challenging","value","language","bloom_rating","answer_problems","comments"
+1,-99,10,-99,8,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+2,-99,10,-99,8,10,10,"(1;2)",,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1; Vergleichen - Level 2; Erklären - Level 2"
+3,-99,10,-99,8,10,10,1,,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1"
+4,-99,10,-99,10,10,10,"(1;6)",,"Auswählen der korrekten Antwort durch Reak vieren des vorhandenen Wissens - Level 1; Identifizieren - Level 1; Entwerfen - Level 6"
+5,-99,10,-99,6,10,10,"(4;1)",,"Bei der Bloomschen Taxonomie sind die Operatoren eindeu g erstmal dem 4. Level zuzuordnen, jedoch sind ja Antworten vorgegeben, weshalb die Befragten rein theoretisch nur die richtigen Antworten auswählen müssen"
+6,-99,10,-99,10,10,10,"(5;6)",,"Begründen - Level 5; Entwerfen - Level 6"
+7,-99,8,-99,8,10,10,"(1;4)",,"Auswählen - Level 1; Analysieren - Level 4"
+8,-99,10,-99,10,10,10,"(1;5;6)",,"Beschreiben - Level 1; Begründen - Level 5; Entwickeln - Level 6"

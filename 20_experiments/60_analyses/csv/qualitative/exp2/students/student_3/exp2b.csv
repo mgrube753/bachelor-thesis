@@ -1,9 +1,9 @@
-sample_id,relevance,clarity,answerability,challenging,value,language,bloom_rating,answer_problems,comments
-001,,,,,,,,,
-002,,,,,,,,,
-003,,,,,,,,,
-004,,,,,,,,,
-005,,,,,,,,,
-006,,,,,,,,,
-007,,,,,,,,,
-008,,,,,,,,,
+"sample_id","relevance","clarity","answerability","challenging","value","language","bloom_rating","answer_problems","comments"
+1,-99,10,-99,4,8,7,3,,
+2,-99,10,-99,4,10,10,"(2;4)",,
+3,-99,,-99,8,8,7,4,,
+4,-99,4,-99,10,6,7,6,,
+5,-99,4,-99,6,6,3,4,,"Super kompliziert formuliert"
+6,-99,6,-99,8,8,7,"(2;4;6)",,"Zu viele Fachtermini, die Frage wirkt überladen und motiviert dazu, die Frage nur zu überfliegen."
+7,-99,10,-99,6,10,10,4,,
+8,-99,8,-99,10,8,7,"(4;5;6)",,

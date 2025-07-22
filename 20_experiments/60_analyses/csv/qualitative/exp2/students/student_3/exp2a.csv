@@ -1,17 +1,17 @@
-sample_id,relevance,clarity,answerability,challenging,value,language,bloom_rating,answer_problems,comments
-001,,,,,,,,,
-002,,,,,,,,,
-003,,,,,,,,,
-004,,,,,,,,,
-005,,,,,,,,,
-006,,,,,,,,,
-007,,,,,,,,,
-008,,,,,,,,,
-009,,,,,,,,,
-010,,,,,,,,,
-011,,,,,,,,,
-012,,,,,,,,,
-013,,,,,,,,,
-014,,,,,,,,,
-015,,,,,,,,,
-016,,,,,,,,,
+"sample_id","relevance","clarity","answerability","challenging","value","language","bloom_rating","answer_problems","comments"
+1,-99,10,-99,6,10,10,2,,
+2,-99,6,-99,8,6,5,4,,
+3,-99,8,-99,6,8,5,4,,
+4,-99,4,-99,8,8,3,4,,"Wie zu kompliziert formuliert, auch durch die Fremdwörter. "
+5,-99,8,-99,4,8,10,2,,
+6,-99,10,-99,6,10,8,2,,
+7,-99,6,-99,8,6,3,2,,"Operatoren sollten verständlich und nicht so kompliziert hochtrabend sein. Für den Unterricht komplett ungeeignet"
+8,-99,8,-99,8,10,10,4,,
+9,-99,8,-99,2,8,10,2,,"Operator fehlt, was soll man mit der richtigen Aussage machen?"
+10,-99,8,-99,2,8,10,2,,
+11,-99,8,-99,8,6,7,4,,"Die Frage wird durch eine sehr lange Einleitung eingeleitet, was ich leider etwas verwirrend finde. Sie könnte präziser formuliert sein."
+12,-99,8,-99,6,8,5,4,,"Schwerfällige Formulierung macht das Verstehen unnötig schwer"
+13,-99,8,-99,4,6,10,2,,"Übersichtliche Frage, jedoch benötigt man kurz zeit um genau zu verstehen, was von einem verlangt wird obwohl die Aufgabe an sich nicht so schwer ist."
+14,-99,10,-99,6,8,10,2,,
+15,-99,2,-99,10,6,3,"(4;5;6)",,"Zu lang, zu viele Fachtermini, macht gar keine Lust das zu lesen oder zu beantwortet - empfinde ich als sehr demotivierend. Mehrere Operatoren könnten dazu führen, dass man den ersten Teil der Aufgabe vergisst. Dadurch auch keine eindeutige Bloom-Zuordnung"
+16,-99,8,-99,8,8,7,"(4;5)",,"Unterschiedliche Teilaufgaben führen zu unterschiedlichen Bloo-ratings; jedoch gut formulierte Frage."
