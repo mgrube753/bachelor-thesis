@@ -8,7 +8,7 @@ This section provides the theoretical foundations for the work presented in this
 
 \subsection{Understanding Large Language Models}
 
-\object{Architectural Fundamentals} \ac{llms} -- the base of \ac{aqg} -- are commonly based on the novel neural network architecture known as transformers \cite{naik_large_2024}, released by Google \cite{vaswani_attention_2017}. It was originally proposed for machine translation \cite{minaee_large_2025,vaswani_attention_2017}. Shown in Google's paper, what makes the transformer architecture so special is that it is solely based on the attention mechanism, so it does not rely on the former approaches called \ac{rnns} or \ac{cnns}. Additionally, this architecture is capable of better parallelization, faster training times and better performance, as to be seen in its intended task \cite{vaswani_attention_2017}. Attention is essential for transformer models, allowing to model long-range dependencies effectively, but also focus and weight on important information in the input sequence \cite{patil_review_2024}. 
+\object{Architectural Fundamentals} \ac{llms} -- the base of \ac{aqg} -- are commonly based on the novel neural network architecture known as transformers \cite{naik_large_2024}, released by Google \cite{vaswani_attention_2017}. It was originally proposed for machine translation \cite{minaee_large_2025,vaswani_attention_2017}. Shown in Google's paper, what makes the transformer architecture so special is that it is solely based on the attention mechanism, so it does not rely on the former approaches called \ac{rnns} or \ac{cnns}. Additionally, this architecture is capable of better parallelization, faster training times and better performance, as to be seen in its intended task \cite{vaswani_attention_2017}. Attention is essential for models such as the transformer, allowing to model long-range dependencies effectively, but also focus and weight on important information in the input sequence \cite{patil_review_2024}. 
 
 The transformer follows an encoder-decoder structure \cite{patil_review_2024,minaee_large_2025}. Obtained from \cite{minaee_large_2025,vaswani_attention_2017}, both the encoder and decoder consist of a stack of identical layers, and in the original paper, $N=6$ layers were used, split in two columns in the following figure.
 
@@ -27,17 +27,17 @@ The transformer follows an encoder-decoder structure \cite{patil_review_2024,min
    \item \textbf{Positional Encoding}. As stated in \cite{vaswani_attention_2017}, positional encoding is added to the input embeddings to provide information about the position of each token in the sequence. This is necessary because transformers do not have a built-in order, unlike \ac{rnns} or \ac{cnns}. 
 \end{itemize}
 
-\object{Left: Encoder} The encoder structure is primarily designed for processing and interpreting the input text \cite{wang_history_2024}. It extracts step-by-step features and the result is passed to the decoder \cite{liu_understanding_2024}. Each encoder layer consists of two sublayers: 
+\object{Left: Encoder} The encoder structure is primarily designed for processing and interpreting the input text \cite{wang_history_2024}. It extracts step-by-step features and the result is passed to the decoder \cite{liu_understanding_2025}. Each encoder layer consists of two sub-layers: 
 
 \begin{itemize}
-    \item \textbf{Orange: Multi-Head Self-Attention} \cite{vaswani_attention_2017}. In this layer, every position in the input sequence can attend to all other positions in the previous layer of the encoder. By this \cite{patil_review_2024}, the model can capture dependencies between the tokens, regardless of their distance in the input sequence. 
-    \item \textbf{Blue: Position-wise \ac{ffn}} \cite{vaswani_attention_2017}. This layer is applied independently to each position in the sequence. By using this layer \cite{liu_understanding_2024}, the encoder can process and extract features from the attention output.
+    \item \textbf{Orange: Multi-Head Self-Attention} \cite{vaswani_attention_2017}. In this layer, every position in the encoder's sequence can attend to all other positions in the previous layer of the encoder, which is the input of the current layer. By this \cite{liu_understanding_2025}, the model can capture dependencies between different tokens in the input sequence. 
+    \item \textbf{Blue: Position-wise \ac{ffn}} \cite{vaswani_attention_2017}. This layer is applied independently to each position in the sequence. By using this layer \cite{liu_understanding_2025}, the encoder can process and extract features from the attention output.
 \end{itemize}
 
-\object{Right: Decoder} The decoder instead is responsible for generating the output sequence based on the encoded input. This results in a sequence of generated tokens \cite{raiaan_review_2024}. Each decoder layer is a bit different from the encoder layer structure. It consists of the following three sublayers:
+\object{Right: Decoder} The decoder instead is responsible for generating the output sequence based on the encoded input. This results in a sequence of generated tokens \cite{raiaan_review_2024}. Each decoder layer is a bit different from the encoder layer structure. It consists of the following three sub-layers:
 
 \begin{itemize}
-    \item \textbf{Orange$_1$: Masked Multi-Head Self-Attention} \cite{vaswani_attention_2017}. This layer is a modified version of the encoder's self-attention mechanism, but it prevents attending to future sequence positions. By this, the model can only use information from the past tokens and the current one.
+    \item \textbf{Orange$_1$: Masked Multi-Head Self-Attention} \cite{vaswani_attention_2017}. This layer is a modified version of the encoder's self-attention mechanism, but it prevents attending to future sequence positions. By this, the model can only use information from the past tokens and the current one in its decoder layer.
     \item \textbf{Orange$_2$: Multi-Head Attention} \cite{vaswani_attention_2017}. This layer explicitly allows the decoder to attend over the encoder's output, enabling it to incorporate information from the input sequence.
     \item \textbf{Blue: Position-wise \ac{ffn}} \cite{vaswani_attention_2017}. This layer is similar to the one in the encoder, applied independently to each position in the sequence. In the end, the decoder output is passed to a linear layer and a softmax function to finally generate the next-token probabilities.
 \end{itemize}
@@ -57,7 +57,7 @@ The transformer follows an encoder-decoder structure \cite{patil_review_2024,min
 \end{itemize}
 
 \object{\ac{moe}} Another notable variant of the transformer architecture is the \ac{moe} \cite{shazeer_outrageously_2017} architecture, as shown in the overview by \cite{naveed_comprehensive_2024}. In this architecture, multiple experts are integrated. Typically, an \ac{moe} system is a mixture of an \ac{ffn} for each expert, positioned right after the attention block, and a router mechanism, which decides which token(s) are processed by which expert(s). These are advantageous in terms of computational efficiency while being as powerful as dense models. That means, the size of the model can be increased without increasing the computational cost proportionally, because only a subset of the experts is activated for each input. % [91,92]
- Prominent examples of \ac{moe} models are xAI Grok-1 \cite{xai_open_2024}, Gemini 1.5 by Google \cite{team_gemini_2024-1}, the DeepSeek models V3 \cite{deepseek-ai_deepseek-v3_2025} and its reasoning variant R1 \cite{deepseek-ai_deepseek-r1_2025}, and the recently released LLaMA 4 family by Meta \cite{meta_ai_llama_2025}.
+Prominent examples of \ac{moe} models are xAI Grok-1 \cite{xai_open_2024}, Gemini 1.5 by Google \cite{team_gemini_2024-1}, the DeepSeek models V3 \cite{deepseek-ai_deepseek-v3_2025} and its reasoning variant R1 \cite{deepseek-ai_deepseek-r1_2025}, and the recently released LLaMA 4 family by Meta \cite{meta_ai_llama_2025}.
 
 \vspace{8em}\pagebreak
 
@@ -66,8 +66,6 @@ The transformer follows an encoder-decoder structure \cite{patil_review_2024,min
 Given \ac{llms}' capabilities, these enable the automation of the often time-consuming question generation process for educators \cite{vu_chatgpt-based_2024}. The integration of such models into education offers an opportunity to enhance the learning experience for students and support teachers in advancing educational content \cite{naveed_comprehensive_2024}. 
 With the help of \ac{llms}, customized study materials and practice questions can be generated to develop personalized learning for students \cite{al_faraby_analysis_2024,bhowmick_automating_2023,hang_mcqgen_2024}, while freeing up the educators' valuable time for both teaching and student interaction \cite{naveed_comprehensive_2024}.
 % sources: 452 part 1 / 453.454 for part 2 
-% Diverse and inclusive materials can be created with the help of \ac{llms}, thereby freeing up valuable time for both teaching and student interaction \cite{naveed_comprehensive_2024}. 
-% However, aligning the automated questions with specific cognitive levels still remains a key challenge. 
 
 \object{Challenge of Alignment} For automated content creation and personalized learning, the ability to differentiate questions based on certain levels of cognitive complexity is crucial \cite{li_planning_2024,zhuge_twinstar_2025}. However, aligning the automated questions with specific cognitive levels still remains a key challenge. \ac{llms} per se show great potential in \ac{aqg} with respect to different cognitive levels \cite{maity_can_2025,blobstein_angel_2023,duong-trung_bloomllm_2024,scaria_automated_2024,scaria_how_2024}. 
 By using different prompting strategies, as illustrated in the \bfhyperref{sec:performance-enhancements}{Performance Enhancements} and the according \bfhyperref{sec:question-generation-research}{Question Generation Research} section, the models can be guided to generate questions that are of high quality and better aligned with the cognitive levels of Bloom's Taxonomy. 
@@ -108,7 +106,7 @@ Each of these cognitive levels is associated with a set of action verbs that can
 
 \begin{table}[htbp]
    \centering
-   \renewcommand{\arraystretch}{1.6} % Matches row height style from the example table
+   \renewcommand{\arraystretch}{1.6}
    \caption{Bloom's Taxonomy Action Verbs.}
    \label{tab:blooms_verbs_columns}
    \begin{tabularx}{\textwidth}{|>{\hsize=1.15\hsize\centering\arraybackslash}X|>{\hsize=1.25\hsize\centering\arraybackslash}X|>{\hsize=0.95\hsize\centering\arraybackslash}X|>{\hsize=0.95\hsize\centering\arraybackslash}X|>{\hsize=0.9\hsize\centering\arraybackslash}X|>{\hsize=0.8\hsize\centering\arraybackslash}X|}
@@ -139,8 +137,6 @@ Each of these cognitive levels is associated with a set of action verbs that can
    \end{tabularx}
  \end{table}
 
-% \pagebreak
-
 \subsection{Performance Enhancements}
 \label{sec:performance-enhancements}
 
@@ -157,8 +153,6 @@ To address these challenges and to refine the capabilities of \ac{llms} for spec
 \object{Using Special Marks} Emphasizing important parts of the prompt can be achieved by using special marks like quotation marks or line breaks \cite{zhao_survey_2025} to help the \ac{llm} visually distinguish between different parts of the prompt. As an example, to emphasize a text block, it can be enclosed in docstring quotation marks, as it is known from Python programming\footnote{\url{https://peps.python.org/pep-0257/}, accessed 06/16/2025}.
 
 \object{Positive Constraints} When formulating the prompt, it is often useful to tell the model more what it should do, rather than what it should not do \cite{zhao_survey_2025}, resulting in a balanced and more focused prompt. 
-
-% \pagebreak
 
 \object{Providing Scoring Standards} For tasks which involve scoring a text, it is crucial to provide a detailed description of the scoring standards in the prompt \cite{zhao_survey_2025}. For instance, using a clear rubric helps the \ac{llm} to assess the quality of generated questions, as it was done in \cite{scaria_automated_2024}. However, in this work -- probably because of the usage of an outdated \ac{llm} --, the evaluation results differ from the human evaluation, which has to be considered when using this technique.
 
@@ -203,13 +197,11 @@ In addition to that, researchers developing new evaluation metrics compare their
    \item Studies such as \cite{steuer_i_2021} and \cite{moore_assessing_2022} adopted this hierarchical scheme and used it for their human question evaluation. For instance, \cite{steuer_i_2021} used it to evaluate their \ac{aqg} system, while \cite{moore_assessing_2022} adopted this scheme to assess the quality of student-generated questions.
    \item Furthermore, the authors in the papers \cite{scaria_how_2024,scaria_automated_2024} used and adapted the evaluation scheme by replacing the criterion \textit{Rephrase} with \textit{Bloom'sLevel}.
    \item  Using \cite{moore_assessing_2022} as a reference, \cite{mi_comparative_2024} proposed another scheme with a maximum of 50 points by covering \textit{Relevance, Clarity, Answerability, Challenging} and \textit{Cognitive Level} as criteria. The latter shall present a higher score for student-generated questions that are more cognitively demanding, so these are positioned higher in the Bloom's Taxonomy hierarchy. GPT-4 had most voting agreement with expert ratings in contrast to e.g.\ GPT-3.5 and ERNIE.
-   % \item Moreover, \cite{moore_automatic_2024} proposed a novel evaluation toolkit for question usability, called SAQUET. Using the 19-item writing flaw rubric by \cite{tarrant_frequency_2006}, they evaluated the \ac{mcqs}. Based on these criteria, the structural and pedagogical value of the questions was assessed, with SAQUET being slightly more strict at rating than the experts.
    % tarrant_frequency_2006 and moore_automatic_2024 removed
 \end{itemize}
 
 % -------------------------------------------------------------------------
 
 \object{LLM as an evaluator} Another approach involves using \ac{llms} themselves as evaluators. For instance, \cite{nguyen_reference-based_2024} introduced NACo, an \ac{llm}-based metric that employs a \ac{cot} strategy to rank the \textit{Naturalness, Complexity} and \textit{Answerability} of generated questions. In contrast to this, \cite{scaria_how_2024} employed Gemini Pro\footnote{\url{https://blog.google/technology/ai/google-gemini-ai/\#performance}, accessed 05/09/2025} to assess \textit{Question Quality} and \textit{Alignment} with Bloom's Taxonomy, revealing discrepancies compared to human evaluators. It is noteworthy that the abilities of \ac{llms} are rapidly evolving, and results from former models, e.g.\ Gemini Pro, might differ with versions nowadays. 
-% #todo maybe skip naco
 
 Other research has also explored using \ac{llms} for tasks like classifying question quality, evaluating answerability, or performing other evaluations based on predefined criteria \cite{moore_assessing_2022,scaria_how_2024,blobstein_angel_2023}. The use of \ac{llms} for evaluation is a promising direction, especially when coupled with human evaluation. Comparing the agreement between the \ac{llm} and the experts can enhance the reliability of the evaluation process.
