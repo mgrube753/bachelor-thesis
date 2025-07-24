@@ -134,9 +134,9 @@ To evaluate the generated questions properly and make a comparison with the quan
 
 The supervisor -- a professor with extensive lecturing experience -- analyzed the questions first, and the staff members were then asked to evaluate the same questions based on the same criteria. In the meantime, the supervisor noticed that the used rubric was not sufficient to cover all qualitative aspects of the questions, leading to an extension of the rubric. By this, the mentioned criteria \textit{Value} and \textit{Language} were added to the rubric, which were not part of the firstly used rubric. The novel \textit{Value} criterion was introduced to rate the meaningfulness of the questions in an e.g.\ educational context, while the \textit{Language} criterion focused on the linguistic complexity and precision of the questions -- since \textit{Clarity} focused the content clarity and logical comprehension.
 
-Regarding Figure \bfref{fig:exp1a-llm-analysis}, certain patterns emerged from the supervisor-based evaluation. Most questions were rated highly \textit{relevant} to the material's topic, with OpenAI and Google as the highest scores. While every model achieved a median of 10,only the OpenAI model could achieve a mean of 10 at \textit{Relevance}, also to be seen at the \textit{Clarity} criterion next to this criterion. Here, DeepSeek was also rated high as a valuable competitor of OpenAI. In contrast, Anthropic and Google both had a wide scale of points and means of 7.33 and 7.64, indicating that these two models were more inconsistent at generating clear and logically understandable questions. 
+Regarding Figure \bfref{fig:exp1a-llm-analysis}, certain patterns emerged from the supervisor-based evaluation. Most questions were rated highly \textit{relevant} to the material's topic, with OpenAI and Google as the highest scores. While every model has a median of 10, only the OpenAI model could achieve a mean of 10 as well at \textit{Relevance}, also to be seen at the \textit{Clarity} criterion next to this criterion. Here, DeepSeek was also rated high as a valuable competitor of OpenAI. In contrast, Anthropic and Google both had a wide scale of points and means of 7.33 and 7.64, indicating that these two models were more inconsistent at generating clear and logically understandable questions. 
 
-Moreover, the \textit{Answerability} criterion -- based on the source text -- has shown that OpenAI and DeepSeek were the best-performing models again (with means of 9.33 and 8.5), while Anthropic's and Google's scores (with means of 7.5 and 7.45) were spreading more to lower scores instead. Contrary to this, the questions of these two models were rated as more challenging -- while Anthropic being most consistent with a mean of 6.67 --, compared to the significantly lower OpenAI and DeepSeek scores in both mean (3.17 and 3.5) and median (both at 2) in this regard.
+Moreover, the \textit{Answerability} criterion -- based on the source text -- has shown that OpenAI and DeepSeek were the best-performing models again (with means of 9.33 and 8.5), while Anthropic's and Google's scores (with means of 7.5 and 7.45) were spreading more to lower scores instead. Contrary to this, the questions of the latter two models were rated as more challenging -- with Anthropic being most consistent with a mean of 6.67 --, compared to the significantly lower OpenAI and DeepSeek scores in both mean (3.17 and 3.5) and median (both at 2) in this regard.
 
 The educational \textit{Value} criterion indicates that the OpenAI questions were the most valuable ones with a mean and median of 10. The other models were inconsistent in this regard, with noticeably wide ranges of scores, means between 6 and 7 and DeepSeek having the lowest median of 7.
 
@@ -232,9 +232,9 @@ The ratings by the supervisor indicate the following: the complex prompt led to 
 \end{table}
 
 
-\object{Experiment 1b -- Error Handling} A second run was conducted to evaluate \ac{llm}-based questions based on manipulated lecture script content. The qualitative analysis of Experiment 1b was done similarly using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This criterion was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
+\object{Experiment 1b -- Error Handling} A second run was conducted to evaluate \ac{llm}-based questions based on manipulated lecture script content. The qualitative analysis of Experiment 1b was done using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
 
-Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the rubric was not sufficient for this manner of assessment, since the contextual material is manipulated. Based on this, the \textit{Manipulation Handling} criterion was solely analyzed by the supervisor, and the results are presented in Table \ref{tab:exp1b-manipulation-handling-supervisor}. If this issue had been noticed earlier, the questions could have been evaluated by solely this single criterion, resulting in a bigger sampling set. However, the sampled set of questions is too small to draw any significant conclusions, since certain questions where the models noticed the manipulation were not rated by the experts.
+Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the rubric was not sufficient for this manner of assessment, since the contextual material is manipulated. Based on this, the \textit{Manipulation Handling} criterion was solely analyzed, and the results are presented in Table \ref{tab:exp1b-manipulation-handling-supervisor}. If this issue had been noticed earlier, the questions could have been evaluated by solely this single criterion, resulting in creating a bigger sampling set, or the full set of questions could have been analyzed. However, the sampled set of questions is too small to draw any significant conclusions, since certain questions where the models noticed the manipulation were not rated by the experts.
 
 % #TODO heatmap based on the prompt type for manipulation handling (llm vs. prompt type)
 % INSTEAD lets create a table for this + table for manipulation handling by llm
@@ -273,13 +273,28 @@ Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the ru
 
 \pagebreak
 
-The limited sample size of 16/56 questions led to the table's results. As to be seen, the \textit{Manipulation Handling} criterion was rated with a mean of 2.5/10 or 0, commonly indicating that the models did not handle the manipulation well. Anthropic and Google were rated with a mean of 2.5/10 for the complex prompt each, while the questions based on the common prompt were rated with 0/10 points. DeepSeek's questions were rated with 2.5/10 for both prompt types, while OpenAI's questions show 0/10 points for each prompt type. One of the two complex prompt questions the OpenAI model generated was not rated by the supervisor, since it was hard to evaluate its manipulation handling here. This results in a NaN value, which is why the standard deviation for OpenAI's complex prompt questions is not available. Overall, the supervisor-based evaluation does not provide significant insights into the \ac{llms}' manipulation handling, since the sample size is too small to draw any conclusions.
+In this table, there are results based on 16/56 questions, two for each prompt type and \ac{llm}. The limited sample size led to the following observations. The \textit{Manipulation Handling} criterion was rated with a mean of 2.5/10 or 0, commonly indicating that the models did not handle the manipulation well. The means of 2.5 illustrate that one of the two questions was rated with 5/10 points, while the other one was rated with 0/10 points. 5/10 points show that the systems still followed the manipulated content, but in the formulation of the questions, there was a hint that the manipulation was noticed.
+
+Anthropic and Google were rated with a mean of 2.5/10 for the complex prompt each, with Google's 5/10 question slightly distancing from the manipulated script (Appendix \bfref{lst:1b-supervisor-good-example}). The questions based on the common prompt were rated with 0/10 points for both models, with Google providing a proper example of following the manipulation (Appendix \bfref{lst:1b-supervisor-bad-example}). DeepSeek's questions were rated with 2.5/10 for both prompt types, while OpenAI's questions show 0/10 points for each prompt type. The latter is a surprising result, because in the quantitative analysis, OpenAI was performing well with the manipulation, as well as DeepSeek -- both providing few essentially low \textit{Adherence Scores}. One of the two complex prompt questions the OpenAI model generated could not be rated by the supervisor, since it was hard to evaluate its manipulation handling here. This question (Appendix \bfref{lst:1b-supervisor-nan-example}) results in a NaN value -- which is why the standard deviation for OpenAI's complex prompt questions is not available --, showing again that the sampling size was too small.
+
+Overall, the supervisor-based evaluation does not provide significant insights into the \ac{llms}' manipulation handling, but the models particularly struggled with this task. The sampled question sets were set as-is, because rating a more vast number of questions -- focusing on the question's context, and a comprehensive rubric -- was not feasible within the project's scope.
 
 \object{Supervisor-based Analysis Complications}
 
-\tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien, NaN values}
+\tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien, NaN values auch bei 1a gewesen}
 
-\tcr{muss man sehen ob man hier ankerbeispiele Pro und Contra hintut oder in-text eher.}
+% \tcr{1a: 3 (complex script),4 (complex script),7 (common transcript),11 anthropic (complex transcript) negativ aufgefallen}
+% 1a: frage 5 (tanenbaum): antwort 2 falsch laut cap
+% deepseek vor allem 19/20 (complex tanenbaum) und 21/22 (common transcript) "laut text", auch complex transcript 24
+% deepseek complex prompt 23, verdammt banal
+% google: common script 25 --> laut text, alle antworten falsch?
+% 29 (common tanenbaum) und 30 (common tanenbaum) auch "laut text" bei google
+% 32 (complex tanenbaum),34 (common transcript),35/36 (complex transcript) "laut text"
+% 46 openai (common transcript) einmalig "laut text", sonst nicht wirklich was aufgefallen
+
+(dadurch dass wir in 1a andere kriterien ausgiebig angesehen haben, ist die relevanz dieser in 1b nicht gegeben. MH reicht hierbei, da randbedinungen für answerability und co nicht wirklich bei manipulation gegeben sind)
+
+(exp1b war sampling size zu klein, wodurch eben das NaN problematisch wurde. hier ist nur eine person am auswerten, wodurch wenig werte gegeben werden. staff members werden danach noch ausgewertet... google ueberladene komplexe sprache, kann aber teils gut abschneiden bei MH; )
 
 \vp
 
@@ -339,7 +354,7 @@ Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.5) rem
 
 Regarding the heatmaps in Figure \bfref{fig:exp1a-correctness-heatmaps-staff}, the \textit{Correctness} scores focusing on the input sources differ from the supervisor's evaluation. There is a minor trend similar to the supervisor's evaluation, where OpenAI and DeepSeek tend to be rated higher than the other models. Contrary to the supervisor, the staff members rated OpenAI's questions based on Tanenbaum with a mean of 7.8, which is significantly lower than the supervisor's 10/10 points. Also, the trend that the transcript-based questions were rated highest is not visible in the staff members' mixed picture.
 
-In the second heatmap, the prompt type had the same impact on the correctness scores, with the common prompt leading to higher scores than the complex one. The models were on par with values all above 9/10 in the mean. In the supervisor's evaluation, Google was rated with 8.3 in the common prompt instead. Focusing the complex prompt, the supervisor also rated Google significantly lower with a mean of 3.3/10, while the staff members rated it with 6.8 points. 
+In the second heatmap, according to the staff members, the prompt type had the same impact on the correctness scores, with the common prompt leading to higher scores than the complex one. The models were on par with values all above 9/10 in the mean. In the supervisor's evaluation, Google was rated with 8.3 in the common prompt instead. Focusing the complex prompt, the supervisor also rated Google significantly lower with a mean of 3.3/10, while the staff members rated it with 6.8 points. 
 
 \begin{figure}[htbp]
     \centering
@@ -535,6 +550,47 @@ As in the previous sub-experiment, the staff members were asked to evaluate ques
 
 \object{Mixed Analysis Complications}
 
+% expert2 1a: frage 14 fragt nach folieninhalt, ebenso 19, 21, 22, 30, 31
+% verneinung in fragestellung bei fragen 8 und 25
+% -----
+% expert2 1b: missing #TODO
+
+% expert3 1a: frage 7 richtigkeit der antworten strittig/nicht bestandteil des textes
+% 3 und 4 sind nicht passend zum quelltext, merkwürdig formuliert
+% gemaess dem text frage 6,7,15,18,24,25,29-36
+% frage 8 unnoetig kompliziert verpackt sprachlich
+% frage 12 antwort 2 eher inkorrekt
+% uebersetzungsprobleme bei tanenbaum aufgetreten zur frage. wohl eher gleiche sprache besser
+% frage 25 negation unnoetig, frage 28 etwas abseits vom quellmaterial
+% 30: antwort 3 falsch
+% frage 35 wie ausgedacht, keinen quelltextbezug
+% fragen 23 und 41 recht einfach
+% frage 44 viel fantasie, entfernt vom quelltext
+% nochmal 46 openai referenz zu text
+% -----
+% expert3 1b: gegebener text 3-7, 9-16. gelegentliche erkennung der manipulation
+
+% expert4 1a: auch basierend auf text oft angekreidet; sehr schoen frage 12 (anthropic transcript complex)
+% 14 (common script)/15 (complex script) deepseek sehr einfache fragen
+% 27/28 (google complex script) jeweils sehr lang geschrieben...
+% frage 11 auffallend merkwürdig mit wenig correctness auch
+% fragen 3 und 4 (anthropic complex script) nicht ganz mit script beantwortbar
+% -----
+% expert4 1b: manipulationen erkannt bei 3 und 4 (anthropic complex)
+% deepseek 6 (common) und 7 (complex) kriegen es halbwegs hin, dies zu erkennen nur
+% 11 und 12 (googles complex fragen) klappten gut bei erkennung
+% 15 openai complex so halb erkannt aber wohl unsinnige frage
+
+% expert5 1a: viel mit gemäß text wieder
+% fragen mit nicht (wie frage 25) sind nicht angebracht
+% frage 7 stark verschachtelt und wohl auch inkorrekt (anthropic complex tanenbaum)
+% frage 8 (anthropic complex tanenbaum) auch eher inkorrekt
+% frage 28 wohl inkorrekte richtige antwort, auf jeden fall nicht basierend auf quelltext
+% frage 35 antworten ausgedacht
+% 40 (openai complex script) sollte nicht mit session layer zu tun haben, frage 47 ebenso (openai complex transcript), aber 44 (complex tanenbaum) eigentlich auch nicht
+% -----
+% expert5 1b: frage 7 halbwegs hinbekommen, antwortmoeglichkeiten teils auf manipulation basierend, teils nicht, frage 16 auch hier nicht verständlich fuer bewerter
+
 \tcr{es fiel den bewertern auch auf, dass die fragen oft \enquote{auf den text} bezogen waren, was nicht der fall sein sollte. also das prompting muss hier angepasst werden, damit die llms nicht mehr so oft \enquote{auf den text} referenzieren, siehe exp2}
 
 \tcr{stichprobe bei exp1b relativ klein (gleiches sampling, aber 1/3 fragen da 1 source), um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
@@ -550,7 +606,24 @@ The second experiment addressed evaluating the relationship between question for
 
 \paragraph*{Qualitative Analysis -- Student-based} 
 
-Exp2 rubric with sampled llm-based evaluation via students from the secondary supervisor, fleiss kappa here as well, also with tables and plots
+Exp2 rubric with sampled question evaluation via students from the secondary supervisor, fleiss kappa here as well, also with tables and plots
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp2/qualitative/plots/exp2_boxplots_all_metrics_by_llm.png} 
+   \caption{Qualitative Analysis - Student-based Evaluation Metrics by LLM (Exp2).}
+   \label{fig:exp2-student-evaluation-metrics}
+\end{figure}
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp2/qualitative/plots/exp2_boxplots_all_metrics_by_experiment.png}
+   \caption{Qualitative Analysis - Student-based Evaluation Metrics by Experiment (Exp2).} 
+   \label{fig:exp2-student-evaluation-experiment}
+\end{figure}
+
+\tcr{and a table/heatmap with means, stds and medians for llm vs. subexperiment wrt. bloom's level}
+\tcr{and a corresponding heatmap with the means, stds and medians for subexperiment (a and c) vs. question format via bloom's level}
 
 \vp
 
