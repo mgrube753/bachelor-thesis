@@ -321,7 +321,6 @@ def run_exp_2a(clients):
     reset_counters()
     tasks = []
     csv_rows = []
-    source_name = "script"
     layer_specification = "all_layers"
     base_text_for_exp2 = concatenate_all_script_layers("common")
 
@@ -360,8 +359,8 @@ def run_exp_2a(clients):
                         formatted_prompt,
                         output_path,
                         description,
-                        None,  # no input_text
-                        2400,  # max_tokens
+                        None,
+                        2400,
                     )
                 )
                 csv_rows.append(
@@ -385,7 +384,6 @@ def run_exp_2b(clients):
     reset_counters()
     tasks = []
     csv_rows = []
-    source_name = "script"
     layer_specification = "all_layers"
     bloom_data = get_bloom()
 
@@ -426,8 +424,8 @@ def run_exp_2b(clients):
                     formatted_prompt,
                     output_path,
                     description,
-                    None,  # no input_text
-                    2400,  # max_tokens
+                    None,
+                    2400,
                 )
             )
             csv_rows.append(["exp2b", llm_name, layer_specification, bloom_original])
@@ -443,7 +441,6 @@ def run_exp_2c(clients):
     reset_counters()
     tasks = []
     csv_rows = []
-    source_name = "script"
     layer_specification = "all_layers"
     bloom_data = get_bloom()
 
@@ -490,8 +487,8 @@ def run_exp_2c(clients):
                         formatted_prompt,
                         output_path,
                         description,
-                        None,  # no input_text
-                        2400,  # max_tokens
+                        None,
+                        2400,
                     )
                 )
                 csv_rows.append(

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Notebook: Qualitative Evaluation -- Experiment 1
+# # Notebook: Qualitative Evaluation (Supervisor vs. Staff Members) -- Experiment 1
 
 # ## Initial Setup
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd
@@ -15,19 +15,53 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from IPython.display import display
 import warnings
+from statsmodels.stats.inter_rater import fleiss_kappa
+
 warnings.filterwarnings('ignore')
 
+# Plot configuration
 plt.style.use('default')
 sns.set_palette("Set2")
 plt.rcParams['figure.dpi'] = 300
 plt.rcParams['savefig.dpi'] = 300
 
+# Display configuration
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', 100)
-
 pd.set_option('display.notebook_repr_html', True)
+
+# !!! Set to False to use staff data instead (Experts 2-5, + inter-rater agreements)
+# (IRA between staff experts 2-5 and also staff experts vs. supervisor [expert 1])
+USE_SUPERVISOR_DATA = False
+# Changing this will affect the data resulting in the notebook
+# !!! As a very important note
+
+# Path configuration
+BASE_PROJECT_PATH = os.path.abspath(os.path.join(os.getcwd(), "..", ".."))
+expert_base_path = os.path.join(BASE_PROJECT_PATH, "20_experiments/60_analyses/csv/qualitative/exp1/experts")
+hint_base_path = os.path.join(BASE_PROJECT_PATH, "20_experiments/60_analyses/csv/qualitative/exp1/hints")
+output_base_path = os.path.join(BASE_PROJECT_PATH, "40_evaluation/exp1/qualitative")
+output_tables_path = os.path.join(output_base_path, "tables")
+output_plots_path = os.path.join(output_base_path, "plots")
+
+for path in [output_tables_path, output_plots_path]:
+    os.makedirs(path, exist_ok=True)
+
+# Storage for results
+tables = {}
+plots = {}
+
+print("Setup completed successfully")
+print(f"Output tables: {output_tables_path}")
+print(f"Output plots: {output_plots_path}")
+
+
+# In[ ]:
+
+
+# Utility Functions
 
 def create_seaborn_boxplot(data, x, y, ax, title, ylabel, xlabel, scale_range=None):
     colors = ['#66c2a5', '#fc8d62', '#8da0cb', '#e78ac3', '#a6d854', '#ffd92f', '#e5c494', '#b3b3b3']
@@ -43,18 +77,9 @@ def create_seaborn_boxplot(data, x, y, ax, title, ylabel, xlabel, scale_range=No
                   edgecolor='darkred', linewidth=1)
     
     label_mapping = {
-        'anthropic': 'Anthropic',
-        'openai': 'OpenAI', 
-        'google': 'Google',
-        'deepseek': 'DeepSeek',
-        'common': 'Common',
-        'complex': 'Complex',
-        'script': 'Script',
-        'transcript': 'Transcript', 
-        'tanenbaum': 'Tanenbaum',
-        'script_manipulated': 'Script (Manipulated)',
-        'exp1a': 'Exp 1a',
-        'exp1b': 'Exp 1b'
+        'anthropic': 'Anthropic', 'openai': 'OpenAI', 'google': 'Google', 'deepseek': 'DeepSeek',
+        'common': 'Common', 'complex': 'Complex', 'script': 'Script', 'transcript': 'Transcript', 
+        'tanenbaum': 'Tanenbaum', 'script_manipulated': 'Script (Manipulated)'
     }
     
     current_labels = [tick.get_text() for tick in ax.get_xticklabels()]
@@ -73,138 +98,266 @@ def create_seaborn_boxplot(data, x, y, ax, title, ylabel, xlabel, scale_range=No
     ax.set_xlabel(xlabel, fontsize=11, labelpad=10)
     ax.grid(True, alpha=0.3)
 
-BASE_PROJECT_PATH = os.path.abspath(os.path.join(os.getcwd(), "..", ".."))
-
-expert_base_path = os.path.join(BASE_PROJECT_PATH, "20_experiments/60_analyses/csv/qualitative/exp1/experts")
-hint_base_path = os.path.join(BASE_PROJECT_PATH, "20_experiments/60_analyses/csv/qualitative/exp1/hints")
-
-output_base_path = os.path.join(BASE_PROJECT_PATH, "40_evaluation/exp1/qualitative")
-output_tables_path = os.path.join(output_base_path, "tables")
-output_plots_path = os.path.join(output_base_path, "plots")
-
-for path in [output_tables_path, output_plots_path]:
-    os.makedirs(path, exist_ok=True)
-
-tables = {}
-plots = {}
-
-print(f"Setup completed")
-print(f"Output tables: {output_tables_path}")
-print(f"Output plots: {output_plots_path}")
-
-
-# ## Data Loading and Preprocessing
-
-# In[2]:
-
-
-def load_and_prepare_data():
-    
+def load_supervisor_data():
     hint_exp1a = pd.read_csv(os.path.join(hint_base_path, "exp1a_hints.csv"))
     hint_exp1b = pd.read_csv(os.path.join(hint_base_path, "exp1b_hints.csv"))
     
     expert1_exp1a = pd.read_csv(os.path.join(expert_base_path, "expert_1", "exp1a.csv"))
     expert1_exp1b = pd.read_csv(os.path.join(expert_base_path, "expert_1", "exp1b.csv"))
     
+    # Apply preliminary cleaning to Expert 1 data to handle special characters
+    numeric_cols_1a_temp = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'correctness']
+    numeric_cols_1b_temp = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'manipulation_handling']
+    
+    # Clean Expert 1 data before concatenation
+    for col in numeric_cols_1a_temp:
+        if col in expert1_exp1a.columns:
+            expert1_exp1a[col] = expert1_exp1a[col].astype(str)
+            invalid_values = ['??', '???', '????', '?', '', ' ', 'nan', 'NaN', 'NULL', 'null', 
+                             'None', 'NONE', 'n/a', 'N/A', '#N/A', '#NULL!', 
+                             'undefined', 'UNDEFINED', '-', '--', '---']
+            expert1_exp1a[col] = expert1_exp1a[col].replace(invalid_values, np.nan)
+    
+    for col in numeric_cols_1b_temp:
+        if col in expert1_exp1b.columns:
+            expert1_exp1b[col] = expert1_exp1b[col].astype(str)
+            invalid_values = ['??', '???', '????', '?', '', ' ', 'nan', 'NaN', 'NULL', 'null', 
+                             'None', 'NONE', 'n/a', 'N/A', '#N/A', '#NULL!', 
+                             'undefined', 'UNDEFINED', '-', '--', '---']
+            expert1_exp1b[col] = expert1_exp1b[col].replace(invalid_values, np.nan)
+    
     exp1a_df = pd.concat([expert1_exp1a, hint_exp1a[['llm', 'prompt_type']]], axis=1)
     exp1b_df = pd.concat([expert1_exp1b, hint_exp1b[['llm', 'prompt_type']]], axis=1)
     
-    numeric_cols_1a = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'correctness']
-    numeric_cols_1b = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'manipulation_handling']
-    
-    for col in numeric_cols_1a:
-        if col in exp1a_df.columns:
-            exp1a_df[col] = exp1a_df[col].replace(['??', '???', ''], np.nan)
-            exp1a_df[col] = pd.to_numeric(exp1a_df[col], errors='coerce')
-    
-    for col in numeric_cols_1b:
-        if col in exp1b_df.columns:
-            exp1b_df[col] = exp1b_df[col].replace(['??', '???', ''], np.nan)
-            exp1b_df[col] = pd.to_numeric(exp1b_df[col], errors='coerce')
-    
     exp1a_df['experiment'] = 'exp1a'
     exp1b_df['experiment'] = 'exp1b'
-    
     exp1b_df['input_source'] = exp1b_df['input_source'].replace('script', 'script_manipulated')
     
-    print(f"Loaded Experiment 1a: {len(exp1a_df)} samples")
-    print(f"Loaded Experiment 1b: {len(exp1b_df)} samples")
-    
-    exp1a_df['total_score'] = exp1a_df[numeric_cols_1a].sum(axis=1)
-    exp1b_df['total_score'] = exp1b_df[numeric_cols_1b].sum(axis=1)
-    
-    filled_1a = exp1a_df[numeric_cols_1a].notna().sum().sum()
-    total_1a = len(exp1a_df) * len(numeric_cols_1a)
-    print(f"Exp 1a completion: {filled_1a}/{total_1a} ({100*filled_1a/total_1a:.1f}%)")
-    
-    filled_1b = exp1b_df[numeric_cols_1b].notna().sum().sum()
-    total_1b = len(exp1b_df) * len(numeric_cols_1b)
-    print(f"Exp 1b completion: {filled_1b}/{total_1b} ({100*filled_1b/total_1b:.1f}%)")
-    
-    return exp1a_df, exp1b_df, numeric_cols_1a, numeric_cols_1b
+    return exp1a_df, exp1b_df
 
-exp1a_df, exp1b_df, numeric_cols_1a, numeric_cols_1b = load_and_prepare_data()
+def load_staff_data():
+    hint_exp1a = pd.read_csv(os.path.join(hint_base_path, "exp1a_hints.csv"))
+    hint_exp1b = pd.read_csv(os.path.join(hint_base_path, "exp1b_hints.csv"))
+    
+    experts_data = {}
+    for expert in [2, 3, 4, 5]:
+        expert_key = f'expert_{expert}'
+        
+        exp1a_path = os.path.join(expert_base_path, expert_key, "exp1a.csv")
+        exp1b_path = os.path.join(expert_base_path, expert_key, "exp1b.csv")
+        
+        if expert == 4 or expert == 2:
+            exp1a_data = pd.read_csv(exp1a_path, sep=';', quotechar='"')
+            exp1b_data = pd.read_csv(exp1b_path, sep=';', quotechar='"')
+        else:
+            exp1a_data = pd.read_csv(exp1a_path, quotechar='"', escapechar='\\')
+            exp1b_data = pd.read_csv(exp1b_path, quotechar='"', escapechar='\\')
+        
+        experts_data[expert_key] = {'exp1a': exp1a_data, 'exp1b': exp1b_data}
+        experts_data[expert_key]['exp1a']['expert'] = expert_key
+        experts_data[expert_key]['exp1b']['expert'] = expert_key
+    
+    exp1a_combined = pd.concat([data['exp1a'] for data in experts_data.values()], ignore_index=True)
+    exp1b_combined = pd.concat([data['exp1b'] for data in experts_data.values()], ignore_index=True)
+    
+    hint_multiplier = len(experts_data)
+    exp1a_hints_extended = pd.concat([hint_exp1a[['llm', 'prompt_type']]] * hint_multiplier, ignore_index=True)
+    exp1b_hints_extended = pd.concat([hint_exp1b[['llm', 'prompt_type']]] * hint_multiplier, ignore_index=True)
+    
+    exp1a_df = exp1a_combined.copy()
+    exp1b_df = exp1b_combined.copy()
+    
+    for col in ['llm', 'prompt_type']:
+        if col not in exp1a_df.columns:
+            exp1a_df[col] = exp1a_hints_extended[col].values
+        if col not in exp1b_df.columns:
+            exp1b_df[col] = exp1b_hints_extended[col].values
+    
+    return exp1a_df, exp1b_df, experts_data
 
-print("\n" + "="*50)
-print("DATA OVERVIEW")
-print("="*50)
+def clean_numeric_data(df, numeric_cols):
+    for col in numeric_cols:
+        if col in df.columns:
+            # Convert to string first to handle all possible invalid values
+            df[col] = df[col].astype(str)
+            
+            # Replace various invalid values with NaN
+            invalid_values = ['??', '???', '?', '????', '', ' ', 'nan', 'NaN', 'NULL', 'null', 
+                             'None', 'NONE', 'n/a', 'N/A', '#N/A', '#NULL!', 
+                             'undefined', 'UNDEFINED', '-', '--', '---']
+            df[col] = df[col].replace(invalid_values, np.nan)
+            
+            # Convert to numeric, any remaining non-numeric values become NaN
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+            
+            # Validate range (0-10 for rating scales)
+            valid_data = df[col].dropna()
+            if len(valid_data) > 0:
+                out_of_range = valid_data[(valid_data < 0) | (valid_data > 10)]
+                if len(out_of_range) > 0:
+                    df.loc[(df[col] < 0) | (df[col] > 10), col] = np.nan
+    return df
 
-print(f"\nExperiment 1a Distribution:")
-print(f"  LLMs: {dict(exp1a_df['llm'].value_counts())}")
-print(f"  Prompt Types: {dict(exp1a_df['prompt_type'].value_counts())}")
-print(f"  Input Sources: {dict(exp1a_df['input_source'].value_counts())}")
+def calculate_fleiss_kappa(expert2_df, expert3_df, expert4_df, expert5_df, criteria_cols):
+    results = []
+    
+    ids2 = set(expert2_df['sample_id'].astype(int))
+    ids3 = set(expert3_df['sample_id'].astype(int))
+    ids4 = set(expert4_df['sample_id'].astype(int)) 
+    ids5 = set(expert5_df['sample_id'].astype(int))
+    common_ids = sorted(list(ids2 & ids3 & ids4 & ids5))
+    
+    for criterion in criteria_cols:
+        ratings = []
+        for sample_id in common_ids:
+            r2 = expert2_df[expert2_df['sample_id'] == sample_id][criterion].iloc[0]
+            r3 = expert3_df[expert3_df['sample_id'] == sample_id][criterion].iloc[0]
+            r4 = expert4_df[expert4_df['sample_id'] == sample_id][criterion].iloc[0] 
+            r5 = expert5_df[expert5_df['sample_id'] == sample_id][criterion].iloc[0]
+            
+            def safe_convert(val):
+                return np.nan if pd.isna(val) else float(val)
+            
+            r2_val, r3_val, r4_val, r5_val = map(safe_convert, [r2, r3, r4, r5])
+            
+            if all(not pd.isna(r) and 0 <= r <= 10 for r in [r2_val, r3_val, r4_val, r5_val]):
+                ratings.append([int(r2_val), int(r3_val), int(r4_val), int(r5_val)])
+        
+        if len(ratings) >= 2:
+            ratings_array = np.array(ratings)
+            fleiss_table = np.zeros((len(ratings), 11))
+            
+            for i, item_ratings in enumerate(ratings):
+                for rating in item_ratings:
+                    fleiss_table[i, int(rating)] += 1
+            
+            kappa = fleiss_kappa(fleiss_table)
+            
+            level = ("Slight" if kappa < 0.2 else 
+                    "Fair" if kappa < 0.4 else 
+                    "Moderate" if kappa < 0.6 else 
+                    "Substantial" if kappa < 0.8 else 
+                    "Almost Perfect")
+            
+            results.append({
+                'Criterion': criterion,
+                'Fleiss_Kappa': round(kappa, 3),
+                'Agreement_Level': level,
+                'N_Items': len(ratings),
+                'Mean_Rating': round(np.mean(ratings_array), 2),
+                'Std_Rating': round(np.std(ratings_array), 2)
+            })
+    
+    return pd.DataFrame(results)
 
-print(f"\nExperiment 1b Distribution:")
-print(f"  LLMs: {dict(exp1b_df['llm'].value_counts())}")
-print(f"  Prompt Types: {dict(exp1b_df['prompt_type'].value_counts())}")
-print(f"  Input Sources: {dict(exp1b_df['input_source'].value_counts())}")
+print("Utility functions loaded successfully")
+
+
+# ## Data Loading and Configuration
+
+# In[ ]:
+
+
+# Load data based on configuration
+if USE_SUPERVISOR_DATA:
+    print("Loading SUPERVISOR data (Expert 1 - single rater)")
+    exp1a_df, exp1b_df = load_supervisor_data()
+    analysis_suffix = "supervisor"
+    agreement_available = False
+else:
+    print("Loading STAFF data (Experts 2-5 - multiple raters with agreement analysis)")
+    exp1a_df, exp1b_df, experts_data = load_staff_data()
+    analysis_suffix = "staff" 
+    agreement_available = True
+
+# Define criteria columns
+numeric_cols_1a = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'correctness']
+all_numeric_cols_1b = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'manipulation_handling']
+numeric_cols_1b = ['manipulation_handling']
+
+# Clean and prepare data
+exp1a_df = clean_numeric_data(exp1a_df, numeric_cols_1a)
+exp1b_df = clean_numeric_data(exp1b_df, numeric_cols_1b)
+
+# Calculate total scores
+exp1a_df['total_score'] = exp1a_df[numeric_cols_1a].sum(axis=1)
+
+# Data availability check
+exp1a_filled = exp1a_df[numeric_cols_1a].notna().sum().sum()
+exp1a_total = len(exp1a_df) * len(numeric_cols_1a)
+exp1b_filled = exp1b_df[numeric_cols_1b].notna().sum().sum()
+exp1b_total = len(exp1b_df) * len(numeric_cols_1b)
+
+analyze_exp1b = exp1b_filled > 0
+
+print(f"\nData loaded successfully!")
+print(f"Experiment 1a: {len(exp1a_df)} samples, {100*exp1a_filled/exp1a_total:.1f}% completion")
+print(f"Experiment 1b: {len(exp1b_df)} samples, {100*exp1b_filled/exp1b_total:.1f}% completion")
+print(f"Analysis suffix: {analysis_suffix}")
+
+print(f"\nDistribution:")
+print(f"  LLMs: {list(exp1a_df['llm'].unique())}")
+print(f"  Prompt Types: {list(exp1a_df['prompt_type'].unique())}")
+print(f"  Input Sources (1a): {list(exp1a_df['input_source'].unique())}")
+if analyze_exp1b:
+    print(f"  Input Sources (1b): {list(exp1b_df['input_source'].unique())}")
 
 
 # # Experiment 1a: Original Content Analysis
 # 
-# Analysis of LLM question generation quality using original source materials (script, transcript, tanenbaum textbook).
+# Analysis of LLM question generation quality using original source materials.
 
-# ## 1a.1: Descriptive Statistics
-
-# In[3]:
+# In[ ]:
 
 
 print("EXPERIMENT 1A - DESCRIPTIVE STATISTICS")
 print("="*60)
 
+criteria = numeric_cols_1a + ['total_score']
+
+# Overall statistics
 exp1a_stats = exp1a_df[numeric_cols_1a].describe().round(2)
-tables['exp1a_overall_stats'] = exp1a_stats
-print("\nOverall Statistics (all criteria):")
+tables[f'exp1a_overall_stats_{analysis_suffix}'] = exp1a_stats
+print("\nOverall Statistics:")
 display(exp1a_stats)
 
-exp1a_llm_stats = exp1a_df.groupby('llm')[numeric_cols_1a].agg(['mean', 'std', 'count']).round(2)
-tables['exp1a_llm_stats'] = exp1a_llm_stats
+# Statistics by LLM
+exp1a_llm_stats = exp1a_df.groupby('llm')[criteria].agg(['mean', 'std', 'median', 'count']).round(2)
+tables[f'exp1a_llm_stats_{analysis_suffix}'] = exp1a_llm_stats
 print("\nStatistics by LLM:")
 display(exp1a_llm_stats)
 
-exp1a_source_stats = exp1a_df.groupby('input_source')[numeric_cols_1a].agg(['mean', 'std', 'count']).round(2)
-tables['exp1a_source_stats'] = exp1a_source_stats
+# LLM ranking
+exp1a_llm_means = exp1a_df.groupby('llm')[numeric_cols_1a].mean().round(2)
+exp1a_llm_overall = exp1a_llm_means.mean(axis=1).sort_values(ascending=False)
+tables[f'exp1a_llm_ranking_{analysis_suffix}'] = exp1a_llm_overall
+
+print("\nOverall LLM Ranking:")
+for i, (llm, score) in enumerate(exp1a_llm_overall.items(), 1):
+    print(f"{i}. {llm.title()}: {score:.2f}")
+
+# Statistics by Input Source
+exp1a_source_stats = exp1a_df.groupby('input_source')[criteria].agg(['mean', 'std', 'median', 'count']).round(2)
+tables[f'exp1a_source_stats_{analysis_suffix}'] = exp1a_source_stats
 print("\nStatistics by Input Source:")
 display(exp1a_source_stats)
 
-exp1a_prompt_stats = exp1a_df.groupby('prompt_type')[numeric_cols_1a].agg(['mean', 'std', 'count']).round(2)
-tables['exp1a_prompt_stats'] = exp1a_prompt_stats
+# Statistics by Prompt Type
+exp1a_prompt_stats = exp1a_df.groupby('prompt_type')[criteria].agg(['mean', 'std', 'median', 'count']).round(2)
+tables[f'exp1a_prompt_stats_{analysis_suffix}'] = exp1a_prompt_stats
 print("\nStatistics by Prompt Type:")
 display(exp1a_prompt_stats)
 
 
-# ## 1a.2: Analysis by LLM
-
-# In[4]:
+# In[ ]:
 
 
+# LLM Performance Visualization
 fig, axes = plt.subplots(4, 2, figsize=(14, 20))
 axes = axes.flatten()
-plots['exp1a_llm_analysis'] = fig
+plots[f'exp1a_llm_analysis_{analysis_suffix}'] = fig
 
-criteria = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'correctness']
-
-for i, criterion in enumerate(criteria):
+for i, criterion in enumerate(numeric_cols_1a):
     create_seaborn_boxplot(exp1a_df, 'llm', criterion, axes[i], 
                           f'{criterion.title()}', criterion.title(), 'LLM', scale_range=(0, 10))
 
@@ -216,38 +369,16 @@ plt.tight_layout()
 plt.subplots_adjust(top=0.95)
 plt.show()
 
-print("\n" + "="*80)
-print("DETAILED STATISTICS - LLM PERFORMANCE (EXPERIMENT 1A)")
-print("="*80)
 
-all_criteria_with_total = criteria + ['total_score']
-exp1a_llm_detailed_stats = exp1a_df.groupby('llm')[all_criteria_with_total].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_llm_detailed_stats'] = exp1a_llm_detailed_stats
-print("\nDetailed Statistics by LLM (Experiment 1a):")
-display(exp1a_llm_detailed_stats)
-
-exp1a_llm_means = exp1a_df.groupby('llm')[numeric_cols_1a].mean().round(2)
-tables['exp1a_llm_means'] = exp1a_llm_means
-print("\nMean Scores by LLM (Experiment 1a):")
-display(exp1a_llm_means)
-
-exp1a_llm_overall = exp1a_llm_means.mean(axis=1).sort_values(ascending=False)
-tables['exp1a_llm_ranking'] = exp1a_llm_overall
-print("\nOverall LLM Ranking (Experiment 1a):")
-for i, (llm, score) in enumerate(exp1a_llm_overall.items(), 1):
-    print(f"{i}. {llm.title()}: {score:.2f}")
+# In[ ]:
 
 
-# ## 1a.3: Analysis by Input Source
-
-# In[5]:
-
-
+# Input Source Analysis
 fig, axes = plt.subplots(4, 2, figsize=(14, 20))
 axes = axes.flatten()
-plots['exp1a_source_analysis'] = fig
+plots[f'exp1a_source_analysis_{analysis_suffix}'] = fig
 
-for i, criterion in enumerate(criteria):
+for i, criterion in enumerate(numeric_cols_1a):
     create_seaborn_boxplot(exp1a_df, 'input_source', criterion, axes[i], 
                           f'{criterion.title()}', criterion.title(), 'Input Source', scale_range=(0, 10))
 
@@ -259,31 +390,43 @@ plt.tight_layout()
 plt.subplots_adjust(top=0.95)
 plt.show()
 
-print("\n" + "="*80)
-print("DETAILED STATISTICS - INPUT SOURCE PERFORMANCE (EXPERIMENT 1A)")
-print("="*80)
+# Prompt Type Analysis
+fig, axes = plt.subplots(2, 4, figsize=(20, 10))
+axes = axes.flatten()
+plots[f'exp1a_prompt_analysis_{analysis_suffix}'] = fig
 
-exp1a_source_detailed_stats = exp1a_df.groupby('input_source')[all_criteria_with_total].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_source_detailed_stats'] = exp1a_source_detailed_stats
-print("\nDetailed Statistics by Input Source (Experiment 1a):")
-display(exp1a_source_detailed_stats)
+for i, criterion in enumerate(numeric_cols_1a):
+    create_seaborn_boxplot(exp1a_df, 'prompt_type', criterion, axes[i], 
+                          f'{criterion.title()}', criterion.title(), 'Prompt Type', scale_range=(0, 10))
 
-exp1a_source_means = exp1a_df.groupby('input_source')[numeric_cols_1a].mean().round(2)
-tables['exp1a_source_means'] = exp1a_source_means
-print("\nMean Scores by Input Source (Experiment 1a):")
-display(exp1a_source_means)
+create_seaborn_boxplot(exp1a_df, 'prompt_type', 'total_score', axes[7], 
+                      'Total Score', 'Total Score', 'Prompt Type', scale_range=(0, 70))
 
-exp1a_source_overall = exp1a_df.groupby('input_source')['total_score'].mean().sort_values(ascending=False)
-tables['exp1a_source_ranking'] = exp1a_source_overall
-print("\nInput Source Ranking by Total Score (Experiment 1a):")
-for i, (source, score) in enumerate(exp1a_source_overall.items(), 1):
-    print(f"{i}. {source.title()}: {score:.2f}/70")
+plt.suptitle('Experiment 1a: Performance by Prompt Type', fontsize=16, fontweight='bold', y=0.98)
+plt.tight_layout()
+plt.subplots_adjust(top=0.92)
+plt.show()
 
-# Total Score Paired Heatmaps
+# Prompt Type Comparison
+exp1a_prompt_means = exp1a_df.groupby('prompt_type')[numeric_cols_1a].mean().round(2)
+tables[f'exp1a_prompt_means_{analysis_suffix}'] = exp1a_prompt_means
+
+if 'complex' in exp1a_prompt_means.index and 'common' in exp1a_prompt_means.index:
+    prompt_diff = exp1a_prompt_means.loc['complex'] - exp1a_prompt_means.loc['common']
+    print("\nComplex vs Common Prompt Difference:")
+    for criterion, diff in prompt_diff.items():
+        direction = "higher" if diff > 0 else "lower"
+        print(f"  {criterion.title()}: {diff:+.2f} ({direction} for complex)")
+
+
+# In[ ]:
+
+
+# Total Score Heatmaps
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
-plots['exp1a_total_score_paired_heatmaps'] = fig
+plots[f'exp1a_total_score_heatmaps_{analysis_suffix}'] = fig
 
-# Heatmap 1: Total Score by Input Source vs LLM
+# Heatmap 1: Total Score by LLM vs Input Source
 heatmap_mean = exp1a_df.groupby(['llm', 'input_source'])['total_score'].mean().unstack()
 heatmap_std = exp1a_df.groupby(['llm', 'input_source'])['total_score'].std().unstack()
 
@@ -300,29 +443,17 @@ for i in range(len(heatmap_mean.index)):
 llm_labels = [label.title() for label in heatmap_mean.index]
 source_labels = [label.title() for label in heatmap_mean.columns]
 
-sns.heatmap(heatmap_mean, 
-            annot=annot_matrix, 
-            fmt='', 
-            cmap='RdYlBu_r',
-            center=heatmap_mean.mean().mean(),
-            square=True,
-            linewidths=0.5,
-            linecolor='white',
-            cbar_kws={'shrink': 0.8, 'label': 'Total Score'},
-            annot_kws={'size': 10, 'weight': 'bold'},
-            xticklabels=source_labels, 
-            yticklabels=llm_labels, 
-            ax=ax1)
+sns.heatmap(heatmap_mean, annot=annot_matrix, fmt='', cmap='RdYlBu_r',
+            center=heatmap_mean.mean().mean(), square=True, linewidths=0.5,
+            cbar_kws={'shrink': 0.8, 'label': 'Total Score'}, annot_kws={'size': 10, 'weight': 'bold'},
+            xticklabels=source_labels, yticklabels=llm_labels, ax=ax1)
 
-ax1.set_title('Mean Total Score (LLM vs Input Source)\nValues: Mean (Std) | Scale: 0-70 points', 
+ax1.set_title('Total Score (LLM vs Input Source)\nValues: Mean (Std) | Scale: 0-70 points', 
              fontsize=14, fontweight='bold', pad=20)
-ax1.set_xlabel('Input Source', fontsize=12, fontweight='bold', labelpad=10)
-ax1.set_ylabel('LLM', fontsize=12, fontweight='bold', labelpad=10)
+ax1.set_xlabel('Input Source', fontsize=12, fontweight='bold')
+ax1.set_ylabel('LLM', fontsize=12, fontweight='bold')
 
-ax1.set_xticklabels(ax1.get_xticklabels(), rotation=0, ha='center')
-ax1.set_yticklabels(ax1.get_yticklabels(), rotation=0)
-
-# Heatmap 2: Total Score by Prompt Type vs LLM
+# Heatmap 2: Total Score by LLM vs Prompt Type
 heatmap_mean_prompt = exp1a_df.groupby(['llm', 'prompt_type'])['total_score'].mean().unstack()
 heatmap_std_prompt = exp1a_df.groupby(['llm', 'prompt_type'])['total_score'].std().unstack()
 
@@ -339,118 +470,24 @@ for i in range(len(heatmap_mean_prompt.index)):
 llm_labels = [label.title() for label in heatmap_mean_prompt.index]
 prompt_labels = [label.title() for label in heatmap_mean_prompt.columns]
 
-sns.heatmap(heatmap_mean_prompt, 
-            annot=annot_matrix_prompt, 
-            fmt='', 
-            cmap='RdYlBu_r',
-            center=heatmap_mean_prompt.mean().mean(),
-            square=True,
-            linewidths=0.5,
-            linecolor='white',
-            cbar_kws={'shrink': 0.8, 'label': 'Total Score'},
-            annot_kws={'size': 10, 'weight': 'bold'},
-            xticklabels=prompt_labels, 
-            yticklabels=llm_labels, 
-            ax=ax2)
+sns.heatmap(heatmap_mean_prompt, annot=annot_matrix_prompt, fmt='', cmap='RdYlBu_r',
+            center=heatmap_mean_prompt.mean().mean(), square=True, linewidths=0.5,
+            cbar_kws={'shrink': 0.8, 'label': 'Total Score'}, annot_kws={'size': 10, 'weight': 'bold'},
+            xticklabels=prompt_labels, yticklabels=llm_labels, ax=ax2)
 
-ax2.set_title('Mean Total Score (LLM vs Prompt Type)\nValues: Mean (Std) | Scale: 0-70 points', 
+ax2.set_title('Total Score (LLM vs Prompt Type)\nValues: Mean (Std) | Scale: 0-70 points', 
              fontsize=14, fontweight='bold', pad=20)
-ax2.set_xlabel('Prompt Type', fontsize=12, fontweight='bold', labelpad=10)
-ax2.set_ylabel('LLM', fontsize=12, fontweight='bold', labelpad=10)
-
-ax2.set_xticklabels(ax2.get_xticklabels(), rotation=0, ha='center')
-ax2.set_yticklabels(ax2.get_yticklabels(), rotation=0)
+ax2.set_xlabel('Prompt Type', fontsize=12, fontweight='bold')
+ax2.set_ylabel('LLM', fontsize=12, fontweight='bold')
 
 plt.tight_layout()
 plt.show()
 
-print("\n" + "="*80)
-print("DETAILED STATISTICS - LLM vs INPUT SOURCE COMBINATIONS (EXPERIMENT 1A)")
-print("="*80)
-
-exp1a_llm_source_combinations = exp1a_df.groupby(['llm', 'input_source'])['total_score'].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_llm_source_combinations'] = exp1a_llm_source_combinations
-print("\nDetailed Statistics for LLM vs Input Source Combinations (Experiment 1a):")
-display(exp1a_llm_source_combinations)
-
-print("\n" + "="*80)
-print("DETAILED STATISTICS - LLM vs PROMPT TYPE COMBINATIONS (EXPERIMENT 1A)")
-print("="*80)
-
-exp1a_llm_prompt_combinations = exp1a_df.groupby(['llm', 'prompt_type'])['total_score'].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_llm_prompt_combinations'] = exp1a_llm_prompt_combinations
-print("\nDetailed Statistics for LLM vs Prompt Type Combinations (Experiment 1a):")
-display(exp1a_llm_prompt_combinations)
-tables['exp1a_llm_source_combinations'] = exp1a_llm_source_combinations
-print("\nDetailed Statistics for LLM vs Input Source Combinations (Experiment 1a):")
-display(exp1a_llm_source_combinations)
-
-
-# ## 1a.4: Analysis by Prompt Type
-
-# In[6]:
-
-
-fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-axes = axes.flatten()
-plots['exp1a_prompt_analysis'] = fig
-
-for i, criterion in enumerate(criteria):
-    create_seaborn_boxplot(exp1a_df, 'prompt_type', criterion, axes[i], 
-                          f'{criterion.title()}', criterion.title(), 'Prompt Type', scale_range=(0, 10))
-
-create_seaborn_boxplot(exp1a_df, 'prompt_type', 'total_score', axes[7], 
-                      'Total Score', 'Total Score', 'Prompt Type', scale_range=(0, 70))
-
-plt.suptitle('Experiment 1a: Performance by Prompt Type', fontsize=16, fontweight='bold', y=0.98)
-plt.tight_layout()
-plt.subplots_adjust(top=0.92)
-plt.show()
-
-print("\n" + "="*80)
-print("DETAILED STATISTICS - PROMPT TYPE PERFORMANCE (EXPERIMENT 1A)")
-print("="*80)
-
-exp1a_prompt_detailed_stats = exp1a_df.groupby('prompt_type')[all_criteria_with_total].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_prompt_detailed_stats'] = exp1a_prompt_detailed_stats
-print("\nDetailed Statistics by Prompt Type (Experiment 1a):")
-display(exp1a_prompt_detailed_stats)
-
-exp1a_prompt_means = exp1a_df.groupby('prompt_type')[numeric_cols_1a].mean().round(2)
-tables['exp1a_prompt_means'] = exp1a_prompt_means
-print("\nMean Scores by Prompt Type (Experiment 1a):")
-display(exp1a_prompt_means)
-
-prompt_diff = exp1a_prompt_means.loc['complex'] - exp1a_prompt_means.loc['common']
-print("\nComplex vs Common Prompt Difference (Experiment 1a):")
-for criterion, diff in prompt_diff.items():
-    direction = "higher" if diff > 0 else "lower"
-    print(f"  {criterion.title()}: {diff:+.2f} ({direction} for complex)")
-
-print("\n" + "="*80)
-print("DETAILED STATISTICS - LLM vs PROMPT TYPE COMBINATIONS (EXPERIMENT 1A)")
-print("="*80)
-
-exp1a_llm_prompt_combinations = exp1a_df.groupby(['llm', 'prompt_type'])['total_score'].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_llm_prompt_combinations'] = exp1a_llm_prompt_combinations
-print("\nDetailed Statistics for LLM vs Prompt Type Combinations (Experiment 1a):")
-display(exp1a_llm_prompt_combinations)
-
-
-# In[7]:
-
-
-# Correctness-focused Heatmaps
-
-print("\n" + "="*80)
-print("CORRECTNESS ANALYSIS - PAIRED HEATMAPS")
-print("="*80)
-
-# Paired Heatmaps: Correctness by Input Source vs LLM and Prompt Type vs LLM
+# Correctness Heatmaps
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
-plots['exp1a_correctness_paired_heatmaps'] = fig
+plots[f'exp1a_correctness_heatmaps_{analysis_suffix}'] = fig
 
-# Heatmap 1: Correctness by Input Source vs LLM
+# Correctness by LLM vs Input Source
 correctness_heatmap_mean = exp1a_df.groupby(['llm', 'input_source'])['correctness'].mean().unstack()
 correctness_heatmap_std = exp1a_df.groupby(['llm', 'input_source'])['correctness'].std().unstack()
 
@@ -464,32 +501,18 @@ for i in range(len(correctness_heatmap_mean.index)):
         elif pd.notna(mean_val):
             correctness_annot_matrix.iloc[i, j] = f"{mean_val:.1f}"
 
-llm_labels = [label.title() for label in correctness_heatmap_mean.index]
-source_labels = [label.title() for label in correctness_heatmap_mean.columns]
-
-sns.heatmap(correctness_heatmap_mean, 
-            annot=correctness_annot_matrix, 
-            fmt='', 
-            cmap='RdYlBu_r',
-            center=correctness_heatmap_mean.mean().mean(),
-            square=True,
-            linewidths=0.5,
-            linecolor='white',
-            cbar_kws={'shrink': 0.8, 'label': 'Correctness Score'},
-            annot_kws={'size': 10, 'weight': 'bold'},
-            xticklabels=source_labels, 
-            yticklabels=llm_labels, 
-            ax=ax1)
+sns.heatmap(correctness_heatmap_mean, annot=correctness_annot_matrix, fmt='', cmap='RdYlBu_r',
+            center=correctness_heatmap_mean.mean().mean(), square=True, linewidths=0.5,
+            cbar_kws={'shrink': 0.8, 'label': 'Correctness Score'}, annot_kws={'size': 10, 'weight': 'bold'},
+            xticklabels=[l.title() for l in correctness_heatmap_mean.columns], 
+            yticklabels=[l.title() for l in correctness_heatmap_mean.index], ax=ax1)
 
 ax1.set_title('Correctness Score (LLM vs Input Source)\nValues: Mean (Std) | Scale: 0-10 points', 
              fontsize=14, fontweight='bold', pad=20)
-ax1.set_xlabel('Input Source', fontsize=12, fontweight='bold', labelpad=10)
-ax1.set_ylabel('LLM', fontsize=12, fontweight='bold', labelpad=10)
+ax1.set_xlabel('Input Source', fontsize=12, fontweight='bold')
+ax1.set_ylabel('LLM', fontsize=12, fontweight='bold')
 
-ax1.set_xticklabels(ax1.get_xticklabels(), rotation=0, ha='center')
-ax1.set_yticklabels(ax1.get_yticklabels(), rotation=0)
-
-# Heatmap 2: Correctness by Prompt Type vs LLM
+# Correctness by LLM vs Prompt Type
 correctness_prompt_heatmap_mean = exp1a_df.groupby(['llm', 'prompt_type'])['correctness'].mean().unstack()
 correctness_prompt_heatmap_std = exp1a_df.groupby(['llm', 'prompt_type'])['correctness'].std().unstack()
 
@@ -503,416 +526,412 @@ for i in range(len(correctness_prompt_heatmap_mean.index)):
         elif pd.notna(mean_val):
             correctness_prompt_annot_matrix.iloc[i, j] = f"{mean_val:.1f}"
 
-llm_labels = [label.title() for label in correctness_prompt_heatmap_mean.index]
-prompt_labels = [label.title() for label in correctness_prompt_heatmap_mean.columns]
-
-sns.heatmap(correctness_prompt_heatmap_mean, 
-            annot=correctness_prompt_annot_matrix, 
-            fmt='', 
-            cmap='RdYlBu_r',
-            center=correctness_prompt_heatmap_mean.mean().mean(),
-            square=True,
-            linewidths=0.5,
-            linecolor='white',
-            cbar_kws={'shrink': 0.8, 'label': 'Correctness Score'},
-            annot_kws={'size': 10, 'weight': 'bold'},
-            xticklabels=prompt_labels, 
-            yticklabels=llm_labels, 
-            ax=ax2)
+sns.heatmap(correctness_prompt_heatmap_mean, annot=correctness_prompt_annot_matrix, fmt='', cmap='RdYlBu_r',
+            center=correctness_prompt_heatmap_mean.mean().mean(), square=True, linewidths=0.5,
+            cbar_kws={'shrink': 0.8, 'label': 'Correctness Score'}, annot_kws={'size': 10, 'weight': 'bold'},
+            xticklabels=[l.title() for l in correctness_prompt_heatmap_mean.columns], 
+            yticklabels=[l.title() for l in correctness_prompt_heatmap_mean.index], ax=ax2)
 
 ax2.set_title('Correctness Score (LLM vs Prompt Type)\nValues: Mean (Std) | Scale: 0-10 points', 
              fontsize=14, fontweight='bold', pad=20)
-ax2.set_xlabel('Prompt Type', fontsize=12, fontweight='bold', labelpad=10)
-ax2.set_ylabel('LLM', fontsize=12, fontweight='bold', labelpad=10)
-
-ax2.set_xticklabels(ax2.get_xticklabels(), rotation=0, ha='center')
-ax2.set_yticklabels(ax2.get_yticklabels(), rotation=0)
+ax2.set_xlabel('Prompt Type', fontsize=12, fontweight='bold')
+ax2.set_ylabel('LLM', fontsize=12, fontweight='bold')
 
 plt.tight_layout()
 plt.show()
 
-# Statistics for both heatmaps
+# Store detailed statistics tables
+exp1a_llm_source_combinations = exp1a_df.groupby(['llm', 'input_source'])['total_score'].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
+tables[f'exp1a_llm_source_combinations_{analysis_suffix}'] = exp1a_llm_source_combinations
+
+exp1a_llm_prompt_combinations = exp1a_df.groupby(['llm', 'prompt_type'])['total_score'].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
+tables[f'exp1a_llm_prompt_combinations_{analysis_suffix}'] = exp1a_llm_prompt_combinations
+
 correctness_llm_source_stats = exp1a_df.groupby(['llm', 'input_source'])['correctness'].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_correctness_llm_source_stats'] = correctness_llm_source_stats
-print("\nDetailed Correctness Statistics by LLM and Input Source:")
-display(correctness_llm_source_stats)
+tables[f'exp1a_correctness_llm_source_stats_{analysis_suffix}'] = correctness_llm_source_stats
 
 correctness_llm_prompt_stats = exp1a_df.groupby(['llm', 'prompt_type'])['correctness'].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-tables['exp1a_correctness_llm_prompt_stats'] = correctness_llm_prompt_stats
-print("\nDetailed Correctness Statistics by LLM and Prompt Type:")
-display(correctness_llm_prompt_stats)
-
-
-# In[8]:
-
-
-print("\n" + "="*80)
-print("CORRECTNESS INSIGHTS")
-print("="*80)
-
-# Best LLM for correctness
-correctness_by_llm = exp1a_df.groupby('llm')['correctness'].mean().sort_values(ascending=False)
-print(f"\nCorrectness Ranking by LLM:")
-for i, (llm, score) in enumerate(correctness_by_llm.items(), 1):
-    print(f"{i}. {llm.title()}: {score:.2f}")
-
-# Best input source for correctness
-correctness_by_source = exp1a_df.groupby('input_source')['correctness'].mean().sort_values(ascending=False)
-print(f"\nCorrectness Ranking by Input Source:")
-for i, (source, score) in enumerate(correctness_by_source.items(), 1):
-    print(f"{i}. {source.title()}: {score:.2f}")
-
-# Best prompt type for correctness
-correctness_by_prompt = exp1a_df.groupby('prompt_type')['correctness'].mean().sort_values(ascending=False)
-print(f"\nCorrectness Ranking by Prompt Type:")
-for i, (prompt, score) in enumerate(correctness_by_prompt.items(), 1):
-    print(f"{i}. {prompt.title()}: {score:.2f}")
-
-# Identify best combinations
-best_llm_source = exp1a_df.groupby(['llm', 'input_source'])['correctness'].mean().idxmax()
-best_llm_source_score = exp1a_df.groupby(['llm', 'input_source'])['correctness'].mean().max()
-print(f"\nBest LLM-Source combination for correctness:")
-print(f"  {best_llm_source[0].title()} + {best_llm_source[1].title()}: {best_llm_source_score:.2f}")
-
-best_llm_prompt = exp1a_df.groupby(['llm', 'prompt_type'])['correctness'].mean().idxmax()
-best_llm_prompt_score = exp1a_df.groupby(['llm', 'prompt_type'])['correctness'].mean().max()
-print(f"\nBest LLM-Prompt combination for correctness:")
-print(f"  {best_llm_prompt[0].title()} + {best_llm_prompt[1].title()}: {best_llm_prompt_score:.2f}")
+tables[f'exp1a_correctness_llm_prompt_stats_{analysis_suffix}'] = correctness_llm_prompt_stats
 
 
 # # Experiment 1b: Manipulated Content Analysis
+# 
+# Analysis of LLM robustness to content manipulation.
 
-# In[9]:
-
-
-print("EXPERIMENT 1B - DATA AVAILABILITY CHECK")
-print("="*60)
-
-exp1b_filled = exp1b_df[numeric_cols_1b].notna().sum().sum()
-exp1b_total = len(exp1b_df) * len(numeric_cols_1b)
-
-print(f"Exp 1b completion: {exp1b_filled}/{exp1b_total} ({100*exp1b_filled/exp1b_total:.1f}%)")
-
-if exp1b_filled > 0:
-    print("Proceeding with Experiment 1b analysis")
-    analyze_exp1b = True
-else:
-    print("No ratings available for Experiment 1b yet - showing structure only")
-    analyze_exp1b = False
-    
-print(f"\nExperiment 1b structure:")
-print(f"  Samples: {len(exp1b_df)}")
-print(f"  LLMs: {list(exp1b_df['llm'].unique())}")
-print(f"  Prompt Types: {list(exp1b_df['prompt_type'].unique())}")
-print(f"  Input Sources: {list(exp1b_df['input_source'].unique())}")
-print(f"  Evaluation Criteria: {numeric_cols_1b}")
-
-print(f"\nSample Exp1b structure:")
-display(exp1b_df[['input_source', 'layer', 'llm', 'prompt_type'] + numeric_cols_1b].head())
-
-
-# In[10]:
+# In[ ]:
 
 
 if analyze_exp1b:
-    print("\nEXPERIMENT 1B - DESCRIPTIVE STATISTICS")
+    print("EXPERIMENT 1B - MANIPULATION HANDLING ANALYSIS")
     print("="*60)
     
+    # Overall statistics for manipulation_handling
     exp1b_stats = exp1b_df[numeric_cols_1b].describe().round(2)
-    tables['exp1b_overall_stats'] = exp1b_stats
-    print("\nOverall Statistics (all criteria):")
+    tables[f'exp1b_manipulation_stats_{analysis_suffix}'] = exp1b_stats
+    print("\nOverall Statistics (Manipulation Handling):")
     display(exp1b_stats)
     
-    exp1b_llm_stats = exp1b_df.groupby('llm')[numeric_cols_1b].agg(['mean', 'std', 'count']).round(2)
-    tables['exp1b_llm_stats'] = exp1b_llm_stats
-    print("\nStatistics by LLM:")
+    # Statistics by LLM
+    exp1b_llm_stats = exp1b_df.groupby('llm')[numeric_cols_1b].agg(['mean', 'std', 'median', 'count']).round(2)
+    tables[f'exp1b_llm_manipulation_stats_{analysis_suffix}'] = exp1b_llm_stats
+    print("\nStatistics by LLM (Manipulation Handling):")
     display(exp1b_llm_stats)
     
-    exp1b_prompt_stats = exp1b_df.groupby('prompt_type')[numeric_cols_1b].agg(['mean', 'std', 'count']).round(2)
-    tables['exp1b_prompt_stats'] = exp1b_prompt_stats
-    print("\nStatistics by Prompt Type:")
-    display(exp1b_prompt_stats)
+    # Statistics by LLM and Prompt Type
+    exp1b_llm_prompt_stats = exp1b_df.groupby(['llm', 'prompt_type'])['manipulation_handling'].agg(['mean', 'std', 'median']).round(2)
+    tables[f'exp1b_llm_prompt_manipulation_stats_{analysis_suffix}'] = exp1b_llm_prompt_stats
+    print("\nStatistics by LLM and Prompt Type (Manipulation Handling):")
+    display(exp1b_llm_prompt_stats)
     
-else:
-    print("\nExperiment 1b analysis will be available once expert evaluations are completed.")
-    print("The structure is ready for analysis of manipulation handling capabilities.")
-
-
-# In[11]:
-
-
-if analyze_exp1b:
-    fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-    axes = axes.flatten()
-    plots['exp1b_llm_analysis'] = fig
+    # LLM Performance Visualization
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+    plots[f'exp1b_manipulation_analysis_{analysis_suffix}'] = fig
     
-    criteria_1b = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'manipulation_handling']
+    create_seaborn_boxplot(exp1b_df, 'llm', 'manipulation_handling', ax1, 
+                          'Manipulation Handling by LLM', 'Score', 'LLM', scale_range=(0, 10))
     
-    for i, criterion in enumerate(criteria_1b):
-        create_seaborn_boxplot(exp1b_df, 'llm', criterion, axes[i], 
-                              f'{criterion.title()}', criterion.title(), 'LLM', scale_range=(0, 10))
+    create_seaborn_boxplot(exp1b_df, 'prompt_type', 'manipulation_handling', ax2, 
+                          'Manipulation Handling by Prompt Type', 'Score', 'Prompt Type', scale_range=(0, 10))
     
-    create_seaborn_boxplot(exp1b_df, 'llm', 'total_score', axes[7], 
-                          'Total Score', 'Total Score', 'LLM', scale_range=(0, 70))
-    
-    plt.suptitle('Experiment 1b: LLM Performance (Manipulation Handling)', fontsize=16, fontweight='bold', y=0.98)
+    plt.suptitle('Experiment 1b: Manipulation Handling Performance', fontsize=16, fontweight='bold', y=1.02)
     plt.tight_layout()
-    plt.subplots_adjust(top=0.92)
     plt.show()
     
-    print("\n" + "="*80)
-    print("DETAILED STATISTICS - LLM PERFORMANCE (EXPERIMENT 1B)")
-    print("="*80)
+    # LLM Rankings by Manipulation Handling
+    manipulation_ranking = exp1b_df.groupby('llm')['manipulation_handling'].mean().sort_values(ascending=False)
+    tables[f'exp1b_manipulation_ranking_{analysis_suffix}'] = manipulation_ranking
     
-    all_criteria_1b_with_total = criteria_1b + ['total_score']
-    exp1b_llm_detailed_stats = exp1b_df.groupby('llm')[all_criteria_1b_with_total].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-    tables['exp1b_llm_detailed_stats'] = exp1b_llm_detailed_stats
-    print("\nDetailed Statistics by LLM (Experiment 1b):")
-    display(exp1b_llm_detailed_stats)
+    print("\nLLM Rankings (Manipulation Handling):")
+    for i, (llm, score) in enumerate(manipulation_ranking.items(), 1):
+        print(f"{i}. {llm.title()}: {score:.2f}/10")
     
-    fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-    axes = axes.flatten()
-    plots['exp1b_prompt_analysis'] = fig
-    
-    for i, criterion in enumerate(criteria_1b):
-        create_seaborn_boxplot(exp1b_df, 'prompt_type', criterion, axes[i], 
-                              f'{criterion.title()}', criterion.title(), 'Prompt Type', scale_range=(0, 10))
-    
-    create_seaborn_boxplot(exp1b_df, 'prompt_type', 'total_score', axes[7], 
-                          'Total Score', 'Total Score', 'Prompt Type', scale_range=(0, 70))
-    
-    plt.suptitle('Experiment 1b: Performance by Prompt Type (Manipulation Handling)', fontsize=16, fontweight='bold', y=0.98)
-    plt.tight_layout()
-    plt.subplots_adjust(top=0.92)
-    plt.show()
-    
-    print("\n" + "="*80)
-    print("DETAILED STATISTICS - PROMPT TYPE PERFORMANCE (EXPERIMENT 1B)")
-    print("="*80)
-    
-    exp1b_prompt_detailed_stats = exp1b_df.groupby('prompt_type')[all_criteria_1b_with_total].agg(['mean', 'std', 'median', 'min', 'max', 'count']).round(2)
-    tables['exp1b_prompt_detailed_stats'] = exp1b_prompt_detailed_stats
-    print("\nDetailed Statistics by Prompt Type (Experiment 1b):")
-    display(exp1b_prompt_detailed_stats)
-    
-    exp1b_llm_means = exp1b_df.groupby('llm')[numeric_cols_1b].mean().round(2)
-    tables['exp1b_llm_means'] = exp1b_llm_means
-    print("\nMean Scores by LLM (Experiment 1b):")
-    display(exp1b_llm_means)
-    
-    exp1b_prompt_means = exp1b_df.groupby('prompt_type')[numeric_cols_1b].mean().round(2)
-    tables['exp1b_prompt_means'] = exp1b_prompt_means
-    print("\nMean Scores by Prompt Type (Experiment 1b):")
-    display(exp1b_prompt_means)
+    # Store additional statistics
+    exp1b_prompt_stats = exp1b_df.groupby('prompt_type')[numeric_cols_1b].agg(['mean', 'std', 'median', 'count']).round(2)
+    tables[f'exp1b_prompt_manipulation_stats_{analysis_suffix}'] = exp1b_prompt_stats
     
 else:
-    print("Visualization section ready for Experiment 1b data")
-    print("Will include: LLM analysis, Prompt type comparison, Manipulation handling focus")
+    print("EXPERIMENT 1B - DATA NOT AVAILABLE")
+    print("="*60)
+    print(f"Experiment 1b analysis will be available once expert evaluations are completed.")
+    print(f"Current completion: {100*exp1b_filled/exp1b_total:.1f}%")
+    print(f"Structure: {len(exp1b_df)} samples ready for analysis")
 
 
-# # Summary and Key Insights
+# # Inter-Rater Agreement Analysis
 # 
-# This section provides a comprehensive summary of findings from the qualitative analysis of Experiment 1.
+# **Note:** Agreement analysis is only available for staff data (Experts 2-5).
 
-# ## Inter-Rater Agreement Analysis
-
-# In[12]:
+# In[ ]:
 
 
-from statsmodels.stats.inter_rater import fleiss_kappa
-
-def kappa_level(k):
-    if k < 0.2:
-        return "Slight"
-    elif k < 0.4:
-        return "Fair" 
-    elif k < 0.6:
-        return "Moderate"
-    elif k < 0.8:
-        return "Substantial"
-    else:
-        return "Almost Perfect"
-
-def ratings_to_fleiss_table(ratings_matrix):
-    data = np.array(ratings_matrix)
-    n_items, n_raters = data.shape
-    table = np.zeros((n_items, 10))
+if agreement_available:
+    print("INTER-RATER AGREEMENT ANALYSIS (Fleiss' Kappa)")
+    print("="*60)
     
-    for i in range(n_items):
-        for j in range(n_raters):
-            rating = data[i, j]
-            if 1 <= rating <= 10:
-                table[i, rating - 1] += 1
+    # Experiment 1a Agreement
+    print("\nExperiment 1a Agreement (Experts 2, 3, 4, 5):")
+    agreement_exp1a = calculate_fleiss_kappa(
+        experts_data['expert_2']['exp1a'],
+        experts_data['expert_3']['exp1a'],
+        experts_data['expert_4']['exp1a'], 
+        experts_data['expert_5']['exp1a'],
+        numeric_cols_1a
+    )
+    tables[f'agreement_exp1a_{analysis_suffix}'] = agreement_exp1a
+    display(agreement_exp1a.round(3))
     
-    return table
-
-def calculate_agreement_for_experiment(df, criteria_cols):
-    results = []
+    if not agreement_exp1a.empty:
+        valid_kappas = agreement_exp1a['Fleiss_Kappa'].dropna()
+        if len(valid_kappas) > 0:
+            avg_kappa = valid_kappas.mean()
+            
+            level = ("Slight" if avg_kappa < 0.2 else 
+                    "Fair" if avg_kappa < 0.4 else 
+                    "Moderate" if avg_kappa < 0.6 else 
+                    "Substantial" if avg_kappa < 0.8 else 
+                    "Almost Perfect")
+            
+            print(f"\nOverall Agreement: K = {avg_kappa:.3f} ({level})")
+            
+            best_criterion = agreement_exp1a.loc[agreement_exp1a['Fleiss_Kappa'].idxmax()]
+            worst_criterion = agreement_exp1a.loc[agreement_exp1a['Fleiss_Kappa'].idxmin()]
+            
+            print(f"Best agreement: {best_criterion['Criterion']} (K = {best_criterion['Fleiss_Kappa']:.3f})")
+            print(f"Worst agreement: {worst_criterion['Criterion']} (K = {worst_criterion['Fleiss_Kappa']:.3f})")
     
-    for criterion in criteria_cols:
-        np.random.seed(42)
-        base_ratings = df[criterion].fillna(df[criterion].mean()).values
+    # Check if Experiment 1b has sufficient data for agreement analysis
+    # exp1b_has_enough_data = False
+    # if 'experts_data' in locals():
+    #     total_filled = 0
+    #     for expert_key in ['expert_2', 'expert_3', 'expert_4', 'expert_5']:
+    #         if expert_key in experts_data:
+    #             expert_df = experts_data[expert_key]['exp1b']
+    #             # Check if manipulation_handling column exists and count non-null values
+    #             if 'manipulation_handling' in expert_df.columns:
+    #                 total_filled += expert_df['manipulation_handling'].notna().sum()
+    #     exp1b_has_enough_data = total_filled > 10  # Lower threshold for exp1b
+    
+    # if exp1b_has_enough_data:
+    #     print("\n" + "-"*40)
+    #     print("Experiment 1b Agreement (Experts 2, 3, 4, 5):")
+    #     agreement_exp1b = calculate_fleiss_kappa(
+    #         experts_data['expert_2']['exp1b'],
+    #         experts_data['expert_3']['exp1b'],
+    #         experts_data['expert_4']['exp1b'], 
+    #         experts_data['expert_5']['exp1b'],
+    #         numeric_cols_1b
+    #     )
+    #     tables[f'agreement_exp1b_{analysis_suffix}'] = agreement_exp1b
+    #     display(agreement_exp1b.round(3))
         
-        simulated_ratings = []
-        for item_rating in base_ratings:
-            item_ratings = []
-            for expert in range(5):
-                varied_rating = item_rating + np.random.normal(0, 0.5)
-                varied_rating = int(np.clip(round(varied_rating), 1, 10))
-                item_ratings.append(varied_rating)
-            simulated_ratings.append(item_ratings)
-        
-        fleiss_table = ratings_to_fleiss_table(simulated_ratings)
-        kappa = fleiss_kappa(fleiss_table)
-        level = kappa_level(kappa)
-        
-        ratings_array = np.array(simulated_ratings)
-        mean_rating = np.mean(ratings_array)
-        std_rating = np.std(ratings_array)
-        
-        results.append({
-            'Criterion': criterion.title(),
-            'Fleiss_Kappa': kappa,
-            'Agreement_Level': level,
-            'Mean_Rating': mean_rating,
-            'Std_Rating': std_rating,
-            'N_Items': len(df),
-            'N_Raters': 5
-        })
+    #     if not agreement_exp1b.empty:
+    #         valid_kappas_1b = agreement_exp1b['Fleiss_Kappa'].dropna()
+    #         if len(valid_kappas_1b) > 0:
+    #             avg_kappa_1b = valid_kappas_1b.mean()
+    #             level_1b = ("Slight" if avg_kappa_1b < 0.2 else 
+    #                        "Fair" if avg_kappa_1b < 0.4 else 
+    #                        "Moderate" if avg_kappa_1b < 0.6 else 
+    #                        "Substantial" if avg_kappa_1b < 0.8 else 
+    #                        "Almost Perfect")
+    #             print(f"\nOverall Agreement (1b): K = {avg_kappa_1b:.3f} ({level_1b})")
+    # else:
+    #     print("\n" + "-"*40)
+    #     print("Experiment 1b Agreement: Insufficient data for analysis")
+    #     print(f"Total non-null manipulation_handling values found: {total_filled}")
     
-    return pd.DataFrame(results)
-
-
-# In[13]:
-
-
-agreement_exp1a = calculate_agreement_for_experiment(exp1a_df, numeric_cols_1a)
-tables['agreement_exp1a'] = agreement_exp1a
-
-print("EXPERIMENT 1A - INTER-RATER AGREEMENT")
-print("="*50)
-display(agreement_exp1a.round(3))
-
-
-# In[14]:
-
-
-if analyze_exp1b:
-    agreement_exp1b = calculate_agreement_for_experiment(exp1b_df, numeric_cols_1b)
-    tables['agreement_exp1b'] = agreement_exp1b
+    # Expert Comparison
+    print("\n" + "="*60)
+    print("EXPERT COMPARISON")
+    print("="*60)
     
-    print("EXPERIMENT 1B - INTER-RATER AGREEMENT")
-    print("="*50)
-    display(agreement_exp1b.round(3))
+    expert_means_1a = {}
+    for expert_key in ['expert_2', 'expert_3', 'expert_4', 'expert_5']:
+        if expert_key in experts_data:
+            expert_means_1a[expert_key] = experts_data[expert_key]['exp1a'][numeric_cols_1a].mean()
     
+    if expert_means_1a:
+        comparison_df_1a = pd.DataFrame(expert_means_1a).T
+        comparison_df_1a['Overall_Mean'] = comparison_df_1a.mean(axis=1)
+        comparison_df_1a = comparison_df_1a.round(3)
+        tables[f'expert_comparison_exp1a_{analysis_suffix}'] = comparison_df_1a
+        
+        print("\nMean Ratings by Expert (Experiment 1a):")
+        display(comparison_df_1a)
+        
+        expert_ranking = comparison_df_1a['Overall_Mean'].sort_values(ascending=False)
+        print(f"\nExpert Ranking:")
+        for i, (expert, score) in enumerate(expert_ranking.items(), 1):
+            print(f"{i}. {expert}: {score:.3f}")
+
 else:
-    agreement_exp1b_placeholder = pd.DataFrame({
-        'Criterion': [col.title() for col in numeric_cols_1b],
-        'Fleiss_Kappa': [np.nan] * len(numeric_cols_1b),
-        'Agreement_Level': ['TBD'] * len(numeric_cols_1b),
-        'Mean_Rating': [np.nan] * len(numeric_cols_1b),
-        'Std_Rating': [np.nan] * len(numeric_cols_1b),
-        'N_Items': [len(exp1b_df)] * len(numeric_cols_1b),
-        'N_Raters': [5] * len(numeric_cols_1b)
-    })
+    print("INTER-RATER AGREEMENT ANALYSIS")
+    print("="*60)
+    print("Agreement analysis not available for supervisor data.")
+    print("Switch to staff data (USE_SUPERVISOR_DATA = False) to enable agreement analysis.")
+
+
+# In[ ]:
+
+
+if agreement_available:
+    print("COMPREHENSIVE INTER-RATER AGREEMENT ANALYSIS")
+    print("="*70)
     
-    print("EXPERIMENT 1B - INTER-RATER AGREEMENT (PLACEHOLDER)")
-    print("="*50)
-    display(agreement_exp1b_placeholder)
-
-
-# In[15]:
-
-
-print("EXPERIMENT 1 - KEY INSIGHTS")
-print("="*50)
-
-print("\nEXPERIMENT 1A INSIGHTS:")
-print("-" * 30)
-
-best_llm = exp1a_llm_overall.index[0]
-best_score = exp1a_llm_overall.iloc[0]
-print(f"Best LLM: {best_llm.title()} (avg score: {best_score:.2f})")
-
-best_source = exp1a_source_overall.index[0]
-best_source_score = exp1a_source_overall.iloc[0]
-print(f"Best Input Source: {best_source.title()} (avg score: {best_source_score:.2f})")
-
-complex_avg = exp1a_prompt_means.loc['complex'].mean()
-common_avg = exp1a_prompt_means.loc['common'].mean()
-prompt_winner = "Complex" if complex_avg > common_avg else "Common"
-print(f"Better Prompt Type: {prompt_winner} ({complex_avg:.2f} vs {common_avg:.2f})")
-
-print(f"\nCRITERIA PERFORMANCE (EXP 1A):")
-criteria_avg = exp1a_df[numeric_cols_1a].mean().sort_values(ascending=False)
-for criterion, score in criteria_avg.items():
-    print(f"  {criterion.title()}: {score:.2f}")
-
-low_performance = criteria_avg[criteria_avg < 7.0]
-if len(low_performance) > 0:
-    print(f"\nAreas needing improvement (< 7.0):")
-    for criterion, score in low_performance.items():
-        print(f"  {criterion.title()}: {score:.2f}")
-
-if analyze_exp1b:
-    print(f"\nEXPERIMENT 1B INSIGHTS:")
-    print("-" * 30)
+    # Function to calculate agreement between all available experts
+    def calculate_comprehensive_fleiss_kappa(experts_data, experiment, criteria_cols):
+        results = []
+        
+        # Get all available expert dataframes for the experiment
+        expert_dfs = {}
+        for expert_key in ['expert_1', 'expert_2', 'expert_3', 'expert_4', 'expert_5']:
+            if expert_key in experts_data and experiment in experts_data[expert_key]:
+                df = experts_data[expert_key][experiment]
+                if 'sample_id' in df.columns: # Ensure sample_id exists
+                    expert_dfs[expert_key] = df
+        
+        # Add supervisor data if we're in staff mode
+        if experiment == 'exp1a':
+            supervisor_exp1a, _ = load_supervisor_data()
+            expert_dfs['expert_1'] = supervisor_exp1a
+        elif experiment == 'exp1b':
+            _, supervisor_exp1b = load_supervisor_data()
+            expert_dfs['expert_1'] = supervisor_exp1b
+        
+        # Find common sample IDs across all experts
+        if len(expert_dfs) < 2:
+            return pd.DataFrame()
+        
+        common_ids = None
+        for expert_key, df in expert_dfs.items():
+            if 'sample_id' in df.columns:
+                ids = set(df['sample_id'].astype(int))
+                if common_ids is None:
+                    common_ids = ids
+                else:
+                    common_ids = common_ids & ids
+        
+        if not common_ids:
+            return pd.DataFrame()
+        
+        common_ids = sorted(list(common_ids))
+        expert_names = sorted(expert_dfs.keys())
+        
+        print(f"\nAnalyzing {experiment.upper()} with experts: {expert_names}")
+        print(f"Common samples: {len(common_ids)}")
+        
+        for criterion in criteria_cols:
+            ratings = []
+            for sample_id in common_ids:
+                sample_ratings = []
+                valid_sample = True
+                
+                for expert_key in expert_names:
+                    df = expert_dfs[expert_key]
+                    if sample_id in df['sample_id'].values:
+                        rating = df[df['sample_id'] == sample_id][criterion].iloc[0]
+                        rating_val = np.nan if pd.isna(rating) else float(rating)
+                        
+                        if pd.isna(rating_val) or rating_val < 0 or rating_val > 10:
+                            valid_sample = False
+                            break
+                        sample_ratings.append(int(rating_val))
+                    else:
+                        valid_sample = False
+                        break
+                
+                if valid_sample and len(sample_ratings) == len(expert_names):
+                    ratings.append(sample_ratings)
+            
+            if len(ratings) >= 2:
+                ratings_array = np.array(ratings)
+                n_raters = len(expert_names)
+                fleiss_table = np.zeros((len(ratings), 11))
+                
+                for i, item_ratings in enumerate(ratings):
+                    for rating in item_ratings:
+                        fleiss_table[i, int(rating)] += 1
+                
+                kappa = fleiss_kappa(fleiss_table)
+                
+                level = ("Slight" if kappa < 0.2 else 
+                        "Fair" if kappa < 0.4 else 
+                        "Moderate" if kappa < 0.6 else 
+                        "Substantial" if kappa < 0.8 else 
+                        "Almost Perfect")
+                
+                results.append({
+                    'Criterion': criterion,
+                    'Fleiss_Kappa': round(kappa, 3),
+                    'Agreement_Level': level,
+                    'N_Items': len(ratings),
+                    'N_Raters': n_raters,
+                    'Mean_Rating': round(np.mean(ratings_array), 2),
+                    'Std_Rating': round(np.std(ratings_array), 2),
+                    'Experts': ', '.join(expert_names)
+                })
+        
+        return pd.DataFrame(results)
     
-    exp1b_llm_overall = exp1b_df.groupby('llm')[numeric_cols_1b].mean().mean(axis=1).sort_values(ascending=False)
-    best_llm_1b = exp1b_llm_overall.index[0]
-    best_score_1b = exp1b_llm_overall.iloc[0]
-    print(f"Best LLM for Manipulation: {best_llm_1b.title()} (avg score: {best_score_1b:.2f})")
+    # Calculate comprehensive agreement for Experiment 1a
+    print("\n" + "="*70)
+    print("ALL EXPERTS AGREEMENT ANALYSIS (Including Supervisor)")
+    print("="*70)
     
-    manip_scores = exp1b_df.groupby('llm')['manipulation_handling'].mean().sort_values(ascending=False)
-    print(f"Manipulation Handling Leader: {manip_scores.index[0].title()} ({manip_scores.iloc[0]:.2f})")
+    comprehensive_agreement_exp1a = calculate_comprehensive_fleiss_kappa(experts_data, 'exp1a', numeric_cols_1a)
     
-else:
-    print(f"\nEXPERIMENT 1B: Awaiting expert evaluations")
-    print("   Will analyze manipulation handling capabilities")
-
-print(f"\nOVERALL RECOMMENDATIONS:")
-print("-" * 30)
-print(f"• Focus on {best_llm.title()} for best overall performance")
-print(f"• {best_source.title()} source material produces highest quality questions")
-print(f"• {prompt_winner} prompts show better results")
-if len(low_performance) > 0:
-    print(f"• Improve {', '.join(low_performance.index)} criteria")
-print(f"• Continue monitoring manipulation handling capabilities in 1b")
+    if not comprehensive_agreement_exp1a.empty:
+        tables[f'comprehensive_agreement_exp1a_{analysis_suffix}'] = comprehensive_agreement_exp1a
+        print("\nExperiment 1a - All Available Experts Agreement:")
+        display(comprehensive_agreement_exp1a[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters']].round(3))
+        
+        # Summary statistics for comprehensive agreement
+        valid_kappas_comp = comprehensive_agreement_exp1a['Fleiss_Kappa'].dropna()
+        if len(valid_kappas_comp) > 0:
+            avg_kappa_comp = valid_kappas_comp.mean()
+            level_comp = ("Slight" if avg_kappa_comp < 0.2 else 
+                         "Fair" if avg_kappa_comp < 0.4 else 
+                         "Moderate" if avg_kappa_comp < 0.6 else 
+                         "Substantial" if avg_kappa_comp < 0.8 else 
+                         "Almost Perfect")
+            
+            print(f"\nComprehensive Agreement Summary (All Experts):")
+            print(f"  Average K: {avg_kappa_comp:.3f} ({level_comp})")
+            print(f"  Experts included: {comprehensive_agreement_exp1a['Experts'].iloc[0]}")
+            print(f"  Number of raters: {comprehensive_agreement_exp1a['N_Raters'].iloc[0]}")
+            
+            # Compare with staff-only agreement
+            if 'agreement_exp1a' in locals() and not agreement_exp1a.empty:
+                staff_avg_kappa = agreement_exp1a['Fleiss_Kappa'].dropna().mean()
+                kappa_diff = avg_kappa_comp - staff_avg_kappa
+                print(f"\nAgreement Comparison:")
+                print(f"  Staff only (Experts 2-5): K = {staff_avg_kappa:.3f}")
+                print(f"  All experts (1-5): K = {avg_kappa_comp:.3f}")
+                print(f"  Difference: {kappa_diff:+.3f} ({'Higher' if kappa_diff > 0 else 'Lower'} with all experts)")
+    
+    # Check for Experiment 1b comprehensive agreement
+    if analyze_exp1b:
+        comprehensive_agreement_exp1b = calculate_comprehensive_fleiss_kappa(experts_data, 'exp1b', numeric_cols_1b)
+        
+        if not comprehensive_agreement_exp1b.empty:
+            tables[f'comprehensive_agreement_exp1b_{analysis_suffix}'] = comprehensive_agreement_exp1b
+            print("\n" + "-"*50)
+            print("Experiment 1b - All Available Experts Agreement:")
+            display(comprehensive_agreement_exp1b[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters']].round(3))
+            
+            valid_kappas_comp_1b = comprehensive_agreement_exp1b['Fleiss_Kappa'].dropna()
+            if len(valid_kappas_comp_1b) > 0:
+                avg_kappa_comp_1b = valid_kappas_comp_1b.mean()
+                level_comp_1b = ("Slight" if avg_kappa_comp_1b < 0.2 else 
+                               "Fair" if avg_kappa_comp_1b < 0.4 else 
+                               "Moderate" if avg_kappa_comp_1b < 0.6 else 
+                               "Substantial" if avg_kappa_comp_1b < 0.8 else 
+                               "Almost Perfect")
+                
+                print(f"\nComprehensive Agreement Summary (Exp 1b - All Experts):")
+                print(f"  Average K: {avg_kappa_comp_1b:.3f} ({level_comp_1b})")
+                print(f"  Experts included: {comprehensive_agreement_exp1b['Experts'].iloc[0]}")
+        else:
+            print("\n" + "-"*50)
+            print("Experiment 1b - Insufficient data for comprehensive agreement analysis")
 
 
 # ## Data Export
 # 
-# Save all tables and plots for use in thesis and presentations.
+# Save all tables and plots for thesis and presentations.
 
-# In[16]:
+# In[ ]:
 
 
 def save_all_results():
     print("Saving results...")
     
+    # Determine prefix based on data source
+    prefix = "supervisor_" if USE_SUPERVISOR_DATA else "staff_"
+    
     tables_saved = 0
     for table_name, table_data in tables.items():
-        try:
-            csv_path = os.path.join(output_tables_path, f"{table_name}_supervisor.csv")
-            table_data.to_csv(csv_path)
-            tables_saved += 1
-            print(f"Saved table: {table_name}_supervisor.csv")
-        except Exception as e:
-            print(f" Error saving {table_name}: {e}")
+        # Remove suffix from table_name if it exists
+        clean_name = table_name.replace(f"_{analysis_suffix}", "")
+        csv_path = os.path.join(output_tables_path, f"{prefix}{table_name}.csv")
+        table_data.to_csv(csv_path)
+        tables_saved += 1
+        print(f"Saved table: {prefix}{clean_name}.csv")
     
     plots_saved = 0
     for plot_name, plot_fig in plots.items():
-        try:
-            png_path = os.path.join(output_plots_path, f"{plot_name}_supervisor.png")
-            plot_fig.savefig(png_path, dpi=300, bbox_inches='tight')
-            plots_saved += 1
-            print(f"Saved plot: {plot_name}_supervisor.png")
-        except Exception as e:
-            print(f" Error saving {plot_name}: {e}")
+        # Remove suffix from plot_name if it exists
+        clean_name = plot_name.replace(f"_{analysis_suffix}", "")
+        png_path = os.path.join(output_plots_path, f"{prefix}{clean_name}.png")
+        plot_fig.savefig(png_path, dpi=300, bbox_inches='tight')
+        plots_saved += 1
+        print(f"Saved plot: {prefix}{clean_name}.png")
     
     print(f"\nExport Summary:")
     print(f"  Tables saved: {tables_saved}")
     print(f"  Plots saved: {plots_saved}")
     print(f"  Output location: {output_base_path}")
+    print(f"  Analysis type: {analysis_suffix}")
+    print(f"  File prefix: {prefix}")
+
 save_all_results()
 

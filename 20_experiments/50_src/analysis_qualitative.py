@@ -10,7 +10,6 @@ from constants import (
     INPUT_SOURCES_PATH,
     EXPERIMENTS_BASE_PATH,
     ANALYSES_PATH,
-    BLOOM_LEVELS_ORDERED,
 )
 import concurrent.futures
 from file_utils import load_txt
@@ -411,11 +410,9 @@ def process_exp2(exp_name, clients):
 def main():
     clients = init_clients()
 
-    # for exp in ["exp1a", "exp1b", "exp2a", "exp2b", "exp2c"]:
-    for exp in ["exp2b", "exp2c"]:
+    for exp in ["exp1a", "exp1b", "exp2a", "exp2b", "exp2c"]:
         print(f"[INFO] Processing {exp}")
-        # (process_exp1 if exp.startswith("exp1") else process_exp2)(exp, clients)
-        process_exp2(exp, clients)
+        (process_exp1 if exp.startswith("exp1") else process_exp2)(exp, clients)
 
 
 if __name__ == "__main__":
