@@ -1,17 +1,17 @@
 "sample_id","relevance","clarity","answerability","challenging","value","language","bloom_rating","answer_problems","comments"
-1,-99,,-99,2,8,10,1,,"Kein Operator"
-2,-99,8,-99,8,8,8,2,,"Kein Operator"
-3,,,,,,,,,
-4,,,,,,,,,
-5,,,,,,,,,
-6,,,,,,,,,
-7,,,,,,,,,
-8,,,,,,,,,
-9,,,,,,,,,
-10,,,,,,,,,
-11,,,,,,,,,
-12,,,,,,,,,
-13,,,,,,,,,
-14,,,,,,,,,
-15,,,,,,,,,
-16,,,,,,,,,
+1,10,10,10,2,8,10,1,,"Kein Operator"
+2,8,8,6,8,8,8,2,,"Kein Operator"
+3,8,10,10,4,8,7,1,,"Zwei Fragen in einer"
+4,8,8,8,6,8,7,4,,
+5,8,10,10,4,10,10,1,,"Kein Operator"
+6,8,6,8,4,6,5,1,,"Kein Operator"
+7,8,10,8,4,8,10,1,,
+8,4,8,2,8,4,7,6,"""eine IoT-Smart-Home-Umgebung"" - was genau ist das?","Passt mMn nicht gut"
+9,8,10,8,8,8,7,"(2;3)",,"Kein Operator"
+10,8,10,10,8,8,10,4,,
+11,8,10,10,2,0,10,1,"Die Antwort ist schon in der Aufgabe vorgegeben - fünf und es sind fünf Lösungsvorschläge - damit wird die Antwort vorgegeben","Umformulierung: Wählen sie Kernaufgaben des Data Layers aus (dann hat man Gleich einen richtigen Operator)"
+12,8,8,8,8,2,7,4,,"Die Antwortmöglichkeiten passen mMn nicht zu ""Analysieren"""
+13,8,10,8,6,8,7,1,,
+14,6,6,6,8,6,7,3,"Laut Operator Creating - aber da es ja Multiple Choice ist und somit die Antworten vorgegeben sind, hätte ich ""Applying"" ausgewählt ","Es sind mehre Aufgaben in einer - das finde ich unglücklich fomuliert "
+15,8,10,8,6,6,7,3,"Die Antwortmöglichkeiten passen nicht zum Operator - Entwickeln ist für mich produktorientiert - da muss also was eigenständiges rauskommen","""veranschaulichen"" ist creating und die Antworten erfüllen das mMn nicht "
+16,8,8,8,10,8,7,3,,
