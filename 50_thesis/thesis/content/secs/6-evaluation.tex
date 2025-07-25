@@ -273,28 +273,35 @@ Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the ru
 
 \pagebreak
 
-In this table, there are results based on 16/56 questions, two for each prompt type and \ac{llm}. The limited sample size led to the following observations. The \textit{Manipulation Handling} criterion was rated with a mean of 2.5/10 or 0, commonly indicating that the models did not handle the manipulation well. The means of 2.5 illustrate that one of the two questions was rated with 5/10 points, while the other one was rated with 0/10 points. 5/10 points show that the systems still followed the manipulated content, but in the formulation of the questions, there was a hint that the manipulation was noticed.
+In this table, there are results based on 16/56 questions, two for each prompt type and \ac{llm}. The limited sample size led to several observations. The \textit{Manipulation Handling} criterion was rated with a mean of 2.5/10 or 0, commonly indicating that the models did not handle the manipulation well. The means of 2.5 illustrate that one of the two questions was rated with 5/10 points, while the other one was rated with 0/10 points. 5/10 points show that the systems still followed the manipulated content, but in the formulation of the questions, there was a hint that the manipulation was noticed.
 
 Anthropic and Google were rated with a mean of 2.5/10 for the complex prompt each, with Google's 5/10 question slightly distancing from the manipulated script (Appendix \bfref{lst:1b-supervisor-good-example}). The questions based on the common prompt were rated with 0/10 points for both models, with Google providing a proper example of following the manipulation (Appendix \bfref{lst:1b-supervisor-bad-example}). DeepSeek's questions were rated with 2.5/10 for both prompt types, while OpenAI's questions show 0/10 points for each prompt type. The latter is a surprising result, because in the quantitative analysis, OpenAI was performing well with the manipulation, as well as DeepSeek -- both providing few essentially low \textit{Adherence Scores}. One of the two complex prompt questions the OpenAI model generated could not be rated by the supervisor, since it was hard to evaluate its manipulation handling here. This question (Appendix \bfref{lst:1b-supervisor-nan-example}) results in a NaN value -- which is why the standard deviation for OpenAI's complex prompt questions is not available --, showing again that the sampling size was too small.
 
-Overall, the supervisor-based evaluation does not provide significant insights into the \ac{llms}' manipulation handling, but the models particularly struggled with this task. The sampled question sets were set as-is, because rating a more vast number of questions -- focusing on the question's context, and a comprehensive rubric -- was not feasible within the project's scope.
+Overall, the supervisor-based evaluation does not provide significant insights into the \ac{llms}' \textit{Manipulation Handling}, but the models particularly struggled with this task. The sampled question sets were set as-is, because rating a more vast number of questions -- focusing on the question's context, and a comprehensive rubric -- was not feasible within the raters' time constraints.
 
-\object{Supervisor-based Analysis Complications}
+\object{Supervisor-based Analysis Complications} During this manner of evaluation, several complications occurred. Firstly, certain questions could not be fully assessed for specific criteria, because these questions were not formulated properly, leading to NaN values. This issue was present in both Experiments 1a and 1b, possibly affecting the calculations for the evaluation.
 
-\tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien, NaN values auch bei 1a gewesen}
+A closer examination of the questions revealed issues for the models. Regarding Anthropic, several questions were problematic, especially in terms of \textit{Challenging}, \textit{Value} and \textit{Correctness}, often coupled with the complex prompt used. In some cases, answer options were incorrect or did not align with the expected content. DeepSeek frequently mentioned \enquote{according to the text} in their questions, which also was a common issue at Google's questions. These were often formulated far too broadly at Google, with some containing answer options which were factually incorrect, coupled with unclear phrasing. OpenAI, in contrast, showed occasionally the \enquote{according to the text} phrasing, and overall, the questions were less challenging, comparable to DeepSeek's questions.
 
-% \tcr{1a: 3 (complex script),4 (complex script),7 (common transcript),11 anthropic (complex transcript) negativ aufgefallen}
-% 1a: frage 5 (tanenbaum): antwort 2 falsch laut cap
-% deepseek vor allem 19/20 (complex tanenbaum) und 21/22 (common transcript) "laut text", auch complex transcript 24
-% deepseek complex prompt 23, verdammt banal
-% google: common script 25 --> laut text, alle antworten falsch?
+Since criteria like \textit{Answerability} or \textit{Correctness} could not be reliably applied to the manipulated content in Experiment 1b, the evaluation was limited to the \textit{Manipulation Handling} criterion. This was done because the rubric's criteria were comprehensively assessed in Experiment 1a, and the manipulation handling was the only criterion that could be reliably applied to the manipulated lecture script.  
+
+% \tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien, NaN values auch bei 1a gewesen}
+
+% \tcr{1a: anthropic mit frage 3 (complex script),4 (complex script),7 (common transcript),11 (complex transcript) negativ aufgefallen}
+% anthropic fiel negativ auf, vor allem sprachlich beim complex prompt
+% 1a: frage 5 anthropic (common prompt tanenbaum): antwort 2 falsch laut cap
+% deepseek vor allem fragen 19/20 (complex tanenbaum) und 21/22 (common transcript) "laut text", auch bei complex transcript 24 deepseek
+% deepseek complex prompt 23 mittels transcript, verdammt banale frage
+% google's fragen sind sehr umschweifend formuliert
+% google: common script 25 --> "laut text" in der frage drin, alle antworten falsch?
+% frage 28 (google complex script) mehrdeutigkeit in den antworten durch schlechte, weit ausholende fragestellung
 % 29 (common tanenbaum) und 30 (common tanenbaum) auch "laut text" bei google
 % 32 (complex tanenbaum),34 (common transcript),35/36 (complex transcript) "laut text"
 % 46 openai (common transcript) einmalig "laut text", sonst nicht wirklich was aufgefallen
 
-(dadurch dass wir in 1a andere kriterien ausgiebig angesehen haben, ist die relevanz dieser in 1b nicht gegeben. MH reicht hierbei, da randbedinungen für answerability und co nicht wirklich bei manipulation gegeben sind)
+% (dadurch dass wir in 1a andere kriterien ausgiebig angesehen haben, ist die relevanz dieser in 1b nicht gegeben. MH reicht hierbei, da randbedinungen für answerability und co nicht wirklich bei manipulation gegeben sind)
 
-(exp1b war sampling size zu klein, wodurch eben das NaN problematisch wurde. hier ist nur eine person am auswerten, wodurch wenig werte gegeben werden. staff members werden danach noch ausgewertet... google ueberladene komplexe sprache, kann aber teils gut abschneiden bei MH; )
+% (exp1b war sampling size zu klein, wodurch eben das NaN problematisch wurde. hier ist nur eine person am auswerten, wodurch wenig werte gegeben werden. staff members werden danach noch ausgewertet... google ueberladene komplexe sprache, kann aber teils gut abschneiden bei MH; )
 
 \vp
 
@@ -323,11 +330,11 @@ In this sub-experiment, four staff members were asked to evaluate the same quest
 
 A key similarity was the identification of OpenAI and DeepSeek as the leading models in most criteria such as \textit{Clarity}, \textit{Answerability}, and \textit{Language}. However, where the supervisor saw a clear advantage for OpenAI (e.g. mean of 10 in \textit{Relevance}), the staff rated the models closer together, with OpenAI (9.12) only slightly ahead of the others. This suggests that the performance gap between the models is mainly perceived as smaller by the staff.
 
-As depicted in the supervisor's evaluation, the \textit{Challenging} criterion remained the lowest-scoring criterion across all models, with means below 5 for all \ac{llms} at the staff-based one. DeepSeek (2.92) and OpenAI (3.35) scored lowest again, while Anthropic (4.65) and Google (4.81) were rated as slightly more challenging, but not as significantly as the supervisor's evaluation. Especially the ratings for Anthropic and Google were different from the supervisor's, showing that the staff members found these models' questions less challenging than the supervisor did.
+As depicted in the supervisor's evaluation, the \textit{Challenging} criterion also remained the lowest-scoring criterion across all models, with means below 5 for all \ac{llms} at the staff-based one. DeepSeek (2.92) and OpenAI (3.35) performed lowest again, while Anthropic (4.65) and Google (4.81) were rated as slightly more challenging, but not as significantly as in the supervisor's evaluation. Especially the ratings for Anthropic and Google were different from the supervisor's, showing that the staff members found these models' questions less challenging than the supervisor did.
 
-Furthermore, the staff's more critical assessment is evident in the linguistic evaluation. For the \textit{Language} criterion, they rated Anthropic (7.4) and Google (6.96) noticeably lower than the supervisor did (8.25 and 7.67 respectively), indicating a stricter judgment of linguistic precision and complexity. Moreover, OpenAI and DeepSeek were also rated lower than the supervisor's 10/10 scores for both models, with means of 8.6 each. These values differ from the supervisor's evaluation, but still indicate that the staff members found these models' questions more precise instead of linguistically complex.
+Furthermore, the staff's more critical assessment is visible in the linguistic evaluation. For the \textit{Language} criterion, they rated Anthropic (7.4) and Google (6.96) lower than the supervisor did (8.25 and 7.67 respectively), indicating a stricter judgment of linguistic precision and complexity. Moreover, OpenAI and DeepSeek were also rated lower than the supervisor's 10/10 scores for both models, with means of 8.6 each. These values differ from the supervisor's evaluation, but still show that the staff members found these models' questions more precise instead of linguistically complex.
 
-For \textit{Correctness}, the staff-based evaluation confirmed OpenAI's proper performance (8.42), with DeepSeek beyond (8.48), though without the clear separation the supervisor observed. Close behind these models, Anthropic and Google were rated lower with means of 7.94 and 8.15. The gaps between the models differ from the supervisor's evaluation, since the \textit{Correctness} criterion was implemented choosing ratings of 0, 5, or 10. The primary thesis supervisor solely used these three ratings, while the staff members rated values in between across the criteria. Otherwise, the supervisor would have rated the questions differently, not rating this many questions with 10/10 points, but rather values below 10, which would have led to a more similar evaluation to the staff members'.
+For \textit{Correctness}, the staff-based evaluation confirmed OpenAI's proper performance (8.42) with DeepSeek beyond (8.48) -- both with narrow value ranges --, though without the clear separation the supervisor observed. Close behind these models, Anthropic and Google were rated lower with means of 7.94 and 8.15. The gaps between the models differ from the supervisor's evaluation, since the \textit{Correctness} criterion was implemented choosing ratings of 0, 5, or 10. The primary thesis supervisor solely used these three ratings, while the staff members rated values in between across the criteria. Otherwise, the supervisor would have rated the questions differently, not rating this many questions with 10/10 points, but rather values between 0 and 5, or 5 and 10, which would have led to a more similar evaluation to the staff members' one.
 
 Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.5) remained the top performer, but less pronounced compared to the supervisor's clear preference (62.5 vs. DeepSeek with 53.25). The results for the other models were more similar to each other, with means around 50/70 points. This is a contrast to the supervisor's evaluation, where Google especially was often rated lower. 
 
@@ -448,6 +455,8 @@ Regarding the complex prompt, both evaluations consistently identified significa
 
 The \textit{Total Score} difference between prompt types was noticeable across both evaluations. The staff showed a significant gap (57.19 vs. 44.75), while the supervisor demonstrated a similar one (60.12 vs. 47.25), with slightly higher ratings overall. This consistency strongly supports the conclusion that the common prompt is significantly more effective for generating suitable questions, while the complex prompt -- producing more challenging questions -- compromises overall quality and correctness.
 
+% #TODO continue creating some final thoughts on staff-1a compared to supervisor-1a
+
 % -----------
 
 % \begin{table}[htbp]
@@ -475,48 +484,11 @@ The \textit{Total Score} difference between prompt types was noticeable across b
 
 As in the previous sub-experiment, the staff members were asked to evaluate questions based on the same criteria. This time, however, the focus was on error handling capabilities. Since the results are based on four staff members -- instead of one single supervisor --, the results are more diverse and provide a broader perspective on the \ac{llms}' performance in handling errors. The staff members evaluated the questions based on the same criteria as in Experiment 1a, but finally, the \textit{Manipulation Handling} criterion was solely regarded, since the other criteria were properly evaluated in the previous sub-experiment. 
 
-\tcr{Auch ohne Thomas Mundt sieht man, dass komplexer Prompt hier hoehere ergebnisse liefert, jedoch sample size gering, und rater haben zwischen den gegebenen werten 0 5 und 10 bewertet, was das agreement stets niedrig macht} bis dato erkennbar, dass die komplexen prompts besser sind als die common prompts, was auch bei den staff members besonders erkennbar ist. grundsaetzlich hoeher bewertet als supervisor... google am besten, dann anthropic, dann openai und deepseek am schlechtesten. was aber in quantitative nicht so rüberkam. somit ist dies grundsaetzlich durch die kleine samplingmenge nicht genuegend geklaert. aber das auffordern, den text zu studieren etc triggert die LLMs das besser zu erkennen
+\tcr{Auch ohne Thomas Mundt sieht man, dass komplexer Prompt hier hoehere ergebnisse liefert, jedoch sample size gering, und rater haben zwischen den gegebenen werten 0 5 und 10 bewertet, was das agreement stets niedrig macht} bis dato erkennbar, dass die komplexen prompts besser sind als die common prompts, was auch bei den staff members besonders erkennbar ist. grundsaetzlich hoeher bewertet als supervisor... google am besten, dann anthropic, dann openai und deepseek am schlechtesten. was aber in quantitative nicht ganz so rüberkam (deepseek und v.a.\ openai besser). somit ist dies grundsaetzlich durch die kleine samplingmenge nicht genuegend geklaert. aber das auffordern, den text zu studieren etc triggert die LLMs das besser zu erkennen (via complex prompt).
 
-% \begin{table}[htbp]
-%     \centering
-%     \caption{Staff-based qualitative Analysis Results by LLM (1b) TODO.}
-%     \label{tab:exp1b-llm-results-staff}
-%     \resizebox{\textwidth}{!}{%
-%     \begin{tabular}{lccccccccc}
-%         \toprule
-%         \textbf{LLM} & \textbf{Metric} & \textbf{Relevance} & \textbf{Clarity} & \textbf{Answerability} & \textbf{Challenging} & \textbf{Value} & \textbf{Language} & \textbf{Manipulation Handling} & \textbf{Total Score} \\
-%         \midrule
-%         \multirow{3}{*}{Anthropic} 
-%         & Mean & 8.92 & 9.08 & 8.33 & 4.08 & 9.08 & 8.25 & 3.50 & 51.25 \\
-%         & Std & 1.62 & 1.83 & 2.35 & 2.11 & 1.08 & 2.14 & 4.17 & 7.76 \\
-%         & Median & 10.0 & 10.0 & 9.5 & 4.0 & 9.5 & 9.0 & 1.5 & 50.5 \\
-%         \midrule
-%         \multirow{3}{*}{DeepSeek} 
-%         & Mean & 8.33 & 8.33 & 7.50 & 4.17 & 8.42 & 7.75 & \textbf{2.33} & 46.83 \\
-%         & Std & 2.57 & 2.57 & 3.53 & 2.82 & 2.43 & 2.70 & 3.31 & 11.02 \\
-%         & Median & 10.0 & 10.0 & 9.0 & 4.0 & 10.0 & 9.0 & \textit{0.0} & 51.0 \\
-%         \midrule
-%         \multirow{3}{*}{Google} 
-%         & Mean & \textbf{9.17} & 9.08 & 8.08 & \textbf{5.33} & 8.33 & 7.83 & 5.17 & \textbf{53.00} \\
-%         & Std & 1.27 & 1.31 & 2.11 & 3.14 & 1.87 & 2.72 & 4.51 & 7.75 \\
-%         & Median & 10.0 & 10.0 & 8.5 & \textit{6.5} & 9.0 & 9.0 & \textit{7.0} & 50.0 \\
-%         \midrule
-%         \multirow{3}{*}{OpenAI} 
-%         & Mean & 7.83 & 7.75 & 7.25 & 3.83 & 7.58 & \textbf{8.25} & 2.42 & 44.92 \\
-%         & Std & 3.27 & 3.17 & 3.86 & 2.95 & 3.60 & 3.02 & 3.53 & 13.22 \\
-%         & Median & 10.0 & 9.0 & 9.0 & 3.5 & 10.0 & \textit{10.0} & 0.0 & 51.0 \\
-%         \bottomrule
-%     \end{tabular}}
-% \end{table}
+\tcr{openai hat werte >0 bei complex prompt nun (bei cap einmal 0 und einmal war es NaN), google explizit bestes modell, auch punkte bei common prompt 1.33 aber 9.0 bei complex viel besser; anthropic 0 bei common aber 7 bei complex, openai 4.83 complex aber 0 common; deepseek schlechtestes via 3.5 complex und 1.17 common prompt}
 
-% \vp
-
-% \begin{figure}[H]
-%    \centering
-%     \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/staff_exp1b_prompt_analysis.png}
-%     \caption{Staff-based Prompt Scores across every proposed Criterion (1b).}
-%     \label{fig:exp1b-prompt-analysis-staff} 
-% \end{figure}
+insights daraus: der komplexe prompt hat explizit in exp1a die llms ausgebremst in qualitaet (ausser challenging), aber in 1b ist es so, dass der komplexe prompt die manipulationen besser erkennt. verzerrte ergebnisse zwischen supervisor und staff, da supervisor 0 5 10, und staff werte ebenso dazwischen...
 
 \begin{table}[htbp]
     \centering
@@ -555,7 +527,7 @@ As in the previous sub-experiment, the staff members were asked to evaluate ques
 % -----
 % expert2 1b: missing #TODO
 
-% expert3 1a: frage 7 richtigkeit der antworten strittig/nicht bestandteil des textes
+% expert3 1a: frage 7 richtigkeit der antworten strittig/nicht bestandteil des textes! supervisor hat diese frage nicht bewerten koennen mittels Correctness
 % 3 und 4 sind nicht passend zum quelltext, merkwürdig formuliert
 % gemaess dem text frage 6,7,15,18,24,25,29-36
 % frage 8 unnoetig kompliziert verpackt sprachlich
@@ -563,7 +535,7 @@ As in the previous sub-experiment, the staff members were asked to evaluate ques
 % uebersetzungsprobleme bei tanenbaum aufgetreten zur frage. wohl eher gleiche sprache besser
 % frage 25 negation unnoetig, frage 28 etwas abseits vom quellmaterial
 % 30: antwort 3 falsch
-% frage 35 wie ausgedacht, keinen quelltextbezug
+% frage 35 wie ausgedacht, keinen quelltextbezug!! Supervisor hat diese frage nicht bewerten koennen
 % fragen 23 und 41 recht einfach
 % frage 44 viel fantasie, entfernt vom quelltext
 % nochmal 46 openai referenz zu text
@@ -583,9 +555,9 @@ As in the previous sub-experiment, the staff members were asked to evaluate ques
 
 % expert5 1a: viel mit gemäß text wieder
 % fragen mit nicht (wie frage 25) sind nicht angebracht
-% frage 7 stark verschachtelt und wohl auch inkorrekt (anthropic complex tanenbaum)
+% frage 7 stark verschachtelt und wohl auch inkorrekt (anthropic complex tanenbaum)! supervisor hat diese frage nicht bewerten koennen mittels Correctness
 % frage 8 (anthropic complex tanenbaum) auch eher inkorrekt
-% frage 28 wohl inkorrekte richtige antwort, auf jeden fall nicht basierend auf quelltext
+% frage 28 wohl inkorrekte richtige antwort, auf jeden fall nicht basierend auf quelltext, konnte supervisor mittels Correctness nicht bewerten
 % frage 35 antworten ausgedacht
 % 40 (openai complex script) sollte nicht mit session layer zu tun haben, frage 47 ebenso (openai complex transcript), aber 44 (complex tanenbaum) eigentlich auch nicht
 % -----
