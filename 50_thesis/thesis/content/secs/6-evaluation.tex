@@ -457,34 +457,55 @@ The \textit{Total Score} difference between prompt types was noticeable across b
 
 Overall, the staff-based evaluation confirmed the supervisor's key findings while being more stringent in their scoring. The complex prompt decreased the quality of the questions across most criteria, particularly in \textit{Clarity}, \textit{Answerability}, \textit{Value}, \textit{Language}, and \textit{Correctness}. In both evaluations, the \textit{Challenging} criterion was the only one where the complex prompt outperformed the common prompt. OpenAI also was consistently rated as the best-performing model across most criteria, while the input source preferences shifted a bit, with the staff members slightly rating the script-based questions as the best source material and the supervisor often favoring the transcript-based questions.
 
-% #TODO continue creating some final thoughts on staff-1a compared to supervisor-1a
+Besides these promising insights, the inter-rater agreement yielded undesirable results, as shown in Tables \bfref{tab:iaa-staff-1a} and \bfref{tab:iaa-combined-1a}. At first, Table \bfref{tab:iaa-staff-1a} shows the Fleiss' Kappa values which indicate poor agreement among the raters, with most criteria showing negative or low positive values. This suggests that the staff members had significant disagreements in their evaluations. This is due to the broad range of possible ratings (0-10) in the rubric, which could have lead to different interpretations of the criteria. 
 
-% -----------
+\begin{table}[H]
+   \centering
+   \caption{Inter-Rater Agreement Analysis, only Staff (Exp1a).} 
+   \label{tab:iaa-staff-1a}
+   \begin{tabular}{lccc}
+        \toprule
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \midrule
+        Relevance      & -0.085 & 48 & 4 \\
+        Clarity        &  0.034 & 48 & 4 \\
+        Answerability  &  0.015 & 48 & 4 \\
+        Challenging    &  0.011 & 48 & 4 \\
+        Value          & -0.010 & 48 & 4 \\
+        Language       &  0.001 & 48 & 4 \\
+        Correctness    & -0.052 & 48 & 4 \\
+        \bottomrule
+   \end{tabular}
+\end{table}
 
-% \begin{table}[htbp]
-%     \centering
-%     \caption{Example Inter-Rater Agreement with $N=48$ Items (Exp1a).}
-%     \label{tab:agreement_exp1a}
-%     \begin{tabular}{lccc}
-%         \toprule
-%         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Mean Rating $\uparrow$} & \textbf{Std Rating $\downarrow$} \\
-%         \midrule
-%         Relevance & 0.313 & \textbf{9.179} & \textbf{2.047} \\
-%         Clarity & 0.403 & 8.558 & 2.596 \\
-%         Answerability & 0.520 & 8.108 & 2.815 \\
-%         Challenging & 0.536 & 4.692 & 3.315 \\
-%         Value & \textbf{0.551} & 7.450 & 3.398 \\
-%         Language & 0.418 & 8.850 & 2.082 \\
-%         Correctness & 0.477 & 8.529 & 2.559 \\
-%         \bottomrule
-%     \end{tabular}
-% \end{table}
+\pagebreak
 
-% \vp
+The staff members' ratings were more diverse, while using all possible values in the rubric. Commonly, the scales were presented as 0, 2, 4, ..., 10, but the staff members also used values in between these steps, e.g.\ leading to one-off ratings.
+
+In addition, the combined inter-rater agreement analysis in Table \bfref{tab:iaa-combined-1a} is presented, including the supervisor's ratings, solely using the desired values for the criteria, instead of the values in between. This table shows that the overall agreement across all raters was also poor, unfortunately. The combined agreement analysis led to slightly higher Fleiss' Kappa values for every criterion. 
+
+\begin{table}[H]
+   \centering
+   \caption{Inter-Rater Agreement Analysis, combined (Exp1a).} 
+   \label{tab:iaa-combined-1a}
+   \begin{tabular}{lccc}
+        \toprule
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \midrule
+        Relevance      & -0.046 & 47 & 5 \\
+        Clarity        &  0.077 & 47 & 5 \\
+        Answerability  &  0.054 & 47 & 5 \\
+        Challenging    &  0.014 & 47 & 5 \\
+        Value          &  0.012 & 45 & 5 \\
+        Language       &  0.043 & 48 & 5 \\
+        Correctness    & -0.022 & 42 & 5 \\
+        \bottomrule
+   \end{tabular}
+\end{table}
 
 \object{Experiment 1b -- Error Handling}
 
-As in the previous sub-experiment, the staff members were asked to evaluate questions based on the same criteria, shown in Table \bfref{tab:exp1b-manipulation-handling-staff}. This time, however, the focus was on error handling capabilities. Since the results are based on four staff members -- instead of one single supervisor --, the results are more diverse and provide a broader perspective on the \ac{llms}' performance in handling errors. The staff members evaluated the questions based on the same criteria as in Experiment 1a, but finally, the \textit{Manipulation Handling} criterion was solely regarded, since the other criteria were properly evaluated in the previous sub-experiment. 
+As in the previous sub-experiment, the staff members were asked to evaluate the same experimental setup as the supervisor, shown in Table \bfref{tab:exp1b-manipulation-handling-staff}. This time, however, the focus was on error handling capabilities. Since the results are based on four staff members -- instead of one single supervisor --, the results are more diverse and provide a broader perspective on the \ac{llms}' performance in handling errors. The staff members evaluated the questions based on the same criteria as in Experiment 1a, but finally, the \textit{Manipulation Handling} criterion was solely regarded, since the other criteria were properly evaluated in the previous sub-experiment. 
 
 \begin{table}[htbp]
     \centering
@@ -520,7 +541,37 @@ As in the previous sub-experiment, the staff members were asked to evaluate ques
 
 There are several key insights and differences compared to the supervisor's evaluation. Most notably, the staff members' scores were higher for \textit{Manipulation Handling}, especially visible in the complex prompt. Google achieved the highest mean (9.0) and median (9.5) for the complex prompt, followed by Anthropic (mean of 7.0), OpenAI (mean of 4.83), and DeepSeek (mean of 3.5). Regarding the common prompt, all models were rated very low or zero, showing that this prompt type did not sufficiently encourage the models to detect manipulations.
 
-Compared to the supervisor, who rated exclusively with the given values (0, 5, 10), the staff members used the full scale, rating all scores between 0 and 10. Here, Google and Anthropic were rated significantly higher for the complex prompt than by the supervisor, while OpenAI and DeepSeek still remained to be at the lower end. This stands in contrast to the quantitative analysis, where OpenAI and DeepSeek had shown better manipulation detection, based on rating every question instead of a sampled set. Overall, the sample size remained small -- and by this, the \textit{Adherence Score} of the quantitative analysis is still suitable --, but the qualitative evaluations still underscore the importance of prompt design. While the complex prompt improves performance in Experiment 1b -- while being problematic in Experiment 1a --, the models still struggle to reliably identify and address manipulated content. The differences between supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling} -- this would have been better with \textit{Correctness} in Experiment 1a as well --, as implemented in the other criteria.
+Compared to the supervisor, who rated exclusively with the given values (0, 5, 10), the staff members used the full scale, rating all scores between 0 and 10. Here, Google and Anthropic were rated significantly higher for the complex prompt than by the supervisor, while OpenAI and DeepSeek still remained to be at the lower end. This stands in contrast to the quantitative analysis, where OpenAI and DeepSeek had shown better manipulation detection, based on rating every question instead of a sampled set. Overall, the sample size remained small -- and by this, the \textit{Adherence Score} of the quantitative analysis is still suitable --, but the qualitative evaluations still underscore the importance of prompt design. While the complex prompt improves performance in Experiment 1b -- while being problematic in Experiment 1a --, the models still struggle to reliably identify and address manipulated content. 
+
+The differences between supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling} -- this would have been better with \textit{Correctness} in Experiment 1a as well --, as implemented in the other criteria. Fortunately, the inter-rater agreement analysis Tables \bfref{tab:iaa-staff-1b} and \bfref{tab:iaa-combined-1b} illustrate a better agreement, compared to the previous sub-experiment. The Fleiss' $\kappa$ value is higher, ... 
+
+\tcr{compare both values if ready}
+
+\begin{table}[H]
+   \centering
+   \caption{Inter-Rater Agreement Analysis, only Staff (Exp1b).} 
+   \label{tab:iaa-staff-1b}
+   \begin{tabular}{lccc}
+        \toprule
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \midrule
+        Manipulation Handling & ... & 16 & 4 \\
+        \bottomrule
+   \end{tabular}
+\end{table}
+
+\begin{table}[H]
+   \centering
+   \caption{Inter-Rater Agreement Analysis, combined (Exp1b).} 
+   \label{tab:iaa-combined-1b}
+   \begin{tabular}{lccc}
+        \toprule
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \midrule
+        Manipulation Handling & ... & 15 & 5 \\
+        \bottomrule
+   \end{tabular}
+\end{table}
 
 % \tcr{Auch ohne Thomas Mundt sieht man, dass komplexer Prompt hier hoehere ergebnisse liefert, jedoch sample size gering, und rater haben zwischen den gegebenen werten 0 5 und 10 bewertet, was das agreement stets niedrig macht} 
 
