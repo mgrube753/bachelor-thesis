@@ -120,7 +120,6 @@ def scan_directory(directory, description, model):
 
 
 def main():
-    # Set up output capturing
     output_capture = OutputCapture()
     sys.stdout = output_capture
 
@@ -170,7 +169,6 @@ def main():
                 "\n[INFO] No files require truncation - all files fit within model limits"
             )
 
-        # Add summary information at the top
         if total_truncated > 0:
             summary = f"{total_truncated} out of {total_files} txt files were longer than the maximum length of {model.max_seq_length} tokens. \n"
             summary += "the source material files were refined before*\n"
@@ -180,11 +178,9 @@ def main():
             summary = f"All {total_files} txt files fit within the maximum length of {model.max_seq_length} tokens.\n\n"
             full_output = summary + output_capture.get_output()
 
-        # Save to markdown file
         save_output(full_output)
 
     finally:
-        # Restore stdout
         sys.stdout = output_capture.stdout
 
 

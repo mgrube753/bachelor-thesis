@@ -2,12 +2,11 @@
 
 This directory contains administrative documents and project management materials for the bachelor thesis "Generating Educational Questions using Large Language Models: An Evaluation of Quality and Alignment with Pedagogical Principles".
 
-## Contents
+## Concept Documents
 
-### Concept Documents
 - **concept.tex** - LaTeX source file for concept document
 - **concept.pdf** - Compiled concept document
-- **Expose_Malte-Grube.pdf** - Thesis exposé presentation for application
+- **Expose_Malte-Grube.pdf** - Thesis exposé for application
 
 ## Document Overview
 
