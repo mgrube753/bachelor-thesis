@@ -268,7 +268,7 @@ def rename_samples(samples, csv_path, output_path):
 
     # Look for initial CSV files in the new structure
     for exp_prefix in ["exp1", "exp2"]:
-        exp_csv_dir = os.path.join(csv_path, "initial", exp_prefix)
+        exp_csv_dir = os.path.join(csv_path, "hints", exp_prefix)
         if not os.path.exists(exp_csv_dir):
             continue
 
@@ -306,16 +306,13 @@ def main():
     output_path = os.path.join(base, "80_samples_renamed")
 
     # Ensure directories exist without cleaning them up first.
-    # Cleanup should be handled by a separate script or manually.
     os.makedirs(sample_base, exist_ok=True)
     os.makedirs(output_path, exist_ok=True)
 
-    # Create exp1 folders (experts and hints only)
     for subfolder in ["experts", "hints"]:
         path_to_create = os.path.join(csv_path, "qualitative", "exp1", subfolder)
         os.makedirs(path_to_create, exist_ok=True)
 
-    # Create exp2 folders (students and hints only)
     for subfolder in ["students", "hints"]:
         path_to_create = os.path.join(csv_path, "qualitative", "exp2", subfolder)
         os.makedirs(path_to_create, exist_ok=True)
