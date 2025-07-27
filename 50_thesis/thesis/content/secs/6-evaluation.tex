@@ -655,22 +655,46 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
    \label{fig:exp2-student-evaluation-experiment}
 \end{figure}
 
-\tcr{and a table/heatmap with means, stds and medians for llm vs. subexperiment wrt. bloom's level}
-\tcr{and a corresponding heatmap with the means, stds and medians for subexperiment (a and c) vs. question format via bloom's level}
+\begin{table}[htbp]
+    \centering
+    \caption[Student-based Bloom Scores by Question Format and Sub-Experiment (Exp2).]{Student-based Bloom Scores by Question Format and Sub-Experiment (Exp2a \& Exp2c).}
+    \label{tab:exp2-questiontype-experiment-bloomslevel}
+    \resizebox{.7\textwidth}{!}{%
+    \begin{tabular}{lcccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{Question Type}} & \multicolumn{2}{c}{\textbf{Mean}} & \multicolumn{2}{c}{\textbf{Std}} & \multicolumn{2}{c}{\textbf{Median}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        & \textbf{Exp2a} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2c} \\
+        \midrule
+        Multiple Choice & 2.42 & 7.92 & 1.23 & 3.27 & 2.25 & 10.0 \\
+        Open Ended      & 5.65 & 9.38 & 2.43 & 1.69 & 7.00 & 10.0 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption[Student-based Bloom Scores by LLM and Subexperiment (Exp2).]{Student-based Bloom Scores by LLM and Subexperiment (Exp2).}
+    \label{tab:exp2-llm-experiment-bloomslevel}
+    \resizebox{.9\textwidth}{!}{%
+    \begin{tabular}{lccccccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{LLM}} & \multicolumn{3}{c}{\textbf{Mean}} & \multicolumn{3}{c}{\textbf{Std}} & \multicolumn{3}{c}{\textbf{Median}} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+        & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} \\
+        \midrule
+        Anthropic & 5.08 & 8.33 & 8.75 & 2.71 & 4.08 & 2.26 & 7.0 & 10.0 & 10.0 \\
+        DeepSeek  & 2.83 & 8.33 & 8.75 & 1.50 & 4.08 & 2.26 & 3.0 & 10.0 & 10.0 \\
+        Google    & 4.54 & 8.33 & 9.58 & 2.53 & 4.08 & 1.44 & 3.0 & 10.0 & 10.0 \\
+        OpenAI    & 3.67 & 10.00 & 7.50 & 2.78 & 0.00 & 3.99 & 3.0 & 10.0 & 10.0 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+\object{Student-based Analysis Complications}
 
 \vp
 
-% #TODO think about proper eval tables and plots
-% 3 prompt types since there are 3 sub-runs to be analyzed together
-% 4 llms still
-% 2 question types
-% 6 bloom levels
-% 1 simple material
-
 % #TODO also add the rubric for the qualitative analysis in exp2
 % #TODO IAA as well for the students
-
-
-
-
 % #TODO add for the eval parts at least some anchor examples for quantitative1, qual1, qual2
