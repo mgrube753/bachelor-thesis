@@ -1,46 +1,46 @@
+
 # `sampling.py`
 
-This script is responsible for preparing the data for human evaluation. It automates the process of sampling the generated questions, creating CSV files for the evaluators, and renaming the sampled files for easy identification.
+This script prepares data for human evaluation by automating the sampling of generated questions, the creation of CSV files for evaluators, and the renaming of sampled files for anonymized review.
 
-## Core Functionality
+## Overview
 
-The script performs a three-step process to prepare the evaluation materials:
+The script follows a three-stage process:
 
-1.  **Sampling**: It randomly samples a small number of questions from each experimental condition.
-2.  **CSV Generation**: It creates detailed CSV files tailored for different evaluation tasks (qualitative analysis by experts).
-3.  **Renaming**: It copies the sampled question files to a new location with standardized, more informative filenames.
+1. **Sampling**: Randomly selects a specified number of question files from each experimental condition in the experiment output directories.
+2. **CSV Generation**: Produces structured CSV files for different evaluation tasks (e.g., qualitative analysis by experts and students), including hint files and evaluation templates.
+3. **Renaming**: Copies the sampled question files to a new directory with standardized, anonymized filenames for manual review.
 
-## Key Functions
+## Main Functions
 
--   `sample_questions(...)` and `walk_and_sample(...)`:
-    -   These functions traverse the output directories of the experiments (`10_exp1`, `20_exp2`).
-    -   They randomly select a specified number of question files (`.txt`) from each condition (e.g., for each LLM, prompt type, and source).
-    -   The selected files are copied to the `70_samples` directory.
+- `sample_questions(...)` and `walk_and_sample(...)`:
+    - Traverse the experiment output directories (`10_exp1`, `20_exp2`).
+    - Randomly select a specified number of `.txt` question files from each condition (e.g., for each LLM, prompt type, and source).
+    - Copy the selected files to the `70_samples` directory.
 
--   `parse_file_path(parts)`:
-    -   A utility function that deconstructs a file path to extract the experimental parameters (like `exp_name`, `llm`, `layer`, etc.) it represents.
+- `parse_file_path(parts)`:
+    - Parses a file path to extract experimental parameters (such as `exp_name`, `llm`, `layer`, etc.) for downstream processing.
 
--   `generate_expert_csvs(sample_base, csv_path)`:
-    -   Walks through the `70_samples` directory.
-    -   Uses `parse_file_path` to create a structured record for each sampled question.
-    -   Generates several CSV files in the `60_analyses/csv/` directory, organized by analysis type (initial, quantitative, qualitative) and experiment, formatted specifically for different expert evaluators and analysis types (e.g., for `exp1a`, `exp1b`, and the different phases of `exp2`).
+- `generate_expert_csvs(sample_base, csv_path)`:
+    - Walks through the `70_samples` directory and uses `parse_file_path` to create structured records for each sampled question.
+    - Generates multiple CSV files in `60_analyses/csv/`, including:
+        - Hint files for each experiment phase.
+        - Evaluation templates for experts (exp1) and students (exp2), with appropriate columns for each analysis type.
 
--   `find_file(...)` and `get_source_type(...)`:
-    -   Helper functions to locate the original file path of a sampled question and determine its source type for the renaming process.
+- `find_file(...)` and `get_source_type(...)`:
+    - Helper functions to locate the original file path of a sampled question and determine its source type for renaming.
 
--   `rename_samples(samples, csv_path, output_path)`:
-    -   Reads the CSVs generated in the previous step.
-    -   For each sampled question, it creates a new, standardized filename (e.g., `001_script_manipulated_1.txt`).
-    -   Copies the files to the `80_samples_renamed` directory, making them ready for manual review without revealing the LLM that generated them.
+- `rename_samples(samples, csv_path, output_path)`:
+    - Reads the generated CSVs and, for each sampled question, creates a new anonymized filename (e.g., `001_script_2.txt`).
+    - Copies the files to the `80_samples_renamed` directory, making them ready for manual review without revealing the LLM or other sensitive details.
 
--   `main()`:
-    -   The main execution function that orchestrates the entire process.
-    -   It sets a random seed for reproducibility, cleans up old output directories, and then calls the sampling, CSV generation, and renaming functions in sequence.
-    -   Finally, it cleans up intermediate CSV files that are no longer needed.
+- `main()`:
+    - Orchestrates the entire process: sets a random seed for reproducibility, ensures output directories exist, performs sampling, generates CSVs, and renames samples.
+    - Prints progress and summary information.
 
 ## Dependencies
 
--   **External Libraries**:
-    -   `pandas`: Used extensively for creating and managing the data for the CSV files.
--   **Internal Modules**:
-    -   `constants`: Provides the base paths for the experiment, sample, and analysis directories.
+- **External Libraries**:
+    - `pandas`: For creating and managing CSV files.
+- **Internal Modules**:
+    - `constants`: Provides base paths for experiment, sample, and analysis directories.
