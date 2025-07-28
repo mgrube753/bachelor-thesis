@@ -1,7 +1,7 @@
 \section{Experimental Design}
 \label{sec:experiment-design}
 
-Two experiments were conducted to evaluate the performance of a selected set of \ac{llms} -- using solely \textit{reasoning} models -- in generating questions. The first experiment primarily focused on the \textbf{RQ1}, which aimed to assess the content fidelity of the generated questions according to the \ac{llms} and the diverse source materials. The second experiment was designed to answer \textbf{RQ2}, which focused on analyzing the relationships between the \ac{llms}, given questions formats and given levels of Bloom's revised Taxonomy \cite{krathwohl_revision_2002}.
+Two experiments were conducted to evaluate the performance of a selected set of \ac{llms} -- using solely \textit{reasoning} models -- in generating questions. The first experiment primarily focused on the \textbf{RQ1}, which aimed to assess the content fidelity of the \ac{llms} between the generated questions and the diverse source materials. The second experiment was designed to answer \textbf{RQ2}, which focused on analyzing the relationships between the \ac{llms}, given questions formats and given levels of Bloom's revised Taxonomy \cite{krathwohl_revision_2002}.
 
 \begin{figure}[htbp]
     \centering
@@ -18,7 +18,7 @@ Two experiments were conducted to evaluate the performance of a selected set of 
 To ensure the experiments were well-structured and relevant, a variety of resources were selected. This covers the source materials and the \ac{llms} used in the experiments for \ac{aqg}.
 
 \object{Selection of Source Materials}
-Focusing on the ISO-OSI model, the following materials, illustrated in its \bfhyperref{sec:source_materials}{Appendices} subsection, were diversely used to generate the experiments' questions:
+Focusing on the ISO-OSI model, the following materials, starting from Appendix \bfref{sec:source_materials}, were diversely used to generate the experiments' questions:
 
 \begin{itemize}
     \item \bfhyperref{sec:script-common}{Lecture Slides} \textbf{(extracted Parts)}: Dealing with reference architectures, the ISO-OSI model is presented in detail by the primary thesis supervisor. The lecture slides are in German and were used for \ac{aqg} for both experiments.
@@ -50,11 +50,11 @@ The method employed for the two experiments is outlined here. It details the spe
 \object{Experiment 1a: Content Fidelity} For the first experiment, questions were generated using the three selected source materials to compare the questions' quality. All four state-of-the-art \ac{llms} were employed. Each model was prompted using both a simple and a complex prompt. To prevent context spillover and ensure focused questioning, one question was generated per prompt for each of the seven layers of the ISO-OSI model, with the context for each layer being introduced in each distinct run. This methodology resulted in a total of
  \begin{align}4 \text{ \ac{llms}} \times 3 \text{ input sources} \times 7 \text{ layers} \times 1 \sfrac{\text{ question}}{\text{prompt}} \times 2 \text{ prompts} = 168 \text{ questions.}\end{align}
 
-\object{Experiment 1b: Error Handling} A subsequent run focused on error handling. The four \ac{llms} were again utilized with the same prompts. For this experiment, a single input source, specifically the lecture script -- chosen for its concise and precise contextual information -- was used. Each of the seven layers of the ISO-OSI model within this source material was intentionally manipulated to introduce errors, as to be seen in its \bfhyperref{sec:script-manipulated}{Appendices} subsection. Seven questions were generated per prompt, one for each manipulated layer and run. This resulted in a total of \begin{align}4 \text{ \ac{llms}} \times 1 \text{ input source} \times 7 \text{ layers} \times 1 \sfrac{\text{ question}}{\text{prompt}} \times 2 \text{ prompts} = 56 \text{ questions.}\end{align}
+\object{Experiment 1b: Error Handling} A subsequent run focused on error handling. The four \ac{llms} were again utilized with the same prompts. For this experiment, a single input source, specifically the lecture script -- chosen for its concise and precise contextual information -- was used. Each of the seven layers of the ISO-OSI model within this source material was intentionally manipulated to introduce errors, as to be seen in Appendix \bfref{sec:script-manipulated}. Seven questions were generated per prompt, one for each manipulated layer and run. This resulted in a total of \begin{align}4 \text{ \ac{llms}} \times 1 \text{ input source} \times 7 \text{ layers} \times 1 \sfrac{\text{ question}}{\text{prompt}} \times 2 \text{ prompts} = 56 \text{ questions.}\end{align}
 
 \pagebreak
 
-\object{Experiment 2: Question Formats and Bloom's Taxonomy} The second experiment focused on the generation of varied question formats and their alignment with Bloom's revised Taxonomy. Contextual information for this experiment was derived from all ISO-OSI model layers together, utilizing the precise lecture \bfhyperref{sec:script-common}{Script} by the primary thesis supervisor. The four selected \ac{llms} were employed in three distinct runs, each designed to explore different prompting parameters related to question type and cognitive complexity:
+\object{Experiment 2: Question Formats and Bloom's Taxonomy} The second experiment focused on the generation of varied question formats and their alignment with Bloom's revised Taxonomy. Contextual information for this experiment was derived from all ISO-OSI model layers together, utilizing the precise lecture Script from Appendix \bfref{sec:script-common} by the primary thesis supervisor. The four selected \ac{llms} were employed in three distinct runs, each designed to explore different prompting parameters related to question type and cognitive complexity:
 
 \begin{enumerate}
     \item \textit{Question Type Specification}: Prompts specified only the desired question types (Multiple-Choice and Open-Ended). For the chosen layer, each \ac{llm} was tasked six times to generate a question without mentioning a certain Bloom level for each of the two question types, resulting in \begin{align}4 \text{ \ac{llms}} \times 2 \text{ question types} \times 1 \sfrac{\text{ question}}{\text{run}}\times 6 \text{ runs} = 48 \text{ questions.}\end{align}
