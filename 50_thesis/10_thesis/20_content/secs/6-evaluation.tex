@@ -519,33 +519,31 @@ As in the previous sub-experiment, the staff members were asked to evaluate the 
         \textbf{LLM} & \textbf{Prompt Type} & \textbf{Mean} & \textbf{Std} & \textbf{Median} \\
         \midrule
         \multirow{2}{*}{Anthropic} 
-        & Common & 0.0 & 0.0 & 0.0 \\
-        & Complex & 7.0 & 2.97 & 7.5 \\
+        & Common & 2.50 & 4.63 & 0.0 \\
+        & Complex & 7.25 & 2.55 & 8.0 \\
         \midrule
         \multirow{2}{*}{DeepSeek} 
-        & Common & 1.17 & 1.83 & 0.0 \\
-        & Complex & 3.5 & 4.18 & 2.5 \\
+        & Common & 3.38 & 4.37 & 1.5 \\
+        & Complex & 5.12 & 4.64 & 5.5 \\
         \midrule
         \multirow{2}{*}{Google} 
-        & Common & 1.33 & 2.8 & 0.0 \\
-        & Complex & \textbf{9.0} & 1.26 & \textit{9.5} \\
+        & Common & 3.50 & 4.66 & 0.5 \\
+        & Complex & 7.88 & 3.00 & 8.5 \\
         \midrule
         \multirow{2}{*}{OpenAI} 
-        & Common & 0.0 & 0.0 & 0.0 \\
-        & Complex & 4.83 & 3.66 & 4.0 \\
+        & Common & 2.50 & 4.63 & 0.0 \\
+        & Complex & 5.00 & 3.93 & 4.0 \\
         \bottomrule
     \end{tabular}}
 \end{table}
 
 \pagebreak
 
-There are several key insights and differences compared to the supervisor's evaluation. Most notably, the staff members' scores were higher for \textit{Manipulation Handling}, especially visible in the complex prompt. Google achieved the highest mean (9.0) and median (9.5) for the complex prompt, followed by Anthropic (mean of 7.0), OpenAI (mean of 4.83), and DeepSeek (mean of 3.5). Regarding the common prompt, all models were rated very low or zero, showing that this prompt type did not sufficiently encourage the models to detect manipulations.
+There are several key insights and differences compared to the supervisor's evaluation. Most notably, the staff members' scores were higher for \textit{Manipulation Handling}, especially visible in the complex prompt. Google and Anthropic achieved the best means of 7.88 and 7.25, while DeepSeek and OpenAI were rated 5.12 and 5.0. Regarding the common prompt, all models were rated significantly lower, showing that this prompt type did not sufficiently encourage the models to detect manipulations.
 
-Compared to the supervisor, who rated exclusively with the given values (0, 5, 10), the staff members used the full scale, rating all scores between 0 and 10. Here, Google and Anthropic were rated significantly higher for the complex prompt than by the supervisor, while OpenAI and DeepSeek still remained to be at the lower end. This stands in contrast to the quantitative analysis, where OpenAI and DeepSeek had shown better manipulation detection, based on rating every question instead of a sampled set. Overall, the sample size remained small -- and by this, the \textit{Adherence Score} of the quantitative analysis is still suitable --, but the qualitative evaluations still underscore the importance of prompt design. While the complex prompt improves performance in Experiment 1b -- while being problematic in Experiment 1a --, the models still struggle to reliably identify and address manipulated content. 
+Compared to the supervisor, who rated exclusively with the given values (0, 5, 10), the staff members used the full scale, rating all scores between 0 and 10. Here, Google and Anthropic were rated significantly higher for the complex prompt than by the supervisor (rated with 2.5), while OpenAI and DeepSeek still remained to be at the lower end, but with values $\geq 2.5$ instead. This stands in contrast to the quantitative analysis, where OpenAI and DeepSeek had shown better manipulation detection, based on rating every question instead of a sampled question set. Overall, the sample size remained small -- and by this, the \textit{Adherence Score} of the quantitative analysis is still suitable --, but the qualitative evaluations still underscore the importance of prompt design. While the complex prompt improves performance in Experiment 1b -- while being problematic in Experiment 1a --, the models still struggle to reliably identify and address manipulated content. 
 
-The differences between supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling} -- this would have been better with \textit{Correctness} in Experiment 1a as well --, as implemented in the other criteria. Fortunately, the inter-rater agreement analysis Tables \bfref{tab:iaa-staff-1b} and \bfref{tab:iaa-combined-1b} illustrate a better agreement, compared to the previous sub-experiment. The Fleiss' $\kappa$ value is higher, ... 
-
-\tcr{compare both values if ready}
+The differences between the supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling}, as implemented in the other criteria. This would have been better with the \textit{Correctness} criterion in Experiment 1a as well. Fortunately, the inter-rater agreement analysis Table \bfref{tab:iaa-staff-1b} illustrates a better agreement, compared to the previous sub-experiment. The Fleiss' $\kappa$ value between the staff members is 0.364, indicating a fair agreement among the raters. 
 
 \begin{table}[H]
    \centering
@@ -555,10 +553,12 @@ The differences between supervisor and staff ratings also illustrate the need fo
         \toprule
         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Manipulation Handling & ... & 16 & 4 \\
+        Manipulation Handling & 0.364 & 16 & 4 \\
         \bottomrule
    \end{tabular}
 \end{table}
+
+This is a significant improvement compared to the previous sub-experiment, but the combined analysis in Table \bfref{tab:iaa-combined-1b} shows a very low Fleiss' $\kappa$ value of 0.036. This is explained by the fact that the supervisor rated only the desired values (0, 5, 10), while the staff members used the full scale instead. The staff members also rated the questions with values $\geq 5$, which were not used by the supervisor, since the supervisor only rated up to 5 in certain cases. This individual misunderstanding in the criterion led to a low agreement between both groups, since the ratings were not comparable, even if the ideas behind the ratings were occasionally similar.
 
 \begin{table}[H]
    \centering
@@ -568,7 +568,7 @@ The differences between supervisor and staff ratings also illustrate the need fo
         \toprule
         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Manipulation Handling & ... & 15 & 5 \\
+        Manipulation Handling & 0.036 & 15 & 5 \\
         \bottomrule
    \end{tabular}
 \end{table}

@@ -149,6 +149,18 @@ Firstly, I want to thank Professor Clemens Cap, my primary advisor from the Depa
 
     \subsection{First Experiment}
 
+    % 19 tanenbaum 3 deepseek complex prompt
+    \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/019_tanenbaum_3.txt}{1a supervisor good example}{lst:1a-tanenbaum-question-3}
+    This question is a good example, as it is based on the source material and demonstrates a good understanding of the content. However, it is also noted that the question is not that challenging, since many of these questions are less challenging. This question is also one of many questions which include a phrasing like \enquote{according to the source material}, which is an unwanted pattern in the question generation process.
+
+    \vp
+
+    % 35 transcript 1 google complex prompt
+    \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/035_transcript_1.txt}{1a supervisor bad example with all values NaN}{lst:1a-supervisor-nan-example}
+    This question also includes a phrasing like \enquote{according to the source material}, but it is noted as a NaN example, as the model tried to generate a question full of technical terms, while it sounds like the model did not understand the terms at all.
+
+    \vp
+
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1b/012_script_manipulated_5.txt}{1b supervisor good example + expert4 also thinks so}{lst:1b-supervisor-good-example}
     This question demonstrates -- with a lack in linguistic quality -- distancing from the manipulated script by contrasting the manipulated script with the \enquote{traditional} OSI architecture.
     \vp
@@ -168,8 +180,6 @@ Firstly, I want to thank Professor Clemens Cap, my primary advisor from the Depa
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/025_script_2.txt}{1a staff bad example}{lst:1a-staff-bad-example}
     This question is noted as a bad example by two staff members, as it is based on a negation in the question, which is not a good linguistic practice for valuable question generation.
     \vp
-
-    % #todo add new examples into the evaluation section
 
     \subsection{Second Experiment}
 
