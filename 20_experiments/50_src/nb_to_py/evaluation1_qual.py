@@ -34,7 +34,7 @@ pd.set_option('display.notebook_repr_html', True)
 
 # !!! Set to False to use staff data instead (Experts 2-5, + inter-rater agreements)
 # (IRA between staff experts 2-5 and also staff experts vs. supervisor [expert 1])
-USE_SUPERVISOR_DATA = False
+USE_SUPERVISOR_DATA = True
 # Changing this will affect the data resulting in the notebook
 # !!! As a very important note
 
@@ -675,7 +675,8 @@ if agreement_available:
     #     print("\n" + "-"*40)
     #     print("Experiment 1b Agreement (Experts 2, 3, 4, 5):")
     #     agreement_exp1b = calculate_fleiss_kappa(
-    #         experts_data['expert_2']['exp1b'],
+    #         # experts_data['expert_2']['exp1b'],
+    #         experts_data['expert_3']['exp1b'],
     #         experts_data['expert_3']['exp1b'],
     #         experts_data['expert_4']['exp1b'], 
     #         experts_data['expert_5']['exp1b'],

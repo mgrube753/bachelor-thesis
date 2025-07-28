@@ -18,6 +18,14 @@ Where to get the keys:
 
 ## Todo
 
+-   [ ] Mixed analysis complications
+-   [ ] musterfragen einbauen
+-   [ ] mf finden bei exp2
+-   [ ] insights rausschreiben bei exp2
+-   [ ] complications in exp2 rausschreiben
+
+---
+
 -   [ ] Refine documentation files according to the new structure
 -   [ ] Continue refining Eval chapter
 -   [ ] Run Experiment 2 and send it to students

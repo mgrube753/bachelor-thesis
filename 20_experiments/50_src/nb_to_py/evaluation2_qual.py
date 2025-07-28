@@ -163,34 +163,15 @@ def combine_data():
             if not df.empty:
                 if exp in hint_data:
                     hint_df = hint_data[exp]
-                    if 'question_id' not in df.columns:
-                        df = df.copy()
-                        df['question_id'] = df['sample_id'] if 'sample_id' in df.columns else np.nan
-                    merge_cols = ['question_id']
-                    if 'llm' in df.columns and 'llm' in hint_df.columns:
-                        merge_cols.append('llm')
-                    columns_to_merge = ['question_id']
-                    if 'llm' in hint_df.columns:
-                        columns_to_merge.append('llm')
-                    if 'bloom_original' in hint_df.columns:
-                        columns_to_merge.append('bloom_original')
-                    # Try merge, else assign by row if lengths match
-                    can_merge = all(col in df.columns for col in merge_cols) and all(col in hint_df.columns for col in columns_to_merge)
-                    if can_merge:
-                        df_merged = df.merge(hint_df[columns_to_merge], on=merge_cols, how='left')
-                        if 'question_id' in df_merged.columns:
-                            df_merged = df_merged.drop(columns=['question_id'])
-                        print(f"  {exp}: {len(df_merged)} evaluations (merged with hint data: {columns_to_merge})")
-                    elif len(df) == len(hint_df):
+                    # Always use row-wise assignment if lengths match
+                    if len(df) == len(hint_df):
                         df_merged = df.copy()
-                        for col in columns_to_merge:
-                            if col in hint_df.columns:
+                        for col in hint_df.columns:
+                            if col not in df_merged.columns:
                                 df_merged[col] = hint_df[col].values
-                        if 'question_id' in df_merged.columns:
-                            df_merged = df_merged.drop(columns=['question_id'])
-                        print(f"  {exp}: {len(df_merged)} evaluations (row-wise assignment: {columns_to_merge})")
+                        print(f"  {exp}: {len(df_merged)} evaluations (row-wise assignment: {list(hint_df.columns)})")
                     else:
-                        print(f"  {exp}: Could not merge or assign hint data (len(df)={len(df)}, len(hint_df)={len(hint_df)})")
+                        print(f"  {exp}: Could not row-wise assign hint data (len(df)={len(df)}, len(hint_df)={len(hint_df)})")
                         df_merged = df
                     combined.append(df_merged)
                 else:
@@ -303,12 +284,12 @@ numeric_metrics = [m for m in metrics if pd.api.types.is_numeric_dtype(df_numeri
 
 # Basic statistics - ALL ratings
 if len(df_numeric) > 0 and numeric_metrics:
-    print("\nOverall Statistics (ALL RATINGS, all metrics on 0-10 scale):")
+    print("\nOverall Statistics (all metrics on 0-10 scale):")
     overall_stats = df_numeric[numeric_metrics].describe().round(2)
     display(overall_stats)
 
-    print("\nStatistics by Experiment (ALL RATINGS):")
-    exp_stats = df_numeric.groupby('experiment')[numeric_metrics].agg(['mean', 'std', 'count']).round(2)
+    print("\nStatistics by Experiment:")
+    exp_stats = df_numeric.groupby('experiment')[numeric_metrics].agg(['mean', 'std', 'median', 'count']).round(2)
     display(exp_stats)
     
     print(f"\nQuestions per Experiment:")
@@ -324,11 +305,21 @@ else:
     overall_stats = pd.DataFrame()
     exp_stats = pd.DataFrame()
 
+# --- TOTAL SCORE ---
+main_score_metrics = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'blooms_level_score']
+existing_score_metrics = [m for m in main_score_metrics if m in df_numeric.columns]
+df_numeric['total_score'] = df_numeric[existing_score_metrics].sum(axis=1)
+metric_labels['total_score'] = 'Total Score'
+if 'total_score' not in metrics:
+    metrics.append('total_score')
+if 'total_score' not in numeric_metrics:
+    numeric_metrics.append('total_score')
+
 # --- PLOTS: ALL RATINGS ---
-print("\n=== VISUALIZATION: PERFORMANCE BY EXPERIMENT (ALL RATINGS) ===")
+print("\n=== VISUALIZATION: PERFORMANCE BY EXPERIMENT ===")
 
 if len(df_numeric) > 0 and numeric_metrics:
-    fig, axes = plt.subplots(2, 4, figsize=(20, 10))
+    fig, axes = plt.subplots(4, 2, figsize=(14, 20))
     axes = axes.flatten()
 
     for i, metric in enumerate(numeric_metrics):
@@ -337,14 +328,18 @@ if len(df_numeric) > 0 and numeric_metrics:
             metric_display = metric_labels[metric]
             colors = ['#66c2a5', '#fc8d62', '#8da0cb']
             sns.boxplot(data=df_plot, x='experiment', y=metric, ax=axes[i], palette=colors,
-                        medianprops={'color': 'black', 'linewidth': 2, 'linestyle': ':'})
+                        medianprops={'color': 'black', 'linewidth': 2.5, 'linestyle': ':'})
+            # Always plot means for all metrics, including total_score
             for j, exp in enumerate(['exp2a', 'exp2b', 'exp2c']):
                 exp_data = df_plot[df_plot['experiment'] == exp][metric]
                 if len(exp_data) > 0:
                     mean_val = exp_data.mean()
-                    axes[i].scatter(j, mean_val, color='red', marker='D', s=50, zorder=3)
-            axes[i].set_ylim(0, 10)
-            axes[i].set_title(f'{metric_display} (All Ratings)', fontsize=12, fontweight='bold')
+                    axes[i].scatter(j, mean_val, color='red', marker='D', s=50, zorder=3, edgecolor='darkred', linewidth=1)
+            if metric == 'total_score' or i == 7:
+                axes[i].set_ylim(0, 70)
+            else:
+                axes[i].set_ylim(0, 10)
+            axes[i].set_title(f'{metric_display}', fontsize=12, fontweight='bold')
             axes[i].set_xlabel('Experiment')
             axes[i].set_ylabel(metric_display)
             axes[i].grid(True, alpha=0.3)
@@ -354,7 +349,8 @@ if len(df_numeric) > 0 and numeric_metrics:
             axes[i].text(0.5, 0.5, 'No Data', ha='center', va='center', transform=axes[i].transAxes)
     for j in range(len(numeric_metrics), len(axes)):
         axes[j].set_visible(False)
-    plt.suptitle('Experiment 2: Performance across Prompt Engineering Approaches\n(Based on ALL Ratings)', fontsize=16, fontweight='bold')
+    plt.suptitle('Experiment 2: Performance across Prompt Engineering Approaches', fontsize=16, fontweight='bold', y=0.995)
+    plt.subplots_adjust(top=0.92)
     plt.tight_layout()
     # Save the entire figure as one PNG
     if 'output_plots_path' in locals():
@@ -380,7 +376,7 @@ else:
 print("\n=== METRIC ANALYSIS BY LLM ===")
 
 if 'df_numeric' in locals() and 'llm' in df_numeric.columns and len(df_numeric) > 0 and numeric_metrics:
-    fig, axes = plt.subplots(2, 4, figsize=(20, 10))
+    fig, axes = plt.subplots(4, 2, figsize=(14, 20))
     axes = axes.flatten()
 
     for i, metric in enumerate(numeric_metrics):
@@ -389,13 +385,16 @@ if 'df_numeric' in locals() and 'llm' in df_numeric.columns and len(df_numeric) 
             metric_display = metric_labels.get(metric, metric)
             colors = sns.color_palette("Set2", n_colors=df_plot['llm'].nunique())
             sns.boxplot(data=df_plot, x='llm', y=metric, ax=axes[i], palette=colors,
-                        medianprops={'color': 'black', 'linewidth': 2, 'linestyle': ':'})
+                        medianprops={'color': 'black', 'linewidth': 2.5, 'linestyle': ':'})
             for j, llm_name in enumerate(sorted(df_plot['llm'].unique())):
                 llm_data = df_plot[df_plot['llm'] == llm_name][metric]
                 if len(llm_data) > 0:
                     mean_val = llm_data.mean()
-                    axes[i].scatter(j, mean_val, color='red', marker='D', s=50, zorder=3)
-            axes[i].set_ylim(0, 10)
+                    axes[i].scatter(j, mean_val, color='red', marker='D', s=50, zorder=3, edgecolor='darkred', linewidth=1)
+            if metric == 'total_score' or i == 7:
+                axes[i].set_ylim(0, 70)
+            else:
+                axes[i].set_ylim(0, 10)
             axes[i].set_title(f'{metric_display} by LLM', fontsize=12, fontweight='bold')
             axes[i].set_xlabel('LLM')
             axes[i].set_ylabel(metric_display)
@@ -406,9 +405,10 @@ if 'df_numeric' in locals() and 'llm' in df_numeric.columns and len(df_numeric) 
             axes[i].text(0.5, 0.5, 'No Data', ha='center', va='center', transform=axes[i].transAxes)
     for j in range(len(numeric_metrics), len(axes)):
         axes[j].set_visible(False)
-    plt.suptitle('Experiment 2: Metrics by LLM (All Ratings)', fontsize=16, fontweight='bold')
+    plt.suptitle('Experiment 2: Metrics by LLM', fontsize=16, fontweight='bold', y=0.995)
+    plt.subplots_adjust(top=0.92)
     plt.tight_layout()
-    # Save the entire figure as one PNG
+    
     if 'output_plots_path' in locals():
         figpath = os.path.join(output_plots_path, "exp2_boxplots_all_metrics_by_llm.png")
         fig.savefig(figpath)
@@ -419,7 +419,7 @@ if 'df_numeric' in locals() and 'llm' in df_numeric.columns and len(df_numeric) 
 
     # --- TABLES: METRICS BY LLM ---
     print("\nSummary Table: Metrics by LLM (mean, std, count)")
-    llm_stats = df_numeric.groupby('llm')[numeric_metrics].agg(['mean', 'std', 'count']).round(2)
+    llm_stats = df_numeric.groupby('llm')[numeric_metrics].agg(['mean', 'std', 'median', 'count']).round(2)
     display(llm_stats)
     if 'output_tables_path' in locals():
         llm_stats.to_csv(os.path.join(output_tables_path, "exp2_metrics_by_llm.csv"))
@@ -447,6 +447,32 @@ else:
     print("Not enough data for LLM vs. Prompt Type Bloom's Level table.")
 
 
+# In[ ]:
+
+
+# --- TABLE: Question Type vs. Subexperiment for Bloom's Level Scoring ---
+print("\n=== TABLE: Question Type vs. Subexperiment for Bloom's Level Scoring ===")
+
+if (
+    'df_numeric' in locals() and 
+    'experiment' in df_numeric.columns and 
+    'question_type' in df_numeric.columns and 
+    'blooms_level_score' in df_numeric.columns
+):
+    qt_exp_bloom = df_numeric.pivot_table(
+        index='question_type',
+        columns='experiment',
+        values='blooms_level_score',
+        aggfunc=['mean', 'std', 'median', 'count']
+    ).round(2)
+    display(qt_exp_bloom)
+    if 'output_tables_path' in locals():
+        qt_exp_bloom.to_csv(os.path.join(output_tables_path, "exp2_questiontype_vs_experiment_bloomslevel.csv"))
+        print(f"Saved Question Type vs. Subexperiment Bloom's Level table to {output_tables_path}")
+else:
+    print("Not enough data for Question Type vs. Subexperiment Bloom's Level table.")
+
+
 # # Inter-Student Reliability Analysis
 # 
 # Analysis of agreement between student evaluators on overlapping questions.
@@ -454,20 +480,31 @@ else:
 # In[ ]:
 
 
-# --- FLEISS' KAPPA: ALL QUESTIONS WITH AT LEAST 2 RATINGS ---
 print("\n" + "="*60)
 print("FLEISS' KAPPA INTER-RATER RELIABILITY ANALYSIS")
-print("(ALL QUESTIONS WITH AT LEAST 2 RATINGS)")
 print("="*60)
 
 from statsmodels.stats.inter_rater import fleiss_kappa
 
+def make_global_question_id(row):
+    if row['experiment'] == 'exp2a':
+        return f"{row['experiment']}|{row['llm']}|{row['question_id']}|{row['question_type']}"
+    elif row['experiment'] == 'exp2b':
+        return f"{row['experiment']}|{row['llm']}|{row['bloom_original']}"
+    elif row['experiment'] == 'exp2c':
+        return f"{row['experiment']}|{row['llm']}|{row['bloom_original']}|{row['question_type']}"
+    else:
+        return None
+
+df_numeric['global_question_id'] = df_numeric.apply(make_global_question_id, axis=1)
+
 def kappa_level(k):
-    """Interpret Fleiss' Kappa value according to Landis & Koch (1977)"""
+    if k < 0:
+        return "Invalid"
     if k < 0.2:
         return "Slight"
     elif k < 0.4:
-        return "Fair" 
+        return "Fair"
     elif k < 0.6:
         return "Moderate"
     elif k < 0.8:
@@ -475,85 +512,88 @@ def kappa_level(k):
     else:
         return "Almost Perfect"
 
-# Find questions with at least 2 ratings
-question_counts = df_numeric.groupby('sample_id')['student'].nunique()
-multi_rated_questions = question_counts[question_counts >= 2].index.tolist()
-print(f"Found {len(multi_rated_questions)} questions with at least 2 ratings.")
+def calculate_fleiss_kappa_all_questions(df, metrics, experiment_col='experiment'):
+    results = []
+    for exp in sorted(df[experiment_col].unique()):
+        exp_df = df[df[experiment_col] == exp]
+        for metric in metrics:
+            pivot = exp_df.pivot_table(index='global_question_id', columns='student', values=metric)
+            ratings_matrix = pivot.applymap(lambda x: max(1, min(10, int(round(x)))) if pd.notnull(x) else np.nan).values
+            fleiss_table = np.zeros((ratings_matrix.shape[0], 10))
+            for i, row in enumerate(ratings_matrix):
+                for r in row:
+                    if not np.isnan(r) and 1 <= r <= 10:
+                        fleiss_table[i, int(r)-1] += 1
+            all_identical = np.all((fleiss_table == np.max(fleiss_table, axis=1, keepdims=True)) | (fleiss_table == 0), axis=1)
+            try:
+                if np.all(all_identical):
+                    kappa = 1.0
+                else:
+                    kappa = fleiss_kappa(fleiss_table)
+            except Exception:
+                kappa = np.nan
+            results.append({
+                'Experiment': exp,
+                'Metric': metric_labels.get(metric, metric),
+                'Fleiss_Kappa': kappa,
+                'Agreement_Level': kappa_level(kappa) if not np.isnan(kappa) else 'No data',
+                'N_Questions': ratings_matrix.shape[0]
+            })
+    return pd.DataFrame(results)
 
-# Filter for Kappa: only these questions
-kappa_data = df_numeric[df_numeric['sample_id'].isin(multi_rated_questions)].copy()
-
-def calculate_fleiss_kappa_all(metric):
-    ratings_data = []
-    for q_id in multi_rated_questions:
-        q_data = kappa_data[kappa_data['sample_id'] == q_id]
-        scores = pd.to_numeric(q_data[metric], errors='coerce').dropna()
-        if len(scores) >= 2:
-            valid_scores = [max(1, min(10, int(round(s)))) for s in scores if 0 <= s <= 10]
-            while len(valid_scores) < 3:
-                valid_scores.append(np.nan)
-            ratings_data.append(valid_scores[:3])
-    if len(ratings_data) < 2:
-        return np.nan, len(ratings_data)
-    ratings_matrix = np.array(ratings_data)
-    valid_rows = ~np.isnan(ratings_matrix).all(axis=1)
-    clean_ratings = ratings_matrix[valid_rows]
-    if len(clean_ratings) == 0:
-        return np.nan, 0
-    fleiss_table = np.zeros((len(clean_ratings), 10))
-    for i, row in enumerate(clean_ratings):
-        for r in row:
-            if not np.isnan(r) and 1 <= r <= 10:
-                fleiss_table[i, int(r)-1] += 1
-    try:
-        kappa = fleiss_kappa(fleiss_table)
-        return kappa, len(clean_ratings)
-    except Exception as e:
-        print(f"Error calculating Kappa for {metric}: {e}")
-        return np.nan, len(clean_ratings)
-
-if len(multi_rated_questions) > 0:
-    print(f"\nCalculating Fleiss' Kappa for {len(multi_rated_questions)} questions...")
-    print(f"Using {len(kappa_data)} ratings from questions with at least 2 ratings.")
-    kappa_results = []
-    for metric in numeric_metrics:
-        metric_display = metric_labels.get(metric, metric)
-        kappa, n_questions = calculate_fleiss_kappa_all(metric)
-        kappa_results.append({
-            'Metric': metric_display,
+def calculate_fleiss_kappa_compact(df, metrics):
+    results = []
+    for metric in metrics:
+        pivot = df.pivot_table(index='global_question_id', columns='student', values=metric)
+        ratings_matrix = pivot.applymap(lambda x: max(1, min(10, int(round(x)))) if pd.notnull(x) else np.nan).values
+        fleiss_table = np.zeros((ratings_matrix.shape[0], 10))
+        for i, row in enumerate(ratings_matrix):
+            for r in row:
+                if not np.isnan(r) and 1 <= r <= 10:
+                    fleiss_table[i, int(r)-1] += 1
+        all_identical = np.all((fleiss_table == np.max(fleiss_table, axis=1, keepdims=True)) | (fleiss_table == 0), axis=1)
+        try:
+            if np.all(all_identical):
+                kappa = 1.0
+            else:
+                kappa = fleiss_kappa(fleiss_table)
+        except Exception:
+            kappa = np.nan
+        results.append({
+            'Metric': metric_labels.get(metric, metric),
             'Fleiss_Kappa': kappa,
             'Agreement_Level': kappa_level(kappa) if not np.isnan(kappa) else 'No data',
-            'N_Questions': n_questions
+            'N_Questions': ratings_matrix.shape[0]
         })
-    kappa_df = pd.DataFrame(kappa_results)
-    print("\nFleiss' Kappa Results (all questions with >=2 ratings):")
-    display(kappa_df.round(4))
-    valid_kappas = kappa_df.dropna(subset=['Fleiss_Kappa'])
-    if len(valid_kappas) > 0:
-        avg_kappa = valid_kappas['Fleiss_Kappa'].mean()
-        print(f"\nSummary:")
-        print(f"Average Fleiss' Kappa: {avg_kappa:.4f} ({kappa_level(avg_kappa)})")
-        print(f"Metrics with valid Kappa: {len(valid_kappas)}/{len(kappa_df)}")
-    print("\nInterpretation (Landis & Koch, 1977):")
-    print("  < 0.20: Slight agreement")
-    print("  0.20-0.40: Fair agreement")
-    print("  0.40-0.60: Moderate agreement") 
-    print("  0.60-0.80: Substantial agreement")
-    print("  > 0.80: Almost perfect agreement")
-else:
-    print("No questions with at least 2 ratings found - Fleiss' Kappa not possible.")
-    kappa_df = pd.DataFrame()
+    return pd.DataFrame(results)
+
+kappa_all_df = calculate_fleiss_kappa_all_questions(df_numeric, numeric_metrics)
+print("\nFleiss' Kappa Calculation:")
+display(kappa_all_df.round(4))
+if 'output_tables_path' in locals():
+    kappa_all_df.to_csv(os.path.join(output_tables_path, "exp2_fleiss_kappa_all_questions.csv"), index=False)
+    print(f"Saved full Fleiss' Kappa table to {output_tables_path}")
+
+kappa_compact_df = calculate_fleiss_kappa_compact(df_numeric, numeric_metrics)
+print("\nFleiss' Kappa Calculation (ALL QUESTIONS, ALL EXPERIMENTS):")
+display(kappa_compact_df.round(4))
+if 'output_tables_path' in locals():
+    kappa_compact_df.to_csv(os.path.join(output_tables_path, "exp2_fleiss_kappa_all_questions_compact.csv"), index=False)
+    print(f"Saved compact Fleiss' Kappa table to {output_tables_path}")
+
+
+# In[ ]:
+
+
+#TODO add fleiss kappa between student pairs
 
 
 # In[ ]:
 
 
 def save_results():
-    """Save key results from the analysis (ALL RATINGS)."""
-    
     print("Saving key results (based on all ratings)...")
     
-    # Save basic statistics (all ratings)
     if 'overall_stats' in locals() and not overall_stats.empty:
         overall_stats.to_csv(os.path.join(output_tables_path, "exp2_overall_statistics_all.csv"))
         print("Saved overall statistics (all ratings)")
@@ -562,10 +602,13 @@ def save_results():
         exp_stats.to_csv(os.path.join(output_tables_path, "exp2_experiment_statistics_all.csv"))
         print("Saved experiment statistics (all ratings)")
     
-    # Save Fleiss' Kappa results
-    if 'kappa_df' in locals() and not kappa_df.empty:
-        kappa_df.to_csv(os.path.join(output_tables_path, "exp2_fleiss_kappa_all.csv"), index=False)
+    if 'kappa_all_df' in locals() and not kappa_all_df.empty:
+        kappa_all_df.to_csv(os.path.join(output_tables_path, "exp2_fleiss_kappa_all.csv"), index=False)
         print("Saved Fleiss' Kappa results (all ratings)")
+    
+    if 'kappa_compact_df' in locals() and not kappa_compact_df.empty:
+        kappa_compact_df.to_csv(os.path.join(output_tables_path, "exp2_fleiss_kappa_all_compact.csv"), index=False)
+        print("Saved compact Fleiss' Kappa results (all ratings)")
     
     print(f"\nResults saved to: {output_tables_path}")
 
