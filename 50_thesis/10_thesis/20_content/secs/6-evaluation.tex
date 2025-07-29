@@ -648,12 +648,12 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
    \label{fig:exp2-student-evaluation-metrics}
 \end{figure}
 % by llm: relevance ... #TODO
-% clarity: alle von 6-10 (box selbst 8-10) eher und ausreisser 4,4,4,2 --> openai mit 8.67 mean dann etwas geringer als die anderen (anthropic: 9.0, deepseek: 8.97, google: 9.07)
+% clarity: alle von 6-10 (box selbst 8-10) + wenige ausreisser 4,4,4,2 --> openai mit 8.67 mean dann etwas geringer als die anderen (anthropic: 9.0, deepseek: 8.97, google: 9.07)
 % answerability: ... #TODO
 % challenging: alle median bei 8; anthropic (mean 6.53) volles spektrum... alle anderen von 2-10; deepseek etwas schwächer (6.8) als google (7.27) und openai (7.47) mit höheren boxen
 % value: ähnlicher aufbau untereinander, boxen an sich zwischen 8-10, enden sind alle bei 6; anthropic und google etwas geringer mit median 8.0; deepseek und openai höher mit 9.0 jeweils; alle means über 8, mit openai bestes 8.73, dann anthropic 8.67, deepseek 8.53 und google 8.33; deepseek und v.a. google mit ausreissern nach unten.
 % language: über alle llms hinweg ähnliche bewertungen, mit google (8.37) und openai (8.4) am niedrigsten; anthropic (8.6) und deepseek (8.73) etwas höher; plots enden jeweils bei 3 
-% bloom score: beschreibt sowohl die performance ohne bloom-level-angabe als auch bloom adherence je nach subexperiment; da waren anthropic (mean 7.2, median 7.75, kleinste box) und google (mean 7.32, median 10, box ok) am besten, openai (mean 6.47, median 9.25) auch ganz gut, deepseeks median (6.0) sehr tief, mean (6.3), ist so naja; alle boxen gehen auch von 0-10
+% bloom score: beschreibt sowohl die performance ohne bloom-level-angabe als auch bloom adherence je nach subexperiment; da waren anthropic (mean 7.15, median 7, kleinste box) und google (mean 7.32, median 10, box ok) am besten, openai (mean 6.47, median 9.25) auch ganz gut, deepseeks median (6.0) sehr tief, mean (6.3), ist so naja; alle boxen inklusive whisker gehen auch von 0-10
 % total score: ... #TODO
 
 
@@ -669,7 +669,7 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
 % challenging: BO besonders weit oben und nicht sonderbar weitreichend verbreitet mit median 8 und mean 8.42; TO median auch 8, aber im grunde daten eher tiefer angesiedelt mit mean 7.17 (dort wurden ja auch keine bloom level angeboten); TB auffallend geringer (mean 6.17, median 7), sehr breit gefächert, hierbei wurden auch nur diverse fragen gesampled, welche aber grundlegend alle bloom level abgedeckt haben 
 % value: im grunde alle hoch (boxen 8-10, an sich alle 6-10); TO median 8, mean 8.58, ausreisser nach unten; BO median 9, mean 8.75, am besten wirkend; TB: mean 8.46, median 9, wäre auch richtig gut, wenn die ausreisser nicht wären.
 % language: an sich bei TB (mean 8.71, median 10) am besten, kürzester plot auch; dann TO (mean 8.44, median 10) und dann BO (mean 8.33, median 8.5); TO und BO gehen bis 3 runter, TB nur bis 5
-% bloom score: hier wird es spannend, grosses spektrum bei TO, aber an sich der mean viel geringer (4.03, median dazu bei 3). also ohne bloom constraints per median bei applying und per mean bei analyzing; BO und TB leicht von ausreissern betroffen, aber im grunde viel adherence zu gegebenem bloom level (mediane 10), mean bei BO 8.75 und knapp dahinter TB (8.65); Bloom only ein ausreisser bei 0, durch entfernte adherence >1; bei type+bloom sowohl dies als auch off-by-one adherence (durch 5pkt sichtbar).
+% bloom score: hier wird es spannend, grosses spektrum bei TO, aber an sich der mean viel geringer (4.0, median dazu bei 3). also ohne bloom constraints per median bei applying und per mean bei analyzing; BO und TB leicht von ausreissern betroffen, aber im grunde viel adherence zu gegebenem bloom level (mediane 10), mean bei BO 8.75 und knapp dahinter TB (8.65); Bloom only ein ausreisser bei 0, durch entfernte adherence >1; bei type+bloom sowohl dies als auch off-by-one adherence (durch 5pkt sichtbar).
 % total score: ... #TODO
 
 \begin{table}[htbp]
@@ -683,7 +683,7 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
         \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
         & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} \\
         \midrule
-        Anthropic & \textbf{5.08} & 8.33 & 8.75 & 2.71 & 4.08 & 2.26 & \textit{7.0} & 10.0 & 10.0 \\
+        Anthropic & \textbf{4.96} & 8.33 & 8.75 & 2.57 & 4.08 & 2.26 & \textit{7.0} & 10.0 & 10.0 \\
         DeepSeek  & 2.83 & 8.33 & 8.75 & 1.50 & 4.08 & 2.26 & 3.0 & 10.0 & 10.0 \\
         Google    & 4.54 & 8.33 & \textbf{9.58} & 2.53 & 4.08 & 1.44 & 3.0 & 10.0 & 10.0 \\
         OpenAI    & 3.67 & \textbf{10.00} & 7.50 & 2.78 & 0.00 & 3.99 & 3.0 & 10.0 & 10.0 \\
@@ -691,7 +691,7 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
     \end{tabular}}
 \end{table}
 % problem in bewertung erkennbar nun: type-only zeigt bei bloom scoring stets die geringsten scores an
-% type-only: anthropic (mean 5.08, median 7.0), deepseek (2.83, 3.0), google (4.54, 3.0), openai (3.67, 3.0). anthropic und google besser!
+% type-only: anthropic (mean 4.96, median 7.0), deepseek (2.83, 3.0), google (4.54, 3.0), openai (3.67, 3.0). anthropic und google besser!
 % betrachtung von bloom-only: mediane alle 10, anthropic deepseek und google alle mean 8.33, openai 10.0!
 % type+bloom: alle mediane 10, sonst aber openai am schwächsten jedoch (7.50 mean); anthropic und deepseek mit 8.75 und google am besten in adherence (9.58 mean), interessant
 
@@ -707,7 +707,7 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
         & \textbf{Exp2a} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2c} \\
         \midrule
         Multiple-Choice & 2.42 & 7.92 & 1.23 & 3.27 & 2.25 & 10.0 \\
-        Open-Ended      & \textbf{5.65} & \textbf{9.38} & 2.43 & 1.69 & \textit{7.00} & 10.0 \\
+        Open-Ended      & \textbf{5.58} & \textbf{9.38} & 2.38 & 1.69 & \textit{7.00} & 10.0 \\
         \bottomrule
     \end{tabular}}
 \end{table}
