@@ -697,7 +697,7 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
 
 \begin{table}[htbp]
     \centering
-    \caption[Student-based Bloom Scores by Question Format and Sub-Experiment (Exp2).]{Student-based Bloom Scores by Question Format and Sub-Experiment (Exp2a \& Exp2c).}
+    \caption[Student-based Bloom Scores by Question Format and each Sub-Experiment (Exp2).]{Student-based Bloom Scores by Question Format and each Sub-Experiment (Exp2).}
     \label{tab:exp2-questiontype-experiment-bloomslevel}
     \resizebox{.7\textwidth}{!}{%
     \begin{tabular}{lcccccc}
@@ -717,9 +717,62 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
 % MC bei 2c: mean 7.92, median 10.0 (bedeutend besser jedenfalls durch bloom-angabe)
 % open-ended bei 2c: mean 9.38, median 10.0, viel besser im grunde...
 
-% #TODO bloom adherence plot/table where level is given per subexperiment and calculated which level was better adhered to by the LLMs
+\begin{table}[H]
+    \centering
+    \caption{Inter-Rater Agreement Analysis, Students (Exp2).}
+    \label{tab:iaa-students-exp2}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \midrule
+        Relevance          & ... & 40 & 3 \\
+        Clarity            & -0.061 & 39 & 3 \\
+        Answerability      & ... & 40 & 3 \\
+        Challenging        & 0.270 & 40 & 3 \\
+        Value              & -0.256 & 40 & 3 \\
+        Language           & 0.016 & 40 & 3 \\
+        Bloom Rating       & 0.397 & 40 & 3 \\
+        Total Score        & -0.482 & 40 & 3 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \object{Student-based Analysis Complications}
+% student1 exp2a: fragen 5 (schlecht bewertet),6,9,14 haben keinen richtigen operator; fragen 15 und 16 zu sehr verschachtelt durch mehrerer fragen in einer.
+% frage10 auch nicht so der knaller, 11 und 12 sprachliich nicht allzu gut
+% frage13 an sich voll gut; relevanz 8/10 jedoch und challenging 2/10, sonst schoene frage
+% ---
+% student1 exp2b: fragen 1 und 6 nicht so gut, 8 auch nicht so
+% ---
+% student1 exp2c: frage 8 schwer verständlich mittels text, iot smart home anwendung fokussiert worden...
+% frage 14 schwierig... operator ist creating, aber MCQ, somit bewertung applying3
+% bei frage 15 aehnlich, operator ist creating, somit bewertung applying3, da muss etwas neues herauskommen.
+
+% student2 exp2a: fragen 11,12,15,16 nicht so gut beantwortbar mit dem text
+% ---
+% student2 exp2b: frage 5 fraglich, ob es level anal4 oder remem1 ist, da MCQ.
+% 3,4, und v.a. 6,8 sind nicht so gut beantwortbar 
+% ---
+% student2 exp2c: keinen operator bei frage 1
+% diverse fragen weniger challenging + verbunden mit bloom1
+% je komplexer die fragen (anhand von bloom), umso weniger beantwortbar
+
+% student3 exp2a: fehlen noch gewisse insights, aber:
+% frage 4 zu kompliziert formuliert, viele fremdwörter
+% frage 7 mit wenig verständlich dargestellten operatoren, ungeeignet für unterricht
+% frage 9 fehlt operator
+% frage 11 unnötig lange einleitung dabei, verwirrt, kann präziser sein
+% frage 12 schwerfällig formuliert, macht es schwer verständlich
+% an sich frage 13 ganz gut und übersichtlich, es brauchte aber zeit um zu verstehen was von einem verlangt wird (obwohl aufgabe nicht so schwer)
+% frage 15 viel zu lang, voller fachtermini, erschwert motivation das zu lesen/beantworten, demotivierend, zu viele operatoren, kann sein dass man dadurch teilaufgaben vergisst
+% ---
+% student3 exp2b: frage5 sehr kompliziert formuliert
+% frage 6 zu viele fachtermini, überladene frage, motiviert nur zu überfliegen bei Bewertung
+% frage 2 sehr schoen bewertet.
+% ---
+% student3 exp2c: frage 4 enthält unnötig viele fremdwörter, die den sinn der aufgabe verkomplizieren
+% frage 8 an sich schoenes rating
+% frage 15 eine ungünstig formulierte frage, die recht zuordnenden touch hat, so ist schwer ersichtlich, was der sinn der frage ist
 
 value criterion badly chosen, says 1 student; this one was introduced by primary supervisor and then decided to use for all members in exp1 and afterwards for students in exp2
 
