@@ -34,7 +34,7 @@ pd.set_option('display.notebook_repr_html', True)
 
 # !!! Set to False to use staff data instead (Experts 2-5, + inter-rater agreements)
 # (IRA between staff experts 2-5 and also staff experts vs. supervisor [expert 1])
-USE_SUPERVISOR_DATA = True
+USE_SUPERVISOR_DATA = False
 # Changing this will affect the data resulting in the notebook
 # !!! As a very important note
 
@@ -98,6 +98,10 @@ def create_seaborn_boxplot(data, x, y, ax, title, ylabel, xlabel, scale_range=No
     ax.set_xlabel(xlabel, fontsize=11, labelpad=10)
     ax.grid(True, alpha=0.3)
 
+
+# In[ ]:
+
+
 def load_supervisor_data():
     hint_exp1a = pd.read_csv(os.path.join(hint_base_path, "exp1a_hints.csv"))
     hint_exp1b = pd.read_csv(os.path.join(hint_base_path, "exp1b_hints.csv"))
@@ -105,7 +109,6 @@ def load_supervisor_data():
     expert1_exp1a = pd.read_csv(os.path.join(expert_base_path, "expert_1", "exp1a.csv"))
     expert1_exp1b = pd.read_csv(os.path.join(expert_base_path, "expert_1", "exp1b.csv"))
     
-    # Apply preliminary cleaning to Expert 1 data to handle special characters
     numeric_cols_1a_temp = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'correctness']
     numeric_cols_1b_temp = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'manipulation_handling']
     
@@ -134,6 +137,10 @@ def load_supervisor_data():
     exp1b_df['input_source'] = exp1b_df['input_source'].replace('script', 'script_manipulated')
     
     return exp1a_df, exp1b_df
+
+
+# In[ ]:
+
 
 def load_staff_data():
     hint_exp1a = pd.read_csv(os.path.join(hint_base_path, "exp1a_hints.csv"))
@@ -175,19 +182,20 @@ def load_staff_data():
     
     return exp1a_df, exp1b_df, experts_data
 
+
+# In[ ]:
+
+
 def clean_numeric_data(df, numeric_cols):
     for col in numeric_cols:
         if col in df.columns:
-            # Convert to string first to handle all possible invalid values
             df[col] = df[col].astype(str)
-            
-            # Replace various invalid values with NaN
             invalid_values = ['??', '???', '?', '????', '', ' ', 'nan', 'NaN', 'NULL', 'null', 
+
                              'None', 'NONE', 'n/a', 'N/A', '#N/A', '#NULL!', 
                              'undefined', 'UNDEFINED', '-', '--', '---']
+
             df[col] = df[col].replace(invalid_values, np.nan)
-            
-            # Convert to numeric, any remaining non-numeric values become NaN
             df[col] = pd.to_numeric(df[col], errors='coerce')
             
             # Validate range (0-10 for rating scales)
@@ -197,6 +205,10 @@ def clean_numeric_data(df, numeric_cols):
                 if len(out_of_range) > 0:
                     df.loc[(df[col] < 0) | (df[col] > 10), col] = np.nan
     return df
+
+
+# In[ ]:
+
 
 def calculate_fleiss_kappa(expert2_df, expert3_df, expert4_df, expert5_df, criteria_cols):
     results = []
@@ -270,19 +282,14 @@ else:
     analysis_suffix = "staff" 
     agreement_available = True
 
-# Define criteria columns
 numeric_cols_1a = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'correctness']
 all_numeric_cols_1b = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'manipulation_handling']
-numeric_cols_1b = ['manipulation_handling']
+numeric_cols_1b = ['manipulation_handling'] # only important column in exp1b
 
-# Clean and prepare data
 exp1a_df = clean_numeric_data(exp1a_df, numeric_cols_1a)
 exp1b_df = clean_numeric_data(exp1b_df, numeric_cols_1b)
-
-# Calculate total scores
 exp1a_df['total_score'] = exp1a_df[numeric_cols_1a].sum(axis=1)
 
-# Data availability check
 exp1a_filled = exp1a_df[numeric_cols_1a].notna().sum().sum()
 exp1a_total = len(exp1a_df) * len(numeric_cols_1a)
 exp1b_filled = exp1b_df[numeric_cols_1b].notna().sum().sum()
@@ -321,11 +328,19 @@ tables[f'exp1a_overall_stats_{analysis_suffix}'] = exp1a_stats
 print("\nOverall Statistics:")
 display(exp1a_stats)
 
+
+# In[ ]:
+
+
 # Statistics by LLM
 exp1a_llm_stats = exp1a_df.groupby('llm')[criteria].agg(['mean', 'std', 'median', 'count']).round(2)
 tables[f'exp1a_llm_stats_{analysis_suffix}'] = exp1a_llm_stats
 print("\nStatistics by LLM:")
 display(exp1a_llm_stats)
+
+
+# In[ ]:
+
 
 # LLM ranking
 exp1a_llm_means = exp1a_df.groupby('llm')[numeric_cols_1a].mean().round(2)
@@ -336,11 +351,19 @@ print("\nOverall LLM Ranking:")
 for i, (llm, score) in enumerate(exp1a_llm_overall.items(), 1):
     print(f"{i}. {llm.title()}: {score:.2f}")
 
+
+# In[ ]:
+
+
 # Statistics by Input Source
 exp1a_source_stats = exp1a_df.groupby('input_source')[criteria].agg(['mean', 'std', 'median', 'count']).round(2)
 tables[f'exp1a_source_stats_{analysis_suffix}'] = exp1a_source_stats
 print("\nStatistics by Input Source:")
 display(exp1a_source_stats)
+
+
+# In[ ]:
+
 
 # Statistics by Prompt Type
 exp1a_prompt_stats = exp1a_df.groupby('prompt_type')[criteria].agg(['mean', 'std', 'median', 'count']).round(2)
@@ -389,6 +412,10 @@ plt.suptitle('Experiment 1a: Performance by Input Source', fontsize=16, fontweig
 plt.tight_layout()
 plt.subplots_adjust(top=0.95)
 plt.show()
+
+
+# In[ ]:
+
 
 # Prompt Type Analysis
 fig, axes = plt.subplots(2, 4, figsize=(20, 10))
@@ -483,6 +510,10 @@ ax2.set_ylabel('LLM', fontsize=12, fontweight='bold')
 plt.tight_layout()
 plt.show()
 
+
+# In[ ]:
+
+
 # Correctness Heatmaps
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
 plots[f'exp1a_correctness_heatmaps_{analysis_suffix}'] = fig
@@ -561,60 +592,42 @@ tables[f'exp1a_correctness_llm_prompt_stats_{analysis_suffix}'] = correctness_ll
 # In[ ]:
 
 
-if analyze_exp1b:
-    print("EXPERIMENT 1B - MANIPULATION HANDLING ANALYSIS")
-    print("="*60)
-    
-    # Overall statistics for manipulation_handling
-    exp1b_stats = exp1b_df[numeric_cols_1b].describe().round(2)
-    tables[f'exp1b_manipulation_stats_{analysis_suffix}'] = exp1b_stats
-    print("\nOverall Statistics (Manipulation Handling):")
-    display(exp1b_stats)
-    
-    # Statistics by LLM
-    exp1b_llm_stats = exp1b_df.groupby('llm')[numeric_cols_1b].agg(['mean', 'std', 'median', 'count']).round(2)
-    tables[f'exp1b_llm_manipulation_stats_{analysis_suffix}'] = exp1b_llm_stats
-    print("\nStatistics by LLM (Manipulation Handling):")
-    display(exp1b_llm_stats)
-    
-    # Statistics by LLM and Prompt Type
-    exp1b_llm_prompt_stats = exp1b_df.groupby(['llm', 'prompt_type'])['manipulation_handling'].agg(['mean', 'std', 'median']).round(2)
-    tables[f'exp1b_llm_prompt_manipulation_stats_{analysis_suffix}'] = exp1b_llm_prompt_stats
-    print("\nStatistics by LLM and Prompt Type (Manipulation Handling):")
-    display(exp1b_llm_prompt_stats)
-    
-    # LLM Performance Visualization
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
-    plots[f'exp1b_manipulation_analysis_{analysis_suffix}'] = fig
-    
-    create_seaborn_boxplot(exp1b_df, 'llm', 'manipulation_handling', ax1, 
-                          'Manipulation Handling by LLM', 'Score', 'LLM', scale_range=(0, 10))
-    
-    create_seaborn_boxplot(exp1b_df, 'prompt_type', 'manipulation_handling', ax2, 
-                          'Manipulation Handling by Prompt Type', 'Score', 'Prompt Type', scale_range=(0, 10))
-    
-    plt.suptitle('Experiment 1b: Manipulation Handling Performance', fontsize=16, fontweight='bold', y=1.02)
-    plt.tight_layout()
-    plt.show()
-    
-    # LLM Rankings by Manipulation Handling
-    manipulation_ranking = exp1b_df.groupby('llm')['manipulation_handling'].mean().sort_values(ascending=False)
-    tables[f'exp1b_manipulation_ranking_{analysis_suffix}'] = manipulation_ranking
-    
-    print("\nLLM Rankings (Manipulation Handling):")
-    for i, (llm, score) in enumerate(manipulation_ranking.items(), 1):
-        print(f"{i}. {llm.title()}: {score:.2f}/10")
-    
-    # Store additional statistics
-    exp1b_prompt_stats = exp1b_df.groupby('prompt_type')[numeric_cols_1b].agg(['mean', 'std', 'median', 'count']).round(2)
-    tables[f'exp1b_prompt_manipulation_stats_{analysis_suffix}'] = exp1b_prompt_stats
-    
-else:
-    print("EXPERIMENT 1B - DATA NOT AVAILABLE")
-    print("="*60)
-    print(f"Experiment 1b analysis will be available once expert evaluations are completed.")
-    print(f"Current completion: {100*exp1b_filled/exp1b_total:.1f}%")
-    print(f"Structure: {len(exp1b_df)} samples ready for analysis")
+print("EXPERIMENT 1B - MANIPULATION HANDLING ANALYSIS")
+print("="*60)
+
+# Overall statistics for manipulation_handling
+exp1b_stats = exp1b_df[numeric_cols_1b].describe().round(2)
+tables[f'exp1b_manipulation_stats_{analysis_suffix}'] = exp1b_stats
+print("\nOverall Statistics (Manipulation Handling):")
+display(exp1b_stats)
+
+
+# In[ ]:
+
+
+# Statistics by LLM
+exp1b_llm_stats = exp1b_df.groupby('llm')[numeric_cols_1b].agg(['mean', 'std', 'median', 'count']).round(2)
+tables[f'exp1b_llm_manipulation_stats_{analysis_suffix}'] = exp1b_llm_stats
+print("\nStatistics by LLM (Manipulation Handling):")
+display(exp1b_llm_stats)
+
+
+# In[ ]:
+
+
+# Statistics by LLM and Prompt Type
+exp1b_llm_prompt_stats = exp1b_df.groupby(['llm', 'prompt_type'])['manipulation_handling'].agg(['mean', 'std', 'median']).round(2)
+tables[f'exp1b_llm_prompt_manipulation_stats_{analysis_suffix}'] = exp1b_llm_prompt_stats
+print("\nStatistics by LLM and Prompt Type (Manipulation Handling):")
+display(exp1b_llm_prompt_stats)
+
+
+# In[ ]:
+
+
+# Store additional statistics
+exp1b_prompt_stats = exp1b_df.groupby('prompt_type')[numeric_cols_1b].agg(['mean', 'std', 'median', 'count']).round(2)
+tables[f'exp1b_prompt_manipulation_stats_{analysis_suffix}'] = exp1b_prompt_stats
 
 
 # # Inter-Rater Agreement Analysis
@@ -624,7 +637,7 @@ else:
 # In[ ]:
 
 
-if agreement_available:
+if agreement_available: # if using staff data was defined
     print("INTER-RATER AGREEMENT ANALYSIS (Fleiss' Kappa)")
     print("="*60)
     
@@ -651,54 +664,35 @@ if agreement_available:
                     "Substantial" if avg_kappa < 0.8 else 
                     "Almost Perfect")
             
-            print(f"\nOverall Agreement: K = {avg_kappa:.3f} ({level})")
-            
-            best_criterion = agreement_exp1a.loc[agreement_exp1a['Fleiss_Kappa'].idxmax()]
-            worst_criterion = agreement_exp1a.loc[agreement_exp1a['Fleiss_Kappa'].idxmin()]
-            
-            print(f"Best agreement: {best_criterion['Criterion']} (K = {best_criterion['Fleiss_Kappa']:.3f})")
-            print(f"Worst agreement: {worst_criterion['Criterion']} (K = {worst_criterion['Fleiss_Kappa']:.3f})")
-    
     # Check if Experiment 1b has sufficient data for agreement analysis
-    # exp1b_has_enough_data = False
-    # if 'experts_data' in locals():
-    #     total_filled = 0
-    #     for expert_key in ['expert_2', 'expert_3', 'expert_4', 'expert_5']:
-    #         if expert_key in experts_data:
-    #             expert_df = experts_data[expert_key]['exp1b']
-    #             # Check if manipulation_handling column exists and count non-null values
-    #             if 'manipulation_handling' in expert_df.columns:
-    #                 total_filled += expert_df['manipulation_handling'].notna().sum()
-    #     exp1b_has_enough_data = total_filled > 10  # Lower threshold for exp1b
+    exp1b_has_enough_data = False
+    if 'experts_data' in locals():
+        total_filled = 0
+        for expert_key in ['expert_2', 'expert_3', 'expert_4', 'expert_5']:
+            if expert_key in experts_data:
+                expert_df = experts_data[expert_key]['exp1b']
+                # Check if manipulation_handling column exists and count non-null values
+                if 'manipulation_handling' in expert_df.columns:
+                    total_filled += expert_df['manipulation_handling'].notna().sum()
+        exp1b_has_enough_data = total_filled > 10  # Lower threshold for exp1b
     
-    # if exp1b_has_enough_data:
-    #     print("\n" + "-"*40)
-    #     print("Experiment 1b Agreement (Experts 2, 3, 4, 5):")
-    #     agreement_exp1b = calculate_fleiss_kappa(
-    #         # experts_data['expert_2']['exp1b'],
-    #         experts_data['expert_3']['exp1b'],
-    #         experts_data['expert_3']['exp1b'],
-    #         experts_data['expert_4']['exp1b'], 
-    #         experts_data['expert_5']['exp1b'],
-    #         numeric_cols_1b
-    #     )
-    #     tables[f'agreement_exp1b_{analysis_suffix}'] = agreement_exp1b
-    #     display(agreement_exp1b.round(3))
-        
-    #     if not agreement_exp1b.empty:
-    #         valid_kappas_1b = agreement_exp1b['Fleiss_Kappa'].dropna()
-    #         if len(valid_kappas_1b) > 0:
-    #             avg_kappa_1b = valid_kappas_1b.mean()
-    #             level_1b = ("Slight" if avg_kappa_1b < 0.2 else 
-    #                        "Fair" if avg_kappa_1b < 0.4 else 
-    #                        "Moderate" if avg_kappa_1b < 0.6 else 
-    #                        "Substantial" if avg_kappa_1b < 0.8 else 
-    #                        "Almost Perfect")
-    #             print(f"\nOverall Agreement (1b): K = {avg_kappa_1b:.3f} ({level_1b})")
-    # else:
-    #     print("\n" + "-"*40)
-    #     print("Experiment 1b Agreement: Insufficient data for analysis")
-    #     print(f"Total non-null manipulation_handling values found: {total_filled}")
+    if exp1b_has_enough_data:
+        print("\n" + "-"*40)
+        print("Experiment 1b Agreement (Experts 2, 3, 4, 5):")
+        agreement_exp1b = calculate_fleiss_kappa(
+            experts_data['expert_2']['exp1b'],
+            experts_data['expert_3']['exp1b'],
+            experts_data['expert_4']['exp1b'], 
+            experts_data['expert_5']['exp1b'],
+            numeric_cols_1b
+        )
+        tables[f'agreement_exp1b_{analysis_suffix}'] = agreement_exp1b
+        display(agreement_exp1b.round(3))
+
+    else:
+        print("\n" + "-"*40)
+        print("Experiment 1b Agreement: Insufficient data for analysis")
+        print(f"Total non-null manipulation_handling values found: {total_filled}")
     
     # Expert Comparison
     print("\n" + "="*60)
@@ -719,11 +713,6 @@ if agreement_available:
         print("\nMean Ratings by Expert (Experiment 1a):")
         display(comparison_df_1a)
         
-        expert_ranking = comparison_df_1a['Overall_Mean'].sort_values(ascending=False)
-        print(f"\nExpert Ranking:")
-        for i, (expert, score) in enumerate(expert_ranking.items(), 1):
-            print(f"{i}. {expert}: {score:.3f}")
-
 else:
     print("INTER-RATER AGREEMENT ANALYSIS")
     print("="*60)
@@ -734,6 +723,7 @@ else:
 # In[ ]:
 
 
+# Agreement Analysis including the Staff Members AND the Supervisor
 if agreement_available:
     print("COMPREHENSIVE INTER-RATER AGREEMENT ANALYSIS")
     print("="*70)
@@ -845,30 +835,6 @@ if agreement_available:
         print("\nExperiment 1a - All Available Experts Agreement:")
         display(comprehensive_agreement_exp1a[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters']].round(3))
         
-        # Summary statistics for comprehensive agreement
-        valid_kappas_comp = comprehensive_agreement_exp1a['Fleiss_Kappa'].dropna()
-        if len(valid_kappas_comp) > 0:
-            avg_kappa_comp = valid_kappas_comp.mean()
-            level_comp = ("Slight" if avg_kappa_comp < 0.2 else 
-                         "Fair" if avg_kappa_comp < 0.4 else 
-                         "Moderate" if avg_kappa_comp < 0.6 else 
-                         "Substantial" if avg_kappa_comp < 0.8 else 
-                         "Almost Perfect")
-            
-            print(f"\nComprehensive Agreement Summary (All Experts):")
-            print(f"  Average K: {avg_kappa_comp:.3f} ({level_comp})")
-            print(f"  Experts included: {comprehensive_agreement_exp1a['Experts'].iloc[0]}")
-            print(f"  Number of raters: {comprehensive_agreement_exp1a['N_Raters'].iloc[0]}")
-            
-            # Compare with staff-only agreement
-            if 'agreement_exp1a' in locals() and not agreement_exp1a.empty:
-                staff_avg_kappa = agreement_exp1a['Fleiss_Kappa'].dropna().mean()
-                kappa_diff = avg_kappa_comp - staff_avg_kappa
-                print(f"\nAgreement Comparison:")
-                print(f"  Staff only (Experts 2-5): K = {staff_avg_kappa:.3f}")
-                print(f"  All experts (1-5): K = {avg_kappa_comp:.3f}")
-                print(f"  Difference: {kappa_diff:+.3f} ({'Higher' if kappa_diff > 0 else 'Lower'} with all experts)")
-    
     # Check for Experiment 1b comprehensive agreement
     if analyze_exp1b:
         comprehensive_agreement_exp1b = calculate_comprehensive_fleiss_kappa(experts_data, 'exp1b', numeric_cols_1b)
@@ -879,18 +845,6 @@ if agreement_available:
             print("Experiment 1b - All Available Experts Agreement:")
             display(comprehensive_agreement_exp1b[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters']].round(3))
             
-            valid_kappas_comp_1b = comprehensive_agreement_exp1b['Fleiss_Kappa'].dropna()
-            if len(valid_kappas_comp_1b) > 0:
-                avg_kappa_comp_1b = valid_kappas_comp_1b.mean()
-                level_comp_1b = ("Slight" if avg_kappa_comp_1b < 0.2 else 
-                               "Fair" if avg_kappa_comp_1b < 0.4 else 
-                               "Moderate" if avg_kappa_comp_1b < 0.6 else 
-                               "Substantial" if avg_kappa_comp_1b < 0.8 else 
-                               "Almost Perfect")
-                
-                print(f"\nComprehensive Agreement Summary (Exp 1b - All Experts):")
-                print(f"  Average K: {avg_kappa_comp_1b:.3f} ({level_comp_1b})")
-                print(f"  Experts included: {comprehensive_agreement_exp1b['Experts'].iloc[0]}")
         else:
             print("\n" + "-"*50)
             print("Experiment 1b - Insufficient data for comprehensive agreement analysis")
@@ -911,7 +865,6 @@ def save_all_results():
     
     tables_saved = 0
     for table_name, table_data in tables.items():
-        # Remove suffix from table_name if it exists
         clean_name = table_name.replace(f"_{analysis_suffix}", "")
         csv_path = os.path.join(output_tables_path, f"{prefix}{table_name}.csv")
         table_data.to_csv(csv_path)
@@ -920,7 +873,6 @@ def save_all_results():
     
     plots_saved = 0
     for plot_name, plot_fig in plots.items():
-        # Remove suffix from plot_name if it exists
         clean_name = plot_name.replace(f"_{analysis_suffix}", "")
         png_path = os.path.join(output_plots_path, f"{prefix}{clean_name}.png")
         plot_fig.savefig(png_path, dpi=300, bbox_inches='tight')

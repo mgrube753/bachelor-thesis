@@ -26,6 +26,10 @@ pd.set_option('display.max_colwidth', 100)
 
 pd.set_option('display.notebook_repr_html', True)
 
+
+# In[ ]:
+
+
 def create_seaborn_boxplot(data, x, y, ax, title, ylabel, xlabel, custom_means=None):
     colors = ['#66c2a5', '#fc8d62', '#8da0cb', '#e78ac3', '#a6d854', '#ffd92f', '#e5c494', '#b3b3b3']
     unique_vals = sorted(data[x].unique())
@@ -37,7 +41,7 @@ def create_seaborn_boxplot(data, x, y, ax, title, ylabel, xlabel, custom_means=N
     plot_labels = [tick.get_text() for tick in ax.get_xticklabels()]
     
     if custom_means is not None:
-        # Use custom means if provided, mapping them to the correct plot positions
+        # Use custom means mapping them to the correct plot positions
         for i, plot_label in enumerate(plot_labels):
             reverse_mapping = {
                 'Anthropic': 'anthropic',
@@ -114,6 +118,10 @@ def create_seaborn_boxplot(data, x, y, ax, title, ylabel, xlabel, custom_means=N
     ax.set_xlabel(xlabel, fontsize=11, labelpad=10)
     ax.grid(True, alpha=0.3)
 
+
+# In[ ]:
+
+
 BASE_PROJECT_PATH = os.path.abspath(os.path.join(os.getcwd(), "..", ".."))
 INPUT_PATH = os.path.join(BASE_PROJECT_PATH, "20_experiments/60_analyses/csv/quantitative/exp1")
 OUTPUT_PATH = os.path.join(BASE_PROJECT_PATH, "40_evaluation/exp1/quantitative/")
@@ -132,6 +140,16 @@ plots = {}
 
 for path in [output_dir_exp1a, output_dir_exp1b, output_plot_dir_exp1a, output_plot_dir_exp1b]:
     os.makedirs(path, exist_ok=True)
+
+output_dir_exp1a_no_source = os.path.join(OUTPUT_PATH, "tables/exp1a_no_source")
+output_plot_dir_exp1a_no_source = os.path.join(OUTPUT_PATH, "plots/exp1a_no_source")
+
+for path in [output_dir_exp1a_no_source, output_plot_dir_exp1a_no_source]:
+    os.makedirs(path, exist_ok=True)
+
+
+# In[ ]:
+
 
 if not os.path.exists(exp1a_path) or not os.path.exists(exp1b_path):
     print("Error: Quantitative data files not found.")
@@ -177,17 +195,6 @@ else:
     exp1b_df = exp1b_df.drop(
         columns=["adherence_score_openai", "adherence_score_anthropic"]
     )
-
-
-# In[ ]:
-
-
-# Paths for exp1a_no_source
-output_dir_exp1a_no_source = os.path.join(OUTPUT_PATH, "tables/exp1a_no_source")
-output_plot_dir_exp1a_no_source = os.path.join(OUTPUT_PATH, "plots/exp1a_no_source")
-
-for path in [output_dir_exp1a_no_source, output_plot_dir_exp1a_no_source]:
-    os.makedirs(path, exist_ok=True)
 
 
 # ## Experiment 1a
@@ -256,6 +263,10 @@ def extract_info_from_path(file_path):
     
     return None, None, None, None
 
+
+# In[ ]:
+
+
 def get_scores_from_df(df, input_source, layer, llm, prompt_type):
     if not all([df is not None, input_source, layer is not None, llm, prompt_type]):
         return None, None
@@ -275,6 +286,10 @@ def get_scores_from_df(df, input_source, layer, llm, prompt_type):
         return fallback_rows['cosine_similarity'].mean(), fallback_rows['adherence_score'].mean()
     
     return None, None
+
+
+# In[ ]:
+
 
 def analyze_free_text_questions():
     base_path = os.path.join(BASE_PROJECT_PATH, "20_experiments/10_exp1")
@@ -323,6 +338,10 @@ def analyze_free_text_questions():
     
     return free_text_data, total_counts
 
+
+# In[ ]:
+
+
 free_text_data, total_counts = analyze_free_text_questions()
 free_text_df = pd.DataFrame(free_text_data)
 
@@ -347,6 +366,10 @@ if sum(total_counts.values()) > 0:
 print(f"\n" + "=" * 80)
 print("INDIVIDUAL FREE TEXT QUESTIONS:")
 print("=" * 80)
+
+
+# In[ ]:
+
 
 for i, item in enumerate(sorted(free_text_data, key=lambda x: (x['experiment'], x['path'])), 1):
     print(f"\n{i}. {item['experiment']} - {item['input_source']} | Layer {item['layer']} | {item['llm']} | {item['prompt_type']}")
@@ -413,6 +436,10 @@ def create_annotation_matrix(mean_df, std_df):
                 annot.iloc[i, j] = f"{mean_val:.2f}"
     return annot
 
+
+# In[ ]:
+
+
 def apply_label_mappings(df):
     mappings = {
         'anthropic': 'Anthropic', 'openai': 'OpenAI', 'google': 'Google', 'deepseek': 'DeepSeek',
@@ -425,6 +452,10 @@ def apply_label_mappings(df):
     if hasattr(df, 'columns'):
         df.columns = df.columns.map(lambda x: mappings.get(x, x))
     return df
+
+
+# In[ ]:
+
 
 def create_dual_heatmap(cosine_pivot, adherence_pivot, title_base, exp_label):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
