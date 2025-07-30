@@ -20,8 +20,7 @@ Where to get the keys:
 
 -   [x] insights rausschreiben bei exp2
 -   [ ] exp1 mixed analysis complications formulieren
--   [ ] musterfragen finden bei exp2
--   [ ] diese auch einbauen
+-   [ ] musterfragen einbauen
 
 ---
 
