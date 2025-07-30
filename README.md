@@ -19,18 +19,16 @@ Where to get the keys:
 ## Todo
 
 -   [x] insights rausschreiben bei exp2
--   [ ] Mixed analysis complications formulieren
--   [ ] weitere musterfragen einbauen (supervisor 1a bad question, 1a NaN question)
--   [ ] mf finden bei exp2
--   [ ] complications in exp2 rausschreiben
--   [ ] Continue refining Eval chapter
+-   [ ] exp1 mixed analysis complications formulieren
+-   [ ] musterfragen finden bei exp2
+-   [ ] diese auch einbauen
 
 ---
 
 ## License
 
-The source code of this project is released under the MIT License. A copy of the license is available in the `LICENSE` file in the root directory of this repository.
+This project is released under the MIT License. A copy of the license is available in the `LICENSE` file in the root directory of this repository.
 
 This project utilizes diverse Python libraries. A comprehensive list of these dependencies and their respective licenses is provided in the `PYTHON_LICENSES.md` file.
 
-The embedding model "T-Systems-onsite/cross-en-de-roberta-sentence-transformer" for the semantic similarity calculation used in this research is also distributed under the MIT License. For detailed information regarding its license terms, please refer to the official license file, which can be found [on the Hugging Face model hub](https://huggingface.co/T-Systems-onsite/cross-en-de-roberta-sentence-transformer/blob/main/LICENSE).
+The used embedding model `"T-Systems-onsite/cross-en-de-roberta-sentence-transformer"` (Copyright (c) 2020 Philip May, T-Systems on site services GmbH) for the semantic similarity calculation used in this research is also distributed under the MIT License. For detailed information regarding its license terms, please refer to the official license file, which can be found [on the Hugging Face model hub](https://huggingface.co/T-Systems-onsite/cross-en-de-roberta-sentence-transformer/blob/main/LICENSE).
