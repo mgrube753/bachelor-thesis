@@ -535,7 +535,7 @@ There are several key insights and differences compared to the supervisor's eval
 
 Compared to the supervisor, who rated exclusively with the given values (0, 5, 10), the staff members used the full scale, rating all scores between 0 and 10. Here, Google and Anthropic were rated significantly higher for the complex prompt than by the supervisor (rated with 2.5), while OpenAI and DeepSeek still remained to be at the lower end, but with values $\geq 2.5$ instead. This stands in contrast to the quantitative analysis, where OpenAI and DeepSeek had shown better manipulation detection, based on rating every question instead of a sampled question set. Overall, the sample size remained small -- while the \textit{Adherence Score} of the quantitative analysis remains suitable --, but the qualitative evaluations still underscore the importance of prompt design. While the complex prompt improves \textit{Manipulation Handling} in Experiment 1b -- while being problematic in Experiment 1a via \textit{Correctness} --, the models still struggle to reliably identify and address manipulated content. 
 
-The differences between the supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling}, as implemented in the other criteria. This would have been better with the \textit{Correctness} criterion in Experiment 1a as well. Fortunately, the inter-rater agreement analysis Table \bfref{tab:iaa-staff-1b} illustrates a better agreement, compared to the previous sub-experiment. The Fleiss' $\kappa$ value between the staff members is 0.364, indicating a fair agreement among the raters. 
+The differences between the supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling}, as implemented in the other criteria. This would have been better with the \textit{Correctness} criterion in Experiment 1a as well. Unfortunately, the inter-rater agreement analysis Table \bfref{tab:iaa-staff-1b} also illustrates an unsatisfying agreement, compared to the previous sub-experiment. The Fleiss' $\kappa$ value between the staff members is 0.014, indicating just a slight agreement among these raters. This had happened because the staff members used the full range of scores instead of the desired ones, but overall, these ratings still present valuable information.
 
 \begin{table}[H]
    \centering
@@ -545,7 +545,7 @@ The differences between the supervisor and staff ratings also illustrate the nee
         \toprule
         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Manipulation Handling & 0.364 & 16 & 4 \\
+        Manipulation Handling & 0.014 & 16 & 4 \\
         \bottomrule
    \end{tabular}
 \end{table}
