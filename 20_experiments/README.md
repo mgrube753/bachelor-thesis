@@ -18,10 +18,10 @@ This directory contains the experimental framework for evaluating Large Language
 
 - **[`30_input_sources/`](30_input_sources/)** - Source materials (script, transcript, Tanenbaum excerpts)
 - **[`40_prompts/`](40_prompts/)** - Prompt templates for generation and evaluation
-- **[`50_src/`](50_src/)** - Python implementation and analysis scripts
-- **[`60_analyses/`](60_analyses/)** - Obtained analyses data for evaluation purposes
+- **[`50_src/`](50_src/)** - Python implementation and evaluation notebooks
+- **[`60_analyses/`](60_analyses/)** - Obtained analyses data used for evaluation purposes
 - **[`70_samples/`](70_samples/)** - Representative question samples
-- **[`80_samples_renamed/`](80_samples_renamed/)** - Processed question collections
+- **[`80_samples_renamed/`](80_samples_renamed/)** - Processed question collections used for manual review
 
 ## Experimental Design
 
@@ -36,7 +36,7 @@ This directory contains the experimental framework for evaluating Large Language
 
 - **Script**: Lecture content from "Referenzarchitekturen" (Prof. Cap)
 - **Transcript**: Audio-to-text conversion of lecture content
-- **Tanenbaum**: Excerpts from "Computer Networks" textbook
+- **Tanenbaum**: Excerpts from "Computer Networks" textbook by Andrew S. Tanenbaum
 - **Manipulated Script**: Intentionally altered lecture content for error detection testing
 
 ## Implementation Framework
@@ -69,9 +69,7 @@ This directory contains the experimental framework for evaluating Large Language
 
 ## Bloom's Taxonomy Integration
 
-The experiments utilize a comprehensive German-language Bloom's framework:
-
-### Cognitive Levels ([`40_prompts/experiment/bloom.md`](40_prompts/experiment/bloom.md))
+The experiments utilize a comprehensive German-language Bloom's framework [`40_prompts/experiment/bloom.md`](40_prompts/experiment/bloom.md):
 
 1. **Remembering**
 2. **Understanding**
@@ -89,30 +87,22 @@ Each level includes specific German descriptions and action verbs for each Bloom
 ### Basic Execution
 
 ```bash
-# (Optional: perform first truncation check for source materials)
-python check_truncation.py
-
-# Generate questions
-python main.py
-
-# Perform second truncation check which covers both -- source materials and questions
-python check_truncation.py
-
-# Run quantitative analysis
-python analysis_quantitative.py
-
-# (Process qualitative assessments)
-(python analysis_qualitative.py)
-
-# Generate sampled question sets for manual review
-python sampling.py
+python check_truncation.py        # Optional: Perform first truncation check for source materials
+python main.py                    # Generate questions
+python check_truncation.py        # Re-check after generating questions to check for truncation
+python analysis_quantitative.py   # Quantitative analysis
+python sampling.py                # Sample questions for manual review
 ```
+
+The script `analysis_qualitative.py`, which would have been LLM-based, was not used as the qualitative analysis was performed manually by experts instead.
 
 Whether all ratings are available, run the Jupyter notebooks:
 
 - [`50_src/evaluation1_quan.ipynb`](50_src/evaluation1_quan.ipynb) - Quantitative analysis of Experiment 1
 - [`50_src/evaluation1_qual.ipynb`](50_src/evaluation1_qual.ipynb) - Qualitative analysis of Experiment 1
 - [`50_src/evaluation2_qual.ipynb`](50_src/evaluation2_qual.ipynb) - Qualitative analysis of Experiment 2
+
+Then, many of the notebooks' insights are available in [`../40_evaluation/`](../40_evaluation/).
 
 ### Configuration Requirements
 

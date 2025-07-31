@@ -1,12 +1,28 @@
 # Prior Experimental Run
 
-This directory contains the prior experimental run of the thesis project.
+This directory contains the initial experimental run for the thesis project.
 
-## Why was a new run needed?
+## Purpose
 
-This experimental run of the directory was archived, since the output questions in Experiment 1 were not satisfactory. The questions' output formats differed a lot, since in the common prompt, in contrast to the complex prompt, the question output format was not specified. In the expert-based evaluation -- and even in an LLM-based evaluation -- this could have led to a bias in the evaluation, since the questions were not that well comparable.
+The results from this run were archived because the output questions in Experiment 1 lacked consistency. The common prompt did not specify a question format, leading to significant variation in outputs. This inconsistency could introduce bias in both expert and LLM-based evaluations, as questions were not directly comparable.
 
-Therefore, a new run was needed to ensure that the questions were more consistent in their output format. This was achieved by refining all prompts for all experiments:
+## Rationale for Rerun
 
-- Experiments 1a and 1b: Using the same common and complex prompts for both subexperiments
-- Experiments 2a, 2b and 2c: Using a certain prompt for each subexperiment, which were based on the properties of the complex prompt of Experiment 1.
+A new experimental run was conducted to ensure uniformity in question formats. This was achieved by refining all prompts for each experiment, as visible in [`../20_experiments/40_prompts/`](../20_experiments/40_prompts/).
+
+## Structure
+
+The structure of this directory is minimal as follows:
+
+- `10_exp1/`: Experiment 1 outputs (content and error runs)
+- `20_exp2/`: Experiment 2 outputs (type, Bloom, and combined runs)
+- `40_prompts/`: Prompt templates used in experiments
+- `70_samples/`: Sample questions and data
+- `80_questions_renamed/`: Renamed question sets for evaluation
+- `for_eval/`: Materials prepared for evaluation
+
+## Additional Notes
+
+- Quantitative analysis was done by Anthropic Claude 3.7 Sonnet
+- Qualitative analysis was done by Claude + OpenAI o3
+- No temperature scores were changed at all
