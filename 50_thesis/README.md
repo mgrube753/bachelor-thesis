@@ -1,21 +1,25 @@
 # Thesis
 
-Here, the complete LaTeX source code for the bachelor thesis: "Generating Educational Questions using Large Language Models: An Evaluation of Quality and Alignment with Pedagogical Principles".
+This directory contains the complete LaTeX source and compiled documents for the bachelor thesis:  
+**"Generating Educational Questions using Large Language Models: An Evaluation of Quality and Alignment with Pedagogical Principles"**
 
-## Structure
+## Directory Structure
 
-### Thesis Document
-- **[`thesis/`](thesis/)** - Primary thesis content and compilation environment
-  - [`content/thesis.tex`](thesis/content/thesis.tex) - Main LaTeX document
-  - [`content/thesis.pdf`](thesis/content/thesis.pdf) - Compiled thesis document
-  - [`content/secs/`](thesis/content/secs/) - Individual thesis sections
-  - [`bibs/`](thesis/bibs/) - Bibliography files (.bib format)
-  - [`extra/`](thesis/extra/) - LaTeX configuration and additional materials
+- **[`00_titlepage/`](00_titlepage/)**  
+  Separate compilation for the official title page, including images and auxiliary files.
 
-### Title Page Generation
-- **[`titlepage/`](titlepage/)** - Separate title page compilation
-  - [`titlepage.tex`](titlepage/titlepage.tex) - Title page source
-  - [`titlepage.pdf`](titlepage/titlepage.pdf) - Compiled title page
+- **[`10_thesis/`](10_thesis/)**  
+  Main thesis content, organized as follows:
+  - **[`00_bibs/`](10_thesis/00_bibs/)**  
+    - `Positive.bib` – Primary research papers  
+    - `Extras.bib` – Supporting literature cited in the positive papers 
+    - `Eigenes.bib` – Independently discovered resources
+  - **[`10_extra/`](10_thesis/10_extra/)**  
+    - LaTeX configuration, abbreviations, figures, and tables
+  - **[`20_content/`](10_thesis/20_content/)**  
+    - `thesis.tex` – Main LaTeX source  
+    - `thesis.pdf` – Compiled thesis  
+    - `secs/` – Individual chapter and section files
 
 ## Thesis Structure
 
@@ -42,11 +46,13 @@ The following research questions guide the thesis:
 ## Bibliography Organization
 
 ### Literature Sources
-- **[`bibs/Positive.bib`](thesis/bibs/Positive.bib)** - Primary research papers
-- **[`bibs/Extras.bib`](thesis/bibs/Extras.bib)** - Supporting literature cited in the positive papers
-- **[`bibs/Eigenes.bib`](thesis/bibs/Eigenes.bib)** - Self-discovered resources and recent developments
+
+- **[`00_bibs/Positive.bib`](10_thesis/00_bibs/Positive.bib)** - Primary research papers
+- **[`00_bibs/Extras.bib`](10_thesis/00_bibs/Extras.bib)** - Supporting literature cited in the positive papers
+- **[`00_bibs/Eigenes.bib`](10_thesis/00_bibs/Eigenes.bib)** - Self-discovered resources and recent developments
 
 ### Key Research Areas
+
 - Large Language Model architectures and capabilities
 - Automated question generation systems and methodologies
 - Bloom's Taxonomy integration in educational technology
@@ -56,12 +62,14 @@ The following research questions guide the thesis:
 The thesis incorporates comprehensive technical documentation:
 
 ### Source Code Integration
+
 - **API Configuration**: Multi-provider LLM integration (OpenAI, Anthropic, Google, DeepSeek)
 - **Prompt Engineering**: Systematic template-based prompts
 - **Data Processing**: Automated experimental pipeline and result synthesis
 - **Evaluation Framework**: Assessment combining automated metrics and expert evaluation
 
 ### Appendices Structure
+
 - **Source Code Listings** - Core experimental implementation
 - **Prompt Templates** - Complete experimental and evaluation prompts
 - **Source Materials** - ISO-OSI layer content in multiple formats
@@ -71,7 +79,7 @@ The thesis incorporates comprehensive technical documentation:
 
 To compile the thesis, follow these steps:
 
-1. **Compile Title Page**: Navigate to [`titlepage/`](titlepage/) and compile `titlepage.tex`
-2. **Compile Main Document**: Navigate to [`thesis/content/`](thesis/content/) and compile `thesis.tex`
+1. **Compile Title Page**: Navigate to [`00_titlepage/`](00_titlepage/) and compile `titlepage.tex`
+2. **Compile Main Document**: Navigate to [`10_thesis/20_content/`](10_thesis/20_content/) and compile `thesis.tex`
 
-To properly compile the thesis, make sure to use e.g. `latexmk` or a similar tool that handles multiple passes for references and citations.
+Use `latexmk` or a similar tool to ensure proper handling of references and citations.
