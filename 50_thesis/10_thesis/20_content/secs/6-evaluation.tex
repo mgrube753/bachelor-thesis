@@ -275,7 +275,7 @@ Overall, the supervisor-based evaluation does not provide significant insights i
 
 \object{Supervisor-based Analysis Complications} During this evaluation, several complications occurred. Firstly, certain questions could not be fully assessed for specific criteria, because these questions were not formulated properly, leading to NaN values, such as Appendix \bfref{lst:1a-supervisor-bad-nan-example}. This issue was present in both Experiments 1a and 1b, possibly affecting the calculations for the evaluation.
 
-A closer examination of the questions revealed issues for the models. Regarding Anthropic, several questions were problematic, especially in terms of \textit{Challenging}, \textit{Value} and \textit{Correctness}, often coupled with the complex prompt used. In some cases, answer options were incorrect or did not align with the expected content. DeepSeek frequently mentioned \enquote{according to the text} in their questions, which also was a common issue at Google's questions. These were often formulated far too broadly at Google, with some containing answer options which were factually incorrect, coupled with unclear phrasing. OpenAI, in contrast, showed occasionally the \enquote{according to the text} phrasing, but overall, the questions were fine but less challenging, comparable to DeepSeek's questions.
+A closer examination of the questions revealed issues for the models. Regarding Anthropic, several questions were problematic, especially in terms of \textit{Challenging}, \textit{Value} and \textit{Correctness}, often coupled with the complex prompt used. In some cases, answer options were incorrect or did not align with the expected content. DeepSeek frequently mentioned \enquote{according to the text} in their questions, which also was a common issue at Google's questions. These were often formulated far too broadly at Google, with some containing answer options which were factually incorrect, coupled with unclear phrasing. OpenAI, in contrast, showed occasionally the \enquote{according to the text} phrasing, but overall, the questions were fine but less challenging, e.g.\ comparable to DeepSeek's questions.
 
 Since criteria like \textit{Answerability} could not be reliably applied to the manipulated content in Experiment 1b, the evaluation was limited to the \textit{Manipulation Handling} criterion. This was done because the rubric's criteria were comprehensively assessed in Experiment 1a, and the manipulation handling was the only criterion that could be reliably applied to the manipulated lecture script.
 
@@ -306,19 +306,6 @@ Since criteria like \textit{Answerability} could not be reliably applied to the 
 In this sub-experiment, four staff members were asked to evaluate the same question set, as the supervisor has done before. This paragraph discusses the staff members' outcomes primarily including the similarities and differences to the supervisor's results.
 
 \object{Experiment 1a -- Content Fidelity} The staff members' evaluation revealed several notable similarities and differences compared to the supervisor's assessment. As shown in Figure \bfref{fig:exp1a-llm-analysis-staff}, the overall trends remained consistent, but the staff members were more stringent in their scoring.
-
-% Regarding \textit{Relevance}, all models performed similarly well with means ranging from 8.79 (Anthropic) to 9.12 (OpenAI), compared to the supervisor's higher ratings where OpenAI achieved a perfect mean of 10. The staff evaluation showed broader score distributions, particularly for OpenAI and DeepSeek, despite maintaining similar median values of 10 across all models.
-
-% For \textit{Clarity}, the staff members confirmed the supervisor's findings that DeepSeek (mean of 8.1) and OpenAI (mean of 8.92) were the top performers -- but providing a broader range of values for both models --, though with notably lower means than the supervisor's high scores. Anthropic (mean of 7.04) and Google (mean of 7.1) again showed more inconsistent performance with wider value ranges, similar to the supervisor's observation of generating less clear questions.
-
-% The \textit{Answerability} criterion followed a similar pattern like \textit{Clarity} -- also to be seen in the supervisor's results--, with OpenAI (mean of 8.6) and DeepSeek (mean of 8.38) leading, though the staff members identified more outliers and variability in these models' performance compared to the supervisor's evaluation. The questions by Anthropic (mean of 7.71) and Google (mean of 7.33) were again rated lower, with more variability in their scores, indicating that these models struggled more with generating answerable questions based on the given source material.
-
-% As depicted in the supervisor's evaluation, the \textit{Challenging} criterion remained the lowest-scoring criterion across all models, with means below 5 for all \ac{llms}. DeepSeek (2.92) and OpenAI (3.35) scored lowest again, while Anthropic (4.65) and Google (4.81) were rated as slightly more challenging, but not as significantly as the supervisor's evaluation. Especially the ratings for Anthropic and Google were different from the supervisor's, showing that the staff members found these models' questions less challenging than the supervisor did.
-
-% The linguistic complexity and precision of the questions, measured via \textit{Language}, has shown that OpenAI and DeepSeek (8.6) maintained their advantage, though the staff members rated lower scores than the supervisor's perfect ratings for both models. Anthropic and Google were pretty similar to the ratings of the supervisor's evaluation. What stands out is that the staff members rated both models as less precise than the supervisor did, with means of 7.4 and 6.96, respectively. Contrary, the supervisor rated these models higher, with means of 8.25 and 7.67 instead.
-
-% ----
-
 
 A key similarity was the identification of OpenAI and DeepSeek as the leading models in most criteria such as \textit{Clarity}, \textit{Answerability}, and \textit{Language}. However, where the supervisor saw a clear advantage for OpenAI (e.g. mean of 10 in \textit{Relevance}), the staff rated the models closer together, with OpenAI (9.12) only slightly ahead of the others. This suggests that the performance gap between the models is mainly perceived as smaller by the staff.
 
@@ -565,22 +552,32 @@ This is a significant improvement compared to the previous sub-experiment, but t
    \end{tabular}
 \end{table}
 
-% \tcr{Auch ohne Thomas Mundt sieht man, dass komplexer Prompt hier hoehere ergebnisse liefert, jedoch sample size gering, und rater haben zwischen den gegebenen werten 0 5 und 10 bewertet, was das agreement stets niedrig macht} 
+\object{Mixed Analysis Complications} The qualitative evaluation revealed complications affecting both supervisor and staff assessments. Firstly, several questions were only partially or not at all related to the provided source material, limiting answerability and relevance. 
 
-% bis dato erkennbar, dass die komplexen prompts besser sind als die common prompts, was auch bei den staff members besonders erkennbar ist. grundsaetzlich hoeher bewertet als supervisor... google am besten, dann anthropic, dann openai und deepseek am schlechtesten. was aber in quantitative nicht ganz so rüberkam (deepseek und v.a.\ openai besser). somit ist dies grundsaetzlich durch die kleine samplingmenge nicht genuegend geklaert. aber das auffordern, den text zu studieren etc triggert die LLMs das besser zu erkennen (via complex prompt).
+Questions containing unnecessary negations in them were frequently criticized for reducing clarity. The evaluation was further complicated by overly long or linguistically complex formulations, especially from Google and Anthropic using the complex prompt. Both groups often noted the use of generic phrases such as \enquote{based on the text}, which weakened the questions' educational value.
 
-% \tcr{openai hat werte >0 bei complex prompt nun (bei supervisor complex prompt openai einmal 0 und einmal war es NaN), google explizit bestes modell, auch punkte bei common prompt 1.33 aber 9.0 bei complex viel besser; anthropic 0 bei common aber 7 bei complex, openai 4.83 complex aber 0 common; deepseek schlechtestes via 3.5 complex und 1.17 common prompt}
+Factually incorrect or invented answer options -- which are not based on the source text -- were identified in multiple cases, making correctness difficult to assess, often seen at Google and Anthropic. Several questions were rated as very easy or trivial by both groups, particularly from OpenAI and DeepSeek, which is visible in the \textit{Challenging} criterion.
 
-% insights daraus: der komplexe prompt hat explizit in exp1a die llms ausgebremst in qualitaet (ausser challenging), aber in 1b ist es so, dass der komplexe prompt die manipulationen besser erkennt. verzerrte ergebnisse zwischen supervisor und staff, da supervisor 0 5 10, und staff werte ebenso dazwischen... es gibt also fälle, in denen die llms manipulationen erkennen, ohne explizit zu sagen "es gibt da welche"... aber grundsaetzlich wurde eher dem manipulierten content gefolgt.
+Questions based on the common prompt were often criticized for being too simple or not sufficiently challenging, while the complex prompt questions -- overly more challenging -- were often too convoluted or complex, leading to low values in e.g.\ \textit{Clarity} and \textit{Language}. Instead, the common prompt questions overall had higher ratings in both evaluations.
 
-\object{Mixed Analysis Complications} \tcr{staff also noted that many questions were \enquote{based on the text}, mostly google, then deepseek, then anthropic, and openai with 1 entry} \\
-\tcr{supervisor konnte fragen manchmal nicht bewerten, die iuk bewerter haben aber immer ein rating gegeben, folgert aber nicht, dass alle fragen bei iuk gut waren} \\
-\tcr{}
-\tcr{negation in questions unnecessary} \\
-\tcr{supervisor could not evaluate a question based on correctness, since the answers were not part of the text and correctness of answers were controversial, happens in some cases} \\
-\tcr{some questions (partially) not related to source text} \\
-\tcr{some questions very easy to answer, visible in challenging at openai and deepseek.} \\
-\tcr{googles questions are often very long, especially in complex prompt, anthropic sometimes as well, with nested questions}
+The strong preference of OpenAI in the supervisor's evaluation was not as pronounced in the staff members' ratings, but still visible. The other models struggled more with achieving high scores in the criteria, especially in \textit{Clarity}, \textit{Answerability}, and \textit{Correctness}.
+
+The evaluation rubric itself was not always clear for all criteria, resulting in inconsistent ratings and low inter-rater agreement among the groups. Overall, the staff members' ratings were more diverse, often using the full scale (0-10) instead of the discrete values (e.g.\ 0, 5, 10 at \textit{Correctness} and \textit{Manipulation Handling}) used by the supervisor. Moreover, the staff members rated the questions higher at \textit{Manipulation Handling} than the supervisor, indicating a different understanding of the criterion but still providing valuable insights based on more perspectives. In addition, the sampled question set in Experiment 1b was smaller than in Experiment 1a, which limits the representativeness of the results. At least, the staff-based qualitative analysis provided a broader perspective on the \ac{llms}' performance in handling errors, where the complex prompt improved \textit{Manipulation Handling} in Experiment 1b, while being problematic in Experiment 1a via \textit{Correctness}. This was not significantly visible in the supervisor's evaluation, but the quantitative analysis revealed similar trends according to the difference in prompt type performance with the \textit{Adherence Score}.
+
+% \tcr{staff also noted that many questions were \enquote{based on the text}, mostly google, then deepseek, then anthropic, and openai with 1 entry} \\
+% \tcr{supervisor konnte fragen manchmal nicht bewerten, die iuk bewerter haben aber immer ein rating gegeben, folgert aber nicht, dass alle fragen bei iuk gut waren} \\
+% \tcr{negations in questions gewesen, unnecessary} \\
+% \tcr{supervisor could not evaluate a question based on correctness, since the answers were not part of the given text and correctness of answers were controversial, happens in some cases} \\
+% \tcr{some questions (partially) not related to source text here as well} \\
+% \tcr{some questions very easy to answer, visible in challenging at openai and deepseek.} \\
+% \tcr{googles questions are often very long, especially in complex prompt, anthropic sometimes as well, with nested questions. fiel supervisor auch auf}
+% \tcr{staff hat zwischenwerte benutzt und somit das agreement stark verringert.}
+% \tcr{staff members rated manipulation handling differently, supervisor was lower scoring.}
+% \tcr{frage 35 google ausgedachte antworten, statt auf text bezogen}
+% \tcr{anthropic sehr verschachtelt, teilweise inkorrekt, supervisor konnte diese fragen nicht bewerten mittels Correctness}
+
+% \tcr{1b: auch hier struggle der modelle, aber bessere ratings als supervisor}
+% \tcr{frage 16 eher unverständlich für die Bewerter auch hier}
 
 % expert2 1a: frage 14 fragt nach folieninhalt, ebenso 19, 21, 22, 30, 31
 % verneinung in fragestellung bei fragen 8 und 25
@@ -623,7 +620,7 @@ This is a significant improvement compared to the previous sub-experiment, but t
 % -----
 % expert5 1b: frage 7 halbwegs hinbekommen, antwortmoeglichkeiten teils auf manipulation basierend, teils nicht, frage 16 auch hier nicht verständlich fuer bewerter
 
-\tcr{stichprobe bei exp1b relativ klein (gleiches sampling, aber 1/3 fragen da 1 source), um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
+% \tcr{stichprobe bei exp1b relativ klein (gleiches sampling, aber 1/3 fragen da 1 source), um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
 
 \vp
 
@@ -636,7 +633,18 @@ The second experiment addressed evaluating the relationship between question for
 
 \paragraph*{Qualitative Analysis -- Student-based} 
 
-Exp2 rubric with sampled question evaluation via students from the secondary supervisor, fleiss kappa here as well, also with tables and plots
+A group of three students, supervised by the secondary supervisor, evaluated the questions generated in Experiment 2. The students were asked to rate the questions based on the known criteria \textit{Relevance}, \textit{Clarity}, \textit{Answerability}, \textit{Challenging}, \textit{Value} and \textit{Language}. Additionally, the \textit{Bloom's Level} was assessed. So, the evaluation process involved a detailed rubric, and the students' ratings were analyzed using Fleiss' Kappa again to assess inter-rater reliability.
+
+Regarding Figure \bfref{fig:exp2-student-evaluation-metrics}, some key insights can be drawn from the student-based evaluation. 
+relevance todo... Focusing on the \textit{Clarity} criterion, the models commonly achieved high scores, with all models showing a median of 10.0. The means were around 9, except for OpenAI, which had a mean of 8.67, but overall, the models generated logically clear questions. answerability todo... The \textit{Challenging} criterion presents medians of 8 for every model. Overall, more questions by Google and OpenAI were rated as more challenging, resulting in means of 7.27 and 7.47, respectively, while DeepSeek and Anthropic were rated lower with means of 6.8 and 6.53.
+
+The results for the value look pretty similar for each model, but the medians were slightly higher for DeepSeek and OpenAI (9.0) than for Google and Anthropic (8.0). Overall, the questions were rated as valuable, with minor outliers at DeepSeek and Google. Resulting from this, the means still remained high, with OpenAI achieving the highest mean of 8.73, followed by Anthropic (8.67), DeepSeek (8.53), and Google (8.33).
+
+Furthermore, the \textit{Language} criterion looks similar across all models, with means around 8.37 (Google) to 8.73 (DeepSeek). In contrast, the \textit{Bloom's Level} shows a more diverse picture, where Google and OpenAI overly achieved the highest medians of 10 and 9.25, respectively, while DeepSeek and Anthropic were rated lower with medians of 6.0 and 7.0. This indicates that more questions by Anthropic and DeepSeek were less rated at Bloom's revised Taxonomy or less aligned with the given Bloom's level, if given. 
+
+total score... todo
+
+\pagebreak
 
 \begin{figure}[H]
    \centering
@@ -653,6 +661,19 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
 % bloom score: beschreibt sowohl die performance ohne bloom-level-angabe als auch bloom adherence je nach subexperiment; da waren anthropic (mean 7.15, median 7, kleinste box) und google (mean 7.32, median 10, box ok) am besten, openai (mean 6.47, median 9.25) auch ganz gut, deepseeks median (6.0) sehr tief, mean (6.3), ist so naja; alle boxen inklusive whisker gehen auch von 0-10
 % total score: ... #TODO
 
+\pagebreak
+
+Regarding each sub-experiment instead, the results are shown in Figure \bfref{fig:exp2-student-evaluation-experiment}. Here, the three sub-experiments are compared, where Experiment 2a focused on solely specifying the question type -- Multiple-Choice or Open-Ended -- (Type Only), Experiment 2b focused on a specific Bloom level for each question (Bloom Only), and Experiment 2c combined both aspects (Type + Bloom). relevance todo... The \textit{Clarity} criterion shows a trend where the prompt from Experiment 2c achieved the highest mean of 9.29, followed by Experiment 2a with a mean of 8.79, and Experiment 2b with 8.43, which still indicate that most of the questions were clear and understandable at first glance.
+
+answerability todo... The \textit{Challenging} criterion shows an interesting trend, where Experiment 2b achieved the best results with a mean of 8.42, while Experiment 2a is following close behind with slightly shifted values and a mean of 7.17. The questions in Experiment 2c were rated as the least challenging with a mean of 6.17 instead. The questions' \textit{Value} was rated overly high across all sub-experiments, but the ones from Type Only (Experiment 2a) have a median of 8, while the other two sub-experiments achieved a median of 9. Overall, Experiment 2c had some outliers to the bottom, but overall, the means were still high, with 8.58 (Experiment 2a), 8.75 (Experiment 2b), and 8.46 (Experiment 2c).
+
+In addition, the \textit{Language} criterion was rated overall best in Experiment 2c with a mean of 8.71, followed by Experiment 2a with a mean of 8.44, and Experiment 2b with a mean of 8.33. Type Only (Experiment 2a) and Type + Bloom (Experiment 2c) achieved the highest medians of 10, while Experiment 2b had a median of 8.5 instead, which indicates that the questions were overall well-formed and linguistically precise, but the questions in Experiment 2b were slightly less linguistically valuable. Also, Type Only (Experiment 2a) share low scoring with Bloom Only (Experiment 2b), where the lowest scores are visible at 3, and Type + Bloom (Experiment 2c) only goes down to 5 instead.
+
+The \textit{Bloom Score} delivers a more interesting picture, where Experiment 2a looks less promising, at first glance. In this sub-experiment, the mean is 4.0, showing that the questions are situated between \textit{Understanding} (3 points) and \textit{Applying} (4.5 points), since no Bloom level was specified in the prompt. This offers an acceptable result, but the median is only 3.0 instead. In contrast, the values of Experiment 2b and 2c were situated significantly higher, with medians of 10 and means of 8.75 and 8.65, respectively. Overall, the Bloom levels were well adhered to (resulting in 10 points), with only a few outliers both sub-experiments, illustrated via one-off ratings (5 points) or a rated Bloom level distance of $>1$ (0 points).
+
+total score todo...
+
+\pagebreak
 
 \begin{figure}[H]
    \centering
@@ -668,6 +689,10 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
 % language: an sich bei TB (mean 8.71, median 10) am besten, kürzester plot auch; dann TO (mean 8.44, median 10) und dann BO (mean 8.33, median 8.5); TO und BO gehen bis 3 runter, TB nur bis 5
 % bloom score: hier wird es spannend, grosses spektrum bei TO, aber an sich der mean viel geringer (4.0, median dazu bei 3). also ohne bloom constraints per median bei applying und per mean bei analyzing; BO und TB leicht von ausreissern betroffen, aber im grunde viel adherence zu gegebenem bloom level (mediane 10), mean bei BO 8.75 und knapp dahinter TB (8.65); Bloom only ein ausreisser bei 0, durch entfernte adherence >1; bei type+bloom sowohl dies als auch off-by-one adherence (durch 5pkt sichtbar).
 % total score: ... #TODO
+
+\pagebreak
+
+Since the \textit{Bloom's Level} criterion is the most important one in this experiment, Table \bfref{tab:exp2-llm-experiment-bloomslevel} shows the means, standard deviations, and medians of the Bloom levels achieved by each model in each sub-experiment. Here, certain trends among the models are visible, where Anthropic and Google achieved the highest means in Experiment 2a (4.96 and 4.54) -- which is situated at the level \textit{Applying} (4.5 points) --, while DeepSeek and OpenAI were rated even lower (2.83 and 3.67), between \textit{Understanding} (3 points) and \textit{Applying} (4.5 points). In Experiment 2b, all models achieved the same mean of 8.33, except OpenAI, showing a perfect Bloom adherence with a mean of 10.0. Experiment 2c, combining both question type and Bloom level specification, shows that Google performed best with a mean of 9.58. Anthropic and DeepSeek follow with 8.75, while OpenAI is rated lowest with a mean of 7.50, still offering a good adherence to the Bloom level specification. The medians of Experiment 2b and 2c 10.0 for every model, also indicating that the questions were well aligned with the specified Bloom levels. Experiment 2a instead shows that the medians were lower -- as this sub-experiment did not specify a Bloom level --, where Anthropic shows the highest median of 7, which is situated at \textit{Analyzing} (7 points). In contrast, the other models' questions were less cognitively demanding, illustrated by the median of 3.0 for each \ac{llm}, which is situated at the Bloom level \textit{Understanding} (3 points).
 
 \begin{table}[htbp]
     \centering
@@ -687,10 +712,12 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
         \bottomrule
     \end{tabular}}
 \end{table}
-% problem in bewertung erkennbar nun: type-only zeigt bei bloom scoring stets die geringsten scores an
 % type-only: anthropic (mean 4.96, median 7.0), deepseek (2.83, 3.0), google (4.54, 3.0), openai (3.67, 3.0). anthropic und google besser!
 % betrachtung von bloom-only: mediane alle 10, anthropic deepseek und google alle mean 8.33, openai 10.0!
 % type+bloom: alle mediane 10, sonst aber openai am schwächsten jedoch (7.50 mean); anthropic und deepseek mit 8.75 und google am besten in adherence (9.58 mean), interessant
+
+Since both question types (Multiple-Choice and Open-Ended) were equally generated in Experiments 2a and 2c, Table \bfref{tab:exp2-questiontype-experiment-bloomslevel} shows the results for each question type. Overall, the Open-Ended questions were rated significantly higher than the Multiple-Choice questions in both sub-experiments. In Experiment 2a, Multiple-Choice achieved a mean of 2.42, while Open-Ended questions achieved a mean of 5.58 instead, which shows that questions of this type were more cognitively demanding -- between \textit{Applying} (4.5 points) and \textit{Analyzing} (7 points) --, while Multiple-Choice questions were rated between \textit{Remembering} (1.5 points) and \textit{Understanding} (3 points).
+Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the cognitive level itself. The Bloom adherence for Multiple-Choice questions were rated high with a mean of 7.92. The Open-Ended questions were rated even higher with a mean of 9.38, showing a very high adherence to the specified Bloom level overall. The medians in Experiment 2c were 10.0 for both question types, but in Experiment 2a, the medians were 2.25 for Multiple-Choice and 7.0 for Open-Ended questions, indicating that the Open-Ended questions were more cognitively demanding, while Multiple-Choice questions were less cognitively demanding and less aligned with given Bloom levels. 
 
 \begin{table}[htbp]
     \centering
@@ -732,6 +759,13 @@ Exp2 rubric with sampled question evaluation via students from the secondary sup
         \bottomrule
     \end{tabular}
 \end{table}
+% relevance: ... #TODO
+% clarity: -0.061, wenig agreement...
+% answerability: ... #TODO
+% challenging: 0.270, moderates agreement, koennte aber besser sein
+% value: -0.256, wenig agreement. sehr verschieden durch die studentin2
+% language: 0.016, wenig agreement, da studentin2 sehr viele 10 gegeben hat
+% bloom rating: 0.397, moderates agreement, leichte unterschiede bringen das ergebnis mit sich
 
 \object{Student-based Analysis Complications}
 % student1 exp2a: fragen 5 (schlecht bewertet),6,9,14 haben keinen richtigen operator; fragen 15 und 16 zu sehr verschachtelt durch mehrerer fragen in einer.
