@@ -5,6 +5,7 @@ This directory contains the experimental framework for evaluating Large Language
 ## Structure Overview
 
 ### Question Paths
+
 - **[`10_exp1/`](10_exp1/)** - Content Adherence & Error Detection
   - [`run_a_content/`](10_exp1/run_a_content/) - Questions from original source materials
   - [`run_b_error/`](10_exp1/run_b_error/) - Questions from manipulated source materials
@@ -14,6 +15,7 @@ This directory contains the experimental framework for evaluating Large Language
   - [`run_c_both/`](20_exp2/run_c_both/) - Combined format and taxonomy specification
 
 ### Supporting Infrastructure
+
 - **[`30_input_sources/`](30_input_sources/)** - Source materials (script, transcript, Tanenbaum excerpts)
 - **[`40_prompts/`](40_prompts/)** - Prompt templates for generation and evaluation
 - **[`50_src/`](50_src/)** - Python implementation and analysis scripts
@@ -24,12 +26,14 @@ This directory contains the experimental framework for evaluating Large Language
 ## Experimental Design
 
 ### Models Used
+
 - **Anthropic Claude 3.7 Sonnet**
 - **Google Gemini 2.5 Flash**
 - **OpenAI o3**
 - **DeepSeek R1**
 
 ### Source Materials
+
 - **Script**: Lecture content from "Referenzarchitekturen" (Prof. Cap)
 - **Transcript**: Audio-to-text conversion of lecture content
 - **Tanenbaum**: Excerpts from "Computer Networks" textbook
@@ -38,6 +42,7 @@ This directory contains the experimental framework for evaluating Large Language
 ## Implementation Framework
 
 ### Prompt Engineering
+
 - **[`40_prompts/experiment/`](40_prompts/experiment/)** - Generation templates
   - [`exp1_common_prompt.md`](40_prompts/experiment/exp1_common_prompt.md) - Basic question generation
   - [`exp1_complex_prompt.md`](40_prompts/experiment/exp1_complex_prompt.md) - Advanced cognitive prompting
@@ -46,6 +51,7 @@ This directory contains the experimental framework for evaluating Large Language
   - [`exp2_both.md`](40_prompts/experiment/exp2_both.md) - Combined specification
 
 ### Evaluation System
+
 - **[`40_prompts/evaluation/`](40_prompts/evaluation/)** - Assessment rubrics
   - [`exp_eval.md`](40_prompts/evaluation/exp_eval.md) - Expert evaluation template
   - [`exp1a_rubric.md`](40_prompts/evaluation/exp1a_rubric.md) - Content adherence criteria
@@ -53,6 +59,7 @@ This directory contains the experimental framework for evaluating Large Language
   - [`exp2_rubric.md`](40_prompts/evaluation/exp2_rubric.md) - Format-taxonomy assessment
 
 ### Automation Pipeline
+
 - **[`50_src/main.py`](50_src/main.py)** - Primary experiment orchestration
 - **[`50_src/question_generation.py`](50_src/question_generation.py)** - LLM question generation
 - **[`50_src/evaluation.py`](50_src/evaluation.py)** - Automated assessment execution
@@ -65,6 +72,7 @@ This directory contains the experimental framework for evaluating Large Language
 The experiments utilize a comprehensive German-language Bloom's framework:
 
 ### Cognitive Levels ([`40_prompts/experiment/bloom.md`](40_prompts/experiment/bloom.md))
+
 1. **Remembering**
 2. **Understanding**
 3. **Applying**
@@ -73,11 +81,13 @@ The experiments utilize a comprehensive German-language Bloom's framework:
 6. **Creating**
 
 ### Description & Verb Integration
+
 Each level includes specific German descriptions and action verbs for each Bloom level to construct the prompts, parsed via [`50_src/prompt_utils.py`](50_src/prompt_utils.py) for systematic question generation targeting specific cognitive demands.
 
 ## Usage Instructions
 
 ### Basic Execution
+
 ```bash
 # (Optional: perform first truncation check for source materials)
 python check_truncation.py
@@ -94,18 +104,18 @@ python analysis_quantitative.py
 # (Process qualitative assessments)
 (python analysis_qualitative.py)
 
-# After inserting all expert results in the csv files, calculate Fleiss' Kappa for inter-annotator agreement
-python agreement.py
-
-# Perform evaluation step for tables and figures
-python evaluation.py
+# Generate sampled question sets for manual review
+python sampling.py
 ```
 
+Whether all ratings are available, run the Jupyter notebooks:
+
+- [`50_src/evaluation1_quan.ipynb`](50_src/evaluation1_quan.ipynb) - Quantitative analysis of Experiment 1
+- [`50_src/evaluation1_qual.ipynb`](50_src/evaluation1_qual.ipynb) - Qualitative analysis of Experiment 1
+- [`50_src/evaluation2_qual.ipynb`](50_src/evaluation2_qual.ipynb) - Qualitative analysis of Experiment 2
+
 ### Configuration Requirements
+
 - **API Keys**: OpenAI, Anthropic, Google configured via environment variables
 - **Dependencies**: Listed in root [`requirements.txt`](../requirements.txt)
  **DeepSeek**: Manual prompting via web interface (R1 model access)
-
- #TODO more details needed
-
- #TODO think about 30_documentation as well so this readme and the documentation do not overlap much
