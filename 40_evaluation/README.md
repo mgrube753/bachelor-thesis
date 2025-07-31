@@ -1,18 +1,35 @@
-# Evaluation
+# Evaluation Results
 
-This directory is designated for evaluation results, illustrated as Tables and Plots, derived from the experimental data.
+This directory contains all results and visualizations derived from the experiments in [`20_experiments/`](../20_experiments/).
 
-## Purpose
+## Overview
 
-It is structured to facilitate the analysis and presentation of results from the experiments conducted in the [`20_experiments/`](../20_experiments/) directory, as depicted in the following structure:
+- **Quantitative & Qualitative Analysis**: CSV files (Expert ratings and processed automated metrics) in [`20_experiments/60_analyses/`](../20_experiments/60_analyses/) are used as input for evaluation.
+- **Tables & Figures**: Statistical summaries and plots are generated from these CSV files and presented here for reporting.
 
-- **Analysis Results** - Processed insights from qualitative expert ratings and quantitative analyses via [`20_experiments/50_src/analysis_quantitative.py`](../20_experiments/50_src/analysis_quantitative.py) were used, which are stored in [`20_experiments/60_analyses/`](../20_experiments/60_analyses/)
-results from CSV files located in [`20_experiments/60_analyses/`](../20_experiments/60_analyses/)
-- **Tables and Figures** - Based on the CSV files, statistical summaries and visualizations of experimental results are served here
+Note: It is best to view the notebooks to understand the context and methodology behind the files.
 
-## Integration with Experimental Framework
+- [`../20_experiments/50_src/evaluation1_quan.ipynb`](../20_experiments/50_src/evaluation1_quan.ipynb): Quantitative analysis of experiment 1.
+- [`../20_experiments/50_src/evaluation1_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of experiment 1.
+- [`../20_experiments/50_src/evaluation2_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of experiment 2.
 
-The evaluation results will be generated through:
+## Workflow Integration
 
-1. **Agreement Calculation** - Via [`20_experiments/50_src/agreement.py`](../20_experiments/50_src/agreement.py)
-2. **Automated Processing** - Via [`20_experiments/50_src/evaluation.ipynb`](../20_experiments/50_src/evaluation.ipynb)
+Results are produced and updated via:
+
+1. **Agreement Calculation**: [`agreement.py`](../20_experiments/50_src/agreement.py)
+2. **Analysis & Visualization**: [`evaluation.ipynb`](../20_experiments/50_src/evaluation.ipynb)
+
+## Directory Structure
+
+- [`exp1/qualitative/`](./exp1/qualitative/): Qualitative results for experiment 1 (expert ratings, rubrics, summaries)
+  - [`plots/`](./exp1/qualitative/plots/): Visualizations
+  - [`tables/`](./exp1/qualitative/tables/): Tabular summaries
+- [`exp1/quantitative/`](./exp1/quantitative/): Quantitative results for experiment 1 (metrics, CSVs, plots)
+  - [`plots/`](./exp1/quantitative/plots/): Visualizations
+  - [`tables/`](./exp1/quantitative/tables/): Tabular summaries
+- [`exp2/qualitative/`](./exp2/qualitative/): Qualitative results for experiment 2
+  - [`plots/`](./exp2/qualitative/plots/): Visualizations
+  - [`tables/`](./exp2/qualitative/tables/): Tabular summaries
+
+All outputs in this directory support the final reporting and

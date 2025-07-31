@@ -8,11 +8,11 @@ The script is organized into functions, each corresponding to a specific part of
 
 ### General Workflow
 
-1.  **Task Preparation**: For each experiment, a list of `tasks` is created. Each task is a tuple containing all the necessary information for a single LLM call (LLM name, client, prompt, output path, etc.).
-2.  **CSV Creation**: An initial CSV file is created for each experiment to log the parameters of each generated question. This file is later used for analysis and is stored in `20_experiments/60_analyses/csv/initial/`.
-3.  **Parallel Execution**: The `run_tasks` function uses a `ThreadPoolExecutor` to process the list of tasks concurrently.
-4.  **Progress Tracking**: A progress bar (`tqdm`) and custom counters provide real-time feedback on the generation process.
-5.  **Saving Results**: Each generated question is saved to a unique text file in a structured directory hierarchy.
+1. **Task Preparation**: For each experiment, a list of `tasks` is created. Each task is a tuple containing all the necessary information for a single LLM call (LLM name, client, prompt, output path, etc.).
+2. **CSV Creation**: An initial CSV file is created for each experiment to log the parameters of each generated question. This file is later used for analysis and is stored in `20_experiments/60_analyses/csv/initial/`.
+3. **Parallel Execution**: The `run_tasks` function uses a `ThreadPoolExecutor` to process the list of tasks concurrently.
+4. **Progress Tracking**: A progress bar (`tqdm`) and custom counters provide real-time feedback on the generation process. The counters are managed thread-safely using `llm_counters` and `counter_lock`, with helper functions for incrementing, resetting, and displaying progress (`increment_counter`, `reset_counters`, `get_progress`).
+5. **Saving Results**: Each generated question is saved to a unique text file in a structured directory hierarchy.
 
 ## Experiment Functions
 
@@ -29,6 +29,10 @@ The script is organized into functions, each corresponding to a specific part of
 - `generate_task(...)`: A single worker function that formats a prompt, sends it to the appropriate LLM, and saves the result. It includes special logic to skip API calls for `"deepseek"` and save an empty file instead.
 - `run_tasks(...)`: The multi-threading manager that executes all tasks for an experiment using a `ThreadPoolExecutor`.
 - `concatenate_all_script_layers(...)`: A utility function that reads and combines all text layers from the `script` source type into a single string.
+- **Progress Counter Functions**:
+  - `increment_counter(llm_name)`: Increments the count for each LLM in a thread-safe manner.
+  - `reset_counters()`: Resets all LLM counters before each experiment run.
+  - `get_progress()`: Returns a formatted string showing the current progress for each LLM.
 
 ## Dependencies
 
