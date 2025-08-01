@@ -18,9 +18,9 @@ Where to get the keys:
 
 ## Todo
 
--   [x] insights rausschreiben bei exp2
--   [ ] exp1 mixed analysis complications formulieren
--   [ ] musterfragen einbauen
+-   [ ] set up better texts for exp2 if all data is there
+-   [ ] + musterfragen einbauen exp2!
+-   [ ] alles nochmal durchgehen
 
 ---
 

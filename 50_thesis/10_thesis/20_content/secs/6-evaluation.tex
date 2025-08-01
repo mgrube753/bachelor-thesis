@@ -338,7 +338,7 @@ For \textit{Correctness}, the staff-based evaluation confirmed OpenAI's high per
 
 Overall, the \textit{Total Scores} revealed that while OpenAI (mean of 53.5) remained the top performer, but less pronounced compared to the supervisor's clear preference (62.5 vs. DeepSeek with 53.25). The results for the other models were more similar to each other, with means around 50/70 points. This is a contrast to the supervisor's evaluation, where Google especially was often rated lower. 
 
-Regarding the heatmaps in Figure \bfref{fig:exp1a-correctness-heatmaps-staff}, the \textit{Correctness} scores focusing on the input sources differ from the supervisor's evaluation. There is a minor trend similar to the supervisor's evaluation, where OpenAI and DeepSeek tend to be rated higher than the other models. Contrary to the supervisor, the staff members rated OpenAI's questions based on Tanenbaum with a mean of 7.8, which is significantly lower than the supervisor's 10/10 points. Also, the trend that the transcript-based questions were rated highest is not visible in the staff members' mixed picture.
+Regarding Figure \bfref{fig:exp1a-correctness-heatmaps-staff}, the \textit{Correctness} scores focusing on the input sources differ from the supervisor's evaluation. There is a minor trend similar to the supervisor's evaluation, where OpenAI and DeepSeek tend to be rated higher than the other models, also visible in the \textit{Adherence Score}. Contrary to the supervisor, the staff members rated OpenAI's questions based on Tanenbaum with a mean of 7.8, which is significantly lower than the supervisor's 10/10 points. Also, the trend that the transcript-based questions were rated highest is not visible in the staff members' mixed picture.
 
 In the second staff heatmap, the prompt type had the same impact on the correctness scores, with the common prompt leading to higher scores than the complex one. The models were on par with values all above 9/10 in the mean. In the supervisor's evaluation, Google was rated with 8.3 in the common prompt instead. Focusing the complex prompt, the supervisor also rated Google significantly lower with a mean of 3.3/10, while the staff members did with 6.8 points. 
 
@@ -518,51 +518,55 @@ As in the previous sub-experiment, the staff members were asked to evaluate the 
 
 \pagebreak
 
-There are several key insights and differences compared to the supervisor's evaluation. Most notably, the staff members' scores were higher for \textit{Manipulation Handling}, especially visible in the complex prompt. Google and Anthropic achieved the best means of 7.88 and 7.25, while DeepSeek and OpenAI were rated 5.12 and 5.0. Regarding the common prompt, all models were rated significantly lower, showing that this prompt type did not sufficiently encourage the models to detect manipulations.
+There are several key insights and differences compared to the supervisor's evaluation. Most notably, the staff members' scores were higher for \textit{Manipulation Handling}, especially visible in the complex prompt. Google and Anthropic achieved the best means of 7.88 and 7.25, while DeepSeek and OpenAI were rated 5.12 and 5.0. Regarding the common prompt, all models were rated lower, showing that this prompt type did not sufficiently encourage the models to detect manipulations.
 
 Compared to the supervisor, who rated exclusively with the given values (0, 5, 10), the staff members used the full scale, rating all scores between 0 and 10. Here, Google and Anthropic were rated significantly higher for the complex prompt than by the supervisor (rated with 2.5), while OpenAI and DeepSeek still remained to be at the lower end, but with values $\geq 2.5$ instead. This stands in contrast to the quantitative analysis, where OpenAI and DeepSeek had shown better manipulation detection, based on rating every question instead of a sampled question set. Overall, the sample size remained small -- while the \textit{Adherence Score} of the quantitative analysis remains suitable --, but the qualitative evaluations still underscore the importance of prompt design. While the complex prompt improves \textit{Manipulation Handling} in Experiment 1b -- while being problematic in Experiment 1a via \textit{Correctness} --, the models still struggle to reliably identify and address manipulated content. 
 
-The differences between the supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling}, as implemented in the other criteria. This would have been better with the \textit{Correctness} criterion in Experiment 1a as well. Unfortunately, the inter-rater agreement analysis Table \bfref{tab:iaa-staff-1b} also illustrates an unsatisfying agreement, compared to the previous sub-experiment. The Fleiss' $\kappa$ value between the staff members is 0.014, indicating just a slight agreement among these raters. This had happened because the staff members used the full range of scores instead of the desired ones, but overall, these ratings still present valuable information.
+The differences between the supervisor and staff ratings also illustrate the need for a more nuanced evaluation scale for \textit{Manipulation Handling}, as implemented in the other criteria. This would have been better with the \textit{Correctness} criterion in Experiment 1a as well. Unfortunately, the inter-rater agreement analysis Table \bfref{tab:iaa-staff-1b} also illustrates an unsatisfying agreement, compared to the previous sub-experiment. The Fleiss' $\kappa$ value between the staff members is 0.014, indicating just a slight agreement among these raters. This had happened because the staff members used the full range of scores instead of the desired ones, but overall, the ratings by all experts still present valuable information.
 
 \begin{table}[H]
    \centering
-   \caption{Inter-Rater Agreement Analysis, only Staff (Exp1b).} 
+   \caption{Inter-Rater Agreement Analysis (Exp1b).} 
    \label{tab:iaa-staff-1b}
    \begin{tabular}{lccc}
         \toprule
-        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \textbf{Manipulation Handling} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Manipulation Handling & 0.014 & 16 & 4 \\
+        Staff-only & 0.014 & 16 & 4 \\
+        Combined with Supervisor & 0.036 & 15 & 5 \\
         \bottomrule
    \end{tabular}
 \end{table}
 
-This is a significant improvement compared to the previous sub-experiment, but the combined analysis in Table \bfref{tab:iaa-combined-1b} shows a very low Fleiss' $\kappa$ of 0.036, which is a slight value. This is explained by the fact that the supervisor rated only the desired values (0, 5, 10), while the staff members used the full scale instead. The staff members also rated the questions with values $\geq 5$, which were not used by the supervisor, since the supervisor only rated up to 5 in certain cases. This individual misunderstanding in the criterion led to a low agreement between both groups, since the ratings were not comparable, even if the ideas behind the ratings were occasionally similar.
+Based on the staff members, there is no significant improvement compared to the previous sub-experiment, but the combined analysis -- including the supervisor -- shows a minimally higher Fleiss' $\kappa$ of 0.036, which is a slight value in the end. This is a little surprising, since the supervisor rated only the desired values (0, 5, 10), while the staff members used the full scale instead. The staff members also rated the questions with values $\geq 5$, which were not used by the supervisor, since the supervisor only rated up to 5 in certain cases. This individual misunderstanding in the criterion led to a low agreement between both groups, since the ratings were not comparable, even if the ideas behind the ratings were occasionally similar.
 
-\begin{table}[H]
-   \centering
-   \caption{Inter-Rater Agreement Analysis, combined (Exp1b).} 
-   \label{tab:iaa-combined-1b}
-   \begin{tabular}{lccc}
-        \toprule
-        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
-        \midrule
-        Manipulation Handling & 0.036 & 15 & 5 \\
-        \bottomrule
-   \end{tabular}
-\end{table}
+\pagebreak
 
-\object{Mixed Analysis Complications} The qualitative evaluation revealed complications affecting both supervisor and staff assessments. Firstly, several questions were only partially or not at all related to the provided source material, limiting answerability and relevance. 
+% \begin{table}[H]
+%    \centering
+%    \caption{Inter-Rater Agreement Analysis, combined (Exp1b).} 
+%    \label{tab:iaa-combined-1b}
+%    \begin{tabular}{lccc}
+%         \toprule
+%         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+%         \midrule
+%         \bottomrule
+%    \end{tabular}
+% \end{table}
 
-Questions containing unnecessary negations in them were frequently criticized for reducing clarity. The evaluation was further complicated by overly long or linguistically complex formulations, especially from Google and Anthropic using the complex prompt. Both groups often noted the use of generic phrases such as \enquote{based on the text}, which weakened the questions' educational value.
+\object{Mixed Analysis Complications} The qualitative evaluation revealed complications affecting both supervisor and staff assessments. Firstly, several questions were only partially or not at all related to the provided source material, limiting \textit{Answerability} and \textit{Correctness}. 
 
-Factually incorrect or invented answer options -- which are not based on the source text -- were identified in multiple cases, making correctness difficult to assess, often seen at Google and Anthropic. Several questions were rated as very easy or trivial by both groups, particularly from OpenAI and DeepSeek, which is visible in the \textit{Challenging} criterion.
+Few questions containing unnecessary negations in them were criticized for reducing \textit{Clarity} and the \textit{Value}. This evaluation was further complicated by overly long or linguistically complex formulations, especially from Google and Anthropic using the complex prompt. Both groups often noted the use of generic phrases such as \enquote{based on the text}, which weakened the questions' educational value.
 
-Questions based on the common prompt were often criticized for being too simple or not sufficiently challenging, while the complex prompt questions -- overly more challenging -- were often too convoluted or complex, leading to low values in e.g.\ \textit{Clarity} and \textit{Language}. Instead, the common prompt questions overall had higher ratings in both evaluations.
+Factually incorrect or invented answer options -- which are not based on the source text -- were identified in multiple cases, making correctness difficult to assess, often seen at Google and Anthropic as well. Several questions were rated as very easy or trivial by both groups, particularly from OpenAI and DeepSeek, which is visible in the \textit{Challenging} criterion.
 
-The strong preference of OpenAI in the supervisor's evaluation was not as pronounced in the staff members' ratings, but still visible. The other models struggled more with achieving high scores in the criteria, especially in \textit{Clarity}, \textit{Answerability}, and \textit{Correctness}.
+Questions based on the common prompt were often criticized for being too simple or not sufficiently challenging, while the complex prompt questions -- overly more challenging -- were often too convoluted or complex, leading to low values in e.g.\ \textit{Clarity} and \textit{Language}. Instead, the common prompt questions overall has shown higher ratings in both evaluations.
 
-The evaluation rubric itself was not always clear for all criteria, resulting in inconsistent ratings and low inter-rater agreement among the groups. Overall, the staff members' ratings were more diverse, often using the full scale (0-10) instead of the discrete values (e.g.\ 0, 5, 10 at \textit{Correctness} and \textit{Manipulation Handling}) used by the supervisor. Moreover, the staff members rated the questions higher at \textit{Manipulation Handling} than the supervisor, indicating a different understanding of the criterion but still providing valuable insights based on more perspectives. In addition, the sampled question set in Experiment 1b was smaller than in Experiment 1a, which limits the representativeness of the results. At least, the staff-based qualitative analysis provided a broader perspective on the \ac{llms}' performance in handling errors, where the complex prompt improved \textit{Manipulation Handling} in Experiment 1b, while being problematic in Experiment 1a via \textit{Correctness}. This was not significantly visible in the supervisor's evaluation, but the quantitative analysis revealed similar trends according to the difference in prompt type performance with the \textit{Adherence Score}.
+Furthermore, the strong preference of OpenAI in the supervisor's evaluation was not as pronounced in the staff members' ratings, but still slightly visible. The other models struggled more with achieving high scores in the criteria, especially in \textit{Clarity}, \textit{Answerability}, and \textit{Correctness}.
+
+The evaluation rubric itself was not always clear for all criteria, resulting in inconsistent ratings and low inter-rater agreement among the groups. Overall, the staff members' ratings were more diverse, often using the full scale (0-10) instead of the discrete values (e.g.\ 0, 5, 10 at \textit{Correctness} and \textit{Manipulation Handling}) used by the supervisor. Moreover, the staff members rated the questions higher at \textit{Manipulation Handling} than the supervisor, indicating a different understanding of the criterion but still providing valuable insights based on more perspectives. 
+
+In addition, the sampled question set in Experiment 1b was smaller than in Experiment 1a, which limits the representativeness of the results. At least, the staff-based qualitative analysis provided a broader perspective on the \ac{llms}' performance in handling errors, where the complex prompt improved \textit{Manipulation Handling} in Experiment 1b, while being problematic in Experiment 1a via \textit{Correctness}. This was not significantly visible in the supervisor's evaluation, but the quantitative analysis revealed similar trends according to the difference in prompt type performance with the \textit{Adherence Score}.
 
 % \tcr{staff also noted that many questions were \enquote{based on the text}, mostly google, then deepseek, then anthropic, and openai with 1 entry} \\
 % \tcr{supervisor konnte fragen manchmal nicht bewerten, die iuk bewerter haben aber immer ein rating gegeben, folgert aber nicht, dass alle fragen bei iuk gut waren} \\
@@ -622,7 +626,7 @@ The evaluation rubric itself was not always clear for all criteria, resulting in
 
 % \tcr{stichprobe bei exp1b relativ klein (gleiches sampling, aber 1/3 fragen da 1 source), um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
 
-\vp
+\pagebreak
 
 \subsection{Second Experiment}
 \label{sec:second-experiment}
@@ -633,14 +637,14 @@ The second experiment addressed evaluating the relationship between question for
 
 \paragraph*{Qualitative Analysis -- Student-based} 
 
-A group of three students, supervised by the secondary supervisor, evaluated the questions generated in Experiment 2. The students were asked to rate the questions based on the known criteria \textit{Relevance}, \textit{Clarity}, \textit{Answerability}, \textit{Challenging}, \textit{Value} and \textit{Language}. Additionally, the \textit{Bloom's Level} was assessed. So, the evaluation process involved a detailed rubric, and the students' ratings were analyzed using Fleiss' Kappa again to assess inter-rater reliability.
+A group of three students, supervised by the secondary supervisor, evaluated the questions generated in Experiment 2. The students were asked to rate the questions based on the known criteria \textit{Relevance}, \textit{Clarity}, \textit{Answerability}, \textit{Challenging}, \textit{Value} and \textit{Language}. Additionally, the \textit{Bloom's Level} was assessed, as seen in Table \bfref{tab:exp2_criteria}. So, the evaluation process involved a detailed rubric, and the students' ratings were analyzed using Fleiss' Kappa again to assess inter-rater reliability.
 
 Regarding Figure \bfref{fig:exp2-student-evaluation-metrics}, some key insights can be drawn from the student-based evaluation. 
 relevance todo... Focusing on the \textit{Clarity} criterion, the models commonly achieved high scores, with all models showing a median of 10.0. The means were around 9, except for OpenAI, which had a mean of 8.67, but overall, the models generated logically clear questions. answerability todo... The \textit{Challenging} criterion presents medians of 8 for every model. Overall, more questions by Google and OpenAI were rated as more challenging, resulting in means of 7.27 and 7.47, respectively, while DeepSeek and Anthropic were rated lower with means of 6.8 and 6.53.
 
-The results for the value look pretty similar for each model, but the medians were slightly higher for DeepSeek and OpenAI (9.0) than for Google and Anthropic (8.0). Overall, the questions were rated as valuable, with minor outliers at DeepSeek and Google. Resulting from this, the means still remained high, with OpenAI achieving the highest mean of 8.73, followed by Anthropic (8.67), DeepSeek (8.53), and Google (8.33).
+The results for the questions' \textit{Value} look pretty similar for each model, but the medians were slightly higher for DeepSeek and OpenAI (9.0) than for Google and Anthropic (8.0). Overall, the questions were rated as valuable, with minor outliers at DeepSeek and Google. Despite this, the means still remained high, with OpenAI achieving the highest mean of 8.73, followed by Anthropic (8.67), DeepSeek (8.53), and Google (8.33).
 
-Furthermore, the \textit{Language} criterion looks similar across all models, with means around 8.37 (Google) to 8.73 (DeepSeek). In contrast, the \textit{Bloom's Level} shows a more diverse picture, where Google and OpenAI overly achieved the highest medians of 10 and 9.25, respectively, while DeepSeek and Anthropic were rated lower with medians of 6.0 and 7.0. This indicates that more questions by Anthropic and DeepSeek were less rated at Bloom's revised Taxonomy or less aligned with the given Bloom's level, if given. 
+Furthermore, the \textit{Language} criterion looks similar across all models, with means around 8.37 (Google) to 8.73 (DeepSeek). In contrast to this, the \textit{Bloom's Level} shows a more diverse picture, where Google and OpenAI overly achieved the highest medians of 10 and 9.25, respectively, while DeepSeek and Anthropic were rated lower with medians of 6.0 and 7.0. This indicates that more questions by Anthropic and DeepSeek were less rated at Bloom's revised Taxonomy or less aligned with the given Bloom's level, if given. 
 
 total score... todo
 
@@ -663,7 +667,7 @@ total score... todo
 
 \pagebreak
 
-Regarding each sub-experiment instead, the results are shown in Figure \bfref{fig:exp2-student-evaluation-experiment}. Here, the three sub-experiments are compared, where Experiment 2a focused on solely specifying the question type -- Multiple-Choice or Open-Ended -- (Type Only), Experiment 2b focused on a specific Bloom level for each question (Bloom Only), and Experiment 2c combined both aspects (Type + Bloom). relevance todo... The \textit{Clarity} criterion shows a trend where the prompt from Experiment 2c achieved the highest mean of 9.29, followed by Experiment 2a with a mean of 8.79, and Experiment 2b with 8.43, which still indicate that most of the questions were clear and understandable at first glance.
+Regarding each sub-experiment instead, the results are shown in Figure \bfref{fig:exp2-student-evaluation-experiment}. Here, the three sub-experiments are compared, where Experiment 2a (Type Only) focused on solely specifying the question type -- Multiple-Choice or Open-Ended --, Experiment 2b focused on a specific Bloom level for each question (Bloom Only), and Experiment 2c combined both aspects (Type + Bloom). relevance todo... The \textit{Clarity} criterion shows a trend where the prompt from Experiment 2c achieved the highest mean of 9.29, followed by Experiment 2a with a mean of 8.79, and Experiment 2b with 8.43, which still indicate that most of the questions were clear and understandable at first glance.
 
 answerability todo... The \textit{Challenging} criterion shows an interesting trend, where Experiment 2b achieved the best results with a mean of 8.42, while Experiment 2a is following close behind with slightly shifted values and a mean of 7.17. The questions in Experiment 2c were rated as the least challenging with a mean of 6.17 instead. The questions' \textit{Value} was rated overly high across all sub-experiments, but the ones from Type Only (Experiment 2a) have a median of 8, while the other two sub-experiments achieved a median of 9. Overall, Experiment 2c had some outliers to the bottom, but overall, the means were still high, with 8.58 (Experiment 2a), 8.75 (Experiment 2b), and 8.46 (Experiment 2c).
 
@@ -692,7 +696,7 @@ total score todo...
 
 \pagebreak
 
-Since the \textit{Bloom's Level} criterion is the most important one in this experiment, Table \bfref{tab:exp2-llm-experiment-bloomslevel} shows the means, standard deviations, and medians of the Bloom levels achieved by each model in each sub-experiment. Here, certain trends among the models are visible, where Anthropic and Google achieved the highest means in Experiment 2a (4.96 and 4.54) -- which is situated at the level \textit{Applying} (4.5 points) --, while DeepSeek and OpenAI were rated even lower (2.83 and 3.67), between \textit{Understanding} (3 points) and \textit{Applying} (4.5 points). In Experiment 2b, all models achieved the same mean of 8.33, except OpenAI, showing a perfect Bloom adherence with a mean of 10.0. Experiment 2c, combining both question type and Bloom level specification, shows that Google performed best with a mean of 9.58. Anthropic and DeepSeek follow with 8.75, while OpenAI is rated lowest with a mean of 7.50, still offering a good adherence to the Bloom level specification. The medians of Experiment 2b and 2c 10.0 for every model, also indicating that the questions were well aligned with the specified Bloom levels. Experiment 2a instead shows that the medians were lower -- as this sub-experiment did not specify a Bloom level --, where Anthropic shows the highest median of 7, which is situated at \textit{Analyzing} (7 points). In contrast, the other models' questions were less cognitively demanding, illustrated by the median of 3.0 for each \ac{llm}, which is situated at the Bloom level \textit{Understanding} (3 points).
+Since the \textit{Bloom's Level} criterion is the most important one in this experiment, Table \bfref{tab:exp2-llm-experiment-bloomslevel} shows the results of the Bloom levels achieved by the models in each sub-experiment. Here, certain trends among the models are visible, where Anthropic and Google achieved the highest means in Experiment 2a (4.96 and 4.54) -- which are situated at the level \textit{Applying} (4.5 points) --, while DeepSeek and OpenAI were rated even lower (2.83 and 3.67), which is close to \textit{Understanding} (3 points). In Experiment 2b, all models achieved the same mean of 8.33, except OpenAI, showing a perfect Bloom adherence with a mean of 10.0. Experiment 2c, combining both question type and Bloom level specification, shows that Google performed best with a mean of 9.58. Anthropic and DeepSeek follow with 8.75, while OpenAI is rated lowest with a mean of 7.50, still offering a good adherence to the Bloom level specification. The medians of Experiment 2b and 2c are rated 10/10 for every model, also indicating that the questions were well aligned with the specified Bloom levels. Experiment 2a instead shows that the medians were lower -- as this sub-experiment did not specify a Bloom level --, where Anthropic shows the highest median of 7, which is situated at \textit{Analyzing} (7 points). In contrast, the other models' questions were less cognitively demanding, illustrated by the median of 3.0 for each \ac{llm}, which is situated at the Bloom level \textit{Understanding} (3 points).
 
 \begin{table}[htbp]
     \centering
@@ -717,7 +721,9 @@ Since the \textit{Bloom's Level} criterion is the most important one in this exp
 % type+bloom: alle mediane 10, sonst aber openai am schwächsten jedoch (7.50 mean); anthropic und deepseek mit 8.75 und google am besten in adherence (9.58 mean), interessant
 
 Since both question types (Multiple-Choice and Open-Ended) were equally generated in Experiments 2a and 2c, Table \bfref{tab:exp2-questiontype-experiment-bloomslevel} shows the results for each question type. Overall, the Open-Ended questions were rated significantly higher than the Multiple-Choice questions in both sub-experiments. In Experiment 2a, Multiple-Choice achieved a mean of 2.42, while Open-Ended questions achieved a mean of 5.58 instead, which shows that questions of this type were more cognitively demanding -- between \textit{Applying} (4.5 points) and \textit{Analyzing} (7 points) --, while Multiple-Choice questions were rated between \textit{Remembering} (1.5 points) and \textit{Understanding} (3 points).
-Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the cognitive level itself. The Bloom adherence for Multiple-Choice questions were rated high with a mean of 7.92. The Open-Ended questions were rated even higher with a mean of 9.38, showing a very high adherence to the specified Bloom level overall. The medians in Experiment 2c were 10.0 for both question types, but in Experiment 2a, the medians were 2.25 for Multiple-Choice and 7.0 for Open-Ended questions, indicating that the Open-Ended questions were more cognitively demanding, while Multiple-Choice questions were less cognitively demanding and less aligned with given Bloom levels. 
+Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the cognitive level itself. The Bloom adherence for Multiple-Choice questions were rated high with a mean of 7.92. The Open-Ended questions were rated even higher with a mean of 9.38, showing a very high adherence to the specified Bloom level overall. The medians in Experiment 2c were 10.0 for both question types, but in Experiment 2a, the medians were 2.25 for Multiple-Choice and 7.0 for Open-Ended questions, indicating that the Open-Ended questions were more cognitively demanding, while Multiple-Choice questions were less cognitively demanding and less aligned with given Bloom levels.
+
+\pagebreak
 
 \begin{table}[htbp]
     \centering
@@ -741,6 +747,10 @@ Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the
 % MC bei 2c: mean 7.92, median 10.0 (bedeutend besser jedenfalls durch bloom-angabe)
 % open-ended bei 2c: mean 9.38, median 10.0, viel besser im grunde...
 
+Regarding the inter-rater agreement analysis, the results are mixed, which is reflected in the varying Fleiss' kappa values across different criteria in Table \bfref{tab:iaa-students-exp2}. A major issue in the ratings was the diversity in scoring among the students, where one of the three certain students often rated question criteria with very high scores all the time. This had a significant impact on the agreement for ... at least \textit{Clarity}, \textit{Value}, and \textit{Language}. These criteria have a very low Fleiss' $\kappa$: \textit{Clarity} with -0.061, \textit{Value} with -0.256, and \textit{Language} with 0.016.
+
+In contrast to this, the \textit{Challenging} criterion achieved a moderate agreement with a Fleiss' $\kappa$ of 0.270, which is a fair value. The \textit{Relevance} and \textit{Answerability} criteria ... still missing... The highest $\kappa$ was achieved for the \textit{Bloom Rating} criterion with 0.397, almost indicating a moderate agreement. In some cases, all students were not able to agree on the Bloom level of a question, which occurs since many questions did not use a certain operator verb, or more than one operator verb was used, which both made it difficult to determine the final Bloom level of the question. Overall, the Kappa of 0.397 is still a good value, showing that the students were able to agree on the Bloom levels in many cases, but still had some disagreements in others.
+
 \begin{table}[H]
     \centering
     \caption{Inter-Rater Agreement Analysis, Students (Exp2).}
@@ -758,6 +768,7 @@ Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the
         Bloom Rating       & 0.397 & 40 & 3 \\
         \bottomrule
     \end{tabular}
+    \caption*{\small Interpretation of Fleiss' $\kappa$:\\ $<$0 Invalid, $<$0.2 Slight, $<$0.4 Fair, $<$0.6 Moderate, $<$0.8 Substantial, $\geq$0.8 Almost Perfect.}
 \end{table}
 % relevance: ... #TODO
 % clarity: -0.061, wenig agreement...
@@ -767,7 +778,11 @@ Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the
 % language: 0.016, wenig agreement, da studentin2 sehr viele 10 gegeben hat
 % bloom rating: 0.397, moderates agreement, leichte unterschiede bringen das ergebnis mit sich
 
-\object{Student-based Analysis Complications}
+Overall, the stringent time constraints for the students' evaluation could have limited the depth of their analysis, as they had to evaluate 40 questions in a limited time frame. The unknown topic of the questions -- since these are pedagogical students -- may have also influenced the students' ability to accurately assess the questions' \textit{Relevance} and \textit{Answerability}, as they were not familiar with the ISO-OSI model.
+
+\pagebreak
+
+\object{Student-based Analysis Complications} ...
 % student1 exp2a: fragen 5 (schlecht bewertet),6,9,14 haben keinen richtigen operator; fragen 15 und 16 zu sehr verschachtelt durch mehrerer fragen in einer.
 % frage10 auch nicht so der knaller, 11 und 12 sprachliich nicht allzu gut
 % frage13 an sich voll gut; relevanz 8/10 jedoch und challenging 2/10, sonst schoene frage
@@ -804,10 +819,10 @@ Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the
 % frage 8 an sich schoenes rating
 % frage 15 eine ungünstig formulierte frage, die recht zuordnenden touch hat, so ist schwer ersichtlich, was der sinn der frage ist
 
-value criterion badly chosen, says 1 student; this one was introduced by primary supervisor and then decided to use for all members in exp1 and afterwards for students in exp2
+% value criterion badly chosen, says 1 student; this one was introduced by primary supervisor and then decided to use for all members in exp1 and afterwards for students in exp2
 
-\tcr{es gibt fragen ohne jegliche operator-verben, welche vor allem fuer bloom-bestimmung bedeutsam wären}
-\tcr{eine studentin hat bei gewissen kategorien wenig varianz aufgezeigt (e.g.\ oft 10 punkte geben)... einig sind sich die beiden anderen studenten teilweise aber auch nicht, wird dann bald im agreement gecheckt.}
+% \tcr{es gibt fragen ohne jegliche operator-verben, welche vor allem fuer bloom-bestimmung bedeutsam wären}
+% \tcr{eine studentin hat bei gewissen kategorien wenig varianz aufgezeigt (e.g.\ oft 10 punkte geben)... einig sind sich die beiden anderen studenten teilweise aber auch nicht, wird dann bald im agreement gecheckt.}
 
 \vp
 
