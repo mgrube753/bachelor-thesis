@@ -6,7 +6,9 @@ from constants import EXP1_PATH, EXP2_PATH, EXPERIMENTS_BASE_PATH
 
 
 def sample_questions(src_path, dest_path, pattern, sample_size=3):
-    files = [f for f in os.listdir(src_path) if pattern in f and f.endswith(".txt")]
+    files = sorted(
+        [f for f in os.listdir(src_path) if pattern in f and f.endswith(".txt")]
+    )
     if len(files) < sample_size:
         print(f"[WARNING] Only {len(files)} questions available in {src_path}")
         sample_size = len(files)
@@ -266,20 +268,20 @@ def get_source_type(exp, row):
 def rename_samples(samples, csv_path, output_path):
     print("\n[INFO] Renaming samples for manual inspection...")
 
-    # Look for initial CSV files in the new structure
+    # Look for hint CSV files in the correct structure
     for exp_prefix in ["exp1", "exp2"]:
-        exp_csv_dir = os.path.join(csv_path, "hints", exp_prefix)
+        exp_csv_dir = os.path.join(csv_path, "qualitative", exp_prefix, "hints")
         if not os.path.exists(exp_csv_dir):
             continue
 
         csvs = [
             f
             for f in os.listdir(exp_csv_dir)
-            if f.startswith(exp_prefix) and f.endswith(".csv")
+            if f.startswith(exp_prefix) and f.endswith("_hints.csv")
         ]
         for csv in sorted(csvs):
             count = 1
-            exp = csv.replace(".csv", "")
+            exp = csv.replace("_hints.csv", "")
             df = pd.read_csv(os.path.join(exp_csv_dir, csv))
             exp_dir = os.path.join(output_path, exp)
             os.makedirs(exp_dir, exist_ok=True)
@@ -305,7 +307,25 @@ def main():
     csv_path = os.path.join(base, "60_analyses", "csv")
     output_path = os.path.join(base, "80_samples_renamed")
 
-    # Ensure directories exist without cleaning them up first.
+    # Clean up previous runs
+    if os.path.exists(sample_base):
+        shutil.rmtree(sample_base)
+    if os.path.exists(output_path):
+        shutil.rmtree(output_path)
+
+    # Clear existing CSV files instead of deleting directories
+    qualitative_path = os.path.join(csv_path, "qualitative")
+    if os.path.exists(qualitative_path):
+        # Clear all CSV files in the qualitative directory
+        for root, _, files in os.walk(qualitative_path):
+            for file in files:
+                if file.endswith(".csv"):
+                    file_path = os.path.join(root, file)
+                    # Create empty CSV file to clear content
+                    with open(file_path, "w") as f:
+                        pass
+
+    # Ensure directories exist
     os.makedirs(sample_base, exist_ok=True)
     os.makedirs(output_path, exist_ok=True)
 
