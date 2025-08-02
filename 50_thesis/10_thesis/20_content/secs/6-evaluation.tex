@@ -232,7 +232,7 @@ The ratings by the supervisor indicate the following: the complex prompt led to 
 
 \object{Experiment 1b -- Error Handling} A second run was conducted to evaluate \ac{llm}-based questions based on manipulated lecture script content. The qualitative analysis of Experiment 1b was done using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This was introduced to assess how well the \ac{llms} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
 
-Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the rubric was not sufficient for this manner of assessment, since the contextual material is manipulated. Based on this, the \textit{Manipulation Handling} criterion was solely analyzed, and the results are presented in Table \ref{tab:exp1b-manipulation-handling-supervisor}. If this issue had been noticed earlier, the questions could have been evaluated by solely this single criterion, resulting in creating a bigger sampling set, or the full set of questions could have been analyzed. However, the sampled set of questions is too small to draw any significant conclusions, since certain questions where the models noticed the manipulation were not rated by the experts.
+Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the rubric was not sufficient for this assessment, because the contextual material is manipulated. Based on this, the \textit{Manipulation Handling} criterion was solely analyzed, and the results are presented in Table \bfref{tab:exp1b-manipulation-handling-supervisor}. If this issue was noticed earlier, the questions could have been evaluated by solely this single criterion, resulting in creating a bigger sampling set, where e.g.\ the full set of questions could have been analyzed. However, the sampled set of questions is too small to draw any significant conclusions, since certain questions where the models noticed the manipulation were not rated by the experts.
 
 \begin{table}[htbp]
     \centering
@@ -262,7 +262,6 @@ Unfortunately, the supervisor's evaluation in Experiment 1b revealed that the ru
         & Complex & 0.0 & --- & 0.0 \\
         \bottomrule
     \end{tabular}}
-    % \footnotetext{Standard deviation cannot be calculated with only one data point.}
 \end{table}
 
 \pagebreak
@@ -556,7 +555,7 @@ Based on the staff members, there is no significant improvement compared to the 
 
 \object{Mixed Analysis Complications} The qualitative evaluation revealed complications affecting both supervisor and staff assessments. Firstly, several questions were only partially or not at all related to the provided source material, limiting \textit{Answerability} and \textit{Correctness}. 
 
-Few questions containing unnecessary negations in them were criticized for reducing \textit{Clarity} and the \textit{Value}. This evaluation was further complicated by overly long or linguistically complex formulations, especially from Google and Anthropic using the complex prompt. Both groups often noted the use of generic phrases such as \enquote{based on the text}, which weakened the questions' educational value.
+Few questions with unnecessary negations in them were criticized, reducing \textit{Clarity} and the \textit{Value}. This evaluation was further complicated by overly long or linguistically complex formulations, especially from Google and Anthropic using the complex prompt. Both groups often noted the use of generic phrases such as \enquote{based on the text}, which weakened the questions' educational value.
 
 Factually incorrect or invented answer options -- which are not based on the source text -- were identified in multiple cases, making correctness difficult to assess, often seen at Google and Anthropic as well. Several questions were rated as very easy or trivial by both groups, particularly from OpenAI and DeepSeek, which is visible in the \textit{Challenging} criterion.
 
@@ -566,7 +565,7 @@ Furthermore, the strong preference of OpenAI in the supervisor's evaluation was 
 
 The evaluation rubric itself was not always clear for all criteria, resulting in inconsistent ratings and low inter-rater agreement among the groups. Overall, the staff members' ratings were more diverse, often using the full scale (0-10) instead of the discrete values (e.g.\ 0, 5, 10 at \textit{Correctness} and \textit{Manipulation Handling}) used by the supervisor. Moreover, the staff members rated the questions higher at \textit{Manipulation Handling} than the supervisor, indicating a different understanding of the criterion but still providing valuable insights based on more perspectives. 
 
-In addition, the sampled question set in Experiment 1b was smaller than in Experiment 1a, which limits the representativeness of the results. At least, the staff-based qualitative analysis provided a broader perspective on the \ac{llms}' performance in handling errors, where the complex prompt improved \textit{Manipulation Handling} in Experiment 1b, while being problematic in Experiment 1a via \textit{Correctness}. This was not significantly visible in the supervisor's evaluation, but the quantitative analysis revealed similar trends according to the difference in prompt type performance with the \textit{Adherence Score}.
+In addition, the sampled question set in Experiment 1b was smaller than in Experiment 1a, which limits the representativeness of the results. At least, the staff-based qualitative analysis provided a broader perspective on the \ac{llms}' performance in handling errors, where the complex prompt improved \textit{Manipulation Handling} in Experiment 1b, while being problematic in Experiment 1a via \textit{Correctness}. This was not significantly visible in the supervisor's evaluation of Experiment 1b, but the quantitative analysis revealed similar trends according to the difference in prompt type performance with the \textit{Adherence Score}.
 
 % \tcr{staff also noted that many questions were \enquote{based on the text}, mostly google, then deepseek, then anthropic, and openai with 1 entry} \\
 % \tcr{supervisor konnte fragen manchmal nicht bewerten, die iuk bewerter haben aber immer ein rating gegeben, folgert aber nicht, dass alle fragen bei iuk gut waren} \\
@@ -626,12 +625,12 @@ In addition, the sampled question set in Experiment 1b was smaller than in Exper
 
 % \tcr{stichprobe bei exp1b relativ klein (gleiches sampling, aber 1/3 fragen da 1 source), um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
 
-\pagebreak
+% \pagebreak
 
 \subsection{Second Experiment}
 \label{sec:second-experiment}
 
-The second experiment addressed evaluating the relationship between question formats and Bloom's Taxonomy levels in \ac{llm}-generated questions. The goal of this was to determine how different question formats, Multiple-Choice and Open-Ended questions, perform across various cognitive levels of Bloom's revised Taxonomy. This experiment dealt with the second research question:
+The second experiment addressed evaluating the relationship between question formats and Bloom's Taxonomy levels in \ac{llm}-generated questions. The goal was to determine how different question formats -- Multiple-Choice and Open-Ended questions -- perform across various cognitive levels of Bloom's revised Taxonomy, and also independently of each other. This experiment dealt with the second research question:
 
 \requ{2}{How does the relationship between diverse question formats and Bloom's Taxonomy levels influence the pedagogical effectiveness of \ac{llm}-generated questions?}
 
@@ -768,7 +767,7 @@ In contrast to this, the \textit{Challenging} criterion achieved a moderate agre
         Bloom Rating       & 0.397 & 40 & 3 \\
         \bottomrule
     \end{tabular}
-    \caption*{\small Interpretation of Fleiss' $\kappa$:\\ $<$0 Invalid, $<$0.2 Slight, $<$0.4 Fair, $<$0.6 Moderate, $<$0.8 Substantial, $\geq$0.8 Almost Perfect.}
+    % \caption*{\small Interpretation of Fleiss' $\kappa$:\\ $<$0 Invalid, $<$0.2 Slight, $<$0.4 Fair, $<$0.6 Moderate, $<$0.8 Substantial, $\geq$0.8 Almost Perfect.}
 \end{table}
 % relevance: ... #TODO
 % clarity: -0.061, wenig agreement...

@@ -23,7 +23,17 @@
 
 \vp
 
+
 \subsection{Practical Implications for Education}
+
+\begin{itemize}
+  \item Leverage LLMs (current ones, if time-constraint acceptable with reasoning) to automate routine question generation, freeing educators to focus on pedagogy and feedback, but paste a note for students about the limitations of LLMs and their variability in performance across different models and inputs used!
+  \item Integrate such generation pipelines into existing Learning Management Systems for seamless workflow and distribution of quiz items, based on sources from lecture courses, while balancing automation benefits with pedagogical quality standards.
+  \item Prioritize concise, well-structured source materials e.g.\ lecture scripts over lengthy transcripts to improve question clarity and content fidelity.
+  \item Adopt a proper prompting strategy to enhance question quality, proper adherence to course content and pedagogical effectiveness.
+  \item Many prompting specifications necessary to avoid linguistic complexity, unnecessary negation questions, ...
+  \item Keep in mind that applying Bloom's Taxonomy as the main framework is senseful!
+\end{itemize}
 
 % --> LLMs with reasoning capabilities demonstrate significant potential for reducing educators' workload by automating the generation of educational questions, when combined with carefully designed prompting strategies that ensure content fidelity to source materials. but the results also show that the performance of LLMs nowadays can still vary significantly, thus educators should be aware of the limitations and variability in performance across different models and inputs used
 % --> Educators should prioritize well-structured lecture materials over long transcripts when using LLMs for question generation due to observed variation in performance across different input source types
@@ -34,13 +44,12 @@
 \subsection{Future Research Directions}
 
 % novel models were used 👍
-% trying content adherence didnt went as expected, but still a good first step.
+% trying automated content adherence check didnt went as expected, but still a good first step.
 %   - semantic similarity is not that senseful at sentence transformers. higher level models are needed
 %   - or even better usage of LLMs for judging exactly this, besides the single content adherence check (full rubric instead)
-% qualitative analysis (instead of relying on metrics) was a bit hard, since ratings were different, bad agreement because of rating between the given values, ...
+% qualitative analysis (instead of relying on metrics) was a bit hard, since ratings were different, bad agreement because of rating between the given values, ..., but overall interesting insights
 % we have used several prompting strategies while injecting knowledge into the prompts
 % bloom assessment across various levels using 3 students, while 1 has not assessed the questions properly...
-
 
 % --> papers/theses with less prompts can focus more on refining the prompts / using many different ones
 % --> explore reasoning + compare models with and without reasoning
