@@ -12,14 +12,23 @@ The script abstracts the specific implementation details of each API, allowing o
 
 ### Provider-Specific Functions
 
-- `gen_with_google(client, prompt_text, model_id, max_tokens)`: Handles text generation using the Google Gemini API. It includes logic to manage responses, especially when the output is truncated due to token limits.
-  - **Source:** [Google AI Gemini API Docs](https://ai.google.dev/gemini-api/docs/text-generation)
+- `gen_with_google(client, prompt_text, model_id, max_tokens)`: Handles text generation using the Google Gemini API. It includes logic to manage responses, especially when the output is truncated due to token limits.  
+  **Sources:**  
+  - [Google API Python Client (python-genai)](https://github.com/googleapis/python-genai)  
+  - [Thinking Config Docs](https://ai.google.dev/gemini-api/docs/thinking)  
+  - [Text Generation Docs](https://ai.google.dev/gemini-api/docs/text-generation)  
+  - [Response for MAX_TOKENS](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/GenerateContentResponse)
 
-- `gen_with_anthropic(client, prompt_text, model_id, max_tokens)`: Manages text generation with the Anthropic Claude API. It also checks for and handles cases where the maximum token limit is reached.
-  - **Source:** [Anthropic API Docs](httpss://docs.anthropic.com/en/api/handling-stop-reasons)
+- `gen_with_anthropic(client, prompt_text, model_id, max_tokens)`: Manages text generation with the Anthropic Claude API. It also checks for and handles cases where the maximum token limit is reached.  
+  **Sources:**  
+  - [Extended Thinking Tips](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-for-making-the-best-use-of-extended-thinking-mode)  
+  - [Handling Stop Reasons](https://docs.anthropic.com/en/api/handling-stop-reasons)
 
-- `gen_with_openai(client, prompt_text, model_id, max_tokens)`: Responsible for text generation via the OpenAI API. It includes checks for incomplete responses caused by token limits.
-  - **Source:** [OpenAI API Docs](httpss://platform.openai.com/docs/quickstart)
+- `gen_with_openai(client, prompt_text, model_id, max_tokens)`: Responsible for text generation via the OpenAI API. It includes checks for incomplete responses caused by token limits.  
+  **Sources:**  
+  - [OpenAI Quickstart Guide](https://platform.openai.com/docs/quickstart?api-mode=responses&lang=python)  
+  - [OpenAI Reasoning Guide](https://platform.openai.com/docs/guides/reasoning?api-mode=responses)  
+  - [Incomplete Response Reference](https://platform.openai.com/docs/api-reference/responses-streaming/response/incomplete)
 
 ### Main Interface
 

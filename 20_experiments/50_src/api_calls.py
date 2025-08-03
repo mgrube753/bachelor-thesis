@@ -4,7 +4,6 @@ from google.genai import types
 
 
 def gen_with_google(client, prompt_text, model_id, max_tokens):
-    # https://github.com/googleapis/python-genai, https://ai.google.dev/gemini-api/docs/thinking https://ai.google.dev/gemini-api/docs/text-generation https://cloud.google.com/vertex-ai/docs/reference/rest/v1/GenerateContentResponse
     try:
         response = client.models.generate_content(
             model=model_id,
@@ -30,7 +29,6 @@ def gen_with_google(client, prompt_text, model_id, max_tokens):
 
 
 def gen_with_anthropic(client, prompt_text, model_id, max_tokens):
-    # https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-for-making-the-best-use-of-extended-thinking-mode https://docs.anthropic.com/en/api/handling-stop-reasons
     try:
         response = client.messages.create(
             model=model_id,
@@ -57,7 +55,6 @@ def gen_with_anthropic(client, prompt_text, model_id, max_tokens):
 
 
 def gen_with_openai(client, prompt_text, model_id, max_tokens):
-    # https://platform.openai.com/docs/quickstart?api-mode=responses&lang=python, https://platform.openai.com/docs/guides/reasoning?api-mode=responses
     try:
         response = client.responses.create(
             model=model_id,
@@ -65,7 +62,6 @@ def gen_with_openai(client, prompt_text, model_id, max_tokens):
             input=[{"role": "user", "content": prompt_text}],
             max_output_tokens=max_tokens,
         )
-        # based on https://platform.openai.com/docs/api-reference/responses-streaming/response/incomplete[]
         if (
             response.status == "incomplete"
             and response.incomplete_details.reason == "max_output_tokens"
