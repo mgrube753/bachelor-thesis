@@ -9,6 +9,7 @@ def sample_questions(src_path, dest_path, pattern, sample_size=3):
     files = sorted(
         [f for f in os.listdir(src_path) if pattern in f and f.endswith(".txt")]
     )
+    print(files)
     if len(files) < sample_size:
         print(f"[WARNING] Only {len(files)} questions available in {src_path}")
         sample_size = len(files)
@@ -24,16 +25,22 @@ def sample_questions(src_path, dest_path, pattern, sample_size=3):
 
 def walk_and_sample(base_path, sample_base, exp_name, pattern, sample_size=3):
     print(f"[INFO] Sampling {exp_name} questions ({sample_size} per condition)...")
+
+    paths_to_process = []
     for root, _, files in os.walk(base_path):
         if "complex_prompt_no_source" in root:
             continue
-
         if any(pattern in f and f.endswith(".txt") for f in files):
-            rel_path = root.replace(base_path, "").lstrip(os.sep)
-            dest_path = os.path.join(sample_base, exp_name, rel_path)
-            sampled = sample_questions(root, dest_path, pattern, sample_size)
-            if sampled:
-                print(f"         {rel_path}: {len(sampled)} questions sampled")
+            paths_to_process.append(root)
+
+    paths_to_process.sort()
+
+    for root in paths_to_process:
+        rel_path = root.replace(base_path, "").lstrip(os.sep)
+        dest_path = os.path.join(sample_base, exp_name, rel_path)
+        sampled = sample_questions(root, dest_path, pattern, sample_size)
+        if sampled:
+            print(f"         {rel_path}: {len(sampled)} questions sampled")
 
 
 def parse_file_path(parts):
