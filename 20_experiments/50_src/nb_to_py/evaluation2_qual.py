@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 from statsmodels.stats.inter_rater import fleiss_kappa
@@ -29,7 +29,7 @@ pd.set_option('display.max_colwidth', 100)
 pd.set_option('display.notebook_repr_html', True)
 
 
-# In[2]:
+# In[ ]:
 
 
 # === METRICS & LABELS ===
@@ -55,7 +55,7 @@ metric_labels = {
 }
 
 
-# In[3]:
+# In[ ]:
 
 
 base_path = Path("../60_analyses/csv/qualitative/exp2/students")
@@ -73,7 +73,7 @@ tables = {}
 plots = {}
 
 
-# In[4]:
+# In[ ]:
 
 
 def load_student_data(student_id):
@@ -114,7 +114,7 @@ def load_student_data(student_id):
     return data
 
 
-# In[5]:
+# In[ ]:
 
 
 def load_hint_data():
@@ -155,7 +155,7 @@ for i in range(1, 4):
 hint_data = load_hint_data()
 
 
-# In[6]:
+# In[ ]:
 
 
 def combine_data():
@@ -193,7 +193,7 @@ print(f"Total evaluations: {len(df_combined)}")
 # 
 # Analysis of prompt engineering approaches for question generation.
 
-# In[7]:
+# In[ ]:
 
 
 def convert_bloom_rating_simple(value, experiment, given_level=None):
@@ -239,7 +239,7 @@ def convert_bloom_rating_simple(value, experiment, given_level=None):
         return np.nan
 
 
-# In[8]:
+# In[ ]:
 
 
 print("EXPERIMENT 2 - DESCRIPTIVE STATISTICS (ALL RATINGS)")
@@ -266,7 +266,7 @@ for metric in metrics:
 display(df_numeric)
 
 
-# In[9]:
+# In[ ]:
 
 
 numeric_metrics = [m for m in metrics if pd.api.types.is_numeric_dtype(df_numeric[m])]
@@ -285,7 +285,7 @@ else:
     exp_stats = pd.DataFrame()
 
 
-# In[10]:
+# In[ ]:
 
 
 # Calculate total score as sum of main metrics
@@ -299,7 +299,7 @@ if 'total_score' not in numeric_metrics:
     numeric_metrics.append('total_score')
 
 
-# In[11]:
+# In[ ]:
 
 
 print("\n=== VISUALIZATION: PERFORMANCE BY EXPERIMENT ===")
@@ -350,7 +350,7 @@ else:
 # 
 # The following section provides boxplots and summary tables for all metrics, grouped by LLM (language model).
 
-# In[12]:
+# In[ ]:
 
 
 print("\n=== METRIC ANALYSIS BY LLM ===")
@@ -409,7 +409,7 @@ else:
     print("No data available for LLM-based analysis.")
 
 
-# In[13]:
+# In[ ]:
 
 
 print("\n=== TABLE: LLM vs. Prompt Type (Experiment) for Bloom's Level Scoring ===")
@@ -425,7 +425,7 @@ else:
     print("Not enough data for LLM vs. Prompt Type Bloom's Level table.")
 
 
-# In[14]:
+# In[ ]:
 
 
 print("\n=== TABLE: Question Type vs. Subexperiment for Bloom's Level Scoring ===")
@@ -454,7 +454,7 @@ else:
 # 
 # Analysis of agreement between student evaluators on overlapping questions.
 
-# In[15]:
+# In[ ]:
 
 
 print("\n" + "="*60)
@@ -475,7 +475,7 @@ def make_global_question_id(row):
 df_numeric['global_question_id'] = df_numeric.apply(make_global_question_id, axis=1)
 
 
-# In[16]:
+# In[ ]:
 
 
 def extract_max_bloom_rating(val):
@@ -487,7 +487,7 @@ def extract_max_bloom_rating(val):
     return np.nan
 
 
-# In[17]:
+# In[ ]:
 
 
 def kappa_level(k):
@@ -505,7 +505,7 @@ def kappa_level(k):
         return "Almost Perfect"
 
 
-# In[21]:
+# In[ ]:
 
 
 def calculate_fleiss_kappa_all_categories(df, metrics):
@@ -563,7 +563,7 @@ def calculate_fleiss_kappa_all_categories(df, metrics):
     return pd.DataFrame(results)
 
 
-# In[22]:
+# In[ ]:
 
 
 kappa_all_df = calculate_fleiss_kappa_all_categories(df_numeric, metrics)
@@ -574,7 +574,7 @@ if 'output_tables_path' in locals():
     print(f"Saved Fleiss' Kappa (all categories) table to {output_tables_path}")
 
 
-# In[23]:
+# In[ ]:
 
 
 def save_results():
