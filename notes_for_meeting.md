@@ -49,11 +49,27 @@
 -   googles fragen waren oft zu lang, sehr weitschweifend, gelegentlich auch antwortmöglichkeiten inkorrekt, gelegentlich fragen überaus unklar gestellt
 -   deepseek und openai fragen waren eben nicht allzu fordernd
 
-### staff #TODO from here on
+### staff
 
 -   schlechtes agreement bei exp 1 vor allem durch zwischenwert-bewertung bei staff members
 
 #### exp1a
+
+- openai und deepseek an sich die leading models in vielen kriterien wie clarity, answerability, language
+- der vorteil von openai bei staff nicht so stark vertreten wie bei supervisor, die modelle waren alle relativ nah beieinander
+- auch hier ist challenging kriterium geringer als die anderen kriterien, aber grundlegend strenger bei den staff members hier
+- challenging auch bei staff mit anthropic und google besser als deepseek und openai
+- language auch strenger bei staff, cap hat 10/10 für openai und deepseek, aber staff sind 8.6/10 jeweils
+- anthropic und google sind eher schwerfällig ebenso, erkennbar in language
+- value etwas strenger auch an sich, openai als klarer favorit entfällt ein wenig hier, statt 10/10 wie bei supervisor, stattdessen 6.48
+- correctness grundsätzlich auch am besten bei openai und dann deepseek, gewisse niedrig-ratings gibts dort aber auch
+- anthropic und google sind tiefer angesiedelt, inkorrektheiten und ausgedachtes abseits vom source text
+- an sich ähnlich zum supervisor, aber dieser hat nur 0,5,10 benutzt bei correctness, die anderen auch werte dazwischen
+- total score auch openai am besten knapp, gefolgt von deepseek, aber differenz ist nicht so groß wie bei supervisor
+- correctness nach input source: sehr verschieden, die llms performen sehr verschieden, aber per prompt type eindeutig der common prompt wieder besser
+- alle metriken nach input source: script an sich knapp am durchsetzen. transcript nah dahinter, und sogar besser bei clarity, ganz knapp answerability und language
+- alles nach prompt type: common prompt besser als complex, ausser bei challenging, da complex prompt besser war. im value aber waren die staff members besonders streng ggü. supervisor, auch etwas bei clarity und language
+- dafür in correctness sehr aehnlich zu supervisor, in beiden prompts
 
 #### exp1b
 
