@@ -1,9 +1,9 @@
 "sample_id","relevance","clarity","answerability","challenging","value","language","bloom_rating","answer_problems","comments"
-1,-99,10,-99,4,8,7,3,,
-2,-99,10,-99,4,10,10,"(2;4)",,
-3,-99,,-99,8,8,7,4,,
-4,-99,4,-99,10,6,7,6,,
-5,-99,4,-99,6,6,3,4,,"Super kompliziert formuliert"
-6,-99,6,-99,8,8,7,"(2;4;6)",,"Zu viele Fachtermini, die Frage wirkt überladen und motiviert dazu, die Frage nur zu überfliegen."
-7,-99,10,-99,6,10,10,4,,
-8,-99,8,-99,10,8,7,"(4;5;6)",,
+1,10,10,10,4,8,7,3,,
+2,10,10,8,4,10,10,"(2;4)",,
+3,10,8,8,8,8,7,4,,
+4,6,4,6,10,6,7,6,,
+5,8,4,6,6,6,3,4,,"Super kompliziert formuliert"
+6,6,6,6,8,8,7,"(2;4;6)",,"Zu viele Fachtermini, die Frage wirkt überladen und motiviert dazu, die Frage nur zu überfliegen."
+7,8,10,10,6,10,10,4,,
+8,6,8,6,10,8,7,"(4;5;6)",,
