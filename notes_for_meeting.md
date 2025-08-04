@@ -73,6 +73,63 @@
 
 #### exp1b
 
+- staff hat etwas anders bewertet als supervisor, was an den zwischen-ratings liegen könnte
+- die sampling-menge war recht klein, spiegelt nicht den kompletten rahmen der fragen wider
+- aber durch die 4 staff members mehr oder weniger ähnliche trends wie bei supervisor
+- dieser war nur viel strenger.
+- an sich complex prompt auch am besser performen was erkennung angeht.
+- auch hier eher anthropic und v.a. google besser, deepseek und openai schwächer, was in quantitativer analyse nicht so war (alle fragen via adherence score)
+- modell-struggles hierbei nicht so stark erkennbar wie bei supervisor, es zeigt sich jedoch auch im agreement, dass die bewertungen sehr divers ausfallen
+
 #### complications
 
+- gewisse fragen waren teils nicht related zum source text, wobei answerability und correctness sinken
+- negationsfragen aufgetreten, was kritisiert wurde --> weniger clarity und value
+- google und anthropic über complex prompt vor allem erkennbar lange komplexe fragen, welche so nicht gestellt werden sollten
+- "based on the text" oft angekreidet --> value vermindert
+- google und anthropic mit inkorrekten antwortmöglichkeiten / oder eben abseits des source textes oft gesehen
+- openai und deepseek manchmal einfache fragen gestellt
+- was grundlegend mit dem common prompt einhergeht, die complex prompt fragen waren mehr herausfordernd, aber dadurch litten die anderen kategorien darunter --> clarity und language
+- openai stets am besten rund, aber bei cap viel besser sichtbar; grundsätzlich hatten die anderen modelle probleme hohe werte bei clarity, answerability und correctness zu erreichen
+- inkonsistente bewertungen, vor allem durch zwischenwerte und verschiedene interpretationen der kriterien-abstufungen, führten zu einem schlechten agreement. es fiel mir schwer, diese abstufungen anzulegen, da die literatur eben nicht so viel dabei geholfen hat
+- exp1b anders bewertet wie gesagt, und die sampling-menge bei 1b relativ klein 
+
 ## Quantitative Analysis exp2 (students)
+
+### insights
+
+- ratings an sich nicht so divers zwischen den modellen wie erwartet
+    - fragen grundlegend relevant und klar für alle modelle. google und openai hierbei etwas schwächer
+    - auch in der answerability alle recht ähnlich gut, aber google und openai schlechter, google hat eben viele überladene fragen, die über den text hinausgehen
+    - dafür sind google und openai bei challenging weiter vorn
+    - fragen oft auch wertvoll, openai und deepseek eben etwas höher vertreten
+    - per language haben alle modelle jeweils diverse performance gehabt, aber grundlegend waren die fragen gut formuliert
+    - bloom's level: auf den ersten blick hat deepseek schwächste performance, dann anthropic. auch wenn mean bei openai und google etwas gering sind, die mediane sind sehr weit oben
+    - total score: kein klarer gewinner oder verlierer
+- anhand der subexperimente:
+    - fragen von type only sind am relevantesten
+    - klarheit bei type only und type+bloom am besten gg. bloom only
+    - answerability eher besser bei type only und type+bloom, bloom only schlechter
+    - fragen von bloom only viel mehr challenging
+    - alle subexperimente haben hohe value scores an sich, aber bloom only an sich am besten
+    - per language type+bloom am besten
+    - bloom only und type+bloom bei bloom score beide gut. type only ergebnisse weniger hoch
+    - total score sind bei BO und TB ähnlich gut, TO etwas niedriger, was primär durch bloom score bedingt ist
+- bloom scores zwischen llm und subexperiment:
+    - anthropic bei 2a gewinnner, openai bei 2b, google bei 2c
+- bloom scores pro question type und subexperiment:
+    - 2c scoring grundsätzlich gut für MCQ und open ended, aber open ended bei beiden subexperimenten besser
+- agreements:
+    - answerability, challenging und bloom rating sind sehenswert, rest ist gering
+
+### complications
+
+- kein operator bei gewissen fragen, besonders in experiment 2a, was bloom's taxonomy wichtig macht
+- value kriterium sei nicht so gut, sagt eine studentin, da sie eher bei fragen auf ein lernziel abbilden würde, das haben wir nicht eingebunden, sondern nur bloom level
+   - "Wird die Frage vom Dozenten als fachlich / didaktisch / technisch sinnvoll erachtet?" ist schwierig, da fachlich und didaktisch etwas anderes ist
+- agreement problem stets vorhanden, aber die haben sich ausdrücklich an die rubrik gehalten, statt zwischenratings wie bei staff members
+- (von mir: deepseek hatte manchmal multiple-choice statt open-ended generiert)
+- google und anthropic voller fachtermini, aber auch einmal openai bei 2a (mit mehreren operatoren, obwohl ich keine vorgegeben habe*)
+- anthropic bei 2c keinen operator
+- openai hatte bei bloom 6 auch MCQ generieren müssen. das gefiel der studentin nicht, da MCQ und hohes Bloom sich ausschließen...
+- an sich google und anthropic explizit oft unschöne fragen.

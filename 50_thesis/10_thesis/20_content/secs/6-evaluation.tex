@@ -643,7 +643,7 @@ relevance todo... Focusing on the \textit{Clarity} criterion, the models commonl
 
 The results for the questions' \textit{Value} look pretty similar for each model, but the medians were slightly higher for DeepSeek and OpenAI (9.0) than for Google and Anthropic (8.0). Overall, the questions were rated as valuable, with minor outliers at DeepSeek and Google. Despite this, the means still remained high, with OpenAI achieving the highest mean of 8.73, followed by Anthropic (8.67), DeepSeek (8.53), and Google (8.33).
 
-Furthermore, the \textit{Language} criterion looks similar across all models, with means around 8.37 (Google) to 8.73 (DeepSeek). In contrast to this, the \textit{Bloom's Level} shows a more diverse picture, where Google and OpenAI overly achieved the highest medians of 10 and 9.25, respectively, while DeepSeek and Anthropic were rated lower with medians of 6.0 and 7.0. This indicates that more questions by Anthropic and DeepSeek were less rated at Bloom's revised Taxonomy or less aligned with the given Bloom's level, if given. 
+Furthermore, the \textit{Language} criterion looks similar across all models, with means from 8.37 (Google) to 8.73 (DeepSeek). In contrast to this, the \textit{Bloom's Level} shows a more diverse picture, where Google and OpenAI overly achieved the highest medians of 10 and 9.25, respectively, while DeepSeek and Anthropic were rated lower with medians of 6.0 and 7.0. This indicates that more questions by Anthropic and DeepSeek were less rated at Bloom's revised Taxonomy or less aligned with the given Bloom's level, if given. 
 
 total score... todo
 
@@ -655,14 +655,15 @@ total score... todo
    \caption{Student-based Evaluation Metrics by LLM (Exp2).}
    \label{fig:exp2-student-evaluation-metrics}
 \end{figure}
-% by llm: relevance ... #TODO
+% by llm: relevance grundlegend gut über alle modelle hinweg, wobei anthropic und deepseek etwas besser mit median 10 jeweils + mean 9.07 und 8.67
+% dagegen google mean 8.2 und median 8, openai mit mean 8.0 und median 8.0...
 % clarity: alle von 6-10 (box selbst 8-10) + wenige ausreisser 4,4,4,2 --> openai mit 8.67 mean dann etwas geringer als die anderen (anthropic: 9.0, deepseek: 8.97, google: 9.07)
-% answerability: ... #TODO
+% answerability: google und openai sehr ähnlich, gibt mehr fragen die anhand des textes weniger gut beantwortbar sind. besonders googles fragen sind sehr überladen, openai auf papier ähnliche performance (google mean 7.72, openai mean 7.53); alle 4 mit median 8, anthropic und vor allem deepseek besonders gut beantwortbar (mean 8.27 und 8.20 bei deepseek mit besserer verteilung, jedoch geringe ausreißer)
 % challenging: alle median bei 8; anthropic (mean 6.53) volles spektrum... alle anderen von 2-10; deepseek etwas schwächer (6.8) als google (7.27) und openai (7.47) mit höheren boxen
 % value: ähnlicher aufbau untereinander, boxen an sich zwischen 8-10, enden sind alle bei 6; anthropic und google etwas geringer mit median 8.0; deepseek und openai höher mit 9.0 jeweils; alle means über 8, mit openai bestes 8.73, dann anthropic 8.67, deepseek 8.53 und google 8.33; deepseek und v.a. google mit ausreissern nach unten.
 % language: über alle llms hinweg ähnliche bewertungen, mit google (8.37) und openai (8.4) am niedrigsten; anthropic (8.6) und deepseek (8.73) etwas höher; plots enden jeweils bei 3 
 % bloom score: beschreibt sowohl die performance ohne bloom-level-angabe als auch bloom adherence je nach subexperiment; da waren anthropic (mean 7.15, median 7, kleinste box) und google (mean 7.32, median 10, box ok) am besten, openai (mean 6.47, median 9.25) auch ganz gut, deepseeks median (6.0) sehr tief, mean (6.3), ist so naja; alle boxen inklusive whisker gehen auch von 0-10
-% total score: ... #TODO
+% total score: kein llm ist hierbei ein klarer gewinner, openai grundsätzlich am weitesten verteilt und tiefster mean (55.27) und median (55.0); google, deepseek und anthropic sind recht ähnlich, alle etwas hoeher, dort sind eher weniger trends auffindbar, da alle modelle recht gleichauf sind + kleinere trends pro kategorie nur haben
 
 \pagebreak
 
@@ -684,14 +685,17 @@ total score todo...
    \caption{Student-based Evaluation Metrics by Experiment (Exp2).} 
    \label{fig:exp2-student-evaluation-experiment}
 \end{figure}
-% by sub experiment: relevance ... #TODO
+% by sub experiment: relevance ist bei type only (TO) am besten mit median 10 und mean 9.04; ähnliche verteilung bei type+bloom (TB), aber dort median 8 und mean 8.12; bloom only (BO) am breitesten gefächert mit median 8 und mean 8.08
 % clarity: alle subexperimente median 10, alle boxen von 8-10, an sich 6-10; TO (mean 8.79) ausreisser; BO (8.43) auch; TB war besser (9.29)
-% answerability: ... #TODO
+% answerability: alle median 8, bloom only dort am geringsten mit mean 7.13; type only (TO) knapp am besten ggü. type+bloom (TB)
+% TO mean 8.17 und TB mit leicht größerer verteilung mit mean 8.08 
 % challenging: BO besonders weit oben und nicht sonderbar weitreichend verbreitet mit median 8 und mean 8.42; TO median auch 8, aber im grunde daten eher tiefer angesiedelt mit mean 7.17 (dort wurden ja auch keine bloom level angeboten); TB auffallend geringer (mean 6.17, median 7), sehr breit gefächert, hierbei wurden auch nur diverse fragen gesampled, welche aber grundlegend alle bloom level abgedeckt haben 
 % value: im grunde alle hoch (boxen 8-10, an sich alle 6-10); TO median 8, mean 8.58, ausreisser nach unten; BO median 9, mean 8.75, am besten wirkend; TB: mean 8.46, median 9, wäre auch richtig gut, wenn die ausreisser nicht wären.
 % language: an sich bei TB (mean 8.71, median 10) am besten, kürzester plot auch; dann TO (mean 8.44, median 10) und dann BO (mean 8.33, median 8.5); TO und BO gehen bis 3 runter, TB nur bis 5
 % bloom score: hier wird es spannend, grosses spektrum bei TO, aber an sich der mean viel geringer (4.0, median dazu bei 3). also ohne bloom constraints per median bei applying und per mean bei analyzing; BO und TB leicht von ausreissern betroffen, aber im grunde viel adherence zu gegebenem bloom level (mediane 10), mean bei BO 8.75 und knapp dahinter TB (8.65); Bloom only ein ausreisser bei 0, durch entfernte adherence >1; bei type+bloom sowohl dies als auch off-by-one adherence (durch 5pkt sichtbar).
-% total score: ... #TODO
+% total score: es bleiben bloom only und type+bloom gleichauf im grunde, mit kleinen unterschieden. bei TO mean 54.19 und median 54.25
+% bei BO mean 57.58 und 58.5 median. knapp dran ist TB mit mean 57.48 und median 58.5 ebenso. angabe der bloom operatoren ist sehr wichtig gewesen
+% alle prompt types hatten stärken und schwächen, grundsätzlich aber gute performance bei allen
 
 \pagebreak
 
@@ -748,9 +752,9 @@ Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the
 % MC bei 2c: mean 7.92, median 10.0 (bedeutend besser jedenfalls durch bloom-angabe)
 % open-ended bei 2c: mean 9.38, median 10.0, viel besser im grunde...
 
-Regarding the inter-rater agreement analysis, the results are mixed, which is reflected in the varying Fleiss' kappa values across different criteria in Table \bfref{tab:iaa-students-exp2}. A major issue in the ratings was the diversity in scoring among the students, where one of the three certain students often rated question criteria with very high scores all the time. This had a significant impact on the agreement for ... at least \textit{Clarity}, \textit{Value}, and \textit{Language}. These criteria have a very low Fleiss' $\kappa$: \textit{Clarity} with -0.061, \textit{Value} with -0.256, and \textit{Language} with 0.016.
+Regarding the inter-rater agreement analysis, the results are mixed, which is reflected in the varying Fleiss' kappa values across different criteria in Table \bfref{tab:iaa-students-exp2}. A major issue in the ratings was the diversity in scoring among the three students, indicating that there were differences in interpretation and application of the rubric criteria. Moreover, rating questions like the desired sample set is no everyday task for the students. This led to certain impacts on the agreement for \textit{Relevance}, \textit{Clarity}, \textit{Value}, and \textit{Language}. These criteria have a very low Fleiss' $\kappa$: \textit{Relevance} with 0.056, \textit{Clarity} with -0.061, \textit{Value} with -0.256, and \textit{Language} with 0.016.
 
-In contrast to this, the \textit{Challenging} criterion achieved a moderate agreement with a Fleiss' $\kappa$ of 0.270, which is a fair value. The \textit{Relevance} and \textit{Answerability} criteria ... still missing... The highest $\kappa$ was achieved for the \textit{Bloom Rating} criterion with 0.397, almost indicating a moderate agreement. In some cases, all students were not able to agree on the Bloom level of a question, which occurs since many questions did not use a certain operator verb, or more than one operator verb was used, which both made it difficult to determine the final Bloom level of the question. Overall, the Kappa of 0.397 is still a good value, showing that the students were able to agree on the Bloom levels in many cases, but still had some disagreements in others.
+In contrast to this, the \textit{Answerability} ($\kappa=0.179$) and especially the \textit{Challenging} ($\kappa=0.270$) criterion achieved better agreements. Moreover, the highest $\kappa$ was achieved for the \textit{Bloom Rating} criterion with 0.397, indicating an almost moderate agreement. In some cases, the students were not able to agree on the Bloom level of a question, which occurs since a set of questions did not provide a certain operator verb, or more than one operator verb was used, which both made it difficult to determine the final Bloom level of the question. Overall, the Kappa of 0.397 is still a good value for this criterion, showing that the students were able to agree on the Bloom levels in many cases, but still had some disagreements.
 
 \begin{table}[H]
     \centering
@@ -760,9 +764,9 @@ In contrast to this, the \textit{Challenging} criterion achieved a moderate agre
         \toprule
         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Relevance          & ... & 40 & 3 \\
-        Clarity            & -0.061 & 39 & 3 \\
-        Answerability      & ... & 39 & 3 \\
+        Relevance          & 0.056 & 40 & 3 \\
+        Clarity            & -0.058 & 39 & 3 \\
+        Answerability      & 0.179 & 39 & 3 \\
         Challenging        & 0.270 & 40 & 3 \\
         Value              & -0.256 & 40 & 3 \\
         Language           & 0.016 & 40 & 3 \\
@@ -771,9 +775,9 @@ In contrast to this, the \textit{Challenging} criterion achieved a moderate agre
     \end{tabular}
     % \caption*{\small Interpretation of Fleiss' $\kappa$:\\ $<$0 Invalid, $<$0.2 Slight, $<$0.4 Fair, $<$0.6 Moderate, $<$0.8 Substantial, $\geq$0.8 Almost Perfect.}
 \end{table}
-% relevance: ... #TODO
-% clarity: -0.061, wenig agreement...
-% answerability: ... #TODO
+% relevance: 0.056, wenig agreement...
+% clarity: -0.058, wenig agreement...
+% answerability: 0.179, moderates agreement, koennte aber besser sein
 % challenging: 0.270, moderates agreement, koennte aber besser sein
 % value: -0.256, wenig agreement. sehr verschieden durch die studentin2
 % language: 0.016, wenig agreement, da studentin2 sehr viele 10 gegeben hat
@@ -803,7 +807,7 @@ Overall, the stringent time constraints for the students' evaluation could have 
 % diverse fragen weniger challenging + verbunden mit bloom1
 % je komplexer die fragen (anhand von bloom), umso weniger beantwortbar
 
-% student3 exp2a: fehlen noch gewisse insights, aber:
+% student3 exp2a:
 % frage 4 zu kompliziert formuliert, viele fremdwörter
 % frage 7 mit wenig verständlich dargestellten operatoren, ungeeignet für unterricht
 % frage 9 fehlt operator
