@@ -149,7 +149,7 @@
 
     % 19 tanenbaum 3 deepseek complex prompt
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/019_tanenbaum_3.txt}{1a supervisor good example}{lst:1a-supervisor-good-example}
-    This question by DeepSeek, using the complex prompt and the Tanenbaum source, is a good example, as it is based on the source material and demonstrates a good understanding of the content. However, it is also noted that the question is not that challenging, since many of these questions are less challenging. This question is also one of many questions which include a phrasing like \enquote{according to the source material}, which is an unwanted pattern in the question generation process.
+    This question by DeepSeek, using the complex prompt and the Tanenbaum source, is a good example, as it is based on the source material and demonstrates a good understanding of the content. However, it is also noted that the question is not that challenging, since many of the experiment's questions are less challenging. This question is also one of many questions which include a phrasing like \enquote{according to the source material}, which is an unwanted pattern in the question generation process.
 
     \vp
 
@@ -159,24 +159,29 @@
 
     \vp
 
+    % google complex script manipulated 1b
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1b/012_script_manipulated_5.txt}{1b supervisor good example + expert4 also thinks so}{lst:1b-supervisor-good-example}
-    This question demonstrates -- with a lack in linguistic quality -- distancing from the manipulated script by contrasting the manipulated script with the \enquote{traditional} OSI architecture.
+    This complex prompt question by Google demonstrates -- with a lack in linguistic quality -- distancing from the manipulated script by contrasting the manipulated script with the \enquote{traditional} OSI architecture.
     \vp
 
+    % openai common prompt 1b
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1b/013_script_manipulated_2.txt}{1b supervisor bad example}{lst:1b-supervisor-bad-example}
-    This question offers a decent style in asking, but regarding the content, it fully follows the manipulated script without any distancing.
+    This question by OpenAI, using the common prompt, offers a decent style in asking, but regarding the content, it fully follows the manipulated script without any distancing.
     \vp
 
+    % 1b openai complex
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1b/016_script_manipulated_6.txt}{1b supervisor NaN example}{lst:1b-supervisor-nan-example}
-    The distancing from the manipulated content via negation is confusing in this question, which makes the categorization difficult.
+    In this question by OpenAI, using the complex prompt, the distancing from the manipulated content via negation is confusing, which makes the categorization difficult for the supervisor.
     \vp
 
+    % openai common prompt 1a transcript
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/045_transcript_1.txt}{1a staff good example + supervisor}{lst:1a-staff-good-example}
-    This question is noted as a good example, as it demonstrates a good understanding of the source material, and it is of high quality.
+    This question by OpenAI, using the common prompt, is noted as a good example, as it demonstrates a good understanding of the source material, and it is of high quality.
     \vp
 
+    % google common prompt 1a script
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/025_script_2.txt}{1a staff bad example}{lst:1a-staff-bad-example}
-    This question is noted as a bad example by two staff members, as it is based on a negation in the question, which is not a good linguistic practice for valuable question generation.
+    This question by Google, using the common prompt, is noted as a bad example by the staff members. It is based on a negation in the question, which is not a good linguistic practice for valuable question generation.
     \vp
 
     \subsection{Second Experiment}
@@ -213,7 +218,7 @@
 
     % exp2c frage 4 als bad example
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp2c/004_script_all.txt}{2c student bad example}{lst:2c-student-bad-example}
-    Anthropic's open-ended question -- Bloom level 4 -- shows a bad example, since it contains too many foreign words and a complex wording, which complicates the meaning of the core task.
+    Anthropic's open-ended question -- Bloom level 4 -- illustrates a bad example, since it contains too many foreign words and a complex wording, which complicates the meaning of the core task.
 
     \vp
 
@@ -234,9 +239,6 @@
     \vp
 
     \section{Evaluation Prompts and Rubrics}
-    % \longlistingfromfile{markdown}{../../../20_experiments/40_prompts/evaluation/exp_eval.md}{Evaluation Prompt Pattern for Experiments: \textbf{exp\_eval.md}}
-    % \label{lst:exp-eval}
-    % \vp
     \longlistingfromfile{markdown}{../../../20_experiments/40_prompts/evaluation/exp1a_rubric.md}{Experiment 1a Evaluation Rubric: \textbf{exp1a\_rubric.md}}{lst:exp1a-rubric}
     \vp
     \longlistingfromfile{markdown}{../../../20_experiments/40_prompts/evaluation/exp1b_rubric.md}{Experiment 1b Evaluation Rubric: \textbf{exp1b\_rubric.md}}{lst:exp1b-rubric}
@@ -330,18 +332,13 @@
     \vp
     \longlistingfromfile{python}{../../../20_experiments/50_src/constants.py}{Configuration Constants: \textbf{constants.py}}{lst:constants}
     \vp
-    % \longlistingfromfile{python}{../../../20_experiments/50_src/agreement.py}{Inter-Annotator Agreement Calculation: \textbf{agreement.py}}{lst:agreement}
-    \vp
     \longlistingfromfile{python}{../../../20_experiments/50_src/analysis_quantitative.py}{Quantitative Analysis: \textbf{analysis\_quantitative.py}}{lst:analysis-quantitative}
     \vp
-    % \longlistingfromfile{python}{../../../20_experiments/50_src/analysis_qualitative.py}{Qualitative Analysis: \textbf{analysis\_qualitative.py}}{lst:analysis-qualitative}
-    % \vp
     \longlistingfromfile{python}{../../../20_experiments/50_src/nb_to_py/evaluation1_quan.py}{Experiment 1 Quantitative Evaluation Notebook: \textbf{evaluation1\_quan.ipynb}}{lst:evaluation1-quan-notebook}
     \vp
     \longlistingfromfile{python}{../../../20_experiments/50_src/nb_to_py/evaluation1_qual.py}{Experiment 1 Qualitative Evaluation Notebook: \textbf{evaluation1\_qual.ipynb}}{lst:evaluation1-qual-notebook}
     \vp
     \longlistingfromfile{python}{../../../20_experiments/50_src/nb_to_py/evaluation2_qual.py}{Experiment 2 Qualitative Evaluation Notebook: \textbf{evaluation2\_qual.ipynb}}{lst:evaluation2-qual-notebook}
-
 \end{appendices}
 
 \vp
