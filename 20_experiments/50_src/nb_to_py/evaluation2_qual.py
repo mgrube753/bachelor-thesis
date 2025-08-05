@@ -83,7 +83,6 @@ def load_student_data(student_id):
     for exp in ["exp2a", "exp2b", "exp2c"]:
         csv_path = student_path / f"{exp}.csv"
         if csv_path.exists():
-            # Try multiple encodings
             df = None
             for encoding in ['utf-8', 'latin-1', 'cp1252', 'iso-8859-1']:
                 try:
@@ -246,7 +245,6 @@ print("EXPERIMENT 2 - DESCRIPTIVE STATISTICS (ALL RATINGS)")
 print("="*70)
 print(f"Number of ratings in df_combined: {len(df_combined)}")
 
-# Create consistent numeric dataset for all ratings
 df_numeric = df_combined.copy()
 
 print("Converting metrics to numeric (all ratings)...")
@@ -270,6 +268,17 @@ display(df_numeric)
 
 
 numeric_metrics = [m for m in metrics if pd.api.types.is_numeric_dtype(df_numeric[m])]
+
+# Calculate total score as sum of main metrics
+main_score_metrics = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'blooms_level_score']
+existing_score_metrics = [m for m in main_score_metrics if m in df_numeric.columns]
+df_numeric['total_score'] = df_numeric[existing_score_metrics].sum(axis=1)
+metric_labels['total_score'] = 'Total Score'
+if 'total_score' not in metrics:
+    metrics.append('total_score')
+if 'total_score' not in numeric_metrics:
+    numeric_metrics.append('total_score')
+
 if len(df_numeric) > 0 and numeric_metrics:
     print("\nOverall Statistics (all metrics on 0-10 scale):")
     overall_stats = df_numeric[numeric_metrics].describe().round(2)
@@ -283,20 +292,6 @@ else:
     print("\nNo ratings available for statistics.")
     overall_stats = pd.DataFrame()
     exp_stats = pd.DataFrame()
-
-
-# In[ ]:
-
-
-# Calculate total score as sum of main metrics
-main_score_metrics = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'blooms_level_score']
-existing_score_metrics = [m for m in main_score_metrics if m in df_numeric.columns]
-df_numeric['total_score'] = df_numeric[existing_score_metrics].sum(axis=1)
-metric_labels['total_score'] = 'Total Score'
-if 'total_score' not in metrics:
-    metrics.append('total_score')
-if 'total_score' not in numeric_metrics:
-    numeric_metrics.append('total_score')
 
 
 # In[ ]:
@@ -380,13 +375,14 @@ if 'df_numeric' in locals() and 'llm' in df_numeric.columns and len(df_numeric) 
             axes[i].set_xlabel('LLM')
             axes[i].set_ylabel(metric_display)
             axes[i].grid(True, alpha=0.3)
-            axes[i].set_xticklabels(sorted(df_plot['llm'].unique()), rotation=20)
+            llm_labels = [llm.capitalize() for llm in sorted(df_plot['llm'].unique())]
+            axes[i].set_xticklabels(llm_labels)
         else:
             axes[i].set_title(f'{metric_labels[metric]} - No Data')
             axes[i].text(0.5, 0.5, 'No Data', ha='center', va='center', transform=axes[i].transAxes)
     for j in range(len(numeric_metrics), len(axes)):
         axes[j].set_visible(False)
-    plt.suptitle('Experiment 2: Metrics by LLM', fontsize=16, fontweight='bold', y=0.995)
+    plt.suptitle('Experiment 2: LLM Performance across all Criteria', fontsize=16, fontweight='bold', y=0.995)
     plt.subplots_adjust(top=0.92)
     plt.tight_layout()
     
@@ -596,10 +592,5 @@ def save_results():
 
 save_results()
 print(f"\n" + "="*60)
-print("ANALYSIS COMPLETE - ALL RATINGS")
-print("="*60)
-print(f"Data loaded: {len(df_combined)} total evaluations")
-print(f"Metrics analyzed: {len(metrics)}")
-print(f"Students: {sorted(df_combined['student'].unique())}")
-print(f"Experiments: {sorted(df_combined['experiment'].unique())}")
+print("ANALYSIS COMPLETE")
 

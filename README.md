@@ -12,9 +12,9 @@
 4. [Running Experiments](#running-experiments)
 5. [Analysis & Evaluation](#analysis--evaluation)
 6. [Documentation](#documentation)
-7. [Thesis Source & Compilation](#thesis-source--compilation)
+7. [Thesis & Compilation](#thesis--compilation)
 8. [Presentations](#presentations)
-9. [Prior Experimental Runs](#prior-experimental-run)
+9. [Prior Experimental Run](#prior-experimental-run)
 10. [License](#license)
 
 ---
@@ -27,7 +27,7 @@ The experiments focus on:
 - **Content Adherence & Error Detection** (Exp 1)
 - **Relationship between Question Formats & Bloom’s Taxonomy Alignment** (Exp 2)
 
-Results are analyzed quantitatively and qualitatively to assess the pedagogical quality of LLM-generated questions.
+Results are analyzed quantitatively (only Exp 1) and qualitatively (both experiments) to assess the quality of LLM-generated questions in certain dimensions.
 
 ---
 
@@ -40,7 +40,7 @@ Results are analyzed quantitatively and qualitatively to assess the pedagogical 
    cd bachelor-thesis
    ```
 
-2. Create a Python 3.x virtual environment, 3.10.14 was used in this thesis.  
+2. Create a Python 3.x virtual environment, 3.10.14 was used in this thesis. An example for creating a virtual environment is:
 
    ```sh
    python -m venv .venv
@@ -119,7 +119,7 @@ All script-level documentation for the Python files in [`20_experiments/50_src/`
 
 ---
 
-## Thesis Source & Compilation
+## Thesis & Compilation
 
 Full LaTeX thesis is under [`50_thesis/`](50_thesis/), including its PDF. To compile if needed, run:
 
