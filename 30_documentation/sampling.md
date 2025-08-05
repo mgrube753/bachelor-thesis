@@ -1,4 +1,3 @@
-
 # `sampling.py`
 
 This script prepares data for human evaluation by automating the sampling of generated questions, the creation of CSV files for evaluators, and the renaming of sampled files for anonymized review.
@@ -8,14 +7,14 @@ This script prepares data for human evaluation by automating the sampling of gen
 The script follows a three-stage process:
 
 1. **Sampling**: Randomly selects a specified number of question files from each experimental condition in the experiment output directories.
-2. **CSV Generation**: Produces structured CSV files for different evaluation tasks (e.g., qualitative analysis by experts and students), including hint files and evaluation templates.
+2. **CSV Generation**: Produces structured CSV files for different evaluation tasks (e.g. qualitative analysis by experts and students), including hint files and evaluation templates.
 3. **Renaming**: Copies the sampled question files to a new directory with standardized, anonymized filenames for manual review.
 
 ## Main Functions
 
 - `sample_questions(...)` and `walk_and_sample(...)`:
     - Traverse the experiment output directories (`10_exp1`, `20_exp2`).
-    - Randomly select a specified number of `.txt` question files from each condition (e.g., for each LLM, prompt type, and source).
+    - Randomly select a specified number of `.txt` question files from each condition (e.g. for each LLM, prompt type, and source).
     - Copy the selected files to the `70_samples` directory.
 
 - `parse_file_path(parts)`:
@@ -31,7 +30,7 @@ The script follows a three-stage process:
     - Helper functions to locate the original file path of a sampled question and determine its source type for renaming.
 
 - `rename_samples(samples, csv_path, output_path)`:
-    - Reads the generated CSVs and, for each sampled question, creates a new anonymized filename (e.g., `001_script_2.txt`).
+    - Reads the generated CSVs and, for each sampled question, creates a new anonymized filename (e.g. `001_script_2.txt`).
     - Copies the files to the `80_samples_renamed` directory, making them ready for manual review without revealing the LLM or other sensitive details.
 
 - `main()`:

@@ -1,6 +1,6 @@
 # `analysis_qualitative.py`
 
-**Note:** This script is marked as discarded and is no longer in use. The qualitative analysis is now performed by human experts.
+**Note:** This script is marked as discarded and is no longer in use. The qualitative analysis is now performed by human experts instead of using this prolonged python script.
 
 This script was designed to automate the qualitative analysis of questions generated in two experiments (`exp1` and `exp2`). It uses Large Language Models (LLMs) from OpenAI and Anthropic to evaluate questions based on a predefined rubric.
 

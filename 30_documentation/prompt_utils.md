@@ -13,7 +13,7 @@ The script streamlines the process of working with prompts by centralizing loadi
   - It automatically appends the `.md` extension if it's not already present.
 
 - `format_prompt(template, **values)`:
-  - Formats a given prompt `template` by substituting placeholders (e.g., `{text}`) with actual values.
+  - Formats a given prompt `template` by substituting placeholders (e.g. `{text}`) with actual values.
   - It includes error handling to prevent crashes if a key is missing in the provided `values`.
 
 - `parse_bloom_md(md_content)`:

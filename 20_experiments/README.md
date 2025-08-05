@@ -32,7 +32,7 @@ This directory contains the experimental framework for evaluating Large Language
 - **OpenAI o3**
 - **DeepSeek R1**
 
-### Source Materials
+### Source Materials (TXT)
 
 - **Script**: Lecture content from "Referenzarchitekturen" (Prof. Cap)
 - **Transcript**: Audio-to-text conversion of lecture content
@@ -50,7 +50,7 @@ This directory contains the experimental framework for evaluating Large Language
   - [`exp2_bloom.md`](40_prompts/experiment/exp2_bloom.md) - Taxonomy-aligned generation
   - [`exp2_both.md`](40_prompts/experiment/exp2_both.md) - Combined specification
 
-### Evaluation System
+### Evaluation Prompts
 
 - **[`40_prompts/evaluation/`](40_prompts/evaluation/)** - Assessment rubrics
   - [`exp_eval.md`](40_prompts/evaluation/exp_eval.md) - Expert evaluation template
@@ -58,18 +58,36 @@ This directory contains the experimental framework for evaluating Large Language
   - [`exp1b_rubric.md`](40_prompts/evaluation/exp1b_rubric.md) - Error detection criteria
   - [`exp2_rubric.md`](40_prompts/evaluation/exp2_rubric.md) - Format-taxonomy assessment
 
-### Automation Pipeline
+### Fundamental Scripts
 
-- **[`50_src/main.py`](50_src/main.py)** - Primary experiment orchestration
-- **[`50_src/question_generation.py`](50_src/question_generation.py)** - LLM question generation
-- **[`50_src/evaluation.py`](50_src/evaluation.py)** - Automated assessment execution
-- **[`50_src/analysis_quantitative.py`](50_src/analysis_quantitative.py)** - Statistical analysis
-- **[`50_src/analysis_qualitative.py`](50_src/analysis_qualitative.py)** - Expert evaluation processing
-- **[`50_src/agreement.py`](50_src/agreement.py)** - Inter-annotator reliability calculation
+- **[`50_src/check_truncation.py`](50_src/check_truncation.py)** - Token length validation for TXT files
+  - Verifies source materials and generated questions fit within model limits for semantic similarity check
+  - Uses the model's tokenizer to ensure that the content does not exceed the maximum token length before analyzing
+  - Generates report in [`note_truncation.md`](50_src/note_truncation.md)
+
+- **[`50_src/main.py`](50_src/main.py)** - Main execution script
+  - Initializes LLM clients (OpenAI, Anthropic, Google, DeepSeek)
+  - Executes all question generation experiments (exp1a, exp1b, exp2a, exp2b, exp2c)
+  - Coordinates the entire experimental workflow using several utility scripts
+    - **[`50_src/api_calls.py`](50_src/api_calls.py)** - LLM API interactions
+    - **[`50_src/prompt_utils.py`](50_src/prompt_utils.py)** - Prompt parsing and generation
+    - **[`50_src/question_generation.py`](50_src/question_generation.py)** - Question generation logic
+
+- **[`50_src/analysis_quantitative.py`](50_src/analysis_quantitative.py)** - Experiment 1 quantitative analysis
+  - Calculates cosine similarity between questions and source materials
+  - Generates adherence scores between questions and source materials using o3 model and Claude 3.7 Sonnet
+  - Processes experiments exp1a, exp1b, and exp1a_no_source
+
+- **[`50_src/sampling.py`](50_src/sampling.py)** - Sample selection for manual review
+  - Randomly samples questions for expert evaluation
+  - Generates structured CSV templates for qualitative assessment
+  - Creates renamed sample collections for blind evaluation
+
+After this
 
 ## Bloom's Taxonomy Integration
 
-The experiments utilize a comprehensive German-language Bloom's framework [`40_prompts/experiment/bloom.md`](40_prompts/experiment/bloom.md):
+The second experiment utilizes Bloom's Taxonomy, described and used via [`40_prompts/experiment/bloom.md`](40_prompts/experiment/bloom.md):
 
 1. **Remembering**
 2. **Understanding**
@@ -80,7 +98,7 @@ The experiments utilize a comprehensive German-language Bloom's framework [`40_p
 
 ### Description & Verb Integration
 
-Each level includes specific German descriptions and action verbs for each Bloom level to construct the prompts, parsed via [`50_src/prompt_utils.py`](50_src/prompt_utils.py) for systematic question generation targeting specific cognitive demands.
+Each level includes specific German descriptions and action verbs for each Bloom level to construct the prompts, properly parsed via [`50_src/prompt_utils.py`](50_src/prompt_utils.py) for systematic question generation targeting specific cognitive demands + question type constraints.
 
 ## Usage Instructions
 
@@ -90,11 +108,11 @@ Each level includes specific German descriptions and action verbs for each Bloom
 python check_truncation.py        # Optional: Perform first truncation check for source materials
 python main.py                    # Generate questions
 python check_truncation.py        # Re-check after generating questions to check for truncation
-python analysis_quantitative.py   # Quantitative analysis
-python sampling.py                # Sample questions for manual review
+python analysis_quantitative.py   # Quantitative analysis for experiment 1
+python sampling.py                # Sample questions for manual review (experts in exp1, students in exp2)
 ```
 
-The script `analysis_qualitative.py`, which would have been LLM-based, was not used as the qualitative analysis was performed manually by experts instead.
+The script [`50_src/analysis_qualitative.py`](50_src/analysis_qualitative.py), which would have been LLM-based (using all questions instead of sampled ones), was not used as the qualitative analysis was performed manually by experts instead (using sample sets). This approach was used in the archived experimental run in [`../70_prior_exp_run/`](../70_prior_exp_run/) for both thesis experiments.
 
 Whether all ratings are available, run the Jupyter notebooks:
 
@@ -102,10 +120,21 @@ Whether all ratings are available, run the Jupyter notebooks:
 - [`50_src/evaluation1_qual.ipynb`](50_src/evaluation1_qual.ipynb) - Qualitative analysis of Experiment 1
 - [`50_src/evaluation2_qual.ipynb`](50_src/evaluation2_qual.ipynb) - Qualitative analysis of Experiment 2
 
-Then, many of the notebooks' insights are available in [`../40_evaluation/`](../40_evaluation/).
+Then, the notebooks' insights are available in [`../40_evaluation/`](../40_evaluation/).
+
+### Notebook Conversion for Documentation
+
+To include the notebooks in the thesis PDF, the following command converts them to Python scripts:
+
+```bash
+# From project root
+jupyter nbconvert --output-dir='20_experiments/50_src/nb_to_py' --to script 20_experiments/50_src/evaluation*.ipynb
+```
+
+These generated Python scripts in [`50_src/nb_to_py/`](50_src/nb_to_py/) are then included in the thesis PDF after compilation.
 
 ### Configuration Requirements
 
 - **API Keys**: OpenAI, Anthropic, Google configured via environment variables
 - **Dependencies**: Listed in root [`requirements.txt`](../requirements.txt)
- **DeepSeek**: Manual prompting via web interface (R1 model access)
+- **DeepSeek**: Manual prompting via web interface (R1 model access)

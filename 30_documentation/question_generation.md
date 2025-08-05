@@ -19,7 +19,7 @@ The script is organized into functions, each corresponding to a specific part of
 - `run_exp_1a(clients)`: **Content Fidelity**. Generates questions by iterating through different source texts (`script`, `transcript`, `tanenbaum`), text layers, and prompt templates.
 - `run_exp_1b(clients)`: **Error Handling**. Generates questions using source texts that contain known errors to observe how LLMs handle them.
 - `run_exp_1a_no_source(clients)`: A variation of 1a that prompts the LLM to generate questions about a topic *without* providing the source text directly in the prompt.
-- `run_exp_2a(clients)`: **Question Type**. Generates questions of different types (e.g., Multiple-Choice, Open-Ended) based on a single source text, iterating through predefined question formats.
+- `run_exp_2a(clients)`: **Question Type**. Generates questions of different types (e.g. Multiple-Choice, Open-Ended) based on a single source text, iterating through predefined question formats.
 - `run_exp_2b(clients)`: **Bloom Level**. Generates questions corresponding to different levels of Bloom's Taxonomy, iterating through predefined Bloom levels.
 - `run_exp_2c(clients)`: **Combined**. Generates questions by combining both question type and Bloom's Taxonomy level as variables.
 
