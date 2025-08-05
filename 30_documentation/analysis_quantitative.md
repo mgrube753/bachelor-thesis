@@ -38,7 +38,7 @@ The script processes experiment data from CSV files, loads the generated questio
   - `scikit-learn`: For calculating cosine similarity.
   - `tqdm`: For progress bars.
 - **Internal Modules:**
-  - `constants`: Provides file paths and model IDs.
-  - `file_utils`: For loading text files.
-  - `api_calls`: For making requests to LLM APIs.
-  - `api_config`: For initializing API clients.
+  - [`constants`](../20_experiments/50_src/constants.py): Provides file paths and model IDs.
+  - [`file_utils`](../20_experiments/50_src/file_utils.py): For loading text files.
+  - [`api_calls`](../20_experiments/50_src/api_calls.py): For making requests to LLM APIs.
+  - [`api_config`](../20_experiments/50_src/api_config.py): For initializing API clients.

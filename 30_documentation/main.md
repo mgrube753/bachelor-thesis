@@ -9,17 +9,17 @@ The `main` function serves as the master controller for the project's experiment
 ### Key Steps in `main()`
 
 1. **Initialize API Clients**:
-   - It begins by calling `init_clients()` from `api_config.py`.
+   - It begins by calling `init_clients()` from [`api_config.py`](../20_experiments/50_src/api_config.py).
    - This step is critical as it sets up the connection to the various LLM services (Google, Anthropic, OpenAI).
    - It includes error handling to gracefully exit if the API keys are not configured correctly in the `.env` file.
 
 2. **Preload Bloom Data**:
-   - It calls `get_bloom()` from `prompt_utils.py`.
+   - It calls `get_bloom()` from [`prompt_utils.py`](../20_experiments/50_src/prompt_utils.py).
    - This function loads and caches the Bloom's Taxonomy data, which is used in prompts for experiment 2. Pre-loading it ensures it's readily available and doesn't need to be read from disk multiple times.
 
 3. **Run Experiments**:
    - The script then calls the specific functions for each part of the experiments.
-   - The functions (`run_exp_1a`, `run_exp_1b`, etc.) are imported from `question_generation.py`.
+   - The functions (`run_exp_1a`, `run_exp_1b`, etc.) are imported from [`question_generation.py`](../20_experiments/50_src/question_generation.py).
    - The script is structured to allow for selective execution of experiments by commenting or uncommenting the relevant function calls, depending on the desired experiments to run sequentially.
 
 ## Execution
@@ -29,6 +29,10 @@ To run the experiments, this script is executed from the command line. The comme
 ## Dependencies
 
 - **Internal Modules**:
-  - `api_config`: For initializing the LLM API clients.
-  - `question_generation`: Contains the logic for running each specific experiment.
-  - `prompt_utils`: For preloading utility data like the Bloom's Taxonomy information.
+  - [`api_config`](../20_experiments/50_src/api_config.py): For initializing the LLM API clients.
+  - [`question_generation`](../20_experiments/50_src/question_generation.py): Contains the logic for running each specific experiment.
+  - [`prompt_utils`](../20_experiments/50_src/prompt_utils.py): For preloading utility data like the Bloom's Taxonomy information.
+
+## Note
+
+Running this script, including the loaded [`question_generation.py`](50_src/question_generation.py) functions, does not generate questions for the DeepSeek model. While running the script, a blank file (still using proper file structure) is created for this model instead, as the questions of this model were generated externally on its [website](https://deepseek.com/).

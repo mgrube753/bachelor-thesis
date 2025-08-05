@@ -4,7 +4,7 @@ This script is responsible for configuring and initializing the API clients requ
 
 ## Core Functionality
 
-The script securely loads API keys from a `.env` file and uses them to create and configure client objects for Google, Anthropic, and OpenAI.
+The script securely loads API keys from a `.env` file (set in the root directory) and uses them to create and configure client objects for Google, Anthropic, and OpenAI.
 
 ## Key Functions
 
@@ -21,7 +21,7 @@ The script securely loads API keys from a `.env` file and uses them to create an
 
 ## Usage
 
-This script is typically called at the beginning of any process that needs to interact with an LLM. The returned dictionary of clients is passed to functions in `api_calls.py`.
+This script is called at the beginning of any process that needs to interact with an LLM. The returned dictionary of clients is passed to functions in `api_calls.py`.
 
 ## Dependencies
 

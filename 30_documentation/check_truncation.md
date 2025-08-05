@@ -1,6 +1,6 @@
 # `check_truncation.py`
 
-This script is a diagnostic tool used to check whether text files will be truncated by the sentence-embedding model due to exceeding its maximum sequence length.
+This script is a diagnostic tool used to check whether text files will be truncated by the sentence-embedding model due to exceeding its maximum sequence length. This sentence transformer model was used to generate embeddings between source texts and generated questions which are explicitly comparable by calculating cosine similarity. Before running the quantitative analysis, it is crucial to ensure that all source materials and as many generated questions as possible fit within the model's token limits.
 
 ## Core Functionality
 
@@ -50,4 +50,4 @@ Running this script provides a clear overview of which source texts or generated
   - `pandas`: For data aggregation and summary.
   - `sentence-transformers`: To access the tokenizer and model properties.
 - **Internal Modules:**
-  - `constants`: Provides file paths and the embedding model ID.
+  - [`constants`](../20_experiments/50_src/constants.py): Provides file paths and the embedding model ID.

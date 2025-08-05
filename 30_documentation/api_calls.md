@@ -1,6 +1,6 @@
 # `api_calls.py`
 
-This script is the central hub for interacting with various Large Language Model (LLM) APIs. It provides a unified interface to generate text from Google, Anthropic, and OpenAI models.
+This script is the central hub for interacting with various Large Language Model APIs. It provides a unified interface to generate text from Google, Anthropic, and OpenAI models.
 
 Note: DeepSeek is not included in this script, as it is handled separately in `question_generation.py` creating empty files for these questions. The questions were generated using [DeepSeek on its website](https://chat.deepseek.com/) instead of through API calls.
 
@@ -37,6 +37,6 @@ The script abstracts the specific implementation details of each API, allowing o
 ## Dependencies
 
 - **Internal Modules:**
-  - `constants`: Provides the request delay duration and a mapping of LLM names to their specific model IDs.
+  - [`constants`](../20_experiments/50_src/constants.py): Provides the request delay duration and a mapping of LLM names to their specific model IDs.
 - **External Libraries:**
   - `google.genai`: The official Python client for the Google Gemini API.

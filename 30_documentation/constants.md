@@ -17,7 +17,7 @@ The script constructs absolute paths to the main project directories, ensuring t
 
 - `LLM_MODEL_IDS`: A dictionary mapping the internal names of the LLMs (`google`, `anthropic`, `openai`) to their specific model identifiers used by the APIs.
 - `LLM_NAMES`: The keys from `LLM_MODEL_IDS`, providing a simple list of the LLMs used.
-- `EMBEDDING_MODEL_ID`: The identifier for the sentence-transformer model used for quantitative analysis. This model is sourced from Hugging Face.
+- `EMBEDDING_MODEL_ID`: The identifier for the sentence-transformer model used for quantitative analysis. This model is sourced from Hugging Face using the `sentence-transformers` library.
   - **Source:** [T-Systems-onsite/cross-en-de-roberta-sentence-transformer](https://huggingface.co/T-Systems-onsite/cross-en-de-roberta-sentence-transformer)
 - `REQUEST_DELAY_SECONDS`: A delay (in seconds) applied between API calls to prevent rate-limiting.
 

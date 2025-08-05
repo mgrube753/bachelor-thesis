@@ -1,6 +1,6 @@
 # `file_utils.py`
 
-This script provides utility functions for file operations.
+This script provides utility functions for file operations, including loading several TXT files (e.g. source texts), saving generated questions, and also normalizing text for use as filenames.
 
 ## Functions
 
@@ -28,4 +28,4 @@ Converts a string into a "slug" by making it lowercase and replacing spaces and 
 - **Parameters:**
   - `text` (str): The input string.
 - **Returns:**
-  - The slugified string.
+  - The normalized string.

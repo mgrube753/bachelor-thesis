@@ -9,7 +9,7 @@ The script streamlines the process of working with prompts by centralizing loadi
 ## Key Functions
 
 - `load_prompt(prompt_name)`:
-  - Loads a prompt template from the `40_prompts` directory.
+  - Loads a prompt template from the [`../20_experiments/40_prompts`](../20_experiments/40_prompts) directory.
   - It automatically appends the `.md` extension if it's not already present.
 
 - `format_prompt(template, **values)`:
@@ -17,20 +17,20 @@ The script streamlines the process of working with prompts by centralizing loadi
   - It includes error handling to prevent crashes if a key is missing in the provided `values`.
 
 - `parse_bloom_md(md_content)`:
-  - Parses the content of the `bloom.md` file.
+  - Parses the content of the [`../20_experiments/40_prompts/experiment/bloom.md`](../20_experiments/40_prompts/experiment/bloom.md) file.
   - It extracts the descriptions and action verbs for each level of Bloom's Taxonomy and organizes them into a structured dictionary.
 
 - `get_bloom()`:
   - A cached function to retrieve the parsed Bloom's Taxonomy data.
-  - On its first call, it loads and parses the `bloom.md` file using `parse_bloom_md`.
+  - On its first call, it loads and parses the [`../20_experiments/40_prompts/experiment/bloom.md`](../20_experiments/40_prompts/experiment/bloom.md) file using `parse_bloom_md`.
   - On subsequent calls, it returns the cached data, avoiding redundant file I/O and parsing. This improves efficiency.
 
 - `q_format(q_type)`:
   - Returns a pre-defined format string for a given question type (`Multiple-Choice` or `Open-Ended`).
-  - This ensures that the generated questions have a consistent structure.
+  - This ensures that the generated questions have a consistent structure and an equally balanced question set for both types.
 
 ## Dependencies
 
 - **Internal Modules**:
-  - `constants`: Provides the file path to the Bloom's Taxonomy data file (`BLOOM_DATA_FILE`) and the path to the prompt templates directory (`PROMPT_TEMPLATES_PATH`).
-  - `file_utils`: Used to load the raw text content of the prompt and Bloom files.
+  - [`constants`](../20_experiments/50_src/constants.py): Provides the file path to the Bloom's Taxonomy data file (`BLOOM_DATA_FILE`) and the path to the prompt templates directory (`PROMPT_TEMPLATES_PATH`).
+  - [`file_utils`](../20_experiments/50_src/file_utils.py): Used to load the raw text content of the prompt and Bloom files.

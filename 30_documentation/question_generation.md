@@ -9,24 +9,24 @@ The script is organized into functions, each corresponding to a specific part of
 ### General Workflow
 
 1. **Task Preparation**: For each experiment, a list of `tasks` is created. Each task is a tuple containing all the necessary information for a single LLM call (LLM name, client, prompt, output path, etc.).
-2. **CSV Creation**: An initial CSV file is created for each experiment to log the parameters of each generated question. This file is later used for analysis and is stored in `20_experiments/60_analyses/csv/initial/`.
+2. **CSV Creation**: An initial CSV file is created for each experiment to log the parameters of each generated question, stored in [`../20_experiments/60_analyses/csv/initial/`](../20_experiments/60_analyses/csv/initial/). By this, every question can be traced back to its experimental parameters, useful for conducting the quantitative analysis in Experiment 1.
 3. **Parallel Execution**: The `run_tasks` function uses a `ThreadPoolExecutor` to process the list of tasks concurrently.
 4. **Progress Tracking**: A progress bar (`tqdm`) and custom counters provide real-time feedback on the generation process. The counters are managed thread-safely using `llm_counters` and `counter_lock`, with helper functions for incrementing, resetting, and displaying progress (`increment_counter`, `reset_counters`, `get_progress`).
 5. **Saving Results**: Each generated question is saved to a unique text file in a structured directory hierarchy.
 
 ## Experiment Functions
 
-- `run_exp_1a(clients)`: **Content Fidelity**. Generates questions by iterating through different source texts (`script`, `transcript`, `tanenbaum`), text layers, and prompt templates.
+- `run_exp_1a(clients)`: **Content Fidelity**. Generates questions by iterating through different source texts (`script`, `transcript`, `tanenbaum` from [`../20_experiments/30_input_sources`](../20_experiments/30_input_sources)), text layers, and prompt templates.
 - `run_exp_1b(clients)`: **Error Handling**. Generates questions using source texts that contain known errors to observe how LLMs handle them.
-- `run_exp_1a_no_source(clients)`: A variation of 1a that prompts the LLM to generate questions about a topic *without* providing the source text directly in the prompt.
+- `run_exp_1a_no_source(clients)`: A variation of 1a that prompts the LLM to generate questions about a topic *without* providing the source text directly in the prompt. This was done to verify or falsify the usefulness of the semantic similarity (cosine similarity between two embedding vectors of source text and generated question) using a sentence transformer model in Experiment 1.
 - `run_exp_2a(clients)`: **Question Type**. Generates questions of different types (e.g. Multiple-Choice, Open-Ended) based on a single source text, iterating through predefined question formats.
 - `run_exp_2b(clients)`: **Bloom Level**. Generates questions corresponding to different levels of Bloom's Taxonomy, iterating through predefined Bloom levels.
 - `run_exp_2c(clients)`: **Combined**. Generates questions by combining both question type and Bloom's Taxonomy level as variables.
 
 ## Helper Functions
 
-- `create_csvs(...)`: Creates the initial CSV log files for each experiment, storing them in `20_experiments/60_analyses/csv/initial/` within `exp1` or `exp2` subdirectories.
-- `generate_task(...)`: A single worker function that formats a prompt, sends it to the appropriate LLM, and saves the result. It includes special logic to skip API calls for `"deepseek"` and save an empty file instead.
+- `create_csvs(...)`: Creates the initial CSV log files for each experiment, storing them in [`../20_experiments/60_analyses/csv/initial/`](../20_experiments/60_analyses/csv/initial/) within [`exp1`](../20_experiments/60_analyses/csv/initial/exp1) or [`exp2`](../20_experiments/60_analyses/csv/initial/exp2) subdirectories.
+- `generate_task(...)`: A single worker function that formats a prompt, sends it to the appropriate LLM, and saves the result. It includes a logic to skip API calls for `"deepseek"` and save an empty file instead, since it is prompted manually via its [web interface](https://deepseek.com/).
 - `run_tasks(...)`: The multi-threading manager that executes all tasks for an experiment using a `ThreadPoolExecutor`.
 - `concatenate_all_script_layers(...)`: A utility function that reads and combines all text layers from the `script` source type into a single string.
 - **Progress Counter Functions**:
@@ -39,7 +39,7 @@ The script is organized into functions, each corresponding to a specific part of
 - **External Libraries**:
   - `tqdm`: For displaying progress bars.
 - **Internal Modules**:
-  - `constants`: Provides all necessary paths, model names, and experiment parameters.
-  - `file_utils`: For loading source texts and saving generated questions.
-  - `prompt_utils`: For loading and formatting prompt templates.
-  - `api_calls`: For making the actual calls to the LLM APIs.
+  - [`constants`](../20_experiments/50_src/constants.py): Provides all necessary paths, model names, and experiment parameters.
+  - [`file_utils`](../20_experiments/50_src/file_utils.py): For loading source texts and saving generated questions.
+  - [`prompt_utils`](../20_experiments/50_src/prompt_utils.py): For loading and formatting prompt templates.
+  - [`api_calls`](../20_experiments/50_src/api_calls.py): For making the actual calls to the LLM APIs.

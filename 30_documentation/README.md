@@ -22,7 +22,7 @@ This directory contains comprehensive technical documentation for the bachelor t
 - Jupyter notebooks for analysis are located in [`20_experiments/50_src/`](../20_experiments/50_src/):
   - [`50_src/evaluation1_quan.ipynb`](../20_experiments/50_src/evaluation1_quan.ipynb)
   - [`50_src/evaluation1_qual.ipynb`](../20_experiments/50_src/evaluation1_qual.ipynb)
-  - [`50_src/evaluation2_quan.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb)
+  - [`50_src/evaluation2_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb)
 - Prompt templates and evaluation rubrics are in [`20_experiments/40_prompts/`](../20_experiments/40_prompts/).
-- API key setup has to be done in [`.env`](../.env), as explained in the main [`README.md`](../README.md).
+- API key setup has to be done in a [`.env`](../.env) file, as explained in the main [`README.md`](../README.md).
 - Python dependencies are listed in [`requirements.txt`](../requirements.txt).

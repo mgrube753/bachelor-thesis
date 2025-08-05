@@ -37,7 +37,7 @@ The script reads experiment data from CSV files, retrieves the generated questio
   - `pandas`: For data manipulation with DataFrames.
   - `tqdm`: For displaying progress bars.
 - **Internal Modules:**
-  - `constants`: Provides paths to various project directories.
-  - `file_utils`: For loading text files.
-  - `api_calls`: Handles the interaction with LLM APIs.
-  - `api_config`: For initializing the API clients.
+  - [`constants`](../20_experiments/50_src/constants.py): Provides paths to various project directories.
+  - [`file_utils`](../20_experiments/50_src/file_utils.py): For loading text files.
+  - [`api_calls`](../20_experiments/50_src/api_calls.py): Handles the interaction with LLM APIs.
+  - [`api_config`](../20_experiments/50_src/api_config.py): For initializing the API clients.
