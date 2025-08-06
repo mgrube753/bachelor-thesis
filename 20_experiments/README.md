@@ -104,6 +104,9 @@ Each level includes specific German descriptions and action verbs for each Bloom
 
 ### Basic Execution
 
+All data were generated using the scripts in this directory. \
+To run the Python files and the notebooks, go to the [`50_src/`](50_src/) directory and execute the following commands:
+
 ```bash
 python check_truncation.py        # Optional: Perform first truncation check for source materials
 python main.py                    # Generate questions
@@ -114,7 +117,7 @@ python sampling.py                # Sample questions for manual review (experts 
 
 The script [`50_src/analysis_qualitative.py`](50_src/analysis_qualitative.py), which would have been LLM-based (using all questions instead of sampled ones), was not used as the qualitative analysis was performed manually by experts instead (using sample sets). This approach was used in the archived experimental run in [`../70_prior_exp_run/`](../70_prior_exp_run/) for both thesis experiments.
 
-Whether all ratings are available, run the Jupyter notebooks:
+**Particularly useful for viewers**: Whether all ratings are available, run the Jupyter notebooks:
 
 - [`50_src/evaluation1_quan.ipynb`](50_src/evaluation1_quan.ipynb) - Quantitative analysis of Experiment 1
 - [`50_src/evaluation1_qual.ipynb`](50_src/evaluation1_qual.ipynb) - Qualitative analysis of Experiment 1
@@ -124,11 +127,10 @@ Then, the notebooks' insights are available in [`../40_evaluation/`](../40_evalu
 
 ### Notebook Conversion for Documentation
 
-To include the notebooks in the thesis PDF, the following command converts them to Python scripts:
+To include the notebooks in the thesis PDF, the following command was used (at [`50_src/`](50_src/)) to convert them to Python scripts:
 
 ```bash
-# From project root
-jupyter nbconvert --output-dir='20_experiments/50_src/nb_to_py' --to script 20_experiments/50_src/evaluation*.ipynb
+jupyter nbconvert --output-dir='nb_to_py' --to script evaluation*.ipynb
 ```
 
 These generated Python scripts in [`50_src/nb_to_py/`](50_src/nb_to_py/) are then included in the thesis PDF after compilation.
@@ -137,4 +139,4 @@ These generated Python scripts in [`50_src/nb_to_py/`](50_src/nb_to_py/) are the
 
 - **API Keys**: OpenAI, Anthropic, Google configured via environment variables
 - **Dependencies**: Listed in root [`requirements.txt`](../requirements.txt)
-- **DeepSeek**: Manual prompting via web interface (R1 model access)
+- **DeepSeek**: Manual prompting via [web interface](https://chat.deepseek.com) (R1 model access)

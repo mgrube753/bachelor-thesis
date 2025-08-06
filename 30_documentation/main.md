@@ -35,4 +35,4 @@ To run the experiments, this script is executed from the command line. The comme
 
 ## Note
 
-Running this script, including the loaded [`question_generation.py`](50_src/question_generation.py) functions, does not generate questions for the DeepSeek model. While running the script, a blank file (still using proper file structure) is created for this model instead, as the questions of this model were generated externally on its [website](https://deepseek.com/).
+Running this script, including the loaded [`question_generation.py`](50_src/question_generation.py) functions, does not generate questions for the DeepSeek model. While running the script, a blank file (still using proper file structure) is created for this model instead, as the questions of this model were generated externally on its [website](https://chat.deepseek.com/).

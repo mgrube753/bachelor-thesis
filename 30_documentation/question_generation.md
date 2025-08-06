@@ -26,7 +26,7 @@ The script is organized into functions, each corresponding to a specific part of
 ## Helper Functions
 
 - `create_csvs(...)`: Creates the initial CSV log files for each experiment, storing them in [`../20_experiments/60_analyses/csv/initial/`](../20_experiments/60_analyses/csv/initial/) within [`exp1`](../20_experiments/60_analyses/csv/initial/exp1) or [`exp2`](../20_experiments/60_analyses/csv/initial/exp2) subdirectories.
-- `generate_task(...)`: A single worker function that formats a prompt, sends it to the appropriate LLM, and saves the result. It includes a logic to skip API calls for `"deepseek"` and save an empty file instead, since it is prompted manually via its [web interface](https://deepseek.com/).
+- `generate_task(...)`: A single worker function that formats a prompt, sends it to the appropriate LLM, and saves the result. It includes a logic to skip API calls for `"deepseek"` and save an empty file instead, since it is prompted manually via its [web interface](https://chat.deepseek.com/).
 - `run_tasks(...)`: The multi-threading manager that executes all tasks for an experiment using a `ThreadPoolExecutor`.
 - `concatenate_all_script_layers(...)`: A utility function that reads and combines all text layers from the `script` source type into a single string.
 - **Progress Counter Functions**:
