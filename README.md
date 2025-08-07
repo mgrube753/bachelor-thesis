@@ -15,13 +15,13 @@
 7. [Thesis & Compilation](#thesis--compilation)
 8. [Presentations](#presentations)
 9. [Prior Experimental Run](#prior-experimental-run)
-10. [License](#license)
+10. [License Information](#license-information)
 
 ---
 
 ## Overview
 
-This repository implements and evaluates an automated pipeline for generating educational questions from instructional texts using various Large Language Models (LLMs). \
+This repository implements and evaluates a semi-automated pipeline for generating and evaluating educational questions from instructional texts using various Large Language Models (LLMs). \
 The experiments focus on:
 
 - **Content Adherence & Error Detection** (Exp 1)
@@ -66,25 +66,30 @@ Then install the requirements via:
 
 ## Project Structure
 
-- **00_administration/** – Project concept, exposé, LaTeX sources – [`00_administration/README.md`](00_administration/README.md)
-- **10_literature_review/** – Systematic literature review, criteria, BibTeX files – [`10_literature_review/README.md`](10_literature_review/README.md)
-- **20_experiments/** – Experimental scripts, source texts, prompt templates, and sample outputs – [`20_experiments/README.md`](20_experiments/README.md)
-- **30_documentation/** – Detailed documentation for each script and workflow – [`30_documentation/README.md`](30_documentation/README.md)
-- **40_evaluation/** – Processed results, visualizations, and tables – [`40_evaluation/README.md`](40_evaluation/README.md)
-- **50_thesis/** – LaTeX source and compiled thesis PDF – [`50_thesis/README.md`](50_thesis/README.md)
-- **60_presentations/** – Beamer source and compiled slides PDFs for intermediate & final defense – [`60_presentations/README.md`](60_presentations/README.md)
-- **70_prior_exp_run/** – Archive of prior experiment runs and notes – [`70_prior_exp_run/README.md`](70_prior_exp_run/README.md)
-- **.env** – Environment variables for API keys (not committed to git)
-- **requirements.txt** – Python dependencies – [`requirements.txt`](requirements.txt)
-- **PYTHON_LICENSES.md** – Dependency license summary – [`PYTHON_LICENSES.md`](PYTHON_LICENSES.md).
-- **LICENSE** – Project MIT license – [LICENSE](LICENSE)
+For a detailed overview of the project structure, refer to the `README.md` files in each subdirectory:
+
+- [`00_administration/README.md`](00_administration/README.md) – Project concept, exposé, LaTeX sources
+- [`10_literature_review/README.md`](10_literature_review/README.md) – Systematic literature review, criteria, BibTeX files
+- [`20_experiments/README.md`](20_experiments/README.md) – Experimental scripts, source texts, prompt templates, and sample outputs
+- [`30_documentation/README.md`](30_documentation/README.md) – Detailed documentation for each script and workflow
+- [`40_evaluation/README.md`](40_evaluation/README.md) – Processed results, visualizations, and tables
+- [`50_thesis/README.md`](50_thesis/README.md) – LaTeX source and compiled thesis PDF
+- [`60_presentations/README.md`](60_presentations/README.md) – Beamer source and compiled slides PDFs for intermediate & final defense
+- [`70_prior_exp_run/README.md`](70_prior_exp_run/README.md) – Archive of prior experiment runs and notes
+
+In the root directory, you will also find/need:
+
+- **.env** – Environment variables for API keys (has to be created, since it is not committed to Git)
+- [`requirements.txt`](requirements.txt) – Python dependencies
+- [`PYTHON_LICENSES.md`](PYTHON_LICENSES.md) – Dependency license summary
+- [`LICENSE`](LICENSE) – Project MIT license
 
 ---
 
 ## Running Experiments
 
 This experiment is commonly controlled by several scripts which have to be executed sequentially. \
-See [20_experiments/README.md](20_experiments/README.md) for detailed information, including information to the question generation, API calls, and result analysis.
+See [`20_experiments/README.md`](20_experiments/README.md) for detailed information, including information to the question generation, API calls, and result analysis.
 
 ---
 
@@ -163,7 +168,7 @@ The prior experimental run was archived in the [`70_prior_exp_run/`](70_prior_ex
 
 ---
 
-## License
+## License Information
 
 This project is released under the MIT License. A copy of the license is available in the [`LICENSE`](LICENSE) file in the root directory of this repository.
 
