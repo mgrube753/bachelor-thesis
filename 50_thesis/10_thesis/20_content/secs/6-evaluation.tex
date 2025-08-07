@@ -644,9 +644,9 @@ Regarding \textit{Answerability}, all medians are 8. The means of the models sli
 
 The results for the questions' \textit{Value} look pretty similar for each model, but the medians were slightly higher for DeepSeek and OpenAI (9.0) than for Google and Anthropic (8.0). Overall, the questions were rated as valuable, with minor outliers at DeepSeek and Google. Despite this, the means still remained high, with OpenAI achieving the highest mean of 8.73, followed by Anthropic (8.67), DeepSeek (8.53), and Google (8.33).
 
-Furthermore, the \textit{Language} criterion looks similar across all models, with means from 8.37 (Google) to 8.73 (DeepSeek). In contrast to this, the \textit{Bloom's Level} shows a more diverse picture, where Google and OpenAI overly achieved the highest medians of 10 and 9.25, respectively, while DeepSeek and Anthropic were rated lower with medians of 6.0 and 7.0. This indicates that more questions by Anthropic and DeepSeek were less rated at Bloom's revised Taxonomy or less aligned with the given Bloom's level, if given. 
+Furthermore, the \textit{Language} criterion looks similar across all models, with means from 8.37 (Google) to 8.73 (DeepSeek). In contrast, the \textit{Bloom's Level} shows a more diverse picture, where Google and OpenAI achieved the highest medians of 10 and 9.25, while DeepSeek and Anthropic were rated lower with medians of 6.0 and 7.0. So, many questions by Anthropic and DeepSeek were less rated at Bloom's revised Taxonomy or less aligned with the desired Bloom's level, if given.
 
-Ultimately, the \textit{Total Score} illustrates that no \ac{llm} is a clear winner, with OpenAI being the lowest rated model with a mean of 55.27 and a median of 55.0 out of 70 points. Google, DeepSeek, and Anthropic are rated slightly higher, including lower ranges of values, but still showing that all models are quite similar in their performance, whether all criteria are considered together.
+Ultimately, the \textit{Total Score} illustrates that no \ac{llm} is a clear winner, with OpenAI being the lowest rated model with a mean of 55.27 and a median of 55.0 out of 70 points. The other models are rated slightly higher with lower ranges of values, but still showing that all models are quite similar in their performance, whether all criteria are considered together. For instance, a proper Multiple-Choice question by OpenAI from Experiment 2a demonstrates a positive example (Appendix \bfref{lst:2a-student-good-example}), while a problematic question by the same model shows complexity issues (Appendix \bfref{lst:2a-student-bad-example}).
 
 \pagebreak
 
@@ -678,7 +678,7 @@ In addition, the \textit{Language} criterion was rated overall best in Experimen
 
 The \textit{Bloom Score} delivers a more interesting picture, where 2a is situated lower. In this sub-experiment, the mean is 4.0, showing that the questions are situated between \textit{Understanding} (3 points) and \textit{Applying} (4.5 points), since no Bloom level was specified in the prompt. This is acceptable, but the median is only 3.0 instead. In contrast, the values of 2b and 2c were situated significantly higher, with medians of 10 and means of 8.75 and 8.65, respectively. Overall, the Bloom levels were well adhered to (resulting in 10 points), with only a few outliers for both sub-experiments, illustrated via one-off ratings (5 points) or a rated Bloom level distance of $>1$ (0 points).
 
-In this box plot, the \textit{Total Score} shows that the sub-experiments do not differ significantly, but Experiment 2b (Bloom Only) achieved the highest mean of 57.58 and a median of 58.5, followed by Experiment 2c (Type + Bloom) with a mean of 57.48 and a median of 58.5 as well. Experiment 2a (Type Only) is rated slightly lower with a mean of 54.19 and a median of 54.25, showing overall that the \textit{Bloom's Level} criterion is the most decisive one, since the scoring in Experiment 2a is significantly lower than in the other two sub-experiments. From this plot-based perspective, Experiment 2b and 2c are rated pretty similarly in \textit{Total Score}, while Experiment 2a also achieved acceptable results.
+In this box plot, the \textit{Total Score} shows that the sub-experiments do not differ significantly, but Experiment 2b (Bloom Only) achieved the highest mean of 57.58 and a median of 58.5, followed by Experiment 2c (Type + Bloom) with a mean of 57.48 and a median of 58.5 as well. Experiment 2a (Type Only) is rated slightly lower with a mean of 54.19 and a median of 54.25, showing overall that the \textit{Bloom's Level} criterion is the most decisive one, since the scoring in Experiment 2a is significantly lower than in the other two sub-experiments. From this plot-based perspective, Experiment 2b and 2c are rated pretty similarly in \textit{Total Score}, while Experiment 2a also achieved acceptable results. 
 
 \pagebreak
 
@@ -701,6 +701,8 @@ In this box plot, the \textit{Total Score} shows that the sub-experiments do not
 % alle prompt types hatten stärken und schwächen, grundsätzlich aber gute performance bei allen
 
 \pagebreak
+
+For instance, Anthropic illustrates a well-structured question from Experiment 2b for Bloom level 2 (Appendix \bfref{lst:2b-student-good-example}), while a problematic question from the same sub-experiment by Google demonstrates unnecessary complexity issues in its Bloom level 6 question, including many technical terms and a long introduction phrase (Appendix \bfref{lst:2b-student-bad-example}). Other examples from Experiment 2c by both models illustrate an inverted picture: one of Google's valuable \ac{mcqs} for Bloom level 4 demonstrates a positive combination of question type and Bloom specification (Appendix \bfref{lst:2c-student-good-example}), while an Open-Ended question by Anthropic for the same Bloom level shows linguistic issues that can arise, based on complex wording and many foreign words (Appendix \bfref{lst:2c-student-bad-example}).
 
 Since the \textit{Bloom's Level} criterion is the most important one in this experiment, Table \bfref{tab:exp2-llm-experiment-bloomslevel} shows the results of the Bloom levels achieved by the models in each sub-experiment. Here, certain trends among the models are visible, where Anthropic and Google achieved the highest means in Experiment 2a (4.96 and 4.54) -- which are situated at the level \textit{Applying} (4.5 points) --, while DeepSeek and OpenAI were rated even lower (2.83 and 3.67), which is close to \textit{Understanding} (3 points). In Experiment 2b, all models achieved the same mean of 8.33, except OpenAI, showing a perfect Bloom adherence with a mean of 10.0. Experiment 2c, combining both question type and Bloom level specification, shows that Google performed best with a mean of 9.58. Anthropic and DeepSeek follow with 8.75, while OpenAI is rated lowest with a mean of 7.50, still offering a good adherence to the Bloom level specification. The medians of Experiment 2b and 2c are rated 10/10 for every model, also indicating that the questions were well aligned with the specified Bloom levels. Experiment 2a instead shows that the medians were lower -- as this sub-experiment did not specify a Bloom level --, where Anthropic shows the highest median of 7, which is situated at \textit{Analyzing} (7 points). In contrast, the other models' questions were less cognitively demanding, illustrated by the median of 3.0 for each \ac{llm}, which is situated at the Bloom level \textit{Understanding} (3 points).
 
@@ -726,12 +728,13 @@ Since the \textit{Bloom's Level} criterion is the most important one in this exp
 % betrachtung von bloom-only: mediane alle 10, anthropic deepseek und google alle mean 8.33, openai 10.0!
 % type+bloom: alle mediane 10, sonst aber openai am schwächsten jedoch (7.50 mean); anthropic und deepseek mit 8.75 und google am besten in adherence (9.58 mean), interessant
 
-Since both question types (Multiple-Choice and Open-Ended) were equally generated in Experiments 2a and 2c, Table \bfref{tab:exp2-questiontype-experiment-bloomslevel} shows the results for each question type. Overall, the Open-Ended questions were rated significantly higher than the Multiple-Choice questions in both sub-experiments. In Experiment 2a, Multiple-Choice achieved a mean of 2.42, rated between \textit{Remembering} (1.5 points) and \textit{Understanding} (3 points).
-Instead, Open-Ended questions achieved a mean of 5.58 instead, which shows that questions of this type were more cognitively demanding -- between \textit{Applying} (4.5 points) and \textit{Analyzing} (7 points).
-
-Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the cognitive level itself. The Bloom adherence for Multiple-Choice questions were rated high with a mean of 7.92. The Open-Ended questions were rated even higher with a mean of 9.38, showing a very high adherence to the specified Bloom level overall. The medians in Experiment 2c were 10.0 for both question types, but in Experiment 2a, the medians were 2.25 for Multiple-Choice and 7.0 for Open-Ended questions, indicating that the Open-Ended questions were more cognitively demanding, while Multiple-Choice questions were less cognitively demanding and less aligned with given Bloom levels.
+Since both question types (Multiple-Choice and Open-Ended) were equally generated in Experiments 2a and 2c, Table \bfref{tab:exp2-questiontype-experiment-bloomslevel} shows the results for each type. Overall, the Open-Ended questions were rated significantly higher than the \ac{mcqs} in both sub-experiments. In Experiment 2a, Multiple-Choice achieved a mean of 2.42, rated between \textit{Remembering} (1.5 points) and \textit{Understanding} (3 points). Instead, Open-Ended questions achieved a mean of 5.58, which shows that questions of this type were more cognitively demanding -- between \textit{Applying} (4.5 points) and \textit{Analyzing} (7 points).
 
 \pagebreak
+
+Experiment 2c shows a similar trend, but focusing Bloom alignment instead of the cognitive level itself. The Bloom adherence for Multiple-Choice questions were rated high with a mean of 7.92. The Open-Ended questions were rated even higher with a mean of 9.38, showing a very high adherence to the specified Bloom level overall. The medians in Experiment 2c were 10.0 for both question types, but in Experiment 2a, the medians were 2.25 for Multiple-Choice and 7.0 for Open-Ended questions, indicating that the Open-Ended questions were more cognitively demanding, while Multiple-Choice questions were less cognitively demanding and less aligned with given Bloom levels. 
+
+% \pagebreak
 
 \begin{table}[htbp]
     \centering
@@ -757,10 +760,6 @@ Experiment 2c shows a similar trend, but focusing Bloom adherence instead of the
 
 Regarding the inter-rater agreement analysis, the results are mixed, which is reflected in the varying Fleiss' kappa values across different criteria in Table \bfref{tab:iaa-students-exp2}. A major issue in the ratings was the diversity in scoring among the three students, indicating that there were differences in interpretation and application of the rubric criteria. Moreover, rating questions like the desired sample set is no everyday task for the students. This led to certain impacts on the agreement for \textit{Relevance}, \textit{Clarity}, \textit{Value}, and \textit{Language}. These criteria have a very low Fleiss' $\kappa$: \textit{Relevance} with 0.056, \textit{Clarity} with -0.061, \textit{Value} with -0.256, and \textit{Language} with 0.016.
 
-In contrast to this, the \textit{Answerability} ($\kappa=0.179$) and especially the \textit{Challenging} ($\kappa=0.270$) criterion achieved better agreements. Moreover, the highest Kappa was achieved for the \textit{Bloom Rating} criterion ($\kappa=0.397$), indicating an almost moderate agreement. Here, the students' Bloom rating per question was compared, instead of taking the calculated \textit{Bloom's Level} score, based on the three scoring options in Table \bfref{tab:exp2_criteria}.
-
-In some cases, the students were not able to agree on the Bloom level of a question, which occurs since a set of questions did not provide a certain operator verb, or more than one operator verb was used, which both made it difficult to determine the final Bloom level of the question. Overall, the Kappa of 0.397 is still a good value for this criterion, showing that the students were able to agree on the Bloom levels in many cases, but still had some disagreements.
-
 \begin{table}[H]
     \centering
     \caption{Inter-Rater Agreement Analysis, Students (Exp2).}
@@ -770,7 +769,7 @@ In some cases, the students were not able to agree on the Bloom level of a quest
         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
         Relevance          & 0.056 & 40 & 3 \\
-        Clarity            & -0.058 & 39 & 3 \\
+        Clarity            & -0.058 & 40 & 3 \\
         Answerability      & 0.179 & 39 & 3 \\
         Challenging        & 0.270 & 40 & 3 \\
         Value              & -0.256 & 40 & 3 \\
@@ -788,11 +787,15 @@ In some cases, the students were not able to agree on the Bloom level of a quest
 % language: 0.016, wenig agreement, da studentin2 sehr viele 10 gegeben hat
 % bloom rating: 0.397, moderates agreement, leichte unterschiede bringen das ergebnis mit sich
 
-Overall, the stringent time constraints for the students' evaluation could have limited the depth of their analysis, as they had to evaluate 40 questions in a limited time frame. The unknown topic of the questions -- since these are pedagogical students -- may have also influenced the students' ability to accurately assess the questions' \textit{Relevance} and \textit{Answerability}, as they were not familiar with the ISO-OSI model.
+In contrast to this, the \textit{Answerability} ($\kappa=0.179$) and especially the \textit{Challenging} ($\kappa=0.270$) criterion achieved better agreements. Moreover, the highest Kappa was achieved for the \textit{Bloom Rating} criterion ($\kappa=0.397$), indicating an almost moderate agreement. Here, the students' Bloom rating per question was compared, instead of taking the calculated \textit{Bloom's Level} score, based on the three scoring options in Table \bfref{tab:exp2_criteria}.
 
 \pagebreak
 
-\object{Student-based Analysis Complications} ...
+In some cases, the students were not able to agree on the Bloom level of a question, which occurs since a set of questions did not provide a certain operator verb, or more than one operator verb was used, which both made it difficult to determine the final Bloom level of the question. Overall, the Kappa of 0.397 is still a good value for this criterion, showing that the students were able to agree on the Bloom levels in many cases, but still had some disagreements.
+
+Overall, the stringent time constraints for the students' evaluation could have limited the depth of their analysis, as they had to evaluate 40 questions in a limited time frame. The unknown topic of the questions -- since these are pedagogical students -- may have also influenced the students' ability to accurately assess the questions' \textit{Relevance} and \textit{Answerability}, as they were not familiar with the ISO-OSI model.
+
+\object{Student-based Analysis Complications} \tcr{TODO}
 % student1 exp2a: fragen 5 (schlecht bewertet),6,9,14 haben keinen richtigen operator; fragen 15 und 16 zu sehr verschachtelt durch mehrerer fragen in einer.
 % frage10 auch nicht so der knaller, 11 und 12 sprachliich nicht allzu gut
 % frage13 an sich voll gut; relevanz 8/10 jedoch und challenging 2/10, sonst schoene frage
