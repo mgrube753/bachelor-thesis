@@ -159,7 +159,7 @@ hint_data = load_hint_data()
 
 def combine_data():
     combined = []
-    print("\n--- Combining all available student data (no overlap filtering) ---")
+    print("\n--- Combining all available student data ---")
     for student, experiments in all_data.items():
         print(f"\n{student}:")
         for exp, df in experiments.items():
@@ -448,7 +448,7 @@ else:
 
 # # Inter-Student Reliability Analysis
 # 
-# Analysis of agreement between student evaluators on overlapping questions.
+# Analysis of agreement between student evaluators on the quality of generated questions.
 
 # In[ ]:
 

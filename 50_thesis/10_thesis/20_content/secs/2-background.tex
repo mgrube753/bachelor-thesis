@@ -57,7 +57,7 @@ The transformer follows an encoder-decoder structure \cite{patil_review_2024,min
 \end{itemize}
 
 \object{\ac{moe}} Another notable variant of the transformer architecture is the \ac{moe} \cite{shazeer_outrageously_2017} architecture, as shown in the overview by \cite{naveed_comprehensive_2024}. In this architecture, multiple experts are integrated. Typically, an \ac{moe} system is a mixture of an \ac{ffn} for each expert, positioned right after the attention block, and a router mechanism, which decides which token(s) are processed by which expert(s). These are advantageous in terms of computational efficiency while being as powerful as dense models. That means, the size of the model can be increased without increasing the computational cost proportionally, because only a subset of the experts is activated for each input. % [91,92]
-Prominent examples of \ac{moe} models are xAI Grok-1 \cite{xai_open_2024}, Gemini 1.5 by Google \cite{team_gemini_2024-1}, the DeepSeek models V3 \cite{deepseek-ai_deepseek-v3_2025} and its reasoning variant R1 \cite{deepseek-ai_deepseek-r1_2025}, and the recently released LLaMA 4 family by Meta \cite{meta_ai_llama_2025}.
+Prominent examples of \ac{moe} models are xAI Grok-1 \cite{xai_open_2024}, Gemini 1.5 by Google \cite{team_gemini_2024-1}, the DeepSeek models V3 \cite{deepseek-ai_deepseek-v3_2025} and its \textit{reasoning} variant R1 \cite{deepseek-ai_deepseek-r1_2025}, and the recently released LLaMA 4 family by Meta \cite{meta_ai_llama_2025}.
 
 \vspace{8em}\pagebreak
 
