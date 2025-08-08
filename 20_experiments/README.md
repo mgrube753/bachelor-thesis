@@ -32,9 +32,9 @@ This directory contains the experimental framework for evaluating Large Language
 - **OpenAI o3**
 - **DeepSeek R1**
 
-### Source Materials (TXT)
+### Source Materials (converted to TXT)
 
-- **Script**: Lecture content from "Referenzarchitekturen" (Prof. Cap)
+- **Script**: Lecture content from the primary supervisor: "Referenzarchitekturen"
 - **Transcript**: Audio-to-text conversion of lecture content
 - **Tanenbaum**: Excerpts from "Computer Networks" textbook by Andrew S. Tanenbaum
 - **Manipulated Script**: Intentionally altered lecture content for error detection testing

@@ -1,6 +1,6 @@
 # Presentations
 
-This directory contains all presentation materials related to thesis milestones and academic dissemination.
+This directory contains all presentation materials for the thesis, including the intermediate and final defenses.
 
 ## Structure
 
@@ -8,6 +8,7 @@ This directory contains all presentation materials related to thesis milestones 
 
 - **[`10_intermediate_defense/`](10_intermediate_defense/)**: Materials for the intermediate thesis defense
   - [`pres.tex`](pres.tex): Main presentation source (LaTeX Beamer)
+  - [`pres.pdf`](pres.pdf): Compiled PDF of the presentation
   - [`style.sty`](style.sty): Custom presentation style
   - [`logo.jpg`](logo.jpg): University logo
 
@@ -15,6 +16,7 @@ This directory contains all presentation materials related to thesis milestones 
 
 - **[`20_defense/`](20_defense/)**: Materials for the final thesis defense
   - [`pres.tex`](pres.tex): Main presentation source
+  - [`pres.pdf`](pres.pdf): Compiled PDF of the presentation
 
 ## Content Overview
 

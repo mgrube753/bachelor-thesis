@@ -4,13 +4,13 @@ This directory contains all results and visualizations derived from the experime
 
 ## Overview
 
-- **Quantitative & Qualitative Analysis**: CSV files (Expert ratings and processed automated metrics) in [`20_experiments/60_analyses/`](../20_experiments/60_analyses/) are used as input for evaluation.
+- **Quantitative & Qualitative Analysis**: CSV files (expert / student ratings and processed automated metrics) in [`20_experiments/60_analyses/`](../20_experiments/60_analyses/) are used as input for evaluation.
 - **Tables & Figures**: Statistical summaries and plots are generated from these CSV files and presented here for reporting.
 
-Note: It is best to view the notebooks to understand the context and methodology behind the files.
+Note: It is best to view the notebooks to understand the context and methodology behind the resulting files.
 
 - [`../20_experiments/50_src/evaluation1_quan.ipynb`](../20_experiments/50_src/evaluation1_quan.ipynb): Quantitative analysis of experiment 1.
-- [`../20_experiments/50_src/evaluation1_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of experiment 1.
+- [`../20_experiments/50_src/evaluation1_qual.ipynb`](../20_experiments/50_src/evaluation1_qual.ipynb): Qualitative analysis of experiment 1.
 - [`../20_experiments/50_src/evaluation2_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of experiment 2.
 
 ## Directory Structure

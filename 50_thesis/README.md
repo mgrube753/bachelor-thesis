@@ -6,13 +6,16 @@ This directory contains the complete LaTeX source and compiled documents for the
 ## Directory Structure
 
 - **[`00_titlepage/`](00_titlepage/)**  
-  Separate compilation for the official title page, including images and auxiliary files.
+  Separate compilation for the official title page, including the logo image used
+  - **[`titlepage.tex`](00_titlepage/titlepage.tex)** – LaTeX source for the title page
+  - **[`titlepage.pdf`](00_titlepage/titlepage.pdf)** – Compiled title page
+  - **[`logo.jpg`](00_titlepage/logo.jpg)** – University logo used in the title page
 
 - **[`10_thesis/`](10_thesis/)**  
   Main thesis content, organized as follows:
   - **[`00_bibs/`](10_thesis/00_bibs/)**  
     - [`Positive.bib`](10_thesis/00_bibs/Positive.bib) – Primary research papers  
-    - [`Extras.bib`](10_thesis/00_bibs/Extras.bib) – Supporting literature cited in the positive papers 
+    - [`Extras.bib`](10_thesis/00_bibs/Extras.bib) – Supporting literature cited in the positive papers
     - [`Eigenes.bib`](10_thesis/00_bibs/Eigenes.bib) – Independently discovered resources
   - **[`10_extra/`](10_thesis/10_extra/)**  
     - LaTeX configuration, abbreviations, figures, and tables
@@ -55,7 +58,7 @@ The following research questions guide the thesis:
 
 - Large Language Model architectures and capabilities
 - Automated question generation systems and methodologies
-- Bloom's Taxonomy integration in educational technology
+- Bloom's Taxonomy integration in educational question generation systems
 
 ## Technical Implementation
 
