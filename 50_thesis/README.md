@@ -11,15 +11,15 @@ This directory contains the complete LaTeX source and compiled documents for the
 - **[`10_thesis/`](10_thesis/)**  
   Main thesis content, organized as follows:
   - **[`00_bibs/`](10_thesis/00_bibs/)**  
-    - `Positive.bib` – Primary research papers  
-    - `Extras.bib` – Supporting literature cited in the positive papers 
-    - `Eigenes.bib` – Independently discovered resources
+    - [`Positive.bib`](10_thesis/00_bibs/Positive.bib) – Primary research papers  
+    - [`Extras.bib`](10_thesis/00_bibs/Extras.bib) – Supporting literature cited in the positive papers 
+    - [`Eigenes.bib`](10_thesis/00_bibs/Eigenes.bib) – Independently discovered resources
   - **[`10_extra/`](10_thesis/10_extra/)**  
     - LaTeX configuration, abbreviations, figures, and tables
   - **[`20_content/`](10_thesis/20_content/)**  
-    - `thesis.tex` – Main LaTeX source  
-    - `thesis.pdf` – Compiled thesis  
-    - `secs/` – Individual chapter and section files
+    - [`thesis.tex`](10_thesis/20_content/thesis.tex) – Main LaTeX source  
+    - [`thesis.pdf`](10_thesis/20_content/thesis.pdf) – Compiled thesis  
+    - [`secs/`](10_thesis/20_content/secs/) – Individual chapter and section files
 
 ## Thesis Structure
 
@@ -27,13 +27,13 @@ The thesis follows a comprehensive academic structure addressing LLM-based educa
 
 ### Core Sections
 
-1. **[Introduction](thesis/content/secs/1-introduction.tex)** - Research motivation, objectives, and thesis outline
-2. **[Theoretical Foundations](thesis/content/secs/2-background.tex)** - LLMs, Bloom's Taxonomy, and evaluation methodologies
-3. **[Related Work](thesis/content/secs/3-related-work.tex)** - Literature review and research gap identification
-4. **[Experiment Design](thesis/content/secs/4-experiment-design.tex)** - Methodology and experimental setup
-5. **[Implementation](thesis/content/secs/5-the-approach.tex)** - Technical approach and implementation details
-6. **[Evaluation](thesis/content/secs/6-evaluation.tex)** - Results analysis and hypothesis testing
-7. **[Conclusion](thesis/content/secs/7-conclusion.tex)** - Findings summary and future work
+1. **[Introduction](10_thesis/20_content/secs/1-introduction.tex)** - Research motivation, objectives, and thesis outline
+2. **[Theoretical Foundations](10_thesis/20_content/secs/2-background.tex)** - LLMs, Bloom's Taxonomy, and evaluation methodologies
+3. **[Related Work](10_thesis/20_content/secs/3-related-work.tex)** - Literature review and research gap identification
+4. **[Experiment Design](10_thesis/20_content/secs/4-experiment-design.tex)** - Methodology and experimental setup
+5. **[Implementation](10_thesis/20_content/secs/5-the-approach.tex)** - Technical approach and implementation details
+6. **[Evaluation](10_thesis/20_content/secs/6-evaluation.tex)** - Results analysis and hypothesis testing
+7. **[Conclusion](10_thesis/20_content/secs/7-conclusion.tex)** - Findings summary and future work
 
 ## Research Focus
 
@@ -79,7 +79,7 @@ The thesis incorporates comprehensive technical documentation:
 
 To compile the thesis, follow these steps:
 
-1. **Compile Title Page**: Navigate to [`00_titlepage/`](00_titlepage/) and compile `titlepage.tex`
-2. **Compile Main Document**: Navigate to [`10_thesis/20_content/`](10_thesis/20_content/) and compile `thesis.tex`
+1. **Compile Title Page**: Navigate to [`00_titlepage/`](00_titlepage/) and compile [`titlepage.tex`](00_titlepage/titlepage.tex)
+2. **Compile Main Document**: Navigate to [`10_thesis/20_content/`](10_thesis/20_content/) and compile [`thesis.tex`](10_thesis/20_content/thesis.tex)
 
-Use `latexmk` or a similar tool to ensure proper handling of references and citations.
+Use e.g. `latexmk -pdf titlepage.tex` / `latexmk -pdf thesis.tex` or a similar tool to ensure proper handling of references and citations.

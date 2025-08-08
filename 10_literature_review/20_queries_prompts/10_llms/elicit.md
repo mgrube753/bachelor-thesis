@@ -9,6 +9,5 @@ Recent research provides comprehensive overviews of Large Language Models (LLMs)
 ## Details
 
 -   Mode: Find papers
--   No changes while searching
 -   Sort: Most relevant
-
+-   No changes while searching

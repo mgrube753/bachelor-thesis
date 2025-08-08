@@ -4,8 +4,8 @@ This directory contains all administrative documents and project management mate
 
 ## Contents
 
-- **concept.tex** / **concept.pdf**: LaTeX source and compiled concept document outlining research objectives, methodology, and planned approach.
-- **Expose_Malte-Grube.pdf**: Thesis exposé for official submission.
+- [`concept.tex`](concept.tex) / [`concept.pdf`](concept.pdf): LaTeX source and compiled concept document outlining research objectives, methodology, and planned approach.
+- [`Expose_Malte-Grube.pdf`](Expose_Malte-Grube.pdf): Thesis exposé for official submission.
 - Other LaTeX auxiliary files for compilation.
 
 ## Overview

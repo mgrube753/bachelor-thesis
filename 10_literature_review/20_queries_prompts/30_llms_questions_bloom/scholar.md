@@ -4,7 +4,7 @@
 
 ## Filter
 
--   134 Ergebnisse
--   nach Relevanz sortiert
--   ab 2021
--   erste 6 Seiten, weil da schon das meiste sinnlos ist
+-   Sort by relevance
+-   From 2021 onwards
+-   134 results
+-   Regarded first 6 pages (60 papers), because from the 7th page on, the results are mostly irrelevant

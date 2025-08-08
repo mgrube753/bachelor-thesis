@@ -5,15 +5,16 @@ This directory contains all presentation materials related to thesis milestones 
 ## Structure
 
 ### Intermediate Defense
+
 - **[`10_intermediate_defense/`](10_intermediate_defense/)**: Materials for the intermediate thesis defense
-  - `pres.tex`: Main presentation source (LaTeX Beamer)
-  - `style.sty`: Custom presentation style
-  - `logo.jpg`: University logo
+  - [`pres.tex`](pres.tex): Main presentation source (LaTeX Beamer)
+  - [`style.sty`](style.sty): Custom presentation style
+  - [`logo.jpg`](logo.jpg): University logo
 
 ### Final Defense
+
 - **[`20_defense/`](20_defense/)**: Materials for the final thesis defense
-  - `pres.tex`: Main presentation source
-  - Additional figures and supporting files...
+  - [`pres.tex`](pres.tex): Main presentation source
 
 ## Content Overview
 

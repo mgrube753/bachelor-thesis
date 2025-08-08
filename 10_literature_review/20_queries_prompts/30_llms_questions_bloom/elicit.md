@@ -9,6 +9,5 @@ Recent studies have explored the use of Large Language Models (LLMs) for automat
 ## Details
 
 -   Mode: Find papers
--   No changes while searching
 -   Sort: Most relevant
-
+-   No changes while searching

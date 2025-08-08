@@ -14,12 +14,12 @@ A new experimental run was conducted to ensure uniformity in question formats. T
 
 The structure of this directory is minimal as follows:
 
-- `10_exp1/`: Experiment 1 outputs (content and error runs)
-- `20_exp2/`: Experiment 2 outputs (type, Bloom, and combined runs)
-- `40_prompts/`: Prompt templates used in experiments
-- `70_samples/`: Sample questions and data
-- `80_questions_renamed/`: Renamed question sets for evaluation
-- `for_eval/`: Materials prepared for evaluation
+- [`10_exp1/`](10_exp1/): Experiment 1 outputs (content and error runs)
+- [`20_exp2/`](20_exp2/): Experiment 2 outputs (type, Bloom, and combined runs)
+- [`40_prompts/`](40_prompts/): Prompt templates used in experiments
+- [`70_samples/`](70_samples/): Sample questions and data
+- [`80_questions_renamed/`](80_questions_renamed/): Renamed question sets for evaluation
+- [`for_eval/`](for_eval/): Materials prepared for evaluation
 
 ## Additional Notes
 

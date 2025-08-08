@@ -13,13 +13,6 @@ Note: It is best to view the notebooks to understand the context and methodology
 - [`../20_experiments/50_src/evaluation1_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of experiment 1.
 - [`../20_experiments/50_src/evaluation2_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of experiment 2.
 
-## Workflow Integration
-
-Results are produced and updated via:
-
-1. **Agreement Calculation**: [`agreement.py`](../20_experiments/50_src/agreement.py)
-2. **Analysis & Visualization**: [`evaluation.ipynb`](../20_experiments/50_src/evaluation.ipynb)
-
 ## Directory Structure
 
 - [`exp1/qualitative/`](./exp1/qualitative/): Qualitative results for experiment 1 (expert ratings, rubrics, summaries)
@@ -32,4 +25,4 @@ Results are produced and updated via:
   - [`plots/`](./exp2/qualitative/plots/): Visualizations
   - [`tables/`](./exp2/qualitative/tables/): Tabular summaries
 
-All outputs in this directory support the final reporting and
+All outputs in this directory support the final reporting and analysis of the experiments conducted in the project, as many of these results are used in the [thesis](../50_thesis/README.md).

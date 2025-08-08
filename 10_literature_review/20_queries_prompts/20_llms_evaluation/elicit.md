@@ -9,6 +9,5 @@ Recent studies have explored the potential of Large Language Models (LLMs) in ge
 ## Details
 
 -   Mode: Find papers
--   No changes while searching
 -   Sort: Most relevant
-
+-   No changes while searching

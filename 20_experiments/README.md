@@ -83,8 +83,6 @@ This directory contains the experimental framework for evaluating Large Language
   - Generates structured CSV templates for qualitative assessment
   - Creates renamed sample collections for blind evaluation
 
-After this
-
 ## Bloom's Taxonomy Integration
 
 The second experiment utilizes Bloom's Taxonomy, described and used via [`40_prompts/experiment/bloom.md`](40_prompts/experiment/bloom.md):
@@ -114,6 +112,9 @@ python check_truncation.py        # Re-check after generating questions to check
 python analysis_quantitative.py   # Quantitative analysis for experiment 1
 python sampling.py                # Sample questions for manual review (experts in exp1, students in exp2)
 ```
+
+This workflow will not work if the `.env` file is not set up with the necessary API keys for the LLMs. \
+The `.env` file should contain the keys for OpenAI, Anthropic, and Google, to ensure the scripts can access the LLMs for question generation and analysis.
 
 The script [`50_src/analysis_qualitative.py`](50_src/analysis_qualitative.py), which would have been LLM-based (using all questions instead of sampled ones), was not used as the qualitative analysis was performed manually by experts instead (using sample sets). This approach was used in the archived experimental run in [`../70_prior_exp_run/`](../70_prior_exp_run/) for both thesis experiments.
 

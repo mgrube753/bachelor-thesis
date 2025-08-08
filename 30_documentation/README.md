@@ -5,7 +5,7 @@ This directory contains comprehensive technical documentation for the bachelor t
 ## Purpose
 
 - **API Integration Guides:**  
-  Step-by-step instructions for configuring and using LLM providers (OpenAI, Anthropic, Google, DeepSeek).
+  Desired instructions for configuring and using LLM providers (OpenAI, Anthropic, Google, DeepSeek).
 
 - **Code Reference:**  
   Detailed documentation for each experimental script, including usage, dependencies, and workflow.

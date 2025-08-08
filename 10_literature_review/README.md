@@ -4,7 +4,7 @@ This directory presents the systematic literature review conducted for the thesi
 
 ## Structure
 
-### Review Criteria and Methodology
+### Literature Review Criteria and Methodology
 
 - **[`10_counts_criteria/`](10_counts_criteria/)**: Contains literature selection criteria and paper counts.
     - [`criteria.md`](10_counts_criteria/criteria.md): Inclusion/exclusion criteria using the TACID method.
@@ -26,6 +26,6 @@ This directory presents the systematic literature review conducted for the thesi
 
 ## Search Tools and Databases
 
-- **Google Scholar**: Comprehensive academic paper discovery
-- **Elicit**: AI-powered research assistant for targeted queries
-- **Zotero**: Reference management and PDF organization
+- [`Google Scholar`](https://scholar.google.com): Comprehensive academic paper discovery
+- [`Elicit`](https://elicit.org): AI-powered research assistant for targeted queries
+- [`Zotero`](https://www.zotero.org): Reference management and PDF organization
