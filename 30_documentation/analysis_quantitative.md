@@ -1,6 +1,6 @@
 # `analysis_quantitative.py`
 
-This script performs a quantitative analysis of the questions generated in experiment 1 (`exp1a` and `exp1b`). It focuses on measuring the adherence of the questions to their source material using two methods: cosine similarity and LLM-based evaluation.
+This script performs a quantitative analysis of the questions generated in Experiment 1 (`exp1a` and `exp1b`). It focuses on measuring the adherence of the questions to their source material using two methods: cosine similarity and LLM-based evaluation.
 
 ## Core Functionality
 

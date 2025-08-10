@@ -20,12 +20,12 @@ The script reads experiment data from CSV files, retrieves the generated questio
 ### Evaluation and Scoring
 
 - `evaluate_single(clients, llm, question, context, rubric)`: Sends a request to an LLM to evaluate a single question against the context and rubric. It parses the scores from the response.
-- `calculate_bloom_score(exp_name, bloom_rating, bloom_original=None)`: Calculates a score based on Bloom's Taxonomy levels, specific to experiment 2.
+- `calculate_bloom_score(exp_name, bloom_rating, bloom_original=None)`: Calculates a score based on Bloom's Taxonomy levels, specific to Experiment 2.
 
 ### Experiment Processing
 
-- `process_exp1(exp_name, clients)`: Manages the evaluation process for experiment 1 (`exp1a`, `exp1b`). It handles file paths, loads data, and orchestrates the evaluation of each question in parallel.
-- `process_exp2(exp_name, clients)`: Manages the evaluation process for experiment 2 (`exp2a`, `exp2b`, `exp2c`). Similar to `process_exp1`, but adapted for the structure of the second experiment.
+- `process_exp1(exp_name, clients)`: Manages the evaluation process for Experiment 1 (`exp1a`, `exp1b`). It handles file paths, loads data, and orchestrates the evaluation of each question in parallel.
+- `process_exp2(exp_name, clients)`: Manages the evaluation process for Experiment 2 (`exp2a`, `exp2b`, `exp2c`). Similar to `process_exp1`, but adapted for the structure of the second experiment.
 
 ### Main Execution
 

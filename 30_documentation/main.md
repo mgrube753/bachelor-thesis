@@ -15,7 +15,7 @@ The `main` function serves as the master controller for the project's experiment
 
 2. **Preload Bloom Data**:
    - It calls `get_bloom()` from [`prompt_utils.py`](../20_experiments/50_src/prompt_utils.py).
-   - This function loads and caches the Bloom's Taxonomy data, which is used in prompts for experiment 2. Pre-loading it ensures it's readily available and doesn't need to be read from disk multiple times.
+   - This function loads and caches the Bloom's Taxonomy data, which is used in prompts for Experiment 2. Pre-loading it ensures it's readily available and doesn't need to be read from disk multiple times.
 
 3. **Run Experiments**:
    - The script then calls the specific functions for each part of the experiments.

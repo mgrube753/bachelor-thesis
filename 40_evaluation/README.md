@@ -9,19 +9,19 @@ This directory contains all results and visualizations derived from the experime
 
 Note: It is best to view the notebooks to understand the context and methodology behind the resulting files.
 
-- [`../20_experiments/50_src/evaluation1_quan.ipynb`](../20_experiments/50_src/evaluation1_quan.ipynb): Quantitative analysis of experiment 1.
-- [`../20_experiments/50_src/evaluation1_qual.ipynb`](../20_experiments/50_src/evaluation1_qual.ipynb): Qualitative analysis of experiment 1.
-- [`../20_experiments/50_src/evaluation2_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of experiment 2.
+- [`../20_experiments/50_src/evaluation1_quan.ipynb`](../20_experiments/50_src/evaluation1_quan.ipynb): Quantitative analysis of Experiment 1.
+- [`../20_experiments/50_src/evaluation1_qual.ipynb`](../20_experiments/50_src/evaluation1_qual.ipynb): Qualitative analysis of Experiment 1.
+- [`../20_experiments/50_src/evaluation2_qual.ipynb`](../20_experiments/50_src/evaluation2_qual.ipynb): Qualitative analysis of Experiment 2.
 
 ## Directory Structure
 
-- [`exp1/qualitative/`](./exp1/qualitative/): Qualitative results for experiment 1 (expert ratings, rubrics, summaries)
+- [`exp1/qualitative/`](./exp1/qualitative/): Qualitative results for Experiment 1 (expert ratings, rubrics, summaries)
   - [`plots/`](./exp1/qualitative/plots/): Visualizations
   - [`tables/`](./exp1/qualitative/tables/): Tabular summaries
-- [`exp1/quantitative/`](./exp1/quantitative/): Quantitative results for experiment 1 (metrics, CSVs, plots)
+- [`exp1/quantitative/`](./exp1/quantitative/): Quantitative results for Experiment 1 (metrics, CSVs, plots)
   - [`plots/`](./exp1/quantitative/plots/): Visualizations
   - [`tables/`](./exp1/quantitative/tables/): Tabular summaries
-- [`exp2/qualitative/`](./exp2/qualitative/): Qualitative results for experiment 2
+- [`exp2/qualitative/`](./exp2/qualitative/): Qualitative results for Experiment 2
   - [`plots/`](./exp2/qualitative/plots/): Visualizations
   - [`tables/`](./exp2/qualitative/tables/): Tabular summaries
 

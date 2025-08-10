@@ -68,14 +68,14 @@ Then install the requirements via:
 
 For a detailed overview of the project structure, refer to the `README.md` files in each subdirectory:
 
-- [`00_administration/README.md`](00_administration/README.md) – Project concept, exposé, LaTeX sources
-- [`10_literature_review/README.md`](10_literature_review/README.md) – Systematic literature review, criteria, BibTeX files
-- [`20_experiments/README.md`](20_experiments/README.md) – Experimental scripts, source texts, prompt templates, and sample outputs
-- [`30_documentation/README.md`](30_documentation/README.md) – Detailed documentation for each script and workflow
-- [`40_evaluation/README.md`](40_evaluation/README.md) – Processed results, visualizations, and tables
-- [`50_thesis/README.md`](50_thesis/README.md) – LaTeX source and compiled thesis PDF
-- [`60_presentations/README.md`](60_presentations/README.md) – Beamer source and compiled slides PDFs for intermediate & final defense
-- [`70_prior_exp_run/README.md`](70_prior_exp_run/README.md) – Archive of prior experiment runs and notes
+- [`00_administration/`](00_administration/README.md) – Project concept, exposé, LaTeX sources
+- [`10_literature_review/`](10_literature_review/README.md) – Systematic literature review, criteria, BibTeX files
+- [`20_experiments/`](20_experiments/README.md) – Experimental scripts, source texts, prompt templates, and sample outputs
+- [`30_documentation/`](30_documentation/README.md) – Detailed documentation for each script and workflow
+- [`40_evaluation/`](40_evaluation/README.md) – Processed results, visualizations, and tables
+- [`50_thesis/`](50_thesis/README.md) – LaTeX source and compiled thesis PDF
+- [`60_presentations/`](60_presentations/README.md) – Beamer source and compiled slides PDFs for intermediate & final defense
+- [`70_prior_exp_run/`](70_prior_exp_run/README.md) – Archive of prior experiment runs and notes
 
 In the root directory, you will also find/need:
 
@@ -95,12 +95,12 @@ See [`20_experiments/README.md`](20_experiments/README.md) for detailed informat
 
 ## Analysis & Evaluation
 
-- **Truncation Check**: Token-limit scans using [`20_experiments/50_src/check_truncation.py`](20_experiments/50_src/check_truncation.py)
+- **Truncation Check**: To check if the source materials or the generated questions exceed the embedding model's token limit (Experiment 1), refer to [`20_experiments/50_src/check_truncation.py`](20_experiments/50_src/check_truncation.py)
 - **Quantitative Analysis**: Automated metrics are calculated in [`20_experiments/50_src/analysis_quantitative.py`](20_experiments/50_src/analysis_quantitative.py). The results are stored in [`20_experiments/60_analyses/`](20_experiments/60_analyses/)
 - **Qualitative Analysis**: Expert and student-ratings are also stored in [`20_experiments/60_analyses/`](20_experiments/60_analyses/)
 - **Evaluation Notebooks**: Jupyter notebooks for evaluations:
   - [`evaluation1_quan.ipynb`](20_experiments/50_src/evaluation1_quan.ipynb) - Quantitative analysis of Experiment 1
-  - [`evaluation1_qual.ipynb`](20_experiments/50_src/evaluation1_qual.ipynb) - Qualitative analysis of Experiment 1. This notebook has to be run twice, once with `USE_SUPERVISOR_DATA = True` and once with `USE_SUPERVISOR_DATA = False`.
+  - [`evaluation1_qual.ipynb`](20_experiments/50_src/evaluation1_qual.ipynb) - Qualitative analysis of Experiment 1. This notebook has to be run twice, once with `USE_SUPERVISOR_DATA = True` and once with `USE_SUPERVISOR_DATA = False`. It is recommended to create a copy of the notebook and rename it accordingly to compare results from both expert groups side-by-side.
   - [`evaluation2_qual.ipynb`](20_experiments/50_src/evaluation2_qual.ipynb) - Qualitative analysis of Experiment 2
 - **Evaluation Results**: Tables & plots based on the notebooks are saved in [`40_evaluation/`](40_evaluation/).
 
@@ -108,7 +108,7 @@ See [`20_experiments/README.md`](20_experiments/README.md) for detailed informat
 
 ## Documentation
 
-All script-level documentation for the Python files in [`20_experiments/50_src/`](20_experiments/50_src/) is in [`30_documentation/`](30_documentation/), including:
+All documentation files for the Python scripts in [`20_experiments/50_src/`](20_experiments/50_src/) are situated in [`30_documentation/`](30_documentation/), including:
 
 - API configuration: [`api_config.md`](30_documentation/api_config.md)
 - API calls abstraction: [`api_calls.md`](30_documentation/api_calls.md)

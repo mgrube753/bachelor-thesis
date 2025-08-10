@@ -109,7 +109,7 @@ To run the Python files and the notebooks, go to the [`50_src/`](50_src/) direct
 python check_truncation.py        # Optional: Perform first truncation check for source materials
 python main.py                    # Generate questions
 python check_truncation.py        # Re-check after generating questions to check for truncation
-python analysis_quantitative.py   # Quantitative analysis for experiment 1
+python analysis_quantitative.py   # Quantitative analysis for Experiment 1
 python sampling.py                # Sample questions for manual review (experts in exp1, students in exp2)
 ```
 

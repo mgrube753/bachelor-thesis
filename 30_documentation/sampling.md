@@ -7,7 +7,7 @@ This script prepares data for human evaluation by automating the sampling of gen
 The script follows a three-stage process:
 
 1. **Sampling**: Randomly selects a specified number of question files from each experimental condition in the experiment output directories.
-2. **CSV Generation**: Produces structured CSV files for different evaluation tasks (e.g. qualitative analysis by experts and students), including hint files and evaluation templates.
+2. **CSV Generation**: Produces structured CSV files for both qualitative analysis tasks (by experts and students), including hint files with information unknown to the raters (e.g. about the LLM used), and evaluation templates.
 3. **Renaming**: Copies the sampled question files to a new directory with standardized, anonymized filenames for manual review.
 
 ## Main Functions
@@ -34,12 +34,15 @@ The script follows a three-stage process:
     - Copies the files to the [`../20_experiments/80_samples_renamed/`](../20_experiments/80_samples_renamed/) directory, making them ready for manual review without revealing the LLM or other sensitive details.
 
 - `main()`:
-    - Orchestrates the entire process: sets a random seed for reproducibility, ensures output directories exist, performs sampling, generates CSVs, and renames samples.
-    - Prints progress and summary information.
+    - Runs the entire process: sets a fixed random seed for reproducibility, ensures output directories exist, performs sampling, generates CSVs, and renames samples.
 
 ## Dependencies
 
 - **External Libraries**:
     - `pandas`: For creating and managing CSV files.
 - **Internal Modules**:
-    - [`constants`](../20_experiments/50_src/constants.py): Provides base paths for experiment, sample, and analysis directories.
+    - [`constants`](../20_experiments/50_src/constants.py): Provides base paths for experimental directories and other constants.
+
+## Important Note
+
+_Unfortunately, the reproducibility of the question sampling was not guaranteed when the sampling for both experiments was performed. A refinement was needed to ensure consistent and reliable sampling across different machines afterwards. Based on this, the sampled questions used in the experiments cannot be reproduced exactly as they were originally sampled. However, the sampling process is now standardized and can be reliably executed in future runs._

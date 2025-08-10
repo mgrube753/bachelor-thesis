@@ -11,7 +11,7 @@ The script constructs absolute paths to the main project directories, ensuring t
 - `INPUT_SOURCES_PATH`: The location of the source texts.
 - `PROMPT_TEMPLATES_PATH`: The directory containing all prompt templates.
 - `ANALYSES_PATH`: The folder where analysis results and CSV files are stored.
-- `EXP1_PATH` and `EXP2_PATH`: Paths to the specific directories for experiment 1 and 2.
+- `EXP1_PATH` and `EXP2_PATH`: Paths to the specific directories for Experiment 1 and 2.
 
 ## Model and API Configuration
 
@@ -26,8 +26,8 @@ The script constructs absolute paths to the main project directories, ensuring t
 ### Experiment 1
 
 - `EXP1_PROMPT_TYPES`: The types of prompts used.
-- `EXP1_SOURCE_TYPES_A`: The different source materials for experiment 1a.
-- `EXP1_SOURCE_TYPE_B`: The source material for experiment 1b.
+- `EXP1_SOURCE_TYPES_A`: The different source materials for Experiment 1a.
+- `EXP1_SOURCE_TYPE_B`: The source material for Experiment 1b.
 - `LAYERS`: The different layers or sections of the source texts.
 
 ### Experiment 2
