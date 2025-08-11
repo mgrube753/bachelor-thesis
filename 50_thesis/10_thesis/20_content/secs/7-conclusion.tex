@@ -2,6 +2,7 @@
 
 % \newtodo{Brief overview of everything i have done.}
 % \newtodo{Provide an outlook on future work planned to do or at least thoughts besides implementation.}
+In this Bachelor's thesis, the potential of \acp{llm} for educational question generation was investigated through two experiments: (1) evaluating the adherence of \ac{llm}-generated questions to their source content, and (2) analyzing how three prompting variants -- specifying only the question format, only the targeted Bloom level, or both together -- affect the generation of questions across Bloom's revised Taxonomy and their adherence to the intended cognitive level, if a Bloom level was specified.
 
 \subsection{Key Findings}
 
@@ -17,14 +18,71 @@
 % --> adherence score: models used reasoning for rating --> no temperature setup possible then, probably high/varying, would have been important for rating
 % exp 1b even harder to interpret without expert ratings, which is crucial
 
+\begin{itemize}
+  \item Overall Potential: reasoning \ac{llms} can automate generation of relevant, clear and Bloom-aligned questions, but show diversity in criteria such as \textit{Correctness}, \textit{Challenging}, and especially in \textit{Clarity} / \textit{Language}.
+  \item Metric Robustness: Cosine similarity (sentence transformer based) failed to discriminate source-based vs.\ no-source-based generations (with close means/medians); the llm-based \textit{Adherence Score} instead provided discriminative, interpretable fidelity across models, sources, and prompt types. Hence, semantic sim is unsuitable for long educational texts, rather than sentence-level comparison, which is the more useful approach.
+  \item Prompt Complexity Difference... Across Experiment 1a, the common prompt consistently outperformed the complex prompt in \textit{Adherence}, \textit{Correctness}, \textit{Clarity}, \textit{Answerability}, \textit{Language}, \textit{Value}; complex prompt only increased \textit{Challenging} but at noticeable quality cost. hence, a vastly formulated prompt does not imply better results
+  \item Source Material (Exp1a): based on supervisor, Transcript produced highest means in multiple quality dimensions (Clarity, Answerability, Correctness) but lowest in \textit{Challenging}; concise script yielded highest \textit{Total Score} due to better \textit{Challenging} balance; Tanenbaum excerpts weakest overall (language switch + book-style). at staff members on the other hand, the transcript and script share similar values, with the script being slightly better in \textit{Challenging}, \textit{Value}, and \textit{Correctness}, while the transcript is minimal better in \textit{Clarity}, \textit{Answerability}, and \textit{Language}.
+  \item Model Differentiation (Exp1a): OpenAI and DeepSeek more consistent in \textit{Correctness}; Anthropic and Google more variable, often unnecessarily linguistically complex (in complex prompt) and occasionally incorrect or invented answer possibilities.
+  \item Challenge problem: All models were less demanding with their questions regarding \textit{Challenging}, with DeepSeek and OpenAI being worse than Anthropic and Google.
+  \item Manipulation Handling (Exp1b Quantitative): Lower adherence scores (desired here) shown in OpenAI \& especially DeepSeek distributions signaled partial detection/neutralization of injected manipulations; Anthropic/Google more often reproduced manipulations (higher adherence). complex prompt showing better detection of manipulations, especially for DeepSeek and OpenAI
+  \item Manipulation Handling (Exp1b Qualitative): Small sampled set (16/56) limits inference; rubric reduced to single \textit{Manipulation Handling} dimension; staff using full scale rated (problem!) complex prompt higher (better detection with this prompt) than supervisor (used 0/5/10 scheme, there the trend is not that visible, since 1x16 questions instead of 4x16). there google and anthropic were the best instead, which is mapped to the small sample size...
+  \item Prompt Effect on Manipulation Handling... Complex prompt decreased adherence (beneficial in Exp1b) showing encouraged analysis; inverse relationship with correctness in Exp1a, there the complex prompt was worse than the common prompt except in \textit{Challenging} 
+  \item Inter-Rater Agreement (Exp1a/1b): Fleiss' $\kappa$ around zero for most criteria (staff-only and combined) due to wide 0-10 scale usage (supervisor used the discrete anchors vs.\ staff used all ratings, with even ratings in between the anchors); reliability constraints limit strength of these ratings, still showing many similar trends in the evaluation.
+  \item Student evaluation reliability (Exp2): Slight to fair agreement for \textit{Answerability}, and \textit{Challenging}; almost moderate for \textit{Bloom Rating}; very low / negative for \textit{Relevance}, \textit{Clarity}, \textit{Value}, \textit{Language} (domain unfamiliar + rubric abstraction probably not that clear).
+  \item Bloom steering impact (Exp2, prompts based on mix of both prompts from exp1): Absence of Bloom specification (Type Only) led to concentration at lower-mid levels (median Understanding / Applying) and questions without operator verbs; specifying Bloom (Bloom Only / Type+Bloom) produced high adherence (medians 10) with minimal performance loss in other criteria. 2b and 2c have most valuable questions overall, with high scoring
+  \item Question format influence: Open-Ended questions achieved higher cognitive levels than Multiple-Choice in Type Only setting (Exp2a); Bloom specification narrowed gap in Exp2c between both types but Open-Ended still stronger at adherence there. --> only open-ended questions would imply the highest rated setup in experiment 2. the mcqs are taking the scores down.
+  \item Model patterns under bloom prompts (Exp2): Without Bloom constraints Anthropic \& Google reached higher levels than DeepSeek \& OpenAI; with constraints, all models converged (high adherence), 2b OpenAI best; OpenAI occasionally underperformed in combined Type+Bloom adherence mean despite strong median, there was mismatch rating because of \ac{mcqs} and bloom (e.g.\ 6), which contradicts.
+  \item Total Score (Exp2): No winning model here; minor value spreading indicates that promptings of exp2 (a,b,c) have more homogeneous quality outcomes than content fidelity focus in Exp1
+  \item Linguistic complexity issues (across exps): Overly complex questions (mostly Google, Anthropic) and generic phrases (\enquote{based on the text}, google and deepseek often, anthropic sometimes, none at openai) reduced \textit{Value}
+  \item Rubric design lessons learned: Broad used 0-10 scale (even with some examples and descriptions per sub-rating) reduced agreement, better abstraction would be needed; \textit{Value} in exp2 noted as problematic since it was set up without explicit learning objectives, which was not considered at planning
+  \item Implementation constraints: Manual DeepSeek prompting as a problematic step (and even then it is a time-consuming task again, when 1 question per prompt is coming); commonly no temperature change possible in reasoning-mode --> uncontrolled variability.
+  \item Overall insight: Questions with content fidelity, fine linguistic quality, and across bloom requires (a) concise, well-structured source inputs rather than overly complex ones, (b) explicit cognitive-level directives (best coupled with learning objectives for each question/exam/topic), (c) restrained prompt complexity with clear phrasing, and (d) refined evaluation rubrics.
+\end{itemize}
+
 \vp
 
 \subsection{Answering the Research Questions}
+
+\requ{1}{To what extent do \ac{llms} adhere to the content of diverse provided instructional texts when generating questions?}
+
+\begin{itemize}
+  \item quantitativ: hohe Adherence scores (>\,90\%) bei allen Quellen im Adherence Score; Cosine Similarity ungeeignet (dadurch, dass kein Unterschied bei Source vs.\ No-Source erkennbar. nur fuer kurzsaetze geeignet).
+  \item common Prompt erhöht Inhaltstreue gegenüber Complex Prompt (Exp1a) mit Qualitätsverlust durch unnötige Komplexität beim Complex Prompt.
+  \item quellen-Effekt: Transcript maximiert Klarheit / Korrektheit, Script liefert ausgewogeneren Total Score (mit mehr Herausforderung), Tanenbaum als englisches Buch oft am schwächsten.
+  \item modellunterschiede: OpenAI / DeepSeek konsistenter korrekt; besonders Anthropic / Google anfällig für stilistische Überladung oder faktische Probleme.
+  \item fehlererkennung (Exp1b): Reduzierte Adherence zeigt manipulations-sensitives Verhalten. quantitativ v.a.\ bei DeepSeek / OpenAI unter Complex Prompt; andere Modelle replizieren Manipulation häufiger. qualitativ eher invers, aber komplexer prompt zeigt bessere Fehlererkennung ebenso.
+  \item qualitative Befunde bestätigen: Common Prompt (der weniger überladen ist) + strukturierte Quelle sind beste Kombination für zuverlässige, korrekte Fragen mit Fokus auf Inhaltstreue. dabei sind openai und deepseek grundsätzlich die besten Modelle.
+  \item wenn es um fehlerhafte / manipulierte Quellen geht, so können LLMs grundlegend die Manipulationen erkennen. Jedoch weisen die Modelle den User nicht darauf hin, bzw.\ selten und indirekt. da muss prompt design wieder her, falls notwendig. zielführend war es, zu sehen, wie die Modelle auf die Manipulationen reagieren, und es werden grundlegend die Manipulationen in die Fragen eingebaut.
+  \item grenzen: Geringe Inter-Rater-Reliabilität reduziert statistische Aussagekraft der Bewertungsqualität; common prompt fragen waren nicht so herausfordernd, was das Verlangen nach Bloom Levels widerspiegelt.
+\end{itemize}
+
+\requ{2}{How does the relationship between diverse question formats and Bloom's Taxonomy levels influence the pedagogical effectiveness of \ac{llm}-generated questions?}
+
+\begin{itemize}
+  \item Ohne Bloom-Vorgabe (Type Only) fallen MC-Fragen auf niedrige Levels (Median auf Remembering/Understanding); Open-Ended höher angesiedelt.
+  \item Bloom-Spezifikation (Bloom Only, Type+Bloom) produziert hohe Level-Adherence (Median 10) ohne deutliche Qualitätseinbußen in Relevance / Clarity / Answerability.
+  \item Open-Ended bleibt bei Bloom-Adherence überlegen; MCQs bei vorgegebenem Bloom angemessen, bleiben aber limitiert in oberen Levels.
+  \item Punktzahl grundlegend höher, sobald Bloom-Spezifikation gegeben ist.
+  \item Studierenden-Bewertungen: Höchste IRR bei Bloom Rating stützt Nutzbarkeit der benutzten klaren Level-Definitionen; niedriges IRR für sprachlich-inhaltliche Kriterien --> Bedarf besserer Rubrikumsetzungen.
+  \item Pädagogische Effektivität wird maximiert durch Bloom-Operatoren + bevorzugt Open-Ended für höhere kognitive Anforderungen. Dadurch, dass MCQ anhand der student ratings eher in richtung applying (level 3) tendieren, sind open-ended automatisch sinnvoller, um hohe/alle levels zu erreichen.
+\end{itemize}
 
 \vp
 
 
 \subsection{Practical Implications for Education}
+
+\begin{itemize}
+  \item Quellenwahl: Kurze, strukturierte Skripte bevorzugen, passend zu e.g.\ Uni-Anwendung; lange Transkripte (falls genutzt) auf das nötigste komprimieren vor Nutzung für \ac{aqg}
+  \item Prompting: Prägnanten Prompt, der nötiges enthält... mit expliziten Bloom-Leveln / Operatorverben einsetzen; auf überladene Instruktionen / Hinweise verzichten.
+  \item Frageformat: Open-Ended für höhere kognitive Ziele; MCQ für Basisverständnis --> aus beiden Fragetypen kann man eine geeignete Mischung anfertigen lassen, um die kognitiven Levels abzudecken, als gute Vorbereitung für Prüfungen.
+  \item Bloom-Integration: Systematisch Lernziele + Bloom-Level koppeln (operatoren immer wichtig) über die Fragen hinweg
+  \item Kontrolle vor Nutzung: sofern man dies benutzen möchte, mag es sinnvoll sein, es auf den eigenen Skripten zu testen... vielleicht Adherence Score (LLM-basiert) als automatisierte Vorfilterung; Expertenstichprobe für finale Bewertung.
+  \item Studierendenfeedback: können hierbei wertvolle Einblicke in die Qualität der Fragen geben, vielleicht als Teil des Frameworks, sodass man bei Generierung gleich ein Feedback da lassen kann.
+  \item Rubrik-Optimierung: Diskrete Anker wurden bereits in der Rubrik genutzt, aber die Erklärungen jeweils müssen optimiert werden, um IRR nicht zu gefährden, da die Abstufungen nicht klar genug waren.
+  \item Nutzungshinweis an User: Darlegen, dass LLMs nicht perfekt sind und Halluzinationen auftreten können; Studierende sollten sich bewusst sein, dass die Qualität der generierten Fragen variieren kann und sie kritisch mit den Inhalten umgehen sollten
+\end{itemize}
 
 % \begin{itemize}
 %   \item Leverage LLMs (current ones, if time-constraint acceptable with reasoning) to automate routine question generation, freeing educators to focus on pedagogy and feedback, but paste a note for students about the limitations of LLMs and their variability in performance across different models and inputs used!
@@ -43,6 +101,30 @@
 
 \subsection{Future Research Directions}
 
+\begin{itemize}
+  \item es kommen immer neuere Modelle heraus, die womöglich auch mehr Potential haben werden.
+  \item Halluzinationen stets wichtig, stets auch hier aufgetreten. neumodische modelle müssen dabei weiterhin progress machen, da dieses problem in der lehre nicht auftreten sollte.
+  \item deswegen Adherence check weiterführen (verbesserung der quantitativen analyse): Multi-LLM-Judging weiterhin, indem man die Modelle dabei auch vergleicht (statt wie ich oberflächlich zwei rater-modelle zu verwenden und mean zu nehmen pro frage), in die richtung ist noch ausbauen möglich, um auch ohne Experten einen Grundstein in der automatisierten Bewertung zu legen.
+  \item fuer vermeidung von randomness bei den bewertungen sollten statt sentence transformers neuere embedding modelle verwendet/erstellt werden.
+  \item Manipulations-Setup problematisch: Stichprobe bei manipuliert war etwas klein... größere Stichprobe (alle anhand von \textit{Manipulation Handling} bewerten), da nun Ergebnisse etwas uneinheitlich sind zwischen superivisor und staff sowie quantitativ etwas anders (da alle fragen benutzt).
+  \item Rubrik neu designen (auch verbesserung der qualitativen analyse): lernzielgebunden, präzisere Anker, um IRR zu verbessern
+  \item Reasoning-Analyse: Vergleich reasoning vs.\ non-reasoning Modelle (Kosten, Stabilität, Temperatur auswerten). reasoning step ist nicht gut analysierbar, da dieser step nun oft als proprietary gilt, ausser bei e.g. deepseek weil open source. gibt nur noch summaries sonst:
+% --> study reasoning process, but hard since many rely on only pasting thinking summaries to the user 
+% https://platform.openai.com/docs/guides/reasoning?api-mode=responses
+% https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking
+% for block in response.content:
+%     if block.type == "thinking":
+%         print(f"\nThinking summary: {block.thinking}")
+%     elif block.type == "text":
+%         print(f"\nResponse: {block.text}")
+  \item Vollständige API-Umsetzung für alle modelle, ebenso in einem framework dann
+  \item Lernziel verknüpfen --> Mapping von Value eher an Learning Objectives statt generischer Nutzenbewertung.
+  \item MCQ-Problematik: richtige antwortmoeglichkeiten teils inkorrekt, haben keine pipeline gebaut, welche frage, korrekte moeglichkeit(en) und falsche moeglichkeiten getrennt generiert. das wäre hilfreich
+  \item Bias... supervisor ist autor von script/transcript, daher möglicherweise Bias in Bewertung, aber grundlegend gleiche Trends wie bei den anderen Ratern.
+  \item rater-anzahl: 4+1 bei exp1 und 3 bei exp2, kann mehr sein, aber als einzelner Bachelorand waren dies ausreichend daten zum Auswerten
+  \item Aus den Insights neue Insights entnehmen, indem man weiter daran arbeitet; das hier zu einem Framework ausbauen, welches dann auch in der Lehre benutzt werden kann.
+\end{itemize}
+
 % novel models were used 👍
 % trying automated content adherence check didnt went as expected, but still a good first step.
 %   - semantic similarity is not that senseful at sentence transformers. higher level models are needed
@@ -52,13 +134,3 @@
 % bloom assessment across various levels using 3 students, while 1 has not assessed the questions properly...
 
 % --> papers/theses with less prompts can focus more on refining the prompts / using many different ones
-% --> explore reasoning + compare models with and without reasoning
-% --> study reasoning process, but hard since many rely on only pasting thinking summaries to the user 
-% https://platform.openai.com/docs/guides/reasoning?api-mode=responses
-% https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking
-% for block in response.content:
-%     if block.type == "thinking":
-%         print(f"\nThinking summary: {block.thinking}")
-%     elif block.type == "text":
-%         print(f"\nResponse: {block.text}")
-% --> more studies on content fidelity, mixed setup with automated and expert ratings
