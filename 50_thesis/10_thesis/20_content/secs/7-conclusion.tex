@@ -6,7 +6,7 @@ In this Bachelor's thesis, the potential of \acp{llm} for educational question g
 
 \begin{enumerate}
   \item Evaluating the adherence of \ac{llm}-generated questions to diverse instructional texts, and
-  \item Analyzing how three prompting variants -- specifying only the question format, only the targeted Bloom level, or both together -- affect the generation of questions across Bloom's revised Taxonomy and their adherence to the intended cognitive level, if a Bloom level was specified.
+  \item Analyzing how three prompting variants (specifying only the question format, only a targeted Bloom level, or both together) affect the generation of questions across Bloom's revised Taxonomy and their adherence to the intended cognitive level, if specified.
 \end{enumerate}
 
 Four popular \acp{llm} with \textit{reasoning} capabilities were employed to conduct \ac{aqg}: Anthropic Claude 3.7 Sonnet, DeepSeek R1, Google Gemini 2.5 Flash, and OpenAI o3.
@@ -66,30 +66,42 @@ Four popular \acp{llm} with \textit{reasoning} capabilities were employed to con
 
 \requ{2}{How does the relationship between diverse question formats and Bloom's Taxonomy levels influence the pedagogical effectiveness of \ac{llm}-generated questions?}
 
-\begin{itemize}
-  \item Ohne Bloom-Vorgabe (Type Only) fallen MC-Fragen auf niedrige Levels (Median auf Remembering/Understanding); Open-Ended höher angesiedelt.
-  \item Bloom-Spezifikation (Bloom Only, Type+Bloom) produziert hohe Level-Adherence (Median 10) ohne deutliche Qualitätseinbußen in Relevance / Clarity / Answerability.
-  \item Open-Ended bleibt bei Bloom-Adherence überlegen; MCQs bei vorgegebenem Bloom angemessen, bleiben aber limitiert in oberen Levels.
-  \item Punktzahl grundlegend höher, sobald Bloom-Spezifikation gegeben ist.
-  \item Studierenden-Bewertungen: Höchste IRR bei Bloom Rating stützt Nutzbarkeit der benutzten klaren Level-Definitionen; niedriges IRR für sprachlich-inhaltliche Kriterien --> Bedarf besserer Rubrikumsetzungen.
-  \item Pädagogische Effektivität wird maximiert durch Bloom-Operatoren + bevorzugt Open-Ended für höhere kognitive Anforderungen. Dadurch, dass MCQ anhand der student ratings eher in richtung applying (level 3) tendieren, sind open-ended automatisch sinnvoller, um hohe/alle levels zu erreichen.
-\end{itemize}
+This research demonstrated that specifying Bloom levels -- either Bloom only or Type+Bloom -- resulted in high adherence to the intended cognitive levels, with median scores of 10 in both cases. If no Bloom specification was given instead, the questions tended to fall into lower cognitive levels, with a median of 3 (at \textit{Understanding}), which is not a sufficient result. It is worth noting that the Open-Ended questions were generally more effective in achieving higher cognitive levels than the \acp{mcq}, and even higher Bloom alignment if a Bloom specification was given. The \acp{mcq} were more suitable for lower cognitive levels, such as \textit{Remembering}, \textit{Understanding}, and \textit{Applying}. By this, a mix of both question types, coupled with specifying Bloom levels -- which leads to a higher \textit{Total Score} -- can be generated to better handle all cognitive levels.
 
-\vp
+The student evaluation of the questions in Experiment 2 showed that the \textit{Bloom's Level} had the highest inter-rater reliability, supporting the usability of the clear level definitions used. However, linguistic and content-related criteria such as \textit{Relevance}, \textit{Clarity}, and \textit{Language} had low inter-rater reliability, as well as the \textit{Value} criterion. The evaluation rubrics used in this thesis were not sufficiently clear and consistent, which leads to the need for rubric refinements.
+
+\tcr{needs a minor refinement for more clear RQ2 answering}
+
+% \begin{itemize}
+%   \item Ohne Bloom-Vorgabe (Type Only) fallen MC-Fragen auf niedrige Levels (Median auf Remembering/Understanding); Open-Ended höher angesiedelt.
+%   \item Bloom-Spezifikation (Bloom Only, Type+Bloom) produziert hohe Level-Adherence (Median 10) ohne deutliche Qualitätseinbußen in Relevance / Clarity / Answerability.
+%   \item Open-Ended bleibt bei Bloom-Adherence überlegen; MCQs bei vorgegebenem Bloom angemessen, bleiben aber limitiert in oberen Levels.
+%   \item Punktzahl grundlegend höher, sobald Bloom-Spezifikation gegeben ist.
+%   \item Studierenden-Bewertungen: Höchste IRR bei Bloom Rating stützt Nutzbarkeit der benutzten klaren Level-Definitionen; niedriges IRR für sprachlich-inhaltliche Kriterien --> Bedarf besserer Rubrikumsetzungen.
+%   \item Pädagogische Effektivität wird maximiert durch Bloom-Operatoren + bevorzugt Open-Ended für höhere kognitive Anforderungen. Dadurch, dass MCQ anhand der student ratings eher in richtung applying (level 3) tendieren, sind open-ended automatisch sinnvoller, um hohe/alle levels zu erreichen.
+% \end{itemize}
+
+% \vp
 
 
 \subsection{Practical Implications for Education}
 
-\begin{itemize}
-  \item Quellenwahl: Kurze, strukturierte Skripte bevorzugen, passend zu e.g.\ Uni-Anwendung; lange Transkripte (falls genutzt) auf das nötigste komprimieren vor Nutzung für \ac{aqg}
-  \item Prompting: Prägnanten Prompt, der nötiges enthält... mit expliziten Bloom-Leveln / Operatorverben einsetzen; auf überladene Instruktionen / Hinweise verzichten.
-  \item Frageformat: Open-Ended für höhere kognitive Ziele; MCQ für Basisverständnis --> aus beiden Fragetypen kann man eine geeignete Mischung anfertigen lassen, um die kognitiven Levels abzudecken, als gute Vorbereitung für Prüfungen.
-  \item Bloom-Integration: Systematisch Lernziele + Bloom-Level koppeln (operatoren immer wichtig) über die Fragen hinweg
-  \item Kontrolle vor Nutzung: sofern man dies benutzen möchte, mag es sinnvoll sein, es auf den eigenen Skripten zu testen... vielleicht Adherence Score (LLM-basiert) als automatisierte Vorfilterung; Expertenstichprobe für finale Bewertung, sodass man in zukunft verlässlich die Fragen für die studenten generieren und nutzen kann.
-  \item Studierendenfeedback: können hierbei wertvolle Einblicke in die Qualität der Fragen geben, vielleicht als Teil des Frameworks, sodass man bei Generierung gleich ein Feedback da lassen kann.
-  % \item Rubrik-Optimierung: Diskrete Anker wurden bereits in der Rubrik genutzt, aber die Erklärungen jeweils müssen optimiert werden, um IRR nicht zu gefährden, da die Abstufungen nicht klar genug waren.
-  \item Nutzungshinweis an User: Darlegen, dass LLMs nicht perfekt sind und Halluzinationen auftreten können; Studierende sollten sich bewusst sein, dass die Qualität der generierten Fragen variieren kann und sie kritisch mit den Inhalten umgehen sollten
-\end{itemize}
+Firstly, valuable \ac{aqg} relies on concise, well-structured source materials (e.g.\ lecture scripts), which can produce clearer, more relevant questions than lengthy transcripts or book excerpts. Secondly, a well-designed prompting strategy is crucial for \ac{aqg}, as extensive prompt formulations do not necessarily lead to high content fidelity or overall quality. This was visible in Experiment 1a, where the common prompt outperformed the complex one in most quality dimensions, despite being less challenging. To achieve the best results, a concise but structured prompt including the necessary information, such as explicit Bloom levels or operator verbs, should be used. This helps to avoid overloading questions with unnecessary formulations or linguistic complexity, which can reduce \textit{Clarity} and \textit{Value}.
+
+Overall, strategic selection of question formats for different cognitive levels is essential. Open-Ended questions are suitable across all Bloom levels, while \acp{mcq} are more appropriate for lower levels, such as \textit{Remembering}, \textit{Understanding}, and \textit{Applying}. A balanced mix of both question types can be generated to cover all cognitive levels, which is beneficial for exam preparation. A mixture of question type, Bloom level, source material, and learning objectives can be used to create a comprehensive question set.
+
+Moreover, users, particularly students, should be aware that \acp{llm} are not perfect and can produce hallucinations or incorrect information. Therefore, it is important to inform students about the limitations of \acp{llm}, and integrate a feedback mechanism into future frameworks, where students can provide feedback on the quality of the generated questions. This can help improve the quality of the questions over time, and ensure that they meet the needs of the students.
+
+% \begin{itemize}
+%   \item Quellenwahl: Kurze, strukturierte Skripte bevorzugen, passend zu e.g.\ Uni-Anwendung; lange Transkripte (falls genutzt) auf das nötigste komprimieren vor Nutzung für \ac{aqg}
+%   \item Prompting: Prägnanten Prompt, der nötiges enthält... mit expliziten Bloom-Leveln / Operatorverben einsetzen; auf überladene Instruktionen / Hinweise verzichten.
+%   \item Frageformat: Open-Ended für höhere kognitive Ziele; MCQ für Basisverständnis --> aus beiden Fragetypen kann man eine geeignete Mischung anfertigen lassen, um die kognitiven Levels abzudecken, als gute Vorbereitung für Prüfungen.
+%   \item Bloom-Integration: Systematisch Lernziele + Bloom-Level koppeln (operatoren immer wichtig) über die Fragen hinweg
+%   \item Kontrolle vor Nutzung: sofern man dies benutzen möchte, mag es sinnvoll sein, es auf den eigenen Skripten zu testen... vielleicht Adherence Score (LLM-basiert) als automatisierte Vorfilterung; Expertenstichprobe für finale Bewertung, sodass man in zukunft verlässlich die Fragen für die studenten generieren und nutzen kann.
+%   \item Studierendenfeedback: können hierbei wertvolle Einblicke in die Qualität der Fragen geben, vielleicht als Teil des Frameworks, sodass man bei Generierung gleich ein Feedback da lassen kann.
+%   % \item Rubrik-Optimierung: Diskrete Anker wurden bereits in der Rubrik genutzt, aber die Erklärungen jeweils müssen optimiert werden, um IRR nicht zu gefährden, da die Abstufungen nicht klar genug waren.
+%   \item Nutzungshinweis an User: Darlegen, dass LLMs nicht perfekt sind und Halluzinationen auftreten können; Studierende sollten sich bewusst sein, dass die Qualität der generierten Fragen variieren kann und sie kritisch mit den Inhalten umgehen sollten
+% \end{itemize}
 
 % \begin{itemize}
 %   \item Leverage LLMs (current ones, if time-constraint acceptable with reasoning) to automate routine question generation, freeing educators to focus on pedagogy and feedback, but paste a note for students about the limitations of LLMs and their variability in performance across different models and inputs used!
@@ -104,7 +116,7 @@ Four popular \acp{llm} with \textit{reasoning} capabilities were employed to con
 % --> Educators should prioritize well-structured lecture materials over long transcripts when using LLMs for question generation due to observed variation in performance across different input source types
 % --> Integration with existing Learning Management Systems could streamline the question generation workflow for educators
 
-\vp
+% \vp
 
 \subsection{Future Research Directions}
 
@@ -112,7 +124,7 @@ The dynamic landscape of \acp{llm} presents both challenges and opportunities fo
 
 Based on this, analyzing the adherence of \ac{llm}-generated questions to educational content can be further improved by still using a multi-\ac{llm} judging approach, where the questions are analyzed by multiple models instead of just two and averaging both results, which was done in this thesis. This would imply a more robust foundation for automated evaluation without solely relying on expert judgments, as these are often time-consuming. To avoid randomness, which might occur in the evaluation process above, more recent or future embedding models should be utilized instead of a sentence transformer, which was used in this thesis. Since sentence transformers are not the best choice for semantic similarity in longer texts\,/\,varying structures, this could be improved by addressing this issue in future work.
 
-The experimental setup for analyzing \textit{Manipulation Handling} was somewhat problematic, as the sample size for the manipulated questions was relatively small. A larger sample size, where all questions are evaluated based on the proposed \textit{Manipulation Handling} criterion, would provide more consistent insights into the \acp{llm}' reaction to manipulations, as the results were inconsistent between the supervisor and staff members, as well as quantitatively different due to the use of all questions in this manner of analysis. This also implies a redesign of the rubric to be more learning objective-oriented, since the \textit{Value} criterion was criticized for its lack of explicit learning objectives, which was not considered during the planning phase. Furthermore, clearer anchor descriptions -- e.g.\ for rating 0, rating 2, \ldots -- are needed to improve inter-rater reliability and thus the qualitative analysis of the questions.
+The experimental setup for analyzing \textit{Manipulation Handling} was problematic, as the sample size for the manipulated questions was relatively small. A larger set, where all questions are evaluated based on the proposed \textit{Manipulation Handling} criterion, would provide more consistent insights into the \acp{llm}' reaction to manipulations, as the results were inconsistent between the supervisor and staff members, as well as quantitatively different due to the use of all questions in this manner of analysis. This also implies a redesign of the rubric, since the \textit{Value} criterion was criticized for its lack of using explicit learning objectives, which was not considered during the planning phase. Furthermore, clearer anchor descriptions -- e.g.\ for 0 points, 2 points, ... -- are needed to improve inter-rater reliability and thus the qualitative analysis of the questions.
 
 While this thesis focused on \textit{reasoning} models, future research should also compare \textit{reasoning} and non-\textit{reasoning} models to analyze differences in \ac{aqg}. Unfortunately, the \textit{reasoning} step before answering the user is often not well analyzable, as many models consider this step proprietary. Based on this, the developers are solely providing summaries of the \textit{reasoning} process instead\footnote{\url{https://platform.openai.com/docs/guides/reasoning?api-mode=responses\#reasoning-summaries}, accessed 08/12/2025}.
 
