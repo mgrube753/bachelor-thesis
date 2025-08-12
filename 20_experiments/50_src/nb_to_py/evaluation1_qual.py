@@ -3,6 +3,12 @@
 
 # # Notebook: Qualitative Evaluation (Supervisor vs. Staff Members) -- Experiment 1
 
+# In this notebook, the qualitative evaluation of the first experiment is conducted, comparing the ratings of supervisors and staff members.
+# 
+# The first evaluation run in this notebook is based on the data from the supervisor (expert 1), while `USE_SUPERVISOR_DATA` is set to `True`.
+# 
+# If set to `False`, the notebook will use the data from the staff members (experts 2-5) instead as the second run. Furthermore, if set to `False`, the inter-rater agreement (IRA) will be calculated between the staff members + between the staff members and the supervisor.
+
 # ## Initial Setup
 
 # In[ ]:
@@ -33,8 +39,8 @@ pd.set_option('display.max_colwidth', 100)
 pd.set_option('display.notebook_repr_html', True)
 
 # !!! Set to False to use staff data instead (Experts 2-5, + inter-rater agreements)
-# (IRA between staff experts 2-5 and also staff experts vs. supervisor [expert 1])
-USE_SUPERVISOR_DATA = False
+# (Then, IRA between staff experts 2-5 + also staff experts vs. supervisor [expert 1] will be calculated)
+USE_SUPERVISOR_DATA = True
 # Changing this will affect the data resulting in the notebook
 # !!! As a very important note
 

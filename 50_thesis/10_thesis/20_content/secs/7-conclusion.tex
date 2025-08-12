@@ -2,7 +2,14 @@
 
 % \newtodo{Brief overview of everything i have done.}
 % \newtodo{Provide an outlook on future work planned to do or at least thoughts besides implementation.}
-In this Bachelor's thesis, the potential of \acp{llm} for educational question generation was investigated through two experiments: (1) evaluating the adherence of \ac{llm}-generated questions to their source content, and (2) analyzing how three prompting variants -- specifying only the question format, only the targeted Bloom level, or both together -- affect the generation of questions across Bloom's revised Taxonomy and their adherence to the intended cognitive level, if a Bloom level was specified.
+In this Bachelor's thesis, the potential of \acp{llm} for educational question generation was investigated through two experiments: 
+
+\begin{enumerate}
+  \item Evaluating the adherence of \ac{llm}-generated questions to diverse instructional texts, and
+  \item Analyzing how three prompting variants -- specifying only the question format, only the targeted Bloom level, or both together -- affect the generation of questions across Bloom's revised Taxonomy and their adherence to the intended cognitive level, if a Bloom level was specified.
+\end{enumerate}
+
+Four popular \acp{llm} with \textit{reasoning} capabilities were employed to conduct \ac{aqg}: Anthropic Claude 3.7 Sonnet, DeepSeek R1, Google Gemini 2.5 Flash, and OpenAI o3.
 
 \subsection{Key Findings}
 
@@ -19,7 +26,7 @@ In this Bachelor's thesis, the potential of \acp{llm} for educational question g
 % exp 1b even harder to interpret without expert ratings, which is crucial
 
 \begin{itemize}
-  \item Overall Potential: reasoning \ac{llms} can automate generation of relevant, clear and Bloom-aligned questions, but show diversity in criteria such as \textit{Correctness}, \textit{Challenging}, and especially in \textit{Clarity} / \textit{Language}.
+  \item Overall Potential: reasoning \acp{llm} can automate generation of relevant, clear and Bloom-aligned questions, but show diversity in criteria such as \textit{Correctness}, \textit{Challenging}, and especially in \textit{Clarity} / \textit{Language}.
   \item Metric Robustness: Cosine similarity (sentence transformer based) failed to discriminate source-based vs.\ no-source-based generations (with close means/medians); the llm-based \textit{Adherence Score} instead provided discriminative, interpretable fidelity across models, sources, and prompt types. Hence, semantic sim is unsuitable for long educational texts, rather than sentence-level comparison, which is the more useful approach.
   \item Prompt Complexity Difference... Across Experiment 1a, the common prompt consistently outperformed the complex prompt in \textit{Adherence}, \textit{Correctness}, \textit{Clarity}, \textit{Answerability}, \textit{Language}, \textit{Value}; complex prompt only increased \textit{Challenging} but at noticeable quality cost. hence, a vastly formulated prompt does not imply better results
   \item Source Material (Exp1a): based on supervisor, Transcript produced highest means in multiple quality dimensions (Clarity, Answerability, Correctness) but lowest in \textit{Challenging}; concise script yielded highest \textit{Total Score} due to better \textit{Challenging} balance; Tanenbaum excerpts weakest overall (language switch + book-style). at staff members on the other hand, the transcript and script share similar values, with the script being slightly better in \textit{Challenging}, \textit{Value}, and \textit{Correctness}, while the transcript is minimal better in \textit{Clarity}, \textit{Answerability}, and \textit{Language}.
@@ -32,7 +39,7 @@ In this Bachelor's thesis, the potential of \acp{llm} for educational question g
   \item Student evaluation reliability (Exp2): Slight to fair agreement for \textit{Answerability}, and \textit{Challenging}; almost moderate for \textit{Bloom Rating}; very low / negative for \textit{Relevance}, \textit{Clarity}, \textit{Value}, \textit{Language} (domain unfamiliar + rubric abstraction probably not that clear).
   \item Bloom steering impact (Exp2, prompts based on mix of both prompts from exp1): Absence of Bloom specification (Type Only) led to concentration at lower-mid levels (median Understanding / Applying) and questions without operator verbs; specifying Bloom (Bloom Only / Type+Bloom) produced high adherence (medians 10) with minimal performance loss in other criteria. 2b and 2c have most valuable questions overall, with high scoring
   \item Question format influence: Open-Ended questions achieved higher cognitive levels than Multiple-Choice in Type Only setting (Exp2a); Bloom specification narrowed gap in Exp2c between both types but Open-Ended still stronger at adherence there. --> only open-ended questions would imply the highest rated setup in experiment 2. the mcqs are taking the scores down.
-  \item Model patterns under bloom prompts (Exp2): Without Bloom constraints Anthropic \& Google reached higher levels than DeepSeek \& OpenAI; with constraints, all models converged (high adherence), 2b OpenAI best; OpenAI occasionally underperformed in combined Type+Bloom adherence mean despite strong median, there was mismatch rating because of \ac{mcqs} and bloom (e.g.\ 6), which contradicts.
+  \item Model patterns under bloom prompts (Exp2): Without Bloom constraints Anthropic \& Google reached higher levels than DeepSeek \& OpenAI; with constraints, all models converged (high adherence), 2b OpenAI best; OpenAI occasionally underperformed in combined Type+Bloom adherence mean despite strong median, there was mismatch rating because of \acp{mcq} and bloom (e.g.\ 6), which contradicts.
   \item Total Score (Exp2): No winning model here; minor value spreading indicates that promptings of exp2 (a,b,c) have more homogeneous quality outcomes than content fidelity focus in Exp1
   \item Linguistic complexity issues (across exps): Overly complex questions (mostly Google, Anthropic) and generic phrases (\enquote{based on the text}, google and deepseek often, anthropic sometimes, none at openai) reduced \textit{Value}
   \item Rubric design lessons learned: Broad used 0-10 scale (even with some examples and descriptions per sub-rating) reduced agreement, better abstraction would be needed; \textit{Value} in exp2 noted as problematic since it was set up without explicit learning objectives, which was not considered at planning
@@ -44,13 +51,13 @@ In this Bachelor's thesis, the potential of \acp{llm} for educational question g
 
 \subsection{Answering the Research Questions}
 
-\requ{1}{To what extent do \ac{llms} adhere to the content of diverse provided instructional texts when generating questions?}
+\requ{1}{To what extent do \acp{llm} adhere to the content of diverse provided instructional texts when generating questions?}
 
 \begin{itemize}
   \item quantitativ: hohe Adherence scores (>\,90\%) bei allen Quellen im Adherence Score; Cosine Similarity ungeeignet (dadurch, dass kein Unterschied bei Source vs.\ No-Source erkennbar. nur fuer kurzsaetze geeignet).
   \item common Prompt erhöht Inhaltstreue gegenüber Complex Prompt (Exp1a) mit Qualitätsverlust durch unnötige Komplexität beim Complex Prompt.
   \item quellen-Effekt: Transcript maximiert Klarheit / Korrektheit, Script liefert ausgewogeneren Total Score (mit mehr Herausforderung), Tanenbaum als englisches Buch oft am schwächsten.
-  \item modellunterschiede: OpenAI / DeepSeek konsistenter korrekt; besonders Anthropic / Google anfällig für stilistische Überladung oder faktische Probleme.
+  \item modellunterschiede: OpenAI / DeepSeek konsistenter korrekt/inhaltstreu; besonders Anthropic / Google anfällig für stilistische Überladung oder faktische Probleme.
   \item fehlererkennung (Exp1b): Reduzierte Adherence zeigt manipulations-sensitives Verhalten. quantitativ v.a.\ bei DeepSeek / OpenAI unter Complex Prompt; andere Modelle replizieren Manipulation häufiger. qualitativ eher invers, aber komplexer prompt zeigt bessere Fehlererkennung ebenso.
   \item qualitative Befunde bestätigen: Common Prompt (der weniger überladen ist) + strukturierte Quelle sind beste Kombination für zuverlässige, korrekte Fragen mit Fokus auf Inhaltstreue. dabei sind openai und deepseek grundsätzlich die besten Modelle.
   \item wenn es um fehlerhafte / manipulierte Quellen geht, so können LLMs grundlegend die Manipulationen erkennen. Jedoch weisen die Modelle den User nicht darauf hin, bzw.\ selten und indirekt. da muss prompt design wieder her, falls notwendig. zielführend war es, zu sehen, wie die Modelle auf die Manipulationen reagieren, und es werden grundlegend die Manipulationen in die Fragen eingebaut.
@@ -78,9 +85,9 @@ In this Bachelor's thesis, the potential of \acp{llm} for educational question g
   \item Prompting: Prägnanten Prompt, der nötiges enthält... mit expliziten Bloom-Leveln / Operatorverben einsetzen; auf überladene Instruktionen / Hinweise verzichten.
   \item Frageformat: Open-Ended für höhere kognitive Ziele; MCQ für Basisverständnis --> aus beiden Fragetypen kann man eine geeignete Mischung anfertigen lassen, um die kognitiven Levels abzudecken, als gute Vorbereitung für Prüfungen.
   \item Bloom-Integration: Systematisch Lernziele + Bloom-Level koppeln (operatoren immer wichtig) über die Fragen hinweg
-  \item Kontrolle vor Nutzung: sofern man dies benutzen möchte, mag es sinnvoll sein, es auf den eigenen Skripten zu testen... vielleicht Adherence Score (LLM-basiert) als automatisierte Vorfilterung; Expertenstichprobe für finale Bewertung.
+  \item Kontrolle vor Nutzung: sofern man dies benutzen möchte, mag es sinnvoll sein, es auf den eigenen Skripten zu testen... vielleicht Adherence Score (LLM-basiert) als automatisierte Vorfilterung; Expertenstichprobe für finale Bewertung, sodass man in zukunft verlässlich die Fragen für die studenten generieren und nutzen kann.
   \item Studierendenfeedback: können hierbei wertvolle Einblicke in die Qualität der Fragen geben, vielleicht als Teil des Frameworks, sodass man bei Generierung gleich ein Feedback da lassen kann.
-  \item Rubrik-Optimierung: Diskrete Anker wurden bereits in der Rubrik genutzt, aber die Erklärungen jeweils müssen optimiert werden, um IRR nicht zu gefährden, da die Abstufungen nicht klar genug waren.
+  % \item Rubrik-Optimierung: Diskrete Anker wurden bereits in der Rubrik genutzt, aber die Erklärungen jeweils müssen optimiert werden, um IRR nicht zu gefährden, da die Abstufungen nicht klar genug waren.
   \item Nutzungshinweis an User: Darlegen, dass LLMs nicht perfekt sind und Halluzinationen auftreten können; Studierende sollten sich bewusst sein, dass die Qualität der generierten Fragen variieren kann und sie kritisch mit den Inhalten umgehen sollten
 \end{itemize}
 
@@ -101,14 +108,24 @@ In this Bachelor's thesis, the potential of \acp{llm} for educational question g
 
 \subsection{Future Research Directions}
 
-\begin{itemize}
-  \item es kommen immer neuere Modelle heraus, die womöglich auch mehr Potential haben werden.
-  \item Halluzinationen stets wichtig, stets auch hier aufgetreten. neumodische modelle müssen dabei weiterhin progress machen, da dieses problem in der lehre nicht auftreten sollte.
-  \item deswegen Adherence check weiterführen (verbesserung der quantitativen analyse): Multi-LLM-Judging weiterhin, indem man die Modelle dabei auch vergleicht (statt wie ich oberflächlich zwei rater-modelle zu verwenden und mean zu nehmen pro frage), in die richtung ist noch ausbauen möglich, um auch ohne Experten einen Grundstein in der automatisierten Bewertung zu legen.
-  \item fuer vermeidung von randomness bei den bewertungen sollten statt sentence transformers neuere embedding modelle verwendet/erstellt werden.
-  \item Manipulations-Setup problematisch: Stichprobe bei manipuliert war etwas klein... größere Stichprobe (alle anhand von \textit{Manipulation Handling} bewerten), da nun Ergebnisse etwas uneinheitlich sind zwischen superivisor und staff sowie quantitativ etwas anders (da alle fragen benutzt).
-  \item Rubrik neu designen (auch verbesserung der qualitativen analyse): lernzielgebunden, präzisere Anker, um IRR zu verbessern
-  \item Reasoning-Analyse: Vergleich reasoning vs.\ non-reasoning Modelle (Kosten, Stabilität, Temperatur auswerten). reasoning step ist nicht gut analysierbar, da dieser step nun oft als proprietary gilt, ausser bei e.g. deepseek weil open source. gibt nur noch summaries sonst:
+The dynamic landscape of \acp{llm} presents both challenges and opportunities for future research. As newer models are going to be released, they may exhibit even greater potential for \ac{aqg} and educational applications, while mitigating existing limitations. Hallucinations remain a critical issue, since factual accuracy is a crucial concern. Future work should continue to reduce the generation of incorrect or misleading information, especially in educational contexts.
+
+Based on this, analyzing the adherence of \ac{llm}-generated questions to educational content can be further improved by still using a multi-\ac{llm} judging approach, where the questions are analyzed by multiple models instead of just two and averaging both results, which was done in this thesis. This would imply a more robust foundation for automated evaluation without solely relying on expert judgments, as these are often time-consuming. To avoid randomness, which might occur in the evaluation process above, more recent or future embedding models should be utilized instead of a sentence transformer, which was used in this thesis. Since sentence transformers are not the best choice for semantic similarity in longer texts\,/\,varying structures, this could be improved by addressing this issue in future work.
+
+The experimental setup for analyzing \textit{Manipulation Handling} was somewhat problematic, as the sample size for the manipulated questions was relatively small. A larger sample size, where all questions are evaluated based on the proposed \textit{Manipulation Handling} criterion, would provide more consistent insights into the \acp{llm}' reaction to manipulations, as the results were inconsistent between the supervisor and staff members, as well as quantitatively different due to the use of all questions in this manner of analysis. This also implies a redesign of the rubric to be more learning objective-oriented, since the \textit{Value} criterion was criticized for its lack of explicit learning objectives, which was not considered during the planning phase. Furthermore, clearer anchor descriptions -- e.g.\ for rating 0, rating 2, \ldots -- are needed to improve inter-rater reliability and thus the qualitative analysis of the questions.
+
+While this thesis focused on \textit{reasoning} models, future research should also compare \textit{reasoning} and non-\textit{reasoning} models to analyze differences in \ac{aqg}. Unfortunately, the \textit{reasoning} step before answering the user is often not well analyzable, as many models consider this step proprietary. Based on this, the developers are solely providing summaries of the \textit{reasoning} process instead\footnote{\url{https://platform.openai.com/docs/guides/reasoning?api-mode=responses\#reasoning-summaries}, accessed 08/12/2025}.
+
+Generating \acp{mcq} in one step is still a challenge, as in few cases, the (in)correct answer options are not generated properly, which can lead to confusion for students. Based on this, a pipeline that generates the question, correct answer(s), and incorrect answer options separately would be a beneficial manner for future work, as it was not implemented in this thesis, but in work such as \cite{bhowmick_automating_2023}. Finally, addressing potential biases in the evaluation process is crucial, as the supervisor of this thesis was also the author of the script/transcript used for question generation. However, the overall trends in the evaluation were similar to those of the other raters. In addition, the number of raters was sufficient for this thesis, with five raters in Experiment 1 and three raters in Experiment 2, but future work could consider increasing the number of raters to enhance the robustness of the findings. All these insights can be used to build a robust, reliable and particularly pedagogical framework for \ac{aqg} in further research, which is a promising direction for future work. 
+
+% \begin{itemize}
+%   \item DONE es kommen immer neuere Modelle heraus, die womöglich auch mehr Potential haben werden.
+%   \item DONE Halluzinationen stets wichtig, stets auch hier aufgetreten. neumodische modelle müssen dabei weiterhin progress machen, da dieses problem in der lehre nicht auftreten sollte.
+%   \item DONE deswegen Adherence check weiterführen (verbesserung der quantitativen analyse): Multi-LLM-Judging weiterhin, indem man die Modelle dabei auch vergleicht (statt wie ich oberflächlich zwei rater-modelle zu verwenden und mean zu nehmen pro frage), in die richtung ist noch ausbauen möglich, um auch ohne Experten einen Grundstein in der automatisierten Bewertung zu legen.
+%   \item DONE fuer vermeidung von randomness bei den bewertungen sollten statt sentence transformers neuere embedding modelle verwendet/erstellt werden.
+%   \item DONE Manipulations-Setup problematisch: Stichprobe bei manipuliert war etwas klein... größere Stichprobe (alle anhand von \textit{Manipulation Handling} bewerten), da nun Ergebnisse etwas uneinheitlich sind zwischen superivisor und staff sowie quantitativ etwas anders (da alle fragen benutzt).
+%   \item DONE Rubrik neu designen (auch verbesserung der qualitativen analyse): lernzielgebunden, präzisere Anker, um IRR zu verbessern
+%   \item DONE Reasoning-Analyse: Vergleich reasoning vs.\ non-reasoning Modelle (Kosten, Stabilität, Temperatur auswerten). reasoning step ist nicht gut analysierbar, da dieser step nun oft als proprietary gilt, ausser bei e.g. deepseek weil open source. gibt nur noch summaries sonst:
 % --> study reasoning process, but hard since many rely on only pasting thinking summaries to the user 
 % https://platform.openai.com/docs/guides/reasoning?api-mode=responses
 % https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking
@@ -117,13 +134,13 @@ In this Bachelor's thesis, the potential of \acp{llm} for educational question g
 %         print(f"\nThinking summary: {block.thinking}")
 %     elif block.type == "text":
 %         print(f"\nResponse: {block.text}")
-  \item Vollständige API-Umsetzung für alle modelle, ebenso in einem framework dann
-  \item Lernziel verknüpfen --> Mapping von Value eher an Learning Objectives statt generischer Nutzenbewertung.
-  \item MCQ-Problematik: richtige antwortmoeglichkeiten teils inkorrekt, haben keine pipeline gebaut, welche frage, korrekte moeglichkeit(en) und falsche moeglichkeiten getrennt generiert. das wäre hilfreich
-  \item Bias... supervisor ist autor von script/transcript, daher möglicherweise Bias in Bewertung, aber grundlegend gleiche Trends wie bei den anderen Ratern.
-  \item rater-anzahl: 4+1 bei exp1 und 3 bei exp2, kann mehr sein, aber als einzelner Bachelorand waren dies ausreichend daten zum Auswerten
-  \item Aus den Insights neue Insights entnehmen, indem man weiter daran arbeitet; das hier zu einem Framework ausbauen, welches dann auch in der Lehre benutzt werden kann.
-\end{itemize}
+  % \item NO Vollständige API-Umsetzung für alle modelle, ebenso in einem framework dann
+  % \item DONE Lernziel verknüpfen --> Mapping von Value eher an Learning Objectives statt generischer Nutzenbewertung.
+  % \item DONE MCQ-Problematik: richtige antwortmoeglichkeiten teils inkorrekt, haben keine pipeline gebaut, welche frage, korrekte moeglichkeit(en) und falsche moeglichkeiten getrennt generiert. das wäre hilfreich
+  % \item Bias... supervisor ist autor von script/transcript, daher möglicherweise Bias in Bewertung, aber grundlegend gleiche Trends wie bei den anderen Ratern.
+  % \item rater-anzahl: 4+1 bei exp1 und 3 bei exp2, kann mehr sein, aber als einzelner Bachelorand waren dies ausreichend daten zum Auswerten
+  % \item Aus den Insights neue Insights entnehmen, indem man weiter daran arbeitet; das hier zu einem Framework ausbauen, welches dann auch in der Lehre benutzt werden kann.
+% \end{itemize}
 
 % novel models were used 👍
 % trying automated content adherence check didnt went as expected, but still a good first step.

@@ -1,6 +1,6 @@
 # Command to convert Jupyter Notebooks to Python Scripts
 
-To properly include the notebooks in the thesis via Minted, you can use the following command to convert Jupyter notebooks to Python scripts (from `./bachelor_thesis/`)
+To properly include the notebooks in the thesis via Minted, you can use the following command to convert Jupyter notebooks to Python scripts (from `50_src/`):
 
 ```bash
 jupyter nbconvert --output-dir='nb_to_py' --to script evaluation*.ipynb
