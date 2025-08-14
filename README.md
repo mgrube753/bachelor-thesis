@@ -54,7 +54,9 @@ Then install the requirements via:
    pip install -r requirements.txt
    ```
 
-4. Create a [`.env`](.env) file in the project root with your API keys (without, scripts like [`20_experiments/50_src/main.py`](20_experiments/50_src/main.py) will not work):
+   Overall, the CPU-based version of PyTorch is sufficient for creating the sentence transformer-based embeddings used in this thesis for semantic similarity calculations.
+
+4. Create a `.env` file in the project root with your API keys (without, scripts like [`20_experiments/50_src/main.py`](20_experiments/50_src/main.py) will not work):
 
    ```ini
    GOOGLE_API_KEY=your_api_key_here
@@ -164,7 +166,7 @@ latexmk -pdf pres.tex
 
 ## Prior Experimental Run
 
-The prior experimental run was archived in the [`70_prior_exp_run/`](70_prior_exp_run/) directory, providing information on the experimental setup, data used, and results obtained.
+The prior experimental run was archived in the [`70_prior_exp_run/`](70_prior_exp_run/) directory, providing information on the experimental setup, data used, and results obtained. See [`70_prior_exp_run/README.md`](70_prior_exp_run/README.md) for details.
 
 ---
 

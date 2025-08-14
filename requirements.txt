@@ -103,7 +103,7 @@ pyparsing==3.2.3
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
 python-json-logger==3.3.0
-pytorch-triton-rocm==3.3.0
+# pytorch-triton-rocm==3.3.0
 pytz==2025.2
 PyYAML==6.0.2
 pyzmq==27.0.0
@@ -131,7 +131,7 @@ threadpoolctl==3.6.0
 tinycss2==1.4.0
 tokenizers==0.21.1
 tomli==2.2.1
-torch==2.7.0+rocm6.3
+# torch==2.7.0+rocm6.3
 tornado==6.5.1
 tqdm==4.67.1
 traitlets==5.14.3
