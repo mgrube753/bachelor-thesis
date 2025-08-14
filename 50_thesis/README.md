@@ -66,17 +66,18 @@ The thesis incorporates comprehensive technical documentation:
 
 ### Source Code Integration
 
-- **API Configuration**: Multi-provider LLM integration (OpenAI, Anthropic, Google, DeepSeek)
-- **Prompt Engineering**: Systematic template-based prompts
+- **API Configuration**: Multi-provider LLM integration (OpenAI, Anthropic, Google, but DeepSeek was prompted manually via its [web interface](https://chat.deepseek.com/))
+- **Several Prompts**: Systematic template-based prompts
 - **Data Processing**: Automated experimental pipeline and result synthesis
 - **Evaluation Framework**: Assessment combining automated metrics and expert evaluation
 
 ### Appendices Structure
 
-- **Source Code Listings** - Core experimental implementation
+- **Example Questions** - Anchor questions for the experiments
 - **Prompt Templates** - Complete experimental and evaluation prompts
-- **Source Materials** - ISO-OSI layer content in multiple formats
 - **Evaluation Rubrics** - Structured assessment criteria and scoring guidelines
+- **Source Materials** - ISO-OSI layer content in multiple formats
+- **Source Code Listings** - Core experimental implementation
 
 ## Compilation Instructions
 

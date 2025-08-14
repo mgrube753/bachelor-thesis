@@ -116,13 +116,13 @@ All documentation files for the Python scripts in [`20_experiments/50_src/`](20_
 - API calls abstraction: [`api_calls.md`](30_documentation/api_calls.md)
 - Constants: [`constants.md`](30_documentation/constants.md)
 - File utilities: [`file_utils.md`](30_documentation/file_utils.md)
-- Main execution: [`main.md`](30_documentation/main.md)
+- Main execution for question generation: [`main.md`](30_documentation/main.md)
 - Prompt utilities: [`prompt_utils.md`](30_documentation/prompt_utils.md)
-- Quantitative Analysis: [`analysis_quantitative.md`](30_documentation/analysis_quantitative.md)
+- Quantitative analysis: [`analysis_quantitative.md`](30_documentation/analysis_quantitative.md)
 - Question generation pipeline: [`question_generation.md`](30_documentation/question_generation.md)
 - Sampling: [`sampling.md`](30_documentation/sampling.md)
 - Truncation check: [`check_truncation.md`](30_documentation/check_truncation.md)
-- Used in archived experimental run: [`analysis_qualitative.md`](30_documentation/analysis_qualitative.md)
+- Qualitative analysis (used in prior experimental run): [`analysis_qualitative.md`](30_documentation/analysis_qualitative.md)
 
 ---
 
