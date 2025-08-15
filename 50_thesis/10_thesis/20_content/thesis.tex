@@ -134,69 +134,56 @@
 
     \subsection{First Experiment}
 
-    % 19 tanenbaum 3 deepseek complex prompt
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/019_tanenbaum_3.txt}{Experiment 1a: Supervisor-rated positive Example}{lst:1a-supervisor-good-example}
     This question by DeepSeek, using the complex prompt and the Tanenbaum source, is a good example, as it is based on the source material and demonstrates a good understanding of the content. However, it is also noted that the question is not that challenging, since many of the experiment's questions are less challenging. This question is also one of many questions which include a phrasing like \enquote{according to the source material}, which is an unwanted pattern in the question generation process.
     \vp
 
-    % openai common prompt 1a transcript
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/045_transcript_1.txt}{Experiment 1a: Staff- \& Supervisor-rated positive Example}{lst:1a-staff-supervisor-good-example}
     This question by OpenAI, using the common prompt, is noted as a good example, as it demonstrates a good understanding of the source material, and it is of high quality.
     \vp
 
-    % 35 transcript 1 google complex prompt
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/035_transcript_1.txt}{Experiment 1a: Supervisor-rated negative Example (NaN Values)}{lst:1a-supervisor-bad-nan-example}
     Google's question, using the complex prompt via the transcript, also includes a phrasing like \enquote{the text describes}, but it is noted as a NaN example, as the model tried to generate a question full of technical terms, while it sounds like the model did not understand the terms at all.
     \vp
 
-    % google common prompt 1a script
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1a/025_script_2.txt}{Experiment 1a: Staff-rated negative Example}{lst:1a-staff-bad-example}
     This question by Google, using the common prompt, is noted as a bad example by the staff members. It is based on a negation in the question, which is not a good linguistic practice for valuable question generation.
     \vp
 
-    % google complex script manipulated 1b
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1b/012_script_manipulated_5.txt}{Experiment 1b: Supervisor- \& Staff-rated positive Example}{lst:1b-supervisor-good-example}
     This complex prompt question by Google demonstrates -- with a lack in linguistic quality -- distancing from the manipulated script by contrasting the manipulated script with the \enquote{traditional} OSI architecture.
     \vp
 
-    % openai common prompt 1b
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1b/013_script_manipulated_2.txt}{Experiment 1b: Supervisor-rated negative Example}{lst:1b-supervisor-bad-example}
     This question by OpenAI, using the common prompt, offers a decent style in asking, but regarding the content, it fully follows the manipulated script without any distancing.
     \vp
 
-    % 1b openai complex
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp1b/016_script_manipulated_6.txt}{Experiment 1b: Supervisor-rated NaN Example}{lst:1b-supervisor-nan-example}
     In this question by OpenAI, using the complex prompt, the distancing from the manipulated content via its negation is confusing, which makes the categorization difficult for the supervisor, leading to a NaN classification.
     \vp
 
     \subsection{Second Experiment}
 
-    % exp2a good example: question 13
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp2a/013_script_all.txt}{Experiment 2a: Student-rated positive Example}{lst:2a-student-good-example}
     This question by OpenAI demonstrates a good example of a clear and precise multiple-choice question, even if it is a less challenging one.
     \vp
 
-    % exp2a bad example: frage 15
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp2a/015_script_all.txt}{Experiment 2a: Student-rated negative Example}{lst:2a-student-bad-example}
     This question by OpenAI demonstrates a bad example of an open-ended question, as it contains too many operator verbs. Moreover, the question is too long, it is hard to understand, and it is full of technical terms.
     \vp
 
-    % exp2b frage 2 als good example
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp2b/002_script_all.txt}{Experiment 2b: Student-rated positive Example}{lst:2b-student-good-example}
     This question by Anthropic demonstrates a good example of a question for Bloom level 2, as it requires proper understanding of knowledge.
     \vp
 
-    % exp2b frage 6 als bad example
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp2b/006_script_all.txt}{Experiment 2b: Student-rated negative Example}{lst:2b-student-bad-example}
     This question by Google demonstrates a bad example of a question for Bloom level 6, as it is hard to answer. The question has too many technical terms, and is overly complex.
     \vp
 
-    % exp2c frage 10 als good example
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp2c/010_script_all.txt}{Experiment 2c: Student-rated positive Example}{lst:2c-student-good-example}
     This question by Google demonstrates a good example of a multiple-choice question with a Bloom level of 4. It is a valuable question, while being quite challenging.
     \vp
 
-    % exp2c frage 4 als bad example
     \longlistingfromfile{markdown}{../../../20_experiments/80_samples_renamed/exp2c/004_script_all.txt}{Experiment 2c: Student-rated negative Example}{lst:2c-student-bad-example}
     Anthropic's open-ended question -- Bloom level 4 -- illustrates a bad example, since it contains too many foreign words and a complex wording, which complicates the meaning of the core task.
     \vp

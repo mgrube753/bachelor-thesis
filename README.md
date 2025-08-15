@@ -21,7 +21,13 @@
 
 ## Overview
 
-This repository implements and evaluates a semi-automated pipeline for generating and evaluating educational questions from instructional texts using various Large Language Models (LLMs). \
+This repository implements and evaluates a semi-automated pipeline for generating and evaluating educational questions from instructional texts using various Large Language Models (LLMs):
+
+- **Anthropic's Claude 3.7 Sonnet**,
+- **DeepSeek R1**,
+- **Google Gemini 2.5 Flash**,
+- **OpenAI o3.**
+
 The experiments focus on:
 
 - **Content Adherence & Error Detection** (Exp 1)
@@ -53,8 +59,6 @@ Then install the requirements via:
    ```sh
    pip install -r requirements.txt
    ```
-
-   Overall, the CPU-based version of PyTorch is sufficient for creating the sentence transformer-based embeddings used in this thesis for semantic similarity calculations.
 
 4. Create a `.env` file in the project root with your API keys (without, scripts like [`20_experiments/50_src/main.py`](20_experiments/50_src/main.py) will not work):
 
