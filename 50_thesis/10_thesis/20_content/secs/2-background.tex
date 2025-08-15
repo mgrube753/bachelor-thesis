@@ -1,10 +1,6 @@
 \section{Theoretical Foundations} \label{sec:theoretical-foundations}
-% \newtodo{Initial research done, looking at the existing work in the field and know the state of the art.}
-% \newtodo{Keep papers for related work section which discusses alternative approaches to my solution (where background provides necessary foundations for understanding).}
-% \newtodo{Introduce terminology and definitions I use. Non-trivial aspects should be mentioned here.}
-% \newtodo{Introduce concepts i will use in the rest of the paper.}
 
-This section provides the theoretical foundations for the work presented in this thesis. It covers the necessary background knowledge, including the fundamentals of \acp{llm}, the hierarchical structure of Bloom's Taxonomy, plus the various performance enhancements and evaluation methodologies.
+This section provides the theoretical foundations for the work presented in this thesis. It covers the necessary background knowledge, including the fundamentals of \acp{llm}, the hierarchical structure of Bloom's Taxonomy, plus various performance enhancement and evaluation methodologies.
 
 \subsection{Understanding Large Language Models}
 
@@ -49,14 +45,12 @@ The transformer follows an encoder-decoder structure \cite{patil_review_2024,min
 \begin{itemize}
    \item \textbf{Encoder-only:} Earlier architectures such as Google BERT \cite{devlin_bert_2019} and its derivates, e.g.\ Huawei ERNIE \cite{zhang_ernie_2019} and Meta RoBERTa \cite{liu_roberta_2019} are solely based on the encoder component. This results a niche for these models being suitable for specific \ac{nlp} tasks focused on comprehension. According to the survey \cite{hou_large_2024}, these models process and encode input into hidden representations to capture word relationships and contextual information. Here, models like BERT observe both the left and right context of the currently focused word.
    
-   \item \textbf{Decoder-only}:
-   More current models e.g.\ Meta's LLaMA series \cite{touvron_llama_2023}, OpenAI's ChatGPT \cite{openai_introducing_2022} and the publication of GPT-4 \cite{openai_gpt-4_2024} focus on token generation based solely on the preceding tokens \cite{shao_survey_2024}. According to \cite{hou_large_2024}, without the reliance on the encoder, decoder-only transformers can be used for diverse generation tasks, such as code generation and code completion.
-   % radford_improving_2018 was deleted GPT-1
+   \item \textbf{Decoder-only}: More current models e.g.\ Meta's LLaMA series \cite{touvron_llama_2023}, OpenAI's ChatGPT \cite{openai_introducing_2022} plus the publication of GPT-4 \cite{openai_gpt-4_2024} focus on token generation based solely on the preceding tokens \cite{shao_survey_2024}. According to \cite{hou_large_2024}, without the reliance on the encoder, decoder-only transformers can be used for diverse generation tasks, such as code generation and code completion.
 
-   \item \textbf{Encoder-Decoder}: Certain architectures such as Google's T5 \cite{raffel_exploring_2023} and their BART model \cite{lewis_bart_2019} integrate both the encoder and decoder components. This leads to hybrid capabilities, combining the understanding of the input and the proper generation of the output. According to \cite{wang_history_2024}, these models are applicable to e.g.\ machine translation, text summarization and question answering. However, the complexity of the dual architecture can lead to demanding training processes and slower inference times.
+   \item \textbf{Encoder-Decoder}: Certain past architectures such as Google's T5 \cite{raffel_exploring_2023} and their BART model \cite{lewis_bart_2019} integrated both the encoder and decoder components. This led to hybrid capabilities, combining the understanding of the input and the proper generation of the output. According to \cite{wang_history_2024}, these models are applicable to e.g.\ machine translation, text summarization and question answering. However, the complexity of the dual architecture can lead to demanding training processes and slower inference times.
 \end{itemize}
 
-\object{\ac{moe}} Another notable variant of the transformer architecture is the \ac{moe} \cite{shazeer_outrageously_2017} architecture, as shown in the overview by \cite{naveed_comprehensive_2024}. In this architecture, multiple experts are integrated. Typically, an \ac{moe} system is a mixture of an \ac{ffn} for each expert, positioned right after the attention block, and a router mechanism, which decides which token(s) are processed by which expert(s). These are advantageous in terms of computational efficiency while being as powerful as dense models. That means, the size of the model can be increased without increasing the computational cost proportionally, because only a subset of the experts is activated for each input. % [91,92]
+\object{\ac{moe}} Another notable variant of the transformer architecture is the \ac{moe} \cite{shazeer_outrageously_2017} architecture, as shown in the overview by \cite{naveed_comprehensive_2024}. In this architecture, multiple experts are integrated. Typically, an \ac{moe} system with several experts includes a mixture of an \ac{ffn} for each expert, positioned right after the attention block, and a router mechanism, which decides which token(s) are processed by which expert(s). These are advantageous in terms of computational efficiency while being as powerful as dense models. That means, the size of the model can be increased without increasing the computational cost proportionally, because only a subset of the experts is activated for each input.
 Prominent examples of \ac{moe} models are xAI Grok-1 \cite{xai_open_2024}, Gemini 1.5 by Google \cite{team_gemini_2024-1}, the DeepSeek models V3 \cite{deepseek-ai_deepseek-v3_2025} and its \textit{reasoning} variant R1 \cite{deepseek-ai_deepseek-r1_2025}, and the recently released LLaMA 4 family by Meta \cite{meta_ai_llama_2025}.
 
 \vspace{8em}\pagebreak
@@ -65,7 +59,6 @@ Prominent examples of \ac{moe} models are xAI Grok-1 \cite{xai_open_2024}, Gemin
 
 Given \acp{llm}' capabilities, these enable the automation of the often time-consuming question generation process for educators \cite{vu_chatgpt-based_2024}. The integration of such models into education offers an opportunity to enhance the learning experience for students and support teachers in advancing educational content \cite{naveed_comprehensive_2024}. 
 With the help of \acp{llm}, customized study materials and practice questions can be generated to develop personalized learning for students \cite{al_faraby_analysis_2024,bhowmick_automating_2023,hang_mcqgen_2024}, while freeing up the educators' valuable time for both teaching and student interaction \cite{naveed_comprehensive_2024}.
-% sources: 452 part 1 / 453.454 for part 2 
 
 \object{Challenge of Alignment} For automated content creation and personalized learning, the ability to differentiate questions based on certain levels of cognitive complexity is crucial \cite{li_planning_2024,zhuge_twinstar_2025}. However, aligning the automated questions with specific cognitive levels still remains a key challenge. \acp{llm} per se show great potential in \ac{aqg} with respect to different cognitive levels \cite{maity_can_2025,blobstein_angel_2023,duong-trung_bloomllm_2024,scaria_automated_2024,scaria_how_2024}. 
 By using different prompting strategies, as illustrated in the \bfhyperref{sec:performance-enhancements}{Performance Enhancements} and the according \bfhyperref{sec:question-generation-research}{Question Generation Research} section, the models can be guided to generate questions that are of high quality and better aligned with the cognitive levels of Bloom's Taxonomy. 
@@ -152,8 +145,6 @@ To address these challenges and to refine the capabilities of \acp{llm} for spec
 
 \object{Using Special Marks} Emphasizing important parts of the prompt can be achieved by using special marks like quotation marks or line breaks \cite{zhao_survey_2025} to help the \ac{llm} visually distinguish between different parts of the prompt. As an example, to emphasize a text block, it can be enclosed in docstring quotation marks, as it is known from Python programming\footnote{\url{https://peps.python.org/pep-0257/}, accessed 06/16/2025}.
 
-% \object{Positive Constraints} When formulating the prompt, it is often useful to tell the model more what it should do, rather than what it should not do \cite{zhao_survey_2025}, resulting in a balanced and more focused prompt. 
-
 \object{Providing Scoring Standards} For tasks which involve scoring a text, it is crucial to provide a detailed description of the scoring standards in the prompt \cite{zhao_survey_2025}. For instance, using a clear rubric helps the \ac{llm} to assess the quality of generated questions, as it was done in \cite{scaria_automated_2024}. However, in this work -- probably because of the usage of an outdated \ac{llm} --, the evaluation results differ from the human evaluation, which has to be considered when using this technique.
 
 \object{\ac{rag}} This method \cite{lewis_retrieval-augmented_2020}, as used in approach \cite{hang_mcqgen_2024}, highlights how external knowledge sources can be integrated at \ac{aqg} prompts. For this technique, querying a comprehensive database is needed to retrieve relevant information that is useful the context of the question. This can also be realized via e.g.\ knowledge graphs with domain-specific knowledge, which can be based on course content \cite{yang_heuristic_2024}.
@@ -161,8 +152,6 @@ To address these challenges and to refine the capabilities of \acp{llm} for spec
 \object{Model Fine-Tuning} A key strategy to adapt general-purpose \acp{llm} to specific tasks by training them on domain-specific data \cite{hou_large_2024}. By this process, models can learn knowledge relevant to a specific context, but traditional full fine-tuning requires vast amounts of data and computational resources \cite{hou_large_2024}. For instance, \cite{duong-trung_bloomllm_2024} fine-tuned their \ac{aqg} model BloomLLM with more than 1000 questions, which is still a relatively small amount of data. In the end, this GPT-3.5-based model was preferred across all Bloom levels over GPT-4 according to \ac{aqg}.
 
 \object{Integration of Contextual Knowledge} Several studies \cite{biancini_multiple-choice_2024,blobstein_angel_2023,bhowmick_automating_2023} have injected topic-related contextual information directly into the prompt to avoid hallucinating and give users control over the source of knowledge \cite{biancini_multiple-choice_2024}. 
-% #TODO biancini explicitly also assessed the compliance to the source text via experts! 
-% # removed wang_towards_2022 from several studies
 
 \pagebreak
 
@@ -178,11 +167,7 @@ The methods to evaluate \acp{llm} at e.g.\ \ac{aqg} can be divided into several 
    \item \textit{\ac{meteor}} \cite{banerjee_meteor_2005} calculates the harmonic mean of precision and recall, so it provides a balanced evaluation \cite{guo_survey_2024}.
 \end{itemize}
 
-% -------------------------------------------------------------------------
-
 \object{Diversity-based Metric} The more recent \textit{Distinct-}$n$ \cite{li_diversity-promoting_2016} measures text diversity by calculating the proportion of unique $n$-grams, though it is considered overly simplistic \cite{guo_survey_2024}.
-
-% -------------------------------------------------------------------------
 
 \object{Semantic Similarity} Metrics in this category assess sentence-level comparison, which is vital beyond word-level comparisons \cite{guo_survey_2024}. Regarding \textit{BERTScore} \cite{zhang_bertscore_2020}, it compares contextual sentence-level embedding vectors returned from a pre-trained BERT model. These generated vectors are compared by calculating cosine similarity between the embeddings of the generated and the reference text \cite{guo_survey_2024}, as this scoring metric was adopted in the study of \cite{li_planning_2024}.
 
@@ -199,13 +184,8 @@ In addition to that, researchers developing new evaluation metrics compare their
    \item Studies such as \cite{steuer_i_2021} and \cite{moore_assessing_2022} adopted this hierarchical scheme and used it for their human question evaluation. For instance, \cite{steuer_i_2021} used it to evaluate their \ac{aqg} system, while \cite{moore_assessing_2022} adopted this scheme to assess the quality of student-generated questions.
    \item Furthermore, the authors of the papers \cite{scaria_how_2024,scaria_automated_2024} used and adapted the evaluation scheme by replacing the criterion \textit{Rephrase} with \textit{Bloom'sLevel}.
    \item Using \cite{moore_assessing_2022} as a reference, \cite{mi_comparative_2024} proposed another scheme with a maximum of 50 points by covering \textit{Relevance, Clarity, Answerability, Challenging} and \textit{Cognitive Level} as criteria. The latter shall present a higher score for student-generated questions that are more cognitively demanding, so these are positioned higher in the Bloom's Taxonomy hierarchy. Focusing on rating student-generated questions, GPT-4 had most voting agreement with expert ratings in contrast to e.g.\ GPT-3.5 and ERNIE.
-   % tarrant_frequency_2006 and moore_automatic_2024 removed
 \end{itemize}
 
-% -------------------------------------------------------------------------
-
 \object{LLM as an evaluator} Another approach involves using \acp{llm} themselves as evaluators. For instance, \cite{nguyen_reference-based_2024} introduced NACo, an \ac{llm}-based metric that employs a \ac{cot} strategy to rank the \textit{Naturalness, Complexity} and \textit{Answerability} of generated questions. In contrast to this, \cite{scaria_how_2024} employed Gemini Pro\footnote{\url{https://blog.google/technology/ai/google-gemini-ai/\#performance}, accessed 05/09/2025} to assess \textit{Question Quality} and \textit{Alignment} with Bloom's Taxonomy, revealing discrepancies compared to human evaluators. It is noteworthy that the abilities of \acp{llm} are rapidly evolving, and results from former models, e.g.\ Gemini Pro, might differ with versions nowadays. 
-
-% Other research has also explored using \acp{llm} for tasks like classifying question quality, evaluating answerability, or performing other evaluations based on predefined criteria \cite{moore_assessing_2022,scaria_how_2024,blobstein_angel_2023}. 
 
 The use of \acp{llm} for the evaluation of questions is a promising direction, especially when coupled with human evaluation. It is also worth noting that analyzing the inter-rater agreement between the \ac{llm} and the human experts can enhance the reliability of the evaluation process, as it was demonstrated in studies such as \cite{mi_comparative_2024}.

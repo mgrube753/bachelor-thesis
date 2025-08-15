@@ -2,11 +2,6 @@
 
 This section explores current research in \acp{llm} and their application to \ac{aqg}, with sections to detail the literature review process and highlight significant contributions in the field.
 
-% \newtodo{Discuss other work in the field aiming this related research problem.}
-% \newtodo{Show how my research builds on them, where used for inspiration, and e.g. how approaches may be combined.}
-% \newtodo{Mention papers, explain why good or bad, also in comparison with my approach.}
-% \newtodo{Try to categorize and group the related work by these, show (dis)advantages using one example.}
-
 \object{Literature Review} To find the fundamental principles and state-of-the-art of the research problem, a literature review was conducted. It was performed in the following way: First, several searches were done with respect to \acp{llm} in common, question generation, particularily focusing on Bloom's Taxonomy, and lastly evaluation methods for both categories. Google Scholar and Elicit were used to find relevant papers. Several search terms were coupled in Google Scholar, such as \textit{LLM, Large Language Model, architecture, question generation, automatic question generation, Bloom's Taxonomy, evaluation, assessment, alignment}. Elicit is a search engine that is designed to help researchers find relevant papers based on writing a specific prompt, instead of a query of keywords.
 
 \object{Review Steps} The review steps were as follows: 
@@ -34,69 +29,64 @@ This section explores current research in \acp{llm} and their application to \ac
     \definecolor{xaiColor}{HTML}{efd4d0} 
     \definecolor{deepseekColor}{HTML}{eed6b3} 
     \definecolor{alibabaColor}{HTML}{cde3b5}
-    % https://medialab.github.io/iwanthue/
 
     \begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.25cm}|>{\centering\arraybackslash}p{4.5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}X|}
         \hline
         \rowcolor{gray!15} \textbf{Date} & \textbf{Developers}                            & \textbf{Model Releases} & \textbf{Architecture} & \textbf{Reasoning} \\
         \hline
-        Nov 2022                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & ChatGPT/GPT-3.5         & Decoder-only?         & -- \\ % https://openai.com/index/chatgpt/
+        Nov 2022                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & ChatGPT/GPT-3.5         & Decoder-only?         & -- \\
         \hline
-        \multirow{2}{*}{Feb 2023}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 65B               & Transformer           & -- \\ % https://arxiv.org/pdf/2302.13971 paper (not really known architecture)
+        \multirow{2}{*}{Feb 2023}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 65B               & Transformer           & -- \\
         \cline{2-5}
-                                         & \cellcolor{googleColor}{\textbf{Google}}       & Bard 137B               & Decoder-only          & -- \\ % https://ai.google/advancing-ai/milestones/?section=bard is decoder only cuz powered by lamda 137B https://arxiv.org/pdf/2201.08239
+                                         & \cellcolor{googleColor}{\textbf{Google}}       & Bard 137B               & Decoder-only          & -- \\
         \hline
-        \multirow{2}{*}{Mar 2023}        & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4                   & Decoder-only?         & -- \\ % https://arxiv.org/pdf/2303.08774
+        \multirow{2}{*}{Mar 2023}        & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4                   & Decoder-only?         & -- \\
         \cline{2-5}
-                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 1                & --                     & -- \\ % https://www.anthropic.com/news/introducing-claude
+                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 1                & --                     & -- \\
         \hline
-        \multirow{2}{*}{Jul 2023}        & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 2                & --                     & -- \\ % https://www.anthropic.com/news/claude-2
+        \multirow{2}{*}{Jul 2023}        & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 2                & --                     & -- \\
         \cline{2-5}
-                                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 2 70B             & Decoder-only          & -- \\ % https://arxiv.org/pdf/2307.09288 paper
+                                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 2 70B             & Decoder-only          & -- \\
         \hline
-        Nov 2023                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-1 314B             & MoE                   & -- \\ % https://x.ai/news/grok & https://x.ai/news/grok-os (here MoE)
+        Nov 2023                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-1 314B             & MoE                   & -- \\
         \hline
-        Dec 2023                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini                  & Decoder-only          & -- \\ % https://arxiv.org/pdf/2312.11805
+        Dec 2023                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini                  & Decoder-only          & -- \\
         \hline
-        Feb 2024                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 1.5              & Decoder MoE           & -- \\ % https://arxiv.org/pdf/2403.05530
+        Feb 2024                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 1.5              & Decoder MoE           & -- \\
         \hline
-        Mar 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3                & --                     & -- \\ % https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf
+        Mar 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3                & --                     & -- \\
         \hline
-        % Apr 2024                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3 70B             & Decoder-only          & -- \\ % https://ai.meta.com/blog/meta-llama-3/
-        % \hline
-        May 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4o                  & Decoder-only?         & -- \\ % https://arxiv.org/pdf/2410.21276
+        May 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & GPT-4o                  & Decoder-only?         & -- \\
         \hline
-        Jun 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.5 Sonnet       & --                     & -- \\ % https://www.anthropic.com/news/claude-3-5-sonnet
+        Jun 2024                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.5 Sonnet       & --                     & -- \\
         \hline
-        % Jul 2024                         & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3.1 405B          & Decoder-only          & -- \\ % https://arxiv.org/pdf/2407.21783 paper (dense decoder transformer instead of MoE, presented in Shazeer et al. 2017)
-        % \hline
-        Aug 2024                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-2                  & --                     & -- \\ % https://x.ai/news/grok-2
+        Aug 2024                         & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-2                  & --                     & -- \\
         \hline
-        Sep 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1-mini                 & --                     & Yes \\ % https://openai.com/index/openai-o1-mini-advancing-cost-efficient-reasoning/
+        Sep 2024                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1-mini                 & --                     & Yes \\
         \hline
-        \multirow{4}{*}{Dec 2024}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3.3 70B           & Decoder-only          & -- \\ % https://ai.meta.com/blog/future-of-ai-built-with-llama/ and https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct (decoder-only there)
+        \multirow{4}{*}{Dec 2024}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 3.3 70B           & Decoder-only          & -- \\
         \cline{2-5}
-                                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.0              & --                     & -- \\ % https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/
+                                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.0              & --                     & -- \\
         \cline{2-5}
-                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1/o3-mini              & --                     & Yes \\ % https://arxiv.org/pdf/2412.16720 o1 paper, https://openai.com/index/openai-o3-mini/
+                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o1/o3-mini              & --                     & Yes \\
         \cline{2-5}
-                                         & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek-V3 658B        & MoE                   & -- \\ % https://arxiv.org/pdf/2412.19437
+                                         & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek-V3 658B        & MoE                   & -- \\
         \hline
-        \multirow{2}{*}{Jan 2025}        & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek R1 658B        & MoE                   & Yes \\ % https://arxiv.org/pdf/2501.12948
+        \multirow{2}{*}{Jan 2025}        & \cellcolor{deepseekColor}{\textbf{DeepSeek}}   & DeepSeek R1 658B        & MoE                   & Yes \\
         \cline{2-5}
-                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & Qwen 2.5-Max            & MoE                   & -- \\ % https://qwenlm.github.io/blog/qwen2.5-max/
+                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & Qwen 2.5-Max            & MoE                   & -- \\
         \hline
-        \multirow{3}{*}{Feb 2025}        & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-3                  & --                     & Yes \\ % https://x.ai/news/grok-3
+        \multirow{3}{*}{Feb 2025}        & \cellcolor{xaiColor}{\textbf{xAI}}             & Grok-3                  & --                     & Yes \\
         \cline{2-5}
-                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.7 Sonnet       & --                     & Yes \\ % https://www.anthropic.com/news/claude-3-7-sonnet
+                                         & \cellcolor{anthropicColor}{\textbf{Anthropic}} & Claude 3.7 Sonnet       & --                     & Yes \\
         \cline{2-5}
-                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & QwQ-Max                 & MoE                   & Yes \\ % https://qwenlm.github.io/blog/qwq-max-preview/ (based on Qwen 2.5-Max, so MoE)
+                                         & \cellcolor{alibabaColor}{\textbf{Alibaba}}     & QwQ-Max                 & MoE                   & Yes \\
         \hline
-        Mar 2025                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.5              & --                     & Yes \\ % https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/
+        Mar 2025                         & \cellcolor{googleColor}{\textbf{Google}}       & Gemini 2.5              & --                     & Yes \\
         \hline
-        \multirow{2}{*}{Apr 2025}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 4 109B/400B/2T    & MoE                   & -- \\ % https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+        \multirow{2}{*}{Apr 2025}        & \cellcolor{metaColor}{\textbf{Meta}}           & LLaMA 4 109B/400B/2T    & MoE                   & -- \\
         \cline{2-5}
-                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o3/o4-mini              & --                     & Yes \\ % https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf
+                                         & \cellcolor{openaiColor}{\textbf{OpenAI}}       & o3/o4-mini              & --                     & Yes \\
         \hline
     \end{tabularx}
 \end{table}
@@ -104,9 +94,9 @@ This section explores current research in \acp{llm} and their application to \ac
 \pagebreak
 
 \object{Major LLM Developers and Models}
-The release of OpenAI's ChatGPT \cite{openai_introducing_2022} has innovated the research on \acp{llm}. Initially leveraging the GPT-3.5 architecture, OpenAI followed the trend of increasing secrecy with models like GPT-4 \cite{openai_gpt-4_2024} and its succesor GPT-4o \cite{openai_gpt-4o_2024}. While the \enquote{GPT} nomenclature suggests the continuation of the decoder-only architecture up to GPT-3 \cite{brown_language_2020}, many methodological details remain undisclosed. Recent models by OpenAI focused on \textit{reasoning} capabilities, as seen in the o1-mini \cite{openai_openai_2024}, o1 \cite{openai_openai_2024-1}, o3-mini \cite{openai_openai_2025}, and the subsequent o3 and o4-mini \cite{openai_openai_2025-1} releases.
+The release of OpenAI's ChatGPT \cite{openai_introducing_2022} has innovated the research on \acp{llm}. Initially leveraging the GPT-3.5 architecture, OpenAI followed the trend of increasing secrecy with models like GPT-4 \cite{openai_gpt-4_2024} and its successor GPT-4o \cite{openai_gpt-4o_2024}. While the \enquote{GPT} nomenclature suggests the continuation of the decoder-only architecture up to GPT-3 \cite{brown_language_2020}, many methodological details remain undisclosed. Recent models by OpenAI focused on \textit{reasoning} capabilities, as seen in the o1-mini \cite{openai_openai_2024}, o1 \cite{openai_openai_2024-1}, o3-mini \cite{openai_openai_2025}, and the subsequent o3 and o4-mini \cite{openai_openai_2025-1} releases.
 
-Other major developers contributed to this competetive landscape. Meta started with a modified transformer, called LLaMA \cite{touvron_llama_2023}, and shifted to a decoder-only architecture in LLaMA 2 \cite{touvron_llama_2023-1} up to LLaMA 3.3\footnote{\url{https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md}, accessed 05/09/2025. Note that auto-regressive means decoder-only}. With the release of the LLaMA 4 family \cite{meta_ai_llama_2025}, Meta switched to the \ac{moe} architecture, scaling its largest model to two trillion model parameters. Google followed a similar path, switching from its LaMDA-based Bard \cite{pichai_important_2023,thoppilan_lamda_2022} to the now well-known Gemini model series \cite{team_gemini_2024} by fine-tuning Bard. The family also started as decoder-only, while Gemini 1.5 marked a shift to an \ac{moe} architecture, though still described as decoder-based \cite{team_gemini_2024-1}. Beginning with Gemini 2.0 \cite{pichai_introducing_2024}, Google stopped publishing detailed architectural information. Gemini 2.5 \cite{kavukcuoglu_gemini_2025} further advanced their offerings by fully integrating \textit{reasoning} capabilities, aligning with current state-of-the-art trends.
+Other major developers contributed to this competitive landscape. Meta started with a modified transformer, called LLaMA \cite{touvron_llama_2023}, and shifted to a decoder-only architecture in LLaMA 2 \cite{touvron_llama_2023-1} up to LLaMA 3.3\footnote{\url{https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md}, accessed 05/09/2025. Note that auto-regressive means decoder-only}. With the release of the LLaMA 4 family \cite{meta_ai_llama_2025}, Meta switched to the \ac{moe} architecture, scaling its largest model to two trillion model parameters. Google followed a similar path, switching from its LaMDA-based Bard \cite{pichai_important_2023,thoppilan_lamda_2022} to the now well-known Gemini model series \cite{team_gemini_2024} by fine-tuning Bard. The family also started as decoder-only, while Gemini 1.5 marked a shift to an \ac{moe} architecture, though still described as decoder-based \cite{team_gemini_2024-1}. Beginning with Gemini 2.0 \cite{pichai_introducing_2024}, Google stopped publishing detailed architectural information. Gemini 2.5 \cite{kavukcuoglu_gemini_2025} further advanced their offerings by fully integrating \textit{reasoning} capabilities, aligning with current state-of-the-art trends.
 
 Besides the presented developers, Anthropic has remained private about architectural information of its Claude models, from Version 1 \cite{anthropic_introducing_2023}, Claude 2 \cite{anthropic_claude_2023}, through the Claude 3 family \cite{anthropic_introducing_2024-1}, Claude 3.5 Sonnet \cite{anthropic_introducing_2024} up to Claude 3.7 Sonnet \cite{anthropic_claude_2025}. The latter model also incorporated \textit{reasoning}, making it competitive with other currently leading models. Meanwhile, developers such as xAI, DeepSeek AI, and Alibaba have set up several \ac{moe} models. xAI's Grok-1 was openly an \ac{moe} model \cite{xai_open_2024}. However, for subsequent releases, Grok-2 \cite{xai_grok-2_2024} and Grok-3 \cite{xai_grok_2025}, architectural details were not provided, though Grok-3 is a competitive state-of-the-art model with \textit{reasoning}. DeepSeek AI has contributed powerful open-source \ac{moe} models like DeepSeek V3 \cite{deepseek-ai_deepseek-v3_2025} and its \textit{reasoning} variant, R1 \cite{deepseek-ai_deepseek-r1_2025}. Similarly, the Alibaba Group has also contributed to the field with models like Qwen 2.5-Max \cite{team_qwen25-max_2025}, an \ac{moe} model. The more recent QwQ-Max \cite{team_thinkthink_2025} builds upon this architecture, incorporating \textit{reasoning} to compete at the state-of-the-art.
 

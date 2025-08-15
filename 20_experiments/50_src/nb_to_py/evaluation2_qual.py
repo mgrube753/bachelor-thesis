@@ -507,6 +507,35 @@ def kappa_level(k):
 def calculate_fleiss_kappa_all_categories(df, metrics):
     results = []
     df = df.copy()
+
+    # Handle all needed 0-10 metrics
+    for metric in metrics:
+        if metric in ('bloom_rating', 'blooms_level_score', 'total_score'):
+            continue
+        pivot = df.pivot_table(index='global_question_id', columns='student', values=metric)
+        pivot = pivot.dropna(axis=0)
+        ratings_matrix = pivot.applymap(lambda x: max(1, min(10, int(round(x)))) if pd.notnull(x) else np.nan).values
+        fleiss_table = np.zeros((ratings_matrix.shape[0], 10))
+        for i, row in enumerate(ratings_matrix):
+            for r in row:
+                if not np.isnan(r) and 1 <= r <= 10:
+                    fleiss_table[i, int(r)-1] += 1
+        all_identical = np.all((fleiss_table == np.max(fleiss_table, axis=1, keepdims=True)) | (fleiss_table == 0), axis=1)
+        try:
+            if np.all(all_identical):
+                kappa = 1.0
+            else:
+                kappa = fleiss_kappa(fleiss_table)
+        except Exception:
+            kappa = np.nan
+        results.append({
+            'Metric': metric_labels.get(metric, metric),
+            'Fleiss_Kappa': kappa,
+            'Agreement_Level': kappa_level(kappa) if not np.isnan(kappa) else 'No data',
+            'N_Questions': ratings_matrix.shape[0]
+        })
+
+    # Add Bloom Rating as the last metric instead
     df['bloom_rating_numeric'] = df['bloom_rating'].apply(extract_max_bloom_rating)
     pivot = df.pivot_table(index='global_question_id', columns='student', values='bloom_rating_numeric')
     pivot = pivot.dropna(axis=0)
@@ -531,31 +560,7 @@ def calculate_fleiss_kappa_all_categories(df, metrics):
         'Agreement_Level': kappa_level(kappa) if not np.isnan(kappa) else 'No data',
         'N_Questions': len(ratings_matrix)
     })
-    for metric in metrics:
-        if metric == 'bloom_rating' or metric == 'blooms_level_score':
-            continue
-        pivot = df.pivot_table(index='global_question_id', columns='student', values=metric)
-        pivot = pivot.dropna(axis=0)
-        ratings_matrix = pivot.applymap(lambda x: max(1, min(10, int(round(x)))) if pd.notnull(x) else np.nan).values
-        fleiss_table = np.zeros((ratings_matrix.shape[0], 10))
-        for i, row in enumerate(ratings_matrix):
-            for r in row:
-                if not np.isnan(r) and 1 <= r <= 10:
-                    fleiss_table[i, int(r)-1] += 1
-        all_identical = np.all((fleiss_table == np.max(fleiss_table, axis=1, keepdims=True)) | (fleiss_table == 0), axis=1)
-        try:
-            if np.all(all_identical):
-                kappa = 1.0
-            else:
-                kappa = fleiss_kappa(fleiss_table)
-        except Exception:
-            kappa = np.nan
-        results.append({
-            'Metric': metric_labels.get(metric, metric),
-            'Fleiss_Kappa': kappa,
-            'Agreement_Level': kappa_level(kappa) if not np.isnan(kappa) else 'No data',
-            'N_Questions': ratings_matrix.shape[0]
-        })
+
     return pd.DataFrame(results)
 
 

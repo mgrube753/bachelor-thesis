@@ -2,10 +2,6 @@
 
 This section presents the findings from the two experiments detailed in Section \bfref{sec:experiment-design}. The quantitative and qualitative analyses are discussed, addressing the research questions regarding content fidelity, error handling, question format generation, and alignment with Bloom's Taxonomy.
 
-% \newtodo{Need some approaches (LLMs) to compare against and provide metrics.}
-% \newtodo{While benchmarking, compare to something that already exists, hmmmm.}
-% \newtodo{Include an overview of the system's implementation but not too detailed if unnecessary.}
-
 \subsection{First Experiment}
 \label{sec:first-experiment}
 
@@ -16,20 +12,6 @@ The first experiment of the thesis focused on evaluating the content fidelity of
 \paragraph*{Quantitative Analysis} 
 
 Two metrics were employed to assess content adherence: the calculation of \textit{Semantic Similarity} using cosine similarity between resulting semantic vectors -- one for the source material file, and one for the question file -- from the embedding model, and \ac{llm}-based \textit{Adherence Score} analysis between these files as an alternate approach to evaluate content fidelity.
-
-% semantic sim via cossim vs. llm-based content adherence calculation, there are tables and plots needed.
-
-% \begin{itemize}
-%     \item question type was not fixed, but via format constraints limited to either Open-Ended or MC questions. trend towards mc questions, open ended is exp1a 9/168 (only complex prompt, 8x openai, 1x google), exp1b 4/56 questions (1x common prompt deepseek, 3x google). 
-%     \item my way is a bit different from plans in literature, since source texts and llm outputs differ much. \cite{li_planning_2024} used bertscore for semantic similarity scoring, but between generated and ground truth q-a pairs. by this, the cossim results in exp1a are less comparable.
-%     \item besides the input sources, the llms were prompted for each layer without using an input source as well. every q-a pair was then compared to every input source, shown in Figure \bfref{fig:exp1a-source-scores} to show how valid the results based on the input sources normally are. the cosine similarity unfortunately does not show significant trends as the adherence scores do; in adherence score we see that using no source has a proper impact on the score set at least. the current cossim trend in the sources is that script is shortest, tanenbaum medium and transcript is longest, so the scorings are descending in cossim script best > then tanenbaum > then transcript. 
-%     \item nosource shows that cossim can not be used to determine if a model follows the source material, which is not only a sentence...
-%     \item cossim via sources plot: input sources vs no source... pretty similar trend even though no source was used in the other case.
-%     \item adherence score shows scattering with respect to input sources; adherence score looks more reliable since llms are spreading way more.
-%     \item adherence: anthropic and google struggle with minor less scores (also watch std for both), deepseek and openai are more consistent.
-%     \item konsequente kontextgebung etwa gleicher laenge und wenig davon (max. 30 woerter) kann für logischere ergebnisse bei cossim sorgen. in diesem fall muss cossim discarded werden 
-% \end{itemize}
-
 
 \object{Experiment 1a -- Content Fidelity} The manner of evaluation revealed several key patterns in the \acp{llm}' behavior. The question type for each question was not explicitly constrained, but to provide a valid analysis -- especially for the experts --, the questions' output formats were limited to either Open-Ended or Multiple-Choice questions. This resulted in a trend toward \acp{mcq}, with only 9 out of 168 questions being Open-Ended in Experiment 1a -- with 7 questions from OpenAI, and 2 from Google --, based on the complex prompt. With regard to this finding, the trend was consistent across the \ac{llm} set, demonstrating a bias toward structured question formats.
 
@@ -60,16 +42,6 @@ Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} 
     \label{fig:exp1a-llm-scores}
 \end{figure}
 
-% \pagebreak
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=.95\textwidth]{../../../40_evaluation/exp1/quantitative/plots/exp1a_no_source/dist_by_llm.png}
-%     \label{fig:exp1a-llm-scores-no-source}
-% \end{figure}
-
-% \pagebreak
-
 To get a proper view of the content adherence, the evaluation also included a comparison of the performance of the \acp{llm} against the used prompt type, as shown in Figure \bfref{fig:exp1a-llm-prompt-comparison}. Here, the results between cosine similarity and adherence scores were again significantly different. On the one hand, the hardly comprehensible cosine similarity tends to higher scoring values for the complex prompt. On the other hand, adherence scores show that the common prompt leads to better results -- best for OpenAI ($\approx 0.992$ vs.\ $0.94$) and DeepSeek ($\approx 0.973$ vs.\ $0.945$) --, while the complex prompt leads to slightly lower scores instead for all models, especially for Google and Anthropic. This is also indicated by the expert results by the primary supervisor, which indicate that the common prompt is more effective in content adherence than the complex prompt.
 
 \begin{figure}[htbp]
@@ -84,16 +56,6 @@ These findings suggest that, while cosine similarity may be suitable for short, 
 \pagebreak
 
 \object{Experiment 1b -- Error Handling} This sub-experiment focused on evaluating how well the \acp{llm} handle manipulated lecture script content to test their ability to detect errors and what the models generated based on that content. A total of 4/56 resulted in open-ended questions, one time DeepSeek using the common prompt, two times Google plus one time OpenAI both using the complex prompt. Overall, it is worth noting that using the cosine similarity approach here -- as to be seen in Figure \bfref{fig:exp1b-llm-scores} -- is less useful than in Experiment 1a, since the embedding model can not detect if a question by an \ac{llm} follows the manipulated content flawlessly, or if the model detects the manipulation and e.g.\ generated the question inversely.
-
-% \begin{itemize}
-%     \item adherence score ausgabe: bei bewertung ist anthropic oft unnötig höher als openai
-%     \item in exp1b, cossim cannot detect if an llm follows the manipulated content or llm detects it (tells this somehow and then generates question based on that text (oder frage wie zitate unten)). since the cossim in exp1a was not that reliable, and the cossim is high in 1b (???), it is not reliable and shall be overall discarded.
-%     \item mixed outcomes in adherence scores.
-%     \item grundsaetzlich folgen die modelle ueberaus dem manipulierten content, tiefe werte sind zurecht dort unten vertreten, grundsaetzlich logisches bild in 1b adherence
-%     \item DeepSeek hat es oft erkannt und somit median und mean nach unten gezogen; anthropic und google aehnlich zueinander. openai folgt auch sehr dem content, verzeichnet aber tieferen mean durch erkennungs-outliers. DeepSeek erkennbar \enquote{besser}
-%     \item auch im common prompt ist deepseek klar tiefer als die anderen, da gelegentlich auch fragen kommen, wie \enquote{Welche der folgenden Aussagen beschreibt eine echte Kernaufgabe des Data Link Layers im ISO-OSI-Modell, basierend auf korrektem Fachwissen?}, oder \enquote{Welche Eigenschaft wird dem Transport Layer laut Beschreibung NICHT zugeordnet?}
-%     \item complex prompt folgert dass die modelle den manipulierten content besser infragestellen!! dass cossim leicht aehnliches zeigt ist aber nicht von bedeutung
-% \end{itemize}
 
 \begin{figure}[htbp]
     \centering
@@ -203,8 +165,6 @@ Even if the transcript appears to be the best source material for many criteria,
 
 Besides the input sources, the results in Table \bfref{tab:exp1a-prompt-results} show a trend, which was depicted in the quantitative analysis as well. The common prompt led to higher scores in almost every criterion, while the complex prompt was rated lower. The only criterion where the complex prompt was rated higher was \textit{Challenging} in both mean and median values (6.87 vs.\ 2.50 and 8.0 vs 2.0). Overall, the common prompt outperformed the complex prompt with a noticeable gap in the mean \textit{Total Score} of 60.12 vs.\ 47.25 points, as well as in the median of 62.0 vs.\ 48.5 points. 
 
-% \pagebreak
-
 The ratings by the supervisor indicate the following: the complex prompt led to less relevant questions, which were less clear and especially less answerable, did not share the same value by far as the common prompt questions, and the questions were overly complex and less precisely formulated. The \textit{Correctness} to the source material was also rated lower for the complex prompt, which is crucial for this experiment, but the questions were noticeably more challenging instead. Overall, the transcript-based questions were rated highest, but the lack of challenge in these questions led to a lower total score compared to the script-based questions. The questions created by OpenAI were rated highest in many criteria, while the questions were less challenging. This observation was also reflected in DeepSeek's results, which were also rated high, but struggling with the \textit{Challenging} and \textit{Value} criteria. Anthropic and Google were more challenging, but their questions overall lacked \textit{Clarity}, \textit{Answerability}, \textit{Language}, and \textit{Correctness}.
 
 \begin{table}[htbp]
@@ -228,7 +188,6 @@ The ratings by the supervisor indicate the following: the complex prompt led to 
         \bottomrule
     \end{tabular}}
 \end{table}
-
 
 \object{Experiment 1b -- Error Handling} A second run was conducted to evaluate \ac{llm}-based questions based on manipulated lecture script content. The qualitative analysis of Experiment 1b was done using the same rubric, while \textit{Correctness} was substituted by \textit{Manipulation Handling}. This was introduced to assess how well the \acp{llm} handled the manipulated lecture script content. The same five experts were asked to evaluate these questions. First, the thesis supervisor analyzed the questions, followed by the staff members regarding the \bfhyperref{sec:exp1b-staff-analysis}{next} paragraph.
 
@@ -278,24 +237,6 @@ A closer examination of the questions revealed issues for the models. Regarding 
 
 Since criteria like \textit{Answerability} could not be reliably applied to the manipulated content in Experiment 1b, the evaluation was limited to the \textit{Manipulation Handling} criterion. This was done because the rubric's criteria were comprehensively assessed in Experiment 1a, and the manipulation handling was the only criterion that could be reliably applied to the manipulated lecture script.
 
-% \tcr{gewisse fragen mittels der rubrik nicht bewertbar in gewissen kriterien, NaN values auch bei 1a gewesen}
-
-% \tcr{1a: anthropic mit frage 3 (complex script),4 (complex script),7 (common transcript),11 (complex transcript) negativ aufgefallen}
-% anthropic fiel negativ auf, vor allem sprachlich beim complex prompt
-% 1a: frage 5 anthropic (common prompt tanenbaum): antwort 2 falsch laut cap
-% deepseek vor allem fragen 19/20 (complex tanenbaum) und 21/22 (common transcript) "laut text", auch bei complex transcript 24 deepseek
-% deepseek complex prompt 23 mittels transcript, verdammt banale frage
-% google's fragen sind sehr umschweifend formuliert
-% google: common script 25 --> "laut text" in der frage drin, alle antworten falsch?
-% frage 28 (google complex script) mehrdeutigkeit in den antworten durch schlechte, weit ausholende fragestellung
-% 29 (common tanenbaum) und 30 (common tanenbaum) auch "laut text" bei google
-% 32 (complex tanenbaum),34 (common transcript),35/36 (complex transcript) "laut text"
-% 46 openai (common transcript) einmalig "laut text", sonst nicht wirklich was aufgefallen
-
-% (dadurch dass wir in 1a andere kriterien ausgiebig angesehen haben, ist die relevanz dieser in 1b nicht gegeben. MH reicht hierbei, da randbedinungen für answerability und co nicht wirklich bei manipulation gegeben sind)
-
-% (exp1b war sampling size zu klein, wodurch eben das NaN problematisch wurde. hier ist nur eine person am auswerten, wodurch wenig werte gegeben werden. staff members werden danach noch ausgewertet... google ueberladene komplexe sprache, kann aber teils gut abschneiden bei MH; )
-
 \vp
 
 % --------------------------------------------------------------------------------
@@ -321,16 +262,6 @@ For \textit{Correctness}, the staff-based evaluation confirmed OpenAI's high per
     \includegraphics[width=.9\textwidth]{../../../40_evaluation/exp1/qualitative/plots/staff_exp1a_llm_analysis.png}
     \caption{Staff-based LLM Scores across every proposed Criterion (Exp1a).}
     \label{fig:exp1a-llm-analysis-staff} 
-    % erkennen diverser aehnlichkeiten und unterschiede, sehr aehnlich zu prof. cap die verläufe vor allem via mean.
-    % erkennbar, dass prof. cap als spezialist + autor von (tran-)script ist, dass er grundsätzlich höhere werte gibt als die staff members
-    % Relevanz ähnlich, aber breiter Bereich bei staff members, trotzdem aehnlich in mean und median
-    % clarity war cap besonders hoch bei deepseek und openai, aehnliches erkennbar bei staff members, gelegentlich weniger klarheit, DeepSeek und OpenAI aber auch hier am besten
-    % answerability aehnlich, cap aber auch hier besser bei Deepseek und openai, staff members aehnlich, aber vor allem bei deepseek und openai wieder geringer mit mehr ausreissern
-    % challenging bei beiden deepseek und openai nicht so gut, means und medians unter 4, gibt an sich ein aehnliches bild
-    % value vor allem bei openai anders bei staff members, cap hat openai am besten bewertet, staff sind eher on par openai vs. anthropic hier. google bei cap etwas besser grundsaetzlich, deepseek aehnlich bei beiden, anthropic auch strenger bei staff members
-    % language recht aehnlich auch, cap wieder besser bei openai und deepseek; staff findet die auch am besten, gibt aber gelegentlich niedrigere werte; bei beiden evals aber anthropic und google jeweils erkennbar schlechter als die anderen beide modelle
-    % correctness aehnlich, openai bestes, anthropic und deepseek aehnlich bei beiden evals; cap findet google sogar schlechter, was durch den common prompt primär bedingt ist
-    % total score: google bei cap grundsätzlich am schlechtesten; sonst sind mit diversen unterschieden in kriterien anthropic deepseek und google on par; openai bei cap klarer sieger, bei staff members.. auch erkennbar, diese haben strenger bewertet
 \end{figure}
 
 \pagebreak
@@ -346,10 +277,6 @@ In the second staff heatmap, the prompt type had the same impact on the correctn
     \includegraphics[width=.8\textwidth]{../../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
     \caption{Staff-based Correctness Heatmaps for different LLM Combinations (Exp1a).}
     \label{fig:exp1a-correctness-heatmaps-staff}
-    % nach input source sehr verschieden ggü. prof. Cap; grundsätzlich google und anthropic aber auch etwas schwächer
-    % openai als favorit bei Cap nicht erkennbar bei staff, google auch nicht so schlecht bewertet wie bei Cap
-    % bei cap war umgekehrter material trend, dass script schlechter war und transcript das beste, bei staff kaum trend sichtbar, ausser eher etwas in richtung script
-    % besser erkennbar: auch hier ist der common prompt viel inhaltstreuer als der complex prompt
 \end{figure}
 
 In the following, the results of the staff-based qualitative analysis are summarized in Table \bfref{tab:exp1a-source-results-staff} to observe how the staff members have rated based on the input source. These revealed a minor shift in source preference compared to the supervisor's findings in Table \bfref{tab:exp1a-source-results}. While the supervisor consistently favored transcript-based questions as the best source -- with the highest means in \textit{Clarity} (9.33), \textit{Answerability} (9.33), \textit{Value} (7.87), \textit{Language} (9.19), and \textit{Correctness} (9.67) -- the staff members slightly identified script-based questions as the overall best performer. The script achieved the highest staff ratings in \textit{Relevance} (9.16), \textit{Challenging} (4.06), \textit{Value} (6.67), \textit{Correctness} (8.33), and \textit{Total Score} (52.14), contrasting with the supervisor's input source preference.
@@ -382,11 +309,6 @@ In the following, the results of the staff-based qualitative analysis are summar
         \bottomrule
     \end{tabular}}
 \end{table}
-% \tcr{staff members differenzieren nicht stark gegenueber der input sources, grundsaetzlich aber eher das script besser ausser in clarity und language, da ist es besser verständlich und präziser formuliert bei transcript.}
-% tanenbaum bei staff eher immer schlechtestes oder mittelfeld, bei cap ebenso, bei challenging language und correctness aber tanenbaum auch gut, sonst an total score auch erkennbar dass tanenbaum schlechtestes ist
-% stets geringe ergebnisse bei challenging, wertigkeit fuer dozenten ist auch bei beiden gering gehalten. da wird experiment 2 wohl andere ergebnisse liefern als kontrast.
-% script gewinnt jeweils knapp als beste source; bei cap ist script oft knapp hinter transcript, bei staff members  
-% grundsaetzlich ist tanenbaum ja weniger gut; text war auf englisch, aber bei challenging waren sie ausreichend
 
 Furthermore, the rating gaps between the two evaluation groups are notable. For instance, the supervisor rated the transcript-based questions significantly higher in \textit{Clarity} (9.33 vs. 7.89), \textit{Answerability} (9.33 vs. 8.19), and \textit{Correctness} (9.67 vs. 8.23). Similarly, the script-based questions have shown several differences in the \textit{Challenging} criterion, where the supervisor rated them at 5.5 compared to the staff's 4.06.
 
@@ -415,15 +337,6 @@ To further investigate the prompt differences, Table \bfref{tab:exp1a-prompt-res
         \bottomrule
         \end{tabular}}
 \end{table}
-% \tcr{gleiches muster wie bei prof. cap: common prompt besser als complex prompt, ausser challenging.}
-% allein bei total score stets grosse luecke, aber im grunde waren die staff members etwas strenger bei der bewertung
-% bei staff stets relevanz hoch, clarity hoch, answerability hoch, challenging ebenso niedrig aber noch geringer als bei prof. cap
-% value bei staff vor allem bei complex prompt anders als bei Cap (sehr hoch in mean in median)
-% sprachlich hat der common prompt auch bei staff besser abgeschnitten, bei staff etwas geringer bei common und complex
-% correctness aber sehr aehnlich wiederum
-% grundsätzlich bei common prompt ähnlichere werte wie bei prof. cap
-% \tcr{IAA bei 1a grausam, da Rubrik von 0-10 zu viel Spielraum lässt. Habe 0, 2, 4, ... meistens gemacht aber Bewerter haben auch Werte dazwischen gewählt.}
-% es sind zu viele moeglichkeiten bei 0-10, da kann das empfinden abweichen pro bewerter
 
 \pagebreak
 
@@ -541,18 +454,6 @@ Based on the staff members, there is no significant improvement compared to the 
 
 \pagebreak
 
-% \begin{table}[H]
-%    \centering
-%    \caption{Inter-Rater Agreement Analysis, combined (Exp1b).} 
-%    \label{tab:iaa-combined-1b}
-%    \begin{tabular}{lccc}
-%         \toprule
-%         \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
-%         \midrule
-%         \bottomrule
-%    \end{tabular}
-% \end{table}
-
 \object{Mixed Analysis Complications} The qualitative evaluation revealed complications affecting both supervisor and staff assessments. Firstly, several questions were only partially or not at all related to the provided source material, limiting \textit{Answerability} and \textit{Correctness}. 
 
 Few questions with unnecessary negations in them were criticized, reducing \textit{Clarity} and the \textit{Value}. This evaluation was further complicated by overly long or linguistically complex formulations, especially from Google and Anthropic using the complex prompt. Both groups often noted the use of generic phrases such as \enquote{based on the text}, which weakened the questions' educational \textit{Value}.
@@ -566,66 +467,6 @@ Furthermore, the strong preference of OpenAI in the supervisor's evaluation was 
 The evaluation rubric itself was not always clear for all criteria, resulting in inconsistent ratings and low inter-rater agreement among the groups. Overall, the staff members' ratings were more diverse, often using the full scale (0-10) instead of the discrete values (e.g.\ 0, 5, 10 at \textit{Correctness} and \textit{Manipulation Handling}) used by the supervisor. Moreover, the staff members rated the questions higher at \textit{Manipulation Handling} than the supervisor, indicating a different understanding of the criterion but still providing valuable insights based on more perspectives. 
 
 In addition, the sampled question set in Experiment 1b was smaller than in Experiment 1a, which limits the representativeness of the results. At least, the staff-based qualitative analysis provided a broader perspective on the \acp{llm}' performance in handling errors, where the complex prompt improved \textit{Manipulation Handling} in Experiment 1b, while being problematic in Experiment 1a via \textit{Correctness}. This was not significantly visible in the supervisor's evaluation of Experiment 1b, but the quantitative analysis revealed similar trends according to the difference in prompt type performance with the \textit{Adherence Score}.
-
-% \tcr{staff also noted that many questions were \enquote{based on the text}, mostly google, then deepseek, then anthropic, and openai with 1 entry} \\
-% \tcr{supervisor konnte fragen manchmal nicht bewerten, die iuk bewerter haben aber immer ein rating gegeben, folgert aber nicht, dass alle fragen bei iuk gut waren} \\
-% \tcr{negations in questions gewesen, unnecessary} \\
-% \tcr{supervisor could not evaluate a question based on correctness, since the answers were not part of the given text and correctness of answers were controversial, happens in some cases} \\
-% \tcr{some questions (partially) not related to source text here as well} \\
-% \tcr{some questions very easy to answer, visible in challenging at openai and deepseek.} \\
-% \tcr{googles questions are often very long, especially in complex prompt, anthropic sometimes as well, with nested questions. fiel supervisor auch auf}
-% \tcr{staff hat zwischenwerte benutzt und somit das agreement stark verringert.}
-% \tcr{staff members rated manipulation handling differently, supervisor was lower scoring.}
-% \tcr{frage 35 google ausgedachte antworten, statt auf text bezogen}
-% \tcr{anthropic sehr verschachtelt, teilweise inkorrekt, supervisor konnte diese fragen nicht bewerten mittels Correctness}
-
-% \tcr{1b: auch hier struggle der modelle, aber bessere ratings als supervisor}
-% \tcr{frage 16 eher unverständlich für die Bewerter auch hier}
-
-% expert2 1a: frage 14 fragt nach folieninhalt, ebenso 19, 21, 22, 30, 31
-% verneinung in fragestellung bei fragen 8 und 25
-% -----
-% expert2 1b: /
-
-% expert3 1a: frage 7 richtigkeit der antworten strittig/nicht bestandteil des textes! supervisor hat diese frage nicht bewerten koennen mittels Correctness
-% 3 und 4 sind nicht passend zum quelltext, merkwürdig formuliert
-% gemaess dem text frage 6,7,15,18,24,25,29-36
-% frage 8 unnoetig kompliziert verpackt sprachlich
-% frage 12 antwort 2 eher inkorrekt
-% uebersetzungsprobleme bei tanenbaum aufgetreten zur frage. wohl eher gleiche sprache besser
-% frage 25 negation unnoetig, frage 28 etwas abseits vom quellmaterial
-% 30: antwort 3 falsch
-% frage 35 wie ausgedacht, keinen quelltextbezug!! Supervisor hat diese frage nicht bewerten koennen
-% fragen 23 und 41 recht einfach
-% frage 44 viel fantasie, entfernt vom quelltext
-% nochmal 46 openai referenz zu text
-% -----
-% expert3 1b: gegebener text 3-7, 9-16. gelegentliche erkennung der manipulation
-
-% expert4 1a: auch basierend auf text oft angekreidet; sehr schoen frage 12 (anthropic transcript complex)
-% 14 (common script)/15 (complex script) deepseek sehr einfache fragen
-% 27/28 (google complex script) jeweils sehr lang geschrieben...
-% frage 11 auffallend merkwürdig mit wenig correctness auch
-% fragen 3 und 4 (anthropic complex script) nicht ganz mit script beantwortbar
-% -----
-% expert4 1b: manipulationen erkannt bei 3 und 4 (anthropic complex)
-% deepseek 6 (common) und 7 (complex) kriegen es halbwegs hin, dies zu erkennen nur
-% 11 und 12 (googles complex fragen) klappten gut bei erkennung
-% 15 openai complex so halb erkannt aber wohl unsinnige frage
-
-% expert5 1a: viel mit gemäß text wieder
-% fragen mit nicht (wie frage 25) sind nicht angebracht
-% frage 7 stark verschachtelt und wohl auch inkorrekt (anthropic complex tanenbaum)! supervisor hat diese frage nicht bewerten koennen mittels Correctness
-% frage 8 (anthropic complex tanenbaum) auch eher inkorrekt
-% frage 28 wohl inkorrekte richtige antwort, auf jeden fall nicht basierend auf quelltext, konnte supervisor mittels Correctness nicht bewerten
-% frage 35 antworten ausgedacht
-% 40 (openai complex script) sollte nicht mit session layer zu tun haben, frage 47 ebenso (openai complex transcript), aber 44 (complex tanenbaum) eigentlich auch nicht
-% -----
-% expert5 1b: frage 7 halbwegs hinbekommen, antwortmoeglichkeiten teils auf manipulation basierend, teils nicht, frage 16 auch hier nicht verständlich fuer bewerter
-
-% \tcr{stichprobe bei exp1b relativ klein (gleiches sampling, aber 1/3 fragen da 1 source), um zwischen den llms geeignet zu vergleichen. gibt kein ideales bild über die llm qualitaet, wichtig bleibt zu sehen dass complex prompt die manipulation besser infragestellt hat}
-
-% \pagebreak
 
 \subsection{Second Experiment}
 \label{sec:second-experiment}
@@ -656,15 +497,6 @@ Ultimately, the \textit{Total Score} illustrates that no \ac{llm} is a clear win
    \caption{Student-based Evaluation Metrics by LLM (Exp2).}
    \label{fig:exp2-student-evaluation-metrics}
 \end{figure}
-% by llm: relevance grundlegend gut über alle modelle hinweg, wobei anthropic und deepseek etwas besser mit median 10 jeweils + mean 9.07 und 8.67
-% dagegen google mean 8.2 und median 8, openai mit mean 8.0 und median 8.0...
-% clarity: alle von 6-10 (box selbst 8-10) + wenige ausreisser 4,4,4,2 --> openai mit 8.67 mean dann etwas geringer als die anderen (anthropic: 9.0, deepseek: 8.97, google: 9.07)
-% answerability: google und openai sehr ähnlich, gibt mehr fragen die anhand des textes weniger gut beantwortbar sind. besonders googles fragen sind sehr überladen, openai auf papier ähnliche performance (google mean 7.72, openai mean 7.53); alle 4 mit median 8, anthropic und vor allem deepseek besonders gut beantwortbar (mean 8.27 und 8.20 bei deepseek mit besserer verteilung, jedoch geringe ausreißer)
-% challenging: alle median bei 8; anthropic (mean 6.53) volles spektrum... alle anderen von 2-10; deepseek etwas schwächer (6.8) als google (7.27) und openai (7.47) mit höheren boxen
-% value: ähnlicher aufbau untereinander, boxen an sich zwischen 8-10, enden sind alle bei 6; anthropic und google etwas geringer mit median 8.0; deepseek und openai höher mit 9.0 jeweils; alle means über 8, mit openai bestes 8.73, dann anthropic 8.67, deepseek 8.53 und google 8.33; deepseek und v.a. google mit ausreissern nach unten.
-% language: über alle llms hinweg ähnliche bewertungen, mit google (8.37) und openai (8.4) am niedrigsten; anthropic (8.6) und deepseek (8.73) etwas höher; plots enden jeweils bei 3 
-% bloom score: beschreibt sowohl die performance ohne bloom-level-angabe als auch bloom adherence je nach subexperiment; da waren anthropic (mean 7.15, median 7, kleinste box) und google (mean 7.32, median 10, box ok) am besten, openai (mean 6.47, median 9.25) auch ganz gut, deepseeks median (6.0) sehr tief, mean (6.3), ist so naja; alle boxen inklusive whisker gehen auch von 0-10
-% total score: kein llm ist hierbei ein klarer gewinner, openai grundsätzlich am weitesten verteilt und tiefster mean (55.27) und median (55.0); google, deepseek und anthropic sind recht ähnlich, alle etwas hoeher, dort sind eher weniger trends auffindbar, da alle modelle recht gleichauf sind + kleinere trends pro kategorie nur haben
 
 \pagebreak
 
@@ -688,17 +520,6 @@ In this box plot, the \textit{Total Score} shows that the sub-experiments do not
    \caption{Student-based Evaluation Metrics by Sub-Experiment (Exp2).} 
    \label{fig:exp2-student-evaluation-experiment}
 \end{figure}
-% by sub experiment: relevance ist bei type only (TO) am besten mit median 10 und mean 9.04; ähnliche verteilung bei type+bloom (TB), aber dort median 8 und mean 8.12; bloom only (BO) am breitesten gefächert mit median 8 und mean 8.08
-% clarity: alle subexperimente median 10, alle boxen von 8-10, an sich 6-10; TO (mean 8.79) ausreisser; BO (8.43) auch; TB war besser (9.29)
-% answerability: alle median 8, bloom only dort am geringsten mit mean 7.13; type only (TO) knapp am besten ggü. type+bloom (TB)
-% TO mean 8.17 und TB mit leicht größerer verteilung mit mean 8.08 
-% challenging: BO besonders weit oben und nicht sonderbar weitreichend verbreitet mit median 8 und mean 8.42; TO median auch 8, aber im grunde daten eher tiefer angesiedelt mit mean 7.17 (dort wurden ja auch keine bloom level angeboten); TB auffallend geringer (mean 6.17, median 7), sehr breit gefächert, hierbei wurden auch nur diverse fragen gesampled, welche aber grundlegend alle bloom level abgedeckt haben 
-% value: im grunde alle hoch (boxen 8-10, an sich alle 6-10); TO median 8, mean 8.58, ausreisser nach unten; BO median 9, mean 8.75, am besten wirkend; TB: mean 8.46, median 9, wäre auch richtig gut, wenn die ausreisser nicht wären.
-% language: an sich bei TB (mean 8.71, median 10) am besten, kürzester plot auch; dann TO (mean 8.44, median 10) und dann BO (mean 8.33, median 8.5); TO und BO gehen bis 3 runter, TB nur bis 5
-% bloom score: hier wird es spannend, grosses spektrum bei TO, aber an sich der mean viel geringer (4.0, median dazu bei 3). also ohne bloom constraints per median bei applying und per mean bei analyzing; BO und TB leicht von ausreissern betroffen, aber im grunde viel adherence zu gegebenem bloom level (mediane 10), mean bei BO 8.75 und knapp dahinter TB (8.65); Bloom only ein ausreisser bei 0, durch entfernte adherence >1; bei type+bloom sowohl dies als auch off-by-one adherence (durch 5pkt sichtbar).
-% total score: es bleiben bloom only und type+bloom gleichauf im grunde, mit kleinen unterschieden. bei TO mean 54.19 und median 54.25
-% bei BO mean 57.58 und 58.5 median. knapp dran ist TB mit mean 57.48 und median 58.5 ebenso. angabe der bloom operatoren ist sehr wichtig gewesen
-% alle prompt types hatten stärken und schwächen, grundsätzlich aber gute performance bei allen
 
 \pagebreak
 
@@ -708,7 +529,7 @@ Since the \textit{Bloom's Level} criterion is the most important one in this exp
 
 \begin{table}[htbp]
     \centering
-    \caption[Student-based Bloom Scores by LLM and Subexperiment (Exp2).]{Student-based Bloom Scores by LLM and Subexperiment (Exp2).}
+    \caption[Student-based Bloom Scores by LLM and Sub-Experiment (Exp2).]{Student-based Bloom Scores by LLM and Sub-Experiment (Exp2).}
     \label{tab:exp2-llm-experiment-bloomslevel}
     \resizebox{.9\textwidth}{!}{%
     \begin{tabular}{lccccccccc}
@@ -724,17 +545,12 @@ Since the \textit{Bloom's Level} criterion is the most important one in this exp
         \bottomrule
     \end{tabular}}
 \end{table}
-% type-only: anthropic (mean 4.96, median 7.0), deepseek (2.83, 3.0), google (4.54, 3.0), openai (3.67, 3.0). anthropic und google besser!
-% betrachtung von bloom-only: mediane alle 10, anthropic deepseek und google alle mean 8.33, openai 10.0!
-% type+bloom: alle mediane 10, sonst aber openai am schwächsten jedoch (7.50 mean); anthropic und deepseek mit 8.75 und google am besten in adherence (9.58 mean), interessant
 
 Since both question types (Multiple-Choice and Open-Ended) were equally generated in Experiments 2a and 2c, Table \bfref{tab:exp2-questiontype-experiment-bloomslevel} shows the results for each type. Overall, the Open-Ended questions were rated significantly higher than the \acp{mcq} in both sub-experiments. In Experiment 2a, Multiple-Choice achieved a mean of 2.42, rated between \textit{Remembering} (1.5 points) and \textit{Understanding} (3 points). Instead, Open-Ended questions achieved a mean of 5.58, which shows that questions of this type were more cognitively demanding -- between \textit{Applying} (4.5 points) and \textit{Analyzing} (7 points).
 
 \pagebreak
 
 Experiment 2c shows a similar trend, but focusing Bloom alignment instead of the cognitive level itself. The Bloom adherence for \acp{mcq} were rated high with a mean of 7.92. The Open-Ended questions were rated even higher with a mean of 9.38, showing a very high adherence to the specified Bloom level overall. The medians in Experiment 2c were 10.0 for both question types, but in Experiment 2a, the medians were 2.25 for Multiple-Choice and 7.0 for Open-Ended questions, indicating that the Open-Ended questions were more cognitively demanding, while \acp{mcq} were less cognitively demanding and less aligned with given Bloom levels. 
-
-% \pagebreak
 
 \begin{table}[htbp]
     \centering
@@ -752,11 +568,6 @@ Experiment 2c shows a similar trend, but focusing Bloom alignment instead of the
         \bottomrule
     \end{tabular}}
 \end{table}
-% erkennbar, dass MC fragen die bloom scorings/adherence stark beeinflussen.
-% MC bei 2a: mean 2.42, median 2.25
-% open-ended bei 2a: mean 5.65, median 7.0
-% MC bei 2c: mean 7.92, median 10.0 (bedeutend besser jedenfalls durch bloom-angabe)
-% open-ended bei 2c: mean 9.38, median 10.0, viel besser im grunde...
 
 Regarding the inter-rater agreement analysis, the results are mixed, which is reflected in the varying Fleiss' kappa values across different criteria in Table \bfref{tab:iaa-students-exp2}. A major issue in the ratings was the diversity in scoring among the three students, indicating that there were differences in interpretation and application of the rubric criteria. Moreover, rating questions like the desired sample set is no everyday task for the students. This led to certain impacts on the agreement for \textit{Relevance}, \textit{Clarity}, \textit{Value}, and \textit{Language}. These criteria have a very low Fleiss' $\kappa$: \textit{Relevance} with 0.056, \textit{Clarity} with -0.061, \textit{Value} with -0.256, and \textit{Language} with 0.016.
 
@@ -777,15 +588,7 @@ Regarding the inter-rater agreement analysis, the results are mixed, which is re
         Bloom Rating       & 0.397 & 40 & 3 \\
         \bottomrule
     \end{tabular}
-    % \caption*{\small Interpretation of Fleiss' $\kappa$:\\ $<$0 Invalid, $<$0.2 Slight, $<$0.4 Fair, $<$0.6 Moderate, $<$0.8 Substantial, $\geq$0.8 Almost Perfect.}
 \end{table}
-% relevance: 0.056, wenig agreement...
-% clarity: -0.058, wenig agreement...
-% answerability: 0.179, moderates agreement, koennte aber besser sein
-% challenging: 0.270, moderates agreement, koennte aber besser sein
-% value: -0.256, wenig agreement. sehr verschieden durch die studentin2
-% language: 0.016, wenig agreement, da studentin2 sehr viele 10 gegeben hat
-% bloom rating: 0.397, moderates agreement, leichte unterschiede bringen das ergebnis mit sich
 
 In contrast to this, the \textit{Answerability} ($\kappa=0.179$) and especially the \textit{Challenging} ($\kappa=0.270$) criterion achieved better agreements. Moreover, the highest Kappa was achieved for the \textit{Bloom Rating} criterion ($\kappa=0.397$), indicating an almost moderate agreement. Here, the students' Bloom rating per question was compared, instead of taking the calculated \textit{Bloom's Level} score, based on the three scoring options in Table \bfref{tab:exp2_criteria}.
 
@@ -803,50 +606,6 @@ Surprisingly, in Experiment 2c, one \textit{Creating}-level Multiple-Choice ques
 
 Overall, the mentioned issues were not present in every question, but these were visible in several questions across the models, which indicates that the \ac{llm}-generated questions were not always suitable for educational purposes. Also, the differences between the models were not as pronounced as in Experiment 1, where the models' performance was more diverse, which is an interesting finding.
 
-% student1 exp2a: fragen 5 (schlecht bewertet),6,9,14 haben keinen richtigen operator; fragen 15 und 16 zu sehr verschachtelt durch mehrerer fragen in einer.
-% frage10 auch nicht so der knaller, 11 und 12 sprachliich nicht allzu gut
-% frage13 an sich voll gut; relevanz 8/10 jedoch und challenging 2/10, sonst schoene frage
-% ---
-% student1 exp2b: fragen 1 und 6 nicht so gut, 8 auch nicht so
-% ---
-% student1 exp2c: frage 8 schwer verständlich mittels text, iot smart home anwendung fokussiert worden...
-% frage 14 schwierig... operator ist creating, aber MCQ, somit bewertung applying3
-% bei frage 15 aehnlich, operator ist creating, somit bewertung applying3, da muss etwas neues herauskommen.
-
-% student2 exp2a: fragen 11,12,15,16 nicht so gut beantwortbar mit dem text
-% ---
-% student2 exp2b: frage 5 fraglich, ob es level anal4 oder remem1 ist, da MCQ.
-% 3,4, und v.a. 6,8 sind nicht so gut beantwortbar 
-% ---
-% student2 exp2c: keinen operator bei frage 1
-% diverse fragen weniger challenging + verbunden mit bloom1
-
-% student3 exp2a:
-% frage 4 zu kompliziert formuliert, viele fremdwörter
-% frage 7 mit wenig verständlich dargestellten operatoren, ungeeignet für unterricht
-% frage 9 fehlt operator
-% frage 11 unnötig lange einleitung dabei, verwirrt, kann präziser sein
-% frage 12 schwerfällig formuliert, macht es schwer verständlich
-% an sich frage 13 ganz gut und übersichtlich, es brauchte aber zeit um zu verstehen was von einem verlangt wird (obwohl aufgabe nicht so schwer)
-% frage 15 viel zu lang, voller fachtermini, erschwert motivation das zu lesen/beantworten, demotivierend, zu viele operatoren, kann sein dass man dadurch teilaufgaben vergisst
-% ---
-% student3 exp2b: frage5 sehr kompliziert formuliert
-% frage 6 zu viele fachtermini, überladene frage, motiviert nur zu überfliegen bei Bewertung
-% frage 2 sehr schoen bewertet.
-% ---
-% student3 exp2c: frage 4 enthält unnötig viele fremdwörter, die den sinn der aufgabe verkomplizieren
-% frage 8 an sich schoenes rating
-% frage 15 eine ungünstig formulierte frage, die recht zuordnenden touch hat, so ist schwer ersichtlich, was der sinn der frage ist
-
-% ------------------------------------------
-
-% value criterion badly chosen, says 1 student; this one was introduced by primary supervisor and then decided to use for all members in exp1 and afterwards for students in exp2; sie meinte, dass value auf ein lernziel abgebildet werden sollte, sowas haben wir explizit nicht gemacht, sondern nur bloom einbezogen; punkt-differenzierungen nicht so gut, wie "fachlich / didaktisch unglücklich" (MEIN FEHLER jedoch), sind beides ja verschiedene dinge; aber von Cap: "Wird die Frage vom Dozenten als fachlich / didaktisch / technisch sinnvoll erachtet?" 
 Ultimately, one student criticized the \textit{Value} criterion, arguing it should be mapped to specific learning objectives rather than general educational worth, highlighting potential issues with the rubric design for students as evaluators who are unfamiliar with the technical domain.
 
-% \tcr{es gibt fragen ohne jegliche operator-verben, welche vor allem fuer bloom-bestimmung wuenschenswert wären}
-% \tcr{eine studentin hat bei gewissen kategorien wenig varianz aufgezeigt (e.g.\ oft 10 punkte geben)... einig sind sich die beiden anderen studenten teilweise aber auch nicht, wird dann bald im agreement gecheckt.}
-
 \vp
-
-% #TODO IAA as well for the students
-% #TODO add for the eval parts at least some anchor examples for quantitative1, qual1, qual2

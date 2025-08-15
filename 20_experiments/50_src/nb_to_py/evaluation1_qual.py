@@ -40,7 +40,7 @@ pd.set_option('display.notebook_repr_html', True)
 
 # !!! Set to False to use staff data instead (Experts 2-5, + inter-rater agreements)
 # (Then, IRA between staff experts 2-5 + also staff experts vs. supervisor [expert 1] will be calculated)
-USE_SUPERVISOR_DATA = True
+USE_SUPERVISOR_DATA = False
 # Changing this will affect the data resulting in the notebook
 # !!! As a very important note
 
@@ -839,7 +839,7 @@ if agreement_available:
     if not comprehensive_agreement_exp1a.empty:
         tables[f'comprehensive_agreement_exp1a_{analysis_suffix}'] = comprehensive_agreement_exp1a
         print("\nExperiment 1a - All Available Experts Agreement:")
-        display(comprehensive_agreement_exp1a[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters']].round(3))
+        display(comprehensive_agreement_exp1a[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters', 'Mean_Rating', 'Std_Rating']].round(3))
         
     # Check for Experiment 1b comprehensive agreement
     if analyze_exp1b:
@@ -849,7 +849,7 @@ if agreement_available:
             tables[f'comprehensive_agreement_exp1b_{analysis_suffix}'] = comprehensive_agreement_exp1b
             print("\n" + "-"*50)
             print("Experiment 1b - All Available Experts Agreement:")
-            display(comprehensive_agreement_exp1b[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters']].round(3))
+            display(comprehensive_agreement_exp1b[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters', 'Mean_Rating', 'Std_Rating']].round(3))
             
         else:
             print("\n" + "-"*50)
