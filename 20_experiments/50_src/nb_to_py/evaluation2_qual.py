@@ -269,7 +269,6 @@ display(df_numeric)
 
 numeric_metrics = [m for m in metrics if pd.api.types.is_numeric_dtype(df_numeric[m])]
 
-# Calculate total score as sum of main metrics
 main_score_metrics = ['relevance', 'clarity', 'answerability', 'challenging', 'value', 'language', 'blooms_level_score']
 existing_score_metrics = [m for m in main_score_metrics if m in df_numeric.columns]
 df_numeric['total_score'] = df_numeric[existing_score_metrics].sum(axis=1)
@@ -354,7 +353,6 @@ if 'df_numeric' in locals() and 'llm' in df_numeric.columns and len(df_numeric) 
     fig, axes = plt.subplots(4, 2, figsize=(14, 20))
     axes = axes.flatten()
 
-    # Boxplots for each metric by LLM
     for i, metric in enumerate(numeric_metrics):
         df_plot = df_numeric[[metric, 'llm']].dropna()
         if len(df_plot) > 0:
@@ -393,7 +391,6 @@ if 'df_numeric' in locals() and 'llm' in df_numeric.columns and len(df_numeric) 
     plt.show()
     print("Visualization by LLM complete.")
 
-    # Summary statistics by LLM
     print("\nSummary Table: Metrics by LLM (mean, std, count)")
     llm_stats = df_numeric.groupby('llm')[numeric_metrics].agg(['mean', 'std', 'median', 'count']).round(2)
     display(llm_stats)
@@ -504,7 +501,7 @@ def kappa_level(k):
 # In[ ]:
 
 
-def calculate_fleiss_kappa_all_categories(df, metrics):
+def calculate_fleiss(df, metrics):
     results = []
     df = df.copy()
 
@@ -528,25 +525,38 @@ def calculate_fleiss_kappa_all_categories(df, metrics):
                 kappa = fleiss_kappa(fleiss_table)
         except Exception:
             kappa = np.nan
+
+
+        flat_valid = [r for row in ratings_matrix for r in row if not np.isnan(r)]
+        mean_rating = float(np.mean(flat_valid)) if flat_valid else np.nan
+        std_rating = float(np.std(flat_valid)) if flat_valid else np.nan
+
         results.append({
             'Metric': metric_labels.get(metric, metric),
             'Fleiss_Kappa': kappa,
             'Agreement_Level': kappa_level(kappa) if not np.isnan(kappa) else 'No data',
-            'N_Questions': ratings_matrix.shape[0]
+            'N_Questions': int(ratings_matrix.shape[0]),
+            'N_Raters': int(pivot.shape[1]) if pivot.shape[0] > 0 else 0,
+            'Mean_Rating': round(mean_rating, 2) if not np.isnan(mean_rating) else np.nan,
+            'Std_Rating': round(std_rating, 2) if not np.isnan(std_rating) else np.nan
         })
 
-    # Add Bloom Rating as the last metric instead
     df['bloom_rating_numeric'] = df['bloom_rating'].apply(extract_max_bloom_rating)
     pivot = df.pivot_table(index='global_question_id', columns='student', values='bloom_rating_numeric')
     pivot = pivot.dropna(axis=0)
     ratings_matrix = pivot.values
-    ratings_matrix = [[max(1, min(6, r)) if not pd.isnull(r) else np.nan for r in row] for row in ratings_matrix]
+    ratings_matrix = np.array([[max(1, min(6, int(r))) for r in row] for row in ratings_matrix if not any(pd.isnull(row))])
+
     fleiss_table = np.zeros((len(ratings_matrix), 6))
     for i, row in enumerate(ratings_matrix):
         for r in row:
-            if not np.isnan(r) and 1 <= r <= 6:
-                fleiss_table[i, int(r)-1] += 1
-    all_identical = np.all((fleiss_table == np.max(fleiss_table, axis=1, keepdims=True)) | (fleiss_table == 0), axis=1)
+            if 1 <= r <= 6:
+                fleiss_table[i, int(r) - 1] += 1
+
+    all_identical = np.all(
+        (fleiss_table == np.max(fleiss_table, axis=1, keepdims=True)) | (fleiss_table == 0),
+        axis=1
+    )
     try:
         if np.all(all_identical):
             kappa = 1.0
@@ -554,11 +564,19 @@ def calculate_fleiss_kappa_all_categories(df, metrics):
             kappa = fleiss_kappa(fleiss_table)
     except Exception:
         kappa = np.nan
+
+    flat_valid = [r for row in ratings_matrix for r in row]
+    mean_rating = float(np.mean(flat_valid)) if flat_valid else np.nan
+    std_rating = float(np.std(flat_valid)) if flat_valid else np.nan
+
     results.append({
-        'Metric': 'Bloom Rating',
+        'Metric': 'Bloom Rating (1-6 Scale)',
         'Fleiss_Kappa': kappa,
         'Agreement_Level': kappa_level(kappa) if not np.isnan(kappa) else 'No data',
-        'N_Questions': len(ratings_matrix)
+        'N_Questions': int(len(ratings_matrix)),
+        'N_Raters': int(pivot.shape[1]) if pivot.shape[0] > 0 else 0,
+        'Mean_Rating': round(mean_rating, 2) if not np.isnan(mean_rating) else np.nan,
+        'Std_Rating': round(std_rating, 2) if not np.isnan(std_rating) else np.nan
     })
 
     return pd.DataFrame(results)
@@ -567,8 +585,8 @@ def calculate_fleiss_kappa_all_categories(df, metrics):
 # In[ ]:
 
 
-kappa_all_df = calculate_fleiss_kappa_all_categories(df_numeric, metrics)
-print("\nFleiss' Kappa Calculation (alle Kategorien, bloom_rating gemeinsam):")
+kappa_all_df = calculate_fleiss(df_numeric, metrics)
+print("\nFleiss' Kappa Calculation:")
 display(kappa_all_df.round(4))
 if 'output_tables_path' in locals():
     kappa_all_df.to_csv(os.path.join(output_tables_path, "exp2_fleiss_kappa_all_categories.csv"), index=False)

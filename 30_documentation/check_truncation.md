@@ -41,13 +41,13 @@ A helper class to capture all `print` statements into a buffer, allowing the ent
 
 ## Usage
 
-Running this script provides a clear overview of which source texts or generated questions are too long for the embedding model, which is crucial for the quantitative analysis (`analysis_quantitative.py`).
+Running this script provides a clear overview of which source texts or generated questions are too long for the embedding model, which is crucial for the quantitative analysis (`analysis_quantitative.py`). A file called `note_truncation.md` will be created in the [`50_src`](../20_experiments/50_src) directory
 
 ## Dependencies
 
 - **External Libraries:**
   - `torch`: Used by `sentence-transformers`.
   - `pandas`: For data aggregation and summary.
-  - `sentence-transformers`: To access the tokenizer and model properties.
+  - `sentence-transformers`: To access the tokenizer and embedding model.
 - **Internal Modules:**
   - [`constants`](../20_experiments/50_src/constants.py): Provides file paths and the embedding model ID.

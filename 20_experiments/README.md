@@ -38,6 +38,7 @@ This directory contains the experimental framework for evaluating Large Language
 - **Transcript**: Audio-to-text conversion of lecture content
 - **Tanenbaum**: Excerpts from "Computer Networks" textbook by Andrew S. Tanenbaum
 - **Manipulated Script**: Intentionally altered lecture content for error detection testing
+- **(Concatenated Script)**: Instead of using each layer separately, in Experiment 2, all layers were used together to generate questions; and since DeepSeek was prompted manually in this thesis, the script was used as a single file
 
 ## Implementation Framework
 
