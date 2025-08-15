@@ -24,7 +24,7 @@ As an introductory step, to observe if both approaches are valid, the \acp{llm} 
     \label{fig:exp1a-source-scores}
 \end{figure}
 
-In contrast, the adherence score provided a clearer differentiation. Using no source led to noticeably lower adherence overall in the mean $\approx 0.714$, the median $\approx 0.768$ and a broader range of scores. Additionally, a certain trend in cosine similarity across the sources is visible in Figures \bfref{fig:exp1a-source-scores} and \bfref{fig:exp1a-llm-source-comparison}. There is to be seen that the precise lecture script is indicating best results, Tanenbaum excerpts are situated in the middle, and the extensive transcript parts equipped with examples keep the widest range of scores, the lowest mean and median values. This trend appears to be influenced by the amount of words in the source materials rather than content quality itself, limiting its overall usefulness. Moreover, the adherence scores showed few outliers in the box plot, and the scoring in the heatmap shows quite individual \ac{llm} performance according to the diverse input sources, overall located above 90\%.
+In contrast, the \textit{Adherence Score} provided a clearer differentiation. Using no source led to noticeably lower adherence overall in the mean $\approx 0.714$, the median $\approx 0.768$ and a broader range of scores. Additionally, a certain trend in cosine similarity across the sources is visible in Figures \bfref{fig:exp1a-source-scores} and \bfref{fig:exp1a-llm-source-comparison}. There is to be seen that the precise lecture script is indicating best results, Tanenbaum excerpts are situated in the middle, and the extensive transcript parts equipped with examples keep the widest range of scores, the lowest mean and median values. This trend appears to be influenced by the amount of words in the source materials rather than content quality itself, limiting its overall usefulness. Moreover, the \textit{Adherence Score} showed few outliers in the box plot, and the scoring in the heatmap shows quite individual \ac{llm} performance according to the diverse input sources, overall located above 90\%.
 
 \begin{figure}[htbp]
     \centering
@@ -33,7 +33,7 @@ In contrast, the adherence score provided a clearer differentiation. Using no so
     \label{fig:exp1a-llm-source-comparison}
 \end{figure}
 
-Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} reveals that the cosine similarity scores were lower and also differ a lot from the adherence scores. Expert results by the primary supervisor, later discussed under \textit{Correctness} in e.g.\ Figure \bfref{fig:exp1a-correctness-heatmaps}, show that cosine similarity was unreliable for this task, as this did not properly reflect the content fidelity of the questions in Experiment 1a. The adherence scores in this quantitative analysis, however, provided a quite nuanced view of model performance, showing that DeepSeek and OpenAI were more consistent in adhering to the source content, while Anthropic and Google exhibited slightly lower and more variable scores.
+Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} reveals that the cosine similarity scores were lower and also differ a lot from the \textit{Adherence Scores}. Expert results by the primary supervisor, later discussed under \textit{Correctness} in e.g.\ Figure \bfref{fig:exp1a-correctness-heatmaps}, show that cosine similarity was unreliable for this task, as this did not properly reflect the content fidelity of the questions in Experiment 1a. The \textit{Adherence Scores} in this quantitative analysis, however, provided a quite nuanced view of model performance, showing that DeepSeek and OpenAI were more consistent in adhering to the source content, while Anthropic and Google exhibited slightly lower and more variable scores.
 
 \begin{figure}[htbp]
     \centering
@@ -42,7 +42,7 @@ Regarding the \ac{llm}-sorted observations, Figure \bfref{fig:exp1a-llm-scores} 
     \label{fig:exp1a-llm-scores}
 \end{figure}
 
-To get a proper view of the content adherence, the evaluation also included a comparison of the performance of the \acp{llm} against the used prompt type, as shown in Figure \bfref{fig:exp1a-llm-prompt-comparison}. Here, the results between cosine similarity and adherence scores were again significantly different. On the one hand, the hardly comprehensible cosine similarity tends to higher scoring values for the complex prompt. On the other hand, adherence scores show that the common prompt leads to better results -- best for OpenAI ($\approx 0.992$ vs.\ $0.94$) and DeepSeek ($\approx 0.973$ vs.\ $0.945$) --, while the complex prompt leads to slightly lower scores instead for all models, especially for Google and Anthropic. This is also indicated by the expert results by the primary supervisor, which indicate that the common prompt is more effective in content adherence than the complex prompt.
+To get a proper view of the content adherence, the evaluation also included a comparison of the performance of the \acp{llm} against the used prompt type, as shown in Figure \bfref{fig:exp1a-llm-prompt-comparison}. Here, the results between cosine similarity and \textit{Adherence Scores} were again significantly different. On the one hand, the hardly comprehensible cosine similarity tends to higher scoring values for the complex prompt. On the other hand, \textit{Adherence Scores} show that the common prompt leads to better results -- best for OpenAI ($\approx 0.992$ vs.\ $0.94$) and DeepSeek ($\approx 0.973$ vs.\ $0.945$) --, while the complex prompt leads to slightly lower scores instead for all models, especially for Google and Anthropic. This is also indicated by the expert results by the primary supervisor, which indicate that the common prompt is more effective in content adherence than the complex prompt.
 
 \begin{figure}[htbp]
     \centering
@@ -73,9 +73,9 @@ These findings suggest that, while cosine similarity may be suitable for short, 
     \item \enquote{Which property is \textbf{NOT} assigned to the Transport Layer according to the \textbf{description?}}.
 \end{itemize}
 
-However, the adherence scores illustrate a proper course in the plots, showing that Google and Anthropic maintain more often to the manipulated content -- based on value range and the high means $\approx 0.92$ and $\approx 0.904$. Instead, OpenAI and especially DeepSeek detected the manipulation in some cases and generated questions where this aspect is recognizable. The rightly present outliers for OpenAI separate its mean from its high median by a value of $0.988-0.806=0.182$. Moreover, the DeepSeek model -- the oldest of the four chosen models -- convinced regarding the lowest median $\approx 0.88$, mean adherence $\approx 0.731$ and a wide range of values, indicating that it often recognized the OSI-layer manipulation.
+However, the \textit{Adherence Scores} illustrate a proper course in the plots, showing that Google and Anthropic maintain more often to the manipulated content -- based on value range and the high means $\approx 0.92$ and $\approx 0.904$. Instead, OpenAI and especially DeepSeek detected the manipulation in some cases and generated questions where this aspect is recognizable. The rightly present outliers for OpenAI separate its mean from its high median by a value of $0.988-0.806=0.182$. Moreover, the DeepSeek model -- the oldest of the four chosen models -- convinced regarding the lowest median $\approx 0.88$, mean adherence $\approx 0.731$ and a wide range of values, indicating that it often recognized the OSI-layer manipulation.
 
-Furthermore, the used type of prompt had an impact on the results, as shown in Figure \bfref{fig:exp1b-llm-prompt-comparison}. In this case, both cosine similarity and adherence scores indicate that the common prompt led to higher results than the complex prompt, while lower results are the goal in this sub-experiment instead. As stated, the cosine similarity cannot reliably determine if an \ac{llm} follows the manipulated content or if it detects it and generates a question based on that text. In contrast to that, the adherence scores provide more reliable results, showing that the complex prompt led to lower scores for all \acp{llm}. Like in Experiment 1a, DeepSeek and OpenAI were more convincing in their performance -- here with lower mean adherence scores ($\approx 0.598$ and $\approx 0.619$) --, while Anthropic and Google still have shown higher adherence scores. Overall, OpenAI and DeepSeek were the models that recognized the manipulation more often, but in this sub-experiment, the complex prompt led to \enquote{better} adherence scores than the common prompt.
+Furthermore, the used type of prompt had an impact on the results, as shown in Figure \bfref{fig:exp1b-llm-prompt-comparison}. In this case, both cosine similarity and \textit{Adherence Scores} indicate that the common prompt led to higher results than the complex prompt, while lower results are the goal in this sub-experiment instead. As stated, the cosine similarity cannot reliably determine if an \ac{llm} follows the manipulated content or if it detects it and generates a question based on that text. In contrast to that, the \textit{Adherence Scores} provide more reliable results, showing that the complex prompt led to lower scores for all \acp{llm}. Like in Experiment 1a, DeepSeek and OpenAI were more convincing in their performance -- here with lower mean \textit{Adherence Scores} ($\approx 0.598$ and $\approx 0.619$) --, while Anthropic and Google still have shown higher scores. Overall, OpenAI and DeepSeek were the models that recognized the manipulation more often, but in this sub-experiment, the complex prompt led to \enquote{better} \textit{Adherence Scores} than the common prompt.
 
 \begin{figure}[htbp]
     \centering
@@ -354,17 +354,17 @@ Besides these promising insights, the inter-rater agreement yielded undesirable 
    \centering
    \caption{Inter-Rater Agreement Analysis, only Staff (Exp1a).} 
    \label{tab:iaa-staff-1a}
-   \begin{tabular}{lccc}
+   \begin{tabular}{lcccc}
         \toprule
-        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Std} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Relevance      & -0.085 & 48 & 4 \\
-        Clarity        &  0.034 & 48 & 4 \\
-        Answerability  &  0.015 & 48 & 4 \\
-        Challenging    &  0.011 & 48 & 4 \\
-        Value          & -0.010 & 48 & 4 \\
-        Language       &  0.001 & 48 & 4 \\
-        Correctness    & -0.052 & 48 & 4 \\
+        Relevance      & -0.085 & 1.92 & 48 & 4 \\
+        Clarity        &  0.034 & 2.72 & 48 & 4 \\
+        Answerability  &  0.015 & 2.84 & 48 & 4 \\
+        Challenging    &  0.011 & 2.35 & 48 & 4 \\
+        Value          & -0.010 & 3.23 & 48 & 4 \\
+        Language       &  0.001 & 2.59 & 48 & 4 \\
+        Correctness    & -0.052 & 2.67 & 48 & 4 \\
         \bottomrule
    \end{tabular}
 \end{table}
@@ -379,17 +379,17 @@ In addition, the combined inter-rater agreement analysis in Table \bfref{tab:iaa
    \centering
    \caption{Inter-Rater Agreement Analysis, combined (Exp1a).} 
    \label{tab:iaa-combined-1a}
-   \begin{tabular}{lccc}
+   \begin{tabular}{lcccc}
         \toprule
-        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \textbf{Criterion} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Std} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Relevance      & -0.046 & 47 & 5 \\
-        Clarity        &  0.077 & 47 & 5 \\
-        Answerability  &  0.054 & 47 & 5 \\
-        Challenging    &  0.014 & 47 & 5 \\
-        Value          &  0.012 & 45 & 5 \\
-        Language       &  0.043 & 48 & 5 \\
-        Correctness    & -0.022 & 42 & 5 \\
+        Relevance      & -0.046 & 1.88 & 47 & 5 \\
+        Clarity        &  0.077 & 2.68 & 47 & 5 \\
+        Answerability  &  0.054 & 2.77 & 47 & 5 \\
+        Challenging    &  0.014 & 2.61 & 47 & 5 \\
+        Value          &  0.012 & 3.34 & 45 & 5 \\
+        Language       &  0.043 & 2.53 & 48 & 5 \\
+        Correctness    & -0.022 & 2.56 & 42 & 5 \\
         \bottomrule
    \end{tabular}
 \end{table}
@@ -440,12 +440,12 @@ The differences between the supervisor and staff ratings also illustrate the nee
    \centering
    \caption{Inter-Rater Agreement Analysis (Exp1b).} 
    \label{tab:iaa-staff-1b}
-   \begin{tabular}{lccc}
+   \begin{tabular}{lcccc}
         \toprule
-        \textbf{Manipulation Handling} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \textbf{Manipulation Handling} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Std} & \textbf{\#Items} & \textbf{\#Raters} \\
         \midrule
-        Staff-only & 0.014 & 16 & 4 \\
-        Combined with Supervisor & 0.036 & 15 & 5 \\
+        Staff-only & 0.014 & 4.31 & 16 & 4 \\
+        Combined with Supervisor & 0.036 & 4.21 & 15 & 5 \\
         \bottomrule
    \end{tabular}
 \end{table}

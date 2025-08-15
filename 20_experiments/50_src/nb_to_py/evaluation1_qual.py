@@ -734,19 +734,17 @@ if agreement_available:
     print("COMPREHENSIVE INTER-RATER AGREEMENT ANALYSIS")
     print("="*70)
     
-    # Function to calculate agreement between all available experts
     def calculate_comprehensive_fleiss_kappa(experts_data, experiment, criteria_cols):
         results = []
         
-        # Get all available expert dataframes for the experiment
         expert_dfs = {}
         for expert_key in ['expert_1', 'expert_2', 'expert_3', 'expert_4', 'expert_5']:
             if expert_key in experts_data and experiment in experts_data[expert_key]:
                 df = experts_data[expert_key][experiment]
-                if 'sample_id' in df.columns: # Ensure sample_id exists
+                if 'sample_id' in df.columns:
                     expert_dfs[expert_key] = df
         
-        # Add supervisor data if we're in staff mode
+        # Add supervisor data if in staff mode
         if experiment == 'exp1a':
             supervisor_exp1a, _ = load_supervisor_data()
             expert_dfs['expert_1'] = supervisor_exp1a
@@ -754,7 +752,6 @@ if agreement_available:
             _, supervisor_exp1b = load_supervisor_data()
             expert_dfs['expert_1'] = supervisor_exp1b
         
-        # Find common sample IDs across all experts
         if len(expert_dfs) < 2:
             return pd.DataFrame()
         
@@ -829,7 +826,7 @@ if agreement_available:
         
         return pd.DataFrame(results)
     
-    # Calculate comprehensive agreement for Experiment 1a
+    # Calculate agreement for Experiment 1a
     print("\n" + "="*70)
     print("ALL EXPERTS AGREEMENT ANALYSIS (Including Supervisor)")
     print("="*70)
@@ -841,7 +838,7 @@ if agreement_available:
         print("\nExperiment 1a - All Available Experts Agreement:")
         display(comprehensive_agreement_exp1a[['Criterion', 'Fleiss_Kappa', 'Agreement_Level', 'N_Items', 'N_Raters', 'Mean_Rating', 'Std_Rating']].round(3))
         
-    # Check for Experiment 1b comprehensive agreement
+    # Check for Experiment 1b agreement
     if analyze_exp1b:
         comprehensive_agreement_exp1b = calculate_comprehensive_fleiss_kappa(experts_data, 'exp1b', numeric_cols_1b)
         
