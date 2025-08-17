@@ -8,7 +8,9 @@
 \usepackage{latexsym,multicol,booktabs,miama}
 \usepackage{setspace}
 \usepackage{xcolor}
+\usepackage{pgfplots}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{amssymb,amsfonts,amsmath,amsthm,mathrsfs,mathptmx} 
 \usepackage{graphicx,pstricks,listings,stackengine}
 \usepackage[backend=biber,bibencoding=utf8,urldateusetime=true,style=alphabetic,sorting=nyt,natbib=true]{biblatex}
@@ -27,7 +29,7 @@
 \subtitle{--\;Endverteidigung\;--}
 \institute[Universität Rostock]{
     \inst{1}
-    \footnotesize{Betreuer: \textit{Prof.\,Dr. rer.nat.habil. \uline{Clemens H. Cap}}} \vspace*{.25em} \\
+    \footnotesize{Betreuer: \textit{Prof.\,Dr. rer.nat. \uline{Clemens H. Cap}}} \vspace*{.25em} \\
     \textit{Jun.-Prof.in Dr.in \uline{Charlott Rubach}} \vspace*{-.25em}
 }
 \date{\today}
@@ -130,7 +132,7 @@
 \begin{frame}{Forschungsfragen}
     \begin{itemize}
         \item \textbf{RQ1:} Zu welchem Grad \textcolor{RedOrange!60}{halten sich LLMs} an den Inhalt verschiedener bereitgestellter \textcolor{RedOrange!60}{Lehrtexte} bei der Generierung von Fragen? \vspace{.5em}
-        \item[\textcolor{gray}{$\bullet$}] \textcolor{gray}{\textbf{RQ2:} Wie beeinflusst die \textcolor{RedOrange!40}{Beziehung} zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die \textcolor{RedOrange!40}{pädagogische Wirksamkeit} von LLM-generierten Fragen?}
+        \item \textbf{RQ2:} Wie beeinflusst die \textcolor{RedOrange!60}{Beziehung} zwischen verschiedenen Frageformaten und den Levels der Bloom's Taxonomie die \textcolor{RedOrange!60}{pädagogische Wirksamkeit} von LLM-generierten Fragen?
     \end{itemize}
 \end{frame}
 
@@ -184,6 +186,27 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{How to: Fleiss Kappa}
+    \begin{itemize}
+        \item \textbf{Ziel:} Inter-Rater Reliability der Experten durch:
+        \begin{align*}
+            \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
+        \end{align*}
+        $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
+        $N$ Anzahl der Fragen, \\
+        $n$ Anzahl der Rater
+        \begin{align*}
+            % n_{ij} Anzahl der Rater, die für Frage i das Rating j abgegeben haben
+            % k Menge der Auswahlmöglichkeiten 0,2,4,6,8,10
+            p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
+            % nenner ist maximale Anzahl möglicher Übereinstimmungen von Raterpaaren über alle Probanden
+            % 0^2 + 3^2 \\ + 1^2 + 2^2 ...
+            p_e &= \sum_{j=1}^{k} p_j^2
+            % wie viele rater haben in der kategorie i eine zustimmung gegeben (2 kategorien, in der einen 8/21 eintraege, bei der anderen 13/21 einträge)
+        \end{align*}
+    \end{itemize}
+\end{frame}
+
 \section{Exp.\ 1 -- Inhaltstreue}
 
 \begin{frame}[allowframebreaks]{Experimentelles Design}
@@ -200,7 +223,7 @@
         \framebreak
         \item 4 Large Language Models: 
             \begin{itemize}
-                \item \textbf{DeepSeek R1:} Jan 2025 -- manuell
+                \item \textbf{DeepSeek R1:} Jan 2025 -- Website
                 \item \textbf{Claude 3.7 Sonnet:} Feb 2025 -- API
                 \item \textbf{Gemini 2.5 Flash:} Mar 2025 -- API
                 \item \textbf{OpenAI o3:} Apr 2025 -- API
@@ -233,7 +256,7 @@
 \begin{frame}{Datenerhebung \& Durchführung}
     \begin{itemize}
         \item \textbf{Python:} Automatisierte API-Ansteuerungen
-        \item \textbf{Manuell:} DeepSeek R1
+        \item \textbf{Website-Prompting:} DeepSeek R1
         \item \textbf{Material:} Layer-weise Aufteilung
         \item \textbf{Resultat:} 
             \begin{itemize}
@@ -276,67 +299,179 @@
         \begin{itemize}
             \item \textbf{Fleiss Kappa:} Inter-Rater Reliability
             \item \textbf{Bewertungsrubrik:} 0-10 Punkte\,/\,Kategorie \& Frage:
-            \item[] \textit{\textcolor{gray}{Relevanz, Klarheit, Beantwortbarkeit, Herausfordernd \& Korrektheit vs. Umgang mit Manipulation}}
+            \item[] \textit{\textcolor{gray}{Relevance, Clarity, Answerability, Challenging, Value, Language \& Correctness vs. Manipulation Handling}}
         \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{How to: Fleiss Kappa}
-    \begin{itemize}
-        \item \textbf{Ziel:} Inter-Rater Reliability der Experten durch:
-        \begin{align*}
-            \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
-        \end{align*}
-        $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
-        $N$ Anzahl der Fragen, \\
-        $n$ Anzahl der Rater
-        \begin{align*}
-            % n_{ij} Anzahl der Rater, die für Frage i das Rating j abgegeben haben
-            % k Menge der Auswahlmöglichkeiten 0,2,4,6,8,10
-            p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
-            % nenner ist maximale Anzahl möglicher Übereinstimmungen von Raterpaaren über alle Probanden
-            % 0^2 + 3^2 \\ + 1^2 + 2^2 ...
-            p_e &= \sum_{j=1}^{k} p_j^2
-            % wie viele rater haben in der kategorie i eine zustimmung gegeben (2 kategorien, in der einen 8/21 eintraege, bei der anderen 13/21 einträge)
-        \end{align*}
-    \end{itemize}
-\end{frame}
+% --- Exp. 1: Quantitative Ergebnisse ---
+% \begin{frame}{Quantitative Analyse 1a -- LLMs}
+%     \begin{figure}
+%         \centering
+%         \begin{tikzpicture}
+%             \node[inner sep=0pt, anchor=south west] (img) at (0,0)
+%                 {\includegraphics[width=0.9\textwidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}};
+%             % Linke Hälfte auswaschen (weniger Kontrast/Farbe)
+%             \path[fill=white, fill opacity=0.55]
+%                 (img.south west) --
+%                 ($(img.south west)!0.5!(img.south east)$) --
+%                 ($(img.north west)!0.5!(img.north east)$) --
+%                 (img.north west) -- cycle;
+%         \end{tikzpicture}
+%         \caption{Verteilung nach LLM (1a).}
+%         \label{fig:dist_llm_a}
+%     \end{figure}
+% \end{frame}
 
-\section{Exp.\ 2 -- Bloom Analyse}
-
-\section{Konklusion}
-
-\begin{frame}{Quantitative Analyse 1 -- Fragetypen}
-    \begin{itemize}
-        \item \textbf{Exp 1a:} 9/168 Fragen Freitext, nur komplexer Prompt\\ 8x OpenAI, 1x Google
-        \item \textbf{Exp 1b:} 4/56 Fragen Freitext, 1x einfacher Prompt (DeepSeek), 3x Google
-    \end{itemize}
-    {\scriptsize
-    \begin{table}[htbp]
-    \centering
-    \caption{Freitext-Scoring aus 1a und 1b.}
-    \label{tab:free_text_scores}
-    \begin{tabular}{lccccccc}
-        \toprule
-        & \multicolumn{3}{c}{Cosine Similarity} & \multicolumn{3}{c}{Adherence Score} \\
-        \cmidrule(lr){2-4} \cmidrule(lr){5-7}
-        Experiment & Mean & Std & Count & Mean & Std & Count \\
-        \midrule
-        Exp1a & 0.673 & 0.079 & 9 & 0.920 & 0.168 & 9 \\
-        Exp1b & 0.501 & 0.184 & 4 & 0.764 & 0.338 & 4 \\
-        \bottomrule
-    \end{tabular}
-    \end{table}}
-\end{frame}
-
-\begin{frame}{Quantitative Analyse 1a -- LLMs}
+\begin{frame}{Quantitative Analyse -- Exp. 1a}
     \begin{figure}
         \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}
-        \caption{Verteilung nach LLM (1a).}
-        \label{fig:dist_llm_a}
+        \begin{tikzpicture}
+            \node[inner sep=0pt, anchor=south west] (img) at (0,0)
+                {\includegraphics[width=.85\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_prompt_type.png}};
+            \path[fill=white, fill opacity=0.55]
+                (img.south west) --
+                ($(img.south west)!0.5!(img.south east)$) --
+                ($(img.north west)!0.5!(img.north east)$) --
+                (img.north west) -- cycle;
+        \end{tikzpicture}
+        \vspace{-.5em}
+        \caption{Heatmap LLMs vs. Prompt-Typen (1a).}
+        \label{fig:combined_llm_vs_prompt_type_a}
     \end{figure}
 \end{frame}
+
+\begin{frame}{Quantitative Analyse -- Exp. 1b}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}
+            \node[inner sep=0pt, anchor=south west] (img) at (0,0)
+                {\includegraphics[width=.85\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/combined_llm_vs_prompt_type.png}};
+            \path[fill=white, fill opacity=0.55]
+                (img.south west) --
+                ($(img.south west)!0.5!(img.south east)$) --
+                ($(img.north west)!0.5!(img.north east)$) --
+                (img.north west) -- cycle;
+        \end{tikzpicture}
+        \vspace{-.5em}
+        \caption{Heatmap LLMs vs. Prompt-Typen (1b).}
+        \label{fig:combined_llm_vs_prompt_type_b}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1a}
+    \begin{itemize}
+        \item Supervisor-basiert: openai favorit bei correctness, transcript an sich favorit, script aber an sich auch genehm, jedoch ist google am schwächeln, vor allem im complex prompt
+        \item an sich mehr oder weniger knapp transcript am besten fuer alle kriterien ausser challenging, da ist script besser, daher auch bester mean total Score
+        \item common prompt am outperformen des complex prompts, ausser in challenging bei weitem
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1a}
+    \begin{itemize}
+        \item staff-basiert: favoritenrolle von openai nicht mehr so nuanciert, deepseek auch gute performance
+        \item hier script eher besser fuer viele kriterien ausser clarity knapp, answerability knapp, und language, da ist transcript besser, trotzdem aber besserer mean total score bei script ebenso
+        \item common prompt am outperformen des complex prompts, ausser in challenging bei weitem, genau wie bei supervisor
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1a}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.85\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
+        \vspace{-.5em}
+        \caption{Correctness Heatmaps (Supervisor).}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1a}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.85\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
+        \vspace{-.5em}
+        \caption{Correctness Heatmaps (Staff).}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1a}
+    \begin{itemize}
+        \item inter-rater agreement bei beiden gruppen und subexperimenten schlecht, da rubrik von staff members anders aufgegriffen wurde (zwischenwerte benutzt + rubrik nicht klar genug)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1a}
+    \begin{table}
+        \centering
+        \caption{Inter-Rater Agreement Analyse. \newline Links: IuK-Bewerter. Rechts: Kombiniert.}
+        \label{tab:iaa-exp1a-side-by-side}
+        \begin{minipage}[t]{0.45\linewidth}
+            \centering
+            \scriptsize
+            \begin{tabular}{lccc}
+                \toprule
+                \textbf{Kriterium} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Std} & \textbf{\#Raters} \\
+                \midrule
+                Relevance      & -0.085 & 1.92 & 4 \\
+                Clarity        &  0.034 & 2.72 & 4 \\
+                Answerability  &  0.015 & 2.84 & 4 \\
+                Challenging    &  0.011 & 2.35 & 4 \\
+                Value          & -0.010 & 3.23 & 4 \\
+                Language       &  0.001 & 2.59 & 4 \\
+                Correctness    & -0.052 & 2.67 & 4 \\
+                \bottomrule
+            \end{tabular}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.45\linewidth}
+            \centering
+            \scriptsize
+            \begin{tabular}{ccc}
+                \toprule
+                \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Std} & \textbf{\#Raters} \\
+                \midrule
+                -0.046 & 1.88 & 5 \\
+                 0.077 & 2.68 & 5 \\
+                 0.054 & 2.77 & 5 \\
+                 0.014 & 2.61 & 5 \\
+                 0.012 & 3.34 & 5 \\
+                 0.043 & 2.53 & 5 \\
+                -0.022 & 2.56 & 5 \\
+                \bottomrule
+            \end{tabular}
+        \end{minipage}
+    \end{table}
+\end{frame}
+
+\section{Exp.\ 2 -- Bloom-Analyse}
+
+\begin{frame}[allowframebreaks]{Experimentelles Design}
+    \begin{itemize}
+        \item \textbf{Ziel:} Auswertung Bloom-Level\,/\,Alignment
+        \item \textbf{Materialien:} Alle ISO-OSI Script Layer
+        \item \textbf{Fragetypen:} Multiple-Choice \& Freitextfragen
+        \item \textbf{Prompting:} Rollenzuweisung, klare Formatvorgaben, Angabe von Fragetyp, Bloom-Level, oder beidem:
+    \end{itemize}
+    \begin{align*}
+        \textcolor{gray}{4 \text{ LLMs}\times 2 \text{ Fragetypen}\times 6 \text{ Runs}} &= \textcolor{gray}{48 \text{ Fragen}} \\
+        \textcolor{gray}{4 \text{ LLMs}\times 6 \text{ Bloom-Levels}} &= \textcolor{gray}{24 \text{ Fragen}} \\
+        \textcolor{gray}{4 \text{ LLMs}\times 2 \text{ Fragetypen}\times 6 \text{ Bloom-Levels}} &= \textcolor{gray}{48 \text{ Fragen}}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Evaluations-Methodik}
+    \begin{itemize}
+        \item \textbf{Quantitativ:} Nur Studentenbewertungen vorgesehen
+        \item \textbf{Qualitativ:} Rubrik mit \textit{Bloom's Level} statt \textit{Correctness}
+        \item \textbf{Umsetzung:} 3 Studenten von Prof. Rubach \& IAA
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 2}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{frame}
+
+\section{Schlusswort}
 % google,transcript,1,complex,0.8341479301452637,0.45,0.7
 % cossim passend, aber adherence geringer.
 
@@ -347,23 +482,7 @@
 % google,script,2,common,0.44263648986816406,0.97,1.0
 % was gehoert NICHT zu den aufgaben ...
 
-\begin{frame}{Quantitative Analyse 1a -- Input Sources}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_input_source.png}
-        \caption{Verteilung nach Eingabequelle (1a).}
-        \label{fig:dist_input_a}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Quantitative Analyse 1a -- Input Sources}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_input_source.png}
-        \caption{Heatmap LLMs vs. Eingabequellen (1a).}
-        \label{fig:combined_llm_vs_input_source_a}
-    \end{figure}
-\end{frame}
+% moved to Appendix: Quantitative Analyse 1a -- Input Sources
 
 % \begin{frame}{Quantitative Analyse 1a -- Layers}
 %     \begin{figure}
@@ -374,95 +493,8 @@
 %     \end{figure}
 % \end{frame}
 
-\begin{frame}{Quantitative Analyse 1a -- Prompt Types}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/combined_llm_vs_prompt_type.png}
-        \caption{Heatmap LLMs vs. Prompt-Typen (1a).}
-        \label{fig:combined_llm_vs_prompt_type_a}
-    \end{figure}
-\end{frame}
 
 % --------------------------------------
-
-\begin{frame}{Quantitative Analyse 1b -- LLMs}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_llm.png}
-        \caption{Verteilung nach LLM (1b).}
-        \label{fig:dist_llm_b}
-    \end{figure}
-\end{frame}
-% selbst groß übernommene fragen ggü. dem text bringen nicht unfassbar viel cosine similarity. und ggf. auch niedrige adherence scores. grosse problematik bei den ergebnissen, wobei an sich cossim vielversprechender ist. wenigstens in exp1a. bei 1b
-% deepseek,script_manipulated,6,complex,0.44526606798171997,0.05,0.0
-% hier ist der Text auf ganz anderen Layern fokussiert, nichts mit dem gegebenen mani-Text zutun... aber cossim bleibt moderat.
-% 
-
-% \begin{frame}{Quantitative Analyse 1b -- Input Sources}
-%     \begin{table}[htbp]
-%         \centering
-%         \caption{Adherence Score pro LLM für manipuliertes Script.}
-%         \label{tab:exp1b_metrics_llm_script_manipulated}
-%         \begin{tabular}{lcccc}
-%         \toprule
-%         & \multicolumn{2}{c}{Cosine Similarity} & \multicolumn{2}{c}{Adherence Score} \\
-%         \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-%         LLM & Mean & Std & Mean & Std \\
-%         \midrule
-%         Anthropic & 0.640 & 0.121 & 0.904 & 0.123 \\
-%         DeepSeek & 0.536 & 0.121 & 0.731 & 0.356 \\
-%         Google & 0.618 & 0.156 & 0.920 & 0.143 \\
-%         OpenAI & 0.600 & 0.107 & 0.806 & 0.359 \\
-%         \bottomrule
-%         \end{tabular}
-%     \end{table}
-% \end{frame}
-
-% \begin{frame}{Quantitative Analyse 1b -- Prompt Types}
-%     \begin{figure}
-%         \centering
-%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_prompt_type.png}
-%         \caption{Verteilung nach Prompt-Typ}
-%         \label{fig:dist_prompt}
-%     \end{figure}
-% \end{frame}
-
-% \begin{frame}{Quantitative Analyse 1b -- Layers}
-%     \begin{figure}
-%         \centering
-%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/dist_by_layer.png}
-%         \caption{Verteilung nach Layer}
-%         \label{fig:dist_layer}
-%     \end{figure}
-% \end{frame}
-
-\begin{frame}{Quantitative Analyse 1b -- Prompt Types}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1b/combined_llm_vs_prompt_type.png}
-        \caption{Heatmap LLMs vs. Prompt-Typen (1b).}
-        \label{fig:combined_llm_vs_prompt_type_b}
-    \end{figure}
-\end{frame}
-
-% --------------------------------------
-
-\begin{frame}{Qualitative Analyse}
-    \begin{itemize}
-        \item Expertenbewertung ausstehend
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Limitations}
-    \begin{itemize}
-        \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
-        \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
-        \item[$\to$] Wichtig für Bewertung gewesen
-        \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
-        \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
-        \item[$\to$] Expertenbewertung von Bedeutung
-    \end{itemize}
-\end{frame}
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
     \begin{itemize}
@@ -514,18 +546,20 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Ausblick auf Exp. 2}
+\begin{frame}{Hauptergebnisse zu RQ2 -- Exp. 2}
     \begin{itemize}
-        \item \textbf{Fokus:} Bloom's Taxonomy-Alignment mit LLMs
-        \item \textbf{Fragetypen:} Multiple-Choice \& Freitextfragen
-        \item \textbf{Vorgehen:} Deskriptives Prompting mit
-            \begin{itemize}
-                \item Rollenzuweisung etc.
-                \item (Nicht-)Angabe von Fragetyp
-                \item (Nicht-)Angabe von Bloom Level
-            \end{itemize}
-        \item \textbf{Evaluatoren:} Bestenfalls Experten
-        \item \textbf{Rubrik:} Gleiche mit \textit{Bloom's Level}
+        \item
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Limitations\,/\,Future Work} % needs update
+    \begin{itemize}
+        \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
+        \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
+        \item[$\to$] Wichtig für Bewertung gewesen
+        \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
+        \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
+        \item[$\to$] Expertenbewertung von Bedeutung
     \end{itemize}
 \end{frame}
 

@@ -132,7 +132,7 @@ All documentation files for the Python scripts in [`20_experiments/50_src/`](20_
 
 ## Thesis & Compilation
 
-Full LaTeX thesis is under [`50_thesis/`](50_thesis/), including its PDF. From the root directory, to compile if needed, run:
+Full LaTeX thesis is under [`50_thesis/`](50_thesis/), including its PDF. If needed, and the evaluation notebooks were run, you can compile the title page:
 
 ```sh
 cd 50_thesis/00_titlepage
