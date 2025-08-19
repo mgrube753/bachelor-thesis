@@ -12,7 +12,8 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{amssymb,amsfonts,amsmath,amsthm,mathrsfs,mathptmx} 
-\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage{graphicx,pstricks,listings,stackengine,multirow}
+\usepackage{adjustbox}
 \usepackage[backend=biber,bibencoding=utf8,urldateusetime=true,style=alphabetic,sorting=nyt,natbib=true]{biblatex}
 \usepackage{../10_intermediate_defense/style}
 \usepackage{hyperref}
@@ -175,7 +176,7 @@
         % expertenbewertung ist eine notwendige evaluation bei fragengenerierung
         \item \textbf{Expertenbewertung} -- Qualitative Evaluation 
         % selten ausgiebig performt, weil es aufwendig ist
-        \item \textbf{Bloom's Taxonomy} -- Hohe kognitive Levels
+        \item \textbf{Bloom's Taxonomy} -- Level Alignment \& \\ hohe kognitive Levels
         % dies sind die schwersten Levels, welche LLMs nicht gut beherrschen in related work
         % nicht immer wird bei fragen bloom benutzt, und wenn dann sind die modelle eher schlecht im generieren von höheren kognitiven levels
 
@@ -186,7 +187,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{How to: Fleiss Kappa}
+\begin{frame}{How to: Fleiss' Kappa}
     \begin{itemize}
         \item \textbf{Ziel:} Inter-Rater Reliability der Experten durch:
         \begin{align*}
@@ -211,7 +212,7 @@
 
 \begin{frame}[allowframebreaks]{Experimentelles Design}
     \begin{itemize}
-        \item \textbf{Ziel:} Bewertung der Inhaltstreue LLM-\\ generierter Fragen + Qualität
+        \item \textbf{Ziel:} Bewertung der Inhaltstreue LLM-\\ generierter Fragen
         \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
         \begin{itemize}
             \item Script -- Prof. Cap's \enquote{Referenzarchitekturen} (DE)
@@ -223,10 +224,10 @@
         \framebreak
         \item 4 Large Language Models: 
             \begin{itemize}
-                \item \textbf{DeepSeek R1:} Jan 2025 -- Website
-                \item \textbf{Claude 3.7 Sonnet:} Feb 2025 -- API
-                \item \textbf{Gemini 2.5 Flash:} Mar 2025 -- API
-                \item \textbf{OpenAI o3:} Apr 2025 -- API
+                \item \textbf{DeepSeek:} R1 \textcolor{gray}{(Jan 2025)}
+                \item \textbf{Anthropic:} Claude 3.7 Sonnet \textcolor{gray}{(Feb 2025)}
+                \item \textbf{Google:} Gemini 2.5 Flash \textcolor{gray}{(Mar 2025)}
+                \item \textbf{OpenAI:} o3 \textcolor{gray}{(Apr 2025)}
             \end{itemize}
         \item 2 Prompt-Strategien:
             \begin{itemize}
@@ -258,11 +259,11 @@
         \item \textbf{Python:} Automatisierte API-Ansteuerungen
         \item \textbf{Website-Prompting:} DeepSeek R1
         \item \textbf{Material:} Layer-weise Aufteilung
-        \item \textbf{Resultat:} 
-            \begin{itemize}
-                \item \textbf{Exp 1a:} 168 Fragen
-                \item \textbf{Exp 1b:} 56 Fragen
-            \end{itemize}
+        \item \textbf{Resultierende \#Fragen:} 
+            % \begin{itemize}
+            %     \item \textbf{Exp 1a:} 168 Fragen
+            %     \item \textbf{Exp 1b:} 56 Fragen
+            % \end{itemize}
     \end{itemize}
     \vspace{-.25em}
     \begin{align*}
@@ -297,7 +298,7 @@
         % \item quantitative mit metriken (semantic sim mit Embedding Model, adherence via llm)
         \item \textbf{Qualitativ:} Prof. Cap + 4 Experten des IuK 
         \begin{itemize}
-            \item \textbf{Fleiss Kappa:} Inter-Rater Reliability
+            \item \textbf{Fleiss' Kappa:} Inter-Rater Reliability
             \item \textbf{Bewertungsrubrik:} 0-10 Punkte\,/\,Kategorie \& Frage:
             \item[] \textit{\textcolor{gray}{Relevance, Clarity, Answerability, Challenging, Value, Language \& Correctness vs. Manipulation Handling}}
         \end{itemize}
@@ -359,50 +360,74 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Qualitative Analyse -- Exp. 1a}
-    \begin{itemize}
-        \item Supervisor-basiert: openai favorit bei correctness, transcript an sich favorit, script aber an sich auch genehm, jedoch ist google am schwächeln, vor allem im complex prompt
-        \item an sich mehr oder weniger knapp transcript am besten fuer alle kriterien ausser challenging, da ist script besser, daher auch bester mean total Score
-        \item common prompt am outperformen des complex prompts, ausser in challenging bei weitem
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Qualitative Analyse -- Exp. 1a}
+%     \begin{itemize}
+%         \item Supervisor-basiert: openai favorit bei correctness, transcript an sich favorit, script aber an sich auch genehm, jedoch ist google am schwächeln, vor allem im complex prompt
+%         \item an sich mehr oder weniger knapp transcript am besten fuer alle kriterien ausser challenging, da ist script besser, daher auch bester mean total Score
+%         \item common prompt am outperformen des complex prompts, ausser in challenging bei weitem
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}{Qualitative Analyse -- Exp. 1a}
-    \begin{itemize}
-        \item staff-basiert: favoritenrolle von openai nicht mehr so nuanciert, deepseek auch gute performance
-        \item hier script eher besser fuer viele kriterien ausser clarity knapp, answerability knapp, und language, da ist transcript besser, trotzdem aber besserer mean total score bei script ebenso
-        \item common prompt am outperformen des complex prompts, ausser in challenging bei weitem, genau wie bei supervisor
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Qualitative Analyse -- Exp. 1a}
+%     \begin{itemize}
+%         \item staff-basiert: favoritenrolle von openai nicht mehr so nuanciert, deepseek auch gute performance
+%         \item hier script eher besser fuer viele kriterien ausser clarity knapp, answerability knapp, und language, da ist transcript besser, trotzdem aber besserer mean total score bei script ebenso
+%         \item common prompt am outperformen des complex prompts, ausser in challenging bei weitem, genau wie bei supervisor
+%     \end{itemize}
+% \end{frame}
+
+\newsavebox{\halfimgbox}
+\newcommand{\includegraphicslefthalf}[2][]{%
+  \sbox{\halfimgbox}{\includegraphics[#1]{#2}}%
+  \clipbox{0pt 0pt {.5\wd\halfimgbox} 0pt}{\usebox{\halfimgbox}}%
+}
+\newcommand{\includegraphicsrighthalf}[2][]{%
+  \sbox{\halfimgbox}{\includegraphics[#1]{#2}}%
+  \clipbox{{.5\wd\halfimgbox} 0pt 0pt 0pt}{\usebox{\halfimgbox}}%
+}
 
 \begin{frame}{Qualitative Analyse -- Exp. 1a}
     \begin{figure}
         \centering
-        \includegraphics[width=.85\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
-        \vspace{-.5em}
-        \caption{Correctness Heatmaps (Supervisor).}
+        \begin{minipage}[t]{0.49\linewidth}
+            \centering
+            \includegraphicslefthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.49\linewidth}
+            \centering
+            \includegraphicslefthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
+        \end{minipage}
+        \vspace{-.25em}
+        \caption{Correctness Heatmaps (Input Sources):\newline links Supervisor, rechts Staff.}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Qualitative Analyse -- Exp. 1a}
     \begin{figure}
         \centering
-        \includegraphics[width=.85\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
-        \vspace{-.5em}
-        \caption{Correctness Heatmaps (Staff).}
+        \begin{minipage}[t]{0.49\linewidth}
+            \centering
+            \includegraphicsrighthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.49\linewidth}
+            \centering
+            \includegraphicsrighthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
+        \end{minipage}
+        \vspace{-.25em}
+        \caption{Correctness Heatmaps (Prompt Types):\newline links Supervisor, rechts Staff.}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Qualitative Analyse -- Exp. 1a}
-    \begin{itemize}
-        \item inter-rater agreement bei beiden gruppen und subexperimenten schlecht, da rubrik von staff members anders aufgegriffen wurde (zwischenwerte benutzt + rubrik nicht klar genug)
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Qualitative Analyse -- Exp. 1a}
+%     \begin{itemize}
+%         \item inter-rater agreement bei beiden gruppen und subexperimenten schlecht, da rubrik von staff members anders aufgegriffen wurde (zwischenwerte benutzt + rubrik nicht klar genug)
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}{Qualitative Analyse -- Exp. 1a}
     \begin{table}
         \centering
-        \caption{Inter-Rater Agreement Analyse. \newline Links: IuK-Bewerter. Rechts: Kombiniert.}
+        \caption{Inter-Rater Agreement Analyse (Exp1a). \newline Links: IuK-Bewerter. Rechts: Kombiniert.}
         \label{tab:iaa-exp1a-side-by-side}
         \begin{minipage}[t]{0.45\linewidth}
             \centering
@@ -441,6 +466,93 @@
     \end{table}
 \end{frame}
 
+% \begin{frame}{Qualitative Analyse -- Exp. 1b}
+%    \begin{itemize}
+%     \item gewisse kommentare koennen noch hier hin
+%    \end{itemize} 
+% \end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1b}
+\begin{table}[htbp]
+    \centering
+    \caption{Manipulation Handling Analyse via LLM \& Prompt Type. Links: Supervisor. Rechts: Staff.}
+    \label{tab:exp1b-manipulation-handling-side-by-side}
+    \begin{minipage}[t]{0.66475\linewidth}
+        \centering
+        \scriptsize
+        \resizebox{\linewidth}{!}{%
+        \begin{tabular}{llccc}
+            \toprule
+            & & \multicolumn{3}{c}{\textbf{Supervisor Scores}} \\
+            \cmidrule(lr){3-5}
+            \textbf{LLM} & \textbf{Prompt Type} & \textbf{Mean} & \textbf{Std} & \textbf{Median} \\
+            \midrule
+            \multirow{2}{*}{Anthropic} 
+            & Common & 0.0 & 0.0 & 0.0 \\
+            & Complex & \textbf{2.5} & 3.54 & \textit{2.5} \\
+            \midrule
+            \multirow{2}{*}{DeepSeek} 
+            & Common & 2.5 & 3.54 & 2.5 \\
+            & Complex & 2.5 & 3.54 & 2.5 \\
+            \midrule
+            \multirow{2}{*}{Google} 
+            & Common & 0.0 & 0.0 & 0.0 \\
+            & Complex & \textbf{2.5} & 3.54 & \textit{2.5} \\
+            \midrule
+            \multirow{2}{*}{OpenAI} 
+            & Common & 0.0 & 0.0 & 0.0 \\
+            & Complex & 0.0 & --- & 0.0 \\
+            \bottomrule
+        \end{tabular}}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.31625\linewidth}
+        \centering
+        \scriptsize
+        \resizebox{\linewidth}{!}{%
+        \begin{tabular}{ccc}
+            \toprule
+            \multicolumn{3}{c}{\textbf{Staff Scores}} \\
+            \cmidrule(lr){1-3}
+            \textbf{Mean} & \textbf{Std} & \textbf{Median} \\
+            \midrule
+            % Anthropic
+            2.50 & 4.63 & 0.0 \\
+            \textbf{7.25} & 2.55 & \textit{8.0} \\
+            \midrule
+            % DeepSeek
+            3.38 & 4.37 & 1.5 \\
+            \textbf{5.12} & 4.64 & \textit{5.5} \\
+            \midrule
+            % Google
+            3.50 & 4.66 & 0.5 \\
+            \textbf{7.88} & 3.00 & \textit{8.5} \\
+            \midrule
+            % OpenAI
+            2.50 & 4.63 & 0.0 \\
+            \textbf{5.00} & 3.93 & \textit{4.0} \\
+            \bottomrule
+        \end{tabular}}
+    \end{minipage}
+\end{table}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 1b}
+\begin{table}[H]
+   \centering
+   \caption{Inter-Rater Agreement Analyse (Exp1b).}
+   \label{tab:iaa-staff-1b}
+   \resizebox{.9\linewidth}{!}{%
+   \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Manipulation Handling} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Std} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \midrule
+        Nur Staff & 0.014 & 4.31 & 16 & 4 \\
+        Mit Supervisor kombiniert & 0.036 & 4.21 & 15 & 5 \\
+        \bottomrule
+   \end{tabular}}
+\end{table}
+\end{frame}
+
 \section{Exp.\ 2 -- Bloom-Analyse}
 
 \begin{frame}[allowframebreaks]{Experimentelles Design}
@@ -459,16 +571,77 @@
 
 \begin{frame}{Evaluations-Methodik}
     \begin{itemize}
-        \item \textbf{Quantitativ:} Nur Studentenbewertungen vorgesehen
-        \item \textbf{Qualitativ:} Rubrik mit \textit{Bloom's Level} statt \textit{Correctness}
-        \item \textbf{Umsetzung:} 3 Studenten von Prof. Rubach \& IAA
+        \item \textbf{Qualitativ:} Ausschließlich Nutzen der Rubrik mit \textit{Bloom's Level} statt \textit{Correctness}
+        \item \textbf{Umsetzung:} 3 Studenten von Prof. Rubach \& Inter-Rater Agreement (Fleiss' Kappa)
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Qualitative Analyse -- Exp. 2}
-    \begin{itemize}
-        \item 
-    \end{itemize}
+\begin{table}[htbp]
+    \centering
+    \caption{Bloom Scores via LLM und Sub-Experiment.}
+    \label{tab:exp2-llm-experiment-bloomslevel}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{LLM}} & \multicolumn{3}{c}{\textbf{Mean}} & \multicolumn{3}{c}{\textbf{Std}} & \multicolumn{3}{c}{\textbf{Median}} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+        & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2b} & \textbf{Exp2c} \\
+        \midrule
+        Anthropic & \textbf{4.96} & 8.33 & 8.75 & 2.57 & 4.08 & 2.26 & \textit{7.0} & 10.0 & 10.0 \\
+        DeepSeek  & 2.83 & 8.33 & 8.75 & 1.50 & 4.08 & 2.26 & 3.0 & 10.0 & 10.0 \\
+        Google    & 4.54 & 8.33 & \textbf{9.58} & 2.53 & 4.08 & 1.44 & 3.0 & 10.0 & 10.0 \\
+        OpenAI    & 3.67 & \textbf{10.00} & 7.50 & 2.78 & 0.00 & 3.99 & 3.0 & 10.0 & 10.0 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+% ohne geg. bloom level: 1 --> 1.5p
+% 2 --> 3p; 3 --> 4.5p; 4 -> 7p
+% 5 --> 8.5p; 6 --> 10p
+
+% mit bloom: getroffen --> 10p;
+% eins vorbei: 5p; sonst: 0
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 2}
+\begin{table}[htbp]
+    \centering
+    \caption{Vergleich von Bloom Scores zwischen Fragetyp \& Sub-Experiment (2a und 2c).}
+    \label{tab:exp2-questiontype-experiment-bloomslevel}
+    \resizebox{.9\textwidth}{!}{%
+    \begin{tabular}{lcccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{Fragetyp}} & \multicolumn{2}{c}{\textbf{Mean}} & \multicolumn{2}{c}{\textbf{Std}} & \multicolumn{2}{c}{\textbf{Median}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        & \textbf{Exp2a} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2c} & \textbf{Exp2a} & \textbf{Exp2c} \\
+        \midrule
+        Multiple-Choice & 2.42 & 7.92 & 1.23 & 3.27 & 2.25 & 10.0 \\
+        Open-Ended      & \textbf{5.58} & \textbf{9.38} & 2.38 & 1.69 & \textit{7.00} & 10.0 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+\end{frame}
+
+\begin{frame}{Qualitative Analyse -- Exp. 2}
+\begin{table}[H]
+    \centering
+    \caption{Inter-Rater Agreement Analyse (Exp2).}
+    \label{tab:iaa-students-exp2}
+    \resizebox{.8\textwidth}{!}{%
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Kriterium} & \textbf{Fleiss' $\mathbf{\kappa}\uparrow$} & \textbf{Std} & \textbf{\#Items} & \textbf{\#Raters} \\
+        \midrule
+        Relevance          & 0.056 & 1.71 & 40 & 3 \\
+        Clarity            & -0.058 & 1.61 & 40 & 3 \\
+        Answerability      & 0.179 & 1.90 & 39 & 3 \\
+        Challenging        & 0.270 & 2.52 & 40 & 3 \\
+        Value              & -0.256 & 1.72 & 40 & 3 \\
+        Language           & 0.016 & 1.95 & 40 & 3 \\
+        Bloom Rating       & 0.397 & 1.67 & 40 & 3 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
 \end{frame}
 
 \section{Schlusswort}
@@ -498,51 +671,53 @@
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
     \begin{itemize}
+        \item 
         % \item Nicht vollständig, da Expertenbewertung aussteht
-        \item \textbf{Bezüglich der LLMs:}
-        \begin{itemize}
-            \item[$\to$] \textbf{CosSim:} DeepSeek R1 schwächstes, Gemini bestes
-            \item[$\to$] \textbf{Adherence:} Ergebnisse nah beieinander
-            % dort sind präferenzen/probleme nicht wirklich erkennbar
-        \end{itemize}
-        \vspace{.5em}
-        \item \textbf{Eingabequellen:}
-        \begin{itemize}
-            \item[$\to$] \textbf{CosSim:} Script > Tanenbaum > Transcript
-            % Script schneidet durch die sehr kurzen Formulierungen besser ab
-            % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
-            \item[$\to$] \textbf{Adherence:} Quellen-übergreifend ähnlich
-        \end{itemize}
-        \vspace{.5em}
-        \item \textbf{Prompt-Strategien:}
-        \begin{itemize}
-            \item[$\to$] \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
-            % aber nicht signifikant
-            \item[$\to$] \textbf{Adherence:} Eher andersherum \vspace{.5em}
-        \end{itemize}
-        \item \textbf{Kritisch:} \enquote{Welche Funktionen hat OSI-Layer $n$ nicht?}
+        % \item \textbf{Bezüglich der LLMs:}
+        % \begin{itemize}
+        %     \item[$\to$] \textbf{CosSim:} DeepSeek R1 schwächstes, Gemini bestes
+        %     \item[$\to$] \textbf{Adherence:} Ergebnisse nah beieinander
+        %     % dort sind präferenzen/probleme nicht wirklich erkennbar
+        % \end{itemize}
+        % \vspace{.5em}
+        % \item \textbf{Eingabequellen:}
+        % \begin{itemize}
+        %     \item[$\to$] \textbf{CosSim:} Script > Tanenbaum > Transcript
+        %     % Script schneidet durch die sehr kurzen Formulierungen besser ab
+        %     % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
+        %     \item[$\to$] \textbf{Adherence:} Quellen-übergreifend ähnlich
+        % \end{itemize}
+        % \vspace{.5em}
+        % \item \textbf{Prompt-Strategien:}
+        % \begin{itemize}
+        %     \item[$\to$] \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
+        %     % aber nicht signifikant
+        %     \item[$\to$] \textbf{Adherence:} Eher andersherum \vspace{.5em}
+        % \end{itemize}
+        % \item \textbf{Kritisch:} \enquote{Welche Funktionen hat OSI-Layer $n$ nicht?}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
     \begin{itemize}
-        % \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
-        \item \textbf{Manipulierte Inhalte -- Performance:}
-        \begin{itemize}
-            \item[$\to$] \textbf{DeepSeek R1:} Schwächstes bei beiden Metriken
-            % (und streut bei adherence sehr)
-            \item[$\to$] \textbf{CosSim:} Stets hoch, Manipulation erkannt?
-            % aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
-            % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
-            % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
-            \item[$\to$] \textbf{Adherence:} Instabil, DeepSeek und OpenAI besonders betroffen im komplexen Prompt
-            % alles schwer nachvollziehbar
-            % bei adherence viel diversität in den Werten
-            \item[$\to$] \textbf{Beide Metriken:} Einfacher Prompt > Komplexer Prompt
-        \end{itemize}
-        \vspace{.5em}
-        \item \textbf{Kritisch:} \enquote{Laut dem zum ISO-OSI-Modell wider\-sprüchlichen Text, was sind [...]?}
-        \item[$\to$] Expertenanalyse von Bedeutung
+        \item
+        % % \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
+        % \item \textbf{Manipulierte Inhalte -- Performance:}
+        % \begin{itemize}
+        %     \item[$\to$] \textbf{DeepSeek R1:} Schwächstes bei beiden Metriken
+        %     % (und streut bei adherence sehr)
+        %     \item[$\to$] \textbf{CosSim:} Stets hoch, Manipulation erkannt?
+        %     % aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
+        %     % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
+        %     % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
+        %     \item[$\to$] \textbf{Adherence:} Instabil, DeepSeek und OpenAI besonders betroffen im komplexen Prompt
+        %     % alles schwer nachvollziehbar
+        %     % bei adherence viel diversität in den Werten
+        %     \item[$\to$] \textbf{Beide Metriken:} Einfacher Prompt > Komplexer Prompt
+        % \end{itemize}
+        % \vspace{.5em}
+        % \item \textbf{Kritisch:} \enquote{Laut dem zum ISO-OSI-Modell wider\-sprüchlichen Text, was sind [...]?}
+        % \item[$\to$] Expertenanalyse von Bedeutung
     \end{itemize}
 \end{frame}
 
@@ -554,12 +729,13 @@
 
 \begin{frame}{Limitations\,/\,Future Work} % needs update
     \begin{itemize}
-        \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
-        \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
-        \item[$\to$] Wichtig für Bewertung gewesen
-        \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
-        \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
-        \item[$\to$] Expertenbewertung von Bedeutung
+        \item 
+        % \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
+        % \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
+        % \item[$\to$] Wichtig für Bewertung gewesen
+        % \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
+        % \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
+        % \item[$\to$] Expertenbewertung von Bedeutung
     \end{itemize}
 \end{frame}
 
