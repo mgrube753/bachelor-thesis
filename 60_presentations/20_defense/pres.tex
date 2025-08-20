@@ -10,7 +10,7 @@
 \usepackage{xcolor}
 \usepackage{pgfplots}
 \usepackage{tikz}
-\usetikzlibrary{calc}
+    \usetikzlibrary{calc}
 \usepackage{amssymb,amsfonts,amsmath,amsthm,mathrsfs,mathptmx} 
 \usepackage{graphicx,pstricks,listings,stackengine,multirow}
 \usepackage{adjustbox}
@@ -18,6 +18,7 @@
 \usepackage{../10_intermediate_defense/style}
 \usepackage{hyperref}
     \hypersetup{colorlinks=true, citecolor=purple, filecolor=black, linkcolor=main, urlcolor=blue}
+
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \setbeamertemplate{caption}[numbered]
 \addbibresource{../../50_thesis/10_thesis/00_bibs/Extras.bib}
@@ -139,24 +140,24 @@
 
 \begin{frame}{Bloom's revised Taxonomy}
     \begin{itemize}
-        \item \textbf{Pädagogische Relevanz:} Systematische Bewertung kognitiver Anforderungen von Fragen
+        \item \textbf{Pädagogische Relevanz:} Systematische Bewertung kognitiver Anforderungen von Fragen \cite{krathwohl_revision_2002}
     \end{itemize}
         %     \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
-        %     % erinnern, wiedererkennen, wiedergeben, benennen, auflisten
+        %     % wiedergeben, nennen
         %     \item \textcolor{blue}{Understanding} -- Bedeutung von Anweisungen erkennen
-        %     % erklären, beschreiben, zusammenfassen, interpretieren, klassifizieren
+        %     % erklären, beschreiben, zusammenfassen
         %     \item \textcolor{blue}{Applying} -- Wissen in gegebenen Situationen anwenden
-        %     % anwenden, benutzen, ausführen, demonstrieren, durchführen
+        %     % anwenden, benutzen, durchführen
         %     \item \textcolor{blue}{Analyzing} -- Material in Komponenten zerlegen
-        %     % untersuchen, vergleichen, kategorisieren, organisieren, differenzieren
+        %     % untersuchen, vergleichen, kategorisieren
         %     \item \textcolor{blue}{Evaluating} -- Urteile basierend auf Kriterien fällen
-        %     % bewerten, beurteilen, rechtfertigen, verteidigen, kritisieren
+        %     % bewerten, beurteilen, kritisieren
         %     \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
-        %     % entwerfen, planen, entwickeln, konstruieren, generieren
+        %     % entwerfen, planen, entwickeln
         \begin{figure}[htpb]
             \centering
             \includegraphics[width=0.6\linewidth]{../10_intermediate_defense/Blooms-Taxonomy.png}
-            \caption{Kognitive Hierarchie \cite{krathwohl_revision_2002}.}
+            \caption{Kognitive Bloom-Hierarchie.}
             \label{fig:bloom}
         \end{figure}
 \end{frame}
@@ -405,6 +406,7 @@
 \begin{frame}{Qualitative Analyse -- Exp. 1a}
     \begin{figure}
         \centering
+        \hspace{-2em}
         \begin{minipage}[t]{0.49\linewidth}
             \centering
             \includegraphicsrighthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
@@ -427,7 +429,7 @@
 \begin{frame}{Qualitative Analyse -- Exp. 1a}
     \begin{table}
         \centering
-        \caption{Inter-Rater Agreement Analyse (Exp1a). \newline Links: IuK-Bewerter. Rechts: Kombiniert.}
+        \caption{Inter-Rater Agreement Analyse (Exp1a). \newline Links: Staff. Rechts: Kombiniert.}
         \label{tab:iaa-exp1a-side-by-side}
         \begin{minipage}[t]{0.45\linewidth}
             \centering
@@ -671,73 +673,75 @@
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
     \begin{itemize}
-        \item 
-        % \item Nicht vollständig, da Expertenbewertung aussteht
-        % \item \textbf{Bezüglich der LLMs:}
-        % \begin{itemize}
-        %     \item[$\to$] \textbf{CosSim:} DeepSeek R1 schwächstes, Gemini bestes
-        %     \item[$\to$] \textbf{Adherence:} Ergebnisse nah beieinander
-        %     % dort sind präferenzen/probleme nicht wirklich erkennbar
-        % \end{itemize}
-        % \vspace{.5em}
-        % \item \textbf{Eingabequellen:}
-        % \begin{itemize}
-        %     \item[$\to$] \textbf{CosSim:} Script > Tanenbaum > Transcript
-        %     % Script schneidet durch die sehr kurzen Formulierungen besser ab
-        %     % Transcript Streuung bei Layern 1-4 (sehr lang), in adherence nicht spürbar
-        %     \item[$\to$] \textbf{Adherence:} Quellen-übergreifend ähnlich
-        % \end{itemize}
-        % \vspace{.5em}
-        % \item \textbf{Prompt-Strategien:}
-        % \begin{itemize}
-        %     \item[$\to$] \textbf{CosSim:} Komplexer Prompt > Einfacher Prompt
-        %     % aber nicht signifikant
-        %     \item[$\to$] \textbf{Adherence:} Eher andersherum \vspace{.5em}
-        % \end{itemize}
-        % \item \textbf{Kritisch:} \enquote{Welche Funktionen hat OSI-Layer $n$ nicht?}
+        \item Antwort: \textbf{LLMs erzeugen inhaltstreue Fragen} unter bestimmten Bedingungen
+        % Hoher \textit{Adherence Score}), aber \textit{Cosine Similarity} mit Sentence-Transformers ungeeignet für lange Lehrtexte.
+        \item \textbf{Common Prompt > Complex} meistens; Complex nur besser in \textit{Challenging} mit Qualitätseinbußen
+        % \item Transcript an sich bestes in \textit{Clarity/Answerability/Correctness}, aber am niedrigsten in \textit{Challenging}; Script \textbf{ausgewogen} mit höchstem \textit{Total Score}
+        \item Script vs. Transcript oft eng beieinander, wobei v.\,a. Staff das Script bevorzugt; Supervisor eher Transcript
+        \item OpenAI \& DeepSeek \textbf{konsistenter}; Anthropic \& Google \textbf{variabler} + teils sprachlich komplex\,/\,mit fehlerhaften/erfundenen Optionen; \textit{Challenging} generell niedrig.
     \end{itemize}
+    % also klappt dann gut, wenn man klare anweisungen gibt + strukturiertes material
+    % DeepSeek und OpenAI dabei am robustesten gewesen grundlegend
+    % IAA war sehr niedrig, die rubrik und pflichten der bewerter muessen refined werden
+    % da fragen nicht so challenging (auch nicht so recht bei complex prompt), ist die wichtigkeit von blooms taxonomy vertreten 
 \end{frame}
 
 \begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
     \begin{itemize}
-        \item
-        % % \item Nicht vollständig, 1b ist auch eher ein sekundärer Case der Forschungsfrage
-        % \item \textbf{Manipulierte Inhalte -- Performance:}
-        % \begin{itemize}
-        %     \item[$\to$] \textbf{DeepSeek R1:} Schwächstes bei beiden Metriken
-        %     % (und streut bei adherence sehr)
-        %     \item[$\to$] \textbf{CosSim:} Stets hoch, Manipulation erkannt?
-        %     % aber nicht erkennbar, ob LLMs dem Text stur folgen, oder die Manipulation merken
-        %     % sobald man über die manipulation hinaus springt mit viel text, ist das scoring wieder niedrig
-        %     % widersprüche in dem semantischen raum sind wahrscheinlich hier das problem
-        %     \item[$\to$] \textbf{Adherence:} Instabil, DeepSeek und OpenAI besonders betroffen im komplexen Prompt
-        %     % alles schwer nachvollziehbar
-        %     % bei adherence viel diversität in den Werten
-        %     \item[$\to$] \textbf{Beide Metriken:} Einfacher Prompt > Komplexer Prompt
-        % \end{itemize}
-        % \vspace{.5em}
-        % \item \textbf{Kritisch:} \enquote{Laut dem zum ISO-OSI-Modell wider\-sprüchlichen Text, was sind [...]?}
-        % \item[$\to$] Expertenanalyse von Bedeutung
+        \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt \\
+        $\Rightarrow$ Anthropic \& Google folgen hierbei häufiger
+        \item \textbf{Kleine Stichprobe} (16/56) und \textbf{geringe IRR} \\
+        $\Rightarrow$ Inkonsistente Trends quantitativ \& qualitativ % da trend invers bei qualitativ
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Hauptergebnisse zu RQ2 -- Exp. 2}
+\begin{frame}[allowframebreaks]{Hauptergebnisse zu RQ2 -- Exp. 2}
     \begin{itemize}
-        \item
+        \item Bloom-Level-Spezifikation $\Rightarrow$ \textbf{hohe Adhärenz}
+        \item Ohne Spezifikation $\Rightarrow$ \textbf{niedrigere Levels} (Levels 2-3).
+        \item \textbf{Open-Ended} $\Rightarrow$ alle Levels + \textbf{besseres Alignment}
+        \item MCQs für \textbf{niedrige Levels} $\Rightarrow$ kombinieren
+        \framebreak
+        \item \textit{Type Only}: Anthropic \& Google > DeepSeek \& OpenAI
+        \item \textit{Bloom Only}: \textbf{OpenAI} am besten
+        \item \textit{Type+Bloom}: \textbf{Google} am besten; OpenAI teils schwächer wegen \textbf{Level-6 MCQ}-Widerspruch in Frage
+        \item Hohe IRR bei \textit{Bloom's Level}; sehr gering bei \textit{Relevance/Clarity/Language/Value} 
+        % es braucht besseres rubrik-design (vor allem bei value) + anker muessen klarer sein
+        % die studenten machen diese evaluation auch nicht jeden tag...
+        % answerability 0.179 und challenging 0.270 sind okay, aber die anderen gegen 0 oder Value -0.256
+    \end{itemize}
+    % bloom mit jeweils passenden frageformaten + durchdachtes prompting + klare lernziele!! + fokus auf sprachliche qualität machen gutes fragesetup aus (da überladene fragen ungewollt) 
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Limitations\,/\,Future Work}
+    \begin{itemize}
+        \item Cosine Similarity \textbf{ungeeignet} % $\Rightarrow$ modernere Embeddings einsetzen.
+        \item Besseres \textbf{Multi-LLM-Judging} für Inhaltstreue % statt zwei Modelle und dann mean nehmen
+        \item \textbf{Größere Stichprobe} bei Manipulation \\ $\Rightarrow$ konsistente Auswertung
+        \item Klare \textbf{Ankerbeschreibungen} \& \textbf{Lernziele} integrieren \\ $\Rightarrow$ 0-10-Skala zu ungenau
+        \item Wenn \textbf{MCQs} $\Rightarrow$ mehrstufige Pipeline 
+        % Frage, richtige, falsche Optionen separat generieren
+        \framebreak
+        \item \textbf{Reasoning vs. Non-Reasoning} Modelle vergleichen
+        % bzw mit und ohne diesen prozess*
+        % reasoning an sich schwer auswertbar, da zunehmend proprietär --> Reasoning-Summaries wenn überhaupt gegeben
+        \item \textbf{Halluzinationen} reduzieren (Modelle\,/\,Prompting)
+        \item \#Rater erhöhen reicht nicht aus $\Rightarrow$ \\ \textbf{bessere Rubrikumsetzung}
+        \item Thesis-Grundlage: Umsetzung eines \textbf{robusten \& pädagogisch sinnvollen} AQG-Frameworks
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Limitations\,/\,Future Work} % needs update
-    \begin{itemize}
-        \item 
-        % \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
-        % \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
-        % \item[$\to$] Wichtig für Bewertung gewesen
-        % \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
-        % \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
-        % \item[$\to$] Expertenbewertung von Bedeutung
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Limitations\,/\,Future Work} % needs update
+%     \begin{itemize}
+%         \item 
+%         % \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
+%         % \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
+%         % \item[$\to$] Wichtig für Bewertung gewesen
+%         % \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
+%         % \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
+%         % \item[$\to$] Expertenbewertung von Bedeutung
+%     \end{itemize}
+% \end{frame}
 
 \appendix
 \setbeamertemplate{headline}{}
