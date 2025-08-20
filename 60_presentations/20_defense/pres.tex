@@ -209,6 +209,46 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Beispiel: Fleiss' Kappa}
+    \begin{minipage}{.45\linewidth}
+        \centering
+        \begin{table}
+            \begin{tabular}{cccc}
+                \toprule
+                \textbf{Q} & \textbf{R1} & \textbf{R2} & \textbf{R3} \\
+                \midrule
+                1 & Y & Y & Y \\
+                2 & N & Y & N \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        \vspace{-1em} 
+        \begin{table}
+            \begin{tabular}{cc}
+                \toprule
+                \textbf{Y} & \textbf{N} \\
+                \midrule
+                3 & 0 \\
+                1 & 2 \\
+                \midrule
+                4 & 2 \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        Somit: $\frac{4}{6}$ und $\frac{2}{6}$ \vspace{.5em} \\
+        $\rightsquigarrow p_e=(\frac{4}{6})^2\cdot (\frac{2}{6})^2=\uline{0.55}$ 
+    \end{minipage}%
+    \begin{minipage}{.05\linewidth}
+       \hfill 
+    \end{minipage}
+    \begin{minipage}{.48\linewidth}
+        $N=2$ Fragen \& $n=3$ Rater \vspace{.5em} \\
+        $\rightsquigarrow p_0=\frac{3^2+0^2+1^2+2^2-2\cdot 3}{2\cdot 3\cdot (3-1)}=\uline{0.66}$ \vspace{2em} \\
+        Einsetzen in $\kappa$-Gleichung: \vspace{.5em} \\
+        $\kappa=\frac{0.66 - 0.55}{1 - 0.55}=\uline{0.25}$
+    \end{minipage}
+\end{frame}
+
 \section{Exp.\ 1 -- Inhaltstreue}
 
 \begin{frame}[allowframebreaks]{Experimentelles Design}
