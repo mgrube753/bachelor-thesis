@@ -194,7 +194,7 @@
         \begin{align*}
             \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
         \end{align*}
-        $p_0$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
+        $p_o$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
         $N$ Anzahl der Fragen, \\
         $n$ Anzahl der Rater
         \begin{align*}
@@ -236,7 +236,7 @@
             \end{tabular}
         \end{table}
         Somit: $\frac{4}{6}$ und $\frac{2}{6}$ \vspace{.5em} \\
-        $\rightsquigarrow p_e=(\frac{4}{6})^2\cdot (\frac{2}{6})^2=\uline{0.55}$ 
+        $\rightsquigarrow p_e=(\frac{4}{6})^2 + (\frac{2}{6})^2=\uline{0.55}$ 
     \end{minipage}%
     \begin{minipage}{.05\linewidth}
        \hfill 
@@ -378,7 +378,7 @@
                 (img.north west) -- cycle;
         \end{tikzpicture}
         \vspace{-.5em}
-        \caption{Heatmap LLMs vs. Prompt-Typen (1a).}
+        \caption{Heatmaps LLMs vs. Prompt-Typen (1a).}
         \label{fig:combined_llm_vs_prompt_type_a}
     \end{figure}
 \end{frame}
@@ -396,7 +396,7 @@
                 (img.north west) -- cycle;
         \end{tikzpicture}
         \vspace{-.5em}
-        \caption{Heatmap LLMs vs. Prompt-Typen (1b).}
+        \caption{Heatmaps LLMs vs. Prompt-Typen (1b).}
         \label{fig:combined_llm_vs_prompt_type_b}
     \end{figure}
 \end{frame}
@@ -432,14 +432,14 @@
         \centering
         \begin{minipage}[t]{0.49\linewidth}
             \centering
-            \includegraphicslefthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
+            \includegraphicslefthalf[width=1.6\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
         \end{minipage}\hfill
         \begin{minipage}[t]{0.49\linewidth}
             \centering
-            \includegraphicslefthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
+            \includegraphicslefthalf[width=1.6\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
         \end{minipage}
         \vspace{-.25em}
-        \caption{Correctness Heatmaps (Input Sources):\newline links Supervisor, rechts Staff.}
+        \caption{Correctness Heatmaps -- Input Sources:\newline links Supervisor, rechts Staff.}
     \end{figure}
 \end{frame}
 
@@ -449,14 +449,14 @@
         \hspace{-2em}
         \begin{minipage}[t]{0.49\linewidth}
             \centering
-            \includegraphicsrighthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
+            \includegraphicsrighthalf[width=1.6\linewidth]{../../40_evaluation/exp1/qualitative/plots/supervisor_exp1a_correctness_heatmaps.png}
         \end{minipage}\hfill
         \begin{minipage}[t]{0.49\linewidth}
             \centering
-            \includegraphicsrighthalf[width=1.5\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
+            \includegraphicsrighthalf[width=1.6\linewidth]{../../40_evaluation/exp1/qualitative/plots/staff_exp1a_correctness_heatmaps.png}
         \end{minipage}
         \vspace{-.25em}
-        \caption{Correctness Heatmaps (Prompt Types):\newline links Supervisor, rechts Staff.}
+        \caption{Correctness Heatmaps -- Prompt Types:\newline links Supervisor, rechts Staff.}
     \end{figure}
 \end{frame}
 
@@ -711,14 +711,23 @@
 
 % --------------------------------------
 
-\begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1a}
+\begin{frame}[allowframebreaks]{Hauptergebnisse zu RQ1}
     \begin{itemize}
-        \item Antwort: \textbf{LLMs erzeugen inhaltstreue Fragen} unter bestimmten Bedingungen
+        \item \textbf{LLMs erzeugen inhaltstreue Fragen} unter bestimmten Bedingungen
         % Hoher \textit{Adherence Score}), aber \textit{Cosine Similarity} mit Sentence-Transformers ungeeignet für lange Lehrtexte.
         \item \textbf{Common Prompt > Complex} meistens; Complex nur besser in \textit{Challenging} mit Qualitätseinbußen
+        % impliziert dass ein überladener/weniger präziser Prompt nicht unbedingt besser sein muss
+        \item Script vs. Transcript oft eng beieinander, wobei \\
+        \textbf{Staff:} Script vs. \textbf{Supervisor:} Transcript
         % \item Transcript an sich bestes in \textit{Clarity/Answerability/Correctness}, aber am niedrigsten in \textit{Challenging}; Script \textbf{ausgewogen} mit höchstem \textit{Total Score}
-        \item Script vs. Transcript oft eng beieinander, wobei v.\,a. Staff das Script bevorzugt; Supervisor eher Transcript
         \item OpenAI \& DeepSeek \textbf{konsistenter}; Anthropic \& Google \textbf{variabler} + teils sprachlich komplex\,/\,mit fehlerhaften/erfundenen Optionen; \textit{Challenging} generell niedrig.
+        \framebreak
+        \item \enquote{Basierend auf dem gegebenen Text} \\ $\Rightarrow$ oft bei Deepseek \& Google
+        \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt \\
+        $\Rightarrow$ Anthropic \& Google folgen hierbei häufiger
+        \item \textbf{Kleine Stichprobe} (16/56) und \textbf{geringe IRR} \\
+        $\Rightarrow$ Inkonsistente Trends quantitativ \& qualitativ % da trend invers bei qualitativ
+        \item Bloom's Taxonomy relevant für gute + anforderungsgesteuerte Fragen
     \end{itemize}
     % also klappt dann gut, wenn man klare anweisungen gibt + strukturiertes material
     % DeepSeek und OpenAI dabei am robustesten gewesen grundlegend
@@ -726,47 +735,41 @@
     % da fragen nicht so challenging (auch nicht so recht bei complex prompt), ist die wichtigkeit von blooms taxonomy vertreten 
 \end{frame}
 
-\begin{frame}{Hauptergebnisse zu RQ1 -- Exp. 1b}
-    \begin{itemize}
-        \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt \\
-        $\Rightarrow$ Anthropic \& Google folgen hierbei häufiger
-        \item \textbf{Kleine Stichprobe} (16/56) und \textbf{geringe IRR} \\
-        $\Rightarrow$ Inkonsistente Trends quantitativ \& qualitativ % da trend invers bei qualitativ
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[allowframebreaks]{Hauptergebnisse zu RQ2 -- Exp. 2}
+\begin{frame}[allowframebreaks]{Hauptergebnisse zu RQ2}
     \begin{itemize}
         \item Bloom-Level-Spezifikation $\Rightarrow$ \textbf{hohe Adhärenz}
-        \item Ohne Spezifikation $\Rightarrow$ \textbf{niedrigere Levels} (Levels 2-3).
+        \item Ohne Spezifikation $\Rightarrow$ \textbf{niedrigere Levels} (Levels 2-3)
         \item \textbf{Open-Ended} $\Rightarrow$ alle Levels + \textbf{besseres Alignment}
         \item MCQs für \textbf{niedrige Levels} $\Rightarrow$ kombinieren
         \framebreak
-        \item \textit{Type Only}: Anthropic \& Google > DeepSeek \& OpenAI
+        \item \textit{Type Only}: \textbf{Anthropic \& Google} > DeepSeek \& OpenAI
         \item \textit{Bloom Only}: \textbf{OpenAI} am besten
-        \item \textit{Type+Bloom}: \textbf{Google} am besten; OpenAI teils schwächer wegen \textbf{Level-6 MCQ}-Widerspruch in Frage
-        \item Hohe IRR bei \textit{Bloom's Level}; sehr gering bei \textit{Relevance/Clarity/Language/Value} 
+        \item \textit{Type+Bloom}: \textbf{Google} am besten
+        % $\Rightarrow$ OpenAI \textbf{Level-6 MCQ}-Widerspruch
+        \item Hohe IRR bei \textit{Bloom's Level}, andere Kriterien niedrig
         % es braucht besseres rubrik-design (vor allem bei value) + anker muessen klarer sein
         % die studenten machen diese evaluation auch nicht jeden tag...
         % answerability 0.179 und challenging 0.270 sind okay, aber die anderen gegen 0 oder Value -0.256
+        \item \textbf{Pädagogisch qualitativ:} Bloom-Vorgaben + passende Fragetypen + durchdachtes Prompting + klare Lernziele + moderne LLMs
     \end{itemize}
     % bloom mit jeweils passenden frageformaten + durchdachtes prompting + klare lernziele!! + fokus auf sprachliche qualität machen gutes fragesetup aus (da überladene fragen ungewollt) 
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Limitations\,/\,Future Work}
     \begin{itemize}
-        \item Cosine Similarity \textbf{ungeeignet} % $\Rightarrow$ modernere Embeddings einsetzen.
+        \item Cosine Similarity \textbf{ungeeignet} 
+        % kein unterschied in inhaltstreue zwischen fragen mit source material und ohne...
         \item Besseres \textbf{Multi-LLM-Judging} für Inhaltstreue % statt zwei Modelle und dann mean nehmen
         \item \textbf{Größere Stichprobe} bei Manipulation \\ $\Rightarrow$ konsistente Auswertung
         \item Klare \textbf{Ankerbeschreibungen} \& \textbf{Lernziele} integrieren \\ $\Rightarrow$ 0-10-Skala zu ungenau
+        \item \#Rater erhöhen reicht nicht aus $\Rightarrow$ \\ \textbf{bessere Rubrikumsetzung}
+        \framebreak
         \item Wenn \textbf{MCQs} $\Rightarrow$ mehrstufige Pipeline 
         % Frage, richtige, falsche Optionen separat generieren
-        \framebreak
         \item \textbf{Reasoning vs. Non-Reasoning} Modelle vergleichen
         % bzw mit und ohne diesen prozess*
         % reasoning an sich schwer auswertbar, da zunehmend proprietär --> Reasoning-Summaries wenn überhaupt gegeben
         \item \textbf{Halluzinationen} reduzieren (Modelle\,/\,Prompting)
-        \item \#Rater erhöhen reicht nicht aus $\Rightarrow$ \\ \textbf{bessere Rubrikumsetzung}
         \item Thesis-Grundlage: Umsetzung eines \textbf{robusten \& pädagogisch sinnvollen} AQG-Frameworks
     \end{itemize}
 \end{frame}
