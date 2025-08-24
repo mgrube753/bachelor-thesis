@@ -235,7 +235,7 @@
                 \bottomrule
             \end{tabular}
         \end{table}
-        Somit: $\frac{4}{6}$ und $\frac{2}{6}$ \vspace{.5em} \\
+        6 Ratings, somit: $\frac{4}{6}$ und $\frac{2}{6}$ \vspace{.5em} \\
         $\rightsquigarrow p_e=(\frac{4}{6})^2 + (\frac{2}{6})^2=\uline{0.55}$ 
     \end{minipage}%
     \begin{minipage}{.05\linewidth}
@@ -574,6 +574,7 @@
             \textbf{5.00} & 3.93 & \textit{4.0} \\
             \bottomrule
         \end{tabular}}
+        % anderes verständnis der rubrik wohl + zwischenwerte..
     \end{minipage}
 \end{table}
 \end{frame}
@@ -687,47 +688,34 @@
 \end{frame}
 
 \section{Schlusswort}
-% google,transcript,1,complex,0.8341479301452637,0.45,0.7
-% cossim passend, aber adherence geringer.
-
-% openai,transcript,4,common,0.20039741694927216,1.0,0.95
-% cossim etwas unnötig gering, und adherence sehr hoch
-% dieses transcript ist sehr lang, frage etc aber kurz 
-
-% google,script,2,common,0.44263648986816406,0.97,1.0
-% was gehoert NICHT zu den aufgaben ...
-
-% moved to Appendix: Quantitative Analyse 1a -- Input Sources
-
-% \begin{frame}{Quantitative Analyse 1a -- Layers}
-%     \begin{figure}
-%         \centering
-%         \includegraphics[width=\linewidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_layer.png}
-%         \caption{Verteilung nach Layer.}
-%         \label{fig:dist_layer_a}
-%     \end{figure}
-% \end{frame}
-
-
-% --------------------------------------
 
 \begin{frame}[allowframebreaks]{Hauptergebnisse zu RQ1}
     \begin{itemize}
-        \item \textbf{LLMs erzeugen inhaltstreue Fragen} unter bestimmten Bedingungen
-        % Hoher \textit{Adherence Score}), aber \textit{Cosine Similarity} mit Sentence-Transformers ungeeignet für lange Lehrtexte.
-        \item \textbf{Common Prompt > Complex} meistens; Complex nur besser in \textit{Challenging} mit Qualitätseinbußen
+        \item \textbf{LLMs erstellen inhaltsgetreue Fragen} unter bestimmten Bedingungen
+        % adherence score zeigte recht deutlich, dass die Fragen inhaltlich gut waren
+        % sentence transformer aber ungeeignet für lange Texte
+        \item \textbf{Common Prompt > Complex} meistens
+        % sowohl bei quantitativ als auch qualitativ
+        % qualitativ: Complex nur besser in Challenging mit Qualitätseinbußen
         % impliziert dass ein überladener/weniger präziser Prompt nicht unbedingt besser sein muss
         \item Script vs. Transcript oft eng beieinander, wobei \\
         \textbf{Staff:} Script vs. \textbf{Supervisor:} Transcript
-        % \item Transcript an sich bestes in \textit{Clarity/Answerability/Correctness}, aber am niedrigsten in \textit{Challenging}; Script \textbf{ausgewogen} mit höchstem \textit{Total Score}
-        \item OpenAI \& DeepSeek \textbf{konsistenter}; Anthropic \& Google \textbf{variabler} + teils sprachlich komplex\,/\,mit fehlerhaften/erfundenen Optionen; \textit{Challenging} generell niedrig.
+        % Transcript an sich bestes in Clarity/Answerability/Correctness, aber am niedrigsten in Challenging
+        % Script ausgewogen mit höchstem Total Score, Script bei Staff das effektivere Material
+        \item OpenAI \& DeepSeek \textbf{konsistenter}
+        % Anthropic \& Google variabler + teils sprachlich komplex oder mit fehlerhaften\,/\,erfundenen Optionen
+        % Challenging generell niedrig
+
         \framebreak
+
         \item \enquote{Basierend auf dem gegebenen Text} \\ $\Rightarrow$ oft bei Deepseek \& Google
-        \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt \\
-        $\Rightarrow$ Anthropic \& Google folgen hierbei häufiger
+        \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt
+        % Anthropic \& Google folgen hierbei häufiger
         \item \textbf{Kleine Stichprobe} (16/56) und \textbf{geringe IRR} \\
-        $\Rightarrow$ Inkonsistente Trends quantitativ \& qualitativ % da trend invers bei qualitativ
-        \item Bloom's Taxonomy relevant für gute + anforderungsgesteuerte Fragen
+        % deswegen auch google und anthropic da besser stattdessen
+        $\Rightarrow$ Inkonsistente Trends quantitativ \& qualitativ
+        % da trend invers bei qualitativ
+        \item \textbf{Bloom's Taxonomy} essentiell für gute + anforderungs-gesteuerte Fragen
     \end{itemize}
     % also klappt dann gut, wenn man klare anweisungen gibt + strukturiertes material
     % DeepSeek und OpenAI dabei am robustesten gewesen grundlegend
@@ -746,10 +734,10 @@
         \item \textit{Bloom Only}: \textbf{OpenAI} am besten
         \item \textit{Type+Bloom}: \textbf{Google} am besten
         % $\Rightarrow$ OpenAI \textbf{Level-6 MCQ}-Widerspruch
-        \item Hohe IRR bei \textit{Bloom's Level}, andere Kriterien niedrig
-        % es braucht besseres rubrik-design (vor allem bei value) + anker muessen klarer sein
-        % die studenten machen diese evaluation auch nicht jeden tag...
+        \item Hohe IRR bei \textit{Bloom's Level}
         % answerability 0.179 und challenging 0.270 sind okay, aber die anderen gegen 0 oder Value -0.256
+        % es braucht besseres rubrik-design (vor allem wegen value) + anker muessen klarer sein
+        % die studenten machen diese evaluation auch nicht jeden tag...
         \item \textbf{Pädagogisch qualitativ:} Bloom-Vorgaben + passende Fragetypen + durchdachtes Prompting + klare Lernziele + moderne LLMs
     \end{itemize}
     % bloom mit jeweils passenden frageformaten + durchdachtes prompting + klare lernziele!! + fokus auf sprachliche qualität machen gutes fragesetup aus (da überladene fragen ungewollt) 
@@ -760,31 +748,24 @@
         \item Cosine Similarity \textbf{ungeeignet} 
         % kein unterschied in inhaltstreue zwischen fragen mit source material und ohne...
         \item Besseres \textbf{Multi-LLM-Judging} für Inhaltstreue % statt zwei Modelle und dann mean nehmen
-        \item \textbf{Größere Stichprobe} bei Manipulation \\ $\Rightarrow$ konsistente Auswertung
-        \item Klare \textbf{Ankerbeschreibungen} \& \textbf{Lernziele} integrieren \\ $\Rightarrow$ 0-10-Skala zu ungenau
-        \item \#Rater erhöhen reicht nicht aus $\Rightarrow$ \\ \textbf{bessere Rubrikumsetzung}
+        \item \textbf{Größere Stichprobe} bei Manipulation
+        % konsistente Auswertung
+        \item Klare \textbf{Ankerbeschreibungen} \& \textbf{Lernziele} integrieren 
+        % 0-10-Skala zu ungenau
+        \item \#Raters\,$\uparrow$ reicht nicht aus $\Rightarrow$ \textbf{bessere Rubrik}
+
         \framebreak
+
         \item Wenn \textbf{MCQs} $\Rightarrow$ mehrstufige Pipeline 
         % Frage, richtige, falsche Optionen separat generieren
         \item \textbf{Reasoning vs. Non-Reasoning} Modelle vergleichen
         % bzw mit und ohne diesen prozess*
         % reasoning an sich schwer auswertbar, da zunehmend proprietär --> Reasoning-Summaries wenn überhaupt gegeben
-        \item \textbf{Halluzinationen} reduzieren (Modelle\,/\,Prompting)
+        \item \textbf{Halluzinationen} reduzieren 
+        % bei Modellen und Prompting
         \item Thesis-Grundlage: Umsetzung eines \textbf{robusten \& pädagogisch sinnvollen} AQG-Frameworks
     \end{itemize}
 \end{frame}
-
-% \begin{frame}{Limitations\,/\,Future Work} % needs update
-%     \begin{itemize}
-%         \item 
-%         % \item \textbf{Adherence Score:} Rater-Modelle mit Reasoning
-%         % \item[$\to$] Temperatur nicht einstellbar, womöglich hoch/variiert
-%         % \item[$\to$] Wichtig für Bewertung gewesen
-%         % \item[$\to$] Nachteil von Reasoning? Exp. 2 Bewertung?
-%         % \item \textbf{Quantitativ:} Experiment 1b schwer nachvollziehbar
-%         % \item[$\to$] Expertenbewertung von Bedeutung
-%     \end{itemize}
-% \end{frame}
 
 \appendix
 \setbeamertemplate{headline}{}
