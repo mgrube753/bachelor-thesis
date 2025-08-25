@@ -8,7 +8,7 @@
 \usepackage{latexsym,multicol,booktabs,miama}
 \usepackage{setspace}
 \usepackage{xcolor}
-\usepackage{pgfplots}
+\usepackage{pgfplots,pgfpages}
 \usepackage{tikz}
     \usetikzlibrary{calc}
 \usepackage{amssymb,amsfonts,amsmath,amsthm,mathrsfs,mathptmx} 
@@ -18,6 +18,31 @@
 \usepackage{../10_intermediate_defense/style}
 \usepackage{hyperref}
     \hypersetup{colorlinks=true, citecolor=purple, filecolor=black, linkcolor=main, urlcolor=blue}
+
+\setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen=right}
+\setbeamertemplate{note page}{\pagecolor{yellow!5}\vfill\insertnote\vfill}
+
+\makeatletter
+\def\beamer@setupnote{%
+  \gdef\beamer@notesactions{%
+    \beamer@outsideframenote{%
+      \beamer@atbeginnote%
+      \beamer@notes%
+      \ifx\beamer@noteitems\@empty\else
+      \begin{itemize}%
+        \setlength{\itemsep}{.4em}% Abstand zwischen Items
+        \setlength{\topsep}{.3em}% Abstand vor/nach der Liste
+        \setlength{\parsep}{0pt}% Absatzabstand innerhalb eines Items
+        \beamer@noteitems%
+      \end{itemize}%
+      \fi%
+      \beamer@atendnote%
+    }%
+    \gdef\beamer@notesactions{}%
+  }
+}
+\makeatother
 
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \setbeamertemplate{caption}[numbered]
@@ -74,21 +99,7 @@
 
 \section{Einführung \& Problem}
 
-            % biancini: used e.g. compliance, human eval, no bloom
-            % al faraby: future work shall be avoiding hallucinations by utilizing a framework which checks content fidelity
-            % angel: super relatedness to context, but very low bloom levels/adherence
-            % doughty: adherence between question and learning content was not assessed 
-            % elkins: relevance assessed, more interesting the bloom adherence
-            % mcqgen: relevance 100% on experts and llm-based eval (Rag)
-                % lamsiyah: mangel an menschlicher bewertung, um e.g. unterschiede zwischen menschlichen und llm-generierten fragen zu evaluieren
-            % maity: relevance/coverage used in eval
-            % mi and li (my rubric): relevance as well!
-            % scaria how good: nutzt horbach rubrik und relevance ergibt sich aus mehreren kategorie-ergebnissen von horbach
-            % vu: sagen, dass man content als wissensbasis beilegen soll, um qualitaet zu verbessern
-            % yang: halluzination in bildung inakzeptabel, somit RAG wieder
-            % twinstar: besides bloom adherence also knowledge relevance, measured automatically but unknown, alles automatisiert ausgewertet
-
-\begin{frame}[allowframebreaks]{Motivation \& Problemstellung}
+\begin{frame}{Motivation \& Problemstellung I}
     \begin{itemize}
         \item \textbf{Motivation:} 
         \begin{itemize}
@@ -97,37 +108,29 @@
         \end{itemize}
         \vspace{.5em}
         \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ bessere Lehrmaterialien-Erstellung + Lernerfahrungen möglich \cite{naveed_comprehensive_2024}
-        \framebreak
+    \end{itemize}
+\end{frame}
 
+\begin{frame}{Motivation \& Problemstellung II}
+    \begin{itemize}
         \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
-        % da auch die pädagogische Eignung bewertet werden muss über experten, was bis dato selten gemacht wurde
+            \note{\textbf{Problemstellung:}\\}
+            \note[item]{P1: da auch die pädagogische Eignung bewertet werden muss über experten, was bis dato selten gemacht wurde \\}
         \begin{itemize}
             \item Selten pädagogische Bewertung \cite{zhuge_twinstar_2025,blobstein_angel_2023,scaria_how_2024}
-            % manchmal sind wirklich nur linguistische Metriken genutzt worden, oder eben Expertenbewertung ohne Bloom's Taxonomy
+                \note[item]{P1.1: manchmal nur linguistische Metriken genutzt, oder eben Expertenbewertung ohne Bloom \\}
             \item Mangelnde Performance bei höheren kognitiven Levels \cite{elkins_how_2023,scaria_how_2024}
-            % wurde zumindest festgestellt*, die genutzten Modelle sind auch nicht die neuesten
+                \note[item]{P1.2: die genutzten Modelle sind auch nicht die neuesten. \\}
             % angel gab es z.b.: gpt-3.5 basiert, super relatedness zu context (selbst bewertet), aber sehr niedrige kognitive levels (human eval)
             \item Relevanz $\neq$ Inhaltstreue \cite{elkins_how_2023,hang_mcqgen_2024,mi_comparative_2024}
-            % korrektheit von Fragen ist elementar in Bildung
-            % Und von interesse ist, wie man gut dies in form von inhaltstreue umsetzen kann
-            % inhaltstreue zu gegebenem text wird aber oft nur als future work erwähnt
+                \note[item]{P1.3: korrektheit von Fragen elementar in Bildung; von interesse ist, wie man gut dies in form von inhaltstreue umsetzen kann; oft nur als future work erwähnt}
         \end{itemize}
-            % content fidelity an sich immer nur durch experten bewertet, sehr selten
-            % spielraum für automatisierte Verfahren, welche die inhaltstreue von LLMs evaluieren (mögliches umgehen von halluzination [al faraby], diese sind inakzeptabel in bildung [yang]). Semantic similarity ist eine Möglichkeit, an sich wurden aber diverse Metriken nur genutzt zwischen generiertem und gold-standard fragen/antworten
-            % nicht immer context gegeben (empfehlenswert sagt vu et al, um qualität zu verbessern)
-            % oder eben nur in grundlegender form von relevanz bewertet, was nicht direkt auf inhaltstreue hinausgeht
-            % wenn war eher bloom als exot bzgl. informatik im fokus
-            % des öfteren als future work erwähnt, dass man inhaltstreue evaluieren sollte, ggf. automatisiert
-        % sonst viel linguistisch, mangel an menschlicher bewertung
-        % biancini (prompting geht besser) und maity (0-shot vs 8-shot aber minimal) haben experten-basiert auch inhaltstreue bewerten lassen
         \vspace{.5em}
         \item \textbf{Forschungslücken:}
         \begin{itemize}
             \item Untersuchung der Inhaltstreue von LLMs
             \item Einhalten kognitiver Anforderungsniveaus
         \end{itemize}
-        % bspw. fragen vs. content betrachten, automatisierter + humaner versuch
-        % versuch, mit gutem prompting neue llms besser anhand von bloom zu steuern
     \end{itemize}
 \end{frame}
 
@@ -142,18 +145,12 @@
     \begin{itemize}
         \item \textbf{Pädagogische Relevanz:} Systematische Bewertung kognitiver Anforderungen von Fragen \cite{krathwohl_revision_2002}
     \end{itemize}
-        %     \item \textcolor{blue}{Remembering} -- Abruf von Faktenwissen
-        %     % wiedergeben, nennen
-        %     \item \textcolor{blue}{Understanding} -- Bedeutung von Anweisungen erkennen
-        %     % erklären, beschreiben, zusammenfassen
-        %     \item \textcolor{blue}{Applying} -- Wissen in gegebenen Situationen anwenden
-        %     % anwenden, benutzen, durchführen
-        %     \item \textcolor{blue}{Analyzing} -- Material in Komponenten zerlegen
-        %     % untersuchen, vergleichen, kategorisieren
-        %     \item \textcolor{blue}{Evaluating} -- Urteile basierend auf Kriterien fällen
-        %     % bewerten, beurteilen, kritisieren
-        %     \item \textcolor{blue}{Creating} -- Elemente zu Ganzem zusammenfügen
-        %     % entwerfen, planen, entwickeln
+            \note[item]{Remembering: Abruf von Faktenwissen -- wiedergeben, nennen}
+            \note[item]{Understanding: Bedeutung von Anweisungen erkennen -- erklären, beschreiben, zusammenfassen}
+            \note[item]{Applying: Wissen in gegebenen Situationen anwenden -- anwenden, benutzen, durchführen}
+            \note[item]{Analyzing: Material in Komponenten zerlegen -- untersuchen, vergleichen, kategorisieren}
+            \note[item]{Evaluating: Urteile basierend auf Kriterien fällen -- bewerten, beurteilen, kritisieren}
+            \note[item]{Creating: Elemente zu Ganzem zusammenfügen -- entwerfen, planen, entwickeln}
         \begin{figure}[htpb]
             \centering
             \includegraphics[width=0.6\linewidth]{../10_intermediate_defense/Blooms-Taxonomy.png}
@@ -165,26 +162,17 @@
 \begin{frame}{Herausforderungen der Literatur}
     \begin{itemize}
         \item \textbf{Veraltete Modelle} -- Kein Reasoning
-        % pre-thinking basiert auf dem user prompt, damit das modell verstehen kann, was der user will
-        % wurde in der literatur noch nicht genutzt, sondern outdated models wie gpt-4/gpt-3.5/llama2
+            \note[item]{P1: pre-thinking basiert auf user prompt, damit modell verstehen kann, was der user will; wurde in der literatur noch nicht genutzt, sondern outdated models wie gpt-4/llama2}
         \item \textbf{Halluzinationen} -- Falsche Ausgaben
-        % kann man minimieren durch kontext hinzugeben. pre-thinking kann auch dafür sorgen, dass das modell den kontext und die anforderungen hinterfragt
+            \note[item]{P2: kann man minimieren durch kontext hinzugeben. durch pre-thinking kann das modell den kontext und die anforderungen hinterfragen}
         \item \textbf{Inhaltstreue} -- Forschung nötig
-        % inhaltstreue ist eher nebensächlich [faraby, doughty], mehr Fokus auf Bloom, linguistische Metriken, Expertenrubriken mit anderem Fokus
-        % es mangelt an systemen, welche die inhaltstreue von LLMs evaluieren
+            \note[item]{P3: Inhaltstreue eher nebensache, mehr Bloom Fokus, linguistische metriken; mangel an systemen, welche die inhaltstreue von LLMs evaluieren}
         \item \textbf{Metriken im Fokus} -- Quantitative Evaluation
-        % Problematisch, da grundlegend linguistische Metriken
-        % expertenbewertung ist eine notwendige evaluation bei fragengenerierung
-        \item \textbf{Expertenbewertung} -- Qualitative Evaluation 
-        % selten ausgiebig performt, weil es aufwendig ist
+            \note[item]{P4: problematisch, da grundlegend linguistische \\ expertenbewertung notwendige evaluation bei aqg}
+        \item \textbf{Expertenbewertung} -- Qualitative Evaluation
+            \note[item]{P5: selten ausgiebig performt, weil es aufwendig ist}
         \item \textbf{Bloom's Taxonomy} -- Level Alignment \& \\ hohe kognitive Levels
-        % dies sind die schwersten Levels, welche LLMs nicht gut beherrschen in related work
-        % nicht immer wird bei fragen bloom benutzt, und wenn dann sind die modelle eher schlecht im generieren von höheren kognitiven levels
-
-        % \item \textbf{Prompting} -- Einfluss auf Ergebnisse
-        % Auch ich bin kein prompt engineer, jedoch gibt es viele methoden, um LLMs zu steuern
-        % kontext geben, rollenzuweisung, beispiellösungen geben --> in-context learning, special marks verwenden für mehr "übersicht" und struktur, auch fine-tuning ist möglich, aber auch aufwendig
-        % gewisse literatur hatte minimale Prompts aber mit Beispieloutputs übergeben, andere haben auch komplexe Prompts verwendet
+            \note[item]{P6: schwerste levels, welche in related work mislungen; nicht immer bloom benutzt, und wenn, dann eher schlecht}
     \end{itemize}
 \end{frame}
 
@@ -197,14 +185,13 @@
         $p_o$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
         $N$ Anzahl der Fragen, \\
         $n$ Anzahl der Rater
+            \note[item]{$n_{ij}$ Anzahl der Rater, die für Frage i das Rating j abgegeben haben}
+            \note[item]{$k$ Menge der Auswahlmöglichkeiten 0,2,4,6,8,10}
+            \note[item]{Nenner ist bei $p_o$ maximale Anzahl möglicher Übereinstimmungen von Raterpaaren über alle Fragen}
+            \note[item]{$p_e$ wird jede Zählung quadriert, alle werden summiert (wie viele rater haben in kategorie $j$ zustimmung gegeben)}
         \begin{align*}
-            % n_{ij} Anzahl der Rater, die für Frage i das Rating j abgegeben haben
-            % k Menge der Auswahlmöglichkeiten 0,2,4,6,8,10
             p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
-            % nenner ist maximale Anzahl möglicher Übereinstimmungen von Raterpaaren über alle Probanden
-            % 0^2 + 3^2 \\ + 1^2 + 2^2 ...
             p_e &= \sum_{j=1}^{k} p_j^2
-            % wie viele rater haben in der kategorie i eine zustimmung gegeben (2 kategorien, in der einen 8/21 eintraege, bei der anderen 13/21 einträge)
         \end{align*}
     \end{itemize}
 \end{frame}
@@ -251,7 +238,7 @@
 
 \section{Exp.\ 1 -- Inhaltstreue}
 
-\begin{frame}[allowframebreaks]{Experimentelles Design}
+\begin{frame}{Experimentelles Design I}
     \begin{itemize}
         \item \textbf{Ziel:} Bewertung der Inhaltstreue LLM-\\ generierter Fragen
         \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
@@ -262,7 +249,10 @@
         \end{itemize}
         \item \textbf{Exp 1a:} Originaltexte 
         \item \textbf{Exp 1b:} Manipuliertes Script 
-        \framebreak
+    \end{itemize}
+\end{frame}
+\begin{frame}{Experimentelles Design II}
+    \begin{itemize}
         \item 4 Large Language Models: 
             \begin{itemize}
                 \item \textbf{DeepSeek:} R1 \textcolor{gray}{(Jan 2025)}
@@ -273,25 +263,12 @@
         \item 2 Prompt-Strategien:
             \begin{itemize}
                 \item \textbf{Einfach:} Weniger Anweisungen, keine Strukturierung, aber Formatvorlage + Material
-                % generiere zum iso osi modell
-                % korrekte Antwort klar gekennzeichnet (eine oder eben aus möglichkeiten)
-                % kein abgrenzen von paragraphen (strukturierung)
-                % klar und präzise Frage, kein weiterer Text soll generiert werden
+                \note[item]{P2.1: generiere zum iso osi modell; korrekte antwort soll klar gekennzeichnet sein (wenn aus mehreren); kein abgrenzen von paragraphen durch strukturierung; klar und präzise Frage, kein weiterer Text soll generiert werden}
                 \item \textbf{Komplex:} Rollenzuweisung, detaillierte Anweisungen, fordert nicht-triviales und kritisches Denken, Struktur durch Docstrings, Formatvorlage + Material 
-                % format für einheitlichen Output bei beiden Prompts --> war das Problem beim einfachen Prompt --> Rerun nötig gewesen
-                % + source material
-                % was war drin:
-                % erfahrener experte im generieren von kognitiv anspruchsvollen fragen, welche nicht triviales und analytisches Denken fordern
-                % untersuchen des iso osi texts, erfassen des wichtigen
-                % soll nur fliesstext statt markdown generieren, nichts anderes soll generiert werden
+                \note[item]{P2.2: rollenzuweisung (experte in generieren von kognitiv anspruchsvollen fragen, welche nicht triviales und analytisches denken fordern); untersuchen des osi texts; erfassen des wichtigen; nur fliesstext statt markdown}
+                \note[item]{bei beiden prompts einheitliches outputformat, aber ohne festen fragetypen}
+                \note[item]{präferenz von mcq in exp1}
             \end{itemize}
-        % diese haben keinen festen fragetypen vorgegeben. 
-        % dies ermöglicht, ergebnisse ohne die eine zusätzliche Variable zu verfälschen, da fokus auf inhaltstreue liegt
-        % kann eine fundierung für verbessern der prompts in experiment 2 sein, wo teils auch fragetyp nicht angegeben wird, wie im komplexen prompt auch
-        % dafür ist halt RQ2 da, um mit sowas umzugehen
-        % wir haben eine geeignete vergleichbarkeit durch die lang durchdachte auswertungsrubrik. wäre diese oberflächlich, wäre die vergleichbarkeit wesentlich geringer
-        % auch die quantitative umsetzung ist recht formatunabhängig (habe die falschen antwortmöglichkeiten abgefiltert), kann ja mal zählen wie viele fragen von typ x generiert wurden --> möglicher erkenntnisgewinn bzgl. präferenzen bei fragestellung (multiple-choice bei exp1)
-        % dann kann man in exp2 gucken, was auf den jeweiligen kognitiven leveln passiert, wenn man dort fragetyp vs. bloom level angibt, wie gut das funktioniert
     \end{itemize}
 \end{frame}
 
@@ -301,10 +278,6 @@
         \item \textbf{Website-Prompting:} DeepSeek R1
         \item \textbf{Material:} Layer-weise Aufteilung
         \item \textbf{Resultierende \#Fragen:} 
-            % \begin{itemize}
-            %     \item \textbf{Exp 1a:} 168 Fragen
-            %     \item \textbf{Exp 1b:} 56 Fragen
-            % \end{itemize}
     \end{itemize}
     \vspace{-.25em}
     \begin{align*}
@@ -326,17 +299,8 @@
             \begin{align*}
                 \hspace{-3em}\cos(\vec{a}, \vec{b}) &= \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| \cdot ||\vec{b}||} 
             \end{align*}
-            % zu beginn der transformer-ära gab es encoder-decoder transformer, wo encoder den input in eine mathematische Repräsentation mit Bedeutung umwandelt
-            % dann generiert der decoder basierend auf diesem embedding den output token-weise
-            % hat sich aber eher gesplittet in encoder-only und decoder-only transformer
-            % decoder-only: gpt, llama, gemini: können text generieren, weniger aufwendiges Training + inferenz als enc-dec-transformer
-            % encoder-only: bert, roberta: können nur text klassifizieren, nicht generieren --> sentence transformers kamen dann auch --> diese Embeddings sind vegleichbar
             \item \textbf{Adherence Score:} o3 \& Claude 3.7 Sonnet Prompting
-            % temperatur auf 0 für weniger randomness in Antwort, geht aber nicht bei thinking mode...
-            % bekommt Rolle eines Experten im Bewerten von metrischen Fragen, Frage studieren, iso osi kontext text studieren
-            % kurze Bewertungsrubrik 0 bis 1, Ausgabe einer Dezimalzahl mit 2 Nachkommastellen, ohne Kommentare etc.
         \end{itemize}
-        % \item quantitative mit metriken (semantic sim mit Embedding Model, adherence via llm)
         \item \textbf{Qualitativ:} Prof. Cap + 4 Experten des IuK 
         \begin{itemize}
             \item \textbf{Fleiss' Kappa:} Inter-Rater Reliability
@@ -345,25 +309,6 @@
         \end{itemize}
     \end{itemize}
 \end{frame}
-
-% --- Exp. 1: Quantitative Ergebnisse ---
-% \begin{frame}{Quantitative Analyse 1a -- LLMs}
-%     \begin{figure}
-%         \centering
-%         \begin{tikzpicture}
-%             \node[inner sep=0pt, anchor=south west] (img) at (0,0)
-%                 {\includegraphics[width=0.9\textwidth]{../../40_evaluation/exp1/quantitative/plots/exp1a/dist_by_llm.png}};
-%             % Linke Hälfte auswaschen (weniger Kontrast/Farbe)
-%             \path[fill=white, fill opacity=0.55]
-%                 (img.south west) --
-%                 ($(img.south west)!0.5!(img.south east)$) --
-%                 ($(img.north west)!0.5!(img.north east)$) --
-%                 (img.north west) -- cycle;
-%         \end{tikzpicture}
-%         \caption{Verteilung nach LLM (1a).}
-%         \label{fig:dist_llm_a}
-%     \end{figure}
-% \end{frame}
 
 \begin{frame}{Quantitative Analyse -- Exp. 1a}
     \begin{figure}
@@ -508,12 +453,6 @@
     \end{table}
 \end{frame}
 
-% \begin{frame}{Qualitative Analyse -- Exp. 1b}
-%    \begin{itemize}
-%     \item gewisse kommentare koennen noch hier hin
-%    \end{itemize} 
-% \end{frame}
-
 \begin{frame}{Qualitative Analyse -- Exp. 1b}
 \begin{table}[htbp]
     \centering
@@ -574,7 +513,6 @@
             \textbf{5.00} & 3.93 & \textit{4.0} \\
             \bottomrule
         \end{tabular}}
-        % anderes verständnis der rubrik wohl + zwischenwerte..
     \end{minipage}
 \end{table}
 \end{frame}
@@ -689,80 +627,85 @@
 
 \section{Schlusswort}
 
-\begin{frame}[allowframebreaks]{Hauptergebnisse zu RQ1}
+\begin{frame}{Hauptergebnisse zu RQ1 I}
     \begin{itemize}
         \item \textbf{LLMs erstellen inhaltsgetreue Fragen} unter bestimmten Bedingungen
-        % adherence score zeigte recht deutlich, dass die Fragen inhaltlich gut waren
-        % sentence transformer aber ungeeignet für lange Texte
+            \note[item]{P1: adherence score zeigte recht deutlich, dass die Fragen inhaltlich gut waren}
+            \note[item]{sentence transformer aber ungeeignet für lange Texte und strukturiertes}
         \item \textbf{Common Prompt > Complex} meistens
-        % sowohl bei quantitativ als auch qualitativ
-        % qualitativ: Complex nur besser in Challenging mit Qualitätseinbußen
-        % impliziert dass ein überladener/weniger präziser Prompt nicht unbedingt besser sein muss
+            \note[item]{P2: sowohl bei quantitativ als auch qualitativ; bei qualitativ nur complex besser in challenging mit einbußen}
+            \note[item]{überladener/weniger präziser prompt folgert nicht unbedingt besseres}
         \item Script vs. Transcript oft eng beieinander, wobei \\
         \textbf{Staff:} Script vs. \textbf{Supervisor:} Transcript
-        % Transcript an sich bestes in Clarity/Answerability/Correctness, aber am niedrigsten in Challenging
-        % Script ausgewogen mit höchstem Total Score, Script bei Staff das effektivere Material
+            \note[item]{P3: transcript bei cap bestes in clarity,answerability und correctness, niedrigstes in challenging (bei beiden)}
+            \note[item]{script bei staff ausgeglichen mit höchstem total score, script bei staff das effektivere material}
         \item OpenAI \& DeepSeek \textbf{konsistenter}
-        % Anthropic \& Google variabler + teils sprachlich komplex oder mit fehlerhaften\,/\,erfundenen Optionen
-        % Challenging generell niedrig
-
-        \framebreak
-
-        \item \enquote{Basierend auf dem gegebenen Text} \\ $\Rightarrow$ oft bei Deepseek \& Google
-        \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt
-        % Anthropic \& Google folgen hierbei häufiger
-        \item \textbf{Kleine Stichprobe} (16/56) und \textbf{geringe IRR} \\
-        % deswegen auch google und anthropic da besser stattdessen
-        $\Rightarrow$ Inkonsistente Trends quantitativ \& qualitativ
-        % da trend invers bei qualitativ
-        \item \textbf{Bloom's Taxonomy} essentiell für gute + anforderungs-gesteuerte Fragen
+            \note[item]{anthropic \& google variabler... teils sprachlich komplex oder mit fehlerhaften/erfundenen optionen}
     \end{itemize}
-    % also klappt dann gut, wenn man klare anweisungen gibt + strukturiertes material
-    % DeepSeek und OpenAI dabei am robustesten gewesen grundlegend
-    % IAA war sehr niedrig, die rubrik und pflichten der bewerter muessen refined werden
-    % da fragen nicht so challenging (auch nicht so recht bei complex prompt), ist die wichtigkeit von blooms taxonomy vertreten 
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Hauptergebnisse zu RQ2}
+\begin{frame}{Hauptergebnisse zu RQ1 II}
+    \begin{itemize}
+        \item \enquote{Basierend auf dem gegebenen Text} \\ $\Rightarrow$ oft bei Deepseek \& Google
+        \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt
+            \note[item]{P2: Anthropic \& Google folgen hierbei häufiger}
+        \item \textbf{Kleine Stichprobe} (16/56) und \textbf{geringe IRR} \\
+            \note[item]{P3: deswegen google und anthropic hier besser}
+        $\Rightarrow$ Inkonsistente Trends quantitativ \& qualitativ
+        \item \textbf{Bloom's Taxonomy} essentiell für gute + anforderungs-gesteuerte Fragen
+    \end{itemize}
+        \note[item]{also klappt dann gut, wenn man klare anweisungen gibt + strukturiertes material}
+        \note[item]{DeepSeek und OpenAI dabei am robustesten gewesen grundlegend}
+        \note[item]{IAA war sehr niedrig, die rubrik und pflichten der bewerter muessen refined werden}
+        \note[item]{da fragen nicht so challenging (auch nicht so recht bei complex prompt), ist die wichtigkeit von blooms taxonomy vertreten}
+\end{frame}
+
+\begin{frame}{Hauptergebnisse zu RQ2 I}
     \begin{itemize}
         \item Bloom-Level-Spezifikation $\Rightarrow$ \textbf{hohe Adhärenz}
         \item Ohne Spezifikation $\Rightarrow$ \textbf{niedrigere Levels} (Levels 2-3)
         \item \textbf{Open-Ended} $\Rightarrow$ alle Levels + \textbf{besseres Alignment}
         \item MCQs für \textbf{niedrige Levels} $\Rightarrow$ kombinieren
-        \framebreak
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hauptergebnisse zu RQ2 II}
+    \begin{itemize}
         \item \textit{Type Only}: \textbf{Anthropic \& Google} > DeepSeek \& OpenAI
         \item \textit{Bloom Only}: \textbf{OpenAI} am besten
         \item \textit{Type+Bloom}: \textbf{Google} am besten
-        % $\Rightarrow$ OpenAI \textbf{Level-6 MCQ}-Widerspruch
+            \note[item]{Type+Bloom: OpenAI wegen Level-6-MCQ Widerspruch geringer bewertet}
         \item Hohe IRR bei \textit{Bloom's Level}
-        % answerability 0.179 und challenging 0.270 sind okay, aber die anderen gegen 0 oder Value -0.256
-        % es braucht besseres rubrik-design (vor allem wegen value) + anker muessen klarer sein
-        % die studenten machen diese evaluation auch nicht jeden tag...
+            \note[item]{answerability 0.179, challenging 0.270; aber andere gegen 0 oder Value -0.256}
+            \note[item]{braucht besseres rubrik-design (vor allem wegen value) + anker muessen klarer sein}
+            \note[item]{studenten machen evaluation auch nicht jeden tag}
         \item \textbf{Pädagogisch qualitativ:} Bloom-Vorgaben + passende Fragetypen + durchdachtes Prompting + klare Lernziele + moderne LLMs
     \end{itemize}
-    % bloom mit jeweils passenden frageformaten + durchdachtes prompting + klare lernziele!! + fokus auf sprachliche qualität machen gutes fragesetup aus (da überladene fragen ungewollt) 
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Limitations\,/\,Future Work}
+\begin{frame}{Limitations\,/\,Future Work I}
     \begin{itemize}
         \item Cosine Similarity \textbf{ungeeignet} 
-        % kein unterschied in inhaltstreue zwischen fragen mit source material und ohne...
-        \item Besseres \textbf{Multi-LLM-Judging} für Inhaltstreue % statt zwei Modelle und dann mean nehmen
+            \note[item]{P1: kein unterschied in inhaltstreue zwischen fragen mit source material und ohne...}
+        \item Besseres \textbf{Multi-LLM-Judging} für Inhaltstreue 
+            \note[item]{P2: statt zwei Modelle und dann mean nehmen, da geht mehr}
         \item \textbf{Größere Stichprobe} bei Manipulation
-        % konsistente Auswertung
+            \note[item]{P3: konsistente auswertung, da 16/56 zu wenig war}
         \item Klare \textbf{Ankerbeschreibungen} \& \textbf{Lernziele} integrieren 
-        % 0-10-Skala zu ungenau
+            \note[item]{P4: 0-10 skala doch zu ungenau trotz anker}
         \item \#Raters\,$\uparrow$ reicht nicht aus $\Rightarrow$ \textbf{bessere Rubrik}
+    \end{itemize}
+\end{frame}
 
-        \framebreak
-
+\begin{frame}{Limitations\,/\,Future Work II}
+    \begin{itemize}
         \item Wenn \textbf{MCQs} $\Rightarrow$ mehrstufige Pipeline 
-        % Frage, richtige, falsche Optionen separat generieren
+            \note[item]{P1: Frage, richtige, falsche Optionen separat generieren}
         \item \textbf{Reasoning vs. Non-Reasoning} Modelle vergleichen
-        % bzw mit und ohne diesen prozess*
-        % reasoning an sich schwer auswertbar, da zunehmend proprietär --> Reasoning-Summaries wenn überhaupt gegeben
+            \note[item]{bzw. mit und ohne den reasoning prozess}
+            \note[item]{reasoning schwer auswertbar, da zunehmend proprietär; summaries wenn überhaupt verfügbar}
         \item \textbf{Halluzinationen} reduzieren 
-        % bei Modellen und Prompting
+            \note[item]{sowohl bei modellen als auch bei prompting}
         \item Thesis-Grundlage: Umsetzung eines \textbf{robusten \& pädagogisch sinnvollen} AQG-Frameworks
     \end{itemize}
 \end{frame}
