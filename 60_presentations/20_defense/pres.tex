@@ -104,7 +104,9 @@
         \item \textbf{Motivation:} 
         \begin{itemize}
             \item Aktives Lernen $\to$ gezielte Fragen
+                \note[item]{Um \textbf{aktives Lernen} zu fördern und nicht nur Texte zu lesen, sind gezielte \textbf{Kontrollfragen} sinnvoll.}
             \item Anspruchsvolle Fragen $\to$ zeitaufwendig \cite{steuer_i_2021} 
+                \note[item]{Eine Menge an \textbf{anspruchsvollen Fragen} zu erstellen ist jedoch \textbf{zeitaufwendig}.}
         \end{itemize}
         \vspace{.5em}
         \item \textbf{Potenzial von LLMs:} Automatisierte Fragen- generierung $\to$ bessere Lehrmaterialien-Erstellung + Lernerfahrungen möglich \cite{naveed_comprehensive_2024}
@@ -115,15 +117,14 @@
     \begin{itemize}
         \item \textbf{Problemstellung:} Qualität oft unklar $\to$ mangelnde systematische Evaluation über linguistische Tests hinaus \cite{horbach_linguistic_2020} 
             \note{\textbf{Problemstellung:}\\}
-            \note[item]{P1: da auch die \textbf{pädagogische Eignung} bewertet werden muss über \textbf{Experten}, was bis dato selten gemacht wurde \\}
+            \note[item]{P1: man muss auch \textbf{pädagogische Eignung} bewerten, aber}
         \begin{itemize}
             \item Selten pädagogische Bewertung \cite{zhuge_twinstar_2025,blobstein_angel_2023,scaria_how_2024}
                 \note[item]{P1.1: manchmal nur \textbf{linguistische Metriken} genutzt, oder eben Expertenbewertung \textbf{ohne Bloom} \\}
             \item Mangelnde Performance bei höheren kognitiven Levels \cite{elkins_how_2023,scaria_how_2024}
-                \note[item]{P1.2: die genutzten Modelle sind auch \textbf{nicht die neuesten}. \\}
-            % angel gab es z.b.: gpt-3.5 basiert, super relatedness zu context (selbst bewertet), aber sehr niedrige kognitive levels (human eval)
+                \note[item]{P1.2: zu \textbf{alte} Modelle... \\}
             \item Relevanz $\neq$ Inhaltstreue \cite{elkins_how_2023,hang_mcqgen_2024,mi_comparative_2024}
-                \note[item]{P1.3: \textbf{Korrektheit} von Fragen \textbf{elementar} in Bildung; von Interesse ist, wie man \textbf{gut} dies in Form von \textbf{Inhaltstreue} umsetzen kann; oft nur als \textbf{Future Work}}
+                \note[item]{P1.3: \textbf{Korrektheit} von Fragen \textbf{elementar} in Bildung; \\ Inhaltstreue oft nur als \textbf{Future Work}}
         \end{itemize}
         \vspace{.5em}
         \item \textbf{Forschungslücken:}
@@ -162,17 +163,17 @@
 \begin{frame}{Herausforderungen der Literatur}
     \begin{itemize}
         \item \textbf{Veraltete Modelle} -- Kein Reasoning
-            \note[item]{P1: \textbf{Reasoning} basiert auf User Prompt, damit Modell \textbf{brainstormt}, was der User will; wurde in Literatur noch \textbf{nicht genutzt}, sondern \textbf{outdated} Models wie GPT-4/LLaMA2}
+            \note[item]{P1: basiert auf User Prompt $\Rightarrow$ Anforderungen \textbf{brainstormen}, \\ zuvor \textbf{nicht genutzt}, sondern \textbf{outdated} Models (GPT-4)}
         \item \textbf{Halluzinationen} -- Falsche Ausgaben
-            \note[item]{P2: Kann man minimieren durch \textbf{Kontext}; Reasoning $\Rightarrow$ Modell kann \textbf{Thema \& Anforderungen hinterfragen}}
+            \note[item]{P2: Kann man minimieren durch \textbf{Kontext}}
         \item \textbf{Inhaltstreue} -- Forschung nötig
-            \note[item]{P3: Inhaltstreue eher \textbf{Nebensache}, mehr \textbf{Bloom} Fokus, \textbf{linguistische} Metriken; \textbf{Mangel} an Systemen, welche die Inhaltstreue von LLMs evaluieren}
-        \item \textbf{Metriken im Fokus} -- Quantitative Evaluation
-            \note[item]{P4: Problematisch, da grundlegend \textbf{linguistisch} \\ \textbf{Expertenbewertung} notwendig bei AQG}
-        \item \textbf{Expertenbewertung} -- Qualitative Evaluation
+            \note[item]{P3: Inhaltstreue eher \textbf{Nebensache}, mehr \textbf{Bloom} Fokus, \textbf{linguistische} Metriken}
+        \item \textbf{Quantitative Metriken} -- Linguistischer Fokus
+            \note[item]{P4: Problematisch, da grundlegend \textbf{linguistisch} \\ $\Rightarrow$ \textbf{Expertenbewertung} notwendig bei AQG}
+        \item \textbf{Expertenbewertung} -- Selten, da aufwendig
             \note[item]{P5: \textbf{Selten} ausgiebig performt, weil aufwendig}
         \item \textbf{Bloom's Taxonomy} -- Level Alignment \& \\ hohe kognitive Levels
-            \note[item]{P6: Schwerste level \textbf{misslingen} in RW; auch \textbf{nicht immer Bloom} benutzt, und wenn, dann eher schlecht \\ $\Rightarrow$ Mit \textbf{neumodischen} Modellen nicht evaluiert}
+            \note[item]{P6: Hohe Levels \textbf{misslingen} in RW; \\ auch \textbf{nicht immer Bloom} benutzt (dann eher schlecht)}
     \end{itemize}
 \end{frame}
 
@@ -182,12 +183,12 @@
         \begin{align*}
             \kappa &= \frac{p_o - p_e}{1 - p_e}, \text{ mit}
         \end{align*}
-        $p_o$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
+        \textcolor{gray}{$p_o$ beobachtete Übereinstimmung, \\ $p_e$ erwartete Übereinstimmung durch Zufall, \\
         $N$ Anzahl der Fragen, \\
-        $n$ Anzahl der Rater
+        $n$ Anzahl der Rater}
             \note[item]{$n_{ij}$ \textbf{\#Rater}, die für Frage $i$ das Rating $j$ abgegeben haben}
             \note[item]{$k$ Menge der \textbf{Auswahlmöglichkeiten} 0,2,4,6,8,10}
-            \note[item]{\textbf{Nenner} bei $p_o$ ist maximale Anzahl \textbf{möglicher Übereinstimmungen} von Raterpaaren über alle Fragen}
+            % \note[item]{\textbf{Nenner} bei $p_o$ ist maximale Anzahl \textbf{möglicher Übereinstimmungen} von Raterpaaren über alle Fragen}
             \note[item]{$p_e$ wird jede \textbf{Zählung quadriert}, die werden \textbf{summiert} (wie viele Rater haben in Rating $j$ Zustimmung gegeben)}
         \begin{align*}
             p_o &= \frac{\sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}^2-N\cdot n}{N\cdot n\cdot (n-1)} \\
@@ -204,8 +205,8 @@
                 \toprule
                 \textbf{Q} & \textbf{R1} & \textbf{R2} & \textbf{R3} \\
                 \midrule
-                1 & Y & Y & Y \\
-                2 & N & Y & N \\
+                1 & \textcolor{green!70}{Y} & \textcolor{green!70}{Y} & \textcolor{green!70}{Y} \\
+                2 & \textcolor{red}{N} & \textcolor{green!70}{Y} & \textcolor{red}{N} \\
                 \bottomrule
             \end{tabular}
         \end{table}
@@ -225,14 +226,12 @@
         6 Ratings, somit: $\frac{4}{6}$ und $\frac{2}{6}$ \vspace{.5em} \\
         $\rightsquigarrow p_e=(\frac{4}{6})^2 + (\frac{2}{6})^2=\uline{0.55}$ 
     \end{minipage}%
-    \begin{minipage}{.05\linewidth}
-       \hfill 
-    \end{minipage}
-    \begin{minipage}{.48\linewidth}
-        $N=2$ Fragen \& $n=3$ Rater \vspace{.5em} \\
-        $\rightsquigarrow p_0=\frac{3^2+0^2+1^2+2^2-2\cdot 3}{2\cdot 3\cdot (3-1)}=\uline{0.66}$ \vspace{2em} \\
-        Einsetzen in $\kappa$-Gleichung: \vspace{.5em} \\
-        $\kappa=\frac{0.66 - 0.55}{1 - 0.55}=\uline{0.25}$
+    \begin{minipage}{.53\linewidth}
+        \centering
+        $N=2$ Fragen, $n=3$ Raters: \vspace{.75em} \\
+        $\displaystyle p_o=\frac{3^2+0^2+1^2+2^2-2\cdot 3}{2\cdot 3\cdot (3-1)}=\uline{0.66}$ \vspace{2em} \\
+        Einsetzen in $\kappa$-Gleichung: \vspace{.75em} \\
+        $\displaystyle\kappa=\frac{0.66 - 0.55}{1 - 0.55}=\uline{0.25}$
     \end{minipage}
 \end{frame}
 
@@ -243,9 +242,9 @@
         \item \textbf{Ziel:} Bewertung der Inhaltstreue LLM-\\ generierter Fragen
         \item \textbf{Materialien:} 3 Quellen -- ISO-OSI-Modell
         \begin{itemize}
-            \item Script -- Prof. Cap's \enquote{Referenzarchitekturen} (DE)
+            \item Script -- \enquote{Referenzarchitekturen} (DE)
             \item Transcript -- Audio-zu-Text (DE)  
-            \item \enquote{Computer Networks} -- Textbook (EN)
+            \item Textbook -- \enquote{Computer Networks} (EN)
         \end{itemize}
         \item \textbf{Exp 1a:} Originaltexte 
         \item \textbf{Exp 1b:} Manipuliertes Script 
@@ -278,7 +277,7 @@
         \item \textbf{Python:} Automatisierte API-Ansteuerungen
         \item \textbf{Website-Prompting:} DeepSeek R1
         \item \textbf{Material:} Layer-weise Aufteilung
-        \item \textbf{Resultierende \#Fragen:} 
+        \item \textbf{\#Fragen:} 
     \end{itemize}
     \vspace{-.25em}
     \begin{align*}
@@ -540,8 +539,8 @@
     \end{itemize}
     \begin{align*}
         \textcolor{gray}{4 \text{ LLMs}\times 2 \text{ Fragetypen}\times 6 \text{ Runs}} &= \textcolor{gray}{48 \text{ Fragen}} \\
-        \textcolor{gray}{4 \text{ LLMs}\times 6 \text{ Bloom-Levels}} &= \textcolor{gray}{24 \text{ Fragen}} \\
-        \textcolor{gray}{4 \text{ LLMs}\times 2 \text{ Fragetypen}\times 6 \text{ Bloom-Levels}} &= \textcolor{gray}{48 \text{ Fragen}}
+        \textcolor{gray}{4 \text{ LLMs}\times 6 \text{ Levels}} &= \textcolor{gray}{24 \text{ Fragen}} \\
+        \textcolor{gray}{4 \text{ LLMs}\times 2 \text{ Fragetypen}\times 6 \text{ Levels}} &= \textcolor{gray}{48 \text{ Fragen}}
     \end{align*}
 \end{frame}
 
@@ -642,7 +641,7 @@
     \begin{itemize}
         \item \enquote{Basierend auf dem gegebenen Text} \\ $\Rightarrow$ oft bei DeepSeek \& Google
         \item \textbf{Teilweise Erkennung} von Manipulationen: \newline OpenAI \& DeepSeek niedrige \textit{Adherence Scores} beim komplexen Prompt
-            \note[item]{P2: Anthropic \& Google \textbf{folgen} hierbei häufiger}
+            % \note[item]{P2: Anthropic \& Google \textbf{folgen} hierbei häufiger}
         \item \textbf{Kleine Stichprobe} (16/56) und \textbf{geringe IRR} \\
             \note[item]{P3: Deswegen Google \& Anthropic hier \textbf{besser} \\
             Rubrik \& Pflichten der Bewerter müssen \textbf{refined} werden}
@@ -650,7 +649,6 @@
         \item \textbf{Bloom's Taxonomy} essenziell für gute + Anforderungs-gesteuerte Fragen
     \end{itemize}
         \note[item]{$\Rightarrow$ klappt dann gut, wenn man \textbf{klare Anweisungen} gibt + strukturiertes, präzises \textbf{Material}}
-        \note[item]{DeepSeek \& OpenAI dabei am robustesten gewesen}
         \note[item]{Fragen \textbf{wenig Challenging} (auch nicht so sehr bei Complex Prompt) $\Rightarrow$ Wichtigkeit von \textbf{Bloom's Taxonomy} da}
 \end{frame}
 
@@ -668,11 +666,10 @@
         \item \textit{Type Only}: \textbf{Anthropic \& Google} > DeepSeek \& OpenAI
         \item \textit{Bloom Only}: \textbf{OpenAI} am besten
         \item \textit{Type+Bloom}: \textbf{Google} am besten
-            \note[item]{P3: OpenAI wegen Level-6-MCQ \textbf{Widerspruch} geringer}
+            % \note[item]{P3: OpenAI wegen Level-6-MCQ \textbf{Widerspruch} geringer}
         \item Hohe IRR bei \textit{Bloom's Level}
             \note[item]{P4: Answerability 0.179, Challenging 0.270; aber andere gegen 0 oder Value -0.256}
             \note[item]{Braucht besseres \textbf{Rubrik-Design} (vor allem wegen Value) + \textbf{klarere Anker}}
-            \note[item]{Studenten machen Evaluation auch \textbf{nicht jeden Tag}}
         \item \textbf{Pädagogisch qualitativ:} Bloom-Vorgaben + passende Fragetypen + durchdachtes Prompting + klare Lernziele + moderne LLMs
     \end{itemize}
 \end{frame}
